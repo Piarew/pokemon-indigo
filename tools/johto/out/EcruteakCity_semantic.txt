@@ -1,0 +1,77 @@
+# EcruteakCity 40x36  source https://archives.bulbagarden.net/media/upload/0/0e/Ecruteak_City_C.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+M  M  M  M  M  M  M  M  M  M  P  P  T  T  T  X  X  X  X  X  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+M  M  M  X  X  X  X  X  X  M  P  P  T  T  T  X  X  X  X  X  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+M  M  M  X  X  X  X  X  X  M  M  M  T  T  T  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  T  T  T  T  T  T  T  T  T  T 
+M  M  M  X  X  X  X  X  X  M  M  M  T  T  T  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  T  T  T  T  T  T  T  T  T  T 
+P  P  M  X  X  X  X  X  X  M  M  M  T  T  T  P  P  P  P  P  P  P  T  T  T  T  T  T  P  P  P  P  P  P  T  X  X  X  X  X 
+P  P  M  X  X  X  X  X  X  M  M  M  T  T  T  P  P  P  P  P  P  P  T  T  T  T  T  T  P  P  P  P  P  P  T  X  X  X  X  X 
+M  M  P  X  X  X  X  X  X  M  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  P  P  P  X  X  X  X  X 
+M  M  P  P  P  P  P  P  M  M  G  G  T  T  T  T  X  X  X  X  X  X  T  T  T  T  T  T  T  T  T  T  P  P  P  X  X  X  X  X 
+T  T  P  P  P  P  P  P  T  T  T  X  X  X  X  X  X  X  X  X  X  X  T  T  T  T  T  T  T  T  T  T  T  T  P  P  P  P  P  P 
+T  T  P  P  P  P  P  P  T  T  T  X  X  X  X  X  X  X  X  X  X  X  T  T  T  T  T  T  T  T  T  T  T  T  P  P  P  P  P  P 
+T  T  S  P  P  P  P  P  P  VR G  X  X  X  X  X  X  X  X  X  X  X  w0 w1 T  T  T  T  T  T  T  T  T  T  T  T  P  P  S  P 
+T  T  P  P  L  L  L  L  L  P  G  X  X  X  X  X  X  X  X  X  X  X  w2 w3 T  T  T  T  T  T  T  T  T  T  T  T  P  P  P  P 
+T  T  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  W  W  W  W  W  W  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  W  W  W  W  W  W  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  P  P  X  X  X  X  X  G  P  P  X  X  X  X  X  P  P  P  P  P  P  P  W  W  W  W  w0 w1 T  T  T  T  T  T  T  T  T  T 
+T  T  P  P  X  X  X  X  X  G  P  P  X  X  X  X  X  P  P  P  P  P  P  P  W  W  W  W  w2 w3 T  T  T  T  T  T  T  T  T  T 
+T  T  P  P  X  X  X  X  X  G  P  P  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  T  T  T  T  T  T 
+T  T  P  P  X  X  X  X  X  G  P  P  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  T  T  T  T  T  T 
+P  P  P  P  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  P  G  G  X  X  X  X  X  P  X  X  X  X  P  P  T  T  T  T  T  T 
+P  P  P  P  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  P  G  G  X  X  X  X  X  P  X  X  X  X  P  P  T  T  T  T  T  T 
+T  T  P  P  X  X  X  X  X  G  P  P  G  G  G  G  P  P  P  P  G  G  X  X  X  X  X  P  X  X  X  X  P  P  T  T  T  T  T  T 
+T  T  P  P  X  X  X  X  X  G  P  P  G  G  G  S  P  P  P  P  G  S  X  X  X  X  X  P  X  X  X  X  P  P  T  T  T  T  T  T 
+T  T  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  T  T  T  T  T  T 
+T  T  P  X  X  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  T  T  T  T  T  T 
+T  T  P  X  X  X  X  X  X  X  P  P  X  X  X  X  X  P  P  P  G  X  X  X  X  X  P  P  X  X  X  X  X  P  T  T  T  T  T  T 
+T  T  P  X  X  X  X  X  X  X  P  P  X  X  X  X  X  P  P  P  G  X  X  X  X  X  P  P  X  X  X  X  X  P  T  T  T  T  T  T 
+T  T  P  X  X  X  X  X  X  X  P  P  X  X  X  X  X  P  P  P  G  X  X  X  X  X  P  P  X  X  X  X  X  P  P  P  P  P  P  P 
+T  T  P  X  X  X  X  X  X  X  P  P  X  X  X  X  X  P  P  P  G  X  X  X  X  X  P  P  X  X  X  X  X  P  P  P  P  P  P  P 
+T  T  P  P  P  P  P  P  S  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  T  T  T  T  T  T 
+T  T  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+
+# raw global cell ids (tools/johto cells.json)
+ 23  24  63  64  64  64  64  64  64  65 148 196   0   0   0   0  15  15  15  15   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 178 179 180 181
+ 25  26  41  37  37  37  37  37  37  40   1 197   8   8   8   8 172 173 173 174   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8 178 179 180 181
+ 23  24  41  37 198 199 200 201  37  37  64  65   0   0   0   0 175 176 176 177 125   1   1   1   1   1   1   1   1   1   0   0   0   0   0   0 178 179 180 181
+ 25  26  49  43 202 203 204 205  45  37  37  40   8   8   8   8 191 184 189 190 125   1   1   1   1   1   1   1   1   1   8   8   8   8   8   8 178 179 180 181
+206   1  23  24 207 208 209 210  41  37  37  40   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1   1   0   0 178 179 180 181
+206   1  25  26 211 183 184 185  49  43  43  46   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   1   1   1   1   1   1   8   8 178 179 180 181
+ 23  24   1   1 186 187  69 137  23  24  16  16   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   1   1   1 178 179 180 181
+ 25  26   1   1   1   1   1   1  25  26  16  16   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   1   1   1   1 182 183 184 185
+  0   0 148 148 148 148   1   1   0   0   0   0  15  15  15  15  15  15  15  15  15  15   0   0   0   0   0   0   0   0   0   0   0   0   1   1 186 187  69 137
+  8   8   1   1   1   1   1   1   8   8   8   8 172 173 173 174 172 173 173 173 173 174   8   8   8   8   8   8   8   8   8   8   8   8   1   1   1   1   1   1
+  0   0  36   1   1   1   1   1   1 136  16  16 175 176 176 177 175 176 176 176 176 177  23  24   0   0   0   0   0   0   0   0   0   0   0   0   1   1  36   1
+  8   8   1   1  69  69  69  69  69 137  16  16 191 184 189 190 191 184 183 192 189 190  25  26   8   8   8   8   8   8   8   8   8   8   8   8   1   1   1   1
+  0   0   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  47  22  22  22  22  48   0   0   0   0   0   0   0   0   0   0   0   0
+  8   8   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   5   6   6   6   6   7   8   8   8   8   8   8   8   8   8   8   8   8
+  0   0   1   1  15  15  15  15  16  16   1   1  15  15  15  15   1   1   1   1   1   1   1   1   5   6   6   7  23  24   0   0   0   0   0   0   0   0   0   0
+  8   8   1   1 172 173 173 174  16  16   1   1 172 173 173 174   1   1   1   1   1   1   1   1   5   6   6   7  25  26   8   8   8   8   8   8   8   8   8   8
+  0   0   1   1 175 176 176 177  16  16   1   1 175 176 176 177   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   0   0   0   0   0   0
+  8   8   1   1 191 184 189 190  16  16   1   1 191 184 189 190   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   8   8   8   8   8   8
+125   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  16  16  15  15  15  15   1   1 212 213 213 214   1   1   0   0   0   0   0   0
+125   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  16  16 172 173 173 174   1   1 215 216 216 217   1   1   8   8   8   8   8   8
+  0   0   1   1 218 219 219 220  16  16   1   1  16  16  16  16   1   1   1   1  16  16 175 176 176 177   1   1  12  13  13  14   1   1   0   0   0   0   0   0
+  8   8   1   1  32  18  33  34  16  16   1   1  16  16  16  36   1   1   1   1  16  36 188 183 189 190   1   1  17  18  19  20   1   1   8   8   8   8   8   8
+  0   0   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   0   0   0   0   0   0
+  8   8   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   8   8   8   8   8   8
+  0   0   1   1 212 213 213 213 213 214   1   1  15  15  15  15   1   1   1   1  16  16 212 213 213 214   1   1  15  15  15  15   1   1   0   0 115 116 116 117
+  8   8   1   1 215 216 216 216 216 217   1   1 172 173 173 174   1   1   1   1  16  16 215 216 216 217   1   1 172 173 173 174   1   1   8   8 118 119 119 120
+  0   0   1   1  56  57  58  59  60  61   1   1 175 176 176 177   1   1   1   1  16  16  12  13  13  14   1   1 175 176 176 177   1   1   1 125  56  57  60  61
+  8   8   1   1  32  33  18  33  33  34   1   1 188 183 189 190   1   1   1   1  16  16  17  18  21  20   1   1 191 184 189 190   1   1   1 125  32  33  33  34
+  0   0   1   1   1   1   1   1  36   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   0   0   0   0   0   0
+  8   8   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   8   8   8   8   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  15  16  16  15   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  15  16  16  15   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  15  16  16  15   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  15  16  16  15   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  15  16  16  15   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  15  16  16  15   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8

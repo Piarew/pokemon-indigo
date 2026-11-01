@@ -863,6 +863,7 @@ gStdScripts_End::
 	.include "data/maps/Route42/scripts.inc"
 	.include "data/maps/Route43/scripts.inc"
 	.include "data/maps/Route44/scripts.inc"
+	.include "data/maps/EcruteakCity/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_1F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_2F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_RivalsHouse_Frlg/scripts.inc"
