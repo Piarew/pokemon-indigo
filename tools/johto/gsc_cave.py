@@ -64,7 +64,7 @@ GROUPS = {
                    music='MUS_RG_MT_MOON', mapsec='MAPSEC_SEAFOAM_ISLANDS', flash=False,
                    level={'MountMortar1FOutside': 1, 'MountMortar1FInside': 1, 'MountMortar2FInside': 2, 'MountMortarB1F': 0,
                           'up': {('MountMortar1FInside', 5, 39), ('MountMortar1FInside', 33, 41)}},
-                   outside=['Route42'],
+                   outside=['Route42'], comps={n: 'auto' for n in ['MountMortar1FOutside', 'MountMortar1FInside', 'MountMortar2FInside', 'MountMortarB1F']},
                    enc={n: (L_MORTAR, W_MORTAR) for n in ['MountMortar1FOutside', 'MountMortar1FInside', 'MountMortar2FInside', 'MountMortarB1F']}),
 }
 WATER_B = {'MB_OCEAN_WATER', 'MB_POND_WATER', 'MB_DEEP_WATER', 'MB_SEMI_DEEP_WATER', 'MB_WATERFALL', 'MB_FAST_WATER',
@@ -248,6 +248,12 @@ def check(name, sem, warps, coll, comps=None):
                     seen.add((nx, ny))
                     if sem[ny][nx] in 'FA': q.append((nx, ny))
         return {i for i, p in enumerate(pos) if p in seen}
+    if comps == 'auto':     # multi-floor caves: components are linked through other floors; report them
+        comps, left = [], set(range(len(pos)))
+        while left:
+            i = min(left); c = (reach(pos[i]) | {i}) & left; comps.append(c); left -= c
+        print('  %s warp components: %s' % (name, comps))
+        return comps
     comps = comps or [set(range(len(pos)))]
     for comp in comps:
         for i in comp:

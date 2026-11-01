@@ -924,6 +924,10 @@ gStdScripts_End::
 	.include "data/maps/Route36_RuinsOfAlphGate/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/MountMortar1FOutside/scripts.inc"
+	.include "data/maps/MountMortar1FInside/scripts.inc"
+	.include "data/maps/MountMortar2FInside/scripts.inc"
+	.include "data/maps/MountMortarB1F/scripts.inc"
 	.include "data/maps/DarkCaveVioletEntrance/scripts.inc"
 	.include "data/maps/DarkCaveBlackthornEntrance/scripts.inc"
 	.include "data/maps/IcePath_1F/scripts.inc"

@@ -1252,6 +1252,10 @@
     "TohjoFalls",
     "DarkCaveVioletEntrance",
     "DarkCaveBlackthornEntrance",
+    "MountMortar1FOutside",
+    "MountMortar1FInside",
+    "MountMortar2FInside",
+    "MountMortarB1F",
     "VictoryRoadGate"
   ]
 }

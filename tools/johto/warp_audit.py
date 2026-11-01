@@ -30,9 +30,6 @@ TODO_ALLOW = {
     ('EcruteakCity', 5, 6): 'Burned Tower (TODO)',
     ('EcruteakCity', 18, 11): 'Tin Tower entrance (TODO)',
     ('EcruteakCity', 36, 7): 'Bell/Tin Tower stand-in (TODO)',
-    ('Route42', 10, 5): 'Mt. Mortar (TODO)',
-    ('Route42', 28, 9): 'Mt. Mortar (TODO)',
-    ('Route42', 46, 7): 'Mt. Mortar (TODO)',
 }
 # Deliberate one-way warps: (map dir, x, y): reason.  The destination must still exist.
 ONE_WAY = {

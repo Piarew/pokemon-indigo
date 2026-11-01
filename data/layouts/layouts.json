@@ -9765,6 +9765,58 @@
       "border_filepath": "data/layouts/DarkCaveBlackthornEntrance/border.bin",
       "blockdata_filepath": "data/layouts/DarkCaveBlackthornEntrance/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_MOUNT_MORTAR1FOUTSIDE",
+      "name": "MountMortar1FOutside_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/MountMortar1FOutside/border.bin",
+      "blockdata_filepath": "data/layouts/MountMortar1FOutside/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_MOUNT_MORTAR1FINSIDE",
+      "name": "MountMortar1FInside_Layout",
+      "width": 40,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/MountMortar1FInside/border.bin",
+      "blockdata_filepath": "data/layouts/MountMortar1FInside/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_MOUNT_MORTAR2FINSIDE",
+      "name": "MountMortar2FInside_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/MountMortar2FInside/border.bin",
+      "blockdata_filepath": "data/layouts/MountMortar2FInside/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_MOUNT_MORTAR_B1F",
+      "name": "MountMortarB1F_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/MountMortarB1F/border.bin",
+      "blockdata_filepath": "data/layouts/MountMortarB1F/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

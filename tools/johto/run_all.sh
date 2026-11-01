@@ -6,7 +6,7 @@ python3 johto_convert.py
 python3 interiors.py
 python3 diglett_tunnel.py
 python3 icepath.py
-python3 gsc_cave.py silver tohjo dark
+python3 gsc_cave.py silver tohjo dark mortar
 python3 vrgate.py
 python3 johto_gates.py
 python3 johto_wild.py
