@@ -131,7 +131,8 @@ MAPS = {
         secondary='gTileset_PewterCity', border=BORDER_ROCK, music='MUS_RG_CINNABAR', xfill='P',
         buildings=[('pewter_gym', 15, 7), ('pewter_house', 12, 18), ('pewter_house', 28, 20),
                    ('pewter_house', 8, 28), ('pewter_mart', 13, 26), ('pewter_pc', 19, 26)],
-        overrides=[],
+        # west: walkable link to Route 44 (rows 28-29 line up with R44 rows 10-11), user decision phase 5
+        overrides=[((0, 28), (1, 29), 'P')],
         signs={(21, 3): 'DRAGONS_DEN', (17, 13): 'GYM', (34, 24): 'CITY', (5, 25): 'MOVE_DELETER',
                (7, 31): 'TRAINER_TIPS'},
         connections=[('MAP_ROUTE44', 18, 'left')]),
@@ -185,7 +186,8 @@ MAPS = {
     'Route44': dict(ROUTE, src='Johto_Route_44_GSC.png', url=BASE + '7/7d/Johto_Route_44_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_ROUTE3', xfill='G',
         buildings=[],
-        overrides=[],
+        # east: walkable link to Blackthorn (rows 10-11 -> Blackthorn rows 28-29); Ice Path stays optional
+        overrides=[((58, 10), (59, 11), 'P')],
         signs={(6, 10): 'R44', (53, 7): 'ICE_PATH'},
         connections=[('MAP_MAHOGANY_TOWN', 0, 'left'), ('MAP_BLACKTHORN_CITY', -18, 'right')]),
     # ---------------------------------------------------------------- phase 3
