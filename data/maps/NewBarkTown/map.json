@@ -27,7 +27,36 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_NEW_BARK_TOWN_ELMS_LAB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_NEW_BARK_TOWN_HOUSE_1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_NEW_BARK_TOWN_ELMS_HOUSE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

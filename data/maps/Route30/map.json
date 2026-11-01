@@ -27,7 +27,22 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 16,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE_30_MR_POKEMONS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE_30_BERRY_HOUSE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

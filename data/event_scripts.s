@@ -869,6 +869,59 @@ gStdScripts_End::
 	.include "data/maps/Route27/scripts.inc"
 	.include "data/maps/Route28/scripts.inc"
 	.include "data/maps/SilverCaveOutside/scripts.inc"
+	.include "data/maps/CherrygroveCity_Mart/scripts.inc"  @ johto-interior
+	.include "data/maps/CherrygroveCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/CherrygroveCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/CherrygroveCity_House1/scripts.inc"  @ johto-interior
+	.include "data/maps/CherrygroveCity_GuideGentsHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/CherrygroveCity_House2/scripts.inc"  @ johto-interior
+	.include "data/maps/VioletCity_Mart/scripts.inc"  @ johto-interior
+	.include "data/maps/VioletCity_Gym/scripts.inc"  @ johto-interior
+	.include "data/maps/VioletCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/VioletCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/VioletCity_House1/scripts.inc"  @ johto-interior
+	.include "data/maps/VioletCity_EarlsAcademy/scripts.inc"  @ johto-interior
+	.include "data/maps/VioletCity_House2/scripts.inc"  @ johto-interior
+	.include "data/maps/VioletCity_House3/scripts.inc"  @ johto-interior
+	.include "data/maps/BlackthornCity_Gym/scripts.inc"  @ johto-interior
+	.include "data/maps/BlackthornCity_Mart/scripts.inc"  @ johto-interior
+	.include "data/maps/BlackthornCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/BlackthornCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/BlackthornCity_House1/scripts.inc"  @ johto-interior
+	.include "data/maps/BlackthornCity_House2/scripts.inc"  @ johto-interior
+	.include "data/maps/BlackthornCity_MoveDeletersHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/MahoganyTown_Gym/scripts.inc"  @ johto-interior
+	.include "data/maps/MahoganyTown_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/MahoganyTown_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/MahoganyTown_Mart/scripts.inc"  @ johto-interior
+	.include "data/maps/MahoganyTown_SouvenirShop/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_Gym/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_Mart/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_WiseTriosHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_House1/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_House2/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_House3/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_House4/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_LugiaSpeechHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_ItemfinderHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_DanceTheater/scripts.inc"  @ johto-interior
+	.include "data/maps/NewBarkTown_ElmsLab/scripts.inc"  @ johto-interior
+	.include "data/maps/NewBarkTown_PlayersHouse_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/NewBarkTown_PlayersHouse_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/NewBarkTown_House1/scripts.inc"  @ johto-interior
+	.include "data/maps/NewBarkTown_ElmsHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/Route26_HealHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/Route26_DayOfWeekSiblingsHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/Route27_SandstormHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/Route28_SteelWingHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/Route29_Route46Gate/scripts.inc"  @ johto-interior
+	.include "data/maps/Route30_MrPokemonsHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/Route30_BerryHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/Route43_TollGate/scripts.inc"  @ johto-interior
+	.include "data/maps/SilverCaveOutside_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/SilverCaveOutside_PokemonCenter_2F/scripts.inc"  @ johto-interior
 	.include "data/maps/PalletTown_PlayersHouse_1F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_2F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_RivalsHouse_Frlg/scripts.inc"

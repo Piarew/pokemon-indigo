@@ -27,7 +27,43 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 24,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE_1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_GUIDE_GENTS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE_2",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

@@ -27,7 +27,15 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 32,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE_27_SANDSTORM_HOUSE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

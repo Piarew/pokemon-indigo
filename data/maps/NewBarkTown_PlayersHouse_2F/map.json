@@ -1,0 +1,30 @@
+{
+  "id": "MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F",
+  "name": "NewBarkTown_PlayersHouse_2F",
+  "layout": "LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_2F_FRLG",
+  "music": "MUS_RG_PALLET",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_VIRIDIAN_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 2,
+      "elevation": 3,
+      "dest_map": "MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_1F",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
