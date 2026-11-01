@@ -1,0 +1,77 @@
+# BlackthornCity 40x36  source https://archives.bulbagarden.net/media/upload/f/fa/Blackthorn_City_GSC.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  C  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  w0 w1 G  G  w0 w1 M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  w2 w3 G  S  w2 w3 M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  W  W  W  W  W  W  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  W  W  W  W  W  W  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  W  W  W  W  W  W  W  W  W  W  W  W  W  W  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  W  W  W  X  X  X  X  X  X  X  W  W  W  W  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  W  W  W  X  X  X  X  X  X  X  W  W  W  W  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  W  W  W  X  X  X  X  X  X  X  W  W  W  W  M  M  M  M  M  M  M  M  M  M  C  M  M  M 
+M  M  M  M  M  M  M  M  M  M  w0 w1 W  W  W  X  X  X  X  X  X  X  W  W  W  W  M  M  M  M  M  M  M  M  G  G  G  G  M  M 
+M  M  M  M  M  M  M  M  M  M  w2 w3 W  W  W  X  X  X  X  X  X  X  W  W  W  W  M  M  M  M  M  M  M  M  L  G  L  L  M  M 
+M  M  M  M  M  M  M  M  M  M  w0 w1 W  W  W  W  G  G  G  G  G  G  G  G  G  G  M  M  M  M  M  M  M  M  G  G  G  G  M  M 
+M  M  M  M  M  M  M  M  M  M  w2 w3 W  W  W  W  G  S  G  G  G  G  G  G  G  G  M  M  M  M  M  M  M  M  G  G  G  G  M  M 
+M  M  M  M  M  M  M  M  M  M  G  G  G  G  G  G  G  G  G  G  G  G  M  M  G  G  M  M  M  M  M  M  M  M  G  G  G  G  M  M 
+M  M  M  M  M  M  M  M  M  M  G  G  G  G  G  G  G  G  G  G  G  G  M  M  G  G  M  M  M  M  M  M  M  M  L  G  L  L  M  M 
+M  M  M  M  M  M  M  M  M  M  G  G  G  G  G  G  M  M  M  M  M  M  M  M  G  G  M  M  M  M  M  M  M  M  P  P  P  P  M  M 
+M  M  M  M  M  M  M  M  M  M  L  L  L  G  L  L  M  M  M  M  M  M  M  M  L  L  M  M  M  M  M  M  M  M  P  P  P  P  M  M 
+M  M  M  M  M  M  M  M  M  M  P  P  X  X  X  X  X  P  M  M  M  M  M  M  P  P  M  M  M  M  M  M  P  P  P  P  P  P  M  M 
+M  M  M  M  M  M  M  M  M  M  P  P  X  X  X  X  X  P  M  M  M  M  M  M  P  P  M  M  M  M  M  M  P  P  P  P  P  P  M  M 
+M  M  M  M  M  M  P  P  P  P  P  P  X  X  X  X  X  P  P  P  M  M  P  P  P  P  M  M  X  X  X  X  X  P  P  P  M  M  M  M 
+M  M  M  M  M  M  L  L  L  P  L  L  X  X  X  X  X  L  L  P  M  M  L  L  L  L  M  M  X  X  X  X  X  P  L  L  M  M  M  M 
+M  M  M  M  M  M  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M  X  X  X  X  X  P  P  P  M  M  M  M 
+M  M  M  M  M  M  L  L  L  L  L  L  L  P  L  L  L  L  L  L  L  L  L  L  L  L  M  M  X  X  X  X  X  P  P  P  M  M  M  M 
+M  M  M  M  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  S  P  M  M  M  M 
+M  M  M  M  P  S  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M  M  M 
+M  M  M  M  P  P  P  P  P  P  P  P  P  X  X  X  X  P  P  X  X  X  X  X  P  P  M  M  P  P  P  P  P  P  M  M  M  M  M  M 
+M  M  M  M  P  P  P  P  P  P  P  P  P  X  X  X  X  P  P  X  X  X  X  X  P  P  M  M  P  P  P  P  P  P  M  M  M  M  M  M 
+M  M  P  P  P  P  M  M  X  X  X  X  X  X  X  X  X  P  P  X  X  X  X  X  P  P  P  P  P  P  M  M  M  M  M  M  M  M  M  M 
+M  M  P  P  P  P  M  M  X  X  X  X  X  X  X  X  X  P  P  X  X  X  X  X  P  P  P  P  P  P  M  M  M  M  M  M  M  M  M  M 
+M  M  P  P  P  P  P  P  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  P  P  P  P  P  S  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  P  P  P  P  P  P  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  P  P  P  P  P  P  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+
+# raw global cell ids (tools/johto cells.json)
+ 37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  40  37  37  37  37  37  37  37  37  37  37  37  37  41  37  37  37  37  37  37  37  37  37  37  37
+ 37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  40  37  42  43  43  44  43  43  43  45  37  37  37  41  37  37  37  37  37  37  37  37  37  37  37
+ 37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  40  37  40  23  24  16  16  23  24  41  37  37  37  41  37  37  37  37  37  37  37  37  37  37  37
+ 37  37  37  37  37  37  37  37  37  42  43  43  43  43  43  46  37  40  25  26  16  36  25  26  41  37  37  37  41  37  37  37  37  37  37  37  37  37  37  42
+ 37  37  37  37  37  37  37  37  37  40  37  37  37  37  37  37  37  40  47  22  22  22  22  48  41  37  37  37  41  37  37  37  37  37  37  37  37  37  37  40
+ 37  37  37  37  37  42  43  43  43  46  37  42  43  43  43  43  43  46   5   6   6   6   6   7  49  43  45  37  41  37  37  37  37  37  37  37  37  37  37  40
+ 37  37  37  37  37  40  37  37  37  37  37  40  47  22  22  22  22  22  39   6   6   6   6  38  22  48  41  37  41  37  37  37  37  37  37  37  37  37  37  40
+ 37  37  37  37  37  40  37  37  37  37  37  40   5   6   6   6   6   6   6   6   6   6   6   6   6   7  41  37  41  37  37  42  43  43  43  43  43  43  43  46
+ 37  37  37  37  37  40  37  37  37  37  37  40   5   6   6   6  50  51  51  51  51  52   6   6   6   7  41  37  41  37  37  40  37  37  37  37  37  37  37  37
+ 37  37  37  37  37  40  37  37  37  42  43  46   5   6   6   6  53  54  54  54  54  55   6   6   6   7  41  37  41  37  37  40  37  42  43  43  44  43  45  37
+ 37  37  37  37  37  40  37  37  37  40  23  24   5   6   6   7  56  57  58  59  60  61   5   6   6   7  41  37  41  37  37  40  37  40  16  16  16  16  41  37
+ 37  37  37  37  37  40  37  37  37  40  25  26   5   6   6   7  32  33  18  33  33  34   5   6   6   7  41  37  41  37  37  40  37  40  62  16  62  62  41  37
+ 37  37  37  37  37  40  37  37  37  40  23  24   5   6   6   7  16  16  16  16  16  16  16  16  16  16  41  37  41  37  37  40  37  40  16  16  16  16  41  37
+ 37  37  37  37  37  40  37  37  37  40  25  26   5   6   6   7  16  36  16  16  16  16  16  16  16  16  41  37  49  43  43  46  37  40  16  16  16  16  41  37
+ 37  37  37  37  37  40  37  37  37  40  16  16  16  16  16  16  16  16  16  16  16  16  23  24  16  16  41  37  37  37  37  37  37  40  16  16  16  16  41  37
+ 43  43  43  43  43  46  37  37  37  40  16  16  16  16  16  16  16  16  16  16  16  16  25  26  16  16  41  37  37  37  37  42  43  46  62  16  62  62  41  37
+ 37  37  37  37  37  37  37  37  37  40  16  16  16  16  16  16  23  24  63  64  64  64  64  65  16  16  41  37  37  37  37  40  23  24   1   1   1   1  41  37
+ 37  37  37  37  37  42  43  43  43  46  62  62  62  16  62  62  25  26  41  37  37  37  37  40  62  62  41  37  37  37  37  40  25  26   1   1   1   1  41  37
+ 37  37  37  37  37  40  23  24  23  24   1   1   1   1   1   1   1   1  41  37  37  37  37  40   1   1  41  37  37  37  37  40   1   1   1   1   1   1  41  37
+ 37  37  37  37  37  40  25  26  25  26   1   1   1   1   1   1   1   1  49  43  43  43  43  46   1   1  41  37  37  37  37  40   1   1   1   1   1   1  41  37
+ 37  37  37  37  37  40   1   1   1   1   1   1  66  67  67  68   1   1   1   1  23  24   1   1   1   1  41  37  37  37  37  40   1   1   1   1  63  64  37  37
+ 37  37  37  37  37  40  69  69  69   1  69  69  32  18  33  34  69  69  69   1  25  26  69  69  69  69  49  43  43  43  43  46  69   1  69  69  41  37  37  37
+ 37  37  37  37  37  40   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  23  24  66  67  67  68   1   1   1   1  41  37  37  37
+ 37  37  37  42  43  46  69  69  69  69  69  69  69   1  69  69  69  69  69  69  69  69  69  69  69  69  25  26  32  18  33  34   1   1   1   1  41  37  37  37
+ 37  37  37  40   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  36   1  41  37  37  37
+ 37  42  43  46   1  36   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  41  37  37  37
+ 37  40  23  24   1   1   1   1   1   1   1   1   1   1  50  51  51  52   1   1  50  51  51  52   1   1  23  24   1   1   1   1   1   1  23  24  41  37  37  37
+ 37  40  25  26   1   1   1   1   1   1   1   1   1   1  53  54  54  55   1   1  53  54  54  55   1   1  25  26   1   1   1   1   1   1  25  26  41  37  37  37
+ 37  40   1   1   1   1  23  24  23  24  23  24   1   1  12  13  13  14   1   1  12  13  13  14   1   1   1   1   1   1  63  64  64  64  64  64  37  37  37  37
+ 37  40   1   1   1   1  25  26  25  26  25  26   1   1  17  18  19  20   1   1  17  18  21  20   1   1   1   1   1   1  41  37  37  37  37  37  37  37  37  37
+ 37  40   1   1   1   1   1   1  66  67  67  68   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  23  24  41  37  63  64  64  64  64  64  64  64
+ 37  40   1   1   1   1   1  36  32  18  33  34   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  25  26  41  37  41  37  37  37  37  37  37  37
+ 37  40  23  24   1   1   1   1   1   1   1   1   1   1   1   1   1   1  23  24  63  64  64  64  64  64  64  64  64  64  37  37  41  37  37  37  37  37  37  37
+ 37  40  25  26   1   1   1   1   1   1   1   1   1   1   1   1   1   1  25  26  41  37  37  37  37  37  37  37  37  37  37  37  41  37  37  37  37  37  37  37
+ 37  37  64  65  23  24  23  24   1   1   1   1   1   1  63  64  64  64  64  64  37  37  37  37  37  37  37  37  63  64  64  64  37  37  37  37  37  37  37  37
+ 37  37  37  40  25  26  25  26   1   1   1   1   1   1  41  37  37  37  37  37  37  37  37  37  37  37  37  37  41  37  37  37  37  37  37  37  37  37  37  37

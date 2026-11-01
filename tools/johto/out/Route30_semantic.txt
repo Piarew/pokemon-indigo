@@ -1,0 +1,113 @@
+# Route30 20x54  source https://archives.bulbagarden.net/media/upload/c/c5/Johto_Route_30_GSC.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+T  T  T  T  P  P  G  G  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  P  P  G  G  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  P  P  G  G  T  T  T  T  T  T  T  X  X  X  X  X 
+T  T  T  T  L  L  G  G  T  T  T  T  G  G  G  X  X  X  X  X 
+T  T  T  T  P  P  G  G  T  T  G  G  G  G  G  X  X  X  X  X 
+T  T  G  G  P  P  G  G  T  T  G  G  G  G  G  X  X  X  X  X 
+H  H  G  G  P  P  G  G  U  G  G  G  G  G  S  G  G  G  F  F 
+H  H  G  G  P  P  G  G  T  G  G  G  G  G  G  G  G  G  F  F 
+H  H  G  G  P  P  G  T  T  T  G  G  G  G  F  F  G  G  G  G 
+H  H  G  G  P  P  T  T  T  T  G  G  G  G  F  F  G  G  G  G 
+H  H  G  G  P  P  T  T  T  T  T  T  G  G  G  G  G  G  T  T 
+H  H  L  L  L  L  T  T  T  T  T  T  G  G  G  G  G  G  T  T 
+H  H  G  G  P  P  T  T  T  T  T  T  G  G  H  H  H  H  T  T 
+H  H  G  G  P  P  T  T  T  T  T  T  G  G  H  H  H  H  T  T 
+G  G  H  H  P  P  T  T  T  T  T  T  H  H  T  T  H  H  H  H 
+G  G  H  H  P  P  G  G  T  T  T  T  H  H  T  T  H  H  H  H 
+T  T  H  H  P  P  G  G  T  T  T  T  G  G  T  T  T  T  H  H 
+T  T  H  H  L  L  L  L  T  T  G  G  G  G  T  T  T  T  H  H 
+T  T  H  H  P  P  G  G  T  T  H  H  T  T  T  T  H  H  H  H 
+T  T  H  H  P  P  G  G  T  T  H  H  T  T  T  T  H  H  H  H 
+T  T  G  G  P  P  F  F  T  T  H  H  T  T  G  G  G  G  T  T 
+T  T  G  S  P  P  F  F  T  T  H  H  T  T  G  G  G  G  T  T 
+T  T  G  G  P  P  T  T  T  T  G  G  H  H  H  H  T  T  T  T 
+T  T  G  G  P  P  T  T  T  T  G  G  H  H  H  H  T  T  T  T 
+T  T  G  G  P  P  T  T  T  T  T  T  H  H  G  G  T  T  T  T 
+T  T  L  L  L  P  T  T  T  T  T  T  H  H  G  G  T  T  T  T 
+T  T  G  G  P  P  H  H  T  T  T  T  T  T  G  G  T  T  T  T 
+T  T  G  G  P  P  H  H  T  T  T  T  T  T  G  G  T  T  T  T 
+T  T  G  G  P  P  H  H  H  H  T  T  G  G  P  P  T  T  T  T 
+T  T  G  G  P  P  H  H  H  H  T  T  G  S  P  P  T  T  T  T 
+T  T  G  G  P  P  G  G  G  G  F  F  P  P  P  P  G  G  T  T 
+T  T  G  G  P  P  G  G  G  G  F  F  P  P  P  P  G  G  T  T 
+T  T  P  P  P  P  P  P  P  P  P  P  P  P  H  H  H  H  T  T 
+T  T  P  P  P  P  P  P  P  P  P  P  P  P  H  H  H  H  T  T 
+T  T  P  P  T  T  T  T  G  G  H  H  H  H  H  H  T  T  T  T 
+T  T  P  P  T  T  T  T  G  G  H  H  H  H  H  H  T  T  T  T 
+T  T  P  P  T  T  X  X  X  X  X  T  H  H  H  H  T  T  T  T 
+T  T  L  L  T  T  X  X  X  X  X  T  H  H  H  H  T  T  T  T 
+T  T  P  P  G  G  X  X  X  X  X  T  H  H  W  W  W  W  T  T 
+T  T  P  P  G  G  X  X  X  X  X  T  H  H  W  W  W  W  T  T 
+T  T  P  P  P  P  P  P  P  P  P  P  G  G  W  W  W  W  T  T 
+T  T  P  P  P  P  P  P  P  P  P  P  G  G  W  W  W  W  T  T 
+T  T  T  T  T  T  G  G  G  G  P  P  G  G  W  W  W  W  T  T 
+T  T  T  T  T  T  G  G  G  S  P  P  G  G  W  W  W  W  T  T 
+T  T  T  T  T  T  P  P  P  P  P  P  G  G  T  T  T  T  T  T 
+T  T  T  T  T  T  P  P  P  P  P  P  G  G  T  T  T  T  T  T 
+T  T  T  T  T  T  P  P  G  G  G  G  H  H  T  T  T  T  T  T 
+T  T  T  T  T  T  L  L  L  L  L  L  H  H  T  T  T  T  T  T 
+T  T  T  T  T  T  P  P  H  H  H  H  H  H  T  T  T  T  T  T 
+T  T  T  T  T  T  P  P  H  H  H  H  H  H  T  T  T  T  T  T 
+T  T  T  T  T  T  P  P  T  T  T  T  T  T  T  T  T  T  W  W 
+T  T  T  T  T  T  P  P  T  T  T  T  T  T  T  T  T  T  W  W 
+T  T  T  T  T  T  P  P  T  T  T  T  T  T  T  T  T  T  W  W 
+T  T  T  T  T  T  P  P  T  T  T  T  T  T  T  T  T  T  W  W 
+
+# raw global cell ids (tools/johto cells.json)
+  0   0   0   0   1   1  16  16   0   0   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8   1   1  16  16   8   8   8   8   8   8   8   8   8   8   8   8
+  0   0   0   0   1   1  16  16   0   0   0   0  15  15  15  15   0   0   0   0
+  8   8   8   8  69  69  16  16   8   8   8   8  16  16  16  16   8   8   8   8
+  0   0  15  15   1   1  16  16   0   0  16  16  16  16  16  16  28  29  29  30
+  8   8  16  16   1   1  16  16   8   8  16  16  16  16  16  36  32  18  33  34
+ 82  82  16  16   1   1  16  16  89  16  16  16  16  16  16  16  16  16  31  31
+ 82  82  16  16   1   1  16  16  15  16  16  16  16  16  16  16  16  16  35  35
+ 82  82  16  16   1   1  16  15   0   0  16  16  16  16  31  31  16  16  16  16
+ 82  82  16  16   1   1  15  15   8   8  16  16  16  16  35  35  16  16  16  16
+ 82  82  16  16   1   1   0   0   0   0   0   0  16  16  16  16  16  16   0   0
+ 82  82  62  62  69  69   8   8   8   8   8   8  16  16  16  16  16  16   8   8
+ 82  82  16  16   1   1   0   0   0   0   0   0  16  16  82  82  82  82   0   0
+ 82  82  16  16   1   1   8   8   8   8   8   8  16  16  82  82  82  82   8   8
+ 16  16  82  82   1   1  15  15   0   0   0   0  82  82   0   0  82  82  82  82
+ 16  16  82  82   1   1  16  16   8   8   8   8  82  82   8   8  82  82  82  82
+  0   0  82  82   1   1  16  16   0   0  15  15  16  16   0   0   0   0  82  82
+  8   8  82  82  69  69  62  62   8   8  16  16  16  16   8   8   8   8  82  82
+  0   0  82  82   1   1  16  16   0   0  82  82   0   0   0   0  82  82  82  82
+  8   8  82  82   1   1  16  16   8   8  82  82   8   8   8   8  82  82  82  82
+  0   0  16  16   1   1  31  31   0   0  82  82   0   0  16  16  16  16   0   0
+  8   8  16  36   1   1  35  35   8   8  82  82   8   8  16  16  16  16   8   8
+  0   0  16  16   1   1   0   0   0   0  16  16  82  82  82  82   0   0   0   0
+  8   8  16  16   1   1   8   8   8   8  16  16  82  82  82  82   8   8   8   8
+  0   0  16  16   1   1   0   0   0   0   0   0  82  82  16  16   0   0   0   0
+  8   8  62  62  69   1   8   8   8   8   8   8  82  82  16  16   8   8   8   8
+  0   0  16  16   1   1  82  82   0   0   0   0   0   0  16  16   0   0   0   0
+  8   8  16  16   1   1  82  82   8   8   8   8   8   8  16  16   8   8   8   8
+  0   0  16  16   1   1  82  82  82  82   0   0  16  16   1   1   0   0   0   0
+  8   8  16  16   1   1  82  82  82  82   8   8  16  36   1   1   8   8   8   8
+  0   0  16  16   1   1  16  16  16  16  31  31   1   1   1   1  16  16   0   0
+  8   8  16  16   1   1  16  16  16  16  35  35   1   1   1   1  16  16   8   8
+  0   0   1   1   1   1   1   1   1   1   1   1   1   1  82  82  82  82   0   0
+  8   8   1   1   1   1   1   1   1   1   1   1   1   1  82  82  82  82   8   8
+  0   0   1   1   0   0   0   0  16  16  82  82  82  82  82  82   0   0   0   0
+  8   8   1   1   8   8   8   8  16  16  82  82  82  82  82  82   8   8   8   8
+  0   0   1   1   0   0   0   0   0   0   0   0  82  82  82  82   0   0   0   0
+  8   8  69  69   8   8   8   8   8   8   8   8  82  82  82  82   8   8   8   8
+  0   0   1   1  16  16  28  29  29  30   0   0  82  82  47  22  22  48   0   0
+  8   8   1   1  16  16  32  18  33  34   8   8  82  82   5   6   6   7   8   8
+  0   0   1   1   1   1   1   1   1   1   1   1  16  16   5   6   6   7   0   0
+  8   8   1   1   1   1   1   1   1   1   1   1  16  16   5   6   6   7   8   8
+  0   0   0   0   0   0  16  16  16  16   1   1  16  16   5   6   6   7   0   0
+  8   8   8   8   8   8  16  16  16  36   1   1  16  16   5   6   6   7   8   8
+  0   0   0   0   0   0   1   1   1   1   1   1  16  16   0   0   0   0   0   0
+  8   8   8   8   8   8   1   1   1   1   1   1  16  16   8   8   8   8   8   8
+  0   0   0   0   0   0   1   1  16  16  16  16  82  82   0   0   0   0   0   0
+  8   8   8   8   8   8  69  69  62  62  62  62  82  82   8   8   8   8   8   8
+  0   0   0   0   0   0   1   1  82  82  82  82  82  82   0   0   0   0   0   0
+  8   8   8   8   8   8   1   1  82  82  82  82  82  82   8   8   8   8   8   8
+  0   0   0   0   0   0   1   1   0   0   0   0   0   0   0   0   0   0  47  22
+  8   8   8   8   8   8   1   1   8   8   8   8   8   8   8   8   8   8   5   6
+  0   0   0   0   0   0   1   1   0   0   0   0   0   0   0   0   0   0   5   6
+  8   8   8   8   8   8   1   1   8   8   8   8   8   8   8   8   8   8   5   6

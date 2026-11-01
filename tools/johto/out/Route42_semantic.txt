@@ -1,0 +1,41 @@
+# Route42 60x18  source https://archives.bulbagarden.net/media/upload/4/4a/Johto_Route_42_GSC.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+T  T  T  T  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  G  G  M  M  M  M  M  M  W  W  W  W  w0 w1 M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  P  P  P  P  P  P  P  P 
+T  T  T  T  T  T  G  S  M  M  C  M  M  M  W  W  W  W  w2 w3 M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  P  P  P  P  P  P  P  P 
+T  T  T  T  P  P  P  P  P  P  P  P  G  G  W  W  W  W  W  W  M  M  M  M  M  M  M  M  M  M  M  M  W  W  W  W  W  W  W  W  w0 w1 M  M  M  M  M  M  M  M  P  P  P  P  P  P  P  P  P  P 
+T  T  T  T  P  P  P  P  P  P  P  P  G  G  W  W  W  W  W  W  M  M  M  M  M  M  M  M  M  M  M  M  W  W  W  W  W  W  W  W  w2 w3 M  M  M  M  C  M  M  M  P  P  P  P  P  P  P  P  P  P 
+P  P  P  P  P  P  P  P  P  P  G  G  G  G  W  W  W  W  W  W  M  M  M  M  M  M  M  M  M  M  M  M  G  G  W  W  W  W  W  W  W  W  G  G  G  G  P  P  P  P  P  P  P  P  S  P  M  M  M  M 
+P  P  P  P  P  P  P  P  P  P  G  G  G  G  W  W  W  W  W  W  M  M  M  M  M  M  M  M  C  M  M  M  G  G  W  W  W  W  W  W  W  W  G  G  G  S  P  P  P  P  P  P  P  P  P  P  M  M  M  M 
+T  T  P  P  S  P  P  P  P  P  T  T  W  W  W  W  w0 w1 W  W  G  G  G  G  G  G  P  P  P  P  P  P  G  G  W  W  w0 w1 W  W  G  G  G  G  P  P  P  P  P  P  P  P  P  P  M  M  M  M  M  M 
+T  T  P  P  P  P  P  P  P  P  T  T  W  W  W  W  w2 w3 W  W  G  G  G  G  G  G  P  P  P  P  P  P  G  G  W  W  w2 w3 W  W  G  G  G  G  P  P  P  P  P  P  P  P  P  P  M  M  M  M  M  M 
+T  T  T  T  P  P  P  P  T  T  T  T  w0 w1 W  W  W  W  W  W  W  W  G  G  G  G  G  G  G  T  T  T  T  T  W  W  W  W  M  M  M  M  M  M  M  M  H  H  H  H  H  H  H  H  M  M  M  M  M  M 
+T  T  T  T  P  P  P  P  T  T  T  T  w2 w3 W  W  W  W  W  W  W  W  T  T  U  T  T  T  T  T  T  T  T  T  W  W  W  W  M  M  M  M  M  M  M  M  H  H  H  H  H  H  H  H  M  M  M  M  M  M 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  W  W  W  W  W  W  w0 w1 T  T  G  G  G  G  T  T  T  T  T  T  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  W  W  W  W  W  W  w2 w3 T  T  T  G  G  G  G  G  G  T  T  T  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  G  G  G  T  T  T  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  G  G  G  T  T  T  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+
+# raw global cell ids (tools/johto cells.json)
+ 70  70  70  70  70  70  90  91  91  91  91  91  91  91  91  91  90  91  91  91  91  91  91  91  91  91  91  91  91  92  91  91  91  91  91  91  90  91  91  91  91  91  91  91  91  91  91  92  91  91  91  91  91  91  91  91  91  91  91  91
+ 76  76  76  76  76  76  90  91  91  91  91  91  91  91  91  91 107 108 108 108 108 108 138  91  91  91  91  91  91  92  91  91  91  91  91  91  90  91  91  91  91  91  91  91  91  91  91  92  91  91  91  91  91  91  91  91  91  91  91  91
+ 70  70  70  70 139 140  90  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  90  91  91  91  91  91  91  92  91  91  91  91  91  91  90  91  91  91  91  91  91  91  91  91  91  92  91  91  91  91  91  91  91  91  91  91  91  91
+ 76  76  76  76 141 142 107 108 138  91  91  91  91 143 108 108 108 108 108 108 138  91  90  91  91  91  91  91  91  92  91  91  91  91  91  91 107 108 108 108 108 108 108 108 108 108 108 110  91 143 108 108 108 108 108 108 108 108 108 108
+ 70  70  70  70  71  71  16  16  90  91  91  91  91  92  93  94  94  94 139 140  90  91  90  91  91  91  91  91  91  92  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  92 139 140   1   1   1   1   1   1   1   1
+ 76  76  76  76  71  71  16  83 107 108 109 108 108 110  96   6   6   6 141 142  90  91 107 108 108 108 108 108 108 110  91 143 108 108 108 108 108 108 108 108 108 108 138  91  91  91  91  91  91  92 141 142   1   1   1   1   1   1   1   1
+ 70  70  71  71   1   1   1   1   1   1   1   1  16  16  96   6   6   6   6  97  90  91  91  91  91  91  91  91  91  91  91  92  93  94  94  94  94  94  94  94 139 140  90  91  91  91  91  91  91  92   1   1   1   1   1   1   1   1   1   1
+ 76  76  71  71   1   1   1   1   1   1   1   1  16  16  96   6   6   6   6  97  90  91  91  91  91  91  91  91  91  91  91  92  96   6   6   6   6   6   6   6 141 142 107 108 108 108 109 108 108 110   1   1   1   1   1   1   1   1   1   1
+113   1   1   1   1   1   1   1   1   1  16  16  16  16  96   6   6   6   6  97  90  91  91  91  91  91  91  91  91  91  91  92  16  16  96   6   6   6   6   6   6  97  16  16  16  16   1   1   1   1   1   1   1   1  83   1 144 145 145 145
+113   1   1   1   1   1   1   1   1   1  16  16  16  16  96   6   6   6   6  97 107 108 108 108 108 108 108 108 109 108 108 110  16  16  96   6   6   6   6   6   6  97  16  16  16  83   1   1   1   1   1   1   1   1   1   1  90  91  91  91
+ 70  70   1   1  83   1   1   1   1   1  71  71  93  94 146   6 139 140   6  97  16  16  16  16  16  16   1   1   1   1   1   1  16  16  96   6 139 140   6  97  16  16  16  16   1   1   1   1   1   1   1   1   1   1 144 145  91  91  91  91
+ 76  76   1   1   1   1   1   1   1   1  71  71  96   6   6   6 141 142   6  97  16  16  16  16  16  16   1   1   1   1   1   1  16  16  96   6 141 142   6  97  16  16  16  16   1   1   1   1   1   1   1   1   1   1  90  91  91  91  91  91
+ 70  70  70  70   1   1   1   1  71  71  70  70 139 140   6   6   6   6   6 101  94  95  16  16  16  16  16  16  16  71  70  70  70  70  96   6   6  97 144 145 145 145 145 147 139 140  82  82  82  82  82  82  82  82  90  91  91  91  91  91
+ 76  76  76  76   1   1   1   1  71  71  76  76 141 142   6   6   6   6   6   6   6  97  71  71  88  71  71  71  71  71  76  76  76  76  96   6   6  97  90  91  91  91  91  92 141 142  82  82  82  82  82  82  82  82  90  91  91  91  91  91
+ 70  70  70  70  70  70  70  70  70  70  70  70  70  70  96   6   6   6   6   6 139 140  71  71  16  16  16  16  71  71  71  71  70  70  70  70 144 145  91  91  91  91  91  91 145 145 145 145 145 145 145 145 145 145  91  91  91  91  91  91
+ 76  76  76  76  76  76  76  76  76  76  76  76  76  76  96   6   6   6   6   6 141 142  71  71  71  16  16  16  16  16  16  71  76  76  76  76  90  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91
+ 70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  70  71  71  16  16  16  16  16  71  70  70  70  70  90  91  91  91  91  91  91  91  91  91  91  91  91  91 144 145 145 145 145 145 145 147  91  91
+ 76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  76  71  71  16  16  16  16  16  71  76  76  76  76  90  91  91  91  91  91  91  91  91  91  91  91  91  91  90  91  91  91  91  91  91  92  91  91

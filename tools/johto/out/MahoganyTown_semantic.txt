@@ -1,0 +1,41 @@
+# MahoganyTown 20x18  source https://archives.bulbagarden.net/media/upload/0/03/Mahogany_Town_GSC.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+M  M  M  M  M  M  M  M  P  P  P  P  T  T  T  T  M  M  M  M 
+M  M  M  M  M  M  M  M  P  P  P  P  T  T  T  T  M  M  M  M 
+M  M  M  M  M  M  M  M  P  P  P  P  G  G  T  T  T  T  T  T 
+M  M  M  M  M  M  M  M  P  P  P  P  G  G  G  T  T  T  T  T 
+G  G  G  G  M  G  P  P  P  P  X  X  X  X  G  X  X  X  X  X 
+G  S  G  G  M  L  L  P  L  L  X  X  X  X  G  X  X  X  X  X 
+P  P  P  P  P  P  P  P  G  G  X  X  X  X  G  X  X  X  X  X 
+P  P  P  P  P  P  P  P  G  S  X  X  X  X  L  X  X  X  X  X 
+M  M  G  G  G  G  P  P  P  P  P  P  P  P  P  P  P  P  P  P 
+M  M  G  G  X  X  X  X  X  X  P  P  P  P  P  P  P  P  P  P 
+M  M  G  G  X  X  X  X  X  X  P  P  G  X  X  X  X  X  M  M 
+M  M  L  L  X  X  X  X  X  X  L  P  L  X  X  X  X  X  M  M 
+M  M  G  G  X  X  X  X  X  X  P  P  G  X  X  X  X  X  M  M 
+M  M  G  S  X  X  X  X  X  X  P  P  G  X  X  X  X  X  M  M 
+M  M  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M 
+M  M  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+
+# raw global cell ids (tools/johto cells.json)
+ 37  37  37  37  37  37  37  40 162  59  60  61   0   0   0   0  41  37  37  37
+ 37  37  37  37  37  37  37  40  32  18  33  34   8   8   8   8  49  43  43  43
+ 37  37  37  37  37  37  37  40   1   1   1   1  16  16  15  15   0   0   0   0
+ 43  43  43  43  43  43  43  46   1   1   1   1  16  16  16  15   8   8   8   8
+ 16  16  16  16 155  16   1   1   1   1 163 164 164 165  16  15   0   0   0   0
+ 16  36  16  16 156  62  69   1  69  69 166 167 167 168  16  16   8   8   8   8
+  1   1   1   1   1   1   1   1  16  16  12  13 123 124  16  16 169 170 170 171
+  1   1   1   1   1   1   1   1  16  36  17  18 126  20  62  62  32  18  33  34
+ 64  65  16  16  16  16   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+ 37  40  16  16  16  16   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+ 37  40  16  16 163 164 164 164 164 165   1   1  16  16 163 164 164 165  63  64
+ 37  40  62  62 166 167 167 167 167 168  69   1  62  62 166 167 167 168  41  37
+ 37  40  16  16  56  57  58  59  60  61   1   1  16  16  12  13  13  14  41  37
+ 37  40  16  36  32  33  18  33  33  34   1   1  16  16  17  18  21  20  41  37
+ 37  40   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  41  37
+ 37  40   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  41  37
+ 37  37  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  37  37
+ 37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37
