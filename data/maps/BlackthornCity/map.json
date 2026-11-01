@@ -71,6 +71,13 @@
       "elevation": 0,
       "dest_map": "MAP_BLACKTHORN_CITY_MOVE_DELETERS_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ICE_PATH_1F",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

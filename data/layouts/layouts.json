@@ -9583,6 +9583,71 @@
       "border_filepath": "data/layouts/DiglettsCave_BlackthornEntrance/border.bin",
       "blockdata_filepath": "data/layouts/DiglettsCave_BlackthornEntrance/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ICE_PATH_1F",
+      "name": "IcePath_1F_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_SeafoamIslands",
+      "border_filepath": "data/layouts/IcePath_1F/border.bin",
+      "blockdata_filepath": "data/layouts/IcePath_1F/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ICE_PATH_B1F",
+      "name": "IcePath_B1F_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_SeafoamIslands",
+      "border_filepath": "data/layouts/IcePath_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/IcePath_B1F/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ICE_PATH_B2F_MAHOGANY_SIDE",
+      "name": "IcePath_B2F_MahoganySide_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_SeafoamIslands",
+      "border_filepath": "data/layouts/IcePath_B2F_MahoganySide/border.bin",
+      "blockdata_filepath": "data/layouts/IcePath_B2F_MahoganySide/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ICE_PATH_B2F_BLACKTHORN_SIDE",
+      "name": "IcePath_B2F_BlackthornSide_Layout",
+      "width": 10,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_SeafoamIslands",
+      "border_filepath": "data/layouts/IcePath_B2F_BlackthornSide/border.bin",
+      "blockdata_filepath": "data/layouts/IcePath_B2F_BlackthornSide/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ICE_PATH_B3F",
+      "name": "IcePath_B3F_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_SeafoamIslands",
+      "border_filepath": "data/layouts/IcePath_B3F/border.bin",
+      "blockdata_filepath": "data/layouts/IcePath_B3F/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

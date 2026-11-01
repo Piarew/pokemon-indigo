@@ -24,7 +24,6 @@ WARPY = {'MB_NON_ANIMATED_DOOR', 'MB_ANIMATED_DOOR', 'MB_LADDER', 'MB_SOUTH_ARRO
 # Known, deliberately unwarped cells (towers/caves not built yet). (map dir, x, y): reason
 TODO_ALLOW = {
     ('BlackthornCity', 20, 1): "Dragon's Den (TODO)",
-    ('BlackthornCity', 36, 9): 'Ice Path B side (phase 5 step 4)',
     ('VioletCity', 23, 6): 'Sprout Tower (TODO)',
     ('EcruteakCity', 5, 6): 'Burned Tower (TODO)',
     ('EcruteakCity', 18, 11): 'Tin Tower entrance (TODO)',
@@ -35,11 +34,10 @@ TODO_ALLOW = {
     ('Route42', 10, 5): 'Mt. Mortar (TODO)',
     ('Route42', 28, 9): 'Mt. Mortar (TODO)',
     ('Route42', 46, 7): 'Mt. Mortar (TODO)',
-    ('Route44', 56, 7): 'Ice Path A side (phase 5 step 4)',
     ('SilverCaveOutside', 18, 11): 'Silver Cave (TODO)',
 }
 EXTRA = ['DiglettsCave_JohtoTunnel', 'DiglettsCave_BlackthornEntrance',
-         'IcePath_1F', 'IcePath_B1F', 'IcePath_B2F', 'IcePath_B3F']
+         'IcePath_1F', 'IcePath_B1F', 'IcePath_B2F_MahoganySide', 'IcePath_B2F_BlackthornSide', 'IcePath_B3F']
 layouts = {l['id']: l for l in json.load(open(os.path.join(REPO, 'data/layouts/layouts.json')))['layouts'] if 'id' in l}
 all_maps = {}
 for p in glob.glob(os.path.join(REPO, 'data/maps/*/map.json')):
