@@ -952,7 +952,10 @@
     "OlivineCity",
     "GoldenrodCity",
     "MortarTrail",
-    "CyclingRoadWest"
+    "CyclingRoadWest",
+    "SeaRouteVioletWest",
+    "SeaRouteVioletCentral",
+    "SeaRouteVioletEast"
   ],
   "gMapGroup_IndoorPallet_Frlg": [
     "PalletTown_PlayersHouse_1F_Frlg",

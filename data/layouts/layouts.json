@@ -10181,6 +10181,45 @@
       "border_filepath": "data/layouts/CyclingRoadWest/border.bin",
       "blockdata_filepath": "data/layouts/CyclingRoadWest/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SEA_ROUTE_VIOLET_WEST",
+      "name": "SeaRouteVioletWest_Layout",
+      "width": 100,
+      "height": 70,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CinnabarIsland",
+      "border_filepath": "data/layouts/SeaRouteVioletWest/border.bin",
+      "blockdata_filepath": "data/layouts/SeaRouteVioletWest/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SEA_ROUTE_VIOLET_CENTRAL",
+      "name": "SeaRouteVioletCentral_Layout",
+      "width": 80,
+      "height": 92,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CinnabarIsland",
+      "border_filepath": "data/layouts/SeaRouteVioletCentral/border.bin",
+      "blockdata_filepath": "data/layouts/SeaRouteVioletCentral/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SEA_ROUTE_VIOLET_EAST",
+      "name": "SeaRouteVioletEast_Layout",
+      "width": 86,
+      "height": 70,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CinnabarIsland",
+      "border_filepath": "data/layouts/SeaRouteVioletEast/border.bin",
+      "blockdata_filepath": "data/layouts/SeaRouteVioletEast/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

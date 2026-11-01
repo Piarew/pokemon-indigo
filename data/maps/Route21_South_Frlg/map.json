@@ -24,6 +24,11 @@
       "map": "MAP_CINNABAR_ISLAND",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_SEA_ROUTE_VIOLET_EAST",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

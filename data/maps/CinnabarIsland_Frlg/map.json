@@ -24,6 +24,11 @@
       "map": "MAP_ROUTE20",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_SEA_ROUTE_VIOLET_EAST",
+      "offset": -50,
+      "direction": "left"
     }
   ],
   "object_events": [
