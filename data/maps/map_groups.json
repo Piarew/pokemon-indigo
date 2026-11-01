@@ -930,10 +930,11 @@
     "Route43",
     "Route44",
     "EcruteakCity",
-    "EcruteakCity",
     "NewBarkTown",
+    "Route26",
     "Route27",
-    "Route26"
+    "Route28",
+    "SilverCaveOutside"
   ],
   "gMapGroup_IndoorPallet_Frlg": [
     "PalletTown_PlayersHouse_1F_Frlg",

@@ -9468,19 +9468,6 @@
       "layout_version": "frlg"
     },
     {
-      "id": "LAYOUT_ECRUTEAK_CITY",
-      "name": "EcruteakCity_Layout",
-      "width": 40,
-      "height": 36,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_FuchsiaCity",
-      "border_filepath": "data/layouts/EcruteakCity/border.bin",
-      "blockdata_filepath": "data/layouts/EcruteakCity/map.bin",
-      "layout_version": "frlg"
-    },
-    {
       "id": "LAYOUT_NEW_BARK_TOWN",
       "name": "NewBarkTown_Layout",
       "width": 20,
@@ -9491,6 +9478,19 @@
       "secondary_tileset": "gTileset_PalletTown",
       "border_filepath": "data/layouts/NewBarkTown/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ROUTE26",
+      "name": "Route26_Layout",
+      "width": 20,
+      "height": 108,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/Route26/border.bin",
+      "blockdata_filepath": "data/layouts/Route26/map.bin",
       "layout_version": "frlg"
     },
     {
@@ -9507,16 +9507,29 @@
       "layout_version": "frlg"
     },
     {
-      "id": "LAYOUT_ROUTE26",
-      "name": "Route26_Layout",
-      "width": 20,
-      "height": 108,
+      "id": "LAYOUT_ROUTE28",
+      "name": "Route28_Layout",
+      "width": 40,
+      "height": 18,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
       "secondary_tileset": "gTileset_ViridianCity",
-      "border_filepath": "data/layouts/Route26/border.bin",
-      "blockdata_filepath": "data/layouts/Route26/map.bin",
+      "border_filepath": "data/layouts/Route28/border.bin",
+      "blockdata_filepath": "data/layouts/Route28/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SILVER_CAVE_OUTSIDE",
+      "name": "SilverCaveOutside_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/SilverCaveOutside/border.bin",
+      "blockdata_filepath": "data/layouts/SilverCaveOutside/map.bin",
       "layout_version": "frlg"
     }
   ]

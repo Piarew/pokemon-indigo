@@ -1,0 +1,41 @@
+# Route28 40x18  source https://archives.bulbagarden.net/media/upload/8/8d/Kanto_Route_28_GSC.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+M  M  M  M  M  M  X  X  X  X  X  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  X  X  X  X  X  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  X  X  X  X  X  M  M  M  M  M  M  M  M  M  T  T  T  T  T  T  T  T  T  T  T  T  M  M  M  M  M  M  M  M 
+G  G  G  G  G  G  X  X  X  X  X  M  M  M  M  M  M  M  M  M  G  G  G  G  G  G  T  T  T  T  T  T  M  M  M  M  M  M  M  M 
+T  T  T  T  G  G  G  G  G  G  G  G  G  G  G  G  G  G  G  G  G  G  T  T  T  T  T  T  T  T  P  P  M  M  M  M  M  M  M  M 
+T  T  T  T  L  L  L  L  L  L  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  P  S  M  M  M  M  M  M  M  M 
+T  T  T  T  H  H  H  H  H  H  H  H  G  G  M  G  G  G  G  G  T  T  T  T  T  T  T  T  P  P  P  P  P  P  P  P  P  P  P  P 
+T  T  T  T  H  H  H  H  H  H  H  H  G  G  L  L  L  L  L  L  T  T  T  T  T  T  T  T  P  P  P  P  P  P  P  P  P  P  P  P 
+T  T  T  T  G  G  G  G  T  T  G  G  H  H  H  H  G  G  H  H  G  G  G  G  G  G  M  G  G  G  P  P  T  T  T  T  P  P  P  P 
+T  T  T  T  G  G  G  G  T  T  G  G  H  H  H  H  G  G  H  H  G  W  W  G  G  G  L  L  L  L  L  L  T  T  T  T  M  M  M  M 
+T  T  T  T  T  T  T  T  G  G  G  G  T  T  G  G  T  T  H  H  H  H  H  H  H  H  H  H  H  H  G  G  T  T  T  T  M  M  M  M 
+T  T  T  T  T  T  T  T  L  L  L  L  T  T  G  G  T  T  H  H  H  H  H  H  H  H  H  H  H  H  G  G  T  T  T  T  M  M  M  M 
+H  H  G  G  H  H  H  H  H  H  G  G  H  H  H  H  T  T  T  T  G  G  G  G  G  G  G  G  M  M  M  M  M  M  M  M  M  M  M  M 
+H  H  G  G  H  H  H  H  H  H  G  G  H  H  H  H  T  T  T  T  G  W  W  W  W  W  W  G  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  T  T  T  T  G  G  G  G  G  G  H  H  G  W  W  W  W  G  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  T  T  T  T  G  G  G  G  G  G  H  H  G  W  W  W  W  G  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+
+# raw global cell ids (tools/johto cells.json)
+ 37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37
+231 231 231 231 231 231 231 231 231 231 232  37  37  37  37  37  37  37  37 233 231 231 231 231 231 231 231 231 231 231 231 231 231 231 231 231 232  37  37  37
+234 234 234 234 234 234 235 236 236 237 238  37  37  37  37  37  37  37  37 239 234 234 234 234 234 234 234 234 234 234 234 234 240 241 241 242 238  37  37  37
+243 243 243 243 243 243 244 245 246 247 248 231 231 231 231 231 231 231 231 249 243 243 243 243 243 243 234 234 234 234 234 234 250 251 251 252 238  37  37  37
+234 234 234 234 243 243 243 243 243 243 243 243 243 243 243 243 243 243 243 243 243 243 234 234 234 234 234 234 234 234   1   1 253 254 254 255 238  37  37  37
+234 234 234 234 256 256 256 256 256 256 234 234 234 234 234 234 234 234 234 234 234 234 234 234 234 234 234 234 234 234   1 257 258 245 259 260 238  37  37  37
+234 234 234 234 261 261 261 261 261 261 261 261 243 243 262 243 243 243 243 243 234 234 234 234 234 234 234 234   1   1   1   1   1   1   1   1 238  37  37  37
+234 234 234 234 261 261 261 261 261 261 261 261 243 243 263 256 264 265 256 256 234 234 234 234 234 234 234 234   1   1   1   1   1   1   1   1 238  37  37  37
+234 234 234 234 243 243 243 243 234 234 243 243 261 261 261 261 243 243 261 261 266 267 267 268 243 243 262 243 243 243   1   1 234 234 234 234 238  37  37  37
+234 234 234 234 243 243 243 243 234 234 243 243 261 261 261 261 243 243 261 261 269   6   6 270 243 243 263 256 256 256 271 272 234 234 234 234 238  37  37  37
+234 234 234 234 234 234 234 234 243 243 243 243 234 234 243 243 234 234 261 261 261 261 261 261 261 261 261 261 261 261 243 243 234 234 234 234 238  37  37  37
+234 234 234 234 234 234 234 234 256 256 256 256 234 234 243 243 234 234 261 261 261 261 261 261 261 261 261 261 261 261 243 243 234 234 234 234 238  37  37  37
+261 261 243 243 261 261 261 261 261 261 243 243 261 261 261 261 234 234 234 234 266 267 267 267 267 267 267 268 273 274 274 274 274 274 274 274  37  37  37  37
+261 261 243 243 261 261 261 261 261 261 243 243 261 261 261 261 234 234 234 234 269   6   6   6   6   6   6 270 238  37  37  37  37  37  37  37  37  37  37  37
+274 274 274 274 274 274 274 274 274 275 234 234 234 234 243 243 243 243 243 243 261 261 269   6   6   6   6 270 238  37  37  37  37  37  37  37  37  37  37  37
+ 37  37  37  37  37  37  37  37  37 239 234 234 234 234 243 243 243 243 243 243 261 261 269   6   6   6   6 270 238  37  37  37  37  37  37  37  37  37  37  37
+ 37  37  37  37  37  37  37  37  37  37 274 274 274 274 274 274 274 274 274 274 274 274 274 274 274 274 274 274  37  37  37  37  37  37  37  37  37  37  37  37
+ 37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37  37
