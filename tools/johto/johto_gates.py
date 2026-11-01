@@ -22,7 +22,10 @@ R5 = blocks('data/layouts/Route5_Frlg/map.bin', 48)
 NFACE = [r[22:28] for r in R5[32:35]]            # door cells at facade cols 2,3 (Route5 x 24,25)
 
 # gate interior, far map, (x0, y0) facade top-left on the far map, far-side interior warp ids
-GATES = [('Route29_Route46Gate', 'Route46', 20, (5, 33), (1, 3))]
+# EcruteakCity_TinTowerEntrance: same-map gate (GSC gatehouse -> Wise Trio's room -> tower grounds); the far side is
+# the fenced north-east tower area of Ecruteak itself, facade on the forest strip south of the (20-29, 2-3) path.
+GATES = [('Route29_Route46Gate', 'Route46', 20, (5, 33), (1, 3)),
+         ('EcruteakCity_TinTowerEntrance', 'EcruteakCity', 40, (22, 4), (1, 3))]
 
 for gate, far, fw, (x0, y0), north in GATES:
     lp = 'data/layouts/%s/map.bin' % far
@@ -33,7 +36,7 @@ for gate, far, fw, (x0, y0), north in GATES:
     save(lp, g)
     fj = mj(far); gj = mj(gate)
     gid = gj['id']
-    old = [i for i, w in enumerate(fj['warp_events']) if w['dest_map'] == gid]
+    old = [i for i, w in enumerate(fj['warp_events']) if w['dest_map'] == gid and w['dest_warp_id'] in map(str, north)]
     base = old[0] if old else len(fj['warp_events'])   # replace in place (stable indices on re-runs)
     assert not old or old == list(range(base, base + len(north))), old
     for k, wid in enumerate(north):

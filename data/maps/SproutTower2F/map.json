@@ -1,0 +1,51 @@
+{
+  "id": "MAP_SPROUT_TOWER2F",
+  "name": "SproutTower2F",
+  "layout": "LAYOUT_SPROUT_TOWER2F",
+  "music": "MUS_RG_POKE_TOWER",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_POKEMON_TOWER",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_SPROUT_TOWER1F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "elevation": 3,
+      "dest_map": "MAP_SPROUT_TOWER1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 17,
+      "y": 3,
+      "elevation": 3,
+      "dest_map": "MAP_SPROUT_TOWER1F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 10,
+      "y": 14,
+      "elevation": 3,
+      "dest_map": "MAP_SPROUT_TOWER3F",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

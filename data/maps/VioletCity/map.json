@@ -29,6 +29,13 @@
   "object_events": [],
   "warp_events": [
     {
+      "x": 23,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_SPROUT_TOWER1F",
+      "dest_warp_id": "1"
+    },
+    {
       "x": 10,
       "y": 17,
       "elevation": 0,

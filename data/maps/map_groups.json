@@ -1222,6 +1222,7 @@
     "EcruteakCity_LugiaSpeechHouse",
     "EcruteakCity_ItemfinderHouse",
     "EcruteakCity_DanceTheater",
+    "EcruteakCity_TinTowerEntrance",
     "NewBarkTown_ElmsLab",
     "NewBarkTown_PlayersHouse_1F",
     "NewBarkTown_PlayersHouse_2F",
@@ -1259,6 +1260,16 @@
     "MountMortar1FInside",
     "MountMortar2FInside",
     "MountMortarB1F",
+    "SproutTower1F",
+    "SproutTower2F",
+    "SproutTower3F",
+    "BurnedTower1F",
+    "BurnedTowerB1F",
+    "TinTower1F",
+    "TinTowerRoof",
+    "DragonsDen1F",
+    "DragonsDenB1F",
+    "DragonShrine",
     "VictoryRoadGate"
   ]
 }

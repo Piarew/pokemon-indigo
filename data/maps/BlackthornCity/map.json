@@ -43,6 +43,13 @@
       "dest_warp_id": "1"
     },
     {
+      "x": 20,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_DRAGONS_DEN1F",
+      "dest_warp_id": "0"
+    },
+    {
       "x": 18,
       "y": 11,
       "elevation": 0,

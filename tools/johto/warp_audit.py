@@ -25,11 +25,6 @@ WARPY = {'MB_NON_ANIMATED_DOOR', 'MB_ANIMATED_DOOR', 'MB_LADDER', 'MB_SOUTH_ARRO
          'MB_DOWN_RIGHT_STAIR_WARP', 'MB_DOWN_LEFT_STAIR_WARP', 'MB_MT_PYRE_HOLE', 'MB_FALL_WARP'}
 # Known, deliberately unwarped cells (towers/caves not built yet). (map dir, x, y): reason
 TODO_ALLOW = {
-    ('BlackthornCity', 20, 1): "Dragon's Den (TODO)",
-    ('VioletCity', 23, 6): 'Sprout Tower (TODO)',
-    ('EcruteakCity', 5, 6): 'Burned Tower (TODO)',
-    ('EcruteakCity', 18, 11): 'Tin Tower entrance (TODO)',
-    ('EcruteakCity', 36, 7): 'Bell/Tin Tower stand-in (TODO)',
 }
 # Deliberate one-way warps: (map dir, x, y): reason.  The destination must still exist.
 ONE_WAY = {

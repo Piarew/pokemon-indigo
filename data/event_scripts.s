@@ -907,6 +907,7 @@ gStdScripts_End::
 	.include "data/maps/EcruteakCity_LugiaSpeechHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/EcruteakCity_ItemfinderHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/EcruteakCity_DanceTheater/scripts.inc"  @ johto-interior
+	.include "data/maps/EcruteakCity_TinTowerEntrance/scripts.inc"  @ johto-interior
 	.include "data/maps/NewBarkTown_ElmsLab/scripts.inc"  @ johto-interior
 	.include "data/maps/NewBarkTown_PlayersHouse_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/NewBarkTown_PlayersHouse_2F/scripts.inc"  @ johto-interior
@@ -926,6 +927,16 @@ gStdScripts_End::
 	.include "data/maps/Route36_RuinsOfAlphGate/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/SproutTower1F/scripts.inc"
+	.include "data/maps/SproutTower2F/scripts.inc"
+	.include "data/maps/SproutTower3F/scripts.inc"
+	.include "data/maps/BurnedTower1F/scripts.inc"
+	.include "data/maps/BurnedTowerB1F/scripts.inc"
+	.include "data/maps/TinTower1F/scripts.inc"
+	.include "data/maps/TinTowerRoof/scripts.inc"
+	.include "data/maps/DragonsDen1F/scripts.inc"
+	.include "data/maps/DragonsDenB1F/scripts.inc"
+	.include "data/maps/DragonShrine/scripts.inc"
 	.include "data/maps/LakeOfRage/scripts.inc"
 	.include "data/maps/MountMortar1FOutside/scripts.inc"
 	.include "data/maps/MountMortar1FInside/scripts.inc"

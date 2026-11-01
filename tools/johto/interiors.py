@@ -59,7 +59,8 @@ DOORS = {
                      (16, 3, 'fhouse1', 'WiseTriosHouse'), (12, 11, 'fhouse1', 'House1'),
                      (5, 17, 'fhouse3', 'House2'), (13, 17, 'fhouse1', 'House3'),
                      (29, 27, 'fhouse3', 'House4'), (5, 21, 'fhouse1', 'LugiaSpeechHouse'),
-                     (13, 27, 'fhouse3', 'ItemfinderHouse'), (23, 21, 'dojo', 'DanceTheater')],
+                     (13, 27, 'fhouse3', 'ItemfinderHouse'), (23, 21, 'dojo', 'DanceTheater'),
+                     (18, 11, 'nsgate', 'TinTowerEntrance')],   # GSC gatehouse; north exits -> tower grounds (johto_gates.py)
     'NewBarkTown': [(7, 4, 'lab', 'ElmsLab'), (13, 5, 'players', 'PlayersHouse'),
                     (3, 13, 'rival', 'House1'), (11, 13, 'rival', 'ElmsHouse')],
     'Route26': [(15, 57, 'vhouse', 'HealHouse'), (5, 71, 'vhouse', 'DayOfWeekSiblingsHouse')],

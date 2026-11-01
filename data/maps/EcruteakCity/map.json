@@ -29,6 +29,20 @@
   "object_events": [],
   "warp_events": [
     {
+      "x": 5,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_BURNED_TOWER1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 36,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_TIN_TOWER1F",
+      "dest_warp_id": "1"
+    },
+    {
       "x": 6,
       "y": 27,
       "elevation": 0,
@@ -104,6 +118,27 @@
       "elevation": 0,
       "dest_map": "MAP_ECRUTEAK_CITY_DANCE_THEATER",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_ECRUTEAK_CITY_TIN_TOWER_ENTRANCE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_ECRUTEAK_CITY_TIN_TOWER_ENTRANCE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 25,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_ECRUTEAK_CITY_TIN_TOWER_ENTRANCE",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],
