@@ -93,11 +93,15 @@ def build(name, ext):
                     g[y + dy][x + dx] = BIG[dy * 2 + dx]
     QUAD = {0x1CB: (0, 0), 0x1CC: (1, 0), 0x1D3: (0, 1), 0x1D4: (1, 1),
             0x110: (0, 0), 0x111: (1, 0), 0x118: (0, 1), 0x119: (1, 1)}
-    def clear(x, y):       # remove the whole 2x2 rock that (x, y) belongs to (no half rocks left behind)
+    def clear(x, y, keep=None):       # remove the whole 2x2 rock that (x, y) belongs to (no half rocks left behind)
         t = g[y][x] & 0x3FF
         if t not in QUAD or not (g[y][x] >> 10) & 3:
             return
         ox, oy = x - QUAD[t][0], y - QUAD[t][1]
+        if keep == 'x' and (ox <= 0 or ox + 1 >= w - 1):      # never open the perpendicular rim
+            return
+        if keep == 'y' and (oy <= 0 or oy + 1 >= h - 1):
+            return
         base = 0x1CB if t >= 0x1CB else 0x110
         for dy in (0, 1):
             for dx in (0, 1):
@@ -150,11 +154,12 @@ def build(name, ext):
             else:
                 ok = 3 <= j < (oh if d in ('left', 'right') else ow) - 3   # sea<->sea seams: open but rock-capped ends
                 ok = ok and 3 <= i < len(rng) - 3
+            ok = ok and 2 <= i < len(rng) - 2      # corner cells stay rock so no perpendicular rim is opened
             step = {'left': (1, 0), 'right': (-1, 0), 'up': (0, 1), 'down': (0, -1)}[d]
             if ok:      # carve the rim / ragged band in front of an open seam cell (8 tiles deep)
                 for k in range(8):
                     x, y = mine[0] + step[0] * k, mine[1] + step[1] * k
-                    clear(x, y)
+                    clear(x, y, keep='y' if d in ('left', 'right') else 'x')
             else:
                 blocked.append(i)
         # blocked seam cells: whole 2x2 rocks on the two edge rows/columns, only over blocked runs
@@ -165,14 +170,10 @@ def build(name, ext):
             if i is not None:
                 cur.append(i)
         for r in runs:
-            starts = list(range(r[0], r[-1], 2)) if len(r) > 1 else [r[0]]
-            if len(r) > 1 and len(r) % 2:
-                starts.append(r[-1] - 1)
+            # even-aligned quads line up with the rim/band grid (w, h are even), so no rock is ever cut in half;
+            # an odd run may cover one extra cell next to it
+            starts = list(range(r[0] // 2 * 2, r[-1] + 1, 2))
             for i in starts:
-                if len(r) == 1:
-                    x, y = {'left': (0, i), 'right': (w - 1, i), 'up': (i, 0), 'down': (i, h - 1)}[d]
-                    g[y][x] = SMALL[(y % 2) * 2 + (x % 2)]
-                    continue
                 x, y = {'left': (0, i), 'right': (w - 2, i), 'up': (i, 0), 'down': (i, h - 2)}[d]
                 for dy in (0, 1):
                     for dx in (0, 1):
@@ -225,9 +226,8 @@ def reach(grids):
     """BFS over passable cells across our three maps + the seams; returns the set of reached (map, x, y)."""
     start = None
     g = grids[W_]
-    for y in range(len(g)):
-        if passable(g[y][0]):
-            start = (W_, 0, y); break
+    ys = [y for y in range(len(g)) if passable(g[y][0])]
+    start = (W_, 0, ys[len(ys) // 2])      # middle of the Route 32 seam
     seen, q = {start}, collections.deque([start])
     while q:
         m, x, y = q.popleft(); gg = grids[m]; w, h = len(gg[0]), len(gg)
