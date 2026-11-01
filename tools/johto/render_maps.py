@@ -94,3 +94,5 @@ if __name__ == '__main__':
     names = sys.argv[2:] or list(MAPS)
     for n in names:
         compare(n, outdir); print('rendered', n)
+    if not sys.argv[2:]:
+        print('overview', overview(['CherrygroveCity'] + list(MAPS), outdir))
