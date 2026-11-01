@@ -24,6 +24,11 @@
       "map": "MAP_VIOLET_CITY",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE35",
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [],

@@ -927,6 +927,54 @@ gStdScripts_End::
 	.include "data/maps/Route36_RuinsOfAlphGate/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/Route32_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/Route32_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/AzaleaTown_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/AzaleaTown_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/AzaleaTown_Mart/scripts.inc"  @ johto-interior
+	.include "data/maps/AzaleaTown_Gym/scripts.inc"  @ johto-interior
+	.include "data/maps/AzaleaTown_KurtsHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/AzaleaTown_CharcoalKiln/scripts.inc"  @ johto-interior
+	.include "data/maps/Route34_DayCare/scripts.inc"  @ johto-interior
+	.include "data/maps/Route35_NationalParkGate/scripts.inc"  @ johto-interior
+	.include "data/maps/Route39_Barn/scripts.inc"  @ johto-interior
+	.include "data/maps/Route39_Farmhouse/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_Gym/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_DeptStore1F/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_NameRater/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_FlowerShop/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_PPSpeechHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_RadioTower1F/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_MagnetTrainStation/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_GameCorner/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_HappinessRater/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_BillsFamilysHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity_BikeShop/scripts.inc"  @ johto-interior
+	.include "data/maps/OlivineCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/OlivineCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/OlivineCity_Mart/scripts.inc"  @ johto-interior
+	.include "data/maps/OlivineCity_Gym/scripts.inc"  @ johto-interior
+	.include "data/maps/OlivineCity_TimsHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/OlivineCity_PunishmentSpeechHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/OlivineCity_GoodRodHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/OlivineCity_Cafe/scripts.inc"  @ johto-interior
+	.include "data/maps/GoldenrodCity/scripts.inc"
+	.include "data/maps/OlivineCity/scripts.inc"
+	.include "data/maps/UnionCave1F/scripts.inc"
+	.include "data/maps/UnionCaveB1F/scripts.inc"
+	.include "data/maps/UnionCaveB2F/scripts.inc"
+	.include "data/maps/SlowpokeWellB1F/scripts.inc"
+	.include "data/maps/SlowpokeWellB2F/scripts.inc"
+	.include "data/maps/Route32/scripts.inc"
+	.include "data/maps/Route33/scripts.inc"
+	.include "data/maps/AzaleaTown/scripts.inc"
+	.include "data/maps/Route34/scripts.inc"
+	.include "data/maps/IlexForest/scripts.inc"
+	.include "data/maps/Route35/scripts.inc"
+	.include "data/maps/Route38/scripts.inc"
+	.include "data/maps/Route39/scripts.inc"
 	.include "data/maps/SproutTower1F/scripts.inc"
 	.include "data/maps/SproutTower2F/scripts.inc"
 	.include "data/maps/SproutTower3F/scripts.inc"

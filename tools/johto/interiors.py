@@ -72,12 +72,35 @@ DOORS = {
     'LakeOfRage': [(7, 3, 'vhouse', 'HiddenPowerHouse'), (27, 31, 'vhouse', 'MagikarpHouse')],
     'Route36': [(15, 9, 'vhouse', 'NationalParkGate'), (47, 16, 'vhouse', 'RuinsOfAlphGate')],
     'SilverCaveOutside': [(23, 19, 'pc', None)],
+    # phase 6 chunk 8
+    'Route32': [(11, 73, 'pc', None)],
+    'AzaleaTown': [(15, 9, 'pc', None), (21, 5, 'mart', None), (11, 15, 'gym_viridian', None),
+                   (8, 5, 'vhouse', 'KurtsHouse'), (20, 13, 'vhouse', 'CharcoalKiln')],
+    'Route34': [(12, 15, 'vhouse', 'DayCare')],
+    'Route35': [(3, 5, 'vhouse', 'NationalParkGate')],
+    'Route39': [(1, 3, 'vhouse', 'Barn'), (6, 3, 'vhouse', 'Farmhouse')],
+    'GoldenrodCity': [(15, 27, 'pc', None), (25, 7, 'gym_viridian', None), (25, 27, 'vhouse', 'DeptStore1F'),
+                      (15, 7, 'vhouse', 'NameRater'), (29, 5, 'vhouse', 'FlowerShop'), (33, 9, 'vhouse', 'PPSpeechHouse'),
+                      (5, 15, 'vhouse', 'RadioTower1F'), (9, 13, 'vhouse', 'MagnetTrainStation'),
+                      (14, 21, 'vhouse', 'GameCorner'), (31, 21, 'vhouse', 'HappinessRater'),
+                      (5, 25, 'vhouse', 'BillsFamilysHouse'), (29, 29, 'vhouse', 'BikeShop')],
+    'OlivineCity': [(13, 21, 'pc', None), (19, 17, 'mart', None), (10, 11, 'gym_viridian', None),
+                    (25, 11, 'vhouse', 'TimsHouse'), (30, 11, 'vhouse', 'PunishmentSpeechHouse'),
+                    (13, 15, 'vhouse', 'GoodRodHouse'), (7, 21, 'vhouse', 'Cafe')],
 }
+
+# outdoor door <-> outdoor door links (GSC gatehouses simplified to a house-door pair, no interior)
+LINKS = [
+    (('Route34', 13, 37), ('IlexForest', 1, 5)),        # Route 34 / Ilex Forest gate
+    (('IlexForest', 2, 43), ('AzaleaTown', 1, 11)),     # Ilex Forest / Azalea gate
+]
 
 HEAL = {  # outside map -> heal location id
     'CherrygroveCity': 'HEAL_LOCATION_CHERRYGROVE_CITY', 'VioletCity': 'HEAL_LOCATION_VIOLET_CITY',
     'BlackthornCity': 'HEAL_LOCATION_BLACKTHORN_CITY', 'MahoganyTown': 'HEAL_LOCATION_MAHOGANY_TOWN',
     'EcruteakCity': 'HEAL_LOCATION_ECRUTEAK_CITY', 'SilverCaveOutside': 'HEAL_LOCATION_SILVER_CAVE_OUTSIDE',
+    'Route32': 'HEAL_LOCATION_ROUTE32', 'AzaleaTown': 'HEAL_LOCATION_AZALEA_TOWN',
+    'OlivineCity': 'HEAL_LOCATION_OLIVINE_CITY', 'GoldenrodCity': 'HEAL_LOCATION_GOLDENROD_CITY',
 }
 
 MART_ITEMS = {
@@ -86,7 +109,7 @@ MART_ITEMS = {
     'late': ['ITEM_GREAT_BALL', 'ITEM_ULTRA_BALL', 'ITEM_SUPER_POTION', 'ITEM_HYPER_POTION', 'ITEM_REVIVE',
              'ITEM_FULL_HEAL', 'ITEM_ICE_HEAL', 'ITEM_ESCAPE_ROPE', 'ITEM_SUPER_REPEL', 'ITEM_MAX_REPEL'],
 }
-LATE = {'MahoganyTown', 'BlackthornCity', 'EcruteakCity'}
+LATE = {'MahoganyTown', 'BlackthornCity', 'EcruteakCity', 'OlivineCity'}
 KEEP_DEST = {'MAP_UNION_ROOM_FRLG', 'MAP_TRADE_CENTER_FRLG', 'MAP_DYNAMIC'}
 
 
@@ -121,6 +144,7 @@ def main():
         oj = load(outside)
         oid = oj['id']
         door_xy = {(x, y) for x, y, _, _ in doors}
+        door_xy |= {(lx, ly) for pair in LINKS for (lm, lx, ly) in pair if lm == outside}   # links re-added last
         warps = [w for w in oj.get('warp_events', []) if (w['x'], w['y']) not in door_xy]
         for x, y, kind, suffix in doors:
             names = interior_names(outside, kind, suffix)
@@ -201,6 +225,21 @@ def main():
                           'dest_warp_id': str(entry_exit)})
         oj['warp_events'] = warps
         dump(outside, oj)
+
+    # outdoor links: strip every link cell first (indices stay stable), then append the pairs
+    for m in {lm for pair in LINKS for (lm, _, _) in pair}:
+        mj = load(m)
+        cells = {(lx, ly) for pair in LINKS for (lm, lx, ly) in pair if lm == m}
+        mj['warp_events'] = [w for w in mj.get('warp_events', []) if (w['x'], w['y']) not in cells]
+        dump(m, mj)
+    for (a, ax, ay), (b, bx, by) in LINKS:
+        aj, bj = load(a), load(b)
+        aw, bw = aj['warp_events'], bj['warp_events']
+        ai, bi = len(aw), len(bw)
+        aw.append({'x': ax, 'y': ay, 'elevation': 0, 'dest_map': bj['id'], 'dest_warp_id': str(bi)})
+        bw.append({'x': bx, 'y': by, 'elevation': 0, 'dest_map': aj['id'], 'dest_warp_id': str(ai)})
+        aj['warp_events'], bj['warp_events'] = aw, bw
+        dump(a, aj); dump(b, bj)
 
     # map group
     mg_path = os.path.join(MAPS, 'map_groups.json')

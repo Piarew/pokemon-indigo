@@ -22,21 +22,21 @@
       "y": 21,
       "elevation": 3,
       "dest_map": "MAP_ECRUTEAK_CITY",
-      "dest_warp_id": "2"
+      "dest_warp_id": "4"
     },
     {
       "x": 7,
       "y": 21,
       "elevation": 3,
       "dest_map": "MAP_ECRUTEAK_CITY",
-      "dest_warp_id": "2"
+      "dest_warp_id": "4"
     },
     {
       "x": 8,
       "y": 21,
       "elevation": 3,
       "dest_map": "MAP_ECRUTEAK_CITY",
-      "dest_warp_id": "2"
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

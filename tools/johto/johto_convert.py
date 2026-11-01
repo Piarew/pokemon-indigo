@@ -95,6 +95,17 @@ _set('W', *range(406, 412))
 _set('S', 413)
 _set('P', 420)
 
+# Goldenrod (own palette, Crystal image)
+_set('X', 423, 424, 425, 428, 429, 430, 431, 437, 438, 439, 440, 445, 446, *range(447, 455), 457, 458, 459,
+     467, 468, *range(469, 473), 475, 476, 477, *range(480, 490), *range(495, 501))
+_set('U', 427, 432, 460, 461, 462, 463, 464, 473, 479, 492, 493, 494)   # fences, planters, rail fence
+_set('M', 421, 422, 433, 434, 435, 436, 465, 466, 490, 491)
+_set('W', 455, 478)
+_set('G', 426, 442)
+_set('F', 443, 444)
+_set('P', 441, 474)                       # 474 = Magnet Train track bed (walkable crossing)
+_set('S', 456)
+
 # ------------------------------------------------------------------ FRLG metatiles
 FOREST_TOP, FOREST_BOT, FOREST_TRUNK = (0x01C, 0x01D), (0x014, 0x015), (0x024, 0x025)
 FOREST_TOP_L, FOREST_TOP_R = 0x01E, 0x01F
@@ -178,7 +189,7 @@ MAPS = {
         overrides=[((39, 24), (39, 25), 'P'), ((2, 26), (2, 26), 'P'), ((2, 30), (2, 30), 'S'), ((13, 17), (13, 17), 'S')],
         signs={(24, 8): 'SPROUT_TOWER', (13, 17): 'GYM', (27, 17): 'SCHOOL', (24, 20): 'CITY',
                (2, 30): 'TRAINER_TIPS', (4, 30): 'HOUSE'},
-        connections=[('MAP_ROUTE31', 18, 'right'), ('MAP_ROUTE36', 0, 'left')]),
+        connections=[('MAP_ROUTE31', 18, 'right'), ('MAP_ROUTE36', 0, 'left'), ('MAP_ROUTE32', 0, 'down')]),
     'Route29': dict(ROUTE, src='Johto_Route_29_GSC.png', url=BASE + 'c/ce/Johto_Route_29_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
         buildings=[('vir_house', 26, 0)],   # Route 46 gatehouse exterior (interior: FRLG N/S gate, johto_gates.py)
@@ -249,7 +260,7 @@ MAPS = {
                    ((36, 24), (39, 25), 'T'), ((35, 26), (39, 27), 'P')],   # Route 42 gate -> open path
         signs={(2, 10): 'BURNED_TOWER', (38, 10): 'TIN_TOWER', (15, 21): 'CITY', (21, 21): 'DANCE_THEATER',
                (8, 28): 'GYM'},
-        connections=[('MAP_ROUTE42', 18, 'right'), ('MAP_ROUTE37', 10, 'down')]),
+        connections=[('MAP_ROUTE42', 18, 'right'), ('MAP_ROUTE37', 10, 'down'), ('MAP_ROUTE38', 10, 'left')]),
     'NewBarkTown': dict(TOWN, src='New_Bark_Town_GSC.png', url=BASE + '5/54/New_Bark_Town_GSC.png',
         secondary='gTileset_PalletTown', border=BORDER_FOREST, music='MUS_RG_PALLET', xfill='P',
         buildings=[('pal_lab', 4, 0), ('pal_house', 12, 1), ('pal_house', 2, 9), ('pal_house', 10, 9)],
@@ -291,13 +302,71 @@ MAPS = {
         buildings=[('vir_house', 14, 6), ('vir_house', 46, 13)],
         overrides=[((15, 10), (19, 10), 'P'), ((50, 14), (51, 15), 'T')],
         signs={(29, 1): 'R37', (21, 7): 'NATIONAL_PARK', (55, 7): 'R36', (45, 11): 'RUINS_OF_ALPH'},
-        connections=[('MAP_ROUTE37', 20, 'up'), ('MAP_VIOLET_CITY', 0, 'right')]),
+        connections=[('MAP_ROUTE37', 20, 'up'), ('MAP_VIOLET_CITY', 0, 'right'), ('MAP_ROUTE35', 0, 'down')]),
     'Route37': dict(ROUTE, src='Johto_Route_37_GSC.png', url=BASE + 'a/a4/Johto_Route_37_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
         buildings=[],
         overrides=[],
         signs={(5, 3): 'R37'},
         connections=[('MAP_ECRUTEAK_CITY', -10, 'up'), ('MAP_ROUTE36', -20, 'down')]),
+    # ---- phase 6 chunk 8 (signs='auto' -> generic sign text; GSC gates become plain door links, see johto_links.py)
+    'Route32': dict(ROUTE, src='Johto_Route_32_GSC.png', url=bp('Johto_Route_32_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G', music='MUS_RG_ROUTE3',
+        buildings=[('vir_pc', 9, 70)], overrides=[((2, 15), (2, 15), 'M'), ((0, 0), (3, 0), 'T'), ((8, 0), (13, 0), 'T')],   # cliff cell misread as a cave mouth
+        signs='auto', sign_text='ROUTE 32\\nVIOLET CITY - AZALEA TOWN',
+        connections=[('MAP_VIOLET_CITY', 0, 'up'), ('MAP_ROUTE33', 0, 'down')]),
+    'Route33': dict(ROUTE, src='Johto_Route_33_GSC.png', url=bp('Johto_Route_33_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
+        buildings=[], overrides=[((13, 13), (13, 13), 'G')], signs='auto', sign_text='ROUTE 33',   # GSC path up to Union Cave
+        connections=[('MAP_ROUTE32', 0, 'up'), ('MAP_AZALEA_TOWN', 0, 'left')]),
+    'AzaleaTown': dict(TOWN, src='Azalea_Town_GSC.png', url=bp('Azalea_Town_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G', music='MUS_RG_PEWTER',
+        buildings=[('vir_pc', 13, 6), ('vir_house', 19, 10), ('vir_mart', 19, 2), ('vir_house', 7, 2),
+                   ('vir_gym', 8, 11), ('vir_house', 0, 8)],   # (0,8): Ilex Forest gate stand-in
+        overrides=[((1, 12), (5, 12), 'P'), ((39, 13), (39, 13), 'T')], signs='auto', sign_text='AZALEA TOWN\\nWhere People and POKéMON\\nLive in Happy Harmony',
+        connections=[('MAP_ROUTE34', -36, 'left'), ('MAP_ROUTE33', 0, 'right')]),
+    'Route34': dict(ROUTE, src='Johto_Route_34_GSC.png', url=bp('Johto_Route_34_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
+        buildings=[('vir_house', 11, 12), ('vir_house', 12, 34)], signs='auto',
+        overrides=[((17, 36), (17, 38), 'P'), ((16, 38), (16, 38), 'P'),
+                   ((0, 0), (1, 0), 'T'), ((7, 0), (7, 0), 'T'), ((12, 0), (12, 0), 'T'), ((18, 0), (19, 0), 'T')],   # walk round the Ilex gate stand-in to its door
+        sign_text='ROUTE 34\\nGOLDENROD CITY - AZALEA TOWN',
+        connections=[('MAP_AZALEA_TOWN', 36, 'right'), ('MAP_GOLDENROD_CITY', -10, 'up')]),
+    'IlexForest': dict(ROUTE, src='Ilex_Forest_GSC.png', url=bp('Ilex_Forest_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G', music='MUS_RG_VIRIDIAN_FOREST',
+        map_type='MAP_TYPE_ROUTE',
+        buildings=[('vir_house', 0, 2), ('vir_house', 1, 40)], overrides=[((1, 6), (1, 6), 'G')], signs='auto',
+        sign_text='ILEX FOREST\\nThe forest is so overgrown\\nthat it stays dark all day.',
+        connections=[]),
+    'Route35': dict(ROUTE, src='Johto_Route_35_GSC.png', url=bp('Johto_Route_35_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
+        buildings=[('vir_house', 2, 2)], overrides=[((0, 35), (3, 35), 'T'), ((18, 35), (19, 35), 'T')], signs='auto', sign_text='ROUTE 35',
+        connections=[('MAP_ROUTE36', 0, 'up'), ('MAP_GOLDENROD_CITY', -10, 'down')]),
+    'Route38': dict(ROUTE, src='Johto_Route_38_GSC.png', url=bp('Johto_Route_38_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
+        buildings=[], overrides=[((39, 6), (39, 7), 'T')], signs='auto', sign_text='ROUTE 38\\nOLIVINE CITY - ECRUTEAK CITY',
+        connections=[('MAP_ROUTE39', 0, 'left'), ('MAP_ECRUTEAK_CITY', -10, 'right')]),
+    'Route39': dict(ROUTE, src='Johto_Route_39_GSC.png', url=bp('Johto_Route_39_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
+        buildings=[('vir_house', 0, 0), ('vir_house', 5, 0)], overrides=[((2, 35), (5, 35), 'T')], signs='auto',
+        sign_text='ROUTE 39\\nMOOMOO FARM',
+        connections=[('MAP_ROUTE38', 0, 'right'), ('MAP_OLIVINE_CITY', -10, 'down')]),
+    'OlivineCity': dict(TOWN, src='Olivine_City_C.png', url=bp('Olivine_City_C.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='P', music='MUS_RG_VERMILLION',
+        buildings=[('vir_pc', 11, 18), ('vir_gym', 7, 7), ('vir_house', 24, 8), ('vir_house', 29, 8),
+                   ('vir_house', 12, 12), ('vir_house', 6, 18), ('vir_mart', 17, 14)],
+        overrides=[], signs='auto', sign_text='OLIVINE CITY\\nThe Port Closest to Foreign Lands',
+        connections=[('MAP_ROUTE39', 10, 'up')]),   # west -> Route 40 (sea, no source): TODO
+    'GoldenrodCity': dict(TOWN, src='Goldenrod_City_C.png', url=bp('Goldenrod_City_C.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='T', music='MUS_RG_CELADON',
+        buildings=[('vir_gym', 22, 3), ('vir_mart', 13, 4), ('vir_house', 28, 2), ('vir_house', 32, 6),
+                   ('vir_mart', 3, 12), ('vir_house', 8, 10), ('vir_house', 13, 18), ('vir_house', 30, 18),
+                   ('vir_house', 4, 22), ('vir_pc', 13, 24), ('vir_gym', 22, 23), ('vir_house', 28, 26)],
+        xdeco=['vir_house'],
+        overrides=[((18, 0), (21, 1), 'P'),       # Route 35 gate -> open road (connection)
+                   ((28, 6), (29, 7), 'G'), ((26, 31), (27, 31), 'G')],   # flower shop / bike shop approaches
+        signs='auto', sign_text='GOLDENROD CITY\\nThe Festive City of\\nOpulent Charm',
+        connections=[('MAP_ROUTE35', 10, 'up'), ('MAP_ROUTE34', 10, 'down')]),
 }
 
 SIGN_TEXT = {
@@ -452,6 +521,25 @@ def convert(name):
                 sem[by + dy][bx + dx] = 'X'
                 if tsets[sec].attr(v & 0x3FF) & 0x1FF in DOOR_BEHAVIORS:
                     doors.append((tname, bx + dx, by + dy))
+    # decorative doorless buildings: fill leftover X blocks (door metatiles -> neighbouring wall metatile)
+    for tname in cfg.get('xdeco', []):
+        lay, lw, lh, tx, ty, tw, th = TEMPLATES[tname]
+        src_l = json.load(open(os.path.join(REPO, 'data/layouts/layouts.json')))['layouts']
+        sec = next(l['secondary_tileset'] for l in src_l if l['blockdata_filepath'].endswith('/' + lay + '/map.bin'))
+        tb = load_blocks(lay, lw, lh)
+        if sec not in tsets:
+            tsets[sec] = Tilesets(tileset_dir('gTileset_General_Frlg', True), tileset_dir(sec))
+        isdoor = lambda v: tsets[sec].attr(v & 0x3FF) & 0x1FF in DOOR_BEHAVIORS
+        for by in range(H - th + 1):
+            for bx in range(W - tw + 1):
+                if all(sem[by + dy][bx + dx] == 'X' and out[by + dy][bx + dx] is None
+                       for dy in range(th) for dx in range(tw)):
+                    for dy in range(th):
+                        for dx in range(tw):
+                            v = tb[ty + dy][tx + dx]
+                            if isdoor(v): v = tb[ty + dy][tx + dx - 1]
+                            out[by + dy][bx + dx] = v
+                    notes['xdeco'].append((tname, bx, by))
     bmask = [[out[y][x] is not None for x in range(W)] for y in range(H)]
     for y in range(H):
         for x in range(W):
@@ -587,6 +675,8 @@ def convert(name):
                 raise SystemExit('%s: unhandled class %r at %d,%d' % (name, c, x, y))
 
     scells = {(x, y) for y in range(H) for x in range(W) if sem[y][x] == 'S'}
+    if cfg['signs'] == 'auto':      # phase 6: generic sign text for every sign cell
+        cfg['signs'] = {c: 'SIGN' for c in scells}
     if scells != set(cfg['signs']):
         raise SystemExit('%s: sign cells %s != configured %s' % (name, sorted(scells), sorted(cfg['signs'])))
 
@@ -630,7 +720,7 @@ def write_map_json(name, cfg, W, H):
         bg.append({'type': 'sign', 'x': x, 'y': y, 'elevation': 0,
                    'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY', 'script': sc})
         scripts.append('%s::\n\tmsgbox %s, MSGBOX_SIGN\n\tend\n' % (sc, tx))
-        lines = SIGN_TEXT[(name, key)].replace('\\p', '\\p\n').replace('\\n', '\\n\n').split('\n')
+        lines = SIGN_TEXT.get((name, key), cfg.get('sign_text', name.upper())).replace('\\p', '\\p\n').replace('\\n', '\\n\n').split('\n')
         body = '\n'.join('\t.string "%s%s"' % (ln, '$' if i == len(lines) - 1 else '') for i, ln in enumerate(lines))
         texts.append('%s::\n%s\n' % (tx, body))
     j = {

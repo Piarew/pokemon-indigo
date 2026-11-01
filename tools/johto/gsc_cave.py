@@ -88,6 +88,19 @@ GROUPS = {
                    flash=False, level={'BurnedTower1F': 1, 'BurnedTowerB1F': 0},
                    outside=['EcruteakCity'], outpos={('EcruteakCity', 12): (5, 6)}, enc={},
                    comps={n: 'auto' for n in ['BurnedTower1F', 'BurnedTowerB1F']}),
+    # Phase 6 chunk 8: Union Cave (Ruins of Alph exits dropped: not built) and Slowpoke Well.
+    'union': dict(maps=['UnionCave1F', 'UnionCaveB1F', 'UnionCaveB2F'], secondary='gTileset_CeruleanCave',
+                  refs=['CeruleanCave_1F_Frlg', 'CeruleanCave_2F_Frlg', 'CeruleanCave_B1F_Frlg'],
+                  music='MUS_RG_MT_MOON', mapsec='MAPSEC_MT_MOON', flash=False,
+                  level={'UnionCave1F': 2, 'UnionCaveB1F': 1, 'UnionCaveB2F': 0},
+                  outside=['Route32', 'Route33'], drop={'RuinsOfAlphOutside'}, enc={},
+                  comps={n: 'auto' for n in ['UnionCave1F', 'UnionCaveB1F', 'UnionCaveB2F']}),
+    'slowpoke': dict(maps=['SlowpokeWellB1F', 'SlowpokeWellB2F'], secondary='gTileset_CeruleanCave',
+                     refs=['CeruleanCave_1F_Frlg', 'CeruleanCave_2F_Frlg', 'CeruleanCave_B1F_Frlg'],
+                     music='MUS_RG_MT_MOON', mapsec='MAPSEC_MT_MOON', flash=False,
+                     level={'SlowpokeWellB1F': 1, 'SlowpokeWellB2F': 0, 'AzaleaTown': 2},
+                     outside=['AzaleaTown'], enc={},
+                     comps={n: 'auto' for n in ['SlowpokeWellB1F', 'SlowpokeWellB2F']}),
     # Tin (Bell) Tower stand-in: 1F + Roof only; the 1F ladder goes straight to the Roof (2F-9F warp-panel maze TODO).
     'tin': dict(maps=['TinTower1F', 'TinTowerRoof'], secondary='gTileset_PokemonTower',
                 refs=TOWER_REFS, tiles=TOWER_TILES, music='MUS_RG_POKE_TOWER', mapsec='MAPSEC_POKEMON_TOWER',
@@ -214,6 +227,8 @@ def build(cfg, name, L):
     warps = []
     for i, (x, y, dc, di) in enumerate(m.warps):
         dn = CONST2NAME[dc]
+        if dn in cfg.get('drop', ()):        # destination not built (e.g. Ruins of Alph): TODO, warp left out
+            print('  note: %s drops warp %d at (%d,%d) -> %s (not built)' % (name, i, x, y, dn)); continue
         if m.coll[y][x] not in WARP_C:      # pits / hole landing spots (Burned Tower): field-move policy drops them
             print('  note: %s drops warp %d at (%d,%d) on %s -> %s' % (name, i, x, y, m.coll[y][x], dn)); continue
         k = warp_kind(m, x, y, dn, cfg['level'])
