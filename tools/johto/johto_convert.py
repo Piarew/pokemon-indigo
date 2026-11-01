@@ -77,6 +77,23 @@ _set('VR', 127, 128, 158)                # rock line right (128/158 also carry a
 _set('VL', 159)
 _set('L', 157, 160)
 _set('X', 161)                           # Route 29/46 gate roof
+# phase 6 chunk 6+ (Lake of Rage, Routes 33-39, Azalea, Olivine, Cianwood)
+_set('X', 315, 316, 317, 327, 328, 329, *range(331, 341), *range(346, 355), *range(355, 369), *range(501, 518))
+_set('T', 318, 319, 321, 323, 324)
+_set('M', 320, 369, 370, 373, 375)
+_set('L', 322)
+_set('U', 341, 342, 343, 344, 345)        # wooden fences -> bush/obstacle stand-in
+_set('P', 325, 326, 330, 371, 374, 376)
+_set('C', 372)                            # Slowpoke Well mouth
+# Ilex Forest (own palette)
+_set('T', 377, 378, 379, 380, 384)
+_set('X', 381, 382, 383, 387, 388, 389, *range(391, 398), *range(399, 406))
+_set('G', 385, 419)                       # 419 = Cut tree -> floor (field-move policy keeps the forest passable)
+_set('F', 386, 390)
+_set('U', 398, 412, 414, 415, 416, 417, 418)   # rock rows, shrine
+_set('W', *range(406, 412))
+_set('S', 413)
+_set('P', 420)
 
 # ------------------------------------------------------------------ FRLG metatiles
 FOREST_TOP, FOREST_BOT, FOREST_TRUNK = (0x01C, 0x01D), (0x014, 0x015), (0x024, 0x025)
@@ -130,6 +147,10 @@ DOOR_BEHAVIORS = {0x60, 0x69}
 
 # ------------------------------------------------------------------ per-map configuration
 BASE = 'https://archives.bulbagarden.net/media/upload/'
+def bp(fname):      # MediaWiki upload path: BASE + md5[0]/md5[:2]/name
+    import hashlib
+    h = hashlib.md5(fname.encode()).hexdigest()
+    return BASE + '%s/%s/%s' % (h[0], h[:2], fname)
 TOWN = dict(map_type='MAP_TYPE_TOWN', music='MUS_RG_PEWTER', path='grey')
 ROUTE = dict(map_type='MAP_TYPE_ROUTE', music='MUS_RG_ROUTE1', path='sand')
 MAPS = {
@@ -188,7 +209,13 @@ MAPS = {
         buildings=[('vir_house', 15, 32)],   # toll gatehouse -> house stand-in
         overrides=[((8, 51), (11, 53), 'P')],   # Mahogany gate straddles the edge -> path
         signs={(13, 3): 'LAKE_OF_RAGE', (16, 38): 'R43', (11, 49): 'TRAINER_TIPS'},
-        connections=[('MAP_MAHOGANY_TOWN', 0, 'down')]),
+        connections=[('MAP_MAHOGANY_TOWN', 0, 'down'), ('MAP_LAKE_OF_RAGE', -10, 'up')]),
+    'LakeOfRage': dict(ROUTE, src='Lake_of_Rage_GSC.png', url=bp('Lake_of_Rage_GSC.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, music='MUS_RG_ROUTE3', xfill='G',
+        buildings=[('vir_house', 6, 0), ('vir_house', 26, 28)],   # Hidden Power house, Magikarp house
+        overrides=[((11, 35), (11, 35), 'T')], signs={(21, 27): 'LAKE', (25, 31): 'FISHING'},
+        cut_paths=[((10, 35), (7, 4))],     # Cut-tree maze: open the fewest bushes to the Hidden Power house
+        connections=[('MAP_ROUTE43', 10, 'down')]),
     'Route44': dict(ROUTE, src='Johto_Route_44_GSC.png', url=BASE + '7/7d/Johto_Route_44_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_ROUTE3', xfill='G',
         buildings=[],
@@ -197,11 +224,11 @@ MAPS = {
         signs={(6, 10): 'R44', (53, 7): 'ICE_PATH'},
         connections=[('MAP_MAHOGANY_TOWN', 0, 'left'), ('MAP_BLACKTHORN_CITY', -18, 'right')]),
     # ---------------------------------------------------------------- phase 6
-    'Route45': dict(ROUTE, src='Johto_Route_45_GSC.png', url=BASE + 'Johto_Route_45_GSC.png',
+    'Route45': dict(ROUTE, src='Johto_Route_45_GSC.png', url=bp('Johto_Route_45_GSC.png'),
         secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_ROUTE3', xfill='G',
         buildings=[], overrides=[], signs={(10, 4): 'R45'},
         connections=[('MAP_BLACKTHORN_CITY', 0, 'up'), ('MAP_ROUTE46', 72, 'left')]),
-    'Route46': dict(ROUTE, src='Johto_Route_46_GSC.png', url=BASE + 'Johto_Route_46_GSC.png',
+    'Route46': dict(ROUTE, src='Johto_Route_46_GSC.png', url=bp('Johto_Route_46_GSC.png'),
         secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_ROUTE1', xfill='M',
         buildings=[], overrides=[], signs={(9, 27): 'R46'},
         connections=[('MAP_ROUTE29', -20, 'down'), ('MAP_ROUTE45', -72, 'right')]),
@@ -303,6 +330,8 @@ SIGN_TEXT = {
     ('Route43', 'R43'): 'ROUTE 43',
     ('Route43', 'LAKE_OF_RAGE'): 'LAKE OF RAGE\\nNORTH TO LAKE OF RAGE',
     ('Route43', 'TRAINER_TIPS'): 'TRAINER TIPS',
+    ('LakeOfRage', 'LAKE'): 'LAKE OF RAGE\nalso known as GYARADOS LAKE',
+    ('LakeOfRage', 'FISHING'): "FISHING GURU'S HOUSE",
     ('Route44', 'R44'): 'ROUTE 44\\nMAHOGANY TOWN - BLACKTHORN CITY',
     ('Route44', 'ICE_PATH'): 'ICE PATH AHEAD',
     ('Route36', 'R37'): 'ROUTE 37',
@@ -373,13 +402,32 @@ def convert(name):
     if unknown:
         raise SystemExit('%s: unclassified cell ids %s' % (name, unknown))
     sem = [[CLASS[c] for c in row] for row in grid]
+    notes = collections.defaultdict(list)
     for (x0, y0), (x1, y1), cls in cfg['overrides']:
         for y in range(y0, y1 + 1):
             for x in range(x0, x1 + 1):
                 sem[y][x] = cls
+    for start, goal in cfg.get('cut_paths', []):    # GSC Cut-tree mazes: open the fewest bushes (U) start->goal
+        import heapq
+        best = {start: 0}; prev = {}; pq = [(0, start)]
+        while pq:
+            dist, (x, y) = heapq.heappop(pq)
+            if (x, y) == goal: break
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                nx, ny = x + dx, y + dy
+                if not (0 <= nx < W and 0 <= ny < H): continue
+                c = sem[ny][nx]
+                step = 0.01 if c in ('P', 'G', 'F', 'H', 'W') or (nx, ny) == goal else (1 if c == 'U' else None)
+                if step is None or dist + step >= best.get((nx, ny), 1e9): continue
+                best[(nx, ny)] = dist + step; prev[(nx, ny)] = (x, y); heapq.heappush(pq, (dist + step, (nx, ny)))
+        assert goal in prev, (name, 'cut path', start, goal)
+        cur = goal; opened = []
+        while cur != start:
+            if sem[cur[1]][cur[0]] == 'U': sem[cur[1]][cur[0]] = 'G'; opened.append(cur)
+            cur = prev[cur]
+        notes['cut_trees_opened'].extend(opened)
     attrs = common_attrs(cfg['secondary'])
     out = [[None] * W for _ in range(H)]
-    notes = collections.defaultdict(list)
 
     # ---- buildings
     doors = []

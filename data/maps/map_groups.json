@@ -939,7 +939,8 @@
     "Route36",
     "Route37",
     "Route45",
-    "Route46"
+    "Route46",
+    "LakeOfRage"
   ],
   "gMapGroup_IndoorPallet_Frlg": [
     "PalletTown_PlayersHouse_1F_Frlg",
@@ -1234,6 +1235,8 @@
     "Route30_MrPokemonsHouse",
     "Route30_BerryHouse",
     "Route43_TollGate",
+    "LakeOfRage_HiddenPowerHouse",
+    "LakeOfRage_MagikarpHouse",
     "Route36_NationalParkGate",
     "Route36_RuinsOfAlphGate",
     "SilverCaveOutside_PokemonCenter_1F",

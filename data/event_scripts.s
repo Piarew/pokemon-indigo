@@ -920,10 +920,13 @@ gStdScripts_End::
 	.include "data/maps/Route30_MrPokemonsHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/Route30_BerryHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/Route43_TollGate/scripts.inc"  @ johto-interior
+	.include "data/maps/LakeOfRage_HiddenPowerHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/LakeOfRage_MagikarpHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/Route36_NationalParkGate/scripts.inc"  @ johto-interior
 	.include "data/maps/Route36_RuinsOfAlphGate/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/LakeOfRage/scripts.inc"
 	.include "data/maps/MountMortar1FOutside/scripts.inc"
 	.include "data/maps/MountMortar1FInside/scripts.inc"
 	.include "data/maps/MountMortar2FInside/scripts.inc"

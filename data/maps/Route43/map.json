@@ -19,6 +19,11 @@
       "map": "MAP_MAHOGANY_TOWN",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_LAKE_OF_RAGE",
+      "offset": -10,
+      "direction": "up"
     }
   ],
   "object_events": [],

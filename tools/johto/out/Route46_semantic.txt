@@ -1,4 +1,4 @@
-# Route46 20x36  source https://archives.bulbagarden.net/media/upload/Johto_Route_46_GSC.png
+# Route46 20x36  source https://archives.bulbagarden.net/media/upload/e/e7/Johto_Route_46_GSC.png
 # T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
 # M mountain C cave L ledge VL/VR side ledge S sign X building
 M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 

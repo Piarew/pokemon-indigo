@@ -68,6 +68,7 @@ DOORS = {
     'Route29': [(27, 3, 'nsgate', 'Route46Gate')],
     'Route30': [(16, 5, 'vhouse', 'MrPokemonsHouse'), (7, 39, 'vhouse', 'BerryHouse')],
     'Route43': [(16, 35, 'vhouse', 'TollGate')],
+    'LakeOfRage': [(7, 3, 'vhouse', 'HiddenPowerHouse'), (27, 31, 'vhouse', 'MagikarpHouse')],
     'Route36': [(15, 9, 'vhouse', 'NationalParkGate'), (47, 16, 'vhouse', 'RuinsOfAlphGate')],
     'SilverCaveOutside': [(23, 19, 'pc', None)],
 }
