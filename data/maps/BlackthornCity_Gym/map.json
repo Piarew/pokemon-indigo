@@ -22,21 +22,21 @@
       "y": 23,
       "elevation": 3,
       "dest_map": "MAP_BLACKTHORN_CITY",
-      "dest_warp_id": "1"
+      "dest_warp_id": "2"
     },
     {
       "x": 25,
       "y": 23,
       "elevation": 3,
       "dest_map": "MAP_BLACKTHORN_CITY",
-      "dest_warp_id": "1"
+      "dest_warp_id": "2"
     },
     {
       "x": 26,
       "y": 23,
       "elevation": 3,
       "dest_map": "MAP_BLACKTHORN_CITY",
-      "dest_warp_id": "1"
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

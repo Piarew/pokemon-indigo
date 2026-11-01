@@ -72,6 +72,11 @@ _set('X', *range(196, 230), 235, 236, 237, 240, 241, 242, 244, 245, 246, 247,
 _set('L', 256, 263, 264, 265, 271, 272, 300, 301, 302, 303, 311)
 _set('S', 257, 284)
 _set('H', 261)
+# phase 6 (Routes 32/45/46)
+_set('VR', 127, 128, 158)                # rock line right (128/158 also carry a ledge corner)
+_set('VL', 159)
+_set('L', 157, 160)
+_set('X', 161)                           # Route 29/46 gate roof
 
 # ------------------------------------------------------------------ FRLG metatiles
 FOREST_TOP, FOREST_BOT, FOREST_TRUNK = (0x01C, 0x01D), (0x014, 0x015), (0x024, 0x025)
@@ -136,7 +141,7 @@ MAPS = {
         overrides=[((0, 28), (1, 29), 'P'), ((4, 23), (4, 23), 'C')],   # (4,23): Diglett's Cave mouth (phase 5)
         signs={(21, 3): 'DRAGONS_DEN', (17, 13): 'GYM', (34, 24): 'CITY', (5, 25): 'MOVE_DELETER',
                (7, 31): 'TRAINER_TIPS'},
-        connections=[('MAP_ROUTE44', 18, 'left')]),
+        connections=[('MAP_ROUTE44', 18, 'left'), ('MAP_ROUTE45', 0, 'down')]),
     'MahoganyTown': dict(TOWN, src='Mahogany_Town_GSC.png', url=BASE + '0/03/Mahogany_Town_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_LAVENDER', xfill='P',
         buildings=[('vir_gym', 4, 9), ('vir_pc', 13, 10), ('vir_mart', 10, 4), ('vir_house', 15, 4)],
@@ -155,10 +160,10 @@ MAPS = {
         connections=[('MAP_ROUTE31', 18, 'right'), ('MAP_ROUTE36', 0, 'left')]),
     'Route29': dict(ROUTE, src='Johto_Route_29_GSC.png', url=BASE + 'c/ce/Johto_Route_29_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
-        buildings=[('vir_house', 26, 0)],   # Route 46 gatehouse -> house stand-in
+        buildings=[('vir_house', 26, 0)],   # Route 46 gatehouse exterior (interior: FRLG N/S gate, johto_gates.py)
         overrides=[],
         signs={(3, 5): 'R29_W', (51, 7): 'R29_E'},
-        connections=[('MAP_CHERRYGROVE_CITY', 0, 'left'), ('MAP_NEW_BARK_TOWN', 0, 'right')]),
+        connections=[('MAP_CHERRYGROVE_CITY', 0, 'left'), ('MAP_NEW_BARK_TOWN', 0, 'right'), ('MAP_ROUTE46', 20, 'up')]),
     'Route30': dict(ROUTE, src='Johto_Route_30_GSC.png', url=BASE + 'c/c5/Johto_Route_30_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
         buildings=[('vir_house', 15, 2), ('vir_house', 6, 36)],   # Mr. Pokemon's house, berry house
@@ -191,6 +196,15 @@ MAPS = {
         overrides=[((58, 10), (59, 11), 'P')],
         signs={(6, 10): 'R44', (53, 7): 'ICE_PATH'},
         connections=[('MAP_MAHOGANY_TOWN', 0, 'left'), ('MAP_BLACKTHORN_CITY', -18, 'right')]),
+    # ---------------------------------------------------------------- phase 6
+    'Route45': dict(ROUTE, src='Johto_Route_45_GSC.png', url=BASE + 'Johto_Route_45_GSC.png',
+        secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_ROUTE3', xfill='G',
+        buildings=[], overrides=[], signs={(10, 4): 'R45'},
+        connections=[('MAP_BLACKTHORN_CITY', 0, 'up'), ('MAP_ROUTE46', 72, 'left')]),
+    'Route46': dict(ROUTE, src='Johto_Route_46_GSC.png', url=BASE + 'Johto_Route_46_GSC.png',
+        secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_ROUTE1', xfill='M',
+        buildings=[], overrides=[], signs={(9, 27): 'R46'},
+        connections=[('MAP_ROUTE29', -20, 'down'), ('MAP_ROUTE45', -72, 'right')]),
     # ---------------------------------------------------------------- phase 3
     'EcruteakCity': dict(TOWN, src='Ecruteak_City_C.png', url=BASE + '0/0e/Ecruteak_City_C.png',
         secondary='gTileset_FuchsiaCity', border=BORDER_FOREST, music='MUS_RG_FUCHSIA', xfill='P',
@@ -274,6 +288,8 @@ SIGN_TEXT = {
     ('VioletCity', 'SCHOOL'): "EARL'S POKéMON ACADEMY",
     ('VioletCity', 'TRAINER_TIPS'): 'TRAINER TIPS',
     ('VioletCity', 'HOUSE'): "VIOLET CITY",
+    ('Route45', 'R45'): 'ROUTE 45\\nMOUNTAIN ROAD',
+    ('Route46', 'R46'): 'ROUTE 46\\nMOUNTAIN ROAD AHEAD',
     ('Route29', 'R29_W'): 'ROUTE 29\\nCHERRYGROVE CITY - NEW BARK TOWN',
     ('Route29', 'R29_E'): 'ROUTE 29\\nCHERRYGROVE CITY - NEW BARK TOWN',
     ('Route30', 'R30'): 'ROUTE 30\\nVIOLET CITY - CHERRYGROVE CITY',

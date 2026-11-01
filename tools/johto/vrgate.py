@@ -37,10 +37,13 @@ save(R26, g26)
 
 DOORS = [(14, 5), (15, 5)]
 p = os.path.join(REPO, 'data/maps/Route26/map.json'); mj = json.load(open(p))
-mj['warp_events'] = [w for w in mj['warp_events'] if w['dest_map'] != 'MAP_VICTORY_ROAD_GATE']
-base = len(mj['warp_events'])
-for x, y in DOORS:
-    mj['warp_events'].append({"x": x, "y": y, "elevation": 0, "dest_map": "MAP_VICTORY_ROAD_GATE", "dest_warp_id": "1"})
+old = [i for i, w in enumerate(mj['warp_events']) if w['dest_map'] == 'MAP_VICTORY_ROAD_GATE']
+base = old[0] if old else len(mj['warp_events'])   # replace in place: other warp indices stay stable on re-runs
+assert not old or old == [base, base + 1], old
+for k, (x, y) in enumerate(DOORS):
+    w = {"x": x, "y": y, "elevation": 0, "dest_map": "MAP_VICTORY_ROAD_GATE", "dest_warp_id": "1"}
+    if old: mj['warp_events'][base + k] = w
+    else: mj['warp_events'].append(w)
 open(p, 'w').write(json.dumps(mj, indent=2) + '\n')
 
 t = json.load(open(os.path.join(REPO, 'data/maps/Route22_NorthEntrance_Frlg/map.json')))

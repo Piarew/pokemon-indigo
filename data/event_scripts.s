@@ -869,17 +869,6 @@ gStdScripts_End::
 	.include "data/maps/Route27/scripts.inc"
 	.include "data/maps/Route28/scripts.inc"
 	.include "data/maps/SilverCaveOutside/scripts.inc"
-	.include "data/maps/IcePath_1F/scripts.inc"
-	.include "data/maps/IcePath_B1F/scripts.inc"
-	.include "data/maps/IcePath_B2F_MahoganySide/scripts.inc"
-	.include "data/maps/IcePath_B2F_BlackthornSide/scripts.inc"
-	.include "data/maps/IcePath_B3F/scripts.inc"
-	.include "data/maps/SilverCaveRoom1/scripts.inc"
-	.include "data/maps/SilverCaveRoom2/scripts.inc"
-	.include "data/maps/SilverCaveRoom3/scripts.inc"
-	.include "data/maps/SilverCaveItemRooms/scripts.inc"
-	.include "data/maps/TohjoFalls/scripts.inc"
-	.include "data/maps/VictoryRoadGate/scripts.inc"
 	.include "data/maps/CherrygroveCity_Mart/scripts.inc"  @ johto-interior
 	.include "data/maps/CherrygroveCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/CherrygroveCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
@@ -935,6 +924,21 @@ gStdScripts_End::
 	.include "data/maps/Route36_RuinsOfAlphGate/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/DarkCaveVioletEntrance/scripts.inc"
+	.include "data/maps/DarkCaveBlackthornEntrance/scripts.inc"
+	.include "data/maps/IcePath_1F/scripts.inc"
+	.include "data/maps/IcePath_B1F/scripts.inc"
+	.include "data/maps/IcePath_B2F_MahoganySide/scripts.inc"
+	.include "data/maps/IcePath_B2F_BlackthornSide/scripts.inc"
+	.include "data/maps/IcePath_B3F/scripts.inc"
+	.include "data/maps/SilverCaveRoom1/scripts.inc"
+	.include "data/maps/SilverCaveRoom2/scripts.inc"
+	.include "data/maps/SilverCaveRoom3/scripts.inc"
+	.include "data/maps/SilverCaveItemRooms/scripts.inc"
+	.include "data/maps/TohjoFalls/scripts.inc"
+	.include "data/maps/VictoryRoadGate/scripts.inc"
+	.include "data/maps/Route45/scripts.inc"
+	.include "data/maps/Route46/scripts.inc"
 	.include "data/maps/DiglettsCave_JohtoTunnel/scripts.inc"
 	.include "data/maps/DiglettsCave_BlackthornEntrance/scripts.inc"
 	.include "data/maps/Route36/scripts.inc"

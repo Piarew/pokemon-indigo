@@ -9713,6 +9713,58 @@
       "border_filepath": "data/layouts/TohjoFalls/border.bin",
       "blockdata_filepath": "data/layouts/TohjoFalls/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ROUTE45",
+      "name": "Route45_Layout",
+      "width": 20,
+      "height": 90,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/Route45/border.bin",
+      "blockdata_filepath": "data/layouts/Route45/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ROUTE46",
+      "name": "Route46_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/Route46/border.bin",
+      "blockdata_filepath": "data/layouts/Route46/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_VIOLET_ENTRANCE",
+      "name": "DarkCaveVioletEntrance_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/DarkCaveVioletEntrance/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCaveVioletEntrance/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_BLACKTHORN_ENTRANCE",
+      "name": "DarkCaveBlackthornEntrance_Layout",
+      "width": 30,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/DarkCaveBlackthornEntrance/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCaveBlackthornEntrance/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

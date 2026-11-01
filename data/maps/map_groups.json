@@ -937,7 +937,9 @@
     "Route28",
     "SilverCaveOutside",
     "Route36",
-    "Route37"
+    "Route37",
+    "Route45",
+    "Route46"
   ],
   "gMapGroup_IndoorPallet_Frlg": [
     "PalletTown_PlayersHouse_1F_Frlg",
@@ -1248,6 +1250,8 @@
     "SilverCaveRoom3",
     "SilverCaveItemRooms",
     "TohjoFalls",
+    "DarkCaveVioletEntrance",
+    "DarkCaveBlackthornEntrance",
     "VictoryRoadGate"
   ]
 }

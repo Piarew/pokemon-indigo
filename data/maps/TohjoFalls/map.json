@@ -22,14 +22,14 @@
       "y": 15,
       "elevation": 3,
       "dest_map": "MAP_ROUTE27",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     },
     {
       "x": 25,
       "y": 15,
       "elevation": 3,
       "dest_map": "MAP_ROUTE27",
-      "dest_warp_id": "2"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

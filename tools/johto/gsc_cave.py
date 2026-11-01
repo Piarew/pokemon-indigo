@@ -164,6 +164,17 @@ def build(cfg, name, L):
             if m.coll[y][x] in WARP_C: sem[y][x] = 'F'      # carpets/ladders without a warp: plain floor
             if m.coll[y][x] not in FLOOR_C | WATER_C | WARP_C | {'WALL', 'HEADBUTT_TREE', 'CUT_TREE'}:
                 print('  note: %s (%d,%d) collision %s -> wall' % (name, x, y, m.coll[y][x]))
+    # GSC ledges: the HOP cell is the one you stand on; you jump over the next cell (the ledge graphic, wall
+    # collision).  Ledges become floor, so the jumped-over cell becomes floor too (when the landing cell is open).
+    HOPS = {'HOP_DOWN': [(0, 1)], 'HOP_LEFT': [(-1, 0)], 'HOP_RIGHT': [(1, 0)],
+            'HOP_DOWN_LEFT': [(0, 1), (-1, 0)], 'HOP_DOWN_RIGHT': [(0, 1), (1, 0)]}
+    for y in range(H):
+        for x in range(W):
+            for dx, dy in HOPS.get(m.coll[y][x], []):
+                ax, ay, bx, by = x + dx, y + dy, x + 2 * dx, y + 2 * dy
+                if 0 <= bx < W and 0 <= by < H and sem[ay][ax] == 'W' and m.coll[ay][ax] == 'WALL' \
+                        and m.coll[by][bx] in FLOOR_C | WARP_C:
+                    sem[ay][ax] = 'F'
     warps = []
     for i, (x, y, dc, di) in enumerate(m.warps):
         dn = CONST2NAME[dc]

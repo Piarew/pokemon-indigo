@@ -36,6 +36,7 @@ KINDS = {
     'dojo':     [(None, 'SaffronCity_Dojo_Frlg')],
     'lab':      [(None, 'PalletTown_ProfessorOaksLab_Frlg')],
     'players':  [('_1F', 'PalletTown_PlayersHouse_1F_Frlg'), ('_2F', 'PalletTown_PlayersHouse_2F_Frlg')],
+    'nsgate':   [(None, 'Route5_SouthEntrance_Frlg')],   # N/S gate: exits 0,2 south (outside door), 1,3 north (johto_gates.py)
     'gym_pewter':   [('Gym', 'PewterCity_Gym_Frlg')],
     'gym_viridian': [('Gym', 'ViridianCity_Gym_Frlg')],
     'gym_fuchsia':  [('Gym', 'FuchsiaCity_Gym_Frlg')],
@@ -64,7 +65,7 @@ DOORS = {
     'Route26': [(15, 57, 'vhouse', 'HealHouse'), (5, 71, 'vhouse', 'DayOfWeekSiblingsHouse')],
     'Route27': [(32, 7, 'vhouse', 'SandstormHouse')],
     'Route28': [(7, 3, 'vhouse', 'SteelWingHouse')],
-    'Route29': [(27, 3, 'vhouse', 'Route46Gate')],
+    'Route29': [(27, 3, 'nsgate', 'Route46Gate')],
     'Route30': [(16, 5, 'vhouse', 'MrPokemonsHouse'), (7, 39, 'vhouse', 'BerryHouse')],
     'Route43': [(16, 35, 'vhouse', 'TollGate')],
     'Route36': [(15, 9, 'vhouse', 'NationalParkGate'), (47, 16, 'vhouse', 'RuinsOfAlphGate')],

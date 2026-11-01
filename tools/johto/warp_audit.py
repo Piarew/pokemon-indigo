@@ -17,6 +17,8 @@ from tsdir import tileset_dir
 JOHTO = ['CherrygroveCity', 'BlackthornCity', 'MahoganyTown', 'VioletCity', 'EcruteakCity', 'NewBarkTown',
          'Route26', 'Route27', 'Route28', 'Route29', 'Route30', 'Route31', 'Route42', 'Route43', 'Route44', 'Route36', 'Route37',
          'SilverCaveOutside']
+from johto_convert import MAPS as _CONVERTED      # every converted outdoor map (keeps the list in sync)
+JOHTO += [n for n in _CONVERTED if n not in JOHTO]
 NAMES = re.findall(r'^\s*(MB_\w+)', open(os.path.join(REPO, 'include/constants/metatile_behaviors.h')).read(), re.M)
 WARPY = {'MB_NON_ANIMATED_DOOR', 'MB_ANIMATED_DOOR', 'MB_LADDER', 'MB_SOUTH_ARROW_WARP', 'MB_NORTH_ARROW_WARP',
          'MB_EAST_ARROW_WARP', 'MB_WEST_ARROW_WARP', 'MB_UP_RIGHT_STAIR_WARP', 'MB_UP_LEFT_STAIR_WARP',
@@ -28,7 +30,6 @@ TODO_ALLOW = {
     ('EcruteakCity', 5, 6): 'Burned Tower (TODO)',
     ('EcruteakCity', 18, 11): 'Tin Tower entrance (TODO)',
     ('EcruteakCity', 36, 7): 'Bell/Tin Tower stand-in (TODO)',
-    ('Route31', 34, 5): 'Dark Cave (TODO)',
     ('Route42', 10, 5): 'Mt. Mortar (TODO)',
     ('Route42', 28, 9): 'Mt. Mortar (TODO)',
     ('Route42', 46, 7): 'Mt. Mortar (TODO)',
