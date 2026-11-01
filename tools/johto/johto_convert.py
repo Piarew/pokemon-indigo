@@ -556,7 +556,14 @@ def write_map_json(name, cfg, W, H):
         'connections': [{'map': m, 'offset': o, 'direction': d} for m, o, d in cfg['connections']] or None,
         'object_events': [], 'warp_events': [], 'coord_events': [], 'bg_events': bg,
     }
-    with open(os.path.join(md, 'map.json'), 'w') as f:
+    # keep hand/tool-authored events (warps from interiors.py, cave warps, objects) across re-conversion
+    mp = os.path.join(md, 'map.json')
+    if os.path.exists(mp):
+        prev = json.load(open(mp))
+        for k in ('warp_events', 'object_events', 'coord_events'):
+            if prev.get(k):
+                j[k] = prev[k]
+    with open(mp, 'w') as f:
         f.write(json.dumps(j, indent=2, ensure_ascii=False) + '\n')
     with open(os.path.join(md, 'scripts.inc'), 'w') as f:
         f.write('%s_MapScripts::\n\t.byte 0\n\n' % name)
