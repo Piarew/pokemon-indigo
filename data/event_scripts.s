@@ -961,6 +961,7 @@ gStdScripts_End::
 	.include "data/maps/OlivineCity_PunishmentSpeechHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_GoodRodHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_Cafe/scripts.inc"  @ johto-interior
+	.include "data/maps/CyclingRoadWest/scripts.inc"
 	.include "data/maps/MortarTrail/scripts.inc"
 	.include "data/maps/GoldenrodCity/scripts.inc"
 	.include "data/maps/OlivineCity/scripts.inc"

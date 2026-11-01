@@ -10168,6 +10168,19 @@
       "border_filepath": "data/layouts/MortarTrail/border.bin",
       "blockdata_filepath": "data/layouts/MortarTrail/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_CYCLING_ROAD_WEST",
+      "name": "CyclingRoadWest_Layout",
+      "width": 64,
+      "height": 26,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeladonCity",
+      "border_filepath": "data/layouts/CyclingRoadWest/border.bin",
+      "blockdata_filepath": "data/layouts/CyclingRoadWest/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

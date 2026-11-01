@@ -12,3 +12,5 @@ python3 johto_gates.py
 python3 johto_wild.py
 python3 warp_audit.py
 python3 check_edges.py
+python3 cycling_west.py
+python3 check_edges.py CyclingRoadWest Route16_Frlg ViridianCity_Frlg

@@ -1,0 +1,87 @@
+{
+  "id": "MAP_CYCLING_ROAD_WEST",
+  "name": "CyclingRoadWest",
+  "layout": "LAYOUT_CYCLING_ROAD_WEST",
+  "music": "MUS_RG_CYCLING",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_ROUTE_16",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_VIRIDIAN_CITY",
+      "offset": -4,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE16",
+      "offset": -6,
+      "direction": "right"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE16",
+      "var_value": "0",
+      "script": "CyclingRoadWest_EventScript_EnterCyclingRoad"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE16",
+      "var_value": "1",
+      "script": "EventScript_SetExitingCyclingRoad"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE16",
+      "var_value": "0",
+      "script": "CyclingRoadWest_EventScript_EnterCyclingRoad"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE16",
+      "var_value": "1",
+      "script": "EventScript_SetExitingCyclingRoad"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CyclingRoadWest_EventScript_WestSign"
+    },
+    {
+      "type": "sign",
+      "x": 47,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CyclingRoadWest_EventScript_EastSign"
+    }
+  ]
+}
