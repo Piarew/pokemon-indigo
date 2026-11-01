@@ -46,7 +46,7 @@
       "x": 17,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE_1",
+      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
@@ -60,7 +60,7 @@
       "x": 31,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE_2",
+      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE2",
       "dest_warp_id": "0"
     }
   ],

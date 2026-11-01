@@ -19,6 +19,11 @@
       "map": "MAP_ROUTE42",
       "offset": 18,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE37",
+      "offset": 10,
+      "direction": "down"
     }
   ],
   "object_events": [],
@@ -55,28 +60,28 @@
       "x": 12,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_ECRUTEAK_CITY_HOUSE_1",
+      "dest_map": "MAP_ECRUTEAK_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_ECRUTEAK_CITY_HOUSE_2",
+      "dest_map": "MAP_ECRUTEAK_CITY_HOUSE2",
       "dest_warp_id": "0"
     },
     {
       "x": 13,
       "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_ECRUTEAK_CITY_HOUSE_3",
+      "dest_map": "MAP_ECRUTEAK_CITY_HOUSE3",
       "dest_warp_id": "0"
     },
     {
       "x": 29,
       "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_ECRUTEAK_CITY_HOUSE_4",
+      "dest_map": "MAP_ECRUTEAK_CITY_HOUSE4",
       "dest_warp_id": "0"
     },
     {

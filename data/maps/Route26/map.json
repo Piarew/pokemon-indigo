@@ -32,14 +32,14 @@
       "x": 15,
       "y": 57,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE_26_HEAL_HOUSE",
+      "dest_map": "MAP_ROUTE26_HEAL_HOUSE",
       "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 71,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE_26_DAY_OF_WEEK_SIBLINGS_HOUSE",
+      "dest_map": "MAP_ROUTE26_DAY_OF_WEEK_SIBLINGS_HOUSE",
       "dest_warp_id": "0"
     }
   ],

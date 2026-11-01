@@ -15,7 +15,7 @@ sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, '..', 'cherrygro
 from tsdir import tileset_dir
 
 JOHTO = ['CherrygroveCity', 'BlackthornCity', 'MahoganyTown', 'VioletCity', 'EcruteakCity', 'NewBarkTown',
-         'Route26', 'Route27', 'Route28', 'Route29', 'Route30', 'Route31', 'Route42', 'Route43', 'Route44',
+         'Route26', 'Route27', 'Route28', 'Route29', 'Route30', 'Route31', 'Route42', 'Route43', 'Route44', 'Route36', 'Route37',
          'SilverCaveOutside']
 NAMES = re.findall(r'^\s*(MB_\w+)', open(os.path.join(REPO, 'include/constants/metatile_behaviors.h')).read(), re.M)
 WARPY = {'MB_NON_ANIMATED_DOOR', 'MB_ANIMATED_DOOR', 'MB_LADDER', 'MB_SOUTH_ARROW_WARP', 'MB_NORTH_ARROW_WARP',
@@ -38,7 +38,7 @@ TODO_ALLOW = {
     ('Route44', 56, 7): 'Ice Path A side (phase 5 step 4)',
     ('SilverCaveOutside', 18, 11): 'Silver Cave (TODO)',
 }
-EXTRA = ['Route36', 'Route37', 'DiglettsCave_JohtoTunnel', 'DiglettsCave_BlackthornEntrance',
+EXTRA = ['DiglettsCave_JohtoTunnel', 'DiglettsCave_BlackthornEntrance',
          'IcePath_1F', 'IcePath_B1F', 'IcePath_B2F', 'IcePath_B3F']
 layouts = {l['id']: l for l in json.load(open(os.path.join(REPO, 'data/layouts/layouts.json')))['layouts'] if 'id' in l}
 all_maps = {}

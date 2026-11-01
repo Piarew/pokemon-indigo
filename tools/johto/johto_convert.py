@@ -49,6 +49,7 @@ _set('B0', 23, 139); _set('B1', 24, 140); _set('B2', 25, 141); _set('B3', 26, 14
 _set('M', 37, 40, 41, 42, 43, 45, 46, 49, 63, 64, 65, 90, 91, 92, 107, 108, 110,
      138, 143, 144, 145, 147, 155, 156)
 _set('C', 44, 109)
+_set('X', 121, 122)   # Route 32/36 gate side wall (phase 5)
 _set('L', 62, 69, 84, 85, 87)
 _set('VR', 81, 114)
 _set('VL', 86)
@@ -151,7 +152,7 @@ MAPS = {
         overrides=[((39, 24), (39, 25), 'P'), ((2, 26), (2, 26), 'P'), ((2, 30), (2, 30), 'S'), ((13, 17), (13, 17), 'S')],
         signs={(24, 8): 'SPROUT_TOWER', (13, 17): 'GYM', (27, 17): 'SCHOOL', (24, 20): 'CITY',
                (2, 30): 'TRAINER_TIPS', (4, 30): 'HOUSE'},
-        connections=[('MAP_ROUTE31', 18, 'right')]),
+        connections=[('MAP_ROUTE31', 18, 'right'), ('MAP_ROUTE36', 0, 'left')]),
     'Route29': dict(ROUTE, src='Johto_Route_29_GSC.png', url=BASE + 'c/ce/Johto_Route_29_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
         buildings=[('vir_house', 26, 0)],   # Route 46 gatehouse -> house stand-in
@@ -207,7 +208,7 @@ MAPS = {
                    ((36, 24), (39, 25), 'T'), ((35, 26), (39, 27), 'P')],   # Route 42 gate -> open path
         signs={(2, 10): 'BURNED_TOWER', (38, 10): 'TIN_TOWER', (15, 21): 'CITY', (21, 21): 'DANCE_THEATER',
                (8, 28): 'GYM'},
-        connections=[('MAP_ROUTE42', 18, 'right')]),
+        connections=[('MAP_ROUTE42', 18, 'right'), ('MAP_ROUTE37', 10, 'down')]),
     'NewBarkTown': dict(TOWN, src='New_Bark_Town_GSC.png', url=BASE + '5/54/New_Bark_Town_GSC.png',
         secondary='gTileset_PalletTown', border=BORDER_FOREST, music='MUS_RG_PALLET', xfill='P',
         buildings=[('pal_lab', 4, 0), ('pal_house', 12, 1), ('pal_house', 2, 9), ('pal_house', 10, 9)],
@@ -241,6 +242,21 @@ MAPS = {
         overrides=[],
         signs={(17, 13): 'MT_SILVER'},
         connections=[('MAP_ROUTE28', 18, 'right')]),
+    # ---------------------------------------------------------------- phase 5
+    'Route36': dict(ROUTE, src='Johto_Route_36_C.png', url=BASE + '1/18/Johto_Route_36_C.png',
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
+        # National Park gate -> house stand-in (door faces south, path carved to the main road);
+        # Ruins of Alph north gate -> house stand-in (its boulder pair becomes trees)
+        buildings=[('vir_house', 14, 6), ('vir_house', 46, 13)],
+        overrides=[((15, 10), (19, 10), 'P'), ((50, 14), (51, 15), 'T')],
+        signs={(29, 1): 'R37', (21, 7): 'NATIONAL_PARK', (55, 7): 'R36', (45, 11): 'RUINS_OF_ALPH'},
+        connections=[('MAP_ROUTE37', 20, 'up'), ('MAP_VIOLET_CITY', 0, 'right')]),
+    'Route37': dict(ROUTE, src='Johto_Route_37_GSC.png', url=BASE + 'a/a4/Johto_Route_37_GSC.png',
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
+        buildings=[],
+        overrides=[],
+        signs={(5, 3): 'R37'},
+        connections=[('MAP_ECRUTEAK_CITY', -10, 'up'), ('MAP_ROUTE36', -20, 'down')]),
 }
 
 SIGN_TEXT = {
@@ -273,6 +289,11 @@ SIGN_TEXT = {
     ('Route43', 'TRAINER_TIPS'): 'TRAINER TIPS',
     ('Route44', 'R44'): 'ROUTE 44\\nMAHOGANY TOWN - BLACKTHORN CITY',
     ('Route44', 'ICE_PATH'): 'ICE PATH AHEAD',
+    ('Route36', 'R37'): 'ROUTE 37',
+    ('Route36', 'NATIONAL_PARK'): 'ROUTE 36\\nNATIONAL PARK GATE',
+    ('Route36', 'R36'): 'ROUTE 36\\nVIOLET CITY',
+    ('Route36', 'RUINS_OF_ALPH'): 'RUINS OF ALPH\\nNORTH ENTRANCE',
+    ('Route37', 'R37'): 'ROUTE 37\\nECRUTEAK CITY AHEAD',
     ('EcruteakCity', 'CITY'): 'ECRUTEAK CITY\\nA Historical City\\pWhere the Past\\nMeets the Present',
     ('EcruteakCity', 'TIN_TOWER'): 'TIN TOWER\\pA legendary POKéMON is said to\\nroost here.',
     ('EcruteakCity', 'GYM'): 'ECRUTEAK CITY POKéMON GYM\\nLEADER: MORTY\\pThe Mystic Seer of\\nthe Future',

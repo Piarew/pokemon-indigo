@@ -935,7 +935,9 @@
     "Route26",
     "Route27",
     "Route28",
-    "SilverCaveOutside"
+    "SilverCaveOutside",
+    "Route36",
+    "Route37"
   ],
   "gMapGroup_IndoorPallet_Frlg": [
     "PalletTown_PlayersHouse_1F_Frlg",
@@ -1230,6 +1232,8 @@
     "Route30_MrPokemonsHouse",
     "Route30_BerryHouse",
     "Route43_TollGate",
+    "Route36_NationalParkGate",
+    "Route36_RuinsOfAlphGate",
     "SilverCaveOutside_PokemonCenter_1F",
     "SilverCaveOutside_PokemonCenter_2F"
   ]

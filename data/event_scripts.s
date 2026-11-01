@@ -920,8 +920,12 @@ gStdScripts_End::
 	.include "data/maps/Route30_MrPokemonsHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/Route30_BerryHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/Route43_TollGate/scripts.inc"  @ johto-interior
+	.include "data/maps/Route36_NationalParkGate/scripts.inc"  @ johto-interior
+	.include "data/maps/Route36_RuinsOfAlphGate/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/SilverCaveOutside_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/Route36/scripts.inc"
+	.include "data/maps/Route37/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_1F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_2F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_RivalsHouse_Frlg/scripts.inc"

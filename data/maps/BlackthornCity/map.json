@@ -48,14 +48,14 @@
       "x": 13,
       "y": 21,
       "elevation": 0,
-      "dest_map": "MAP_BLACKTHORN_CITY_HOUSE_1",
+      "dest_map": "MAP_BLACKTHORN_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
       "x": 29,
       "y": 23,
       "elevation": 0,
-      "dest_map": "MAP_BLACKTHORN_CITY_HOUSE_2",
+      "dest_map": "MAP_BLACKTHORN_CITY_HOUSE2",
       "dest_warp_id": "0"
     },
     {

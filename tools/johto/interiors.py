@@ -16,9 +16,8 @@ MAPS = os.path.join(REPO, 'data', 'maps')
 GROUP = 'gMapGroup_IndoorJohto'
 
 def snake_upper(n):
-    s = re.sub(r'(?<=[a-z])(?=[A-Z0-9])', '_', n)
-    s = re.sub(r'(?<=[0-9])(?=[A-Z][a-z])', '_', s)
-    return s.upper()
+    return re.sub(r'(?<=[a-z])(?=[A-Z])', '_', n).upper()   # same rule as johto_convert: Route29 -> ROUTE29
+
 
 # kind -> list of (suffix, FRLG source map dir); first entry is the entrance map
 KINDS = {
@@ -68,6 +67,7 @@ DOORS = {
     'Route29': [(27, 3, 'vhouse', 'Route46Gate')],
     'Route30': [(16, 5, 'vhouse', 'MrPokemonsHouse'), (7, 39, 'vhouse', 'BerryHouse')],
     'Route43': [(16, 35, 'vhouse', 'TollGate')],
+    'Route36': [(15, 9, 'vhouse', 'NationalParkGate'), (47, 16, 'vhouse', 'RuinsOfAlphGate')],
     'SilverCaveOutside': [(23, 19, 'pc', None)],
 }
 
