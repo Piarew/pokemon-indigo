@@ -33,6 +33,11 @@ TODO_ALLOW = {
     ('Route42', 28, 9): 'Mt. Mortar (TODO)',
     ('Route42', 46, 7): 'Mt. Mortar (TODO)',
 }
+# Deliberate one-way warps: (map dir, x, y): reason.  The destination must still exist.
+ONE_WAY = {
+    ('VictoryRoadGate', 7, 1): 'north exit onto Route23 in front of the FRLG League gate; Route23 is reserved for the '
+                               "owner's Indigo Plateau edits, so the way back is the FRLG gate -> Route22 -> Route26 pass",
+}
 EXTRA = ['DiglettsCave_JohtoTunnel', 'DiglettsCave_BlackthornEntrance',
          'IcePath_1F', 'IcePath_B1F', 'IcePath_B2F_MahoganySide', 'IcePath_B2F_BlackthornSide', 'IcePath_B3F']
 layouts = {l['id']: l for l in json.load(open(os.path.join(REPO, 'data/layouts/layouts.json')))['layouts'] if 'id' in l}
@@ -78,6 +83,8 @@ def audit(name, dump=False, quiet=False):
                 st = '!! return warp id out of range'
             else:
                 st = 'ok'
+        if st.startswith('!! dest warp') and (name, wp['x'], wp['y']) in ONE_WAY:
+            st = 'one-way (allowed: %s)' % ONE_WAY[(name, wp['x'], wp['y'])][:40]
         if st.startswith('!!'):
             errs.append('warp %d (%d,%d): %s' % (i, wp['x'], wp['y'], st))
         if not quiet or st.startswith('!!'):

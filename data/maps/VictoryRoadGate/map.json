@@ -1,0 +1,51 @@
+{
+  "id": "MAP_VICTORY_ROAD_GATE",
+  "name": "VictoryRoadGate",
+  "layout": "LAYOUT_ROUTE22_NORTH_ENTRANCE",
+  "music": "MUS_RG_VIRIDIAN_FOREST",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_ROUTE_22",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE23",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 6,
+      "y": 10,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE26",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 7,
+      "y": 10,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE26",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 8,
+      "y": 10,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE26",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
