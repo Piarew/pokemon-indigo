@@ -1,0 +1,37 @@
+{
+  "id": "MAP_DIGLETTS_CAVE_JOHTO_TUNNEL",
+  "name": "DiglettsCave_JohtoTunnel",
+  "layout": "LAYOUT_DIGLETTS_CAVE_JOHTO_TUNNEL",
+  "music": "MUS_RG_VIRIDIAN_FOREST",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_DIGLETTS_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 40,
+      "y": 35,
+      "elevation": 3,
+      "dest_map": "MAP_DIGLETTS_CAVE_BLACKTHORN_ENTRANCE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

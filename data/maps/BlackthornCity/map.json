@@ -24,6 +24,13 @@
   "object_events": [],
   "warp_events": [
     {
+      "x": 4,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_DIGLETTS_CAVE_BLACKTHORN_ENTRANCE",
+      "dest_warp_id": "1"
+    },
+    {
       "x": 18,
       "y": 11,
       "elevation": 0,

@@ -9557,6 +9557,32 @@
       "border_filepath": "data/layouts/Route37/border.bin",
       "blockdata_filepath": "data/layouts/Route37/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DIGLETTS_CAVE_JOHTO_TUNNEL",
+      "name": "DiglettsCave_JohtoTunnel_Layout",
+      "width": 48,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_DiglettsCave",
+      "border_filepath": "data/layouts/DiglettsCave_JohtoTunnel/border.bin",
+      "blockdata_filepath": "data/layouts/DiglettsCave_JohtoTunnel/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DIGLETTS_CAVE_BLACKTHORN_ENTRANCE",
+      "name": "DiglettsCave_BlackthornEntrance_Layout",
+      "width": 10,
+      "height": 8,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_DiglettsCave",
+      "border_filepath": "data/layouts/DiglettsCave_BlackthornEntrance/border.bin",
+      "blockdata_filepath": "data/layouts/DiglettsCave_BlackthornEntrance/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

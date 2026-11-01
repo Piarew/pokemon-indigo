@@ -1,0 +1,7 @@
+DiglettsCave_JohtoTunnel_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DiglettsCave_JohtoTunnel_OnTransition
+	.byte 0
+
+DiglettsCave_JohtoTunnel_OnTransition::
+	setworldmapflag FLAG_WORLD_MAP_DIGLETTS_CAVE_B1F
+	end
