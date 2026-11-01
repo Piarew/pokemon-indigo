@@ -28,8 +28,6 @@ TODO_ALLOW = {
     ('EcruteakCity', 5, 6): 'Burned Tower (TODO)',
     ('EcruteakCity', 18, 11): 'Tin Tower entrance (TODO)',
     ('EcruteakCity', 36, 7): 'Bell/Tin Tower stand-in (TODO)',
-    ('Route27', 26, 5): 'Tohjo Falls (TODO)',
-    ('Route27', 36, 5): 'Tohjo Falls (TODO)',
     ('Route31', 34, 5): 'Dark Cave (TODO)',
     ('Route42', 10, 5): 'Mt. Mortar (TODO)',
     ('Route42', 28, 9): 'Mt. Mortar (TODO)',

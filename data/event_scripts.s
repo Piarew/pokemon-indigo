@@ -878,6 +878,7 @@ gStdScripts_End::
 	.include "data/maps/SilverCaveRoom2/scripts.inc"
 	.include "data/maps/SilverCaveRoom3/scripts.inc"
 	.include "data/maps/SilverCaveItemRooms/scripts.inc"
+	.include "data/maps/TohjoFalls/scripts.inc"
 	.include "data/maps/CherrygroveCity_Mart/scripts.inc"  @ johto-interior
 	.include "data/maps/CherrygroveCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/CherrygroveCity_PokemonCenter_2F/scripts.inc"  @ johto-interior

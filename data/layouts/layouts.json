@@ -9700,6 +9700,19 @@
       "border_filepath": "data/layouts/SilverCaveItemRooms/border.bin",
       "blockdata_filepath": "data/layouts/SilverCaveItemRooms/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_TOHJO_FALLS",
+      "name": "TohjoFalls_Layout",
+      "width": 30,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/TohjoFalls/border.bin",
+      "blockdata_filepath": "data/layouts/TohjoFalls/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

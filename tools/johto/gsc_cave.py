@@ -31,6 +31,17 @@ CONST2NAME = {c: n for n, c in re.findall(r'map_attributes (\w+), (\w+),', pkc._
 L_SILVER = [('GOLBAT', 45), ('GRAVELER', 44), ('ONIX', 45), ('GOLBAT', 46), ('MACHOKE', 44), ('URSARING', 46),
             ('GRAVELER', 46), ('DONPHAN', 45), ('MACHOKE', 47), ('URSARING', 48), ('GOLBAT', 48), ('MISDREAVUS', 47)]
 W_SILVER = [('GOLDUCK', 40), ('GOLDUCK', 42), ('SEAKING', 41), ('GOLDUCK', 44), ('SEAKING', 43)]
+L_TOHJO = [('ZUBAT', 21), ('RATICATE', 22), ('ZUBAT', 23), ('GOLBAT', 22), ('SLOWPOKE', 22), ('RATICATE', 24),
+           ('GOLBAT', 24), ('SLOWPOKE', 24), ('ZUBAT', 22), ('GOLBAT', 25), ('RATICATE', 23), ('SLOWPOKE', 23)]
+W_TOHJO = [('GOLDEEN', 20), ('SLOWPOKE', 22), ('GOLDEEN', 22), ('SEAKING', 24), ('SLOWBRO', 26)]
+L_DARKV = [('GEODUDE', 3), ('ZUBAT', 3), ('GEODUDE', 2), ('ZUBAT', 2), ('TEDDIURSA', 3), ('DUNSPARCE', 2),
+           ('GEODUDE', 4), ('ZUBAT', 4), ('DUNSPARCE', 4), ('TEDDIURSA', 4), ('DUNSPARCE', 3), ('GEODUDE', 3)]
+L_DARKB = [('GOLBAT', 23), ('GRAVELER', 23), ('WOBBUFFET', 21), ('URSARING', 25), ('GEODUDE', 21), ('ZUBAT', 21),
+           ('GOLBAT', 25), ('GRAVELER', 25), ('WOBBUFFET', 23), ('URSARING', 23), ('DUNSPARCE', 23), ('GOLBAT', 27)]
+W_DARK = [('MAGIKARP', 15), ('GOLDEEN', 15), ('MAGIKARP', 20), ('GOLDEEN', 20), ('GYARADOS', 20)]
+L_MORTAR = [('ZUBAT', 14), ('GEODUDE', 14), ('RATTATA', 14), ('MACHOP', 14), ('GOLBAT', 16), ('MARILL', 15),
+            ('ZUBAT', 16), ('GEODUDE', 16), ('RATICATE', 16), ('MACHOP', 16), ('GRAVELER', 17), ('GOLBAT', 18)]
+W_MORTAR = [('GOLDEEN', 15), ('MARILL', 15), ('GOLDEEN', 18), ('MARILL', 20), ('SEAKING', 20)]
 GROUPS = {
     'silver': dict(maps=['SilverCaveRoom1', 'SilverCaveRoom2', 'SilverCaveRoom3', 'SilverCaveItemRooms'],
                    secondary='gTileset_CeruleanCave',
@@ -38,6 +49,23 @@ GROUPS = {
                    music='MUS_RG_ROCKET_HIDEOUT', mapsec='MAPSEC_CERULEAN_CAVE', flash=False,
                    level={}, outside=['SilverCaveOutside'], comps={'SilverCaveItemRooms': [{0}, {1}]},
                    enc={n: (L_SILVER, W_SILVER) for n in ['SilverCaveRoom1', 'SilverCaveRoom2', 'SilverCaveRoom3', 'SilverCaveItemRooms']}),
+    'tohjo': dict(maps=['TohjoFalls'], secondary='gTileset_CeruleanCave',
+                  refs=['CeruleanCave_1F_Frlg', 'CeruleanCave_2F_Frlg', 'CeruleanCave_B1F_Frlg'],
+                  music='MUS_RG_MT_MOON', mapsec='MAPSEC_SEAFOAM_ISLANDS', flash=False,
+                  level={}, outside=['Route27'], enc={'TohjoFalls': (L_TOHJO, W_TOHJO)}),
+    'dark': dict(maps=['DarkCaveVioletEntrance', 'DarkCaveBlackthornEntrance'], secondary='gTileset_CeruleanCave',
+                 refs=['CeruleanCave_1F_Frlg', 'CeruleanCave_2F_Frlg', 'CeruleanCave_B1F_Frlg'],
+                 music='MUS_RG_MT_MOON', mapsec='MAPSEC_SEAFOAM_ISLANDS', flash=True,
+                 level={}, outside=['Route31', 'Route45', 'Route46'],
+                 enc={'DarkCaveVioletEntrance': (L_DARKV, W_DARK), 'DarkCaveBlackthornEntrance': (L_DARKB, W_DARK)}),
+    'mortar': dict(maps=['MountMortar1FOutside', 'MountMortar1FInside', 'MountMortar2FInside', 'MountMortarB1F'],
+                   secondary='gTileset_CeruleanCave',
+                   refs=['CeruleanCave_1F_Frlg', 'CeruleanCave_2F_Frlg', 'CeruleanCave_B1F_Frlg'],
+                   music='MUS_RG_MT_MOON', mapsec='MAPSEC_SEAFOAM_ISLANDS', flash=False,
+                   level={'MountMortar1FOutside': 1, 'MountMortar1FInside': 1, 'MountMortar2FInside': 2, 'MountMortarB1F': 0,
+                          'up': {('MountMortar1FInside', 5, 39), ('MountMortar1FInside', 33, 41)}},
+                   outside=['Route42'],
+                   enc={n: (L_MORTAR, W_MORTAR) for n in ['MountMortar1FOutside', 'MountMortar1FInside', 'MountMortar2FInside', 'MountMortarB1F']}),
 }
 WATER_B = {'MB_OCEAN_WATER', 'MB_POND_WATER', 'MB_DEEP_WATER', 'MB_SEMI_DEEP_WATER', 'MB_WATERFALL', 'MB_FAST_WATER',
            'MB_SOUTHWARD_CURRENT', 'MB_NORTHWARD_CURRENT', 'MB_EASTWARD_CURRENT', 'MB_WESTWARD_CURRENT', 'MB_INTERIOR_DEEP_WATER'}
@@ -238,7 +266,7 @@ def write(name, W, H, g, sem, L, cfg, warps, idx):
           "warp_events": we, "coord_events": [], "bg_events": []}
     open(os.path.join(d, 'map.json'), 'w').write(json.dumps(mj, indent=2) + '\n')
     open(os.path.join(d, 'scripts.inc'), 'w').write('%s_MapScripts::\n\t.byte 0\n' % name)
-    register('gMapGroup_IndoorJohto', name, W, H, cfg['secondary'])
+    register('gMapGroup_IndoorJohto', name, W, H, cfg['secondary'], cfg.get('primary', 'gTileset_General_Frlg'))
 
 def wire_outside(outside, ox, oy, dest, wi):
     p = os.path.join(REPO, 'data/maps', outside, 'map.json'); mj = json.load(open(p))
@@ -259,8 +287,10 @@ def encounters(cfg):
         for name, (land, water) in cfg['enc'].items():
             for ver in ('FireRed', 'LeafGreen'):
                 lab = 's' + name.replace('_', '') + '_' + ver
-                e = {"map": MID(name), "base_label": lab, "land_mons": {"encounter_rate": 7, "mons": [
-                    {"min_level": l, "max_level": l, "species": 'SPECIES_' + s} for s, l in land]}}
+                e = {"map": MID(name), "base_label": lab}
+                if land:
+                    e["land_mons"] = {"encounter_rate": 7, "mons": [
+                        {"min_level": l, "max_level": l, "species": 'SPECIES_' + s} for s, l in land]}
                 if water and any(r.count('A') for r in open('/workspace/p6/sem/%s_semantic.txt' % name).read().split('\n')[1:]):
                     e["water_mons"] = {"encounter_rate": 2, "mons": [
                         {"min_level": l - 5, "max_level": l, "species": 'SPECIES_' + s} for s, l in water]}
