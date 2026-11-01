@@ -853,6 +853,7 @@ gStdScripts_End::
 	.include "data/maps/SevenIsland_SevaultCanyon_Entrance_Frlg/scripts.inc"
 	.include "data/maps/SevenIsland_SevaultCanyon_Frlg/scripts.inc"
 	.include "data/maps/SevenIsland_TanobyRuins_Frlg/scripts.inc"
+	.include "data/maps/CherrygroveCity/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_1F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_PlayersHouse_2F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_RivalsHouse_Frlg/scripts.inc"
