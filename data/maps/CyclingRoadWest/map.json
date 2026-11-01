@@ -27,49 +27,27 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
-  "coord_events": [
+  "coord_events": [],
+  "warp_events": [
     {
-      "type": "trigger",
       "x": 4,
       "y": 18,
-      "elevation": 0,
-      "var": "VAR_MAP_SCENE_ROUTE16",
-      "var_value": "0",
-      "script": "CyclingRoadWest_EventScript_EnterCyclingRoad"
+      "elevation": 3,
+      "dest_map": "MAP_CYCLING_ROAD_WEST_GATE_1F",
+      "dest_warp_id": "0"
     },
     {
-      "type": "trigger",
-      "x": 3,
+      "x": 11,
       "y": 18,
-      "elevation": 0,
-      "var": "VAR_MAP_SCENE_ROUTE16",
-      "var_value": "1",
-      "script": "EventScript_SetExitingCyclingRoad"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_MAP_SCENE_ROUTE16",
-      "var_value": "0",
-      "script": "CyclingRoadWest_EventScript_EnterCyclingRoad"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_MAP_SCENE_ROUTE16",
-      "var_value": "1",
-      "script": "EventScript_SetExitingCyclingRoad"
+      "elevation": 3,
+      "dest_map": "MAP_CYCLING_ROAD_WEST_GATE_1F",
+      "dest_warp_id": "1"
     }
   ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 7,
+      "x": 13,
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

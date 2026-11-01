@@ -1321,6 +1321,8 @@
     "UnionCaveB2F",
     "SlowpokeWellB1F",
     "SlowpokeWellB2F",
-    "VictoryRoadGate"
+    "VictoryRoadGate",
+    "CyclingRoadWestGate_1F",
+    "CyclingRoadWestGate_2F"
   ]
 }

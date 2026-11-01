@@ -9,9 +9,14 @@ semantic grid designs/CyclingRoadWest.txt:
   L / R  Route-17 lamp-pole fence (left / right side)
 East segment (rows 5-8) joins Route 16's cycling-road pocket, a Route-17-style downhill section (pull-down tiles:
 riders coast south going west, pedal uphill going east) drops to the west segment (rows 17-20), which joins Viridian.
-Bike-only: the map mirrors Route 16's scripts (VAR_MAP_SCENE_ROUTE16 == 1 -> FLAG_SYS_ON_CYCLING_ROAD, forced bike);
-at the Viridian end coord triggers stand in for a gatehouse: x=4 (eastbound, var 0) refuses pedestrians, else sets
-var/flag; x=3 (westbound, var 1) runs the stock EventScript_SetExitingCyclingRoad.
+Bike-only: the map mirrors Route 16's scripts (VAR_MAP_SCENE_ROUTE16 == 1 -> FLAG_SYS_ON_CYCLING_ROAD, forced bike).
+At the Viridian end a real Cycling Road gatehouse plugs the corridor ('G' in the design = the lower block of FireRed
+Route 16's gate exterior, x20-27 y8-14, copied tile-for-tile; doors x4/x11 y18).  Its interior CyclingRoadWestGate_1F
+reuses LAYOUT_ROUTE16_NORTH_ENTRANCE_1F and a mirrored copy of the Route 16 gate script (guard; no BICYCLE ->
+"No pedestrians" and stepped back WEST; reaching the east door sets VAR_MAP_SCENE_ROUTE16=1; reaching the west door
+runs EventScript_SetExitingCyclingRoad, and the gate's OnTransition clears FLAG_SYS_ON_CYCLING_ROAD).  The upper
+room of that layout (Route 16's pedestrian pass) is unused/unreachable.  CyclingRoadWestGate_2F reuses
+LAYOUT_ENTRANCE_2F (binoculars + two cyclists).
 
 FIRERED EDITS (flagged; rebuilt from the untouched upstream copy at BASE_COMMIT every run):
   * Route16_Frlg map.bin   : x0-1, y11-14 (sea strip + fence) -> grass, a 4-tile gap into the new map
@@ -25,10 +30,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, HERE)
 from register_maps import register
+from interiors import snake_upper
 
 NAME, MID = 'CyclingRoadWest', 'MAP_CYCLING_ROAD_WEST'
 BASE_COMMIT = '72bd0bff9c'
 P, B = 0x3000, 0x0400            # passable (elevation 3) / blocked
+GATE = (4, 13)                   # top-left of the 8x7 gatehouse; doors at (x+0, y+5) west and (x+7, y+5) east
+G1, G2 = NAME + 'Gate_1F', NAME + 'Gate_2F'
 
 def tile_grid(g):
     H, W = len(g), len(g[0])
@@ -75,6 +83,8 @@ def tile_grid(g):
                     out[y][x] = B | (0x323, 0x32B, 0x333, 0x0F5, 0x0F5)[k]
                 else:
                     out[y][x] = B | (0x325, 0x32D, 0x335, 0x0F4, 0x0F4)[k]
+            elif c == 'G':
+                pass                                # gatehouse, overlaid below
             else:
                 raise SystemExit('unknown design char %r at %d,%d' % (c, x, y))
     # lamp heads drawn on the cycling ground beside the poles (Route 17: 324/334 right of L, 32C left of R)
@@ -86,6 +96,13 @@ def tile_grid(g):
                 if k == 0x333: out[y][x + 1] = P | 0x334
             if g[y][x] == 'R' and at(x - 1, y) == 'c' and out[y][x] & 0x3FF == 0x325:
                 out[y][x - 1] = P | 0x32C
+    # gatehouse: lower block of Route 16's gate exterior (upstream x20-27 y8-14)
+    gx, gy = GATE
+    src = upstream('data/layouts/Route16_Frlg/map.bin', 48, 20)
+    for dy in range(7):
+        for dx in range(8):
+            if g[gy + dy][gx + dx] == 'G':
+                out[gy + dy][gx + dx] = src[8 + dy][20 + dx]
     return out
 
 def write_bin(path, cells):
@@ -127,6 +144,96 @@ def frlg_edits():
     write_bin(os.path.join(REPO, bv), g)
     add_connection('ViridianCity_Frlg', {'map': MID, 'offset': 4, 'direction': 'right'})
 
+def gate_maps():
+    """Gate interior (Route 16 gate layout + mirrored bike-check script) and its 2F."""
+    raw = subprocess.check_output(['git', 'show', BASE_COMMIT + ':data/maps/Route16_NorthEntrance_1F_Frlg/scripts.inc'],
+                                  cwd=REPO).decode()
+    sc = raw.replace('Route16_NorthEntrance_1F_Frlg_MapScripts', G1 + '_MapScripts').replace('Route16_NorthEntrance_1F', G1)
+    # the cycling road lies EAST of this gate (Route 16's lies west): turn pedestrians back westward
+    sc = sc.replace(G1 + '_Movement_WalkRight', G1 + '_Movement_WalkLeft').replace(
+        G1 + '_Movement_WalkLeft::\n\twalk_right', G1 + '_Movement_WalkLeft::\n\twalk_left')
+    sc = sc.replace('"CYCLING ROAD is a downhill course\\n"\n\t.string "by the sea. It\'s a great ride.$"',
+                    '"CYCLING ROAD WEST climbs all the\\n"\n\t.string "way to CELADON. Good luck!$"')
+    assert 'walk_right' not in sc and 'climbs all' in sc
+    os.makedirs(os.path.join(REPO, 'data/maps', G1), exist_ok=True)
+    open(os.path.join(REPO, 'data/maps', G1, 'scripts.inc'), 'w').write(sc)
+    j = json.loads(subprocess.check_output(['git', 'show', BASE_COMMIT + ':data/maps/Route16_NorthEntrance_1F_Frlg/map.json'],
+                                           cwd=REPO))
+    mid1, mid2 = 'MAP_' + snake_upper(G1), 'MAP_' + snake_upper(G2)
+    j.update(id=mid1, name=G1, region_map_section='MAPSEC_ROUTE_16')
+    j['object_events'] = [dict(o, script=o['script'].replace('Route16_NorthEntrance_1F', G1))
+                          for o in j['object_events'] if 'Guard' in o['script']]      # upper room unused: no old man
+    j['warp_events'] = [{'x': 1, 'y': 12, 'elevation': 3, 'dest_map': MID, 'dest_warp_id': '0'},
+                        {'x': 11, 'y': 12, 'elevation': 3, 'dest_map': MID, 'dest_warp_id': '1'},
+                        {'x': 9, 'y': 16, 'elevation': 3, 'dest_map': mid2, 'dest_warp_id': '0'},
+                        # upper room (Route 16's pedestrian pass) is unreachable here; its arrow warps get
+                        # one-way targets so they are never dangling
+                        {'x': 1, 'y': 3, 'elevation': 3, 'dest_map': MID, 'dest_warp_id': '0'},
+                        {'x': 11, 'y': 3, 'elevation': 3, 'dest_map': MID, 'dest_warp_id': '1'}]
+    trig = lambda x, y, var, val, script: {'type': 'trigger', 'x': x, 'y': y, 'elevation': 3, 'var': var,
+                                           'var_value': val, 'script': script}
+    co = []
+    for y, k in zip(range(10, 15), ('Top', 'MidTop', 'Mid', 'MidBottom', 'Bottom')):     # bike check at the counter
+        co.append(trig(6, y, 'VAR_TEMP_1', '0', '%s_EventScript_NeedBikeTrigger%s' % (G1, k)))
+    for x, y in ((2, 12), (1, 11), (1, 13)):        # west (Viridian) side: leaving the Cycling Road
+        co.append(trig(x, y, 'VAR_MAP_SCENE_ROUTE16', '1', 'EventScript_SetExitingCyclingRoad'))
+    for x, y in ((10, 12), (11, 11), (11, 13)):     # east (road) side: entering the Cycling Road
+        co.append(trig(x, y, 'VAR_MAP_SCENE_ROUTE16', '0', 'EventScript_SetEnteringCyclingRoad'))
+    j['coord_events'] = co
+    open(os.path.join(REPO, 'data/maps', G1, 'map.json'), 'w').write(json.dumps(j, indent=2) + '\n')
+
+    j2 = json.loads(subprocess.check_output(['git', 'show', BASE_COMMIT + ':data/maps/Route16_NorthEntrance_2F_Frlg/map.json'],
+                                            cwd=REPO))
+    j2.update(id=mid2, name=G2)
+    j2['warp_events'] = [{'x': 10, 'y': 9, 'elevation': 3, 'dest_map': mid1, 'dest_warp_id': '2'}]
+    j2['object_events'] = [dict(o, script=o['script'].replace('Route16_NorthEntrance_2F', G2))
+                           for o in j2['object_events'] if 'Aide' not in o['script']]
+    j2['bg_events'] = [dict(b, script=b['script'].replace('Route16_NorthEntrance_2F', G2)) for b in j2['bg_events']]
+    os.makedirs(os.path.join(REPO, 'data/maps', G2), exist_ok=True)
+    open(os.path.join(REPO, 'data/maps', G2, 'map.json'), 'w').write(json.dumps(j2, indent=2) + '\n')
+    open(os.path.join(REPO, 'data/maps', G2, 'scripts.inc'), 'w').write(GATE2F.replace('@G', G2))
+    register('gMapGroup_IndoorJohto', G1, 0, 0, None)
+    register('gMapGroup_IndoorJohto', G2, 0, 0, None)
+
+GATE2F = """@G_MapScripts::
+	.byte 0
+
+@G_EventScript_LittleBoy::
+	msgbox @G_Text_LittleBoy, MSGBOX_NPC
+	end
+
+@G_EventScript_LittleGirl::
+	msgbox @G_Text_LittleGirl, MSGBOX_NPC
+	end
+
+@G_EventScript_LeftBinoculars::
+	msgbox @G_Text_LeftBinoculars, MSGBOX_SIGN
+	end
+
+@G_EventScript_RightBinoculars::
+	msgbox @G_Text_RightBinoculars, MSGBOX_SIGN
+	end
+
+@G_Text_LittleBoy:
+	.string "Riding up to CELADON is tough,\\n"
+	.string "but coasting back down is great!$"
+
+@G_Text_LittleGirl:
+	.string "We ride here from VIRIDIAN every\\n"
+	.string "weekend.$"
+
+@G_Text_LeftBinoculars:
+	.string "Let's see what the binoculars have\\n"
+	.string "to show…\\p"
+	.string "It's VIRIDIAN CITY's POKéMON GYM!$"
+
+@G_Text_RightBinoculars:
+	.string "Let's see what the binoculars have\\n"
+	.string "to show…\\p"
+	.string "A bike road winds up the hill\\n"
+	.string "toward CELADON.$"
+"""
+
 SCRIPTS = '''CyclingRoadWest_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CyclingRoadWest_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CyclingRoadWest_OnWarp
@@ -149,28 +256,6 @@ CyclingRoadWest_OnWarpCyclingRoad::
 	special ForcePlayerOntoBike
 	end
 
-@ Viridian end, eastbound (VAR_MAP_SCENE_ROUTE16 == 0): stand-in for a Cycling Road gatehouse
-CyclingRoadWest_EventScript_EnterCyclingRoad::
-	lockall
-	specialvar VAR_RESULT, GetPlayerAvatarBike
-	goto_if_eq VAR_RESULT, 0, CyclingRoadWest_EventScript_NoPedestrians
-	setvar VAR_MAP_SCENE_ROUTE16, 1
-	setflag FLAG_SYS_ON_CYCLING_ROAD
-	releaseall
-	end
-
-CyclingRoadWest_EventScript_NoPedestrians::
-	msgbox CyclingRoadWest_Text_NoPedestrians
-	closemessage
-	applymovement LOCALID_PLAYER, CyclingRoadWest_Movement_WalkLeft
-	waitmovement 0
-	releaseall
-	end
-
-CyclingRoadWest_Movement_WalkLeft:
-	walk_left
-	step_end
-
 CyclingRoadWest_EventScript_WestSign::
 	msgbox CyclingRoadWest_Text_WestSign, MSGBOX_SIGN
 	end
@@ -179,15 +264,10 @@ CyclingRoadWest_EventScript_EastSign::
 	msgbox CyclingRoadWest_Text_EastSign, MSGBOX_SIGN
 	end
 
-CyclingRoadWest_Text_NoPedestrians:
-	.string "No pedestrians are allowed on\\n"
-	.string "CYCLING ROAD!\\p"
-	.string "Please come back on a BIKE.$"
-
 CyclingRoadWest_Text_WestSign:
 	.string "CYCLING ROAD WEST\\n"
 	.string "VIRIDIAN CITY - CELADON CITY\\p"
-	.string "BIKES ONLY! Uphill to CELADON.$"
+	.string "Uphill to CELADON. Keep pedaling!$"
 
 CyclingRoadWest_Text_EastSign:
 	.string "CYCLING ROAD WEST\\n"
@@ -195,12 +275,6 @@ CyclingRoadWest_Text_EastSign:
 '''
 
 def map_json():
-    trig = lambda x, y, val, script: {'type': 'trigger', 'x': x, 'y': y, 'elevation': 0,
-                                      'var': 'VAR_MAP_SCENE_ROUTE16', 'var_value': val, 'script': script}
-    coords = []
-    for y in (18, 19):
-        coords.append(trig(4, y, '0', 'CyclingRoadWest_EventScript_EnterCyclingRoad'))
-        coords.append(trig(3, y, '1', 'EventScript_SetExitingCyclingRoad'))
     sign = lambda x, y, s: {'type': 'sign', 'x': x, 'y': y, 'elevation': 0,
                             'player_facing_dir': 'BG_EVENT_PLAYER_FACING_ANY', 'script': s}
     return {'id': MID, 'name': NAME, 'layout': 'LAYOUT_CYCLING_ROAD_WEST', 'music': 'MUS_RG_CYCLING',
@@ -210,8 +284,10 @@ def map_json():
             'battle_scene': 'MAP_BATTLE_SCENE_NORMAL',
             'connections': [{'map': 'MAP_VIRIDIAN_CITY', 'offset': -4, 'direction': 'left'},
                             {'map': 'MAP_ROUTE16', 'offset': -6, 'direction': 'right'}],
-            'object_events': [], 'warp_events': [], 'coord_events': coords,
-            'bg_events': [sign(7, 17, 'CyclingRoadWest_EventScript_WestSign'),
+            'object_events': [], 'coord_events': [],
+            'warp_events': [{'x': GATE[0], 'y': GATE[1] + 5, 'elevation': 3, 'dest_map': 'MAP_' + snake_upper(G1), 'dest_warp_id': '0'},
+                            {'x': GATE[0] + 7, 'y': GATE[1] + 5, 'elevation': 3, 'dest_map': 'MAP_' + snake_upper(G1), 'dest_warp_id': '1'}],
+            'bg_events': [sign(13, 17, 'CyclingRoadWest_EventScript_WestSign'),
                           sign(47, 5, 'CyclingRoadWest_EventScript_EastSign')]}
 
 # GSC Kanto Route 17 flavour (day), FRLG 12-slot layout; grass patches only
@@ -239,6 +315,7 @@ def main():
     open(os.path.join(md, 'map.json'), 'w').write(json.dumps(map_json(), indent=2) + '\n')
     open(os.path.join(md, 'scripts.inc'), 'w').write(SCRIPTS)
     register('gMapGroup_TownsAndRoutes_Frlg', NAME, W, H, 'gTileset_CeladonCity')
+    gate_maps()
     frlg_edits()
     wild()
     print('cycling_west: %s %dx%d, Route16 <-> %s <-> ViridianCity' % (NAME, W, H, NAME))
