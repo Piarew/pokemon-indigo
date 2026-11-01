@@ -1,0 +1,63 @@
+{
+  "id": "MAP_MAHOGANY_TOWN",
+  "name": "MahoganyTown",
+  "layout": "LAYOUT_MAHOGANY_TOWN",
+  "music": "MUS_RG_LAVENDER",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_VIRIDIAN_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE42",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE44",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE43",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MahoganyTown_EventScript_CitySign"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MahoganyTown_EventScript_ShopSign"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MahoganyTown_EventScript_GymSign"
+    }
+  ]
+}

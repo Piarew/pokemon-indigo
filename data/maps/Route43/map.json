@@ -1,0 +1,53 @@
+{
+  "id": "MAP_ROUTE43",
+  "name": "Route43",
+  "layout": "LAYOUT_ROUTE43",
+  "music": "MUS_RG_ROUTE3",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_VIRIDIAN_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_MAHOGANY_TOWN",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route43_EventScript_LakeOfRageSign"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 38,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route43_EventScript_R43Sign"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 49,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route43_EventScript_TrainerTipsSign"
+    }
+  ]
+}

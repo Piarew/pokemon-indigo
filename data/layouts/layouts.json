@@ -9336,6 +9336,71 @@
       "border_filepath": "data/layouts/CherrygroveCity/border.bin",
       "blockdata_filepath": "data/layouts/CherrygroveCity/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_BLACKTHORN_CITY",
+      "name": "BlackthornCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_PewterCity",
+      "border_filepath": "data/layouts/BlackthornCity/border.bin",
+      "blockdata_filepath": "data/layouts/BlackthornCity/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_MAHOGANY_TOWN",
+      "name": "MahoganyTown_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/MahoganyTown/border.bin",
+      "blockdata_filepath": "data/layouts/MahoganyTown/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ROUTE42",
+      "name": "Route42_Layout",
+      "width": 60,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/Route42/border.bin",
+      "blockdata_filepath": "data/layouts/Route42/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ROUTE43",
+      "name": "Route43_Layout",
+      "width": 20,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/Route43/border.bin",
+      "blockdata_filepath": "data/layouts/Route43/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ROUTE44",
+      "name": "Route44_Layout",
+      "width": 60,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/Route44/border.bin",
+      "blockdata_filepath": "data/layouts/Route44/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

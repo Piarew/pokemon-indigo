@@ -919,7 +919,12 @@
     "SevenIsland_SevaultCanyon_Entrance_Frlg",
     "SevenIsland_SevaultCanyon_Frlg",
     "SevenIsland_TanobyRuins_Frlg",
-    "CherrygroveCity"
+    "CherrygroveCity",
+    "BlackthornCity",
+    "MahoganyTown",
+    "Route42",
+    "Route43",
+    "Route44"
   ],
   "gMapGroup_IndoorPallet_Frlg": [
     "PalletTown_PlayersHouse_1F_Frlg",
