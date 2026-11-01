@@ -29,6 +29,11 @@
       "map": "MAP_ROUTE32",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_MORTAR_TRAIL",
+      "offset": -2,
+      "direction": "up"
     }
   ],
   "object_events": [],

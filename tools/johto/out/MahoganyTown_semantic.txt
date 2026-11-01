@@ -17,8 +17,8 @@ M  M  G  G  X  X  X  X  X  X  P  P  G  X  X  X  X  X  M  M
 M  M  G  S  X  X  X  X  X  X  P  P  G  X  X  X  X  X  M  M 
 M  M  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M 
 M  M  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  M  M 
-M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
-M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  P  P  P  P  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  P  P  P  P  M  M  M  M  M  M  M  M 
 
 # raw global cell ids (tools/johto cells.json)
  37  37  37  37  37  37  37  40 162  59  60  61   0   0   0   0  41  37  37  37

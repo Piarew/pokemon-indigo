@@ -952,6 +952,7 @@ gStdScripts_End::
 	.include "data/maps/GoldenrodCity_HappinessRater/scripts.inc"  @ johto-interior
 	.include "data/maps/GoldenrodCity_BillsFamilysHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/GoldenrodCity_BikeShop/scripts.inc"  @ johto-interior
+	.include "data/maps/MortarTrail_RestHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_Mart/scripts.inc"  @ johto-interior
@@ -960,6 +961,7 @@ gStdScripts_End::
 	.include "data/maps/OlivineCity_PunishmentSpeechHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_GoodRodHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_Cafe/scripts.inc"  @ johto-interior
+	.include "data/maps/MortarTrail/scripts.inc"
 	.include "data/maps/GoldenrodCity/scripts.inc"
 	.include "data/maps/OlivineCity/scripts.inc"
 	.include "data/maps/UnionCave1F/scripts.inc"

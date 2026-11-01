@@ -26,6 +26,8 @@ def compare(name, outdir):
     stem = snake_upper(name).lower()
     img.save(os.path.join(outdir, stem + '_preview.png'))
     cfg = MAPS.get(name)
+    if 'src' not in cfg:          # hand-designed custom map: preview only
+        return img
     g = Image.open(os.path.join(SRC_DIR, cfg['src'])).convert('RGB')
     pad, lab = 16, 24
     vertical = g.width > g.height * 1.5

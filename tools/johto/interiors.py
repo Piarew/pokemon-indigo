@@ -84,6 +84,7 @@ DOORS = {
                       (5, 15, 'vhouse', 'RadioTower1F'), (9, 13, 'vhouse', 'MagnetTrainStation'),
                       (14, 21, 'vhouse', 'GameCorner'), (31, 21, 'vhouse', 'HappinessRater'),
                       (5, 25, 'vhouse', 'BillsFamilysHouse'), (29, 29, 'vhouse', 'BikeShop')],
+    'MortarTrail': [(15, 19, 'vhouse', 'RestHouse')],
     'OlivineCity': [(13, 21, 'pc', None), (19, 17, 'mart', None), (10, 11, 'gym_viridian', None),
                     (25, 11, 'vhouse', 'TimsHouse'), (30, 11, 'vhouse', 'PunishmentSpeechHouse'),
                     (13, 15, 'vhouse', 'GoodRodHouse'), (7, 21, 'vhouse', 'Cafe')],

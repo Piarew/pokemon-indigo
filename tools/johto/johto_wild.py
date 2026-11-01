@@ -30,6 +30,13 @@ def parse():
             water[mm.group(1)] = (rate, [(s, int(l)) for l, s in re.findall(r'db (\d+), (\w+)', body)])
     return grass, water
 
+# custom maps (no pokecrystal data): GSC-style 7 day slots / 3 water slots, GSC percent
+CUSTOM = {
+    'MortarTrail': ((10, [('SPEAROW', 14), ('MAREEP', 14), ('MANKEY', 15), ('MARILL', 15), ('FLAAFFY', 17),
+                          ('SANDSHREW', 16), ('GIRAFARIG', 17)]),
+                    (6, [('POLIWAG', 15), ('MARILL', 15), ('POLIWHIRL', 20)])),
+}
+
 def sp(s): return 'SPECIES_' + SPECIES_FIX.get(s, s)
 
 def main():
@@ -43,12 +50,15 @@ def main():
     enc = grp['encounters']
     done = []
     for name in names:
-        try: m = pkc.load(name)
-        except Exception: continue
-        flat = {c for row in m.coll for c in row}
-        indoor = any(k in m.tileset.upper() for k in INDOOR_TILESETS)
-        land = grass.get(m.const) if (indoor or flat & {'TALL_GRASS', 'LONG_GRASS'}) else None
-        wat = water.get(m.const) if flat & {'WATER'} else None
+        if name in CUSTOM:
+            land, wat = CUSTOM[name]
+        else:
+            try: m = pkc.load(name)
+            except Exception: continue
+            flat = {c for row in m.coll for c in row}
+            indoor = any(k in m.tileset.upper() for k in INDOOR_TILESETS)
+            land = grass.get(m.const) if (indoor or flat & {'TALL_GRASS', 'LONG_GRASS'}) else None
+            wat = water.get(m.const) if flat & {'WATER'} else None
         if not land and not wat: continue
         mid = 'MAP_' + snake_upper(name)
         enc[:] = [e for e in enc if e.get('map') != mid]

@@ -178,9 +178,11 @@ MAPS = {
         secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_LAVENDER', xfill='P',
         buildings=[('vir_gym', 4, 9), ('vir_pc', 13, 10), ('vir_mart', 10, 4), ('vir_house', 15, 4)],
         # top: Route 43 gate straddles the map edge -> opened up as path (no gate interior)
-        overrides=[((8, 0), (11, 1), 'P')],
+        overrides=[((8, 0), (11, 1), 'P'),
+                   ((8, 16), (11, 17), 'P')],     # custom (A): opening in the south cliff -> Mortar Trail
         signs={(1, 5): 'CITY', (9, 7): 'SHOP', (3, 13): 'GYM'},
-        connections=[('MAP_ROUTE42', 0, 'left'), ('MAP_ROUTE44', 0, 'right'), ('MAP_ROUTE43', 0, 'up')]),
+        connections=[('MAP_ROUTE42', 0, 'left'), ('MAP_ROUTE44', 0, 'right'), ('MAP_ROUTE43', 0, 'up'),
+                     ('MAP_MORTAR_TRAIL', -2, 'down')]),
     'VioletCity': dict(TOWN, src='Violet_City_C.png', url=BASE + 'e/e8/Violet_City_C.png',
         secondary='gTileset_LavenderTown', border=BORDER_FOREST, xfill='G',
         buildings=[('lav_tower', 20, 0), ('lav_house', 1, 12), ('lav_mart', 8, 14), ('pewter_gym', 15, 13),
@@ -189,7 +191,8 @@ MAPS = {
         overrides=[((39, 24), (39, 25), 'P'), ((2, 26), (2, 26), 'P'), ((2, 30), (2, 30), 'S'), ((13, 17), (13, 17), 'S')],
         signs={(24, 8): 'SPROUT_TOWER', (13, 17): 'GYM', (27, 17): 'SCHOOL', (24, 20): 'CITY',
                (2, 30): 'TRAINER_TIPS', (4, 30): 'HOUSE'},
-        connections=[('MAP_ROUTE31', 18, 'right'), ('MAP_ROUTE36', 0, 'left'), ('MAP_ROUTE32', 0, 'down')]),
+        connections=[('MAP_ROUTE31', 18, 'right'), ('MAP_ROUTE36', 0, 'left'), ('MAP_ROUTE32', 0, 'down'),
+                     ('MAP_MORTAR_TRAIL', -2, 'up')]),     # custom (A): north lawn cols 4-7
     'Route29': dict(ROUTE, src='Johto_Route_29_GSC.png', url=BASE + 'c/ce/Johto_Route_29_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
         buildings=[('vir_house', 26, 0)],   # Route 46 gatehouse exterior (interior: FRLG N/S gate, johto_gates.py)
@@ -367,6 +370,12 @@ MAPS = {
                    ((28, 6), (29, 7), 'G'), ((26, 31), (27, 31), 'G')],   # flower shop / bike shop approaches
         signs='auto', sign_text='GOLDENROD CITY\\nThe Festive City of\\nOpulent Charm',
         connections=[('MAP_ROUTE35', 10, 'up'), ('MAP_ROUTE34', 10, 'down')]),
+    # ---- custom (A): hand-designed route Mahogany Town (south) <-> Violet City (north)
+    'MortarTrail': dict(ROUTE, design='designs/MortarTrail.txt', secondary='gTileset_ViridianCity',
+        border=BORDER_FOREST, xfill='G', music='MUS_RG_ROUTE24',
+        buildings=[('vir_house', 14, 16)], overrides=[],
+        signs='auto', sign_text='MORTAR TRAIL\\nMAHOGANY TOWN - VIOLET CITY',
+        connections=[('MAP_MAHOGANY_TOWN', 2, 'up'), ('MAP_VIOLET_CITY', 2, 'down')]),
 }
 
 SIGN_TEXT = {
@@ -465,12 +474,21 @@ def grid_for(src):
 # ------------------------------------------------------------------ conversion
 def convert(name):
     cfg = MAPS[name]
-    grid = grid_for(cfg['src'])
-    H, W = len(grid), len(grid[0])
-    unknown = sorted({c for r in grid for c in r if c not in CLASS})
-    if unknown:
-        raise SystemExit('%s: unclassified cell ids %s' % (name, unknown))
-    sem = [[CLASS[c] for c in row] for row in grid]
+    if 'design' in cfg:      # hand-designed map: one semantic char per cell (< = VL, > = VR)
+        rows = [r.rstrip('\n') for r in open(os.path.join(HERE, cfg['design'])) if r.strip() and not r.startswith('#')]
+        grid = None
+        sem = [[{'<': 'VL', '>': 'VR'}.get(ch, ch) for ch in r] for r in rows]
+        H, W = len(sem), len(sem[0])
+        assert all(len(r) == W for r in sem), (name, 'ragged design rows')
+        bad = {c for r in sem for c in r} - set('TUPGFHWRMCLSX') - {'VL', 'VR'}
+        assert not bad, (name, 'design chars', bad)
+    else:
+        grid = grid_for(cfg['src'])
+        H, W = len(grid), len(grid[0])
+        unknown = sorted({c for r in grid for c in r if c not in CLASS})
+        if unknown:
+            raise SystemExit('%s: unclassified cell ids %s' % (name, unknown))
+        sem = [[CLASS[c] for c in row] for row in grid]
     notes = collections.defaultdict(list)
     for (x0, y0), (x1, y1), cls in cfg['overrides']:
         for y in range(y0, y1 + 1):
@@ -690,13 +708,13 @@ def convert(name):
         f.write(struct.pack('<4H', *[m | attrs.get(m, 0) for m in cfg['border']]))
     os.makedirs(os.path.join(HERE, 'out'), exist_ok=True)
     with open(os.path.join(HERE, 'out', name + '_semantic.txt'), 'w') as f:
-        f.write('# %s %dx%d  source %s\n' % (name, W, H, cfg['url']))
+        f.write('# %s %dx%d  source %s\n' % (name, W, H, cfg.get('url', cfg.get('design'))))
         f.write('# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water\n'
                 '# M mountain C cave L ledge VL/VR side ledge S sign X building\n')
         for row in sem:
             f.write(' '.join('%-2s' % c for c in row) + '\n')
         f.write('\n# raw global cell ids (tools/johto cells.json)\n')
-        for row in grid:
+        for row in grid or []:
             f.write(' '.join('%3d' % c for c in row) + '\n')
     write_map_json(name, cfg, W, H)
     return dict(name=name, w=W, h=H, doors=doors, notes=dict(notes), out=out, sem=sem)

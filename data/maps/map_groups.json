@@ -950,7 +950,8 @@
     "Route38",
     "Route39",
     "OlivineCity",
-    "GoldenrodCity"
+    "GoldenrodCity",
+    "MortarTrail"
   ],
   "gMapGroup_IndoorPallet_Frlg": [
     "PalletTown_PlayersHouse_1F_Frlg",
@@ -1277,6 +1278,7 @@
     "GoldenrodCity_HappinessRater",
     "GoldenrodCity_BillsFamilysHouse",
     "GoldenrodCity_BikeShop",
+    "MortarTrail_RestHouse",
     "OlivineCity_PokemonCenter_1F",
     "OlivineCity_PokemonCenter_2F",
     "OlivineCity_Mart",
