@@ -1,0 +1,41 @@
+# NewBarkTown 20x18  source https://archives.bulbagarden.net/media/upload/5/54/New_Bark_Town_GSC.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+T  T  T  T  X  X  X  X  X  X  X  T  T  T  T  T  T  T  T  T 
+T  T  T  T  X  X  X  X  X  X  X  T  X  X  X  X  X  T  T  T 
+T  T  G  G  X  X  X  X  X  X  X  T  X  X  X  X  X  T  T  T 
+T  T  G  S  X  X  X  X  X  X  X  T  X  X  X  X  X  T  T  T 
+T  T  G  G  X  X  X  X  X  X  X  G  X  X  X  X  X  T  T  T 
+T  T  G  G  P  P  P  P  P  P  G  S  X  X  X  X  X  T  T  T 
+T  T  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  W  W 
+T  T  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  W  W 
+P  P  P  P  P  P  P  P  S  P  P  P  P  P  P  P  P  P  W  W 
+P  P  X  X  X  X  X  P  P  P  X  X  X  X  X  P  P  P  W  W 
+T  T  X  X  X  X  X  P  P  P  X  X  X  X  X  P  G  T  T  T 
+T  T  X  X  X  X  X  P  P  P  X  X  X  X  X  P  G  T  T  T 
+F  F  X  X  X  X  X  P  G  G  X  X  X  X  X  P  G  T  T  T 
+F  F  X  X  X  X  X  P  G  S  X  X  X  X  X  P  G  T  T  T 
+T  T  G  G  G  G  P  P  P  P  P  P  P  P  P  P  G  T  T  T 
+T  T  T  T  T  T  P  P  P  P  P  P  P  P  P  P  G  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+
+# raw global cell ids (tools/johto cells.json)
+  0   0   0   0 221 222 222 222 222 223   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8 224 225 225 225 225 226   8   8   8   8   8   8   8   8   8   8
+  0   0  16  16  56  57  59  59  60  61   0   0 221 222 222 223   0   0   0   0
+  8   8  16  36  32  33  18  33  33  34   8   8 224 225 225 226   8   8   8   8
+  0   0  16  16   1   1   1   1   1   1  16  16 162  59  60  61   0   0   0   0
+  8   8  16  16   1   1   1   1   1   1  16  36  32  18  33  34   8   8   8   8
+  0   0   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  47  22
+  8   8   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   5   6
+  1   1   1   1   1   1   1   1  36   1   1   1   1   1   1   1   1   1   5   6
+  1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   5   6
+  0   0 227 228 228 229   1   1   1   1   1   1   1   1   1   1  16  15   0   0
+  8   8  32  18  33  34   1   1   1   1   1   1   1   1   1   1  16  15   8   8
+ 31  31   1   1   1   1   1   1  16  16 227 228 228 229   1   1  16  15   0   0
+ 35  35   1   1   1   1   1   1  16  36  32  18  33  34   1   1  16  15   8   8
+  0   0  16  16  16  16   1   1   1   1   1   1   1   1   1   1  16  15   0   0
+  8   8  15  15  15  15   1   1   1   1   1   1   1   1   1   1  16  15   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8
