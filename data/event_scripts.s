@@ -874,6 +874,10 @@ gStdScripts_End::
 	.include "data/maps/IcePath_B2F_MahoganySide/scripts.inc"
 	.include "data/maps/IcePath_B2F_BlackthornSide/scripts.inc"
 	.include "data/maps/IcePath_B3F/scripts.inc"
+	.include "data/maps/SilverCaveRoom1/scripts.inc"
+	.include "data/maps/SilverCaveRoom2/scripts.inc"
+	.include "data/maps/SilverCaveRoom3/scripts.inc"
+	.include "data/maps/SilverCaveItemRooms/scripts.inc"
 	.include "data/maps/CherrygroveCity_Mart/scripts.inc"  @ johto-interior
 	.include "data/maps/CherrygroveCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
 	.include "data/maps/CherrygroveCity_PokemonCenter_2F/scripts.inc"  @ johto-interior

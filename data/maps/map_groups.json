@@ -1242,6 +1242,10 @@
     "IcePath_B1F",
     "IcePath_B2F_MahoganySide",
     "IcePath_B2F_BlackthornSide",
-    "IcePath_B3F"
+    "IcePath_B3F",
+    "SilverCaveRoom1",
+    "SilverCaveRoom2",
+    "SilverCaveRoom3",
+    "SilverCaveItemRooms"
   ]
 }

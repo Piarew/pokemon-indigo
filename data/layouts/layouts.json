@@ -9648,6 +9648,58 @@
       "border_filepath": "data/layouts/IcePath_B3F/border.bin",
       "blockdata_filepath": "data/layouts/IcePath_B3F/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SILVER_CAVE_ROOM1",
+      "name": "SilverCaveRoom1_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/SilverCaveRoom1/border.bin",
+      "blockdata_filepath": "data/layouts/SilverCaveRoom1/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SILVER_CAVE_ROOM2",
+      "name": "SilverCaveRoom2_Layout",
+      "width": 30,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/SilverCaveRoom2/border.bin",
+      "blockdata_filepath": "data/layouts/SilverCaveRoom2/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SILVER_CAVE_ROOM3",
+      "name": "SilverCaveRoom3_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/SilverCaveRoom3/border.bin",
+      "blockdata_filepath": "data/layouts/SilverCaveRoom3/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SILVER_CAVE_ITEM_ROOMS",
+      "name": "SilverCaveItemRooms_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/SilverCaveItemRooms/border.bin",
+      "blockdata_filepath": "data/layouts/SilverCaveItemRooms/map.bin",
+      "layout_version": "frlg"
     }
   ]
 }

@@ -34,7 +34,6 @@ TODO_ALLOW = {
     ('Route42', 10, 5): 'Mt. Mortar (TODO)',
     ('Route42', 28, 9): 'Mt. Mortar (TODO)',
     ('Route42', 46, 7): 'Mt. Mortar (TODO)',
-    ('SilverCaveOutside', 18, 11): 'Silver Cave (TODO)',
 }
 EXTRA = ['DiglettsCave_JohtoTunnel', 'DiglettsCave_BlackthornEntrance',
          'IcePath_1F', 'IcePath_B1F', 'IcePath_B2F_MahoganySide', 'IcePath_B2F_BlackthornSide', 'IcePath_B3F']
