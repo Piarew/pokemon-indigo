@@ -11,7 +11,9 @@ FILES = ['Cherrygrove_City_GSC.png', 'Blackthorn_City_GSC.png', 'Johto_Route_29_
          'Johto_Route_30_GSC.png', 'Johto_Route_31_GSC.png', 'Johto_Route_32_GSC.png',
          'Johto_Route_42_GSC.png', 'Johto_Route_43_C.png', 'Johto_Route_44_GSC.png',
          'Johto_Route_45_GSC.png', 'Johto_Route_46_GSC.png', 'Mahogany_Town_GSC.png',
-         'Violet_City_C.png']   # order fixes the ids used by johto_convert.CLASS -- do not reorder
+         'Violet_City_C.png', 'Ecruteak_City_C.png', 'New_Bark_Town_GSC.png',
+         'Kanto_Route_26_GSC.png', 'Kanto_Route_27_GSC.png', 'Kanto_Route_28_GSC.png',
+         'Mt._Silver_Exterior_GSC.png']   # order fixes the ids used by johto_convert.CLASS -- do not reorder
 
 def build(files):
     ids, order, grids = {}, [], {}

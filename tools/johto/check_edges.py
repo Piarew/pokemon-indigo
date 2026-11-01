@@ -6,7 +6,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, '..', '..'))
 OPP = {'up': 'down', 'down': 'up', 'left': 'right', 'right': 'left'}
 MAPS = sys.argv[1:] or ['CherrygroveCity', 'BlackthornCity', 'MahoganyTown', 'VioletCity',
-                        'Route29', 'Route30', 'Route31', 'Route42', 'Route43', 'Route44']
+                        'Route29', 'Route30', 'Route31', 'Route42', 'Route43', 'Route44',
+                        'EcruteakCity', 'NewBarkTown', 'Route26', 'Route27', 'Route28', 'SilverCaveOutside',
+                        'Route22_Frlg']
 layouts = {l['id']: l for l in json.load(open(os.path.join(REPO, 'data/layouts/layouts.json')))['layouts'] if 'id' in l}
 mj = {n: json.load(open(os.path.join(REPO, 'data/maps', n, 'map.json'))) for n in MAPS}
 by_id = {m['id']: n for n, m in mj.items()}

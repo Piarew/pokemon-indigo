@@ -17,13 +17,24 @@ W8 = [1, 2, 1, 2, 2, 1, 2, 1]   # orthogonal neighbours matter more
 
 # our own Johto conversions must never feed back into the corpus
 JOHTO = ('CherrygroveCity', 'BlackthornCity', 'MahoganyTown', 'VioletCity',
-         'Route29', 'Route30', 'Route31', 'Route42', 'Route43', 'Route44')
+         'Route29', 'Route30', 'Route31', 'Route42', 'Route43', 'Route44',
+         'EcruteakCity', 'NewBarkTown', 'Route26', 'Route27', 'Route28', 'SilverCaveOutside')
+
+
+# FRLG layouts edited by frlg_edits.py: learn from the untouched upstream copy so the edits never
+# feed back into the tilers (keeps converter output stable).
+PRISTINE = {'data/layouts/Route22_Frlg/map.bin': '72bd0bff9c'}
 
 
 def frlg_layouts():
     for l in json.load(open(os.path.join(REPO, 'data/layouts/layouts.json')))['layouts']:
         if l.get('primary_tileset') == 'gTileset_General_Frlg' and not l['name'].startswith(('RS_',) + JOHTO) and 'BattleTower' not in l['name']:
-            d = open(os.path.join(REPO, l['blockdata_filepath']), 'rb').read()
+            if l['blockdata_filepath'] in PRISTINE:
+                import subprocess
+                d = subprocess.check_output(['git', 'show', '%s:%s' % (PRISTINE[l['blockdata_filepath']],
+                                                                       l['blockdata_filepath'])], cwd=REPO)
+            else:
+                d = open(os.path.join(REPO, l['blockdata_filepath']), 'rb').read()
             w, h = l['width'], l['height']
             v = struct.unpack('<%dH' % (w * h), d[:w * h * 2])
             yield l, [[v[y * w + x] for x in range(w)] for y in range(h)]

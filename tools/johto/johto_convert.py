@@ -59,6 +59,18 @@ _set('X', 2, 3, 4, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 28, 29, 30, 32, 33
      123, 124, 125, 126, 130, 131, 132, 133, 134, 135, 137, 148, 149, 150, 151, 152, 153,
      154, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177,
      178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195)
+# phase 3 (Ecruteak, New Bark, Routes 26-28, Mt. Silver exterior)
+_set('W', 129, 230)                      # pier edge over water, whirlpool (no FRLG whirlpool -> water)
+_set('VR', 136, 304)                     # walkable left, rock line right
+_set('VL', 299)                          # rock line left, walkable right
+_set('M', 231, 232, 233, 238, 239, 248, 249, 262, *range(273, 283), 312, 313, 314)
+_set('G', 243, *range(266, 271), *range(305, 311))   # lawn, pond rims
+_set('T', 234, 283)
+_set('X', *range(196, 230), 235, 236, 237, 240, 241, 242, 244, 245, 246, 247,
+     *range(250, 256), 258, 259, 260, *range(285, 299))
+_set('L', 256, 263, 264, 265, 271, 272, 300, 301, 302, 303, 311)
+_set('S', 257, 284)
+_set('H', 261)
 
 # ------------------------------------------------------------------ FRLG metatiles
 FOREST_TOP, FOREST_BOT, FOREST_TRUNK = (0x01C, 0x01D), (0x014, 0x015), (0x024, 0x025)
@@ -101,6 +113,12 @@ TEMPLATES = {
     'lav_tower':    ('LavenderTown_Frlg', 24, 20, 15, 0, 7, 7),
     'lav_mart':     ('LavenderTown_Frlg', 24, 20, 18, 12, 4, 4),
     'lav_pc':       ('LavenderTown_Frlg', 24, 20, 4, 2, 5, 4),
+    'fu_house':     ('FuchsiaCity_Frlg', 48, 40, 32, 28, 5, 4),
+    'fu_gym':       ('FuchsiaCity_Frlg', 48, 40, 6, 28, 7, 5),
+    'fu_safari':    ('FuchsiaCity_Frlg', 48, 40, 22, 0, 6, 6),
+    'fu_warden':    ('FuchsiaCity_Frlg', 48, 40, 26, 12, 6, 5),
+    'pal_house':    ('PalletTown_Frlg', 24, 20, 5, 3, 5, 5),
+    'pal_lab':      ('PalletTown_Frlg', 24, 20, 13, 9, 7, 5),
 }
 DOOR_BEHAVIORS = {0x60, 0x69}
 
@@ -138,7 +156,7 @@ MAPS = {
         buildings=[('vir_house', 26, 0)],   # Route 46 gatehouse -> house stand-in
         overrides=[],
         signs={(3, 5): 'R29_W', (51, 7): 'R29_E'},
-        connections=[('MAP_CHERRYGROVE_CITY', 0, 'left')]),
+        connections=[('MAP_CHERRYGROVE_CITY', 0, 'left'), ('MAP_NEW_BARK_TOWN', 0, 'right')]),
     'Route30': dict(ROUTE, src='Johto_Route_30_GSC.png', url=BASE + 'c/c5/Johto_Route_30_GSC.png',
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='G',
         buildings=[('vir_house', 15, 2), ('vir_house', 6, 36)],   # Mr. Pokemon's house, berry house
@@ -157,7 +175,7 @@ MAPS = {
         buildings=[],
         overrides=[((0, 8), (0, 9), 'P')],   # Ecruteak gate doorway
         signs={(7, 5): 'MT_MORTAR', (4, 10): 'R42', (45, 9): 'MT_MORTAR', (54, 8): 'R42'},
-        connections=[('MAP_MAHOGANY_TOWN', 0, 'right')]),
+        connections=[('MAP_MAHOGANY_TOWN', 0, 'right'), ('MAP_ECRUTEAK_CITY', -18, 'left')]),
     'Route43': dict(ROUTE, src='Johto_Route_43_C.png', url=BASE + '4/4a/Johto_Route_43_C.png',
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, music='MUS_RG_ROUTE3', xfill='P',
         buildings=[('vir_house', 15, 32)],   # toll gatehouse -> house stand-in
@@ -170,6 +188,57 @@ MAPS = {
         overrides=[],
         signs={(6, 10): 'R44', (53, 7): 'ICE_PATH'},
         connections=[('MAP_MAHOGANY_TOWN', 0, 'left'), ('MAP_BLACKTHORN_CITY', -18, 'right')]),
+    # ---------------------------------------------------------------- phase 3
+    'EcruteakCity': dict(TOWN, src='Ecruteak_City_C.png', url=BASE + '0/0e/Ecruteak_City_C.png',
+        secondary='gTileset_FuchsiaCity', border=BORDER_FOREST, music='MUS_RG_FUCHSIA', xfill='P',
+        buildings=[('fu_safari', 3, 1),      # Burned Tower exterior stand-in (interior TODO)
+                   ('fu_warden', 16, 7),     # Tin Tower entrance building
+                   ('fu_house', 11, 8), ('fu_house', 15, 0),   # house, Wise Trio house
+                   ('fu_house', 35, 4),      # Bell (Tin) Tower stand-in (tower TODO)
+                   ('fu_house', 4, 14), ('fu_house', 12, 14),
+                   ('fu_house', 4, 18),      # Lugia speech house (2-tall in GSC, sits on the road)
+                   ('fu_gym', 3, 23), ('fu_house', 12, 24), ('vir_pc', 21, 24), ('fu_house', 28, 24),
+                   ('fu_house', 22, 18),     # Dance Theater stand-in
+                   ('vir_mart', 28, 18)],
+        overrides=[((15, 4), (21, 5), 'P'),          # Wise Trio house front
+                   ((36, 0), (39, 3), 'T'), ((34, 8), (39, 8), 'P'),   # Tin Tower column
+                   ((36, 24), (39, 25), 'T'), ((35, 26), (39, 27), 'P')],   # Route 42 gate -> open path
+        signs={(2, 10): 'BURNED_TOWER', (38, 10): 'TIN_TOWER', (15, 21): 'CITY', (21, 21): 'DANCE_THEATER',
+               (8, 28): 'GYM'},
+        connections=[('MAP_ROUTE42', 18, 'right')]),
+    'NewBarkTown': dict(TOWN, src='New_Bark_Town_GSC.png', url=BASE + '5/54/New_Bark_Town_GSC.png',
+        secondary='gTileset_PalletTown', border=BORDER_FOREST, music='MUS_RG_PALLET', xfill='P',
+        buildings=[('pal_lab', 4, 0), ('pal_house', 12, 1), ('pal_house', 2, 9), ('pal_house', 10, 9)],
+        overrides=[],
+        signs={(8, 8): 'CITY', (11, 5): 'PLAYERS_HOUSE', (3, 3): 'ELMS_LAB', (9, 13): 'ELMS_HOUSE'},
+        connections=[('MAP_ROUTE29', 0, 'left'), ('MAP_ROUTE27', 0, 'right')]),
+    'Route27': dict(ROUTE, src='Kanto_Route_27_GSC.png', url=BASE + 'e/e7/Kanto_Route_27_GSC.png',
+        secondary='gTileset_ViridianCity', border=BORDER_FOREST, music='MUS_RG_ROUTE24', xfill='P',
+        buildings=[('vir_house', 31, 4)],   # Sandstorm house; brick piers -> xfill sand path
+        overrides=[],
+        signs={(25, 7): 'TOHJO_FALLS'},
+        connections=[('MAP_NEW_BARK_TOWN', 0, 'left'), ('MAP_ROUTE26', -90, 'right')]),
+    'Route26': dict(ROUTE, src='Kanto_Route_26_GSC.png', url=BASE + 'e/ee/Kanto_Route_26_GSC.png',
+        secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_ROUTE24', xfill='P',
+        buildings=[('vir_house', 14, 54), ('vir_house', 4, 68)],   # heal house, day-of-week siblings
+        # top: Victory Road Gate -> mountain pass straight into FRLG Route 22 (gate role taken by
+        # the FRLG Pokemon League Front Gate there)
+        overrides=[((6, 0), (6, 5), 'M'), ((9, 0), (9, 5), 'M'), ((7, 0), (8, 5), 'P')],
+        signs={(8, 6): 'R26'},
+        connections=[('MAP_ROUTE27', 90, 'left'), ('MAP_ROUTE22', -1, 'up')]),
+    'Route28': dict(ROUTE, src='Kanto_Route_28_GSC.png', url=BASE + '8/8d/Kanto_Route_28_GSC.png',
+        secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_ROUTE3', xfill='G',
+        buildings=[('vir_house', 6, 0)],   # Steel Wing house
+        # east: Victory Road Gate -> mountain; walk rows carved east into FRLG Route 22
+        overrides=[((32, 2), (35, 5), 'M'), ((36, 6), (39, 8), 'P')],
+        signs={(31, 5): 'R28'},
+        connections=[('MAP_SILVER_CAVE_OUTSIDE', -18, 'left'), ('MAP_ROUTE22', -10, 'right')]),
+    'SilverCaveOutside': dict(ROUTE, src='Mt._Silver_Exterior_GSC.png', url=BASE + 'e/e5/Mt._Silver_Exterior_GSC.png',
+        secondary='gTileset_ViridianCity', border=BORDER_ROCK, music='MUS_RG_VICTORY_ROAD', xfill='G',
+        buildings=[('vir_pc', 21, 16)],
+        overrides=[],
+        signs={(17, 13): 'MT_SILVER'},
+        connections=[('MAP_ROUTE28', 18, 'right')]),
 }
 
 SIGN_TEXT = {
@@ -202,6 +271,19 @@ SIGN_TEXT = {
     ('Route43', 'TRAINER_TIPS'): 'TRAINER TIPS',
     ('Route44', 'R44'): 'ROUTE 44\\nMAHOGANY TOWN - BLACKTHORN CITY',
     ('Route44', 'ICE_PATH'): 'ICE PATH AHEAD',
+    ('EcruteakCity', 'CITY'): 'ECRUTEAK CITY\\nA Historical City\\pWhere the Past\\nMeets the Present',
+    ('EcruteakCity', 'TIN_TOWER'): 'TIN TOWER\\pA legendary POKéMON is said to\\nroost here.',
+    ('EcruteakCity', 'GYM'): 'ECRUTEAK CITY POKéMON GYM\\nLEADER: MORTY\\pThe Mystic Seer of\\nthe Future',
+    ('EcruteakCity', 'DANCE_THEATER'): 'ECRUTEAK DANCE THEATER',
+    ('EcruteakCity', 'BURNED_TOWER'): 'BURNED TOWER\\pIt was destroyed by a mysterious fire.\\pPlease stay away, as it is unsafe.',
+    ('NewBarkTown', 'CITY'): 'NEW BARK TOWN\\pThe Town Where the\\nWinds of a New\\nBeginning Blow',
+    ('NewBarkTown', 'PLAYERS_HOUSE'): "{PLAYER}'s HOUSE",
+    ('NewBarkTown', 'ELMS_LAB'): 'ELM POKéMON LAB',
+    ('NewBarkTown', 'ELMS_HOUSE'): "ELM'S HOUSE",
+    ('Route26', 'R26'): 'ROUTE 26\\pPOKéMON LEAGUE\\nRECEPTION GATE',
+    ('Route27', 'TOHJO_FALLS'): 'TOHJO FALLS\\pTHE LINK BETWEEN\\nKANTO AND JOHTO',
+    ('Route28', 'R28'): 'ROUTE 28',
+    ('SilverCaveOutside', 'MT_SILVER'): 'MT. SILVER',
 }
 
 # ------------------------------------------------------------------ helpers

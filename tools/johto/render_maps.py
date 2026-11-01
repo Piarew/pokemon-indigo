@@ -89,10 +89,13 @@ def overview(names, outdir, scale=0.5):
     o.save(os.path.join(outdir, 'johto_overview.png'))
     return o.size
 
+# existing FRLG maps the Johto chain connects to (shown in the overview only)
+FRLG_CONTEXT = ['Route22_Frlg', 'Route23_Frlg', 'IndigoPlateau_Exterior_Frlg']
+
 if __name__ == '__main__':
     outdir = sys.argv[1]
     names = sys.argv[2:] or list(MAPS)
     for n in names:
         compare(n, outdir); print('rendered', n)
     if not sys.argv[2:]:
-        print('overview', overview(['CherrygroveCity'] + list(MAPS), outdir))
+        print('overview', overview(['CherrygroveCity'] + list(MAPS) + FRLG_CONTEXT, outdir))
