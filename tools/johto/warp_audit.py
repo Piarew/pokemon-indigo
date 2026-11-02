@@ -30,8 +30,6 @@ TODO_ALLOW = {
 ONE_WAY = {
     ('VictoryRoadGate', 7, 1): 'north exit onto Route23 in front of the FRLG League gate; Route23 is reserved for the '
                                "owner's Indigo Plateau edits, so the way back is the FRLG gate -> Route22 -> Route26 pass",
-    ('SeafoamIslands_B3F_Frlg', 23, 9): 'vanilla FRLG: B3F stair pair shares B2F landing warps that return to B1F',
-    ('SeafoamIslands_B3F_Frlg', 24, 9): 'vanilla FRLG: B3F stair pair shares B2F landing warps that return to B1F',
 }
 EXTRA = ['DiglettsCave_JohtoTunnel', 'DiglettsCave_BlackthornEntrance',
          'IcePath_1F', 'IcePath_B1F', 'IcePath_B2F_MahoganySide', 'IcePath_B2F_BlackthornSide', 'IcePath_B3F']

@@ -2,7 +2,7 @@
 """West blocks: the player can no longer leave the Indigo region westward through Violet City or Mahogany Town.
 
 Three choke points, each closed on the ROUTE map just outside the town with existing General_Frlg metatiles
-(collision 1), plus sign bg_events on both faces of the barrier (the Seafoam ice-wall style).  No town map, no
+(collision 1), plus sign bg_events on both faces of the barrier (the style used by all Indigo road blocks).  No town map, no
 connection and no warp is edited: every connection stays mirrored and every warp pair stays intact, so there are no
 one-sided links; the far side is simply unreachable on foot/surf.
 
