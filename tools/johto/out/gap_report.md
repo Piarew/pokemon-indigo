@@ -1,11 +1,11 @@
 # Gap audit
 
-Scope: 171 maps (new on spike + FireRed maps edited by the spike).
-Gaps: 0 (allow-listed: 105)
+Scope: 183 maps (new on spike + FireRed maps edited by the spike).
+Gaps: 0 (allow-listed: 106)
 
 ## Connectivity
 
-- MAIN (contains Pallet Town): 565 maps total, 171 scoped: AzaleaTown, AzaleaTown_CharcoalKiln, AzaleaTown_Gym, AzaleaTown_KurtsHouse, AzaleaTown_Mart, AzaleaTown_PokemonCenter_1F, AzaleaTown_PokemonCenter_2F, BlackthornCity, BlackthornCity_Gym, BlackthornCity_House1, BlackthornCity_House2, BlackthornCity_Mart, BlackthornCity_MoveDeletersHouse, BlackthornCity_PokemonCenter_1F, BlackthornCity_PokemonCenter_2F, BurnedTower1F, BurnedTowerB1F, CherrygroveCity, CherrygroveCity_GuideGentsHouse, CherrygroveCity_House1, CherrygroveCity_House2, CherrygroveCity_Mart, CherrygroveCity_PokemonCenter_1F, CherrygroveCity_PokemonCenter_2F, CinnabarIsland_Frlg, CyclingRoadWest, CyclingRoadWestGate_1F, CyclingRoadWestGate_2F, DarkCaveBlackthornEntrance, DarkCaveVioletEntrance, DiglettsCave_BlackthornEntrance, DiglettsCave_JohtoTunnel, DiglettsCave_NorthEntrance_Frlg, DragonShrine, DragonsDen1F, DragonsDenB1F, EcruteakCity, EcruteakCity_DanceTheater, EcruteakCity_Gym, EcruteakCity_House1, ...
+- MAIN (contains Pallet Town): 565 maps total, 183 scoped: AzaleaTown, AzaleaTown_CharcoalKiln, AzaleaTown_Gym, AzaleaTown_KurtsHouse, AzaleaTown_Mart, AzaleaTown_PokemonCenter_1F, AzaleaTown_PokemonCenter_2F, BlackthornCity, BlackthornCity_Gym, BlackthornCity_House1, BlackthornCity_House2, BlackthornCity_Mart, BlackthornCity_MoveDeletersHouse, BlackthornCity_PokemonCenter_1F, BlackthornCity_PokemonCenter_2F, BurnedTower1F, BurnedTowerB1F, CherrygroveCity, CherrygroveCity_GuideGentsHouse, CherrygroveCity_House1, CherrygroveCity_House2, CherrygroveCity_Mart, CherrygroveCity_PokemonCenter_1F, CherrygroveCity_PokemonCenter_2F, CianwoodCity, CianwoodCity_Gym, CianwoodCity_LugiaSpeechHouse, CianwoodCity_ManiasHouse, CianwoodCity_Pharmacy, CianwoodCity_PhotoStudio, CianwoodCity_PokeSeersHouse, CianwoodCity_PokemonCenter_1F, CianwoodCity_PokemonCenter_2F, CinnabarIsland_Frlg, CyclingRoadWest, CyclingRoadWestGate_1F, CyclingRoadWestGate_2F, DarkCaveBlackthornEntrance, DarkCaveVioletEntrance, DiglettsCave_BlackthornEntrance, ...
 
 ## Gaps
 
@@ -114,6 +114,7 @@ Gaps: 0 (allow-listed: 105)
 - Route43 **OPEN EDGE** right edge 8-32 - BORDER: pokecrystal Route43 has no right connection; out-of-bounds is solid in-engine (cosmetic)
 - Route43 **OPEN EDGE** right edge 36-37 - BORDER: pokecrystal Route43 has no right connection; out-of-bounds is solid in-engine (cosmetic)
 - Route46 **OPEN EDGE** left edge 12-15 - BORDER: pokecrystal Route46 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- SeafoamIslands_1F_Frlg **OPEN EDGE** left edge 9-9 - VANILLA: already open at the merge base (unchanged FireRed edge)
 - SproutTower1F **OPEN EDGE** down edge 8-11 - BORDER: pokecrystal SproutTower1F has no down connection; out-of-bounds is solid in-engine (cosmetic)
 - SproutTower2F **OPEN EDGE** down edge 2-11 - BORDER: pokecrystal SproutTower2F has no down connection; out-of-bounds is solid in-engine (cosmetic)
 - SproutTower3F **OPEN EDGE** down edge 6-13 - BORDER: pokecrystal SproutTower3F has no down connection; out-of-bounds is solid in-engine (cosmetic)
