@@ -321,7 +321,14 @@ ASM_OBJS := $(patsubst $(ASM_SUBDIR)/%.s,$(ASM_BUILDDIR)/%.o,$(ASM_SRCS))
 DATA_ASM_SRCS := $(wildcard $(DATA_ASM_SUBDIR)/*.s)
 DATA_ASM_OBJS := $(patsubst $(DATA_ASM_SUBDIR)/%.s,$(DATA_ASM_BUILDDIR)/%.o,$(DATA_ASM_SRCS))
 
+# AUDIO_DISABLED (include/config/general.h): link no midi songs at all, every
+# song ID plays the silent song from sound/silent_audio.inc. See docs/prune-audio.md.
+AUDIO_DISABLED := $(shell grep -Eq '^[[:space:]]*\#define[[:space:]]+AUDIO_DISABLED[[:space:]]+TRUE' include/config/general.h && echo 1)
+ifeq ($(AUDIO_DISABLED),1)
+MID_SRCS :=
+else
 MID_SRCS := $(wildcard $(MID_SUBDIR)/*.mid)
+endif
 MID_OBJS := $(patsubst $(MID_SUBDIR)/%.mid,$(MID_BUILDDIR)/%.o,$(MID_SRCS))
 
 OBJS     := $(C_OBJS) $(C_ASM_OBJS) $(ASM_OBJS) $(DATA_ASM_OBJS) $(MID_OBJS)

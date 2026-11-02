@@ -186,7 +186,9 @@ void PlayFanfareByFanfareNum(u8 fanfareNum)
     u16 songNum;
     m4aMPlayStop(&gMPlayInfo_BGM);
     songNum = sFanfares[fanfareNum].songNum;
-    sFanfareCounter = sFanfares[fanfareNum].duration;
+    // With all audio stripped the fanfare is silent, so don't make the player
+    // sit through its full length: WaitFanfare/Task_Fanfare finish at once.
+    sFanfareCounter = AUDIO_DISABLED ? 0 : sFanfares[fanfareNum].duration;
     m4aSongNumStart(songNum);
 }
 
@@ -491,6 +493,16 @@ void PlayCryInternal(enum Species species, s8 pan, s8 volume, u8 priority, u8 mo
 
 bool8 IsCryFinished(void)
 {
+    if (gMPlay_PokemonCry == NULL)
+    {
+        // No cry has ever been started (always the case with AUDIO_DISABLED /
+        // P_CRIES_ENABLED FALSE); don't wait on the BGM ducking task.
+        u8 taskId = FindTaskIdByFunc(Task_DuckBGMForPokemonCry);
+        if (taskId != TASK_NONE)
+            DestroyTask(taskId);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
+        return TRUE;
+    }
     if (FuncIsActiveTask(Task_DuckBGMForPokemonCry) == TRUE)
     {
         return FALSE;
@@ -504,18 +516,20 @@ bool8 IsCryFinished(void)
 
 void StopCryAndClearCrySongs(void)
 {
-    m4aMPlayStop(gMPlay_PokemonCry);
+    if (gMPlay_PokemonCry != NULL)
+        m4aMPlayStop(gMPlay_PokemonCry);
     ClearPokemonCrySongs();
 }
 
 void StopCry(void)
 {
-    m4aMPlayStop(gMPlay_PokemonCry);
+    if (gMPlay_PokemonCry != NULL)
+        m4aMPlayStop(gMPlay_PokemonCry);
 }
 
 bool8 IsCryPlayingOrClearCrySongs(void)
 {
-    if (IsPokemonCryPlaying(gMPlay_PokemonCry))
+    if (gMPlay_PokemonCry != NULL && IsPokemonCryPlaying(gMPlay_PokemonCry))
     {
         return TRUE;
     }
@@ -528,7 +542,7 @@ bool8 IsCryPlayingOrClearCrySongs(void)
 
 bool8 IsCryPlaying(void)
 {
-    if (IsPokemonCryPlaying(gMPlay_PokemonCry))
+    if (gMPlay_PokemonCry != NULL && IsPokemonCryPlaying(gMPlay_PokemonCry))
         return TRUE;
     else
         return FALSE;
@@ -542,7 +556,10 @@ void Task_DuckBGMForPokemonCry(u8 taskId)
         return;
     }
 
-    if (!IsPokemonCryPlaying(gMPlay_PokemonCry))
+    // gMPlay_PokemonCry stays NULL when no cry was ever started (cries
+    // disabled); reading through it would be garbage and could keep this
+    // task (and IsCryFinished) alive forever.
+    if (gMPlay_PokemonCry == NULL || !IsPokemonCryPlaying(gMPlay_PokemonCry))
     {
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
         DestroyTask(taskId);

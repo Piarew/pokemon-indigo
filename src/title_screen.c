@@ -817,7 +817,9 @@ static void Task_TitleScreenPhase3(u8 taskId)
             gBattle_BG1_X = 0;
         }
         UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
-        if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
+        // Vanilla returns to the intro when the title BGM ends; with
+        // AUDIO_DISABLED the silent BGM "ends" at once, so use a frame timer.
+        if (AUDIO_DISABLED ? (gTasks[taskId].tCounter >= 2700) : ((gMPlayInfo_BGM.status & 0xFFFF) == 0))
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
             SetMainCallback2(CB2_GoToCopyrightScreen);

@@ -75,6 +75,7 @@
 // General settings
 #define EXPANSION_INTRO              TRUE    // If TRUE, a custom RHH intro will play after the vanilla copyright screen.
 #define PHONEMES_SHARED              FALSE   // If TRUE, bard phonemes all reference the same sound (sound/direct_sound_samples/phonemes/shared.bin) to save ROM space.
+#define AUDIO_DISABLED               TRUE    // If TRUE, all game audio (music, fanfares, SFX, cries) is stripped from the ROM: every song ID plays one silent 0-track song and no voicegroups/samples/midi songs are linked. Also set P_CRIES_ENABLED to FALSE. See docs/prune-audio.md.
 
 // Measurement system constants to be used for UNITS
 #define UNITS_IMPERIAL               0       // Inches, feet, pounds
