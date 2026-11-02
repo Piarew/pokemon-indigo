@@ -7,6 +7,14 @@
 	.include "asm/macros/music_voice.inc"
 	.include "include/config/general.h"
 	.include "include/config/pokemon.h"
+#include "config/general.h"
+#ifndef TRUE
+#define TRUE 1
+#define FALSE 0
+#endif
+#ifndef AUDIO_DISABLED
+#error "AUDIO_DISABLED must be defined in include/config/general.h"
+#endif
 #if AUDIO_DISABLED == TRUE
 	@ All audio stripped (see docs/prune-audio.md): no voicegroups, keysplits,
 	@ wave/PCM samples, cries or songs; every song ID plays a silent song.
