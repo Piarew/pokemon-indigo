@@ -1,0 +1,64 @@
+{
+  "id": "MAP_ROUTE46",
+  "name": "Route46",
+  "layout": "LAYOUT_ROUTE46",
+  "music": "MUS_RG_ROUTE1",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_VIRIDIAN_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE29",
+      "offset": -20,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE45",
+      "offset": -72,
+      "direction": "right"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_VIOLET_ENTRANCE",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 7,
+      "y": 33,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE29_ROUTE46GATE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 8,
+      "y": 33,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE29_ROUTE46GATE",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route46_EventScript_R46Sign"
+    }
+  ]
+}

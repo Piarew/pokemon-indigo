@@ -1,0 +1,148 @@
+# Gap audit
+
+Scope: 185 maps (new on spike + FireRed maps edited by the spike).
+Gaps: 0 (allow-listed: 106)
+
+## Connectivity
+
+- MAIN (contains Pallet Town): 565 maps total, 185 scoped: AzaleaTown, AzaleaTown_CharcoalKiln, AzaleaTown_Gym, AzaleaTown_KurtsHouse, AzaleaTown_Mart, AzaleaTown_PokemonCenter_1F, AzaleaTown_PokemonCenter_2F, BlackthornCity, BlackthornCity_Gym, BlackthornCity_House1, BlackthornCity_House2, BlackthornCity_Mart, BlackthornCity_MoveDeletersHouse, BlackthornCity_PokemonCenter_1F, BlackthornCity_PokemonCenter_2F, BurnedTower1F, BurnedTowerB1F, CherrygroveCity, CherrygroveCity_GuideGentsHouse, CherrygroveCity_House1, CherrygroveCity_House2, CherrygroveCity_Mart, CherrygroveCity_PokemonCenter_1F, CherrygroveCity_PokemonCenter_2F, CianwoodCity, CianwoodCity_Gym, CianwoodCity_LugiaSpeechHouse, CianwoodCity_ManiasHouse, CianwoodCity_Pharmacy, CianwoodCity_PhotoStudio, CianwoodCity_PokeSeersHouse, CianwoodCity_PokemonCenter_1F, CianwoodCity_PokemonCenter_2F, CinnabarIsland_Frlg, CyclingRoadWest, CyclingRoadWestGate_1F, CyclingRoadWestGate_2F, DarkCaveBlackthornEntrance, DarkCaveVioletEntrance, DiglettsCave_B1F_Frlg, ...
+
+## Gaps
+
+(none)
+
+## Accepted (allow-listed / auto-classified)
+
+- AzaleaTown **OPEN EDGE** down edge 6-19 - BORDER: pokecrystal AzaleaTown has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- CherrygroveCity **OPEN EDGE** up edge 34-37 - BORDER: outside the span of the up neighbour(s) Route30, which are connected (cosmetic)
+- CherrygroveCity **OPEN EDGE** down edge 0-17 - BORDER: pokecrystal CherrygroveCity has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- CherrygroveCity **OPEN EDGE** left edge 4-7 - BORDER: pokecrystal CherrygroveCity has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- CherrygroveCity **OPEN EDGE** left edge 10-17 - BORDER: pokecrystal CherrygroveCity has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- CinnabarIsland_Frlg **OPEN EDGE** down edge 0-7 - VANILLA: already open at the merge base (unchanged FireRed edge)
+- CinnabarIsland_Frlg **OPEN EDGE** down edge 14-19 - VANILLA: already open at the merge base (unchanged FireRed edge)
+- DragonShrine **OPEN EDGE** down edge 0-9 - BORDER: pokecrystal DragonShrine has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- DragonShrine **OPEN EDGE** left edge 9-9 - BORDER: pokecrystal DragonShrine has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- DragonShrine **OPEN EDGE** right edge 9-9 - BORDER: pokecrystal DragonShrine has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- EcruteakCity **OPEN EDGE** up edge 10-11 - BORDER: pokecrystal EcruteakCity has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- EcruteakCity **OPEN EDGE** up edge 15-19 - BORDER: pokecrystal EcruteakCity has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- EcruteakCity **OPEN EDGE** left edge 4-5 - BORDER: outside the span of the left neighbour(s) Route38, which are connected (cosmetic)
+- EcruteakCity **OPEN EDGE** right edge 4-4 - BORDER: outside the span of the right neighbour(s) Route42, which are connected (cosmetic)
+- EcruteakCity **OPEN EDGE** right edge 8-11 - BORDER: outside the span of the right neighbour(s) Route42, which are connected (cosmetic)
+- GoldenrodCity **OPEN EDGE** up edge 34-37 - BORDER: outside the span of the up neighbour(s) Route35, which are connected (cosmetic)
+- GoldenrodCity **OPEN EDGE** down edge 0-3 - BORDER: outside the span of the down neighbour(s) Route34, which are connected (cosmetic)
+- GoldenrodCity **OPEN EDGE** down edge 6-8 - BORDER: outside the span of the down neighbour(s) Route34, which are connected (cosmetic)
+- GoldenrodCity **OPEN EDGE** down edge 30-30 - BORDER: outside the span of the down neighbour(s) Route34, which are connected (cosmetic)
+- GoldenrodCity **OPEN EDGE** down edge 34-35 - BORDER: outside the span of the down neighbour(s) Route34, which are connected (cosmetic)
+- GoldenrodCity **OPEN EDGE** down edge 38-39 - BORDER: outside the span of the down neighbour(s) Route34, which are connected (cosmetic)
+- GoldenrodCity **OPEN EDGE** left edge 6-9 - BORDER: pokecrystal GoldenrodCity has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- GoldenrodCity **OPEN EDGE** left edge 12-21 - BORDER: pokecrystal GoldenrodCity has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- GoldenrodCity **OPEN EDGE** left edge 24-31 - BORDER: pokecrystal GoldenrodCity has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- GoldenrodCity **OPEN EDGE** left edge 34-35 - BORDER: pokecrystal GoldenrodCity has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- GoldenrodCity **OPEN EDGE** right edge 10-10 - BORDER: pokecrystal GoldenrodCity has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- GoldenrodCity **OPEN EDGE** right edge 13-13 - BORDER: pokecrystal GoldenrodCity has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- GoldenrodCity **OPEN EDGE** right edge 15-15 - BORDER: pokecrystal GoldenrodCity has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- GoldenrodCity **OPEN EDGE** right edge 34-35 - BORDER: pokecrystal GoldenrodCity has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B1F **OPEN EDGE** up edge 10-11 - BORDER: pokecrystal IcePathB1F has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B1F **OPEN EDGE** down edge 5-8 - BORDER: pokecrystal IcePathB1F has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B1F **OPEN EDGE** left edge 8-13 - BORDER: pokecrystal IcePathB1F has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B1F **OPEN EDGE** right edge 12-13 - BORDER: pokecrystal IcePathB1F has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B1F **OPEN EDGE** right edge 28-33 - BORDER: pokecrystal IcePathB1F has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_BlackthornSide **OPEN EDGE** up edge 6-8 - BORDER: pokecrystal IcePathB2FBlackthornSide has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_BlackthornSide **OPEN EDGE** down edge 0-0 - BORDER: pokecrystal IcePathB2FBlackthornSide has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_BlackthornSide **OPEN EDGE** down edge 2-4 - BORDER: pokecrystal IcePathB2FBlackthornSide has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_BlackthornSide **OPEN EDGE** down edge 7-7 - BORDER: pokecrystal IcePathB2FBlackthornSide has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_BlackthornSide **OPEN EDGE** left edge 4-17 - BORDER: pokecrystal IcePathB2FBlackthornSide has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_BlackthornSide **OPEN EDGE** right edge 1-8 - BORDER: pokecrystal IcePathB2FBlackthornSide has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_BlackthornSide **OPEN EDGE** right edge 10-15 - BORDER: pokecrystal IcePathB2FBlackthornSide has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_MahoganySide **OPEN EDGE** up edge 1-17 - BORDER: pokecrystal IcePathB2FMahoganySide has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_MahoganySide **OPEN EDGE** down edge 0-0 - BORDER: pokecrystal IcePathB2FMahoganySide has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_MahoganySide **OPEN EDGE** down edge 3-17 - BORDER: pokecrystal IcePathB2FMahoganySide has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_MahoganySide **OPEN EDGE** left edge 1-14 - BORDER: pokecrystal IcePathB2FMahoganySide has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_MahoganySide **OPEN EDGE** left edge 16-17 - BORDER: pokecrystal IcePathB2FMahoganySide has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_MahoganySide **OPEN EDGE** right edge 1-1 - BORDER: pokecrystal IcePathB2FMahoganySide has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B2F_MahoganySide **OPEN EDGE** right edge 3-15 - BORDER: pokecrystal IcePathB2FMahoganySide has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B3F **OPEN EDGE** up edge 7-7 - BORDER: pokecrystal IcePathB3F has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- IcePath_B3F **OPEN EDGE** up edge 10-11 - BORDER: pokecrystal IcePathB3F has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- IlexForest **OPEN EDGE** left edge 2-2 - BORDER: pokecrystal IlexForest has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- LakeOfRage **OPEN EDGE** up edge 6-10 - BORDER: pokecrystal LakeOfRage has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- LakeOfRage **OPEN EDGE** right edge 10-13 - BORDER: pokecrystal LakeOfRage has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- NewBarkTown **OPEN EDGE** up edge 4-10 - BORDER: pokecrystal NewBarkTown has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- Route16_Frlg **OPEN EDGE** up edge 0-1 - VANILLA: already open at the merge base (unchanged FireRed edge)
+- Route16_Frlg **OPEN EDGE** left edge 0-5 - VANILLA: already open at the merge base (unchanged FireRed edge)
+- Route21_South_Frlg **OPEN EDGE** right edge 2-23 - VANILLA: already open at the merge base (unchanged FireRed edge)
+- Route21_South_Frlg **OPEN EDGE** right edge 26-29 - VANILLA: already open at the merge base (unchanged FireRed edge)
+- Route21_South_Frlg **OPEN EDGE** right edge 32-49 - VANILLA: already open at the merge base (unchanged FireRed edge)
+- Route22_Frlg **OPEN EDGE** up edge 45-47 - VANILLA: already open at the merge base (unchanged FireRed edge)
+- Route26 **OPEN EDGE** down edge 0-19 - BORDER: pokecrystal Route26 has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- Route26 **OPEN EDGE** right edge 32-35 - BORDER: pokecrystal Route26 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route26 **OPEN EDGE** right edge 38-41 - BORDER: pokecrystal Route26 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route26 **OPEN EDGE** right edge 92-107 - BORDER: pokecrystal Route26 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route28 **OPEN EDGE** up edge 6-10 - BORDER: pokecrystal Route28 has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- Route29 **OPEN EDGE** down edge 26-43 - BORDER: pokecrystal Route29 has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- Route30 **OPEN EDGE** left edge 6-15 - BORDER: pokecrystal Route30 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route30 **OPEN EDGE** right edge 2-2 - BORDER: pokecrystal Route30 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route30 **OPEN EDGE** right edge 6-9 - BORDER: pokecrystal Route30 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route30 **OPEN EDGE** right edge 14-19 - BORDER: pokecrystal Route30 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route30 **OPEN EDGE** right edge 50-53 - BORDER: pokecrystal Route30 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route32 **OPEN EDGE** left edge 1-3 - BORDER: pokecrystal Route32 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route32 **OPEN EDGE** left edge 8-11 - BORDER: pokecrystal Route32 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route32 **OPEN EDGE** left edge 16-17 - BORDER: pokecrystal Route32 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route32 **OPEN EDGE** left edge 42-65 - BORDER: pokecrystal Route32 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route32 **OPEN EDGE** right edge 4-19 - BORDER: pokecrystal Route32 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route33 **OPEN EDGE** down edge 6-15 - BORDER: pokecrystal Route33 has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- Route34 **OPEN EDGE** left edge 1-1 - BORDER: pokecrystal Route34 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route34 **OPEN EDGE** left edge 4-9 - BORDER: pokecrystal Route34 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route34 **OPEN EDGE** left edge 12-43 - BORDER: pokecrystal Route34 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route34 **OPEN EDGE** right edge 1-3 - BORDER: outside the span of the right neighbour(s) AzaleaTown, which are connected (cosmetic)
+- Route34 **OPEN EDGE** right edge 16-35 - BORDER: outside the span of the right neighbour(s) AzaleaTown, which are connected (cosmetic)
+- Route35 **OPEN EDGE** left edge 4-27 - BORDER: pokecrystal Route35 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route35 **OPEN EDGE** left edge 32-34 - BORDER: pokecrystal Route35 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route35 **OPEN EDGE** right edge 32-34 - BORDER: pokecrystal Route35 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route36 **OPEN EDGE** down edge 46-49 - BORDER: outside the span of the down neighbour(s) Route35, which are connected (cosmetic)
+- Route38 **OPEN EDGE** up edge 2-2 - BORDER: pokecrystal Route38 has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- Route38 **OPEN EDGE** up edge 4-15 - BORDER: pokecrystal Route38 has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- Route38 **OPEN EDGE** down edge 2-2 - BORDER: pokecrystal Route38 has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- Route38 **OPEN EDGE** down edge 4-13 - BORDER: pokecrystal Route38 has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- Route38 **OPEN EDGE** down edge 15-17 - BORDER: pokecrystal Route38 has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- Route39 **OPEN EDGE** up edge 0-11 - BORDER: pokecrystal Route39 has no up connection; out-of-bounds is solid in-engine (cosmetic)
+- Route39 **OPEN EDGE** left edge 0-0 - BORDER: pokecrystal Route39 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route39 **OPEN EDGE** left edge 4-7 - BORDER: pokecrystal Route39 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route39 **OPEN EDGE** left edge 9-17 - BORDER: pokecrystal Route39 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route42 **OPEN EDGE** down edge 26-30 - BORDER: pokecrystal Route42 has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- Route43 **OPEN EDGE** left edge 0-9 - BORDER: pokecrystal Route43 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route43 **OPEN EDGE** left edge 25-27 - BORDER: pokecrystal Route43 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route43 **OPEN EDGE** right edge 8-32 - BORDER: pokecrystal Route43 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route43 **OPEN EDGE** right edge 36-37 - BORDER: pokecrystal Route43 has no right connection; out-of-bounds is solid in-engine (cosmetic)
+- Route46 **OPEN EDGE** left edge 12-15 - BORDER: pokecrystal Route46 has no left connection; out-of-bounds is solid in-engine (cosmetic)
+- Route7_Frlg **NO WARP** (22,10) WEST_ARROW_WARP - VANILLA FireRed: Route 7 gate approach arrow tile has no warp at the merge base (scoped only because east_blocks.py edits Route 7; behind the tree wall)
+- SproutTower1F **OPEN EDGE** down edge 8-11 - BORDER: pokecrystal SproutTower1F has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- SproutTower2F **OPEN EDGE** down edge 2-11 - BORDER: pokecrystal SproutTower2F has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- SproutTower3F **OPEN EDGE** down edge 6-13 - BORDER: pokecrystal SproutTower3F has no down connection; out-of-bounds is solid in-engine (cosmetic)
+- VioletCity **OPEN EDGE** left edge 26-33 - BORDER: outside the span of the left neighbour(s) Route36, which are connected (cosmetic)
+
+## Outdoor dead ends (<=1 connected outdoor neighbour)
+
+- IlexForest (warps only)
+- LakeOfRage (Route43)
+- SilverCaveOutside (Route28)
+
+## GSC outdoor maps not built (pokecrystal maps with connections)
+
+Route10North, Route10South, Route21
+
+## Tile-level reachability from Pallet Town
+
+209 of 1114 maps reachable on foot/surf (over-approximation: ignores elevation, ledges, HM obstacles, objects); 90 scoped maps unreachable.
+
+### Intentionally severed
+
+- west_blocks.py: west of the Route36 tree wall / Route42 rockslide / Route32 rockfall (no travel west out of the region via Violet City or Mahogany Town) (81 maps): AzaleaTown, AzaleaTown_CharcoalKiln, AzaleaTown_Gym, AzaleaTown_KurtsHouse, AzaleaTown_Mart, AzaleaTown_PokemonCenter_1F, AzaleaTown_PokemonCenter_2F, BurnedTower1F, BurnedTowerB1F, CianwoodCity, CianwoodCity_Gym, CianwoodCity_LugiaSpeechHouse, CianwoodCity_ManiasHouse, CianwoodCity_Pharmacy, CianwoodCity_PhotoStudio, CianwoodCity_PokeSeersHouse, CianwoodCity_PokemonCenter_1F, CianwoodCity_PokemonCenter_2F, EcruteakCity, EcruteakCity_DanceTheater, EcruteakCity_Gym, EcruteakCity_House1, EcruteakCity_House2, EcruteakCity_House3, EcruteakCity_House4, EcruteakCity_ItemfinderHouse, EcruteakCity_LugiaSpeechHouse, EcruteakCity_Mart, EcruteakCity_PokemonCenter_1F, EcruteakCity_PokemonCenter_2F, EcruteakCity_TinTowerEntrance, EcruteakCity_WiseTriosHouse, GoldenrodCity, GoldenrodCity_BikeShop, GoldenrodCity_BillsFamilysHouse, GoldenrodCity_DeptStore1F, GoldenrodCity_FlowerShop, GoldenrodCity_GameCorner, GoldenrodCity_Gym, GoldenrodCity_HappinessRater, GoldenrodCity_MagnetTrainStation, GoldenrodCity_NameRater, GoldenrodCity_PPSpeechHouse, GoldenrodCity_PokemonCenter_1F, GoldenrodCity_PokemonCenter_2F, GoldenrodCity_RadioTower1F, IlexForest, MountMortar1FInside, MountMortar1FOutside, MountMortar2FInside, MountMortarB1F, OlivineCity, OlivineCity_Cafe, OlivineCity_GoodRodHouse, OlivineCity_Gym, OlivineCity_Mart, OlivineCity_PokemonCenter_1F, OlivineCity_PokemonCenter_2F, OlivineCity_PunishmentSpeechHouse, OlivineCity_TimsHouse, Route33, Route34, Route34_DayCare, Route35, Route35_NationalParkGate, Route36_NationalParkGate, Route36_RuinsOfAlphGate, Route37, Route38, Route39, Route39_Barn, Route39_Farmhouse, Route40, Route41, SlowpokeWellB1F, SlowpokeWellB2F, TinTower1F, TinTowerRoof, UnionCave1F, UnionCaveB1F, UnionCaveB2F
+
+### Known unreachable (pre-existing)
+
+- Route28 east part (x27-39, connected to Route22) is walled off from its west part, so Route28's west half and Silver Cave cannot be reached (8 maps): Route28_SteelWingHouse, SilverCaveItemRooms, SilverCaveOutside, SilverCaveOutside_PokemonCenter_1F, SilverCaveOutside_PokemonCenter_2F, SilverCaveRoom1, SilverCaveRoom2, SilverCaveRoom3
+- door (3,29) sits in a pocket (x0-5, y26-33) only reachable through Violet City's west edge rows 26-33, which are outside Route36's connection span (1 maps): VioletCity_House3
+
+### Undocumented
+
+(none)

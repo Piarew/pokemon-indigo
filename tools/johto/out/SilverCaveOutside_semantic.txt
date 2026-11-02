@@ -1,0 +1,77 @@
+# SilverCaveOutside 40x36  source https://archives.bulbagarden.net/media/upload/e/e5/Mt._Silver_Exterior_GSC.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  T  T 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  T  T 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  C  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  P  P  P  P  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  P  S  P  P  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  P  P  G  G  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  P  P  G  G  T  T  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  G  G  H  H  T  X  X  X  X  X  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  G  G  H  H  T  X  X  X  X  X  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  H  H  H  H  T  X  X  X  X  X  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  H  H  H  H  T  X  X  X  X  X  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  T  T  H  H  VL G  P  P  P  P  VL G  G  G  G  G  T  T  T  T  T  T  T  T 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  T  T  H  H  VL G  P  P  P  P  L  L  L  L  L  L  T  T  G  G  G  G  G  G 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  T  T  H  H  VL G  G  G  G  G  G  G  G  G  G  G  T  T  G  T  T  T  T  T 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  T  T  H  H  L  L  L  L  L  L  L  L  T  T  G  G  T  T  U  T  T  T  T  T 
+M  M  M  M  T  T  T  T  G  G  G  VR G  G  G  G  G  G  G  G  H  H  G  G  H  H  H  H  T  T  G  U  T  T  G  T  T  T  T  T 
+M  M  M  M  T  T  T  T  G  G  G  VR G  G  G  W  W  G  G  G  H  H  G  G  H  H  H  H  T  T  T  G  G  G  G  T  T  T  T  T 
+M  M  M  M  G  G  G  G  G  G  G  VR H  H  G  W  W  G  G  G  T  T  T  T  G  G  G  G  T  T  T  T  G  G  T  T  T  T  T  T 
+M  M  M  M  L  L  L  L  L  L  L  L  H  H  G  W  W  W  W  G  T  T  T  T  L  L  L  L  T  T  T  T  L  L  T  T  T  T  T  T 
+M  M  M  M  H  H  H  H  G  G  H  H  H  H  H  H  G  W  W  G  G  G  G  G  G  G  G  G  H  H  VL G  H  H  T  T  T  T  T  T 
+M  M  M  M  H  H  H  H  G  G  H  H  H  H  H  H  G  W  W  W  W  W  W  G  G  G  G  G  H  H  VL G  H  H  T  T  T  T  T  T 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  H  H  VL G  G  G  G  VR G  G  H  H 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  H  H  L  L  L  L  L  L  G  G  H  H 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  G  G  H  H  H  H  G  G  H  H  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  T  T  G  G  H  H  H  H  G  G  H  H  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M  M 
+
+# raw global cell ids (tools/johto cells.json)
+ 91  91  91  91  91 276  91  91  91  91  91 276  91  91  91  91  91  91 277  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91
+ 91  91  91  91  91 276  91  91  91  91  91 276  91  91  91  91  91  91 278 279 279 279 279 279 280  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91
+ 91  91  91  91  91 276  91  91  91  91  91 276  91  91  91  91  91  91  91  91  91  91  91  91 277  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91
+ 91  91  91  91  91 276  91  91  91  91  91 276  91  91  91  91  91  91  91  91  91  91  91  91 277  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91
+ 91  91  91  91  91 276  91  91  91  91  91 276  91  91  91  91  91  91  91  91  91  91  91  91 277  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91
+279 279 279 279 279 281  91  91  91  91  91 276  91  91  91  91  91  91  91  91  91  91  91  91 278 279 279 279 279 279 279 279 280  91  91  91  91  91  91  91
+ 91  91  91  91  91  91  91  91  91  91  91 276  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91 277  91  91  91  91  91  91  91
+ 91  91  91  91  91  91  91  91  91  91  91 276  91 282 279 279 279 279 279 279 280  91  91  91  91  91  91  91  91  91  91  91 278 279 279 279 279 279 279 279
+ 91  91  91  91  91  91  91  91  91  91  91 276  91 276  91  91  91  91  91  91 277  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91 283 283 283 283
+ 91  91  91  91  91  91  91  91  91  91  91 276  91 276  91  91  91  91  91  91 278 279 279 279 280  91  91  91  91  91  91  91  91  91  91  91 283 283 283 283
+ 91  91  91  91  91  91  91  91  91  91  91 276  91 276  91  91  91  91  91  91  91  91  91  91 277  91  91  91  91  91  91  91  91  91  91  91  91  91 283 283
+279 279 279 279 279 279 279 279 279 279 279 281  91 276  91 282 279 279 109 279 279 279 280  91 278 279 279 279 279 279 280  91  91  91  91  91  91  91 283 283
+ 91  91  91  91  91  91  91  91  91  91  91  91  91 276  91 276   1   1   1   1 283 283 277  91  91  91  91  91  91  91 277  91  91  91  91  91  91  91  91  91
+ 91  91  91  91  91  91  91  91  91  91  91  91  91 276  91 276   1 284   1   1 283 283 277  91  91  91  91  91  91  91 277  91  91  91  91  91  91 282 279 279
+ 91  91  91  91  91  91  91  91  91  91  91  91  91 276  91 276   1   1 243 243 283 283 277  91  91  91  91  91  91  91 277  91  91  91  91  91  91 276  91  91
+ 91  91  91  91  91  91  91  91  91  91  91 282 279 281  91 276   1   1 243 243 283 283 278 279 279 279 280  91  91  91 278 279 279 279 280  91  91 276  91  91
+ 91  91  91  91  91  91  91  91  91  91  91 276  91  91  91 276 243 243 261 261 283 283 285 286 286 287 277  91  91  91  91  91  91  91 277  91  91 276  91  91
+ 91  91  91  91  91  91  91  91  91  91  91 276  91 282 279 281 243 243 261 261 283 283 288 289 289 290 277  91  91  91  91  91  91  91 278 279 279 281  91  91
+ 91  91  91  91  91  91  91  91  91  91  91 276  91 276 283 283 261 261 261 261 283 283 291 292 293 294 277  91  91  91  91  91  91  91  91  91  91  91  91  91
+279 279 279 279 279 279 279 279 279 279 279 281  91 276 283 283 261 261 261 261 283 283 295 296 297 298 278 279 279 279 279 279 279 279 279 279 279 279 279 279
+ 91  91  91  91  91  91  91  91  91  91  91  91  91 276 283 283 283 283 261 261 299 243   1   1   1   1 299 243 243 243 243 243 283 283 283 283 283 283 283 283
+ 91  91  91  91  91  91  91  91  91  91  91  91  91 276 283 283 283 283 261 261 299 243   1   1   1   1 300 301 302 303 301 301 283 283 243 243 243 243 243 243
+ 91  91  91  91  91  91  91  91  91  91  91  91  91 276 283 283 283 283 261 261 299 243 243 243 243 243 243 243 243 243 243 243 283 283 243 283 283 283 283 283
+ 91  91  91 282 279 279 279 279 279 279 279 279 279 281 283 283 283 283 261 261 300 301 302 303 301 301 301 301 283 283 243 243 283 283  88 283 283 283 283 283
+ 91  91  91 276 283 283 283 283 243 243 243 304 243 243 305 306 306 307 243 243 261 261 243 243 261 261 261 261 283 283 243  88 283 283 243 283 283 283 283 283
+ 91  91  91 276 283 283 283 283 243 243 243 304 243 243 308   6   6 309 243 243 261 261 243 243 261 261 261 261 283 283 283 243 243 243 243 283 283 283 283 283
+ 91  91  91 276 243 243 243 243 243 243 243 304 261 261 308   6   6 310 306 307 283 283 283 283 243 243 243 243 283 283 283 283 243 243 283 283 283 283 283 283
+ 91  91  91 276 302 303 301 301 301 301 301 311 261 261 308   6   6   6   6 309 283 283 283 283 302 303 301 301 283 283 283 283 301 301 283 283 283 283 283 283
+ 91  91  91 276 261 261 261 261 243 243 261 261 261 261 261 261 308   6   6 310 306 306 306 307 243 243 243 243 261 261 299 243 261 261 283 283 283 283 283 283
+ 91  91  91 276 261 261 261 261 243 243 261 261 261 261 261 261 308   6   6   6   6   6   6 309 243 243 243 243 261 261 299 243 261 261 283 283 283 283 283 283
+ 91  91  91  91 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 313 283 283 261 261 299 243 243 243 243 304 243 243 261 261
+ 91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91 276 283 283 261 261 300 301 301 301 301 311 243 243 261 261
+312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 312 313  91  91  91  91  91 276 283 283 243 243 261 261 261 261 243 243 261 261 314 312
+ 91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91 276  91  91  91  91  91 276 283 283 243 243 261 261 261 261 243 243 261 261 277  91
+ 91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91 276  91  91  91  91  91  91 312 312 312 312 312 312 312 312 312 312 312 312  91  91
+ 91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91 276  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91  91

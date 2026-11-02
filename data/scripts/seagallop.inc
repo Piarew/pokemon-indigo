@@ -83,6 +83,7 @@ EventScript_ChooseDestFromIslandVermilionAllowed::
 	end
 
 EventScript_SailToDest::
+	call_if_eq VAR_0x8006, SEAGALLOP_VERMILION_CITY, EventScript_IndigoVermilionHarborClosed  @ east block
 	specialvar VAR_RESULT, GetSeagallopNumber
 	buffernumberstring STR_VAR_1, VAR_RESULT
 	goto_if_eq VAR_0x8004, SEAGALLOP_VERMILION_CITY, EventScript_DepartingVermilion
@@ -197,3 +198,16 @@ EventScript_SailToSevenIsland::
 Text_AllAboardSeagallopNum::
 	.string "All right!\n"
 	.string "All aboard SEAGALLOP HI-SPEED {STR_VAR_1}!$"
+
+@ ---- East block (indigo custom; see tools/johto/east_blocks.py) ----
+@ Vermilion City is behind the east blocks: any ferry bound for it puts in at Cinnabar Island instead.
+EventScript_IndigoVermilionHarborClosed::
+	msgbox Text_IndigoVermilionHarborClosed
+	setvar VAR_0x8006, SEAGALLOP_CINNABAR_ISLAND
+	return
+
+Text_IndigoVermilionHarborClosed:
+	.string "VERMILION harbor has been closed\n"
+	.string "since the rockslides.\p"
+	.string "This ship will put in at\n"
+	.string "CINNABAR ISLAND instead.$"

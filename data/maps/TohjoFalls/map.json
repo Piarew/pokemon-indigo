@@ -1,0 +1,37 @@
+{
+  "id": "MAP_TOHJO_FALLS",
+  "name": "TohjoFalls",
+  "layout": "LAYOUT_TOHJO_FALLS",
+  "music": "MUS_RG_MT_MOON",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_SEAFOAM_ISLANDS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 13,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE27",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE27",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

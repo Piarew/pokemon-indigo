@@ -159,3 +159,13 @@ Route15_Text_RonNotEnoughMons::
 	.string "RON: Did you want to battle with\n"
 	.string "my sister and me?\p"
 	.string "You need two POKéMON, then.$"
+
+@ ---- East block (indigo custom; see tools/johto/east_blocks.py) ----
+Route15_Frlg_EventScript_RockslideSign::
+	msgbox Route15_Frlg_Text_Rockslide, MSGBOX_SIGN
+	end
+
+Route15_Frlg_Text_Rockslide:
+	.string "A rockslide has buried the\n"
+	.string "road east to LAVENDER TOWN.\p"
+	.string "It can't be crossed.$"

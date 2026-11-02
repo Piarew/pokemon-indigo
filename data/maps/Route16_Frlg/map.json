@@ -24,6 +24,11 @@
       "map": "MAP_CELADON_CITY",
       "offset": -10,
       "direction": "right"
+    },
+    {
+      "map": "MAP_CYCLING_ROAD_WEST",
+      "offset": 6,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -206,9 +211,7 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

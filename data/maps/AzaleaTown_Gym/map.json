@@ -1,0 +1,44 @@
+{
+  "id": "MAP_AZALEA_TOWN_GYM",
+  "name": "AzaleaTown_Gym",
+  "layout": "LAYOUT_VIRIDIAN_CITY_GYM",
+  "music": "MUS_RG_GYM",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_VIRIDIAN_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_GYM",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 16,
+      "y": 22,
+      "elevation": 3,
+      "dest_map": "MAP_AZALEA_TOWN",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 17,
+      "y": 22,
+      "elevation": 3,
+      "dest_map": "MAP_AZALEA_TOWN",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 18,
+      "y": 22,
+      "elevation": 3,
+      "dest_map": "MAP_AZALEA_TOWN",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

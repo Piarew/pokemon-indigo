@@ -1,0 +1,124 @@
+{
+  "id": "MAP_CIANWOOD_CITY",
+  "name": "CianwoodCity",
+  "layout": "LAYOUT_CIANWOOD_CITY",
+  "music": "MUS_RG_CINNABAR",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_VIRIDIAN_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE40",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE41",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 24,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_CIANWOOD_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_CIANWOOD_CITY_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_CIANWOOD_CITY_MANIAS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_CIANWOOD_CITY_PHARMACY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_CIANWOOD_CITY_PHOTO_STUDIO",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_CIANWOOD_CITY_LUGIA_SPEECH_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_CIANWOOD_CITY_POKE_SEERS_HOUSE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CianwoodCity_EventScript_SignSign"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CianwoodCity_EventScript_Sign2Sign"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CianwoodCity_EventScript_Sign3Sign"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 45,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CianwoodCity_EventScript_Sign4Sign"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CianwoodCity_EventScript_Sign5Sign"
+    }
+  ]
+}

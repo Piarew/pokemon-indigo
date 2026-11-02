@@ -1,0 +1,41 @@
+# AzaleaTown 40x18  source https://archives.bulbagarden.net/media/upload/f/f1/Azalea_Town_GSC.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  M  M  T  T  T  T  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  G  G  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  M  M  T  T  T  T  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  G  X  X  X  X  X  M  M  T  T  T  T  M  X  X  X  X  G  T  T  T  T  T  T  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  G  X  X  X  X  X  M  M  T  T  T  T  M  X  X  X  X  G  T  T  T  T  T  T  M  M  M  M  M  M  M  M  M  M 
+T  T  T  T  T  T  G  X  X  X  X  X  T  T  T  T  T  T  T  X  X  X  X  G  T  T  M  M  T  T  T  T  T  T  T  T  T  T  M  M 
+T  T  T  T  T  T  G  X  X  X  X  X  T  T  T  T  T  T  T  X  X  X  X  G  T  T  M  M  G  G  G  G  G  G  T  T  T  T  M  M 
+T  T  M  M  T  T  G  G  P  P  G  G  T  X  X  X  X  X  T  T  P  P  P  P  T  T  T  T  G  G  M  M  M  G  T  T  T  T  T  T 
+T  T  M  M  T  T  L  L  L  P  L  L  T  X  X  X  X  X  T  T  P  P  P  P  T  T  T  T  G  S  M  C  M  G  T  T  T  T  T  T 
+X  X  X  X  X  G  G  G  P  P  G  G  T  X  X  X  X  X  G  G  P  P  P  P  G  G  G  G  G  G  M  P  M  G  T  T  M  M  T  T 
+X  X  X  X  X  G  G  G  P  P  S  G  T  X  X  X  X  X  G  S  P  P  P  P  G  G  G  G  G  G  G  G  G  G  T  T  M  M  T  T 
+X  X  X  X  X  P  P  P  P  P  P  P  P  P  P  P  P  P  P  X  X  X  X  X  G  G  G  G  G  G  G  G  G  G  T  T  T  T  T  T 
+X  X  X  X  X  P  P  P  X  X  X  X  X  X  P  P  P  P  P  X  X  X  X  X  T  T  T  T  L  L  L  P  L  L  T  T  T  T  T  T 
+T  P  P  P  P  P  P  P  X  X  X  X  X  X  G  G  P  P  G  X  X  X  X  X  T  T  T  T  G  G  G  G  G  G  T  T  T  T  T  T 
+T  T  T  T  T  T  P  P  X  X  X  X  X  X  G  G  P  P  G  X  X  X  X  X  T  T  T  T  G  G  G  G  G  G  G  G  G  G  G  T 
+T  T  T  T  T  T  P  P  X  X  X  X  X  X  G  G  P  P  P  P  P  P  P  P  M  M  T  T  G  G  P  P  P  P  P  P  P  P  P  P 
+T  T  T  T  T  T  P  P  X  X  X  X  X  X  S  G  P  P  P  P  P  P  P  P  M  M  T  T  G  G  P  P  P  P  P  P  P  P  P  P 
+T  T  T  T  T  T  P  P  P  P  P  P  P  P  P  P  P  P  G  G  T  T  M  M  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  P  P  P  P  P  P  P  P  P  P  P  P  G  G  T  T  M  M  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+
+# raw global cell ids (tools/johto cells.json)
+323 323 323 323 323 323  15  15  15  15 323 323 323 323 323 323 323 323 323 323 323 323 323 323  23  24 323 323 323 323  41  37  37  37  37  37  37  37  37  37
+324 324 324 324 324 324  16  16  16  16 324 324 324 324 324 324 324 324 324 324 324 324 324 324  25  26 324 324 324 324  41  37  37  37  37  37  37  37  37  37
+323 323 323 323 323 323  16  16  16  16 323 323  23  24 323 323 323 323  23  24 355 356 356 357 323 323 323 323 323 323  41  37  37  37  37  37  37  37  37  37
+324 324 324 324 324 324  16  16  16  16 324 324  25  26 324 324 324 324  25  26 358 359 359 360 324 324 324 324 324 324  49  43  43  43  43  43  43  43  43  43
+323 323 323 323 323 323  16  16 361 362 362 363 323 323 323 323 323 323 323 323 364 365 365 366 323 323  23  24  15  15  15  15  15  15 323 323 323 323  23  24
+324 324 324 324 324 324  16  16  32  18  33  34 324 324 324 324 324 324 324 324 367  18  19 368 324 324  25  26  16  16  16  16  16  16 324 324 324 324  25  26
+323 323  23  24 323 323  16  16   1   1  16  16 323 323 355 356 356 357 323 323   1   1   1   1 323 323 323 323  16  16 369 369 370  16 323 323 323 323 323 323
+324 324  25  26 324 324  62  62  69 371  62  62 324 324 358 359 359 360 324 324   1   1   1   1 324 324 324 324  16  36 369 372 370  16 324 324 324 324 324 324
+116 117   1   1   1 197  16  16   1   1  16  16 323 323 364 365 365 366  16  16   1   1   1   1  16  16  16  16  16  16 373 374 375  16 323 323  23  24 323 323
+119 120 148  36 148 148  16  16   1   1  36  16 324 324 367  18  21 368  16  36   1   1   1   1  16  16  16  16  16  16  16  16  16  16 324 324  25  26 324 324
+ 60  61 125 326   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  16  16  16  16  16  16  16  16  16  16 323 323 323 323 323 323
+ 33  34 125 330   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1  15  15  15  15  62  62  62 376  62  62 324 324 324 324 324 324
+323 323 323 323 323 323   1   1 355 356 356 356 356 357  16  16   1   1  16  16 361 362 362 363 323 323 323 323  16  16  16  16  16  16  15  15  15  15  15  15
+324 324 324 324 324 324   1   1 358 359 359 359 359 360  16  16   1   1  16  36  32  18  33  34 324 324 324 324  16  16  16  16  16  16  16  16  16  16  16  16
+323 323 323 323 323 323   1   1  56  57  58  59  60  61  16  16   1   1   1   1   1   1   1   1  23  24 323 323  16  16   1   1   1   1   1   1   1   1   1   1
+324 324 324 324 324 324   1   1  32  33  18  33  33  34  36  16   1   1   1   1   1   1   1   1  25  26 324 324  16  16   1   1   1   1   1   1   1   1   1   1
+323 323 323 323 323 323   1   1   1   1   1   1   1   1   1   1   1   1  16  16 323 323  23  24 323 323 323 323 323 323 323 323 323 323 323 323 323 323 323 323
+324 324 324 324 324 324   1   1   1   1   1   1   1   1   1   1   1   1  16  16 324 324  25  26 324 324 324 324 324 324 324 324 324 324 324 324 324 324 324 324

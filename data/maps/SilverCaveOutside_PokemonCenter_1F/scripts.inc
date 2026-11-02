@@ -1,0 +1,16 @@
+SilverCaveOutside_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SilverCaveOutside_PokemonCenter_1F_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+	.byte 0
+
+SilverCaveOutside_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_SILVER_CAVE_OUTSIDE
+	end
+
+SilverCaveOutside_PokemonCenter_1F_EventScript_Nurse::
+	lock
+	faceplayer
+	call EventScript_PkmnCenterNurse_Frlg
+	release
+	end
+

@@ -1,0 +1,41 @@
+# Route36 60x18  source https://archives.bulbagarden.net/media/upload/1/18/Johto_Route_36_C.png
+# T forest U bush P path G lawn F flower H tall grass W water R/w* rocks in water
+# M mountain C cave L ledge VL/VR side ledge S sign X building
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  P  P  G  G  G  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  P  P  G  S  G  G  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  P  P  P  P  P  P  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  G  T  T  G  P  P  P  P  P  P  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  G  T  T  G  G  G  G  G  G  G  G  T  T  T  T  T  T  T  H  H  H  H  H  H  G  G  T  T  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  G  T  T  T  G  G  T  T  G  G  T  T  T  T  T  T  T  T  H  H  H  H  H  H  G  G  G  G  G  G  G  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  X  X  X  X  X  T  G  G  G  T  T  T  G  G  T  T  G  G  T  T  T  T  T  T  T  T  G  G  F  F  G  G  F  F  G  G  F  F  G  G  G  G  G  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  X  X  X  X  X  T  G  S  G  T  T  T  G  G  T  T  T  G  G  T  T  T  T  T  T  T  G  G  F  F  G  G  F  F  G  G  F  F  G  G  G  S  G  G  G  G 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  X  X  X  X  X  P  P  P  G  T  T  T  T  G  G  G  G  G  G  T  T  T  T  T  T  T  G  G  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  X  X  X  X  X  P  P  P  G  T  T  T  T  T  T  T  T  T  G  G  G  G  G  G  G  G  G  G  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P  P 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  P  P  P  P  P  P  P  G  T  T  T  T  T  T  T  T  T  T  T  T  G  T  T  T  T  T  G  G  G  G  G  P  P  P  P  G  G  G  G  G  G  G  G  G  G 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  P  P  G  T  T  T  T  T  T  T  T  T  T  T  T  G  T  T  T  T  T  T  T  T  G  S  P  P  P  P  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  P  P  G  G  H  H  H  H  T  T  T  T  G  G  G  G  T  T  T  T  T  T  T  T  T  T  P  P  P  P  T  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  P  P  G  G  H  H  H  H  T  T  T  T  G  G  G  G  T  T  T  T  T  T  T  T  T  T  X  X  X  X  X  T  T  T  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  G  P  P  P  P  P  P  P  P  P  P  P  P  G  G  T  T  T  T  T  T  T  T  T  T  T  T  X  X  X  X  X  T  M  M  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  G  G  P  P  P  P  P  P  P  P  P  P  P  P  G  G  T  T  T  T  T  T  T  T  T  T  T  T  X  X  X  X  X  T  M  M  T  T  T  T  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  M  M  X  X  X  X  X  M  M  M  M  M  M  M  T  T 
+T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  G  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  M  M  G  G  G  G  M  M  M  M  M  M  M  M  T  T 
+
+# raw global cell ids (tools/johto cells.json)
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  15  16   1   1  16  16  16  16  16  15   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  15  16   1   1  16  36  16  16  16  15   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  15  15  15  15  15  16   1   1   1   1   1   1  16  15   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  16  16  16  15  15  16   1   1   1   1   1   1  16  15   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  16  16  16  15  15  16  16  16  16  16  16  16  16  15   0   0   0   0   0   0  82  82  82  82  82  82  16  16  15  15  15  15  15  15   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  16  16  16  15  15  15  16  16  15  15  16  16  15  15   8   8   8   8   8   8  82  82  82  82  82  82  16  16  16  16  16  16  16  15   8   8   8   8   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0 115 116 116 117   0   0  16  16  16  15   0   0  16  16  15  15  16  16  15  15  15  15   0   0   0   0  16  16  31  31  16  16  31  31  16  16  31  31  16  16  16  16  16  15  15  15
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8 118 119 119 120   8   8  16  36  16  15   8   8  16  16  15  15  15  16  16  15  15  15   8   8   8   8  16  16  35  35  16  16  35  35  16  16  35  35  16  16  16  36  16  16  16  16
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0 121 122 123 124 125   1   1   1  16  15   0   0  15  16  16  16  16  16  16  15  15  15  15  15  15  15  16  16   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8  17 126 126  20 125   1   1   1  16  15   8   8  15  15  15  15  15  15  16  16  16  16  16  16  16  16  16  16   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   1  16  15   0   0   0   0   0   0   0   0   0   0  15  16   0   0   0   0  15  16  16  16  16  16   1   1   1   1  16  16  16  16  16  16  16  16  16  16
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   1   1  16  15   8   8   8   8   8   8   8   8   8   8  15  16   8   8   8   8  15  15  15  15  16  36   1   1   1   1  15  15  15  15  15  15  15  15  15  15
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   1  16  16  82  82  82  82   0   0   0   0  16  16  16  16   0   0   0   0   0   0   0   0   0   0   1   1   1   1   0   0   0   0   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   1   1  16  16  82  82  82  82   8   8   8   8  16  16  16  16   8   8   8   8   8   8   8   8   8   8 148 125 125 148   8   8   8   8   8   8   8   8   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  15  16  16  16   1   1   1   1   1   1   1   1   1   1   1   1  16  16   0   0   0   0   0   0   0   0   0   0   0   0 115 116 116 117  23  24  23  24   0   0   0   0   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  15  16  16  16   1   1   1   1   1   1   1   1   1   1   1   1  16  16   8   8   8   8   8   8   8   8   8   8   8   8 118 119 119 120  25  26  25  26   8   8   8   8   8   8
+  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  15  16   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  23  24  12  13 123 124  63  64  64  64  64  64  64  65   0   0
+  8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  15  16   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8   8  25  26  17  18 126  20  41  37  37  37  37  37  37  40   8   8

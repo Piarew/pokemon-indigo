@@ -1,0 +1,30 @@
+{
+  "id": "MAP_SPROUT_TOWER3F",
+  "name": "SproutTower3F",
+  "layout": "LAYOUT_SPROUT_TOWER3F",
+  "music": "MUS_RG_POKE_TOWER",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_POKEMON_TOWER",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 14,
+      "elevation": 3,
+      "dest_map": "MAP_SPROUT_TOWER2F",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
