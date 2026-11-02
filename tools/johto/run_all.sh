@@ -22,6 +22,9 @@ python3 check_edges.py SeaRouteVioletWest SeaRouteVioletCentral SeaRouteVioletEa
 python3 warp_audit.py SeaRouteVioletWest SeaRouteVioletCentral SeaRouteVioletEast
 python3 check_edges.py Route40 Route41 OlivineCity CianwoodCity
 python3 warp_audit.py Route40 Route41 CianwoodCity
-python3 gap_audit.py --strict --report out/gap_report.md > /dev/null && echo "gap audit: PASS (report tools/johto/out/gap_report.md)"
 python3 seafoam_block.py
 python3 warp_audit.py SeafoamIslands_1F_Frlg SeafoamIslands_B1F_Frlg SeafoamIslands_B2F_Frlg SeafoamIslands_B3F_Frlg SeafoamIslands_B4F_Frlg
+python3 west_blocks.py
+python3 check_edges.py Route36 VioletCity Route42 MahoganyTown Route32
+python3 warp_audit.py Route36 Route42 Route32
+python3 gap_audit.py --strict --report out/gap_report.md > /dev/null && echo "gap audit: PASS (report tools/johto/out/gap_report.md)"

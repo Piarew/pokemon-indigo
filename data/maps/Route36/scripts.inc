@@ -31,3 +31,13 @@ Route36_Text_R36Sign::
 Route36_Text_RuinsOfAlphSign::
 	.string "RUINS OF ALPH\n"
 	.string "NORTH ENTRANCE$"
+
+@ ---- West block (indigo custom; see tools/johto/west_blocks.py) ----
+Route36_EventScript_TreeWallSign::
+	msgbox Route36_Text_TreeWall, MSGBOX_SIGN
+	end
+
+Route36_Text_TreeWall:
+	.string "The trees have grown together\n"
+	.string "into a thick wall.\p"
+	.string "There is no way west from here.$"

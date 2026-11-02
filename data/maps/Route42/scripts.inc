@@ -32,3 +32,13 @@ Route42_Text_MtMortar2Sign::
 Route42_Text_R422Sign::
 	.string "ROUTE 42\n"
 	.string "ECRUTEAK CITY - MAHOGANY TOWN$"
+
+@ ---- West block (indigo custom; see tools/johto/west_blocks.py) ----
+Route42_EventScript_RockslideSign::
+	msgbox Route42_Text_Rockslide, MSGBOX_SIGN
+	end
+
+Route42_Text_Rockslide:
+	.string "A rockslide has buried the\n"
+	.string "road west to ECRUTEAK CITY.\p"
+	.string "It can't be crossed.$"

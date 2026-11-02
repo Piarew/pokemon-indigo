@@ -83,6 +83,70 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route42_EventScript_R422Sign"
+    },
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route42_EventScript_RockslideSign"
+    },
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route42_EventScript_RockslideSign"
+    },
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route42_EventScript_RockslideSign"
+    },
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route42_EventScript_RockslideSign"
+    },
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route42_EventScript_RockslideSign"
+    },
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route42_EventScript_RockslideSign"
+    },
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route42_EventScript_RockslideSign"
+    },
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route42_EventScript_RockslideSign"
     }
   ]
 }

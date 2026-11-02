@@ -129,3 +129,20 @@ Gaps: 0 (allow-listed: 106)
 ## GSC outdoor maps not built (pokecrystal maps with connections)
 
 Route10North, Route10South, Route21
+
+## Tile-level reachability from Pallet Town
+
+330 of 1114 maps reachable on foot/surf (over-approximation: ignores elevation, ledges, HM obstacles, objects); 90 scoped maps unreachable.
+
+### Intentionally severed
+
+- west_blocks.py: west of the Route36 tree wall / Route42 rockslide / Route32 rockfall (no travel west out of the region via Violet City or Mahogany Town) (81 maps): AzaleaTown, AzaleaTown_CharcoalKiln, AzaleaTown_Gym, AzaleaTown_KurtsHouse, AzaleaTown_Mart, AzaleaTown_PokemonCenter_1F, AzaleaTown_PokemonCenter_2F, BurnedTower1F, BurnedTowerB1F, CianwoodCity, CianwoodCity_Gym, CianwoodCity_LugiaSpeechHouse, CianwoodCity_ManiasHouse, CianwoodCity_Pharmacy, CianwoodCity_PhotoStudio, CianwoodCity_PokeSeersHouse, CianwoodCity_PokemonCenter_1F, CianwoodCity_PokemonCenter_2F, EcruteakCity, EcruteakCity_DanceTheater, EcruteakCity_Gym, EcruteakCity_House1, EcruteakCity_House2, EcruteakCity_House3, EcruteakCity_House4, EcruteakCity_ItemfinderHouse, EcruteakCity_LugiaSpeechHouse, EcruteakCity_Mart, EcruteakCity_PokemonCenter_1F, EcruteakCity_PokemonCenter_2F, EcruteakCity_TinTowerEntrance, EcruteakCity_WiseTriosHouse, GoldenrodCity, GoldenrodCity_BikeShop, GoldenrodCity_BillsFamilysHouse, GoldenrodCity_DeptStore1F, GoldenrodCity_FlowerShop, GoldenrodCity_GameCorner, GoldenrodCity_Gym, GoldenrodCity_HappinessRater, GoldenrodCity_MagnetTrainStation, GoldenrodCity_NameRater, GoldenrodCity_PPSpeechHouse, GoldenrodCity_PokemonCenter_1F, GoldenrodCity_PokemonCenter_2F, GoldenrodCity_RadioTower1F, IlexForest, MountMortar1FInside, MountMortar1FOutside, MountMortar2FInside, MountMortarB1F, OlivineCity, OlivineCity_Cafe, OlivineCity_GoodRodHouse, OlivineCity_Gym, OlivineCity_Mart, OlivineCity_PokemonCenter_1F, OlivineCity_PokemonCenter_2F, OlivineCity_PunishmentSpeechHouse, OlivineCity_TimsHouse, Route33, Route34, Route34_DayCare, Route35, Route35_NationalParkGate, Route36_NationalParkGate, Route36_RuinsOfAlphGate, Route37, Route38, Route39, Route39_Barn, Route39_Farmhouse, Route40, Route41, SlowpokeWellB1F, SlowpokeWellB2F, TinTower1F, TinTowerRoof, UnionCave1F, UnionCaveB1F, UnionCaveB2F
+
+### Known unreachable (pre-existing)
+
+- Route28 east part (x27-39, connected to Route22) is walled off from its west part, so Route28's west half and Silver Cave cannot be reached (8 maps): Route28_SteelWingHouse, SilverCaveItemRooms, SilverCaveOutside, SilverCaveOutside_PokemonCenter_1F, SilverCaveOutside_PokemonCenter_2F, SilverCaveRoom1, SilverCaveRoom2, SilverCaveRoom3
+- door (3,29) sits in a pocket (x0-5, y26-33) only reachable through Violet City's west edge rows 26-33, which are outside Route36's connection span (1 maps): VioletCity_House3
+
+### Undocumented
+
+(none)

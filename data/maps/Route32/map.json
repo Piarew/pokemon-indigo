@@ -73,6 +73,38 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route32_EventScript_Sign3Sign"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 77,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route32_EventScript_RockfallSign"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 77,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route32_EventScript_RockfallSign"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 78,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route32_EventScript_RockfallSign"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 78,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route32_EventScript_RockfallSign"
     }
   ]
 }

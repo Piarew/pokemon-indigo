@@ -24,3 +24,13 @@ Route32_Text_Sign2Sign::
 Route32_Text_Sign3Sign::
 	.string "ROUTE 32\n"
 	.string "VIOLET CITY - AZALEA TOWN$"
+
+@ ---- West block (indigo custom; see tools/johto/west_blocks.py) ----
+Route32_EventScript_RockfallSign::
+	msgbox Route32_Text_Rockfall, MSGBOX_SIGN
+	end
+
+Route32_Text_Rockfall:
+	.string "Fallen rocks have buried the\n"
+	.string "path to UNION CAVE.\p"
+	.string "There is no way through.$"

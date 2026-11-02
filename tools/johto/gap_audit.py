@@ -18,6 +18,20 @@ BASE = '12de80e9c09a7e89daf9ea8ff8d25a82c61c3c4d'   # merge-base of spike with u
 START = 'MAP_PALLET_TOWN'
 # Deliberate / accepted gaps: (map dir, kind, detail-prefix): reason
 ALLOW = {}
+# Tile-level: scoped maps intentionally severed from the rest of the game (barrier script: reason)
+import west_blocks
+SEVERED = {n: 'west_blocks.py: west of the Route36 tree wall / Route42 rockslide / Route32 rockfall '
+              '(no travel west out of the region via Violet City or Mahogany Town)' for n in west_blocks.SEVERED}
+# Tile-level: scoped maps already unreachable on foot/surf before the west blocks (known weak spots, not fixed here)
+_SILVER = ('Route28 east part (x27-39, connected to Route22) is walled off from its west part, so Route28\'s west '
+           'half and Silver Cave cannot be reached')
+KNOWN_UNREACHABLE = {
+    'Route28_SteelWingHouse': _SILVER, 'SilverCaveOutside': _SILVER, 'SilverCaveOutside_PokemonCenter_1F': _SILVER,
+    'SilverCaveOutside_PokemonCenter_2F': _SILVER, 'SilverCaveItemRooms': _SILVER, 'SilverCaveRoom1': _SILVER,
+    'SilverCaveRoom2': _SILVER, 'SilverCaveRoom3': _SILVER,
+    'VioletCity_House3': 'door (3,29) sits in a pocket (x0-5, y26-33) only reachable through Violet City\'s west '
+                         'edge rows 26-33, which are outside Route36\'s connection span',
+}
 # Open edges are accepted automatically (listed under "Accepted") when
 #   * BORDER  - a GSC map whose pokecrystal original has no connection on that side (the converter keeps the source
 #               art, e.g. a path running into the tree line); out-of-bounds cells are always solid in-engine
@@ -179,6 +193,12 @@ def components(adj, ids):
         seen |= comp; comps.append(comp)
     return comps
 
+def _group(names, reasons):
+    g = collections.OrderedDict()
+    for n in sorted(names & set(reasons)):
+        g.setdefault(reasons[n], []).append(n)
+    return list(g.items())
+
 def main():
     args = sys.argv[1:]
     rep = args[args.index('--report') + 1] if '--report' in args else None
@@ -220,6 +240,25 @@ def main():
     missing = sorted(n for n, c in GSC.items() if c and n not in have and n + '_Frlg' not in have)
     out += ['', '## GSC outdoor maps not built (pokecrystal maps with connections)', '',
             ', '.join(missing) or '(none)']
+    # tile-level reachability
+    import tilereach
+    world, tdirs = tilereach.load_world()
+    r = tilereach.reach(world, [tilereach.PALLET])
+    unreach = {tdirs[i] for i in world if tdirs[i] in names and i not in r}
+    expect = {n for n in list(SEVERED) + list(KNOWN_UNREACHABLE) if n in names}
+    surprise, stale = sorted(unreach - expect), sorted(expect - unreach)
+    out += ['', '## Tile-level reachability from Pallet Town', '',
+            '%d of %d maps reachable on foot/surf (over-approximation: ignores elevation, ledges, HM obstacles, '
+            'objects); %d scoped maps unreachable.' % (len(r), len(world), len(unreach)), '',
+            '### Intentionally severed', ''] + \
+           ['- %s (%d maps): %s' % (why, len(ns), ', '.join(ns)) for why, ns in _group(unreach, SEVERED)] + \
+           ['', '### Known unreachable (pre-existing)', ''] + \
+           ['- %s (%d maps): %s' % (why, len(ns), ', '.join(ns)) for why, ns in _group(unreach, KNOWN_UNREACHABLE)] + \
+           ['', '### Undocumented', ''] + \
+           (['- **UNREACHABLE** %s' % n for n in surprise] + ['- **NOW REACHABLE** %s (listed as severed/known)' % n
+                                                               for n in stale] or ['(none)'])
+    total += len(surprise) + len(stale)
+    out[3] = 'Gaps: %d (allow-listed: %d)' % (total, len(allowed))
     txt = '\n'.join(out) + '\n'
     print(txt)
     if rep:
