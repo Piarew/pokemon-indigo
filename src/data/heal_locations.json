@@ -397,6 +397,46 @@
       "y": 20,
       "respawn_map": "MAP_SILVER_CAVE_OUTSIDE_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_SILVER_CAVE_OUTSIDE_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE32",
+      "map": "MAP_ROUTE32",
+      "x": 11,
+      "y": 74,
+      "respawn_map": "MAP_ROUTE32_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_ROUTE32_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_AZALEA_TOWN",
+      "map": "MAP_AZALEA_TOWN",
+      "x": 15,
+      "y": 10,
+      "respawn_map": "MAP_AZALEA_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_AZALEA_TOWN_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_GOLDENROD_CITY",
+      "map": "MAP_GOLDENROD_CITY",
+      "x": 15,
+      "y": 28,
+      "respawn_map": "MAP_GOLDENROD_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_GOLDENROD_CITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_OLIVINE_CITY",
+      "map": "MAP_OLIVINE_CITY",
+      "x": 13,
+      "y": 22,
+      "respawn_map": "MAP_OLIVINE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_OLIVINE_CITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_CIANWOOD_CITY",
+      "map": "MAP_CIANWOOD_CITY",
+      "x": 24,
+      "y": 44,
+      "respawn_map": "MAP_CIANWOOD_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_CIANWOOD_CITY_NURSE"
     }
   ]
 }
