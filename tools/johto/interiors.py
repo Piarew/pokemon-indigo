@@ -88,6 +88,10 @@ DOORS = {
     'OlivineCity': [(13, 21, 'pc', None), (19, 17, 'mart', None), (10, 11, 'gym_viridian', None),
                     (25, 11, 'vhouse', 'TimsHouse'), (30, 11, 'vhouse', 'PunishmentSpeechHouse'),
                     (13, 15, 'vhouse', 'GoodRodHouse'), (7, 21, 'vhouse', 'Cafe')],
+    # gap fill (sea route batch)
+    'CianwoodCity': [(24, 43, 'pc', None), (9, 43, 'gym_viridian', None), (5, 17, 'vhouse', 'ManiasHouse'),
+                     (9, 31, 'vhouse', 'Pharmacy'), (15, 37, 'vhouse', 'PhotoStudio'),
+                     (17, 41, 'vhouse', 'LugiaSpeechHouse'), (15, 47, 'vhouse', 'PokeSeersHouse')],
 }
 
 # outdoor door <-> outdoor door links (GSC gatehouses simplified to a house-door pair, no interior)
@@ -102,6 +106,7 @@ HEAL = {  # outside map -> heal location id
     'EcruteakCity': 'HEAL_LOCATION_ECRUTEAK_CITY', 'SilverCaveOutside': 'HEAL_LOCATION_SILVER_CAVE_OUTSIDE',
     'Route32': 'HEAL_LOCATION_ROUTE32', 'AzaleaTown': 'HEAL_LOCATION_AZALEA_TOWN',
     'OlivineCity': 'HEAL_LOCATION_OLIVINE_CITY', 'GoldenrodCity': 'HEAL_LOCATION_GOLDENROD_CITY',
+    'CianwoodCity': 'HEAL_LOCATION_CIANWOOD_CITY',
 }
 
 MART_ITEMS = {
@@ -110,7 +115,7 @@ MART_ITEMS = {
     'late': ['ITEM_GREAT_BALL', 'ITEM_ULTRA_BALL', 'ITEM_SUPER_POTION', 'ITEM_HYPER_POTION', 'ITEM_REVIVE',
              'ITEM_FULL_HEAL', 'ITEM_ICE_HEAL', 'ITEM_ESCAPE_ROPE', 'ITEM_SUPER_REPEL', 'ITEM_MAX_REPEL'],
 }
-LATE = {'MahoganyTown', 'BlackthornCity', 'EcruteakCity', 'OlivineCity'}
+LATE = {'MahoganyTown', 'BlackthornCity', 'EcruteakCity', 'OlivineCity', 'CianwoodCity'}
 KEEP_DEST = {'MAP_UNION_ROOM_FRLG', 'MAP_TRADE_CENTER_FRLG', 'MAP_DYNAMIC'}
 
 

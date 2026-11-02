@@ -35,6 +35,8 @@ BIG = (0x0400 | 0x1CB, 0x0400 | 0x1CC, 0x0400 | 0x1D3, 0x0400 | 0x1D4)   # 2x2 w
 SMALL = (0x0400 | 0x110, 0x0400 | 0x111, 0x0400 | 0x118, 0x0400 | 0x119)
 SECONDARY = 'gTileset_CinnabarIsland'
 W_, C_, E_ = 'SeaRouteVioletWest', 'SeaRouteVioletCentral', 'SeaRouteVioletEast'
+R40, R41 = 'Route40', 'Route41'      # gap fill: Olivine (west/south) <-> Cianwood, same generator
+SAND = 0x3115
 OPP = {'up': 'down', 'down': 'up', 'left': 'right', 'right': 'left'}
 # map -> (w, h, mapsec, connections [(direction, target dir, offset)])
 MAPS = {
@@ -42,10 +44,17 @@ MAPS = {
     C_: (80, 92, 'MAPSEC_VIRIDIAN_CITY', [('up', 'Route27', 0), ('left', W_, 6), ('right', E_, 56)]),
     E_: (86, 70, 'MAPSEC_ROUTE_21', [('left', C_, -56), ('right', 'Route21_South_Frlg', 0),
                                      ('right', 'CinnabarIsland_Frlg', 50)]),
+    # Olivine-relative: Route40 x-60..-1 y0..35, Route41 x-30..49 y36..89, Cianwood x-60..-31 y36..89
+    R40: (60, 36, 'MAPSEC_VIRIDIAN_CITY', [('right', 'OlivineCity', 0), ('down', 'CianwoodCity', 0), ('down', R41, 30)]),
+    R41: (80, 54, 'MAPSEC_VIRIDIAN_CITY', [('up', R40, -30), ('up', 'OlivineCity', 30), ('left', 'CianwoodCity', 0)]),
 }
 # the other side of each external connection: (map dir, direction, my map, offset)
 EXTERNAL = [('Route32', 'right', W_, 40), ('Route27', 'down', C_, 0),
-            ('Route21_South_Frlg', 'left', E_, 0), ('CinnabarIsland_Frlg', 'left', E_, -50)]
+            ('Route21_South_Frlg', 'left', E_, 0), ('CinnabarIsland_Frlg', 'left', E_, -50),
+            ('OlivineCity', 'left', R40, 0), ('OlivineCity', 'down', R41, -30),
+            ('CianwoodCity', 'up', R40, 0), ('CianwoodCity', 'right', R41, 0)]
+# BFS seeds (one per sea system): (map, edge, neighbour)
+SEEDS = [(W_, 'left', 'Route32'), (R40, 'right', 'OlivineCity')]
 # sandbar stamps copied from FireRed: (source map, x, y, w, h)
 SANDBARS = {'a': ('Route20_Frlg', 21, 4, 7, 5), 'b': ('Route20_Frlg', 40, 7, 6, 5), 'c': ('Route20_Frlg', 31, 12, 3, 3),
             'd': ('Route20_Frlg', 15, 13, 4, 3), 'e': ('Route21_South_Frlg', 7, 7, 5, 4),
@@ -63,6 +72,12 @@ DESIGN = {
     E_: dict(sand=[('a', 10, 10), ('h', 34, 30), ('e', 60, 8), ('d', 22, 52), ('g', 56, 46)],
              reefs=[[(24, 4), (24, 24)], [(46, 20), (70, 30)], [(40, 50), (40, 66)], [(6, 40), (18, 44)]],
              items=[(37, 32, 'ITEM_BIG_PEARL', 'FLAG_UNUSED_0x4A9')]),
+    R40: dict(sand=[('c', 40, 8), ('e', 14, 6), ('d', 26, 24)],
+              reefs=[[(32, 4), (32, 20)], [(8, 28), (20, 28)]],
+              items=[]),
+    R41: dict(sand=[('a', 30, 12), ('h', 56, 34), ('d', 14, 40), ('b', 66, 10)],
+              reefs=[[(20, 6), (20, 30)], [(44, 24), (44, 48)], [(52, 6), (66, 6)]],
+              items=[(58, 36, 'ITEM_STAR_PIECE', 'FLAG_UNUSED_0x4AA')]),
 }
 LAYOUTS = {l['id']: l for l in json.load(open(os.path.join(REPO, 'data/layouts/layouts.json')))['layouts'] if 'id' in l}
 
@@ -137,6 +152,7 @@ def build(name, ext):
                 elif (g[y + dy][x + dx] >> 10) & 3:
                     clear(x + dx, y + dy)           # keep the stamp's water rim free of rocks
     # 4. seams: open water along each connection, copying the neighbour's passability (rock where blocked)
+    beach = []
     for d, other, off in conns:
         og = ext[other] if other in ext else None
         ow, oh = (len(og[0]), len(og)) if og else (MAPS[other][0], MAPS[other][1])
@@ -156,6 +172,8 @@ def build(name, ext):
                 ok = ok and 3 <= i < len(rng) - 3
             ok = ok and 2 <= i < len(rng) - 2      # corner cells stay rock so no perpendicular rim is opened
             step = {'left': (1, 0), 'right': (-1, 0), 'up': (0, 1), 'down': (0, -1)}[d]
+            if ok and og and og[theirs[1]][theirs[0]] >> 12 == 3:     # walkable land on the other side: sand beach
+                beach.append((mine, step))
             if ok:      # carve the rim / ragged band in front of an open seam cell (8 tiles deep)
                 for k in range(8):
                     x, y = mine[0] + step[0] * k, mine[1] + step[1] * k
@@ -179,6 +197,9 @@ def build(name, ext):
                     for dx in (0, 1):
                         clear(x + dx, y + dy)
                 rock2(x, y, force=True)
+    for (x, y), (sx, sy) in beach:      # 6-deep sand strip in front of a land seam (Olivine's west shore)
+        for k in range(6):
+            g[y + sy * k][x + sx * k] = SAND
     return g
 
 def map_json(name):
@@ -223,12 +244,15 @@ def wild():
     open(p, 'w').write(json.dumps(wj, indent=2, ensure_ascii=False) + '\n')
 
 def reach(grids):
-    """BFS over passable cells across our three maps + the seams; returns the set of reached (map, x, y)."""
-    start = None
-    g = grids[W_]
-    ys = [y for y in range(len(g)) if passable(g[y][0])]
-    start = (W_, 0, ys[len(ys) // 2])      # middle of the Route 32 seam
-    seen, q = {start}, collections.deque([start])
+    """BFS over passable cells across our maps + the seams, from one seam cell per sea system."""
+    starts = []
+    for m, d, o in SEEDS:
+        g = grids[m]; w, h = len(g[0]), len(g)
+        cells = [((0 if d == 'left' else w - 1), y) for y in range(h)] if d in ('left', 'right') else \
+                [(x, (0 if d == 'up' else h - 1)) for x in range(w)]
+        ok = [c for c in cells if passable(g[c[1]][c[0]])]
+        starts.append((m,) + ok[len(ok) // 2])
+    seen, q = set(starts), collections.deque(starts)
     while q:
         m, x, y = q.popleft(); gg = grids[m]; w, h = len(gg[0]), len(gg)
         for dx, dy, d in ((1, 0, 'right'), (-1, 0, 'left'), (0, 1, 'down'), (0, -1, 'up')):
@@ -257,7 +281,7 @@ def fix_dims(name, w, h):      # register() never resizes an existing layout ent
 
 def main():
     ext = {}
-    for src in {s[0] for s in SANDBARS.values()} | {'Route32', 'Route27', 'Route21_South_Frlg', 'CinnabarIsland_Frlg'}:
+    for src in {s[0] for s in SANDBARS.values()} | {o for m in MAPS.values() for _, o, _ in m[3] if o not in MAPS}:
         ext[src] = load(src)[3]
     grids = {}
     for n, (w, h, _, _) in MAPS.items():
@@ -287,7 +311,7 @@ def main():
                       0 <= (y if d in ('left', 'right') else x) - off < span]
             reached = [c for c in n_open if (n,) + c in seen]
             assert reached, (n, d, o, 'seam unreachable')
-            print('  %s %s -> %s: %d open seam cells, %d reachable from Route32' % (n, d, o, len(n_open), len(reached)))
+            print('  %s %s -> %s: %d open seam cells, %d reachable from a seed seam' % (n, d, o, len(n_open), len(reached)))
     wild()
     print('sea_route: %s; %d surfable cells reachable' % (', '.join('%s %dx%d' % (n, m[0], m[1]) for n, m in MAPS.items()), len(seen)))
 

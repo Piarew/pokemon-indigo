@@ -358,8 +358,17 @@ MAPS = {
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='P', music='MUS_RG_VERMILLION',
         buildings=[('vir_pc', 11, 18), ('vir_gym', 7, 7), ('vir_house', 24, 8), ('vir_house', 29, 8),
                    ('vir_house', 12, 12), ('vir_house', 6, 18), ('vir_mart', 17, 14)],
-        overrides=[], signs='auto', sign_text='OLIVINE CITY\\nThe Port Closest to Foreign Lands',
-        connections=[('MAP_ROUTE39', 10, 'up')]),   # west -> Route 40 (sea, no source): TODO
+        overrides=[((38, 16), (39, 33), 'R')],   # gap fill: east harbour edge (no map beyond) -> water rocks
+        signs='auto', sign_text='OLIVINE CITY\\nThe Port Closest to Foreign Lands',
+        connections=[('MAP_ROUTE39', 10, 'up')]),   # west -> Route40 / south -> Route41: added by sea_route.py
+    # ---- gap fill (sea route batch): Cianwood City; Routes 40/41 are hand-built sea maps (sea_route.py),
+    #      which also adds Cianwood's/Olivine's connections every run
+    'CianwoodCity': dict(TOWN, src='Cianwood_City_C.png', url=bp('Cianwood_City_C.png'),
+        secondary='gTileset_ViridianCity', border=BORDER_ROCK, xfill='P', music='MUS_RG_CINNABAR',
+        buildings=[('vir_house', 4, 14), ('vir_house', 8, 28), ('vir_house', 14, 34), ('vir_gym', 6, 39),
+                   ('vir_house', 16, 38), ('vir_pc', 22, 40), ('vir_house', 14, 44)],
+        overrides=[], signs='auto', sign_text='CIANWOOD CITY\\nA Port Surrounded\\nby Rough Seas',
+        connections=[]),
     'GoldenrodCity': dict(TOWN, src='Goldenrod_City_C.png', url=bp('Goldenrod_City_C.png'),
         secondary='gTileset_ViridianCity', border=BORDER_FOREST, xfill='T', music='MUS_RG_CELADON',
         buildings=[('vir_gym', 22, 3), ('vir_mart', 13, 4), ('vir_house', 28, 2), ('vir_house', 32, 6),

@@ -961,6 +961,17 @@ gStdScripts_End::
 	.include "data/maps/OlivineCity_PunishmentSpeechHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_GoodRodHouse/scripts.inc"  @ johto-interior
 	.include "data/maps/OlivineCity_Cafe/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity_PokemonCenter_1F/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity_PokemonCenter_2F/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity_Gym/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity_ManiasHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity_Pharmacy/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity_PhotoStudio/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity_LugiaSpeechHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity_PokeSeersHouse/scripts.inc"  @ johto-interior
+	.include "data/maps/CianwoodCity/scripts.inc"
+	.include "data/maps/Route40/scripts.inc"
+	.include "data/maps/Route41/scripts.inc"
 	.include "data/maps/SeaRouteVioletWest/scripts.inc"
 	.include "data/maps/SeaRouteVioletCentral/scripts.inc"
 	.include "data/maps/SeaRouteVioletEast/scripts.inc"

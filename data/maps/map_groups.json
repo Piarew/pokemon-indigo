@@ -955,7 +955,10 @@
     "CyclingRoadWest",
     "SeaRouteVioletWest",
     "SeaRouteVioletCentral",
-    "SeaRouteVioletEast"
+    "SeaRouteVioletEast",
+    "CianwoodCity",
+    "Route40",
+    "Route41"
   ],
   "gMapGroup_IndoorPallet_Frlg": [
     "PalletTown_PlayersHouse_1F_Frlg",
@@ -1291,6 +1294,14 @@
     "OlivineCity_PunishmentSpeechHouse",
     "OlivineCity_GoodRodHouse",
     "OlivineCity_Cafe",
+    "CianwoodCity_PokemonCenter_1F",
+    "CianwoodCity_PokemonCenter_2F",
+    "CianwoodCity_Gym",
+    "CianwoodCity_ManiasHouse",
+    "CianwoodCity_Pharmacy",
+    "CianwoodCity_PhotoStudio",
+    "CianwoodCity_LugiaSpeechHouse",
+    "CianwoodCity_PokeSeersHouse",
     "DiglettsCave_JohtoTunnel",
     "DiglettsCave_BlackthornEntrance",
     "IcePath_1F",

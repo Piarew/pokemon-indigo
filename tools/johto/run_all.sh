@@ -20,3 +20,5 @@ python3 warp_audit.py MtMoon_B1F_Frlg
 python3 sea_route.py
 python3 check_edges.py SeaRouteVioletWest SeaRouteVioletCentral SeaRouteVioletEast Route32 Route27 Route21_South_Frlg CinnabarIsland_Frlg
 python3 warp_audit.py SeaRouteVioletWest SeaRouteVioletCentral SeaRouteVioletEast
+python3 check_edges.py Route40 Route41 OlivineCity CianwoodCity
+python3 warp_audit.py Route40 Route41 CianwoodCity
