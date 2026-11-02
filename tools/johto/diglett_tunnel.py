@@ -28,6 +28,10 @@ def coll(v): return (v >> 10) & 3
 
 # ---------------- tunnel layout
 B1F = rd('DiglettsCave_B1F_Frlg', 85, 80)
+# learn from the vanilla B1F: undo east_blocks.py's cave-in so its rubble doesn't leak into the tunnel decoration
+import east_blocks
+for (x, y), (orig, _) in east_blocks.BARRIERS['DiglettsCave_B1F_Frlg']['cells'].items():
+    B1F[y][x] = orig
 BW, BH = 85, 80
 WEIGHT = [[1, 1, 1, 1, 1], [1, 4, 4, 4, 1], [1, 4, 0, 4, 1], [1, 4, 4, 4, 1], [1, 1, 1, 1, 1]]
 

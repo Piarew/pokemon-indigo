@@ -17,11 +17,16 @@ from warp_audit import attrs, behaviour, WARPY, ONE_WAY, layouts
 BASE = '12de80e9c09a7e89daf9ea8ff8d25a82c61c3c4d'   # merge-base of spike with upstream master
 START = 'MAP_PALLET_TOWN'
 # Deliberate / accepted gaps: (map dir, kind, detail-prefix): reason
-ALLOW = {}
+ALLOW = {
+    ('Route7_Frlg', 'NO WARP', '(22,10)'): 'VANILLA FireRed: Route 7 gate approach arrow tile has no warp at the merge base '
+                                          '(scoped only because east_blocks.py edits Route 7; behind the tree wall)',
+}
 # Tile-level: scoped maps intentionally severed from the rest of the game (barrier script: reason)
-import west_blocks
+import west_blocks, east_blocks
 SEVERED = {n: 'west_blocks.py: west of the Route36 tree wall / Route42 rockslide / Route32 rockfall '
               '(no travel west out of the region via Violet City or Mahogany Town)' for n in west_blocks.SEVERED}
+SEVERED.update({n: 'east_blocks.py: east of the Route7 tree wall / Route15 rockslide / Diglett\'s Cave B1F cave-in '
+                   '(+ Mt. Moon cave-in; Kanto east of Celadon City and Fuchsia City is closed)' for n in east_blocks.SEVERED})
 # Tile-level: scoped maps already unreachable on foot/surf before the west blocks (known weak spots, not fixed here)
 _SILVER = ('Route28 east part (x27-39, connected to Route22) is walled off from its west part, so Route28\'s west '
            'half and Silver Cave cannot be reached')
