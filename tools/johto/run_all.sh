@@ -22,3 +22,4 @@ python3 check_edges.py SeaRouteVioletWest SeaRouteVioletCentral SeaRouteVioletEa
 python3 warp_audit.py SeaRouteVioletWest SeaRouteVioletCentral SeaRouteVioletEast
 python3 check_edges.py Route40 Route41 OlivineCity CianwoodCity
 python3 warp_audit.py Route40 Route41 CianwoodCity
+python3 gap_audit.py --strict --report out/gap_report.md > /dev/null && echo "gap audit: PASS (report tools/johto/out/gap_report.md)"
