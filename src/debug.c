@@ -14,6 +14,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
+#include "heal_location.h"
 #include "field_message_box.h"
 #include "field_screen_effect.h"
 #include "field_weather.h"
@@ -62,6 +63,7 @@
 #include "constants/event_objects.h"
 #include "constants/expansion.h"
 #include "constants/flags.h"
+#include "constants/heal_locations.h"
 #include "constants/items.h"
 #include "constants/map_groups.h"
 #include "constants/random_mon_generation.h"
@@ -180,7 +182,7 @@ enum DebugMenuTypes
 #define DEBUG_MENU_WIDTH_MAIN 17
 #define DEBUG_MENU_HEIGHT_MAIN 9
 
-#define DEBUG_MENU_WIDTH_EXTRA 10
+#define DEBUG_MENU_WIDTH_EXTRA 20
 #define DEBUG_MENU_HEIGHT_EXTRA 4
 
 #define DEBUG_MENU_WIDTH_WEATHER 15
@@ -287,7 +289,6 @@ static void DebugTask_HandleMenuInput_General(u8 taskId);
 static void DebugAction_Selection_StepUpdate(u8 taskId);
 static void DebugAction_Selection_NextStep(u8 taskId);
 
-static void DebugAction_Util_Fly(u8 taskId);
 static void DebugAction_Util_WatchCredits(u8 taskId);
 static void DebugAction_Util_CheatStart(u8 taskId);
 
@@ -414,6 +415,7 @@ extern const u8 Debug_BerryWeedsDisabled[];
 extern const u8 Common_EventScript_MoveRelearner[];
 
 static const struct DebugSelection sWarpSelection;
+static const struct DebugSelection sFlySelection;
 static const struct DebugSelection sSetWeatherSelection;
 static const struct DebugSelection sSpeciesGeneratorSelection;
 static const struct DebugSelection sItemGeneratorSelection;
@@ -438,6 +440,7 @@ static const struct DebugSelection sTrainer2Selection;
 static const struct DebugSelection sPartnerSelection;
 
 #include "data/map_group_count.h"
+#include "data/debug_map_names.h"
 
 // Text
 // General
@@ -448,6 +451,8 @@ static const u8 sDebugText_Colored_True[] =  _("{COLOR GREEN}TRUE");
 static const u8 sDebugText_Colored_False[] = _("{COLOR RED}FALSE");
 static const u8 sDebugText_Dashes[] =        _("---");
 static const u8 sDebugText_Empty[] =         _("");
+static const u8 sDebugText_DynamicMap[] =    _("Dynamic");
+static const u8 sDebugText_NoWarps[] =       _("No warps (map center)");
 static const u8 sDebugText_Continue[] =      _("Continue…");
 
 //Time Menu
@@ -587,7 +592,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_FollowerNPCMenu[] =
 
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
-    { COMPOUND_STRING("Fly to map…"),               DebugAction_Util_Fly },
+    { COMPOUND_STRING("Fly to map…"),               DebugAction_Selection_Init, &sFlySelection },
     { COMPOUND_STRING("Warp to map warp…"),         DebugAction_Selection_Init, &sWarpSelection},
     { COMPOUND_STRING("Set weather…"),              DebugAction_Selection_Init, &sSetWeatherSelection },
     { COMPOUND_STRING("Font Test…"),                DebugAction_ExecuteScript, Debug_EventScript_FontTest },
@@ -1744,30 +1749,58 @@ static void DebugAction_OpenSubMenuCreateFollowerNPC(u8 taskId, const struct Deb
 // *******************************
 // Actions Utilities
 
-static void DebugAction_Util_Fly(u8 taskId)
+static const u8 *Debug_GetMapGroupName(u32 mapGroup)
 {
-    Debug_DestroyMenu(taskId);
-    SetMainCallback2(CB2_OpenFlyMap);
+    if (mapGroup >= MAP_GROUPS_COUNT)
+        return sDebugText_Dashes;
+    return sDebugMapGroupNames[mapGroup];
+}
+
+static const u8 *Debug_GetMapName(u32 mapGroup, u32 mapNum)
+{
+    if (mapGroup == MAP_GROUP(MAP_DYNAMIC) && mapNum == MAP_NUM(MAP_DYNAMIC))
+        return sDebugText_DynamicMap;
+    if (mapGroup >= MAP_GROUPS_COUNT || mapNum >= MAP_GROUP_COUNT[mapGroup])
+        return sDebugText_Dashes;
+    return sDebugMapNames[mapGroup][mapNum];
+}
+
+static void Debug_PrintWrapped(u8 *dest, const u8 *src, u8 taskId)
+{
+    u8 *end = StringCopy(dest, src);
+    WrapFontIdToFit(dest, end, DEBUG_MENU_FONT, WindowWidthPx(gTasks[taskId].tSubWindowId));
+}
+
+static void Debug_CopyMapSecName(u8 *dest, u32 mapGroup, u32 mapNum)
+{
+    if (mapGroup == MAP_GROUP(MAP_DYNAMIC) || mapGroup >= MAP_GROUPS_COUNT)
+    {
+        dest[0] = EOS;
+        return;
+    }
+    GetMapName(dest, Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->regionMapSectionId, 0);
 }
 
 static void DebugSelectionStep_UpdateMapGroup(u8 taskId, u8 digits, u32 min, u32 max)
 {
-    ConvertIntToDecimalStringN(gStringVar2, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, digits);
-    ConvertIntToDecimalStringN(gStringVar3, max, STR_CONV_MODE_LEADING_ZEROS, digits);
-    StringExpandPlaceholders(gStringVar1, COMPOUND_STRING("Group: {STR_VAR_2} / {STR_VAR_3}"));
-    StringCopy(gStringVar2, COMPOUND_STRING(""));
+    (void)digits;
+    (void)min;
+    (void)max;
+    StringCopy(gStringVar1, COMPOUND_STRING("Group:"));
+    Debug_PrintWrapped(gStringVar2, Debug_GetMapGroupName(gTasks[taskId].tInput), taskId);
     StringCopy(gStringVar3, COMPOUND_STRING(""));
     DebugNativeStep_PrintWindowSelection(taskId);
 }
 
 static void DebugSelectionStep_UpdateMapNum(u8 taskId, u8 digits, u32 min, u32 max)
 {
+    (void)digits;
+    (void)min;
+    (void)max;
     u16 mapGroup = DebugSelection_GetData(taskId, gTasks[taskId].tStep - 1);
-    ConvertIntToDecimalStringN(gStringVar2, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, digits);
-    ConvertIntToDecimalStringN(gStringVar3, max, STR_CONV_MODE_LEADING_ZEROS, digits);
-    StringExpandPlaceholders(gStringVar1, COMPOUND_STRING("Map: {STR_VAR_2} / {STR_VAR_3}"));
-    StringCopy(gStringVar2, COMPOUND_STRING("MapSec:"));
-    GetMapName(gStringVar3, Overworld_GetMapHeaderByGroupAndId(mapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
+    StringCopy(gStringVar1, COMPOUND_STRING("Map:"));
+    Debug_PrintWrapped(gStringVar2, Debug_GetMapName(mapGroup, gTasks[taskId].tInput), taskId);
+    Debug_CopyMapSecName(gStringVar3, mapGroup, gTasks[taskId].tInput);
     DebugNativeStep_PrintWindowSelection(taskId);
 }
 
@@ -1779,13 +1812,26 @@ static u32 DebugSelectionStep_GetLastMapNum(u8 taskId)
 
 static void DebugSelectionStep_UpdateWarp(u8 taskId, u8 digits, u32 min, u32 max)
 {
+    (void)digits;
+    (void)min;
+    (void)max;
     u16 mapGroup = DebugSelection_GetData(taskId, gTasks[taskId].tStep - 2);
     u16 mapNum = DebugSelection_GetData(taskId, gTasks[taskId].tStep - 1);
-    ConvertIntToDecimalStringN(gStringVar2, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, digits);
-    ConvertIntToDecimalStringN(gStringVar3, max, STR_CONV_MODE_LEADING_ZEROS, digits);
-    StringExpandPlaceholders(gStringVar1, COMPOUND_STRING("Warp: {STR_VAR_2} / {STR_VAR_3}"));
-    GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->regionMapSectionId, 0);
-    StringCopy(gStringVar3, COMPOUND_STRING(""));
+    const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum);
+    u32 warpCount = header->events->warpCount;
+
+    StringCopy(gStringVar1, COMPOUND_STRING("Warp dest:"));
+    if (warpCount == 0)
+    {
+        Debug_PrintWrapped(gStringVar2, sDebugText_NoWarps, taskId);
+        StringCopy(gStringVar3, COMPOUND_STRING(""));
+    }
+    else
+    {
+        const struct WarpEvent *warp = &header->events->warps[gTasks[taskId].tInput];
+        Debug_PrintWrapped(gStringVar2, Debug_GetMapName(warp->mapGroup, warp->mapNum), taskId);
+        Debug_CopyMapSecName(gStringVar3, warp->mapGroup, warp->mapNum);
+    }
     DebugNativeStep_PrintWindowSelection(taskId);
 }
 
@@ -1794,13 +1840,63 @@ static u32 DebugSelectionStep_GetLastWarp(u8 taskId)
     u16 mapGroup = DebugSelection_GetData(taskId, gTasks[taskId].tStep - 2);
     u16 mapNum = DebugSelection_GetData(taskId, gTasks[taskId].tStep - 1);
     u32 count = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->events->warpCount;
+    if (count == 0)
+        return 0;
     return (count - 1);
 }
 
 static bool32 DebugSelection_SetWarp_OnComplete(u8 taskId)
 {
-    SetWarpDestinationToMapWarp(DebugSelection_GetData(taskId, 0),
-        DebugSelection_GetData(taskId, 1), DebugSelection_GetData(taskId, 2));
+    u16 mapGroup = DebugSelection_GetData(taskId, 0);
+    u16 mapNum = DebugSelection_GetData(taskId, 1);
+    u16 warpId = DebugSelection_GetData(taskId, 2);
+    const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum);
+
+    if (header->events->warpCount == 0)
+    {
+        s16 x = header->mapLayout->width / 2;
+        s16 y = header->mapLayout->height / 2;
+        if (x > 127)
+            x = 127;
+        if (y > 127)
+            y = 127;
+        SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, x, y);
+    }
+    else
+    {
+        SetWarpDestinationToMapWarp(mapGroup, mapNum, warpId);
+    }
+    DoWarp();
+    ResetInitialPlayerAvatarState();
+    DebugAction_DestroyExtraWindow(taskId);
+    ScriptContext_Stop();
+    return TRUE;
+}
+
+static void DebugSelectionStep_UpdateFly(u8 taskId, u8 digits, u32 min, u32 max)
+{
+    (void)digits;
+    (void)min;
+    (void)max;
+    const struct HealLocation *heal = GetHealLocation(gTasks[taskId].tInput);
+
+    StringCopy(gStringVar1, COMPOUND_STRING("Fly to:"));
+    if (heal == NULL)
+    {
+        StringCopy(gStringVar2, sDebugText_Dashes);
+        StringCopy(gStringVar3, COMPOUND_STRING(""));
+    }
+    else
+    {
+        Debug_PrintWrapped(gStringVar2, Debug_GetMapName(heal->mapGroup, heal->mapNum), taskId);
+        Debug_CopyMapSecName(gStringVar3, heal->mapGroup, heal->mapNum);
+    }
+    DebugNativeStep_PrintWindowSelection(taskId);
+}
+
+static bool32 DebugSelection_SetFly_OnComplete(u8 taskId)
+{
+    SetWarpDestinationToHealLocation(DebugSelection_GetData(taskId, 0));
     DoWarp();
     ResetInitialPlayerAvatarState();
     DebugAction_DestroyExtraWindow(taskId);
@@ -1834,12 +1930,28 @@ static const struct DebugSelectionStep sWarpSelectionStep = {
     .useMaxFunc = TRUE,
 };
 
+static const struct DebugSelectionStep sFlySelectionStep = {
+    .stepUpdate = DebugSelectionStep_UpdateFly,
+    .stepConfirm = DebugSelectionStep_GenericInputConfirm,
+    .minValue = 1,
+    .maxValue = NUM_HEAL_LOCATIONS - 1,
+    .digits = 2
+};
+
 static const struct DebugSelection sWarpSelection = {
     .onInit = Debug_CreateInputDisplayWindow,
     .onCancel = DebugSelectionStep_ReturnToUtilMenu,
     .onComplete = DebugSelection_SetWarp_OnComplete,
     .steps = {&sMapGroupSelectionStep, &sMapNumSelectionStep, &sWarpSelectionStep},
     .maxSteps = 3,
+};
+
+static const struct DebugSelection sFlySelection = {
+    .onInit = Debug_CreateInputDisplayWindow,
+    .onCancel = DebugSelectionStep_ReturnToUtilMenu,
+    .onComplete = DebugSelection_SetFly_OnComplete,
+    .steps = {&sFlySelectionStep},
+    .maxSteps = 1,
 };
 
 void CheckSaveBlock1Size(struct ScriptContext *ctx)

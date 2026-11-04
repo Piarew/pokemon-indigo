@@ -1177,6 +1177,9 @@ enum RegionMapType GetRegionMapType(u32 mapSecId)
         default:
             return REGION_MAP_KANTO;
         }
+    case REGION_JOHTO:
+        // Stub until Johto region-map art exists. Do not fall through to Hoenn.
+        return REGION_MAP_KANTO;
     case REGION_HOENN:
     default:
         return REGION_MAP_HOENN;
@@ -1207,6 +1210,9 @@ static mapsec_u16_t GetMapSecIdAt(u16 x, u16 y)
         default:
                 return sRegionMapSections_Kanto[y][x];
         }
+    case REGION_JOHTO:
+        // Stub grid until a Johto section layout exists.
+        return sRegionMapSections_Kanto[y][x];
     case REGION_HOENN:
     default:
             return sRegionMap_MapSectionLayout[y][x];

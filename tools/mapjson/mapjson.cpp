@@ -12,6 +12,8 @@ using std::vector;
 #include <algorithm>
 using std::sort; using std::find;
 
+#include <cctype>
+
 #include <map>
 using std::map;
 
@@ -602,12 +604,90 @@ Json parse_required_map_defines(void) {
     return json_data;
 }
 
+static string title_identifier_word(string word) {
+    if (word == "HNS" || word == "Hns" || word == "hns")
+        return "HNS";
+    if (word == "FRLG" || word == "Frlg" || word == "frlg")
+        return "FRLG";
+    if (word == "PC" || word == "Pc" || word == "pc")
+        return "PC";
+
+    bool has_digit = false;
+    for (char c : word) {
+        if (std::isdigit(static_cast<unsigned char>(c)))
+            has_digit = true;
+    }
+    if (has_digit && word.size() <= 3) {
+        for (char &c : word)
+            c = std::toupper(static_cast<unsigned char>(c));
+        return word;
+    }
+
+    string split;
+    for (size_t i = 0; i < word.size(); i++) {
+        unsigned char c = static_cast<unsigned char>(word[i]);
+        if (i > 0 && std::isupper(c) && std::islower(static_cast<unsigned char>(word[i - 1])))
+            split += ' ';
+        else if (i > 0 && std::isdigit(c) && std::isalpha(static_cast<unsigned char>(word[i - 1])))
+            split += ' ';
+        split += static_cast<char>(c);
+    }
+
+    string titled;
+    bool new_word = true;
+    for (char c : split) {
+        if (c == ' ') {
+            titled += c;
+            new_word = true;
+        } else if (new_word) {
+            titled += static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
+            new_word = false;
+        } else {
+            titled += static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+        }
+    }
+    return titled;
+}
+
+static string humanize_identifier(string id) {
+    const char *prefixes[] = { "gMapGroup_", "MAP_" };
+    for (const char *prefix : prefixes) {
+        size_t prefix_len = string(prefix).size();
+        if (id.compare(0, prefix_len, prefix) == 0) {
+            id = id.substr(prefix_len);
+            break;
+        }
+    }
+
+    string result;
+    string word;
+    auto flush_word = [&]() {
+        if (word.empty())
+            return;
+        if (!result.empty())
+            result += ' ';
+        result += title_identifier_word(word);
+        word.clear();
+    };
+    for (char c : id) {
+        if (c == '_')
+            flush_word();
+        else
+            word += c;
+    }
+    flush_word();
+    return result.empty() ? id : result;
+}
+
 string generate_map_constants_text(string groups_filepath, Json groups_data, vector<string> &valid_map_ids) {
     string file_dir = file_parent(groups_filepath) + sep;
 
     string guard_name = "CONSTANTS_MAP_GROUPS";
     ostringstream text;
     ostringstream mapCountText;
+    ostringstream mapNamesText;
+    vector<string> debug_group_names;
+    vector<vector<string>> debug_group_map_ids;
 
     text << get_include_guard_start(guard_name) << get_generated_warning("data/maps/map_groups.json", false);
 
@@ -649,6 +729,8 @@ string generate_map_constants_text(string groups_filepath, Json groups_data, vec
 
         group_num++;
         map_count_vec.push_back(map_count); //DEBUG
+        debug_group_names.push_back(groupName);
+        debug_group_map_ids.push_back(map_ids);
     }
 
     text << "};\n\n";
@@ -691,6 +773,23 @@ string generate_map_constants_text(string groups_filepath, Json groups_data, vec
     }                                                        //DEBUG
     mapCountText << "0};\n";                                 //DEBUG
     write_text_file(file_dir + ".." + s + ".." + s + "src" + s + "data" + s + "map_group_count.h", mapCountText.str());
+
+    mapNamesText << get_generated_warning("data/maps/map_groups.json", false);
+    for (size_t g = 0; g < debug_group_map_ids.size(); g++) {
+        mapNamesText << "static const u8 *const sDebugMapNames_" << g << "[] = {\n";
+        for (const string &map_id : debug_group_map_ids[g])
+            mapNamesText << "    COMPOUND_STRING(\"" << humanize_identifier(map_id) << "\"),\n";
+        mapNamesText << "};\n\n";
+    }
+    mapNamesText << "static const u8 *const sDebugMapGroupNames[] = {\n";
+    for (const string &group_name : debug_group_names)
+        mapNamesText << "    COMPOUND_STRING(\"" << humanize_identifier(group_name) << "\"),\n";
+    mapNamesText << "};\n\n";
+    mapNamesText << "static const u8 *const *const sDebugMapNames[] = {\n";
+    for (size_t g = 0; g < debug_group_map_ids.size(); g++)
+        mapNamesText << "    sDebugMapNames_" << g << ",\n";
+    mapNamesText << "};\n";
+    write_text_file(file_dir + ".." + s + ".." + s + "src" + s + "data" + s + "debug_map_names.h", mapNamesText.str());
 
     return text.str();
 }

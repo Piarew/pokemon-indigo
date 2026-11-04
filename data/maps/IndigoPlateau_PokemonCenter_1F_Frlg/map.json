@@ -136,7 +136,7 @@
       "x": 11,
       "y": 16,
       "elevation": 3,
-      "dest_map": "MAP_INDIGO_PLATEAU_EXTERIOR",
+      "dest_map": "MAP_INDIGO_PLATEAU_HNS",
       "dest_warp_id": "0"
     },
     {

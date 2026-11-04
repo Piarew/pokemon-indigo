@@ -1,0 +1,151 @@
+{
+  "id": "MAP_CHERRYGROVE_CITY_HNS",
+  "name": "CherrygroveCity_hns",
+  "layout": "LAYOUT_CHERRYGROVE_CITY_HNS",
+  "music": "MUS_RG_PEWTER",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_CHERRYGROVE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE29_HNS",
+      "offset": -6,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "offset": 9,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_GUIDE_GENT",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
+      "x": 57,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherryGroveCity_EventScript_TriggerGent_Top",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_FISHER",
+      "x": 18,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherryGroveCity_EventScript_Fisherman",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
+      "x": 48,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherryGroveCity_EventScript_Boy",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
+      "x": 39,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherryGroveCity_EventScript_Lass",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CHERRYGROVE_SILVER",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BLUE",
+      "x": 65,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 41,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_MART_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 47,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_POKEMON_CENTER_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 34,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE1_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 42,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE2_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 50,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_HOUSE3_HNS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 51,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CherryGroveCity_EventScript_Sign"
+    }
+  ]
+}

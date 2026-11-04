@@ -1,0 +1,33 @@
+{
+  "id": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+  "name": "SafariZone_Top_Left_hns",
+  "layout": "LAYOUT_SAFARI_ZONE_TOP_LEFT_HNS",
+  "music": "MUS_RG_ROUTE1",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_CIANWOOD_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "offset": -6,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

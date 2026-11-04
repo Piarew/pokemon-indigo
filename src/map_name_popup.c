@@ -11,6 +11,7 @@
 #include "map_name_popup.h"
 #include "palette.h"
 #include "region_map.h"
+#include "regions.h"
 #include "rtc.h"
 #include "start_menu.h"
 #include "strings.h"
@@ -679,7 +680,9 @@ static void LoadMapNamePopUpWindowBg(void)
     if (OW_POPUP_GENERATION == GEN_5)
         secondaryPopUpWindowId = GetSecondaryPopUpWindowId();
 
-    if (regionMapSectionId >= KANTO_MAPSEC_START)
+    bool8 isJohtoPopup = (GetRegionForSectionId(regionMapSectionId) == REGION_JOHTO);
+
+    if (!isJohtoPopup && regionMapSectionId >= KANTO_MAPSEC_START)
     {
         if (regionMapSectionId > KANTO_MAPSEC_END)
             regionMapSectionId -= KANTO_MAPSEC_COUNT;
@@ -689,7 +692,7 @@ static void LoadMapNamePopUpWindowBg(void)
 
     if (OW_POPUP_GENERATION == GEN_5)
     {
-        popUpThemeId = sRegionMapSectionId_To_PopUpThemeIdMapping_BW[regionMapSectionId];
+        popUpThemeId = isJohtoPopup ? MAPPOPUP_THEME_BW_DEFAULT : sRegionMapSectionId_To_PopUpThemeIdMapping_BW[regionMapSectionId];
         switch (popUpThemeId)
         {
         // add additional gen 5-style pop-up themes as cases here
@@ -709,7 +712,7 @@ static void LoadMapNamePopUpWindowBg(void)
     }
     else
     {
-        popUpThemeId = sMapSectionToThemeId[regionMapSectionId];
+        popUpThemeId = isJohtoPopup ? MAPPOPUP_THEME_WOOD : sMapSectionToThemeId[regionMapSectionId];
         LoadBgTiles(GetWindowAttribute(popupWindowId, WINDOW_BG), sMapPopUp_OutlineTable[popUpThemeId], 0x400, 0x21D);
         CallWindowFunction(popupWindowId, DrawMapNamePopUpFrame);
         PutWindowTilemap(popupWindowId);

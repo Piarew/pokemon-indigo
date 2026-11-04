@@ -1,0 +1,30 @@
+{
+  "id": "MAP_EMBEDDED_TOWER_HNS",
+  "name": "EmbeddedTower_hns",
+  "layout": "LAYOUT_EMBEDDED_TOWER_HNS",
+  "music": "MUS_RG_ROUTE1",
+  "region": "REGION_KANTO",
+  "region_map_section": "MAPSEC_ROUTE_46",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE47_HNS",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
