@@ -179,7 +179,7 @@ static void MatchCall_GetNameAndDescByRematchIdx(u32, const u8 **, const u8 **);
 static const struct MatchCallStructNPC sMrStoneMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
-    .mapSec = MAPSEC_RUSTBORO_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = 0xFFFF,
     .desc = COMPOUND_STRING("DEVON PRES"),
     .name = COMPOUND_STRING("MR. STONE"),
@@ -202,7 +202,7 @@ static const struct MatchCallStructNPC sMrStoneMatchCallHeader =
 static const struct MatchCallStructTrainer sNormanMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_PETALBURG_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_NORMAN_MATCH_CALL,
     .rematchTableIdx = REMATCH_NORMAN,
     .desc = COMPOUND_STRING("RELIABLE ONE"),
@@ -240,7 +240,7 @@ static const match_call_text_data_t sMomTextScripts[] = {
 static const struct MatchCallStructNPC sMomMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
-    .mapSec = MAPSEC_LITTLEROOT_TOWN,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_MOM_MATCH_CALL,
     .desc = COMPOUND_STRING("CALM & KIND"),
     .name = COMPOUND_STRING("MOM"),
@@ -345,7 +345,7 @@ static const struct MatchCallWally sWallyMatchCallHeader =
         MATCH_CALL_TEXT_END
     },
     .locationData = (const struct MatchCallLocationOverride[]) {
-        { FLAG_HIDE_MAUVILLE_CITY_WALLY,          MAPSEC_VERDANTURF_TOWN },
+        { FLAG_HIDE_MAUVILLE_CITY_WALLY,          MAPSEC_NONE },
         { FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT,    MAPSEC_NONE },
         { FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY,  MAPSEC_VICTORY_ROAD },
         { ALWAYS_AVAILABLE,                       MAPSEC_NONE }
@@ -374,7 +374,7 @@ static const struct MatchCallStructNPC sScottMatchCallHeader =
 static const struct MatchCallStructTrainer sRoxanneMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_RUSTBORO_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_ROXANNE_MATCH_CALL,
     .rematchTableIdx = REMATCH_ROXANNE,
     .desc = COMPOUND_STRING("ROCKIN' WHIZ"),
@@ -391,7 +391,7 @@ static const struct MatchCallStructTrainer sRoxanneMatchCallHeader =
 static const struct MatchCallStructTrainer sBrawlyMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_DEWFORD_TOWN,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_BRAWLY_MATCH_CALL,
     .rematchTableIdx = REMATCH_BRAWLY,
     .desc = COMPOUND_STRING("THE BIG HIT"),
@@ -408,7 +408,7 @@ static const struct MatchCallStructTrainer sBrawlyMatchCallHeader =
 static const struct MatchCallStructTrainer sWattsonMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_MAUVILLE_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_WATTSON_MATCH_CALL,
     .rematchTableIdx = REMATCH_WATTSON,
     .desc = COMPOUND_STRING("SWELL SHOCK"),
@@ -425,7 +425,7 @@ static const struct MatchCallStructTrainer sWattsonMatchCallHeader =
 static const struct MatchCallStructTrainer sFlanneryMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_LAVARIDGE_TOWN,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_FLANNERY_MATCH_CALL,
     .rematchTableIdx = REMATCH_FLANNERY,
     .desc = COMPOUND_STRING("PASSION BURN"),
@@ -442,7 +442,7 @@ static const struct MatchCallStructTrainer sFlanneryMatchCallHeader =
 static const struct MatchCallStructTrainer sWinonaMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_FORTREE_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_WINONA_MATCH_CALL,
     .rematchTableIdx = REMATCH_WINONA,
     .desc = COMPOUND_STRING("SKY TAMER"),
@@ -459,7 +459,7 @@ static const struct MatchCallStructTrainer sWinonaMatchCallHeader =
 static const struct MatchCallStructTrainer sTateLizaMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_MOSSDEEP_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL,
     .rematchTableIdx = REMATCH_TATE_AND_LIZA,
     .desc = COMPOUND_STRING("MYSTIC DUO"),
@@ -476,7 +476,7 @@ static const struct MatchCallStructTrainer sTateLizaMatchCallHeader =
 static const struct MatchCallStructTrainer sJuanMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_SOOTOPOLIS_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_ENABLE_JUAN_MATCH_CALL,
     .rematchTableIdx = REMATCH_JUAN,
     .desc = COMPOUND_STRING("DANDY CHARM"),
@@ -495,7 +495,7 @@ static const u8 gText_EliteFourMatchCallDesc[] = _("ELITE FOUR");
 static const struct MatchCallStructTrainer sSidneyMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_EVER_GRANDE_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_REGISTERED_SIDNEY,
     .rematchTableIdx = REMATCH_SIDNEY,
     .desc = gText_EliteFourMatchCallDesc,
@@ -509,7 +509,7 @@ static const struct MatchCallStructTrainer sSidneyMatchCallHeader =
 static const struct MatchCallStructTrainer sPhoebeMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_EVER_GRANDE_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_REGISTERED_PHOEBE,
     .rematchTableIdx = REMATCH_PHOEBE,
     .desc = gText_EliteFourMatchCallDesc,
@@ -523,7 +523,7 @@ static const struct MatchCallStructTrainer sPhoebeMatchCallHeader =
 static const struct MatchCallStructTrainer sGlaciaMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_EVER_GRANDE_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_REGISTERED_GLACIA,
     .rematchTableIdx = REMATCH_GLACIA,
     .desc = gText_EliteFourMatchCallDesc,
@@ -537,7 +537,7 @@ static const struct MatchCallStructTrainer sGlaciaMatchCallHeader =
 static const struct MatchCallStructTrainer sDrakeMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_EVER_GRANDE_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_REGISTERED_DRAKE,
     .rematchTableIdx = REMATCH_DRAKE,
     .desc = gText_EliteFourMatchCallDesc,
@@ -551,7 +551,7 @@ static const struct MatchCallStructTrainer sDrakeMatchCallHeader =
 static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_EVER_GRANDE_CITY,
+    .mapSec = MAPSEC_NONE,
     .flag = FLAG_REGISTERED_WALLACE,
     .rematchTableIdx = REMATCH_WALLACE,
     .desc = COMPOUND_STRING("CHAMPION"),

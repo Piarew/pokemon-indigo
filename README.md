@@ -20,6 +20,8 @@ If you use **`pokeemerald-expansion`**, please credit **RHH (Rom Hacking Hideout
 Based off RHH's pokeemerald-expansion 1.17.2 https://github.com/rh-hideout/pokeemerald-expansion/
 ```
 
+Sinnoh maps in this hack are copied from [Lider Morti’s Sinnoh pokeemerald-expansion](https://github.com/LiderMorti00/Sinnoh-pokeemerald-expansion), with Hoenn FR Style graphics by Jaizu. Johto maps are copied from Pokémon Heart & Soul 2.0.
+
 Please consider [crediting all contributors](CREDITS.md) involved in the project!
 
 # Choosing `pokeemerald` or **`pokeemerald-expansion`**

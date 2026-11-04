@@ -2277,4 +2277,520 @@ const struct Tileset gTileset_IndigoPlateau_Hns =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_Sinnoh_General =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Sinnoh_General,
+    .palettes = gTilesetPalettes_Sinnoh_General,
+    .metatiles = gMetatiles_Sinnoh_General,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_General,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Petalburg =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_Petalburg,
+    .palettes = gTilesetPalettes_Sinnoh_Petalburg,
+    .metatiles = gMetatiles_Sinnoh_Petalburg,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Petalburg,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Building =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Sinnoh_Building,
+    .palettes = gTilesetPalettes_Sinnoh_Building,
+    .metatiles = gMetatiles_Sinnoh_Building,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Building,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_BrendansMaysHouse =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_BrendansMaysHouse,
+    .palettes = gTilesetPalettes_Sinnoh_BrendansMaysHouse,
+    .metatiles = gMetatiles_Sinnoh_BrendansMaysHouse,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_BrendansMaysHouse,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_GenericBuilding =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_GenericBuilding,
+    .palettes = gTilesetPalettes_Sinnoh_GenericBuilding,
+    .metatiles = gMetatiles_Sinnoh_GenericBuilding,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_GenericBuilding,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Rustboro =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_Rustboro,
+    .palettes = gTilesetPalettes_Sinnoh_Rustboro,
+    .metatiles = gMetatiles_Sinnoh_Rustboro,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Rustboro,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Jubilife =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Jubilife,
+    .palettes = gTilesetPalettes_Jubilife,
+    .metatiles = gMetatiles_Jubilife,
+    .metatileAttributes = gMetatileAttributes_Jubilife,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Mauville =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_Mauville,
+    .palettes = gTilesetPalettes_Sinnoh_Mauville,
+    .metatiles = gMetatiles_Sinnoh_Mauville,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Mauville,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Hearthome =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Hearthome,
+    .palettes = gTilesetPalettes_Hearthome,
+    .metatiles = gMetatiles_Hearthome,
+    .metatileAttributes = gMetatileAttributes_Hearthome,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Celestic =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Celestic,
+    .palettes = gTilesetPalettes_Celestic,
+    .metatiles = gMetatiles_Celestic,
+    .metatileAttributes = gMetatileAttributes_Celestic,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Veilstone =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Veilstone,
+    .palettes = gTilesetPalettes_Veilstone,
+    .metatiles = gMetatiles_Veilstone,
+    .metatileAttributes = gMetatileAttributes_Veilstone,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Lilycove =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_Lilycove,
+    .palettes = gTilesetPalettes_Sinnoh_Lilycove,
+    .metatiles = gMetatiles_Sinnoh_Lilycove,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Lilycove,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Canalave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Canalave,
+    .palettes = gTilesetPalettes_Canalave,
+    .metatiles = gMetatiles_Canalave,
+    .metatileAttributes = gMetatileAttributes_Canalave,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Snowpoint =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Snowpoint,
+    .palettes = gTilesetPalettes_Snowpoint,
+    .metatiles = gMetatiles_Snowpoint,
+    .metatileAttributes = gMetatileAttributes_Snowpoint,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sunnyshore =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sunnyshore,
+    .palettes = gTilesetPalettes_Sunnyshore,
+    .metatiles = gMetatiles_Sunnyshore,
+    .metatileAttributes = gMetatileAttributes_Sunnyshore,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_EverGrande =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_EverGrande,
+    .palettes = gTilesetPalettes_Sinnoh_EverGrande,
+    .metatiles = gMetatiles_Sinnoh_EverGrande,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_EverGrande,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Valor =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Valor,
+    .palettes = gTilesetPalettes_Valor,
+    .metatiles = gMetatiles_Valor,
+    .metatileAttributes = gMetatileAttributes_Valor,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Lavaridge =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_Lavaridge,
+    .palettes = gTilesetPalettes_Sinnoh_Lavaridge,
+    .metatiles = gMetatiles_Sinnoh_Lavaridge,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Lavaridge,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Cave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_Cave,
+    .palettes = gTilesetPalettes_Sinnoh_Cave,
+    .metatiles = gMetatiles_Sinnoh_Cave,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Cave,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_LilycoveMuseum =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_LilycoveMuseum,
+    .palettes = gTilesetPalettes_Sinnoh_LilycoveMuseum,
+    .metatiles = gMetatiles_Sinnoh_LilycoveMuseum,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_LilycoveMuseum,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Facility =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_Facility,
+    .palettes = gTilesetPalettes_Sinnoh_Facility,
+    .metatiles = gMetatiles_Sinnoh_Facility,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Facility,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Pasos =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Pasos,
+    .palettes = gTilesetPalettes_Pasos,
+    .metatiles = gMetatiles_Pasos,
+    .metatileAttributes = gMetatileAttributes_Pasos,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_BikeShop =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_BikeShop,
+    .palettes = gTilesetPalettes_Sinnoh_BikeShop,
+    .metatiles = gMetatiles_Sinnoh_BikeShop,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_BikeShop,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_PokemonCenter =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_PokemonCenter,
+    .palettes = gTilesetPalettes_Sinnoh_PokemonCenter,
+    .metatiles = gMetatiles_Sinnoh_PokemonCenter,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_PokemonCenter,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_Shop =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_Shop,
+    .palettes = gTilesetPalettes_Sinnoh_Shop,
+    .metatiles = gMetatiles_Sinnoh_Shop,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_Shop,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_PokemonSchool =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_PokemonSchool,
+    .palettes = gTilesetPalettes_Sinnoh_PokemonSchool,
+    .metatiles = gMetatiles_Sinnoh_PokemonSchool,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_PokemonSchool,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_OreburghGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OreburghGym,
+    .palettes = gTilesetPalettes_OreburghGym,
+    .metatiles = gMetatiles_OreburghGym,
+    .metatileAttributes = gMetatileAttributes_OreburghGym,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_OreburghMuseum =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OreburghMuseum,
+    .palettes = gTilesetPalettes_OreburghMuseum,
+    .metatiles = gMetatiles_OreburghMuseum,
+    .metatileAttributes = gMetatileAttributes_OreburghMuseum,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_PrettyPetalFlowerShop =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_PrettyPetalFlowerShop,
+    .palettes = gTilesetPalettes_Sinnoh_PrettyPetalFlowerShop,
+    .metatiles = gMetatiles_Sinnoh_PrettyPetalFlowerShop,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_PrettyPetalFlowerShop,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_EternaGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_EternaGym,
+    .palettes = gTilesetPalettes_EternaGym,
+    .metatiles = gMetatiles_EternaGym,
+    .metatileAttributes = gMetatileAttributes_EternaGym,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Church =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Church,
+    .palettes = gTilesetPalettes_Church,
+    .metatiles = gMetatiles_Church,
+    .metatileAttributes = gMetatileAttributes_Church,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_HearthomeCityGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_HearthomeCityGym,
+    .palettes = gTilesetPalettes_HearthomeCityGym,
+    .metatiles = gMetatiles_HearthomeCityGym,
+    .metatileAttributes = gMetatileAttributes_HearthomeCityGym,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_PokemonFanClub =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_PokemonFanClub,
+    .palettes = gTilesetPalettes_Sinnoh_PokemonFanClub,
+    .metatiles = gMetatiles_Sinnoh_PokemonFanClub,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_PokemonFanClub,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_PokemonDayCare =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_PokemonDayCare,
+    .palettes = gTilesetPalettes_Sinnoh_PokemonDayCare,
+    .metatiles = gMetatiles_Sinnoh_PokemonDayCare,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_PokemonDayCare,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_DewfordGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_DewfordGym,
+    .palettes = gTilesetPalettes_Sinnoh_DewfordGym,
+    .metatiles = gMetatiles_Sinnoh_DewfordGym,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_DewfordGym,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_MauvilleGameCorner =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_MauvilleGameCorner,
+    .palettes = gTilesetPalettes_Sinnoh_MauvilleGameCorner,
+    .metatiles = gMetatiles_Sinnoh_MauvilleGameCorner,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_MauvilleGameCorner,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_VeilstoneDepartmentStore =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_VeilstoneDepartmentStore,
+    .palettes = gTilesetPalettes_VeilstoneDepartmentStore,
+    .metatiles = gMetatiles_VeilstoneDepartmentStore,
+    .metatileAttributes = gMetatileAttributes_VeilstoneDepartmentStore,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_PastoriaCityGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PastoriaCityGym,
+    .palettes = gTilesetPalettes_PastoriaCityGym,
+    .metatiles = gMetatiles_PastoriaCityGym,
+    .metatileAttributes = gMetatileAttributes_PastoriaCityGym,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_CanalaveCityGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_CanalaveCityGym,
+    .palettes = gTilesetPalettes_CanalaveCityGym,
+    .metatiles = gMetatiles_CanalaveCityGym,
+    .metatileAttributes = gMetatileAttributes_CanalaveCityGym,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_SootopolisGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_SootopolisGym,
+    .palettes = gTilesetPalettes_Sinnoh_SootopolisGym,
+    .metatiles = gMetatiles_Sinnoh_SootopolisGym,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_SootopolisGym,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_MauvilleGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_MauvilleGym,
+    .palettes = gTilesetPalettes_Sinnoh_MauvilleGym,
+    .metatiles = gMetatiles_Sinnoh_MauvilleGym,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_MauvilleGym,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_EliteFour =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_EliteFour,
+    .palettes = gTilesetPalettes_Sinnoh_EliteFour,
+    .metatiles = gMetatiles_Sinnoh_EliteFour,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_EliteFour,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
+const struct Tileset gTileset_Sinnoh_CableClub =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sinnoh_CableClub,
+    .palettes = gTilesetPalettes_Sinnoh_CableClub,
+    .metatiles = gMetatiles_Sinnoh_CableClub,
+    .metatileAttributes = gMetatileAttributes_Sinnoh_CableClub,
+    .callback = NULL,
+    .usesEmeraldCounts = TRUE,
+};
+
 #endif // IS_FRLG

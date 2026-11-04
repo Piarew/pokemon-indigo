@@ -4,7 +4,7 @@
   "layout": "LAYOUT_TIN_TOWER_6F_HNS",
   "music": "MUS_RG_MT_MOON",
   "region": "REGION_KANTO",
-  "region_map_section": "MAPSEC_ECRUTEAK_CITY",
+  "region_map_section": "MAPSEC_TIN_TOWER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

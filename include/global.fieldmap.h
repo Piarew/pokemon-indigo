@@ -106,6 +106,9 @@ struct Tileset
     /*0x0C*/ const u16 *metatiles;
     /*0x10*/ const u16 *metatileAttributes;
     /*0x14*/ TilesetCB callback;
+    // Emerald primary is 512 tiles / 6 pals; FRLG is 640 / 7. Imported
+    // Sinnoh tilesets keep Emerald dimensions even on FRLG layouts.
+    bool8 usesEmeraldCounts;
 };
 
 struct MapLayout
