@@ -38,12 +38,18 @@ enum TitleScreenScene
 };
 
 #if   defined(FIRERED)
-#define TITLE_SPECIES SPECIES_CHARIZARD
+#define TITLE_SPECIES SPECIES_GYARADOS
+#define NUM_PRESS_START_FRAMES 5
+#define PRESS_START_BANNER_X   120
+#define PRESS_START_BANNER_Y   148
 #elif defined(LEAFGREEN)
 #define TITLE_SPECIES SPECIES_VENUSAUR
 #endif
 
 static EWRAM_DATA u8 sTitleScreenTimerTaskId = 0;
+#if defined(FIRERED)
+static EWRAM_DATA bool8 sPressStartCreated = FALSE;
+#endif
 
 static void ResetGpuRegs(void);
 static void CB2_TitleScreenRun(void);
@@ -69,6 +75,8 @@ static void CB2_FadeOutTransitionToResetRtcScreen(void);
 static void CB2_FadeOutTransitionToBerryFix(void);
 static void LoadSpriteGfxAndPals(void);
 #if defined(FIRERED)
+static void SpriteCB_PressStart(struct Sprite *sprite);
+static void CreatePressStartBanner(void);
 static void SpriteCallback_TitleScreenFlame(struct Sprite *sprite);
 static void Task_FlameSpawner(u8 taskId);
 #elif defined(LEAFGREEN)
@@ -105,15 +113,11 @@ static const u32 sStreak_Gfx[] = INCGFX_U32("graphics/title_screen_frlg/leafgree
 #endif
 
 #ifdef FIRERED
-const u16 gGraphics_TitleScreen_GameTitleLogoPals[] = INCGFX_U16("graphics/title_screen_frlg/firered/game_title_logo.pal", ".gbapal");
-const u8 gGraphics_TitleScreen_GameTitleLogoTiles[] = INCGFX_U8("graphics/title_screen_frlg/firered/game_title_logo.png", ".8bpp.smol");
-const u8 gGraphics_TitleScreen_GameTitleLogoMap[] = INCBIN_U8("graphics/title_screen_frlg/firered/game_title_logo.bin.smolTM");
-const u16 gGraphics_TitleScreen_BoxArtMonPals[] = INCGFX_U16("graphics/title_screen_frlg/firered/box_art_mon.pal", ".gbapal");
-const u8 gGraphics_TitleScreen_BoxArtMonTiles[] = INCGFX_U8("graphics/title_screen_frlg/firered/box_art_mon.png", ".4bpp.smol");
-const u8 gGraphics_TitleScreen_BoxArtMonMap[] = INCBIN_U8("graphics/title_screen_frlg/firered/box_art_mon.bin.smolTM");
-const u16 gGraphics_TitleScreen_BackgroundPals[] = INCGFX_U16("graphics/title_screen_frlg/firered/background.pal", ".gbapal");
-const u8 gGraphics_TitleScreen_CopyrightPressStartTiles[] = INCGFX_U8("graphics/title_screen_frlg/copyright_press_start.png", ".4bpp.smol");
-const u8 gGraphics_TitleScreen_CopyrightPressStartMap[] = INCBIN_U8("graphics/title_screen_frlg/copyright_press_start.bin.smolTM");
+const u16 gGraphics_TitleScreen_FullscreenPals[] = INCGFX_U16("graphics/title_screen_frlg/firered/fullscreen.png", ".gbapal");
+const u8 gGraphics_TitleScreen_FullscreenTiles[] = INCGFX_U8("graphics/title_screen_frlg/firered/fullscreen.png", ".8bpp.lz");
+const u8 gGraphics_TitleScreen_FullscreenMap[] = INCBIN_U8("graphics/title_screen_frlg/firered/fullscreen.bin.smolTM");
+static const u16 sPressStart_Pal[] = INCGFX_U16("graphics/title_screen_frlg/firered/press_start.png", ".gbapal");
+static const u32 sPressStart_Gfx[] = INCGFX_U32("graphics/title_screen_frlg/firered/press_start.png", ".4bpp.smol", "-mwidth 4 -mheight 1");
 const u16 gTitleScreen_Slash_Pal[] = INCGFX_U16("graphics/title_screen_frlg/firered/slash.pal", ".gbapal");
 #endif
 
@@ -195,12 +199,14 @@ enum {
     TILE_TAG_BLANK_OR_STREAK,
     TILE_TAG_BLANK,
     TILE_TAG_SLASH,
+    TILE_TAG_PRESS_START,
 };
 
 enum {
     PAL_TAG_DEFAULT,
     PAL_TAG_UNUSED,
     PAL_TAG_SLASH,
+    PAL_TAG_PRESS_START,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_FlameOrLeaf = {
@@ -280,6 +286,48 @@ static const struct SpriteTemplate sSlashSpriteTemplate = {
     .callback = SpriteCallbackDummy
 };
 
+#if defined(FIRERED)
+static const struct OamData sOamData_PressStart = {
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(32x8),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(32x8),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const union AnimCmd sAnim_PressStart_0[] = { ANIMCMD_FRAME(0,  4), ANIMCMD_END };
+static const union AnimCmd sAnim_PressStart_1[] = { ANIMCMD_FRAME(4,  4), ANIMCMD_END };
+static const union AnimCmd sAnim_PressStart_2[] = { ANIMCMD_FRAME(8,  4), ANIMCMD_END };
+static const union AnimCmd sAnim_PressStart_3[] = { ANIMCMD_FRAME(12, 4), ANIMCMD_END };
+static const union AnimCmd sAnim_PressStart_4[] = { ANIMCMD_FRAME(16, 4), ANIMCMD_END };
+
+static const union AnimCmd *const sPressStartAnims[NUM_PRESS_START_FRAMES] = {
+    sAnim_PressStart_0,
+    sAnim_PressStart_1,
+    sAnim_PressStart_2,
+    sAnim_PressStart_3,
+    sAnim_PressStart_4,
+};
+
+static const struct SpriteTemplate sPressStartSpriteTemplate = {
+    .tileTag = TILE_TAG_PRESS_START,
+    .paletteTag = PAL_TAG_PRESS_START,
+    .oam = &sOamData_PressStart,
+    .anims = sPressStartAnims,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_PressStart
+};
+#endif
+
 static const struct BgTemplate sBgTemplates[] = {
     {
         .bg = 0,
@@ -287,7 +335,11 @@ static const struct BgTemplate sBgTemplates[] = {
         .mapBaseIndex = 31,
         .screenSize = 0,
         .paletteMode = 1, // 8bpp
+#if defined(FIRERED)
+        .priority = 1,
+#else
         .priority = 0,
+#endif
         .baseTile = 0
     }, {
         .bg = 1,
@@ -327,15 +379,11 @@ static void (*const sSceneFuncs[])(s16 *data) = {
 
 #if defined(FIRERED)
 static const struct CompressedSpriteSheet sSpriteSheets[] = {
-    {sFlames_Gfx,                    0x500, TILE_TAG_FLAME_OR_LEAF},
-    {sBlankFlames_Gfx,               0x500, TILE_TAG_BLANK_OR_STREAK},
-    {gTitleScreen_BlankSprite_Tiles, 0x400, TILE_TAG_BLANK},
-    {sSlash_Gfx,                     0x800, TILE_TAG_SLASH}
+    {sPressStart_Gfx, 0x280, TILE_TAG_PRESS_START},
 };
 
 static const struct SpritePalette sSpritePals[] = {
-    {sFlames_Pal,            PAL_TAG_DEFAULT},
-    {gTitleScreen_Slash_Pal, PAL_TAG_SLASH},
+    {sPressStart_Pal, PAL_TAG_PRESS_START},
     {}
 };
 
@@ -394,6 +442,9 @@ void CB2_InitTitleScreenFrlg(void)
         FreeAllSpritePalettes();
         ResetPaletteFade();
         ResetGpuRegs();
+#if defined(FIRERED)
+        sPressStartCreated = FALSE;
+#endif
         DmaFill16(3, 0, (void *)VRAM, VRAM_SIZE);
         DmaFill32(3, 0, (void *)OAM, OAM_SIZE);
         DmaFill16(3, 0, (void *)PLTT, PLTT_SIZE);
@@ -403,6 +454,12 @@ void CB2_InitTitleScreenFrlg(void)
         sTitleScreenTimerTaskId = TASK_NONE;
         break;
     case 1:
+#if defined(FIRERED)
+        LoadPalette(gGraphics_TitleScreen_FullscreenPals, BG_PLTT_ID(0), PLTT_SIZE_8BPP);
+        DecompressAndCopyTileDataToVram(0, gGraphics_TitleScreen_FullscreenTiles, 0, 0, 0);
+        DecompressAndCopyTileDataToVram(0, gGraphics_TitleScreen_FullscreenMap, 0, 0, 1);
+        LoadSpriteGfxAndPals();
+#else
         LoadPalette(gGraphics_TitleScreen_GameTitleLogoPals, BG_PLTT_ID(0), 13 * PLTT_SIZE_4BPP);
         DecompressAndCopyTileDataToVram(0, gGraphics_TitleScreen_GameTitleLogoTiles, 0, 0, 0);
         DecompressAndCopyTileDataToVram(0, gGraphics_TitleScreen_GameTitleLogoMap, 0, 0, 1);
@@ -416,11 +473,16 @@ void CB2_InitTitleScreenFrlg(void)
         DecompressAndCopyTileDataToVram(3, sBorderBgTiles, 0, 0, 0);
         DecompressAndCopyTileDataToVram(3, sBorderBgMap, 0, 0, 1);
         LoadSpriteGfxAndPals();
+#endif
         break;
     case 2:
         if (!FreeTempTileDataBuffersIfPossible())
         {
+#if defined(FIRERED)
+            BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+#else
             BlendPalettes(PALETTES_BG, 16, RGB_BLACK);
+#endif
             CreateTask(Task_TitleScreenMain, 4);
             sTitleScreenTimerTaskId = CreateTask(Task_TitleScreenTimer, 2);
             SetVBlankCallback(VBlankCB);
@@ -493,9 +555,14 @@ static void Task_TitleScreenMain(u8 taskId)
         && tSceneNum != TITLESCREENSCENE_RESTART
         && tSceneNum != TITLESCREENSCENE_CRY)
     {
+#if defined(FIRERED)
+        LoadMainTitleScreenPalsAndResetBgs();
+        CreatePressStartBanner();
+#else
         ScheduleStopScanlineEffect();
         LoadMainTitleScreenPalsAndResetBgs();
         SetPalOnOrCreateBlankSprite(tHasCreatedBlankSprite);
+#endif
         SetTitleScreenScene(data, TITLESCREENSCENE_RUN);
     }
     else
@@ -510,6 +577,13 @@ static void SetTitleScreenScene(s16 *data, u8 sceneNum)
 
 static void SetTitleScreenScene_Init(s16 *data)
 {
+#if defined(FIRERED)
+    HideBg(1);
+    HideBg(2);
+    HideBg(3);
+    ShowBg(0);
+    SetTitleScreenScene(data, TITLESCREENSCENE_FADEIN);
+#else
     struct ScanlineEffectParams params;
 
     HideBg(0);
@@ -528,6 +602,7 @@ static void SetTitleScreenScene_Init(s16 *data)
     ScanlineEffect_SetParams(params);
 
     SetTitleScreenScene(data, TITLESCREENSCENE_FLASHSPRITE);
+#endif
 }
 
 static void SetTitleScreenScene_FlashSprite(s16 *data)
@@ -559,6 +634,20 @@ static void SetTitleScreenScene_FlashSprite(s16 *data)
 
 static void SetTitleScreenScene_FadeIn(s16 *data)
 {
+#if defined(FIRERED)
+    switch (tState)
+    {
+    case 0:
+        CreatePressStartBanner();
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        tState++;
+        break;
+    case 1:
+        if (!gPaletteFade.active)
+            SetTitleScreenScene(data, TITLESCREENSCENE_RUN);
+        break;
+    }
+#else
     switch (tState)
     {
     case 0:
@@ -644,6 +733,7 @@ static void SetTitleScreenScene_FadeIn(s16 *data)
         }
         break;
     }
+#endif
 }
 
 #define KEYSTROKE_DELSAVE (B_BUTTON | SELECT_BUTTON | DPAD_UP)
@@ -657,14 +747,15 @@ static void SetTitleScreenScene_Run(s16 *data)
     case 0:
         if (QUICKSTART && QUICKSTART_HUD)
             CreateQuickstartHud();
-        CreateTask(Task_TitleScreen_BlinkPressStart, 0);
 #if defined(FIRERED)
-        CreateTask(Task_FlameSpawner, 5);
-#elif defined(LEAFGREEN)
+        CreatePressStartBanner();
+        tSlashSpriteId = MAX_SPRITES;
+#else
+        CreateTask(Task_TitleScreen_BlinkPressStart, 0);
         CreateTask(Task_LeafSpawner, 5);
-#endif
         SetGpuRegsForTitleScreenRun();
         tSlashSpriteId = CreateSlashSprite();
+#endif
         tState++;
         // fallthrough
     case 1:
@@ -739,7 +830,9 @@ static void SetTitleScreenScene_Restart(s16 *data)
     case 2:
         if (IsNotWaitingForBGMStop() && !gPaletteFade.active)
         {
-            DestroyTask(FindTaskIdByFunc(Task_TitleScreen_BlinkPressStart));
+            u8 blinkTaskId = FindTaskIdByFunc(Task_TitleScreen_BlinkPressStart);
+            if (blinkTaskId != TASK_NONE)
+                DestroyTask(blinkTaskId);
             data[2] = 0;
             tState++;
         }
@@ -748,7 +841,9 @@ static void SetTitleScreenScene_Restart(s16 *data)
         data[2]++;
         if (data[2] >= 20)
         {
-            DestroyTask(FindTaskIdByFunc(Task_TitleScreen_BlinkPressStart));
+            u8 blinkTaskId = FindTaskIdByFunc(Task_TitleScreen_BlinkPressStart);
+            if (blinkTaskId != TASK_NONE)
+                DestroyTask(blinkTaskId);
             tState++;
         }
         break;
@@ -859,6 +954,9 @@ static void Task_TitleScreen_SlideWin0(u8 taskId)
 
 static void Task_TitleScreen_BlinkPressStart(u8 taskId)
 {
+#if defined(FIRERED)
+    DestroyTask(taskId);
+#else
     s16 *data = gTasks[taskId].data;
     s32 i;
 
@@ -899,12 +997,27 @@ static void Task_TitleScreen_BlinkPressStart(u8 taskId)
             }
         }
     }
+#endif
 }
 
 static void SignalEndTitleScreenPaletteSomethingTask(void)
 {
+#if defined(FIRERED)
+    s32 i;
+
+    for (i = 0; i < MAX_SPRITES; i++)
+    {
+        if (gSprites[i].inUse && gSprites[i].callback == SpriteCB_PressStart)
+        {
+            gSprites[i].data[0] = FALSE;
+            gSprites[i].invisible = FALSE;
+        }
+    }
+#else
     u8 taskId = FindTaskIdByFunc(Task_TitleScreen_BlinkPressStart);
-    gTasks[taskId].data[15] = TRUE;
+    if (taskId != TASK_NONE)
+        gTasks[taskId].data[15] = TRUE;
+#endif
 }
 
 static void UpdateScanlineEffectRegBuffer(s16 y)
@@ -955,6 +1068,15 @@ static void LoadMainTitleScreenPalsAndResetBgs(void)
 
     DestroyBlendPalettesGraduallyTask();
     ResetPaletteFadeControl();
+#if defined(FIRERED)
+    LoadPalette(gGraphics_TitleScreen_FullscreenPals, BG_PLTT_ID(0), PLTT_SIZE_8BPP);
+    ResetBgPositions();
+    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_WIN1_ON | DISPCNT_OBJWIN_ON);
+    HideBg(1);
+    HideBg(2);
+    HideBg(3);
+    ShowBg(0);
+#else
     LoadPalette(gGraphics_TitleScreen_GameTitleLogoPals, BG_PLTT_ID(0), 13 * PLTT_SIZE_4BPP);
     LoadPalette(gGraphics_TitleScreen_BoxArtMonPals, BG_PLTT_ID(13), PLTT_SIZE_4BPP);
     LoadPalette(gGraphics_TitleScreen_BackgroundPals, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
@@ -965,6 +1087,7 @@ static void LoadMainTitleScreenPalsAndResetBgs(void)
     ShowBg(2);
     ShowBg(0);
     ShowBg(3);
+#endif
 }
 
 static void CB2_FadeOutTransitionToSaveClearScreen(void)
@@ -981,6 +1104,44 @@ static void CB2_FadeOutTransitionToBerryFix(void)
         SetMainCallback2(CB2_InitBerryFixProgram);
     }
 }
+
+#if defined(FIRERED)
+#define sAnimate data[0]
+#define sTimer   data[1]
+
+static void SpriteCB_PressStart(struct Sprite *sprite)
+{
+    if (sprite->sAnimate)
+    {
+        if (++sprite->sTimer & 16)
+            sprite->invisible = FALSE;
+        else
+            sprite->invisible = TRUE;
+    }
+}
+
+static void CreatePressStartBanner(void)
+{
+    u8 i;
+    u8 spriteId;
+    s16 x = PRESS_START_BANNER_X - (32 * NUM_PRESS_START_FRAMES) / 2;
+
+    if (sPressStartCreated)
+        return;
+    sPressStartCreated = TRUE;
+
+    for (i = 0; i < NUM_PRESS_START_FRAMES; i++, x += 32)
+    {
+        spriteId = CreateSprite(&sPressStartSpriteTemplate, x, PRESS_START_BANNER_Y, 0);
+        StartSpriteAnim(&gSprites[spriteId], i);
+        gSprites[spriteId].sAnimate = TRUE;
+        gSprites[spriteId].sTimer = 0;
+    }
+}
+
+#undef sAnimate
+#undef sTimer
+#endif
 
 static void LoadSpriteGfxAndPals(void)
 {
