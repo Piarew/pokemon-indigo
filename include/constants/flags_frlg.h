@@ -1188,7 +1188,7 @@
 #define FLAG_HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE                       (FLAG_HIDDEN_ITEMS_START + 190)
 
 // Unused hidden item flags
-#define FLAG_UNUSED_0x4A7               0x4A7 // Unused Flag
+#define FLAG_UNUSED_0x4A7               0x4A7 // Exp. Share on/off (I_EXP_SHARE_FLAG)
 #define FLAG_UNUSED_0x4A8               0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9               0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA               0x4AA // Unused Flag

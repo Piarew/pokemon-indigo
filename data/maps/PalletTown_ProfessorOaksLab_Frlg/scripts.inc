@@ -771,6 +771,7 @@ PalletTown_ProfessorOaksLab_Movement_OakWalkToDeskSouth::
 	step_end
 
 PalletTown_ProfessorOaksLab_EventScript_RatePokedexOrTryGiveBalls::
+	call PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShare
 	setvar VAR_0x8004, 0
 	specialvar VAR_RESULT, GetFrlgPokedexCount
 	copyvar VAR_0x8008, VAR_0x8005
@@ -782,10 +783,25 @@ PalletTown_ProfessorOaksLab_EventScript_RatePokedexOrTryGiveBalls::
 	end
 
 PalletTown_ProfessorOaksLab_EventScript_RatePokedex::
+	call PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShare
 	call PokedexRating_EventScript_RateInPerson
 	goto_if_set FLAG_OAK_SAW_DEX_COMPLETION, PalletTown_ProfessorOaksLab_EventScript_DexCompleted
 	release
 	end
+
+PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShare::
+	goto_if_set FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE, PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShareReturn
+	goto_if_unset FLAG_BADGE01_GET, PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShareReturn
+	msgbox PalletTown_ProfessorOaksLab_Text_OakGiveExpShare
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedExpShare, ITEM_EXP_SHARE, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE
+	setflag FLAG_UNUSED_0x4A7
+	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainExpShare
+	release
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShareReturn::
+	return
 
 PalletTown_ProfessorOaksLab_EventScript_DexCompleted::
 	closemessage
@@ -1527,6 +1543,24 @@ PalletTown_ProfessorOaksLab_Text_OakComeSeeMeSometime::
 	.string "OAK: Come see me sometime.\p"
 	.string "After all, I want to know how your\n"
 	.string "POKéDEX is coming along.$"
+
+PalletTown_ProfessorOaksLab_Text_OakGiveExpShare::
+	.string "OAK: {PLAYER}!\n"
+	.string "I heard you earned a GYM BADGE.\p"
+	.string "Here, take this EXP. SHARE.\n"
+	.string "It's a device I developed.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedExpShare::
+	.string "{PLAYER} received the EXP. SHARE\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_OakExplainExpShare::
+	.string "Turn it on from the KEY ITEMS\n"
+	.string "pocket, and every POKéMON in\l"
+	.string "your party will gain EXP. Points\l"
+	.string "from battle.\p"
+	.string "It's on now, so your whole team\n"
+	.string "will grow together.$"
 
 PalletTown_ProfessorOaksLab_Text_BlankEncyclopedia::
 	.string "It's like an encyclopedia, but the\n"

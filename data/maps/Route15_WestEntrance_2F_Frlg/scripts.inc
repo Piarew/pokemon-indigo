@@ -73,11 +73,11 @@ Route15_WestEntrance_2F_Text_ReceivedItemFromAide::
 	.string "from the AIDE.$"
 
 Route15_WestEntrance_2F_Text_ExplainExpShare::
-	.string "EXP. SHARE is an item to be held\n"
-	.string "by a POKéMON.\p"
-	.string "The POKéMON will receive a share\n"
-	.string "of the EXP. Points without having\l"
-	.string "to battle.$"
+	.string "EXP. SHARE is a KEY ITEM.\p"
+	.string "Turn it on, and every POKéMON in\n"
+	.string "your party will gain EXP. Points\l"
+	.string "from battle, even if they didn't\l"
+	.string "fight.$"
 
 Route15_WestEntrance_2F_Text_LargeShiningBird::
 	.string "Let's see what the binoculars have\n"

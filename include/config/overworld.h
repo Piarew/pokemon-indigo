@@ -8,17 +8,17 @@
 // Other settings
 #define OW_POISON_DAMAGE                GEN_LATEST // In Gen4, Pokémon no longer faint from Poison in the overworld. In Gen5+, they no longer take damage at all.
 #define OW_DOUBLE_APPROACH_WITH_ONE_MON FALSE      // If enabled, you can be spotted by two trainers at the same time even if you only have one eligible Pokémon in your party.
-#define OW_HIDE_REPEAT_MAP_POPUP        FALSE      // If enabled, map popups will not appear if entering a map with the same Map Section Id as the last.
+#define OW_HIDE_REPEAT_MAP_POPUP        TRUE       // If enabled, map popups will not appear if entering a map with the same Map Section Id as the last.
 #define OW_WHITEOUT_CUTSCENE            GEN_LATEST // In Gen4+, whiting out shows an additional message and post whiteout event script cutscene with a healing NPC. (While this change was also in FRLG, for the sake of simplicity, setting this to GEN_3 will result in RSE behavior.)
-#define OW_DEFOG_FIELD_MOVE             FALSE      // If enabled, Defog can be used as a Field Move as seen in DPPt.
-#define OW_ROCK_CLIMB_FIELD_MOVE        FALSE      // If enabled, Rock Climb can be used as a Field Move as seen in DPPt.
+#define OW_DEFOG_FIELD_MOVE             TRUE       // If enabled, Defog can be used as a Field Move as seen in DPPt.
+#define OW_ROCK_CLIMB_FIELD_MOVE        TRUE       // If enabled, Rock Climb can be used as a Field Move as seen in DPPt.
 #define OW_CHOOSE_FROM_PC_AND_PARTY     TRUE       // If enabled, NPCs like move tutors or trainers asking for trade will let you pick a Pokémon from your PC or party instead of just your party
 
 // Item Obtain Description Box
 #define OW_ITEM_DESCRIPTIONS_OFF        0   // never show descriptions
 #define OW_ITEM_DESCRIPTIONS_FIRST_TIME 1   // show first time (** SAVE-BREAKING - see struct SaveBlock3 **)
 #define OW_ITEM_DESCRIPTIONS_ALWAYS     2   // always show description
-#define OW_SHOW_ITEM_DESCRIPTIONS       OW_ITEM_DESCRIPTIONS_OFF    // If enabled, item descriptions/images will be shown when finding items.
+#define OW_SHOW_ITEM_DESCRIPTIONS       OW_ITEM_DESCRIPTIONS_ALWAYS // If enabled, item descriptions/images will be shown when finding items.
 
 // These generational defines only make a distinction for Berries and the OW_PC_MOVE_ORDER
 #define GEN_6_XY GEN_6
