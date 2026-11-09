@@ -1052,6 +1052,11 @@ enum __attribute__((packed)) Item
     ITEM_TATSUGIRINITE = 872,
     ITEM_GLIMMORANITE = 873,
 
+    // QoL key items
+    ITEM_INFINITE_REPEL,
+    ITEM_TIME_CHANGER,
+    ITEM_NATURE_CHANGER,
+
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
 };

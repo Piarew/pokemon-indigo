@@ -659,6 +659,7 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene::
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCatchMonsForDataTakeThese
 	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls, ITEM_POKE_BALL, 5
 	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainCatching
+	call PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKit
 	famechecker FAMECHECKER_OAK, 1
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCompleteMonGuideWasMyDream
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalLeaveItToMeGramps
@@ -771,6 +772,7 @@ PalletTown_ProfessorOaksLab_Movement_OakWalkToDeskSouth::
 	step_end
 
 PalletTown_ProfessorOaksLab_EventScript_RatePokedexOrTryGiveBalls::
+	call PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKit
 	call PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShare
 	setvar VAR_0x8004, 0
 	specialvar VAR_RESULT, GetFrlgPokedexCount
@@ -801,6 +803,22 @@ PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShare::
 	end
 
 PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShareReturn::
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKit::
+	goto_if_set FLAG_GOT_OAK_RESEARCH_KIT, PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKitReturn
+	goto_if_unset FLAG_SYS_POKEDEX_GET, PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKitReturn
+	msgbox PalletTown_ProfessorOaksLab_Text_OakGiveResearchKit
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedInfiniteRepel, ITEM_INFINITE_REPEL, 1, MUS_RG_OBTAIN_KEY_ITEM
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedTimeChanger, ITEM_TIME_CHANGER, 1, MUS_RG_OBTAIN_KEY_ITEM
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedNatureChanger, ITEM_NATURE_CHANGER, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_OAK_RESEARCH_KIT
+	setflag FLAG_UNUSED_0x4A9
+	setflag FLAG_UNUSED_0x4AA
+	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainResearchKit
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKitReturn::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_DexCompleted::
@@ -1561,6 +1579,35 @@ PalletTown_ProfessorOaksLab_Text_OakExplainExpShare::
 	.string "from battle.\p"
 	.string "It's on now, so your whole team\n"
 	.string "will grow together.$"
+
+PalletTown_ProfessorOaksLab_Text_OakGiveResearchKit::
+	.string "OAK: One more thing, {PLAYER}.\p"
+	.string "Field research is easier with the\n"
+	.string "right tools. Take these.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedInfiniteRepel::
+	.string "{PLAYER} received the INFINITE REPEL\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedTimeChanger::
+	.string "{PLAYER} received the TIME CHANGER\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedNatureChanger::
+	.string "{PLAYER} received the NATURE CHANGER\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_OakExplainResearchKit::
+	.string "The INFINITE REPEL keeps weaker\n"
+	.string "wild POKéMON away until you turn\l"
+	.string "it off.\p"
+	.string "The TIME CHANGER lets you set\n"
+	.string "morning, day, evening, or night.\p"
+	.string "The NATURE CHANGER can set any\n"
+	.string "NATURE on a POKéMON in your party.\p"
+	.string "I've also unlocked DEXNAV in the\n"
+	.string "START MENU. Register a species\l"
+	.string "you've seen to search for it.$"
 
 PalletTown_ProfessorOaksLab_Text_BlankEncyclopedia::
 	.string "It's like an encyclopedia, but the\n"

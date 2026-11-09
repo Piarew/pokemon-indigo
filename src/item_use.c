@@ -272,6 +272,29 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
 #endif
 }
 
+STATIC_ASSERT(I_INFINITE_REPEL_FLAG > TEMP_FLAGS_END, YouNeedToSetAFlagToUseInfiniteRepel);
+
+void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
+{
+    if (FlagGet(I_INFINITE_REPEL_FLAG))
+    {
+        PlaySE(SE_PC_OFF);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_InfiniteRepelOff, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_InfiniteRepelOff, CloseItemMessage);
+    }
+    else
+    {
+        PlaySE(SE_REPEL);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_InfiniteRepelOn, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_InfiniteRepelOn, CloseItemMessage);
+    }
+    FlagToggle(I_INFINITE_REPEL_FLAG);
+}
+
 void ItemUseOutOfBattle_Bike(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
@@ -866,6 +889,18 @@ void ItemUseOutOfBattle_AbilityPatch(u8 taskId)
 void ItemUseOutOfBattle_Mint(u8 taskId)
 {
     gItemUseCB = ItemUseCB_Mint;
+    SetUpItemUseCallback(taskId);
+}
+
+void ItemUseOutOfBattle_NatureChanger(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_NatureChanger;
+    SetUpItemUseCallback(taskId);
+}
+
+void ItemUseOutOfBattle_BottleCap(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_BottleCap;
     SetUpItemUseCallback(taskId);
 }
 
@@ -1577,6 +1612,28 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
     else
     {
         gTasks[taskId].func = ItemUseOnFieldCB_TownMap;
+    }
+}
+
+static void ItemUseOnFieldCB_TimeChanger(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_UseTimeChanger);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_TimeChanger(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_TimeChanger;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        gTasks[taskId].func = ItemUseOnFieldCB_TimeChanger;
     }
 }
 

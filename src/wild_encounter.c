@@ -1040,6 +1040,8 @@ bool8 UpdateRepelCounter(void)
         return FALSE;
     if (InUnionRoom() == TRUE)
         return FALSE;
+    if (I_INFINITE_REPEL_FLAG && FlagGet(I_INFINITE_REPEL_FLAG))
+        return FALSE;
 
     if (steps != 0)
     {
@@ -1071,7 +1073,7 @@ bool8 IsWildLevelAllowedByRepel(u8 wildLevel)
 {
     u8 i;
 
-    if (!REPEL_STEP_COUNT)
+    if (!(I_INFINITE_REPEL_FLAG && FlagGet(I_INFINITE_REPEL_FLAG)) && !REPEL_STEP_COUNT)
         return TRUE;
 
     for (i = 0; i < PARTY_SIZE; i++)

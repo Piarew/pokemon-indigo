@@ -54,6 +54,11 @@ CeladonCity_DepartmentStore_5F_Vitamins::
 	.2byte ITEM_CALCIUM
 	.2byte ITEM_ZINC
 	.2byte ITEM_CARBOS
+	.2byte ITEM_BOTTLE_CAP
+	.2byte ITEM_GOLD_BOTTLE_CAP
+	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_FRESH_START_MOCHI
 	.2byte ITEM_NONE
 	release
 	end

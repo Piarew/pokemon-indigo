@@ -259,9 +259,9 @@
 #define VAR_0x40F4                 0x40F4
 #define VAR_0x40F5                 0x40F5
 #define VAR_0x40F6                 0x40F6
-#define VAR_0x40F7                 0x40F7
-#define VAR_0x40F8                 0x40F8
-#define VAR_0x40F9                 0x40F9
+#define VAR_0x40F7                 0x40F7 // Level cap override (B_LEVEL_CAP_VARIABLE). 0 = auto from gym count.
+#define VAR_0x40F8                 0x40F8 // DexNav registered species (DN_VAR_SPECIES)
+#define VAR_0x40F9                 0x40F9 // DexNav step counter (DN_VAR_STEP_COUNTER)
 #define VAR_0x40FA                 0x40FA
 #define VAR_0x40FB                 0x40FB
 #define VAR_0x40FC                 0x40FC

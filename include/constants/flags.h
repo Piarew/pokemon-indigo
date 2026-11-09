@@ -1243,11 +1243,11 @@
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Exp. Share on/off (I_EXP_SHARE_FLAG)
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
+#define FLAG_UNUSED_0x4A8                                           0x4A8 // DexNav searching (DN_FLAG_SEARCHING)
+#define FLAG_UNUSED_0x4A9                                           0x4A9 // DexNav unlocked (DN_FLAG_DEXNAV_GET)
+#define FLAG_UNUSED_0x4AA                                           0x4AA // DexNav detector mode (DN_FLAG_DETECTOR_MODE)
+#define FLAG_UNUSED_0x4AB                                           0x4AB // Infinite Repel on/off (I_INFINITE_REPEL_FLAG)
+#define FLAG_UNUSED_0x4AC                                           0x4AC // Pause fake RTC (OW_FLAG_PAUSE_TIME)
 #define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
 #define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
 #define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
@@ -2011,7 +2011,7 @@
 #define FLAG_DID_MARC_TRADE                              0
 #define FLAG_BEAT_RIVAL_IN_OAKS_LAB                      0
 #define FLAG_GOT_TM06_FROM_KOGA                          0
-#define FLAG_0x25A                                       0
+#define FLAG_GOT_OAK_RESEARCH_KIT                        0
 #define FLAG_GOT_TM27                                    0
 #define FLAG_0x25C                                       0
 #define FLAG_0x25D                                       0

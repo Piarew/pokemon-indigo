@@ -11,11 +11,17 @@
 #define LEVEL_CAP_VARIABLE              2 // Level cap is chosen according to the contents of the event variable specified by B_LEVEL_CAP_VARIABLE
 
 // Level Cap Configs
-#define B_EXP_CAP_TYPE                  EXP_CAP_NONE   // [EXP_CAP_NONE, EXP_CAP_HARD, EXP_CAP_SOFT] choose the type of level cap to apply
-#define B_LEVEL_CAP_TYPE                LEVEL_CAP_NONE // [LEVEL_CAP_NONE, LEVEL_CAP_FLAG_LIST, LEVEL_CAP_VARIABLE] choose the method to derive the level cap
-#define B_LEVEL_CAP_VARIABLE            0 // event variable used to derive level cap if B_LEVEL_CAP_TYPE is set to LEVEL_CAP_VARIABLE
+// Auto formula when B_LEVEL_CAP_VARIABLE is 0: min(LEVEL_CAP_MAX, LEVEL_CAP_BASE + LEVEL_CAP_PER_GYM × gyms).
+// Scripts may write a non-zero value to B_LEVEL_CAP_VARIABLE to override the auto cap.
+#define LEVEL_CAP_BASE                  10
+#define LEVEL_CAP_PER_GYM               5
+#define LEVEL_CAP_MAX                   100
 
-#define B_RARE_CANDY_CAP                FALSE // If set to true, Rare Candies can't be used to go over the level cap
+#define B_EXP_CAP_TYPE                  EXP_CAP_HARD       // [EXP_CAP_NONE, EXP_CAP_HARD, EXP_CAP_SOFT] choose the type of level cap to apply
+#define B_LEVEL_CAP_TYPE                LEVEL_CAP_VARIABLE // [LEVEL_CAP_NONE, LEVEL_CAP_FLAG_LIST, LEVEL_CAP_VARIABLE] choose the method to derive the level cap
+#define B_LEVEL_CAP_VARIABLE            0x40F7 // VAR_UNUSED_0x40F7. 0 = auto from gym count; non-zero overrides.
+
+#define B_RARE_CANDY_CAP                TRUE  // If set to true, Rare Candies can't be used to go over the level cap
 #define B_LEVEL_CAP_EXP_UP              FALSE // If set to true, mons under level cap will receive more experience
 
 // EV Cap Constants

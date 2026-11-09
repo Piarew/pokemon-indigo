@@ -5232,6 +5232,322 @@ void ItemUseCB_Mint(u8 taskId, TaskFunc task)
 #undef tNewNature
 #undef tOldFunc
 
+#define tState      data[0]
+#define tMonId      data[1]
+#define tOldNature  data[2]
+#define tNewNature  data[3]
+#define tOldFunc    4
+
+static void Task_ReturnToChooseMonFromChanger(u8 taskId)
+{
+    gPartyMenuUseExitCallback = FALSE;
+    PlaySE(SE_SELECT);
+    ScheduleBgCopyTilemapToVram(2);
+    ClearStdWindowAndFrameToTransparent(6, 0);
+    ClearWindowTilemap(6);
+    DisplayPartyMenuStdMessage(5);
+    gTasks[taskId].func = (void *)GetWordTaskArg(taskId, tOldFunc);
+}
+
+static void PrintNatureChangerPrompt(u8 taskId)
+{
+    static const u8 sText_NatureChangerPrompt[] = _("Nature: {STR_VAR_2}\n{LEFT_ARROW}{RIGHT_ARROW} change, A confirm");
+    s16 *data = gTasks[taskId].data;
+
+    GetMonNickname(&gParties[B_TRAINER_PLAYER][tMonId], gStringVar1);
+    StringCopy(gStringVar2, gNaturesInfo[tNewNature].name);
+    StringExpandPlaceholders(gStringVar4, sText_NatureChangerPrompt);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
+void Task_NatureChanger(u8 taskId)
+{
+    static const u8 sText_doneText[] = _("{STR_VAR_1}'s Nature became\n{STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
+    s16 *data = gTasks[taskId].data;
+
+    switch (tState)
+    {
+    case 0:
+        gPartyMenuUseExitCallback = TRUE;
+        PrintNatureChangerPrompt(taskId);
+        tState++;
+        break;
+    case 1:
+        if (IsPartyMenuTextPrinterActive())
+            break;
+        if (JOY_NEW(DPAD_RIGHT) || JOY_NEW(DPAD_DOWN))
+        {
+            PlaySE(SE_SELECT);
+            tNewNature++;
+            if (tNewNature >= NUM_NATURES)
+                tNewNature = 0;
+            PrintNatureChangerPrompt(taskId);
+        }
+        else if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_UP))
+        {
+            PlaySE(SE_SELECT);
+            if (tNewNature == 0)
+                tNewNature = NUM_NATURES - 1;
+            else
+                tNewNature--;
+            PrintNatureChangerPrompt(taskId);
+        }
+        else if (JOY_NEW(A_BUTTON))
+        {
+            if (tOldNature == tNewNature)
+            {
+                gPartyMenuUseExitCallback = FALSE;
+                PlaySE(SE_SELECT);
+                DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+                ScheduleBgCopyTilemapToVram(2);
+                gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+                return;
+            }
+            tState++;
+        }
+        else if (JOY_NEW(B_BUTTON))
+        {
+            Task_ReturnToChooseMonFromChanger(taskId);
+            return;
+        }
+        break;
+    case 2:
+        PlaySE(SE_USE_ITEM);
+        GetMonNickname(&gParties[B_TRAINER_PLAYER][tMonId], gStringVar1);
+        StringCopy(gStringVar2, gNaturesInfo[tNewNature].name);
+        StringExpandPlaceholders(gStringVar4, sText_doneText);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        tState++;
+        break;
+    case 3:
+        if (!IsPartyMenuTextPrinterActive())
+            tState++;
+        break;
+    case 4:
+        SetMonData(&gParties[B_TRAINER_PLAYER][tMonId], MON_DATA_HIDDEN_NATURE, &tNewNature);
+        CalculateMonStats(&gParties[B_TRAINER_PLAYER][tMonId]);
+        gTasks[taskId].func = Task_ClosePartyMenu;
+        break;
+    }
+}
+
+void ItemUseCB_NatureChanger(u8 taskId, TaskFunc task)
+{
+    s16 *data = gTasks[taskId].data;
+
+    tState = 0;
+    tMonId = gPartyMenu.slotId;
+    tOldNature = GetMonData(&gParties[B_TRAINER_PLAYER][tMonId], MON_DATA_HIDDEN_NATURE);
+    tNewNature = tOldNature;
+    SetWordTaskArg(taskId, tOldFunc, (uintptr_t)(gTasks[taskId].func));
+    gTasks[taskId].func = Task_NatureChanger;
+}
+
+#undef tState
+#undef tMonId
+#undef tOldNature
+#undef tNewNature
+#undef tOldFunc
+
+#define tState     data[0]
+#define tMonId     data[1]
+#define tStat      data[2]
+#define tGoldCap   data[3]
+#define tOldFunc   4
+
+static const u8 *const sBottleCapStatNames[NUM_STATS] =
+{
+    [STAT_HP]    = COMPOUND_STRING("HP"),
+    [STAT_ATK]   = COMPOUND_STRING("Attack"),
+    [STAT_DEF]   = COMPOUND_STRING("Defense"),
+    [STAT_SPEED] = COMPOUND_STRING("Speed"),
+    [STAT_SPATK] = COMPOUND_STRING("Sp. Atk"),
+    [STAT_SPDEF] = COMPOUND_STRING("Sp. Def"),
+};
+
+static bool32 MonNeedsHyperTrainStat(struct Pokemon *mon, u32 stat)
+{
+    return GetMonData(mon, MON_DATA_HP_IV + stat) < MAX_PER_STAT_IVS
+        && !GetMonData(mon, MON_DATA_HYPER_TRAINED_HP + stat);
+}
+
+static bool32 MonNeedsAnyHyperTrain(struct Pokemon *mon)
+{
+    u32 stat;
+    for (stat = 0; stat < NUM_STATS; stat++)
+    {
+        if (MonNeedsHyperTrainStat(mon, stat))
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static void HyperTrainStat(struct Pokemon *mon, u32 stat)
+{
+    u32 iv = MAX_PER_STAT_IVS;
+    bool32 trained = TRUE;
+    SetMonData(mon, MON_DATA_HP_IV + stat, &iv);
+    SetMonData(mon, MON_DATA_HYPER_TRAINED_HP + stat, &trained);
+}
+
+static void PrintBottleCapPrompt(u8 taskId)
+{
+    static const u8 sText_BottleCapPrompt[] = _("Max {STR_VAR_2}?\n{LEFT_ARROW}{RIGHT_ARROW} change, A confirm");
+    s16 *data = gTasks[taskId].data;
+
+    StringCopy(gStringVar2, sBottleCapStatNames[tStat]);
+    StringExpandPlaceholders(gStringVar4, sText_BottleCapPrompt);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
+static s16 NextTrainableStat(struct Pokemon *mon, s16 stat, s16 dir)
+{
+    u32 i;
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        stat += dir;
+        if (stat < 0)
+            stat = NUM_STATS - 1;
+        else if (stat >= NUM_STATS)
+            stat = 0;
+        if (MonNeedsHyperTrainStat(mon, stat))
+            return stat;
+    }
+    return -1;
+}
+
+void Task_BottleCap(u8 taskId)
+{
+    static const u8 sText_AskGold[] = _("Max all of {STR_VAR_1}'s IVs?");
+    static const u8 sText_DoneOne[] = _("{STR_VAR_1}'s {STR_VAR_2}\nwas maxed out!{PAUSE_UNTIL_PRESS}");
+    static const u8 sText_DoneAll[] = _("{STR_VAR_1}'s IVs were\nall maxed out!{PAUSE_UNTIL_PRESS}");
+    s16 *data = gTasks[taskId].data;
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][tMonId];
+    u32 stat;
+
+    switch (tState)
+    {
+    case 0:
+        if (!MonNeedsAnyHyperTrain(mon))
+        {
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            return;
+        }
+        gPartyMenuUseExitCallback = TRUE;
+        GetMonNickname(mon, gStringVar1);
+        if (tGoldCap)
+        {
+            StringExpandPlaceholders(gStringVar4, sText_AskGold);
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            tState = 3;
+        }
+        else
+        {
+            tStat = NextTrainableStat(mon, -1, 1);
+            PrintBottleCapPrompt(taskId);
+            tState++;
+        }
+        break;
+    case 1:
+        if (IsPartyMenuTextPrinterActive())
+            break;
+        if (JOY_NEW(DPAD_RIGHT) || JOY_NEW(DPAD_DOWN))
+        {
+            PlaySE(SE_SELECT);
+            tStat = NextTrainableStat(mon, tStat, 1);
+            PrintBottleCapPrompt(taskId);
+        }
+        else if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_UP))
+        {
+            PlaySE(SE_SELECT);
+            tStat = NextTrainableStat(mon, tStat, -1);
+            PrintBottleCapPrompt(taskId);
+        }
+        else if (JOY_NEW(A_BUTTON))
+        {
+            tState++;
+        }
+        else if (JOY_NEW(B_BUTTON))
+        {
+            Task_ReturnToChooseMonFromChanger(taskId);
+            return;
+        }
+        break;
+    case 2:
+        PlaySE(SE_USE_ITEM);
+        HyperTrainStat(mon, tStat);
+        CalculateMonStats(mon);
+        GetMonNickname(mon, gStringVar1);
+        StringCopy(gStringVar2, sBottleCapStatNames[tStat]);
+        StringExpandPlaceholders(gStringVar4, sText_DoneOne);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        RemoveBagItem(gSpecialVar_ItemId, 1);
+        tState = 5;
+        break;
+    case 3:
+        if (!IsPartyMenuTextPrinterActive())
+        {
+            PartyMenuDisplayYesNoMenu();
+            tState++;
+        }
+        break;
+    case 4:
+        switch (Menu_ProcessInputNoWrapClearOnChoose())
+        {
+        case 0:
+            PlaySE(SE_USE_ITEM);
+            for (stat = 0; stat < NUM_STATS; stat++)
+            {
+                if (MonNeedsHyperTrainStat(mon, stat))
+                    HyperTrainStat(mon, stat);
+            }
+            CalculateMonStats(mon);
+            GetMonNickname(mon, gStringVar1);
+            StringExpandPlaceholders(gStringVar4, sText_DoneAll);
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            RemoveBagItem(gSpecialVar_ItemId, 1);
+            tState++;
+            break;
+        case 1:
+        case MENU_B_PRESSED:
+            Task_ReturnToChooseMonFromChanger(taskId);
+            return;
+        }
+        break;
+    case 5:
+        if (!IsPartyMenuTextPrinterActive())
+            gTasks[taskId].func = Task_ClosePartyMenu;
+        break;
+    }
+}
+
+void ItemUseCB_BottleCap(u8 taskId, TaskFunc task)
+{
+    s16 *data = gTasks[taskId].data;
+
+    tState = 0;
+    tMonId = gPartyMenu.slotId;
+    tGoldCap = (gSpecialVar_ItemId == ITEM_GOLD_BOTTLE_CAP);
+    SetWordTaskArg(taskId, tOldFunc, (uintptr_t)(gTasks[taskId].func));
+    gTasks[taskId].func = Task_BottleCap;
+}
+
+#undef tState
+#undef tMonId
+#undef tStat
+#undef tGoldCap
+#undef tOldFunc
+
 static void Task_DisplayHPRestoredMessage(u8 taskId)
 {
     struct Pokemon *party = NULL;

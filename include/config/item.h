@@ -35,6 +35,7 @@
 // These two settings are both independent and complementary.
 #define VAR_LAST_REPEL_LURE_USED    0       // If this var has been assigned, the last Repel/Lure used will be saved and the player will be prompted with the vanilla repel YES/NO option, unless I_REPEL_LURE_MENU is set to TRUE.
 #define I_REPEL_LURE_MENU           TRUE    // If set to TRUE, the player is able to choose which Repel/Lure to use once the previous one runs out. Cursor position is saved by VAR_LAST_REPEL_LURE_USED if not 0.
+#define I_INFINITE_REPEL_FLAG       FLAG_UNUSED_0x4AB // If this flag is set, wild Pokémon below the lead's level are always repelled (Radical Red-style Infinite Repel).
 
 // Vs. Seeker
 #define I_VS_SEEKER_CHARGING        0                     // If this flag is assigned, the Vs. Seeker functionality will be enabled. When the player has the Vs. Seeker, Match Call rematch functions will stop working. Documentation for the Vs. Seeker can be found in docs/tutorials/vs_seeker.md.

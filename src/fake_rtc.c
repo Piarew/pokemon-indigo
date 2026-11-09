@@ -7,6 +7,8 @@
 #include "fake_rtc.h"
 #include "event_data.h"
 #include "script.h"
+#include "overworld.h"
+#include "field_weather.h"
 
 static void FakeRtc_CalcTimeDifference(struct Time *result, struct SiiRtcInfo *t1, struct Time *t2);
 
@@ -143,4 +145,27 @@ void Script_ToggleFakeRtc(void)
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
     FlagToggle(OW_FLAG_PAUSE_TIME);
+}
+
+void Script_SetTimeOfDayFromResult(void)
+{
+    static const u8 sHours[TIMES_OF_DAY_COUNT] =
+    {
+        [TIME_MORNING] = MORNING_HOUR_BEGIN,
+        [TIME_DAY]     = DAY_HOUR_BEGIN,
+        [TIME_EVENING] = EVENING_HOUR_BEGIN,
+        [TIME_NIGHT]   = NIGHT_HOUR_BEGIN,
+    };
+    u32 tod = gSpecialVar_Result;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    if (tod >= TIMES_OF_DAY_COUNT)
+        return;
+
+    FakeRtc_ForwardTimeTo(sHours[tod], 0, 0);
+    gTimeUpdateCounter = 0;
+    UpdateTimeOfDay(TRUE);
+    if (MapHasNaturalLight(gMapHeader.mapType))
+        ApplyWeatherColorMapIfIdle(gWeatherPtr->colorMapIndex);
 }

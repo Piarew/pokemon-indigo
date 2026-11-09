@@ -21,6 +21,8 @@ u32 GetCurrentLevelCap(void)
     };
 
     u32 i;
+    u32 gyms;
+    u32 cap;
 
     if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
     {
@@ -32,7 +34,20 @@ u32 GetCurrentLevelCap(void)
     }
     else if (B_LEVEL_CAP_TYPE == LEVEL_CAP_VARIABLE)
     {
-        return VarGet(B_LEVEL_CAP_VARIABLE);
+        cap = VarGet(B_LEVEL_CAP_VARIABLE);
+        if (cap != 0)
+            return cap;
+
+        gyms = 0;
+        for (i = 0; i < NUM_BADGES; i++)
+        {
+            if (FlagGet(FLAG_BADGE01_GET + i))
+                gyms++;
+        }
+        cap = LEVEL_CAP_BASE + LEVEL_CAP_PER_GYM * gyms;
+        if (cap > LEVEL_CAP_MAX)
+            cap = LEVEL_CAP_MAX;
+        return cap;
     }
 
     return MAX_LEVEL;
