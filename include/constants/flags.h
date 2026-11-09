@@ -2013,7 +2013,7 @@
 #define FLAG_GOT_TM06_FROM_KOGA                          0
 #define FLAG_GOT_OAK_RESEARCH_KIT                        0
 #define FLAG_GOT_TM27                                    0
-#define FLAG_0x25C                                       0
+#define FLAG_GOT_OAK_FIELD_KIT                           0
 #define FLAG_0x25D                                       0
 #define FLAG_GOT_OLD_AMBER                               0
 #define FLAG_0x25F                                       0

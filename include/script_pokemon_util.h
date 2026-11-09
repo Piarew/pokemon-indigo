@@ -8,6 +8,10 @@ void CreateScriptedDoubleWildMon(enum Species species, u8 level, enum Item item,
 void ScriptSetMonMoveSlot(u8 monIndex, enum Move move, u8 slot);
 void ReducePlayerPartyToSelectedMons(void);
 void HealPlayerParty(void);
+bool32 PokemonNeedsFullRestore(struct Pokemon *mon);
+u32 HealPartyMonsIfNeeded(void);
+bool32 SetMonToLevelCap(struct Pokemon *mon);
+u32 LevelPartyToCap(void);
 void Script_GetChosenMonOffensiveEVs(void);
 void Script_GetChosenMonDefensiveEVs(void);
 void Script_GetChosenMonOffensiveIVs(void);

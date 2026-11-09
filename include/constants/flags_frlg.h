@@ -585,7 +585,7 @@
 #define FLAG_GOT_TM06_FROM_KOGA                          0x259
 #define FLAG_GOT_OAK_RESEARCH_KIT                        0x25A // Infinite Repel, Time Changer, Nature Changer, DexNav
 #define FLAG_GOT_TM27                                    0x25B
-#define FLAG_0x25C                                       0x25C
+#define FLAG_GOT_OAK_FIELD_KIT                           0x25C // Porta-Heal, Candy Feast, Portable PC
 #define FLAG_0x25D                                       0x25D
 #define FLAG_GOT_OLD_AMBER                               0x25E
 #define FLAG_0x25F                                       0x25F

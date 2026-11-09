@@ -563,7 +563,12 @@ static void Task_MoveRelearner_Quit(u8 taskId)
     if (gPaletteFade.active)
         return;
 
-    if (gInitialSummaryScreenCallback != NULL)
+    if (gRelearnMode == RELEARN_MODE_PARTY_MENU)
+    {
+        gPartyMenu.slotId = gTasks[taskId].tPartyIndex;
+        SetMainCallback2(CB2_ReturnToPartyMenuFromMoveRelearner);
+    }
+    else if (gInitialSummaryScreenCallback != NULL)
     {
         if (gRelearnMode == RELEARN_MODE_PSS_PAGE_CONTEST_MOVES)
             ShowPokemonSummaryScreen(SUMMARY_MODE_RELEARNER_CONTEST, gParties[B_TRAINER_PLAYER], gTasks[taskId].tPartyIndex, gPartiesCount[B_TRAINER_PLAYER] - 1, gInitialSummaryScreenCallback);
@@ -643,7 +648,7 @@ static void Task_MoveRelearner_HandleInput(u8 taskId)
     switch (itemId)
     {
     case LIST_NOTHING_CHOSEN:
-        if (JOY_NEW(SELECT_BUTTON) && gRelearnMode != RELEARN_MODE_SCRIPT)
+        if (JOY_NEW(SELECT_BUTTON) && (gRelearnMode == RELEARN_MODE_PSS_PAGE_BATTLE_MOVES || gRelearnMode == RELEARN_MODE_PSS_PAGE_CONTEST_MOVES))
         {
             if (UpdateMoveRelearnerState())
             {

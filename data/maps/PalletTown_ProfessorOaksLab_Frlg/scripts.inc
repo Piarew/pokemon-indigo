@@ -806,7 +806,7 @@ PalletTown_ProfessorOaksLab_EventScript_TryGiveExpShareReturn::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKit::
-	goto_if_set FLAG_GOT_OAK_RESEARCH_KIT, PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKitReturn
+	goto_if_set FLAG_GOT_OAK_RESEARCH_KIT, PalletTown_ProfessorOaksLab_EventScript_TryGiveFieldKit
 	goto_if_unset FLAG_SYS_POKEDEX_GET, PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKitReturn
 	msgbox PalletTown_ProfessorOaksLab_Text_OakGiveResearchKit
 	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedInfiniteRepel, ITEM_INFINITE_REPEL, 1, MUS_RG_OBTAIN_KEY_ITEM
@@ -816,9 +816,23 @@ PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKit::
 	setflag FLAG_UNUSED_0x4A9
 	setflag FLAG_UNUSED_0x4AA
 	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainResearchKit
-	return
+	goto PalletTown_ProfessorOaksLab_EventScript_TryGiveFieldKit
 
 PalletTown_ProfessorOaksLab_EventScript_TryGiveResearchKitReturn::
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_TryGiveFieldKit::
+	goto_if_set FLAG_GOT_OAK_FIELD_KIT, PalletTown_ProfessorOaksLab_EventScript_TryGiveFieldKitReturn
+	goto_if_unset FLAG_SYS_POKEDEX_GET, PalletTown_ProfessorOaksLab_EventScript_TryGiveFieldKitReturn
+	msgbox PalletTown_ProfessorOaksLab_Text_OakGiveFieldKit
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedPortaHeal, ITEM_PORTA_HEAL, 1, MUS_RG_OBTAIN_KEY_ITEM
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedCandyFeast, ITEM_CANDY_FEAST, 1, MUS_RG_OBTAIN_KEY_ITEM
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedPortablePC, ITEM_PORTABLE_PC, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_OAK_FIELD_KIT
+	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainFieldKit
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_TryGiveFieldKitReturn::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_DexCompleted::
@@ -1608,6 +1622,32 @@ PalletTown_ProfessorOaksLab_Text_OakExplainResearchKit::
 	.string "I've also unlocked DEXNAV in the\n"
 	.string "START MENU. Register a species\l"
 	.string "you've seen to search for it.$"
+
+PalletTown_ProfessorOaksLab_Text_OakGiveFieldKit::
+	.string "OAK: And these should help you\n"
+	.string "care for your team in the field.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedPortaHeal::
+	.string "{PLAYER} received the PORTA-HEAL\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedCandyFeast::
+	.string "{PLAYER} received the CANDY FEAST\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedPortablePC::
+	.string "{PLAYER} received the PORTABLE PC\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_OakExplainFieldKit::
+	.string "The PORTA-HEAL fully restores\n"
+	.string "and revives your whole party.\p"
+	.string "The CANDY FEAST raises every\n"
+	.string "party POKéMON to the level cap.\p"
+	.string "The PORTABLE PC lets you use a\n"
+	.string "PC from anywhere.\p"
+	.string "You can also relearn forgotten\n"
+	.string "moves from the party menu.$"
 
 PalletTown_ProfessorOaksLab_Text_BlankEncyclopedia::
 	.string "It's like an encyclopedia, but the\n"

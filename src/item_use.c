@@ -37,6 +37,7 @@
 #include "pokeblock.h"
 #include "pokemon.h"
 #include "script.h"
+#include "script_pokemon_util.h"
 #include "sound.h"
 #include "strings.h"
 #include "string_util.h"
@@ -1634,6 +1635,66 @@ void ItemUseOutOfBattle_TimeChanger(u8 taskId)
     else
     {
         gTasks[taskId].func = ItemUseOnFieldCB_TimeChanger;
+    }
+}
+
+void ItemUseOutOfBattle_PortaHeal(u8 taskId)
+{
+    if (HealPartyMonsIfNeeded() == 0)
+    {
+        PlaySE(SE_SELECT);
+        if (!gTasks[taskId].data[2])
+            DisplayItemMessageOnField(taskId, gText_WontHaveEffect, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
+        return;
+    }
+
+    PlaySE(SE_USE_ITEM);
+    if (!gTasks[taskId].data[2])
+        DisplayItemMessageOnField(taskId, gText_PartyFullyRestored, Task_CloseCantUseKeyItemMessage);
+    else
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_PartyFullyRestored, CloseItemMessage);
+}
+
+void ItemUseOutOfBattle_CandyFeast(u8 taskId)
+{
+    if (LevelPartyToCap() == 0)
+    {
+        PlaySE(SE_SELECT);
+        if (!gTasks[taskId].data[2])
+            DisplayItemMessageOnField(taskId, gText_WontHaveEffect, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
+        return;
+    }
+
+    PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
+    if (!gTasks[taskId].data[2])
+        DisplayItemMessageOnField(taskId, gText_PartyGrewToLevelCap, Task_CloseCantUseKeyItemMessage);
+    else
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_PartyGrewToLevelCap, CloseItemMessage);
+}
+
+static void ItemUseOnFieldCB_PortablePC(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_PC);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_PortablePC(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_PortablePC;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        gTasks[taskId].func = ItemUseOnFieldCB_PortablePC;
     }
 }
 

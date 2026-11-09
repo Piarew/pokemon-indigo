@@ -7349,6 +7349,53 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_GreenMint,
     },
 
+    [ITEM_PORTA_HEAL] =
+    {
+        .name = ITEM_NAME("Porta-Heal"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Fully restores and\n"
+            "revives every\n"
+            "Pokémon in the party."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_PortaHeal,
+        .iconPic = gItemIcon_LargePotion,
+        .iconPalette = gItemIconPalette_FullRestore,
+    },
+
+    [ITEM_CANDY_FEAST] =
+    {
+        .name = ITEM_NAME("Candy Feast"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Raises every party\n"
+            "Pokémon to the\n"
+            "current level cap."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_CandyFeast,
+        .iconPic = gItemIcon_RareCandy,
+        .iconPalette = gItemIconPalette_RareCandy,
+    },
+
+    [ITEM_PORTABLE_PC] =
+    {
+        .name = ITEM_NAME("Portable PC"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Lets you use a PC\n"
+            "from anywhere."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_PortablePC,
+        .iconPic = gItemIcon_PokemonBoxLink,
+        .iconPalette = gItemIconPalette_PokemonBoxLink,
+    },
+
 // Gems
 #if I_PRICE >= GEN_9
     #define GEM_PRICE 15000

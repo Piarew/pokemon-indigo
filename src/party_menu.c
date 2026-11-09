@@ -83,6 +83,7 @@
 
 enum {
     MENU_SUMMARY,
+    MENU_RELEARN,
     MENU_SWITCH,
     MENU_CANCEL1,
     MENU_ITEM,
@@ -185,7 +186,7 @@ struct PartyMenuInternal
     u32 spriteIdCancelPokeball:7;
     u32 messageId:14;
     u8 windowId[3];
-    u8 actions[8];
+    u8 actions[16];
     u8 numActions;
     // In vanilla Emerald, only the first 0xB0 hwords (0x160 bytes) are actually used.
     // However, a full 0x100 hwords (0x200 bytes) are allocated.
@@ -455,6 +456,7 @@ static void ShiftMoveSlot(struct BoxPokemon *, u8, u8);
 static void BlitBitmapToPartyWindow_LeftColumn(u8, u8, u8, u8, u8, bool8);
 static void BlitBitmapToPartyWindow_RightColumn(u8, u8, u8, u8, u8, bool8);
 static void CursorCb_Summary(u8);
+static void CursorCb_Relearn(u8);
 static void CursorCb_Switch(u8);
 static void CursorCb_Cancel1(u8);
 static void CursorCb_Item(u8);
@@ -2858,8 +2860,17 @@ static u8 DisplaySelectionWindow(u8 windowType)
     switch (windowType)
     {
     case SELECTWINDOW_ACTIONS:
-        SetWindowTemplateFields(&window, 2, 19, 19 - (sPartyMenuInternal->numActions * 2), 10, sPartyMenuInternal->numActions * 2, 14, 0x2E9);
+    {
+        s32 y = 19 - (sPartyMenuInternal->numActions * 2);
+        u8 height = sPartyMenuInternal->numActions * 2;
+        if (y < 0)
+        {
+            y = 0;
+            height = 20;
+        }
+        SetWindowTemplateFields(&window, 2, 19, y, 10, height, 14, 0x2E9);
         break;
+    }
     case SELECTWINDOW_ITEM:
         window = sItemGiveTakeWindowTemplate;
         break;
@@ -2953,6 +2964,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN);
 
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -3127,6 +3139,41 @@ static void CursorCb_Summary(u8 taskId)
 {
     PlaySE(SE_SELECT);
     sPartyMenuInternal->exitCallback = CB2_ShowPokemonSummaryScreen;
+    Task_ClosePartyMenu(taskId);
+}
+
+static void CB2_InitPartyMenuMoveRelearner(void)
+{
+    gSpecialVar_0x8004 = gPartyMenu.slotId;
+    gMoveRelearnerState = MOVE_RELEARNER_LEVEL_UP_MOVES;
+    gRelearnMode = RELEARN_MODE_PARTY_MENU;
+    gInitialSummaryScreenCallback = NULL;
+    CB2_InitLearnMove();
+}
+
+void CB2_ReturnToPartyMenuFromMoveRelearner(void)
+{
+    gPaletteFade.bufferTransferDisabled = TRUE;
+    InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, PARTY_ACTION_CHOOSE_MON, TRUE, PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow, gPartyMenu.exitCallback);
+}
+
+static void CursorCb_Relearn(u8 taskId)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+
+    if (!CanBoxMonRelearnMoves(&mon->box, MOVE_RELEARNER_LEVEL_UP_MOVES))
+    {
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        return;
+    }
+
+    sPartyMenuInternal->exitCallback = CB2_InitPartyMenuMoveRelearner;
     Task_ClosePartyMenu(taskId);
 }
 

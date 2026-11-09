@@ -48,6 +48,80 @@ void HealPlayerParty(void)
         FlagSet(B_FLAG_TERA_ORB_CHARGED);
 }
 
+bool32 PokemonNeedsFullRestore(struct Pokemon *mon)
+{
+    u32 i;
+    u32 move;
+    u32 ppBonuses;
+
+    if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG))
+        return FALSE;
+    if (GetMonData(mon, MON_DATA_HP) < GetMonData(mon, MON_DATA_MAX_HP))
+        return TRUE;
+    if (GetMonData(mon, MON_DATA_STATUS) != STATUS1_NONE)
+        return TRUE;
+
+    ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES);
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        move = GetMonData(mon, MON_DATA_MOVE1 + i);
+        if (move == MOVE_NONE)
+            continue;
+        if (GetMonData(mon, MON_DATA_PP1 + i) < CalculatePPWithBonus(move, ppBonuses, i))
+            return TRUE;
+    }
+    return FALSE;
+}
+
+u32 HealPartyMonsIfNeeded(void)
+{
+    u32 i;
+    u32 healed = 0;
+
+    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+    {
+        if (PokemonNeedsFullRestore(&gParties[B_TRAINER_PLAYER][i]))
+        {
+            HealPokemon(&gParties[B_TRAINER_PLAYER][i]);
+            healed++;
+        }
+    }
+    return healed;
+}
+
+bool32 SetMonToLevelCap(struct Pokemon *mon)
+{
+    u32 cap;
+    u32 exp;
+    enum Species species;
+
+    if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG))
+        return FALSE;
+
+    cap = GetCurrentLevelCap();
+    if (GetMonData(mon, MON_DATA_LEVEL) >= cap)
+        return FALSE;
+
+    species = GetMonData(mon, MON_DATA_SPECIES);
+    exp = gExperienceTables[gSpeciesInfo[species].growthRate][cap];
+    SetMonData(mon, MON_DATA_EXP, &exp);
+    CalculateMonStats(mon);
+    return TRUE;
+}
+
+u32 LevelPartyToCap(void)
+{
+    u32 i;
+    u32 grown = 0;
+
+    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+    {
+        if (SetMonToLevelCap(&gParties[B_TRAINER_PLAYER][i]))
+            grown++;
+    }
+    return grown;
+}
+
 static void HealPlayerBoxes(void)
 {
     int boxId, boxPosition;
