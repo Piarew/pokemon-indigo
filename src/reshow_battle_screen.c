@@ -16,6 +16,7 @@
 #include "battle_interface.h"
 #include "battle_anim.h"
 #include "data.h"
+#include "battle_script_commands.h"
 
 // this file's functions
 static void CB2_ReshowBattleScreenAfterMenu(void);
@@ -242,7 +243,8 @@ static void CB2_ReshowBlankBattleScreenAfterMenu(void)
             gBattleScripting.reshowMainState--;
         break;
     case 10:
-        if (gBattleScripting.monCaught)
+        if (gBattleScripting.monCaught
+         && (!WILD_DOUBLE_BATTLE || !IsBattlerAlive(GetPartnerBattler(GetCatchingBattler()))))
             CreateCaughtMonSprite(); // displays the caught mon for the switch into party feature
         break;
     default:
@@ -321,7 +323,7 @@ void CreateBattlerSprite(enum BattlerId battler)
                 return;
             if (gBattleStruct->battlerState[battler].notOnField) // Don't create sprite for a mon that has switched out
                 return;
-            if (gBattleScripting.monCaught) // Don't create opponent sprite if it has been caught.
+            if (ShouldHideCaughtOpponentOnReshow(battler))
                 return;
             if (gBattleStruct->victoryCatchState == VICTORY_CATCH_FAINTED) // Don't create opponent sprite if it has faux-fainted during a victory catch sequence.
                 return;
@@ -418,7 +420,9 @@ static void CreateHealthboxSprite(enum BattlerId battler)
         }
         else if (!IsOnPlayerSide(battler))
         {
-            if (GetMonData(GetBattlerMon(battler), MON_DATA_HP) == 0 || gBattleStruct->battlerState[battler].notOnField)
+            if (GetMonData(GetBattlerMon(battler), MON_DATA_HP) == 0
+             || gBattleStruct->battlerState[battler].notOnField
+             || ShouldHideCaughtOpponentOnReshow(battler))
                 SetHealthboxSpriteInvisible(healthboxSpriteId);
         }
         else if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI))

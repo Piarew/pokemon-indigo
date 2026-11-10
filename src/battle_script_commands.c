@@ -76,6 +76,8 @@
 #include "test/battle.h"
 #include "follower_npc.h"
 #include "load_save.h"
+#include "battle_util2.h"
+#include "battle_ai_main.h"
 
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
@@ -3239,7 +3241,6 @@ static void Cmd_switchindataupdate(void)
     gBattleMons[battler].types[0] = GetSpeciesType(gBattleMons[battler].species, 0);
     gBattleMons[battler].types[1] = GetSpeciesType(gBattleMons[battler].species, 1);
     gBattleMons[battler].types[2] = TYPE_MYSTERY;
-    gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
     #if TESTING
     if (gTestRunnerEnabled)
     {
@@ -6480,7 +6481,6 @@ static void Cmd_healpartystatus(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         enum Species species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
-        u8 abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
 
         if (species != SPECIES_NONE && species != SPECIES_EGG)
         {
@@ -6499,7 +6499,7 @@ static void Cmd_healpartystatus(void)
                 ability = GetBattlerAbility(partner);
             else
             {
-                ability = GetAbilityBySpecies(species, abilityNum);
+                ability = GetMonAbility(&party[i]);
                 #if TESTING
                 if (gTestRunnerEnabled)
                 {
@@ -7559,7 +7559,7 @@ static void Cmd_pickup(void)
             if (lvlDivBy10 > 9)
                 lvlDivBy10 = 9;
 
-            ability = GetSpeciesAbility(species, GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_ABILITY_NUM));
+            ability = GetMonAbility(&gParties[B_TRAINER_PLAYER][i]);
 
             if (ability == ABILITY_PICKUP
                 && species != SPECIES_NONE
@@ -7788,10 +7788,111 @@ static void Cmd_snatchsetbattlers(void)
 
 u8 GetCatchingBattler(void)
 {
+    enum BattlerId chosen = gBattleStruct->catchingBattler;
+
+    if (chosen < gBattlersCount
+     && !IsOnPlayerSide(chosen)
+     && IsBattlerAlive(chosen))
+        return chosen;
+
     if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
         return GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
     else
         return GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+}
+
+bool32 ShouldHideCaughtOpponentOnReshow(enum BattlerId battler)
+{
+    if (!gBattleScripting.monCaught || IsOnPlayerSide(battler))
+        return FALSE;
+    if (!WILD_DOUBLE_BATTLE)
+        return TRUE;
+    if (battler == GetCatchingBattler())
+        return TRUE;
+    return !IsBattlerAlive(GetPartnerBattler(battler));
+}
+
+static void MarkCaughtWildBattlerGone(enum BattlerId caught)
+{
+    gAbsentBattlerFlags |= 1u << caught;
+    gBattleMons[caught].hp = 0;
+    SetMonData(GetBattlerMon(caught), MON_DATA_HP, &gBattleMons[caught].hp);
+    gBattleStruct->battlerState[caught].notOnField = TRUE;
+    FaintClearSetData(caught);
+    gBattleStruct->throwingPokeBall = FALSE;
+    gBattleScripting.monCaught = FALSE;
+    gBattleStruct->catchingBattler = 0;
+}
+
+// If the player started a wild double with an empty flank, the caught
+// mon lands in that party slot. Load it so reshow sends it out.
+static void TrySendInCaughtMonToEmptySlot(void)
+{
+    for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)
+    {
+        struct Pokemon *mon;
+
+        if (!IsOnPlayerSide(battler))
+            continue;
+        if (!(gAbsentBattlerFlags & (1u << battler)))
+            continue;
+
+        mon = GetBattlerMon(battler);
+        if (!IsValidForBattle(mon))
+            continue;
+
+        PokemonToBattleMon(mon, &gBattleMons[battler]);
+        gAbsentBattlerFlags &= ~(1u << battler);
+        gBattleStruct->battlerState[battler].notOnField = FALSE;
+        gBattleStruct->battlerState[battler].hpOnSwitchout = gBattleMons[battler].hp;
+        gBattleStruct->battlerState[battler].isFirstTurn = 2;
+        GetBattlerPartyState(battler)->sentOut = TRUE;
+        Ai_UpdateSwitchInData(battler);
+    }
+}
+
+void BS_TryContinueAfterWildCatch(void)
+{
+    NATIVE_ARGS(const u8 *continueInstr);
+
+    switch (gBattleCommunication[MULTIUSE_STATE])
+    {
+    case 0:
+    {
+        enum BattlerId caught = GetCatchingBattler();
+        enum BattlerId partner = GetPartnerBattler(caught);
+
+        if (WILD_DOUBLE_BATTLE
+         && !IsOnPlayerSide(caught)
+         && IsBattlerAlive(partner))
+        {
+            MarkCaughtWildBattlerGone(caught);
+            TrySendInCaughtMonToEmptySlot();
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            gBattleCommunication[MULTIUSE_STATE] = 1;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        break;
+    }
+    case 1:
+        if (!gPaletteFade.active)
+        {
+            CloseMainBattleScreen();
+            ReshowBattleScreenAfterMenu();
+            gBattleCommunication[MULTIUSE_STATE] = 2;
+        }
+        break;
+    case 2:
+        if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
+        {
+            gBattleCommunication[MULTIUSE_STATE] = 0;
+            gBattlescriptCurrInstr = cmd->continueInstr;
+        }
+        break;
+    }
 }
 
 static void FinalizeCapture(void)
@@ -9980,17 +10081,15 @@ static void UpdatePokeFlutePartyStatus(struct Pokemon* party, enum BattlerPositi
     enum BattlerId battler;
     u32 monToCheck, status;
     enum Species species;
-    u16 abilityNum;
     monToCheck = 0;
     for (i = 0; i < PARTY_SIZE; i++)
     {
         species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
-        abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
         status = GetMonData(&party[i], MON_DATA_STATUS);
         if (species != SPECIES_NONE
             && species != SPECIES_EGG
             && status & AILMENT_FNT
-            && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+            && GetMonAbility(&party[i]) != ABILITY_SOUNDPROOF)
             monToCheck |= (1 << i);
     }
     if (monToCheck)

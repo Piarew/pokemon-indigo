@@ -750,3 +750,36 @@ TEST("BoxPokemon encryption works")
     EXPECT_EQ(GetMonData(&mon, MON_DATA_DYNAMAX_LEVEL), 3);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_OT_GENDER), 0);
 }
+
+TEST("Teachable learnsets keep defaults and add type-matching TMs")
+{
+    const u16 *learnset;
+    u32 i;
+    bool32 foundWaterPulse = FALSE;
+
+    // Magikarp has an empty default list and is Water, so Water TMs are added.
+    EXPECT(CanLearnTeachableMove(SPECIES_MAGIKARP, MOVE_WATER_PULSE));
+    EXPECT(CanLearnTeachableMove(SPECIES_MAGIKARP, MOVE_RAIN_DANCE));
+    EXPECT(!CanLearnTeachableMove(SPECIES_MAGIKARP, MOVE_ICE_BEAM));
+    EXPECT(!CanLearnTeachableMove(SPECIES_MAGIKARP, MOVE_SURF));
+    EXPECT(!CanLearnTeachableMove(SPECIES_MAGIKARP, MOVE_SNORE));
+    EXPECT(!CanLearnTeachableMove(SPECIES_MAGIKARP, MOVE_REST));
+
+    learnset = GetSpeciesTeachableLearnset(SPECIES_MAGIKARP);
+    for (i = 0; learnset[i] != MOVE_UNAVAILABLE; i++)
+    {
+        if (learnset[i] == MOVE_WATER_PULSE)
+            foundWaterPulse = TRUE;
+    }
+    EXPECT(foundWaterPulse);
+
+    // Weedle is Bug/Poison with an empty default list.
+    EXPECT(CanLearnTeachableMove(SPECIES_WEEDLE, MOVE_TOXIC));
+    EXPECT(CanLearnTeachableMove(SPECIES_WEEDLE, MOVE_SLUDGE_BOMB));
+    EXPECT(!CanLearnTeachableMove(SPECIES_WEEDLE, MOVE_FLAMETHROWER));
+
+    // Default tutors and TMs are unchanged.
+    EXPECT(CanLearnTeachableMove(SPECIES_CATERPIE, MOVE_SNORE));
+    EXPECT(CanLearnTeachableMove(SPECIES_PIKACHU, MOVE_THUNDERBOLT));
+    EXPECT(!CanLearnTeachableMove(SPECIES_EGG, MOVE_WATER_PULSE));
+}

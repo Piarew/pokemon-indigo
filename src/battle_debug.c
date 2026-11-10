@@ -423,7 +423,7 @@ static const struct ListMenuItem sAIListItems[] =
     {COMPOUND_STRING("Check Viability"),            LIST_AI_CHECK_VIABILITY},
     {COMPOUND_STRING("Force Setup First Turn"),     LIST_AI_FORCE_SETUP_FIRST_TURN},
     {COMPOUND_STRING("Risky"),                      LIST_AI_RISKY},
-    {COMPOUND_STRING("Try to 2HKO"),                LIST_AI_TRY_TO_2HKO},
+    {COMPOUND_STRING("Try to 2Hko"),                LIST_AI_TRY_TO_2HKO},
     {COMPOUND_STRING("Prefer Baton Pass"),          LIST_AI_PREFER_BATON_PASS},
     {COMPOUND_STRING("Double Battle"),              LIST_AI_DOUBLE_BATTLE},
     {COMPOUND_STRING("HP Aware"),                   LIST_AI_HP_AWARE},

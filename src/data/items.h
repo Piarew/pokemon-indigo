@@ -1965,8 +1965,8 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_EXP_CANDY_XS] =
     {
-        .name = ITEM_NAME("Exp. Candy XS"),
-        .pluralName = ITEM_PLURAL_NAME("Exp. Candies XS"),
+        .name = ITEM_NAME("Exp. Candy Xs"),
+        .pluralName = ITEM_PLURAL_NAME("Exp. Candies Xs"),
         .price = 20,
         .holdEffectParam = EXP_100,
         .description = COMPOUND_STRING(
@@ -2045,8 +2045,8 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_EXP_CANDY_XL] =
     {
-        .name = ITEM_NAME("Exp. Candy XL"),
-        .pluralName = ITEM_PLURAL_NAME("Exp. Candies XL"),
+        .name = ITEM_NAME("Exp. Candy Xl"),
+        .pluralName = ITEM_PLURAL_NAME("Exp. Candies Xl"),
         .price = 10000,
         .holdEffectParam = EXP_30000,
         .description = COMPOUND_STRING(
@@ -7347,6 +7347,22 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_NatureChanger,
         .iconPic = gItemIcon_Mint,
         .iconPalette = gItemIconPalette_GreenMint,
+    },
+
+    [ITEM_ABILITY_SWAPPER] =
+    {
+        .name = ITEM_NAME("Ability Swap"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Swaps the Abilities\n"
+            "of two Pokémon in\n"
+            "the party."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_AbilitySwapper,
+        .iconPic = gItemIcon_AbilityCapsule,
+        .iconPalette = gItemIconPalette_AbilityCapsule,
     },
 
     [ITEM_PORTA_HEAL] =

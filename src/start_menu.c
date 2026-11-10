@@ -46,6 +46,7 @@
 #include "window.h"
 #include "union_room.h"
 #include "dexnav.h"
+#include "fly_dest.h"
 #include "wild_encounter.h"
 #include "challenge.h"
 #include "field_move.h"
@@ -204,9 +205,9 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
     .baseBlock = 0x8
 };
 
-static const u8 sText_MenuDebug[] = _("DEBUG");
-static const u8 sText_MenuFly[] = _("FLY");
-static const u8 sText_MenuNuzlocke[] = _("NUZLOCKE");
+static const u8 sText_MenuDebug[] = _("Debug");
+static const u8 sText_MenuFly[] = _("Fly");
+static const u8 sText_MenuNuzlocke[] = _("Nuzlocke");
 
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -1555,7 +1556,9 @@ static bool8 StartMenuFlyCallback(void)
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
         gPartyMenu.slotId = GetFieldMoveUserSlot(FIELD_MOVE_FLY);
-        SetMainCallback2(CB2_OpenFlyMap);
+        FlyDest_SetOpenedFromPartyMenu(FALSE);
+        gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
+        SetMainCallback2(CB2_OpenFlyDestList);
         return TRUE;
     }
 

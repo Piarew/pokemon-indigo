@@ -125,6 +125,10 @@ enum MonData {
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TERA_TYPE,
     MON_DATA_EVOLUTION_TRACKER,
+    MON_DATA_ABILITY,          // Ability currently selected by abilityNum.
+    MON_DATA_ABILITY_SLOT_0,   // Regular ability slot 1.
+    MON_DATA_ABILITY_SLOT_1,   // Regular ability slot 2.
+    MON_DATA_ABILITY_HIDDEN,   // Hidden ability slot.
 };
 
 #define BLOCK_AI_DYNAMAX 15 // Used as dynamax level value by the AI to indicate this mon shouldn't dynamax
@@ -134,15 +138,15 @@ struct PokemonSubstruct0
     enum Species species:11; // 2047 species.
     enum Type teraType:5; // 30 types.
     enum Item heldItem:10; // 1023 items.
-    u16 unused_02:6;
+    u16 ability0Low:6; // Slot 0 bits 0-5.
     u32 experience:21;
     u32 nickname11:8; // 11th character of nickname.
-    u32 unused_04:3;
+    u32 ability0High:3; // Slot 0 bits 6-8.
     u8 ppBonuses;
     u8 friendship;
     u16 pokeball:6; // 63 balls.
     u16 nickname12:8; // 12th character of nickname.
-    u16 unused_0A:2;
+    u16 ability1Low:2; // Slot 1 bits 0-1.
 };
 
 struct PokemonSubstruct1
@@ -152,9 +156,9 @@ struct PokemonSubstruct1
     enum Move move2:11; // 2047 moves.
     u16 evolutionTracker2:5;
     enum Move move3:11; // 2047 moves.
-    u16 unused_04:5;
+    u16 ability1Mid:5; // Slot 1 bits 2-6.
     enum Move move4:11; // 2047 moves.
-    u16 unused_06:3;
+    u16 ability1HighAndH0:3; // Slot 1 bits 7-8, hidden bit 0.
     u16 hyperTrainedHP:1;
     u16 hyperTrainedAttack:1;
     u8 pp1:7; // 127 PP.
@@ -217,7 +221,7 @@ struct PokemonSubstruct3
     u32 earthRibbon:1;    // Given to teams that have beaten Mt. Battle's 100-battle challenge in Colosseum/XD.
     u32 worldRibbon:1;    // Distributed during Pokémon Festa '04 and '05 to tournament winners.
     u32 isShadow:1;
-    u32 unused_0B:1;
+    u32 abilityH1:1; // Hidden bit 1.
     u32 abilityNum:2;
 
     // The functionality of this bit changed in FRLG:
@@ -265,16 +269,17 @@ struct BoxPokemon
     u8 isBadEgg:1;
     u8 hasSpecies:1;
     u8 isEgg:1;
-    u8 blockBoxRS:1; // Unused, but Pokémon Box Ruby & Sapphire will refuse to deposit a Pokémon with this flag set.
+    u8 abilityH2:1; // Hidden bit 2.
     u8 daysSinceFormChange:3; // 7 days.
-    u8 unused_13:1;
+    u8 abilityH3:1; // Hidden bit 3.
     u8 otName[PLAYER_NAME_LENGTH];
     u8 markings:4;
     u8 compressedStatus:4;
     u16 checksum;
-    u16 hpLost:14; // 16383 HP.
+    u16 hpLost:10; // 1023 HP.
+    u16 abilityHMid:4; // Hidden bits 4-7.
     u16 shinyModifier:1;
-    u16 unused_1E:1;
+    u16 abilityHHigh:1; // Hidden bit 8.
 
     union
     {
@@ -840,7 +845,16 @@ u8 CalculateEnemyPartyCount(void);
 u8 GetMonsStateToDoubles(void);
 u8 GetMonsStateToDoubles_2(void);
 enum Ability GetAbilityBySpecies(enum Species species, u8 abilityNum);
+enum Ability GetBoxMonAbility(struct BoxPokemon *boxMon);
 enum Ability GetMonAbility(struct Pokemon *mon);
+enum Ability GetBoxMonAbilitySlot(struct BoxPokemon *boxMon, u32 slot);
+enum Ability GetMonAbilitySlot(struct Pokemon *mon, u32 slot);
+void AssignCreatedBoxMonAbility(struct BoxPokemon *boxMon);
+void AssignCreatedMonAbility(struct Pokemon *mon);
+void UpdateBoxMonAbilitiesOnEvolution(struct BoxPokemon *boxMon);
+void UpdateMonAbilitiesOnEvolution(struct Pokemon *mon);
+void UpdateBoxMonAbilitiesOnFormChange(struct BoxPokemon *boxMon);
+void UpdateMonAbilitiesOnFormChange(struct Pokemon *mon);
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord);
 enum TrainerPicID GetSecretBaseTrainerPicIndex(void);
 enum TrainerClassID GetSecretBaseTrainerClass(void);
@@ -861,6 +875,7 @@ u32 GetSpeciesBaseSpDefense(enum Species species);
 u32 GetSpeciesBaseSpeed(enum Species species);
 u32 GetSpeciesBaseStat(enum Species species, u32 statIndex);
 u32 GetSpeciesBaseStatTotal(enum Species species);
+const struct LevelUpMove *GetSpeciesLevelUpLearnsetRaw(enum Species species);
 const struct LevelUpMove *GetSpeciesLevelUpLearnset(enum Species species);
 const u16 *GetSpeciesTeachableLearnset(enum Species species);
 const u16 *GetSpeciesEggMoves(enum Species species);

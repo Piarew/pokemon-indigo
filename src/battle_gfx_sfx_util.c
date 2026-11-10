@@ -30,6 +30,7 @@
 #include "constants/battle_palace.h"
 #include "constants/battle_move_effects.h"
 #include "constants/event_objects.h" // only for SHADOW_SIZE constants
+#include "battle_script_commands.h"
 
 // this file's functions
 static u8 GetBattlePalaceMoveGroup(enum BattlerId battler, enum Move move);
@@ -1294,7 +1295,7 @@ void SetBattlerShadowSpriteCallback(enum BattlerId battler, enum Species species
 {
     if (B_ENEMY_MON_SHADOW_STYLE >= GEN_4 && P_GBA_STYLE_SPECIES_GFX == FALSE)
     {
-        if (IsOnPlayerSide(battler) || gBattleScripting.monCaught)
+        if (IsOnPlayerSide(battler) || ShouldHideCaughtOpponentOnReshow(battler))
         {
             gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary].callback = SpriteCB_SetInvisible;
             gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdSecondary].callback = SpriteCB_SetInvisible;
@@ -1321,7 +1322,7 @@ void SetBattlerShadowSpriteCallback(enum BattlerId battler, enum Species species
     }
     else
     {
-        if (IsOnPlayerSide(battler) || gBattleScripting.monCaught)
+        if (IsOnPlayerSide(battler) || ShouldHideCaughtOpponentOnReshow(battler))
         {
             gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary].callback = SpriteCB_SetInvisible;
             return;

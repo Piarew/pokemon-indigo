@@ -209,8 +209,11 @@ BattleScript_TryNicknameCaughtMon::
 BattleScript_GiveCaughtMonEnd::
 	givecaughtmon BattleScript_SuccessBallThrowEnd
 BattleScript_SuccessBallThrowEnd::
+	trycontinueafterwildcatch BattleScript_CaughtMonContinueBattle
 	setbyte gBattleOutcome, B_OUTCOME_CAUGHT
 	finishturn
+BattleScript_CaughtMonContinueBattle::
+	finishaction
 
 BattleScript_WallyBallThrow::
 	printstring STRINGID_GOTCHAPKMNCAUGHTWALLY

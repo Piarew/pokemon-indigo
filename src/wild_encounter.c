@@ -32,6 +32,7 @@
 #include "constants/layouts.h"
 #include "constants/weather.h"
 #include "challenge.h"
+#include "dexnav.h"
 
 extern const u8 EventScript_SprayWoreOff[];
 
@@ -949,24 +950,28 @@ bool8 DoesCurrentMapHaveFishingMons(void)
 void FishingWildEncounter(u8 rod)
 {
     enum Species species;
-    u32 headerId;
-    s16 x, y;
-    enum TimeOfDay timeOfDay;
 
     gIsFishingEncounter = TRUE;
-    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-    if (CheckFeebasAtCoords(x, y) == TRUE)
+    if (!TryGenerateDexNavFishingMon(&species))
     {
-        u8 level = ChooseWildMonLevel(&gWildFeebas, 0, WILD_AREA_FISHING);
+        u32 headerId;
+        s16 x, y;
+        enum TimeOfDay timeOfDay;
 
-        species = gWildFeebas.species;
-        CreateWildMon(species, level);
-    }
-    else
-    {
-        headerId = GetCurrentMapWildMonHeaderId();
-        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
-        species = GenerateFishingWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo, rod);
+        GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+        if (CheckFeebasAtCoords(x, y) == TRUE)
+        {
+            u8 level = ChooseWildMonLevel(&gWildFeebas, 0, WILD_AREA_FISHING);
+
+            species = gWildFeebas.species;
+            CreateWildMon(species, level);
+        }
+        else
+        {
+            headerId = GetCurrentMapWildMonHeaderId();
+            timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
+            species = GenerateFishingWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo, rod);
+        }
     }
 
     IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
@@ -1197,6 +1202,27 @@ static void ApplyCleanseTagEncounterRateMod(u32 *encRate)
         *encRate = *encRate * 2 / 3;
 }
 
+// Authored maps whose land/surf/rock-smash wilds are always doubles.
+// WE_DOUBLE_WILD_CHANCE stays 0; do not set WE_FLAG_FORCE_DOUBLE_WILD in
+// OnTransition (that flag is global and would leak onto connected maps).
+static const u16 sForcedDoubleWildMaps[] =
+{
+    MAP_ROUTE1,
+};
+
+static bool8 CurrentMapForcesDoubleWild(void)
+{
+    u32 i;
+    u16 map = gSaveBlock1Ptr->location.mapNum | (gSaveBlock1Ptr->location.mapGroup << 8);
+
+    for (i = 0; i < ARRAY_COUNT(sForcedDoubleWildMaps); i++)
+    {
+        if (sForcedDoubleWildMaps[i] == map)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 bool8 TryDoDoubleWildBattle(void)
 {
     if (GetSafariZoneFlag()
@@ -1205,7 +1231,9 @@ bool8 TryDoDoubleWildBattle(void)
     if (FollowerNPCIsBattlePartner() && FNPC_FLAG_PARTNER_WILD_BATTLES != 0
      && (FNPC_FLAG_PARTNER_WILD_BATTLES == FNPC_ALWAYS || FlagGet(FNPC_FLAG_PARTNER_WILD_BATTLES)) && FNPC_NPC_FOLLOWER_WILD_BATTLE_VS_2 == TRUE)
         return TRUE;
-    else if (FlagGet(WE_FLAG_FORCE_DOUBLE_WILD))
+    else if (CurrentMapForcesDoubleWild())
+        return TRUE;
+    else if (WE_FLAG_FORCE_DOUBLE_WILD && FlagGet(WE_FLAG_FORCE_DOUBLE_WILD))
         return TRUE;
     else if (RandomPercentage(RNG_NONE, WE_DOUBLE_WILD_CHANCE))
         return TRUE;

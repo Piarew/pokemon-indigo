@@ -12,6 +12,7 @@
 #include "battle_tower.h"
 #include "battle_z_move.h"
 #include "caps.h"
+#include "challenge.h"
 #include "data.h"
 #include "daycare.h"
 #include "dexnav.h"
@@ -97,6 +98,10 @@ static void Task_PlayMapChosenOrBattleBGM(u8 taskId);
 void TrySpecialOverworldEvo();
 
 EWRAM_DATA static u8 sLearningMoveTableID = 0;
+#define MAX_TEACHABLE_LEARNSET_MOVES 160
+EWRAM_DATA static bool8 sTeachableLearnsetCached;
+EWRAM_DATA static enum Species sTeachableLearnsetSpecies;
+EWRAM_DATA static u16 sTeachableLearnset[MAX_TEACHABLE_LEARNSET_MOVES];
 EWRAM_DATA u8 gPartiesCount[MAX_BATTLE_TRAINERS] = {0};
 EWRAM_DATA struct Pokemon gParties[MAX_BATTLE_TRAINERS][PARTY_SIZE] = {0};
 EWRAM_DATA struct SpriteTemplate gMultiuseSpriteTemplate = {0};
@@ -1019,6 +1024,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32
     //using gen 3-4 ability formula, it was changed in later gens
     if (GetSpeciesAbility(species, 1))
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
+    AssignCreatedBoxMonAbility(boxMon);
 }
 
 static bool32 IsValidGender(u32 gender)
@@ -1134,6 +1140,7 @@ void CreateBattleTowerMon(struct Pokemon *mon, struct BattleTowerPokemon *src)
     SetMonData(mon, MON_DATA_SPDEF_EV, &src->spDefenseEV);
     value = src->abilityNum;
     SetMonData(mon, MON_DATA_ABILITY_NUM, &value);
+    AssignCreatedMonAbility(mon);
     value = src->hpIV;
     SetMonData(mon, MON_DATA_HP_IV, &value);
     value = src->attackIV;
@@ -1196,6 +1203,7 @@ void CreateBattleTowerMon_HandleLevel(struct Pokemon *mon, struct BattleTowerPok
     SetMonData(mon, MON_DATA_SPDEF_EV, &src->spDefenseEV);
     value = src->abilityNum;
     SetMonData(mon, MON_DATA_ABILITY_NUM, &value);
+    AssignCreatedMonAbility(mon);
     value = src->hpIV;
     SetMonData(mon, MON_DATA_HP_IV, &value);
     value = src->attackIV;
@@ -2003,6 +2011,112 @@ static ALWAYS_INLINE struct PokemonSubstruct3 *GetSubstruct3(struct BoxPokemon *
     return &(GetSubstruct(boxMon, boxMon->personality, SUBSTRUCT_TYPE_3)->type3);
 }
 
+static enum Ability ReadAbilitySlot(struct BoxPokemon *boxMon, u32 slot)
+{
+    u32 value = 0;
+
+    switch (slot)
+    {
+    case 0:
+    {
+        struct PokemonSubstruct0 *substruct0 = GetSubstruct0(boxMon);
+        value = substruct0->ability0Low | (substruct0->ability0High << 6);
+        break;
+    }
+    case 1:
+    {
+        struct PokemonSubstruct0 *substruct0 = GetSubstruct0(boxMon);
+        struct PokemonSubstruct1 *substruct1 = GetSubstruct1(boxMon);
+        value = substruct0->ability1Low
+              | (substruct1->ability1Mid << 2)
+              | ((substruct1->ability1HighAndH0 & 0x3) << 7);
+        break;
+    }
+    case 2:
+    {
+        struct PokemonSubstruct1 *substruct1 = GetSubstruct1(boxMon);
+        struct PokemonSubstruct3 *substruct3 = GetSubstruct3(boxMon);
+        value = ((substruct1->ability1HighAndH0 >> 2) & 0x1)
+              | (substruct3->abilityH1 << 1)
+              | (boxMon->abilityH2 << 2)
+              | (boxMon->abilityH3 << 3)
+              | (boxMon->abilityHMid << 4)
+              | (boxMon->abilityHHigh << 8);
+        break;
+    }
+    default:
+        return ABILITY_NONE;
+    }
+
+    if (value >= ABILITIES_COUNT)
+        return ABILITY_NONE;
+    return value;
+}
+
+static void WriteAbilitySlot(struct BoxPokemon *boxMon, u32 slot, enum Ability ability)
+{
+    u32 value = ability;
+
+    if (value >= ABILITIES_COUNT)
+        value = ABILITY_NONE;
+
+    switch (slot)
+    {
+    case 0:
+    {
+        struct PokemonSubstruct0 *substruct0 = GetSubstruct0(boxMon);
+        substruct0->ability0Low = value & 0x3F;
+        substruct0->ability0High = (value >> 6) & 0x7;
+        break;
+    }
+    case 1:
+    {
+        struct PokemonSubstruct0 *substruct0 = GetSubstruct0(boxMon);
+        struct PokemonSubstruct1 *substruct1 = GetSubstruct1(boxMon);
+        substruct0->ability1Low = value & 0x3;
+        substruct1->ability1Mid = (value >> 2) & 0x1F;
+        substruct1->ability1HighAndH0 = (substruct1->ability1HighAndH0 & 0x4) | ((value >> 7) & 0x3);
+        break;
+    }
+    case 2:
+    {
+        struct PokemonSubstruct1 *substruct1 = GetSubstruct1(boxMon);
+        struct PokemonSubstruct3 *substruct3 = GetSubstruct3(boxMon);
+        substruct1->ability1HighAndH0 = (substruct1->ability1HighAndH0 & 0x3) | ((value & 0x1) << 2);
+        substruct3->abilityH1 = (value >> 1) & 0x1;
+        boxMon->abilityH2 = (value >> 2) & 0x1;
+        boxMon->abilityH3 = (value >> 3) & 0x1;
+        boxMon->abilityHMid = (value >> 4) & 0xF;
+        boxMon->abilityHHigh = (value >> 8) & 0x1;
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static u32 AbilitySlotFieldToIndex(s32 field)
+{
+    switch (field)
+    {
+    case MON_DATA_ABILITY_SLOT_0:
+        return 0;
+    case MON_DATA_ABILITY_SLOT_1:
+        return 1;
+    case MON_DATA_ABILITY_HIDDEN:
+        return 2;
+    default:
+        return 0;
+    }
+}
+
+static void WriteBoxMonAbilitySlots(struct BoxPokemon *boxMon, enum Ability slot0, enum Ability slot1, enum Ability hidden)
+{
+    SetBoxMonData(boxMon, MON_DATA_ABILITY_SLOT_0, &slot0);
+    SetBoxMonData(boxMon, MON_DATA_ABILITY_SLOT_1, &slot1);
+    SetBoxMonData(boxMon, MON_DATA_ABILITY_HIDDEN, &hidden);
+}
+
 static bool32 IsBadEgg(struct BoxPokemon *boxMon)
 {
     if (boxMon->isBadEgg)
@@ -2235,6 +2349,14 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         case MON_DATA_ABILITY_NUM:
             retVal = GetSubstruct3(boxMon)->abilityNum;
+            break;
+        case MON_DATA_ABILITY:
+            retVal = ReadAbilitySlot(boxMon, GetSubstruct3(boxMon)->abilityNum);
+            break;
+        case MON_DATA_ABILITY_SLOT_0:
+        case MON_DATA_ABILITY_SLOT_1:
+        case MON_DATA_ABILITY_HIDDEN:
+            retVal = ReadAbilitySlot(boxMon, AbilitySlotFieldToIndex(field));
             break;
         case MON_DATA_COOL_RIBBON:
             retVal = GetSubstruct3(boxMon)->coolRibbon;
@@ -2752,6 +2874,26 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_ABILITY_NUM:
             SET8(GetSubstruct3(boxMon)->abilityNum);
             break;
+        case MON_DATA_ABILITY:
+        {
+            u32 ability;
+            SET16(ability);
+            if (ability >= ABILITIES_COUNT)
+                ability = ABILITY_NONE;
+            WriteAbilitySlot(boxMon, GetSubstruct3(boxMon)->abilityNum, ability);
+            break;
+        }
+        case MON_DATA_ABILITY_SLOT_0:
+        case MON_DATA_ABILITY_SLOT_1:
+        case MON_DATA_ABILITY_HIDDEN:
+        {
+            u32 ability;
+            SET16(ability);
+            if (ability >= ABILITIES_COUNT)
+                ability = ABILITY_NONE;
+            WriteAbilitySlot(boxMon, AbilitySlotFieldToIndex(field), ability);
+            break;
+        }
         case MON_DATA_COOL_RIBBON:
             SET8(GetSubstruct3(boxMon)->coolRibbon);
             break;
@@ -3102,11 +3244,103 @@ enum Ability GetAbilityBySpecies(enum Species species, u8 abilityNum)
     return gLastUsedAbility;
 }
 
+enum Ability GetBoxMonAbilitySlot(struct BoxPokemon *boxMon, u32 slot)
+{
+    enum Ability ability;
+
+    if (slot >= NUM_ABILITY_SLOTS)
+        slot = 0;
+
+    ability = GetBoxMonData(boxMon, MON_DATA_ABILITY_SLOT_0 + slot);
+    if (ability != ABILITY_NONE && ability < ABILITIES_COUNT)
+        return ability;
+    return GetSpeciesAbility(GetBoxMonData(boxMon, MON_DATA_SPECIES), slot);
+}
+
+enum Ability GetMonAbilitySlot(struct Pokemon *mon, u32 slot)
+{
+    return GetBoxMonAbilitySlot(&mon->box, slot);
+}
+
+enum Ability GetBoxMonAbility(struct BoxPokemon *boxMon)
+{
+    u32 abilityNum = GetBoxMonData(boxMon, MON_DATA_ABILITY_NUM);
+    enum Ability ability = GetBoxMonAbilitySlot(boxMon, abilityNum);
+    if (ability != ABILITY_NONE && ability < ABILITIES_COUNT)
+        return ability;
+    return GetAbilityBySpecies(GetBoxMonData(boxMon, MON_DATA_SPECIES), abilityNum);
+}
+
 enum Ability GetMonAbility(struct Pokemon *mon)
 {
-    enum Species species = GetMonData(mon, MON_DATA_SPECIES);
-    u8 abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
-    return GetAbilityBySpecies(species, abilityNum);
+    return GetBoxMonAbility(&mon->box);
+}
+
+void AssignCreatedBoxMonAbility(struct BoxPokemon *boxMon)
+{
+    enum Species species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
+    enum Ability slot0;
+    enum Ability slot1;
+    enum Ability hidden;
+
+    if (species == SPECIES_NONE)
+        return;
+
+    if (IsAbilityRandomizerActive())
+    {
+        ChooseRandomizerAbilitySlots(species, GetBoxMonData(boxMon, MON_DATA_PERSONALITY), &slot0, &slot1, &hidden, FALSE);
+    }
+    else
+    {
+        slot0 = GetSpeciesAbility(species, 0);
+        slot1 = GetSpeciesAbility(species, 1);
+        hidden = GetSpeciesAbility(species, 2);
+    }
+
+    WriteBoxMonAbilitySlots(boxMon, slot0, slot1, hidden);
+}
+
+void AssignCreatedMonAbility(struct Pokemon *mon)
+{
+    AssignCreatedBoxMonAbility(&mon->box);
+}
+
+void UpdateBoxMonAbilitiesOnEvolution(struct BoxPokemon *boxMon)
+{
+    enum Species species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
+    enum Ability slot0;
+    enum Ability slot1;
+    enum Ability hidden;
+
+    if (species == SPECIES_NONE)
+        return;
+
+    if (IsAbilityRandomizerActive())
+    {
+        hidden = GetBoxMonData(boxMon, MON_DATA_ABILITY_HIDDEN);
+        ChooseRandomizerAbilitySlots(species, GetBoxMonData(boxMon, MON_DATA_PERSONALITY), &slot0, &slot1, &hidden, TRUE);
+        WriteBoxMonAbilitySlots(boxMon, slot0, slot1, hidden);
+        return;
+    }
+
+    AssignCreatedBoxMonAbility(boxMon);
+}
+
+void UpdateMonAbilitiesOnEvolution(struct Pokemon *mon)
+{
+    UpdateBoxMonAbilitiesOnEvolution(&mon->box);
+}
+
+void UpdateBoxMonAbilitiesOnFormChange(struct BoxPokemon *boxMon)
+{
+    if (IsAbilityRandomizerActive())
+        return;
+    AssignCreatedBoxMonAbility(boxMon);
+}
+
+void UpdateMonAbilitiesOnFormChange(struct Pokemon *mon)
+{
+    UpdateBoxMonAbilitiesOnFormChange(&mon->box);
 }
 
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord)
@@ -3280,7 +3514,7 @@ u32 GetSpeciesBaseStatTotal(enum Species species)
     return total;
 }
 
-const struct LevelUpMove *GetSpeciesLevelUpLearnset(enum Species species)
+const struct LevelUpMove *GetSpeciesLevelUpLearnsetRaw(enum Species species)
 {
     const struct LevelUpMove *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].levelUpLearnset;
     if (learnset == NULL)
@@ -3288,12 +3522,81 @@ const struct LevelUpMove *GetSpeciesLevelUpLearnset(enum Species species)
     return learnset;
 }
 
+const struct LevelUpMove *GetSpeciesLevelUpLearnset(enum Species species)
+{
+    const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnsetRaw(species);
+    if (IsMovesetRandomizerActive())
+        learnset = RemapLevelUpLearnsetForRandomizer(species, learnset);
+    return learnset;
+}
+
+static bool32 TeachableLearnsetContainsMove(const u16 *learnset, u32 count, enum Move move)
+{
+    u32 i;
+    for (i = 0; i < count; i++)
+    {
+        if (learnset[i] == move)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static bool32 IsTypeMatchingTMMove(enum Species species, enum Move move)
+{
+    enum TMHMIndex tmIndex;
+    enum Type moveType;
+
+    tmIndex = GetItemTMHMIndex(GetTMHMItemIdFromMoveId(move));
+    if (tmIndex == 0 || tmIndex > NUM_TECHNICAL_MACHINES)
+        return FALSE;
+
+    moveType = GetMoveType(move);
+    if (moveType == TYPE_NONE)
+        return FALSE;
+
+    return GetSpeciesType(species, 0) == moveType
+        || GetSpeciesType(species, 1) == moveType;
+}
+
+// Default teachable list plus every TM whose type matches the species.
+static const u16 *BuildTeachableLearnsetWithTypeTMs(enum Species species, const u16 *learnset)
+{
+    u32 i;
+    u32 count = 0;
+
+    if (sTeachableLearnsetCached && sTeachableLearnsetSpecies == species)
+        return sTeachableLearnset;
+
+    for (i = 0; learnset[i] != MOVE_UNAVAILABLE && count < MAX_TEACHABLE_LEARNSET_MOVES - 1; i++)
+        sTeachableLearnset[count++] = learnset[i];
+
+    for (i = 1; i <= NUM_TECHNICAL_MACHINES && count < MAX_TEACHABLE_LEARNSET_MOVES - 1; i++)
+    {
+        enum Move move = GetTMHMMoveId(i);
+        if (!IsTypeMatchingTMMove(species, move))
+            continue;
+        if (TeachableLearnsetContainsMove(sTeachableLearnset, count, move))
+            continue;
+        sTeachableLearnset[count++] = move;
+    }
+
+    sTeachableLearnset[count] = MOVE_UNAVAILABLE;
+    sTeachableLearnsetSpecies = species;
+    sTeachableLearnsetCached = TRUE;
+    return sTeachableLearnset;
+}
+
 const u16 *GetSpeciesTeachableLearnset(enum Species species)
 {
-    const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].teachableLearnset;
+    const u16 *learnset;
+
+    species = SanitizeSpeciesId(species);
+    learnset = gSpeciesInfo[species].teachableLearnset;
     if (learnset == NULL)
-        return gSpeciesInfo[SPECIES_NONE].teachableLearnset;
-    return learnset;
+        learnset = gSpeciesInfo[SPECIES_NONE].teachableLearnset;
+    if (species == SPECIES_NONE || species == SPECIES_EGG)
+        return learnset;
+    return BuildTeachableLearnsetWithTypeTMs(species, learnset);
 }
 
 const u16 *GetSpeciesEggMoves(enum Species species)
@@ -3402,7 +3705,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->types[2] = TYPE_MYSTERY;
     dst->isShiny = IsMonShiny(src);
     dst->affectionHearts = GetMonAffectionHearts(src);
-    dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum);
+    dst->ability = GetMonAbility(src);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy_Nickname(dst->nickname, nickname);
     GetMonData(src, MON_DATA_OT_NAME, dst->otName);
@@ -5038,10 +5341,14 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 
 bool32 CanLearnTeachableMove(enum Species species, enum Move move)
 {
-    const u16 *teachableLearnset = GetSpeciesTeachableLearnset(species);
+    const u16 *teachableLearnset;
+    u32 i;
+
     if (species == SPECIES_EGG)
         return FALSE;
-    for (u32 i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
+
+    teachableLearnset = GetSpeciesTeachableLearnset(species);
+    for (i = 0; teachableLearnset[i] != MOVE_UNAVAILABLE; i++)
     {
         if (teachableLearnset[i] == move)
             return TRUE;
@@ -5923,7 +6230,7 @@ enum Species GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum Fo
         .method = method,
         .currentSpecies = species,
         .heldItem = GetBoxMonData(boxMon, MON_DATA_HELD_ITEM),
-        .ability = GetAbilityBySpecies(species, GetBoxMonData(boxMon, MON_DATA_ABILITY_NUM)),
+        .ability = GetBoxMonAbility(boxMon),
         .partyItemUsed = gSpecialVar_ItemId,
         .multichoiceSelection = gSpecialVar_Result,
         .status = GetBoxMonData(boxMon, MON_DATA_STATUS),
@@ -6349,6 +6656,7 @@ bool32 TryFormChange(struct Pokemon *mon, enum FormChanges method, enum BattleTr
     {
         TryToSetBattleFormChangeMoves(mon, method);
         SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+        UpdateMonAbilitiesOnFormChange(mon);
         TrySetDayLimitToFormChange(mon);
         CalculateMonStats(mon);
         return TRUE;
@@ -6374,6 +6682,7 @@ bool32 TryBoxMonFormChange(struct BoxPokemon *boxMon, enum FormChanges method)
     if (targetSpecies != currentSpecies)
     {
         SetBoxMonData(boxMon, MON_DATA_SPECIES, &targetSpecies);
+        UpdateBoxMonAbilitiesOnFormChange(boxMon);
         return TRUE;
     }
     return FALSE;
@@ -6979,6 +7288,7 @@ void CreateMonFromTemplate(struct Pokemon *mon, const struct PokemonTemplate *mo
         u8 abilityNum = ResolveAbility(species, monTemplate->abilityNum);
         SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
     }
+    AssignCreatedMonAbility(mon);
 
     u8 ivs[NUM_STATS];
     u8 evs[NUM_STATS];

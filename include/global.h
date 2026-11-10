@@ -265,14 +265,16 @@ struct SaveBlock3
 #if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
     u8 itemFlags[ITEM_FLAGS_COUNT];
 #endif
-#if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    u8 dexNavSearchLevels[NUM_SPECIES];
-#endif
+    u16 dexNavChainSpecies; // species the current DexNav chain is built on; SPECIES_NONE if none
     u8 dexNavChain;
+#if USE_DEXNAV_SEARCH_LEVELS == TRUE
+    u8 dexNavSearchLevels[NATIONAL_DEX_COUNT + 1]; // indexed by SpeciesToNationalPokedexNum
+#endif
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif
     u8 nuzlockeMapsecFlags[32];
+    u8 distilledMoves[128]; // bitfield of archived single-move donations
 }; /* max size 1624 bytes */
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;

@@ -8798,6 +8798,7 @@ bool32 TryBattleFormChange(enum BattlerId battler, enum FormChanges method, enum
 
         TryToSetBattleFormChangeMoves(mon, method);
         SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+        UpdateMonAbilitiesOnFormChange(mon);
         gBattleMons[battler].species = targetSpecies;
         if (GetConfig(B_AUTOTOMIZE_FORM_CHANGE) >= GEN_6)
             gBattleMons[battler].volatiles.autotomizeCount = 0;
@@ -9764,8 +9765,7 @@ bool32 MoveIsAffectedBySheerForce(enum Move move)
 bool32 CanMonParticipateInSkyBattle(struct Pokemon *mon)
 {
     enum Species species = GetMonData(mon, MON_DATA_SPECIES);
-    u32 monAbilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
-    enum Ability ability = GetSpeciesAbility(species, monAbilityNum);
+    enum Ability ability = GetMonAbility(mon);
 
     bool32 hasLevitateAbility = (ability == ABILITY_LEVITATE || ability == ABILITY_EELEVATE);
     bool32 isFlyingType = GetSpeciesType(species, 0) == TYPE_FLYING || GetSpeciesType(species, 1) == TYPE_FLYING;

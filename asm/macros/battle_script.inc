@@ -1166,6 +1166,11 @@
 	.4byte \jumpInstr
 	.endm
 
+	.macro trycontinueafterwildcatch continueInstr:req
+	callnative BS_TryContinueAfterWildCatch
+	.4byte \continueInstr
+	.endm
+
 	.macro itemrestorehp jumpInstr:req, restoreBattlerInstr:req
 	callnative BS_ItemRestoreHP
 	.4byte \jumpInstr

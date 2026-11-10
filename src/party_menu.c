@@ -19,6 +19,7 @@
 #include "field_control_avatar.h"
 #include "field_effect.h"
 #include "field_move.h"
+#include "fly_dest.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
 #include "field_specials.h"
@@ -43,6 +44,7 @@
 #include "menu_helpers.h"
 #include "menu_specialized.h"
 #include "metatile_behavior.h"
+#include "move_distiller.h"
 #include "move_relearner.h"
 #include "overworld.h"
 #include "palette.h"
@@ -2361,10 +2363,12 @@ static enum CanMoveBeLearned CanTeachMove(struct Pokemon *mon, enum Move move)
 {
     if (GetMonData(mon, MON_DATA_IS_EGG))
         return CANNOT_LEARN_MOVE_IS_EGG;
-    else if (!CanLearnTeachableMove(GetMonData(mon, MON_DATA_SPECIES_OR_EGG), move))
-        return CANNOT_LEARN_MOVE;
     else if (MonKnowsMove(mon, move) == TRUE)
         return ALREADY_KNOWS_MOVE;
+    else if (IsDistillerTutorActive() && IsMoveDistilled(move))
+        return CAN_LEARN_MOVE;
+    else if (!CanLearnTeachableMove(GetMonData(mon, MON_DATA_SPECIES_OR_EGG), move))
+        return CANNOT_LEARN_MOVE;
     else
         return CAN_LEARN_MOVE;
 }
@@ -4216,7 +4220,8 @@ static void CursorCb_FieldMove(u8 taskId)
             sPartyMenuInternal->data[0] = fieldMove;
             break;
         case FIELD_MOVE_FLY:
-            gPartyMenu.exitCallback = CB2_OpenFlyMap;
+            FlyDest_SetOpenedFromPartyMenu(TRUE);
+            gPartyMenu.exitCallback = CB2_OpenFlyDestList;
             Task_ClosePartyMenu(taskId);
             break;
         default:
@@ -5046,13 +5051,16 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
 void Task_AbilityCapsule(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][tMonId];
+    enum Ability ability0 = GetMonAbilitySlot(mon, 0);
+    enum Ability ability1 = GetMonAbilitySlot(mon, 1);
 
     switch (tState)
     {
     case 0:
         // Can't use.
-        if (GetSpeciesAbility(tSpecies, 0) == GetSpeciesAbility(tSpecies, 1)
-            || GetSpeciesAbility(tSpecies, 1) == 0
+        if (ability0 == ability1
+            || ability1 == ABILITY_NONE
             || tAbilityNum > 1
             || !tSpecies)
         {
@@ -5064,8 +5072,8 @@ void Task_AbilityCapsule(u8 taskId)
             return;
         }
         gPartyMenuUseExitCallback = TRUE;
-        GetMonNickname(&gParties[B_TRAINER_PLAYER][tMonId], gStringVar1);
-        StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, tAbilityNum)].name);
+        GetMonNickname(mon, gStringVar1);
+        StringCopy(gStringVar2, gAbilitiesInfo[GetMonAbilitySlot(mon, tAbilityNum)].name);
         StringExpandPlaceholders(gStringVar4, sText_askText);
         PlaySE(SE_SELECT);
         DisplayPartyMenuMessage(gStringVar4, 1);
@@ -5117,6 +5125,90 @@ void Task_AbilityCapsule(u8 taskId)
     }
 }
 
+static void Task_AbilitySwapChooseSecond(u8 taskId)
+{
+    struct Pokemon *mon1;
+    struct Pokemon *mon2;
+    enum Ability ability1;
+    enum Ability ability2;
+    u8 buffer[100];
+
+    if (gPaletteFade.active || MenuHelpers_ShouldWaitForLinkRecv())
+        return;
+
+    switch (PartyMenuButtonHandler(&gPartyMenu.slotId2))
+    {
+    case 2:
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        Task_ClosePartyMenu(taskId);
+        break;
+    case 1:
+        mon1 = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+        mon2 = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId2];
+        if (GetMonData(mon2, MON_DATA_IS_EGG)
+         || GetMonData(mon2, MON_DATA_SPECIES) == SPECIES_NONE
+         || gPartyMenu.slotId == gPartyMenu.slotId2)
+        {
+            PlaySE(SE_FAILURE);
+            return;
+        }
+
+        ability1 = GetMonAbility(mon1);
+        ability2 = GetMonAbility(mon2);
+        if (ability1 == ability2)
+        {
+            PlaySE(SE_SELECT);
+            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gPartyMenuUseExitCallback = FALSE;
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            return;
+        }
+
+        PlaySE(SE_USE_ITEM);
+        SetMonData(mon1, MON_DATA_ABILITY, &ability2);
+        SetMonData(mon2, MON_DATA_ABILITY, &ability1);
+
+        GetMonNickname(mon1, gStringVar1);
+        StringCopy(gStringVar2, gAbilitiesInfo[ability1].name);
+        StringExpandPlaceholders(buffer, gText_XsYAnd);
+        StringAppend(buffer, gText_XsYWereSwapped);
+        GetMonNickname(mon2, gStringVar1);
+        StringCopy(gStringVar2, gAbilitiesInfo[ability2].name);
+        StringExpandPlaceholders(gStringVar4, buffer);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        AnimatePartySlot(gPartyMenu.slotId2, 0);
+        AnimatePartySlot(gPartyMenu.slotId, 1);
+        ScheduleBgCopyTilemapToVram(2);
+        gPartyMenuUseExitCallback = TRUE;
+        gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+        break;
+    }
+}
+
+void ItemUseCB_AbilitySwapper(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+
+    if (GetMonData(mon, MON_DATA_IS_EGG) || GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+        return;
+    }
+
+    PlaySE(SE_SELECT);
+    gPartyMenu.action = PARTY_ACTION_SWITCH;
+    DisplayPartyMenuStdMessage(PARTY_MSG_SWAP_ABILITY);
+    AnimatePartySlot(gPartyMenu.slotId, 1);
+    gPartyMenu.slotId2 = gPartyMenu.slotId;
+    gTasks[taskId].func = Task_AbilitySwapChooseSecond;
+}
+
 void ItemUseCB_AbilityCapsule(u8 taskId, TaskFunc task)
 {
     s16 *data = gTasks[taskId].data;
@@ -5132,12 +5224,13 @@ void ItemUseCB_AbilityCapsule(u8 taskId, TaskFunc task)
 void Task_AbilityPatch(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][tMonId];
 
     switch (tState)
     {
     case 0:
         // Can't use.
-        if (GetSpeciesAbility(tSpecies, tAbilityNum) == 0
+        if (GetMonAbilitySlot(mon, tAbilityNum) == ABILITY_NONE
             || !tSpecies
             )
         {
@@ -5149,8 +5242,8 @@ void Task_AbilityPatch(u8 taskId)
             return;
         }
         gPartyMenuUseExitCallback = TRUE;
-        GetMonNickname(&gParties[B_TRAINER_PLAYER][tMonId], gStringVar1);
-        StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, tAbilityNum)].name);
+        GetMonNickname(mon, gStringVar1);
+        StringCopy(gStringVar2, gAbilitiesInfo[GetMonAbilitySlot(mon, tAbilityNum)].name);
         StringExpandPlaceholders(gStringVar4, sText_askText);
         PlaySE(SE_SELECT);
         DisplayPartyMenuMessage(gStringVar4, 1);
@@ -6921,6 +7014,7 @@ static void Task_TryItemUseFusionChange(u8 taskId)
         }
         targetSpecies = gTasks[taskId].tTargetSpecies;
         SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+        UpdateMonAbilitiesOnFormChange(mon);
         CalculateMonStats(mon);
         CompactPartySlots();
         CalculatePlayerPartyCount();

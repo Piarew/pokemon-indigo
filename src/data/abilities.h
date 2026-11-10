@@ -1784,7 +1784,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_RKS_SYSTEM] =
     {
-        .name = _("RKS System"),
+        .name = _("Rks System"),
         .description = COMPOUND_STRING("Matches held memory's type."),
         .aiRating = 8,
         .cantBeCopied = TRUE,

@@ -583,12 +583,12 @@
 #define FLAG_DID_MARC_TRADE                              0x257
 #define FLAG_BEAT_RIVAL_IN_OAKS_LAB                      0x258
 #define FLAG_GOT_TM06_FROM_KOGA                          0x259
-#define FLAG_GOT_OAK_RESEARCH_KIT                        0x25A // Infinite Repel, Time Changer, Nature Changer, DexNav
+#define FLAG_GOT_OAK_RESEARCH_KIT                        0x25A // Infinite Repel, Time Changer, Nature Changer, Ability Swap, DexNav
 #define FLAG_GOT_TM27                                    0x25B
 #define FLAG_GOT_OAK_FIELD_KIT                           0x25C // Porta-Heal, Candy Feast, Portable PC
 #define FLAG_GOT_SHINY_CHARM                             0x25D
 #define FLAG_GOT_OLD_AMBER                               0x25E
-#define FLAG_0x25F                                       0x25F
+#define FLAG_GOT_ABILITY_SWAPPER                         0x25F
 #define FLAG_0x260                                       0x260
 #define FLAG_0x261                                       0x261
 #define FLAG_0x262                                       0x262
@@ -1197,6 +1197,9 @@
 #define FLAG_UNUSED_0x4AD               0x4AD // Nuzlocke mode (FLAG_SYS_NUZLOCKE)
 #define FLAG_UNUSED_0x4AE               0x4AE // Wild randomizer (FLAG_SYS_RANDOMIZER_WILD)
 #define FLAG_UNUSED_0x4AF               0x4AF // Trainer randomizer (FLAG_SYS_RANDOMIZER_TRAINER)
+#define FLAG_UNUSED_0x4BD               0x4BD // Ability randomizer (FLAG_SYS_RANDOMIZER_ABILITY)
+#define FLAG_UNUSED_0x4BE               0x4BE // Moveset randomizer (FLAG_SYS_RANDOMIZER_MOVESET)
+#define FLAG_UNUSED_0x4BF               0x4BF // Moveset signature (FLAG_SYS_RANDOMIZER_MOVESET_SIGNATURE)
 
 // Boss clear flags, 1200
 #define FLAG_DEFEATED_BROCK           0x4B0
@@ -1214,9 +1217,9 @@
 #define FLAG_DEFEATED_CHAMP           0x4BC
 
 // Unused?
-#define FLAG_0x4BD               0x4BD
-#define FLAG_0x4BE               0x4BE
-#define FLAG_0x4BF               0x4BF
+#define FLAG_0x4BD               FLAG_UNUSED_0x4BD
+#define FLAG_0x4BE               FLAG_UNUSED_0x4BE
+#define FLAG_0x4BF               FLAG_UNUSED_0x4BF
 #define FLAG_0x4C0               0x4C0
 #define FLAG_0x4C1               0x4C1
 #define FLAG_0x4C2               0x4C2
@@ -1427,33 +1430,37 @@
 #define FLAG_WORLD_MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY       (SYS_FLAGS + 0xC1)
 #define FLAG_WORLD_MAP_BIRTH_ISLAND_EXTERIOR                        (SYS_FLAGS + 0xC2)
 
-#define FLAG_0x8C3                                                  (SYS_FLAGS + 0xC3)
-#define FLAG_0x8C4                                                  (SYS_FLAGS + 0xC4)
-#define FLAG_0x8C5                                                  (SYS_FLAGS + 0xC5)
-#define FLAG_0x8C6                                                  (SYS_FLAGS + 0xC6)
-#define FLAG_0x8C7                                                  (SYS_FLAGS + 0xC7)
-#define FLAG_0x8C8                                                  (SYS_FLAGS + 0xC8)
-#define FLAG_0x8C9                                                  (SYS_FLAGS + 0xC9)
-#define FLAG_0x8CA                                                  (SYS_FLAGS + 0xCA)
-#define FLAG_0x8CB                                                  (SYS_FLAGS + 0xCB)
-#define FLAG_0x8CC                                                  (SYS_FLAGS + 0xCC)
-#define FLAG_0x8CD                                                  (SYS_FLAGS + 0xCD)
-#define FLAG_0x8CE                                                  (SYS_FLAGS + 0xCE)
-#define FLAG_0x8CF                                                  (SYS_FLAGS + 0xCF)
-#define FLAG_0x8D0                                                  (SYS_FLAGS + 0xD0)
-#define FLAG_0x8D1                                                  (SYS_FLAGS + 0xD1)
-#define FLAG_0x8D2                                                  (SYS_FLAGS + 0xD2)
-#define FLAG_0x8D3                                                  (SYS_FLAGS + 0xD3)
-#define FLAG_0x8D4                                                  (SYS_FLAGS + 0xD4)
-#define FLAG_0x8D5                                                  (SYS_FLAGS + 0xD5)
-#define FLAG_0x8D6                                                  (SYS_FLAGS + 0xD6)
-#define FLAG_0x8D7                                                  (SYS_FLAGS + 0xD7)
-#define FLAG_0x8D8                                                  (SYS_FLAGS + 0xD8)
-#define FLAG_0x8D9                                                  (SYS_FLAGS + 0xD9)
-#define FLAG_0x8DA                                                  (SYS_FLAGS + 0xDA)
-#define FLAG_0x8DB                                                  (SYS_FLAGS + 0xDB)
-#define FLAG_0x8DC                                                  (SYS_FLAGS + 0xDC)
-#define FLAG_0x8DD                                                  (SYS_FLAGS + 0xDD)
+// Johto visit flags (Fly)
+#define FLAG_WORLD_MAP_NEW_BARK_TOWN                                (SYS_FLAGS + 0xC3)
+#define FLAG_WORLD_MAP_CHERRYGROVE_CITY                             (SYS_FLAGS + 0xC4)
+#define FLAG_WORLD_MAP_VIOLET_CITY                                  (SYS_FLAGS + 0xC5)
+#define FLAG_WORLD_MAP_AZALEA_TOWN                                  (SYS_FLAGS + 0xC6)
+#define FLAG_WORLD_MAP_GOLDENROD_CITY                               (SYS_FLAGS + 0xC7)
+#define FLAG_WORLD_MAP_ECRUTEAK_CITY                                (SYS_FLAGS + 0xC8)
+#define FLAG_WORLD_MAP_OLIVINE_CITY                                 (SYS_FLAGS + 0xC9)
+#define FLAG_WORLD_MAP_CIANWOOD_CITY                                (SYS_FLAGS + 0xCA)
+#define FLAG_WORLD_MAP_MAHOGANY_TOWN                                (SYS_FLAGS + 0xCB)
+#define FLAG_WORLD_MAP_BLACKTHORN_CITY                              (SYS_FLAGS + 0xCC)
+
+// Sinnoh visit flags (Fly)
+#define FLAG_WORLD_MAP_TWINLEAF_TOWN                                (SYS_FLAGS + 0xCD)
+#define FLAG_WORLD_MAP_SANDGEM_TOWN                                 (SYS_FLAGS + 0xCE)
+#define FLAG_WORLD_MAP_JUBILIFE_CITY                                (SYS_FLAGS + 0xCF)
+#define FLAG_WORLD_MAP_OREBURGH_CITY                                (SYS_FLAGS + 0xD0)
+#define FLAG_WORLD_MAP_FLOAROMA_TOWN                                (SYS_FLAGS + 0xD1)
+#define FLAG_WORLD_MAP_ETERNA_CITY                                  (SYS_FLAGS + 0xD2)
+#define FLAG_WORLD_MAP_HEARTHOME_CITY                               (SYS_FLAGS + 0xD3)
+#define FLAG_WORLD_MAP_SOLACEON_TOWN                                (SYS_FLAGS + 0xD4)
+#define FLAG_WORLD_MAP_CELESTIC_TOWN                                (SYS_FLAGS + 0xD5)
+#define FLAG_WORLD_MAP_VEILSTONE_CITY                               (SYS_FLAGS + 0xD6)
+#define FLAG_WORLD_MAP_PASTORIA_CITY                                (SYS_FLAGS + 0xD7)
+#define FLAG_WORLD_MAP_CANALAVE_CITY                                (SYS_FLAGS + 0xD8)
+#define FLAG_WORLD_MAP_SNOWPOINT_CITY                               (SYS_FLAGS + 0xD9)
+#define FLAG_WORLD_MAP_SUNYSHORE_CITY                               (SYS_FLAGS + 0xDA)
+#define FLAG_WORLD_MAP_FIGHT_AREA                                   (SYS_FLAGS + 0xDB)
+#define FLAG_WORLD_MAP_SURVIVAL_AREA                                (SYS_FLAGS + 0xDC)
+#define FLAG_WORLD_MAP_RESORT_AREA                                  (SYS_FLAGS + 0xDD)
+
 #define FLAG_0x8DE                                                  (SYS_FLAGS + 0xDE)
 #define FLAG_0x8DF                                                  (SYS_FLAGS + 0xDF)
 #define FLAG_0x8E0                                                  (SYS_FLAGS + 0xE0)

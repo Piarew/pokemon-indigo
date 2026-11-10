@@ -749,6 +749,7 @@ void InheritAbility(struct Pokemon *egg, struct DayCare *daycare)
     if (inheritAbility < 2 && !RandomPercentage(RNG_DAYCARE_ABILITY_INHERITANCE, 80))
         return;
     SetMonData(egg, MON_DATA_ABILITY_NUM, &inheritAbility);
+    AssignCreatedMonAbility(egg);
 }
 
 #define ADD_OR_REPLACE_MOVE(move) if (GiveMoveToMon(egg, move) == MON_HAS_MAX_MOVES) {DeleteFirstMoveAndGiveMoveToMon(egg, move);}

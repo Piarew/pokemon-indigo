@@ -50,6 +50,7 @@
 #include "text_window.h"
 #include "wild_encounter.h"
 #include "window.h"
+#include "caps.h"
 #include "constants/species.h"
 #include "constants/maps.h"
 #include "constants/field_effects.h"
@@ -149,7 +150,10 @@ static enum Item DexNavGenerateHeldItem(enum Species species, u8 searchLevel);
 static u8 DexNavGetAbilityNum(enum Species species, u8 searchLevel);
 static u8 DexNavGeneratePotential(u8 searchLevel);
 static u8 DexNavTryGenerateMonLevel(enum Species species, enum EncounterType environment);
+static u8 DexNavApplyChainLevelBonus(enum Species species, u8 levelBase);
+static void PrepareDexNavChainForSpecies(enum Species species);
 static u8 GetEncounterLevelFromMapData(enum Species species, enum EncounterType environment);
+static u8 GetFishingEncounterLevelFromMapData(enum Species species);
 static void CreateDexNavWildMon(enum Species species, u8 potential, u8 level, u8 abilityNum, enum Item item, enum Move *moves);
 static u8 GetPlayerDistance(s16 x, s16 y);
 static u8 DexNavPickTile(enum EncounterType environment, u8 xSize, u8 ySize, bool8 smallScan);
@@ -182,15 +186,15 @@ static const u32 sHiddenMonIconGfx[] = INCGFX_U32("graphics/dexnav/hidden.png", 
 // strings
 static const u8 sText_DexNav_NoInfo[] = _("--------");
 static const u8 sText_DexNav_CaptureToSee[] = _("Capture first!");
-static const u8 sText_DexNav_PressRToRegister[] = _("R TO REGISTER!");
+static const u8 sText_DexNav_PressRToRegister[] = _("R to Register!");
 static const u8 sText_DexNav_SearchForRegisteredSpecies[] = _("Search {STR_VAR_1}");
 static const u8 sText_DexNav_NotFoundHere[] = _("This Pokémon cannot be found here!");
 static const u8 sText_ThreeQmarks[] = _("???");
-static const u8 sText_SearchLevel[] = _("SEARCH {LV}. {STR_VAR_1}");
+static const u8 sText_SearchLevel[] = _("Search {LV}. {STR_VAR_1}");
 static const u8 sText_MonLevel[] = _("{LV}. {STR_VAR_1}");
-static const u8 sText_EggMove[] = _("MOVE: {STR_VAR_1}");
+static const u8 sText_EggMove[] = _("Move: {STR_VAR_1}");
 static const u8 sText_HeldItem[] = _("{STR_VAR_1}");
-static const u8 sText_StartExit[] = _("{START_BUTTON} EXIT");
+static const u8 sText_StartExit[] = _("{START_BUTTON} Exit");
 static const u8 sText_DexNavChain[] = _("{NO} {STR_VAR_1}");
 static const u8 sText_DexNavChainLong[] = _("{NO}{STR_VAR_1}");
 
@@ -779,13 +783,15 @@ static void LoadSearchIconData(void)
 
 static u8 GetSearchLevel(enum Species species)
 {
-    u8 searchLevel;
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    searchLevel = gSaveBlock3Ptr->dexNavSearchLevels[species];
+    enum NationalDexOrder dexNum = SpeciesToNationalPokedexNum(species);
+
+    if (dexNum > NATIONAL_DEX_COUNT)
+        return 0;
+    return gSaveBlock3Ptr->dexNavSearchLevels[dexNum];
 #else
-    searchLevel = 0;
+    return 0;
 #endif
-    return searchLevel;
 }
 
 static void SetUpDexNavSearch(void)
@@ -849,7 +855,6 @@ static bool8 InitDexNavSearch(enum Species species, u32 environment)
     sDexNavSearchDataPtr->species = species;
     sDexNavSearchDataPtr->environment = environment;  //updated in DexNavTryGenerateMonLevel if hidden mon
     sDexNavSearchDataPtr->isHiddenMon = (environment == ENCOUNTER_TYPE_HIDDEN) ? TRUE : FALSE;
-    sDexNavSearchDataPtr->monLevel = DexNavTryGenerateMonLevel(species, environment);
 
     if (GetFlashLevel() > 0)
     {
@@ -857,11 +862,16 @@ static bool8 InitDexNavSearch(enum Species species, u32 environment)
         return TRUE;
     }
 
+    sDexNavSearchDataPtr->monLevel = DexNavTryGenerateMonLevel(species, environment);
+
     if (sDexNavSearchDataPtr->monLevel == MON_LEVEL_NONEXISTENT || !TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 12, 12, FALSE))
     {
         DexNavSearchBail(EventScript_NotFoundNearby);
         return TRUE;
     }
+
+    // Rustle is on the field. A different species here is a new hunt the player can walk away from.
+    PrepareDexNavChainForSpecies(species);
 
     sDexNavSearchDataPtr->hiddenSearch = FALSE;
     SetUpDexNavSearch();
@@ -974,13 +984,6 @@ void EndDexNavSearch(void)
     FlagClear(DN_FLAG_SEARCHING);
 }
 
-static void EndDexNavSearchSetupScript(const u8 *script)
-{
-    gSaveBlock3Ptr->dexNavChain = 0;   //reset chain
-    EndDexNavSearch();
-    ScriptContext_SetupScript(script);
-}
-
 static u8 GetMovementProximityBySearchLevel(void)
 {
     if (sDexNavSearchDataPtr->searchLevel < 20)
@@ -1038,60 +1041,9 @@ bool32 OnStep_DexNavSearch(void)
     if (!FlagGet(DN_FLAG_SEARCHING) || sDexNavSearchDataPtr == NULL)
         return FALSE;
 
-    u32 frameCount = gMain.vblankCounter1 - sDexNavSearchDataPtr->startingTime;
     DexNavProximityUpdate();
     if (!sDexNavSearchDataPtr->hiddenSearch)    //update search window info only if revealed mon
         DexNavUpdateSearchWindow(sDexNavSearchDataPtr->proximity, sDexNavSearchDataPtr->searchLevel);
-
-    if (sDexNavSearchDataPtr->proximity > MAX_PROXIMITY)
-    { // out of range
-        if (sDexNavSearchDataPtr->hiddenSearch)
-        {
-            EndDexNavSearch();
-            return FALSE;
-        }
-        else
-        {
-            EndDexNavSearchSetupScript(EventScript_LostSignal);
-            return TRUE;
-        }
-    }
-
-    if (sDexNavSearchDataPtr->proximity <= CREEPING_PROXIMITY && !gPlayerAvatar.creeping && frameCount > 60)
-    { //should be creeping but player walks normally
-        if (sDexNavSearchDataPtr->hiddenSearch)
-        {
-            EndDexNavSearch();
-            return FALSE;
-        }
-        else
-        {
-            EndDexNavSearchSetupScript(EventScript_MovedTooFast);
-            return TRUE;
-        }
-    }
-
-    if (sDexNavSearchDataPtr->proximity <= SNEAKING_PROXIMITY && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH | PLAYER_AVATAR_FLAG_BIKE))
-    { // running/biking too close
-        //always do event script, even if player hasn't revealed a hidden mon. It's assumed they would be creeping towards it
-        EndDexNavSearchSetupScript(EventScript_MovedTooFast);
-        return TRUE;
-    }
-
-    if (frameCount > DEXNAV_TIMEOUT * 60)
-    { // player took too long
-        if (sDexNavSearchDataPtr->hiddenSearch)
-        {
-            EndDexNavSearch();
-            return FALSE;
-        }
-        else
-        {
-            EndDexNavSearchSetupScript(EventScript_PokemonGotAway);
-            return TRUE;
-        }
-        return FALSE;
-    }
 
     if (sDexNavSearchDataPtr->proximity < 1)
     {
@@ -1111,20 +1063,26 @@ bool32 OnStep_DexNavSearch(void)
         return FALSE;
     }
 
-    //Caves and water the Pokémon moves around
+    // Caves and water: the Pokémon can shift tiles a couple of times as you approach.
     if ((sDexNavSearchDataPtr->environment == ENCOUNTER_TYPE_WATER || GetCurrentMapType() == MAP_TYPE_UNDERGROUND)
         && sDexNavSearchDataPtr->proximity < GetMovementProximityBySearchLevel() && sDexNavSearchDataPtr->movementCount < 2
         && !sDexNavSearchDataPtr->hiddenSearch)
     {
-        FieldEffectStop(&gSprites[sDexNavSearchDataPtr->fldEffSpriteId], sDexNavSearchDataPtr->fldEffId);
+        u16 oldX = sDexNavSearchDataPtr->tileX;
+        u16 oldY = sDexNavSearchDataPtr->tileY;
+        u8 oldSprite = sDexNavSearchDataPtr->fldEffSpriteId;
+        u8 oldEff = sDexNavSearchDataPtr->fldEffId;
 
-        if (!TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 10, 10, TRUE))
+        if (TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 10, 10, TRUE))
         {
-            EndDexNavSearchSetupScript(EventScript_PokemonGotAway);
-            return TRUE;
+            FieldEffectStop(&gSprites[oldSprite], oldEff);
+            sDexNavSearchDataPtr->movementCount++;
         }
-
-        sDexNavSearchDataPtr->movementCount++;
+        else
+        {
+            sDexNavSearchDataPtr->tileX = oldX;
+            sDexNavSearchDataPtr->tileY = oldY;
+        }
     }
     return FALSE;
 }
@@ -1186,6 +1144,7 @@ static void CreateDexNavWildMon(enum Species species, u8 potential, u8 level, u8
 
     //Set ability
     SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
+    AssignCreatedMonAbility(mon);
 
     // Set Held Item
     if (item)
@@ -1200,21 +1159,36 @@ static void CreateDexNavWildMon(enum Species species, u8 potential, u8 level, u8
 
 // gets a random level of the species based on map data.
 //if it was a hidden encounter, updates the environment it is to be found from the wildheader encounterRate
-static u8 DexNavTryGenerateMonLevel(enum Species species, enum EncounterType environment)
+static u8 DexNavApplyChainLevelBonus(enum Species species, u8 levelBase)
 {
-    u8 levelBase = GetEncounterLevelFromMapData(species, environment);
-    u8 levelBonus = gSaveBlock3Ptr->dexNavChain / 5;
+    u8 chain = gSaveBlock3Ptr->dexNavChain;
+    u8 levelBonus;
+    u32 level;
+    u32 cap;
 
     if (levelBase == MON_LEVEL_NONEXISTENT)
-        return MON_LEVEL_NONEXISTENT;   //species not found in the area
+        return MON_LEVEL_NONEXISTENT;
+
+    if (gSaveBlock3Ptr->dexNavChainSpecies != SPECIES_NONE
+        && gSaveBlock3Ptr->dexNavChainSpecies != species)
+        chain = 0;
+    levelBonus = chain / 5;
 
     if (Random() % 100 < 4)
         levelBonus += 10; //4% chance of having a +10 level
 
-    if (levelBase + levelBonus > MAX_LEVEL)
-        return MAX_LEVEL;
-    else
-        return levelBase + levelBonus;
+    level = levelBase + levelBonus;
+    cap = GetCurrentLevelCap();
+    if (level > cap)
+        level = cap;
+    if (level > MAX_LEVEL)
+        level = MAX_LEVEL;
+    return level;
+}
+
+static u8 DexNavTryGenerateMonLevel(enum Species species, enum EncounterType environment)
+{
+    return DexNavApplyChainLevelBonus(species, GetEncounterLevelFromMapData(species, environment));
 }
 
 static enum Move GetRandomEggMove(enum Species species)
@@ -1536,6 +1510,38 @@ static u8 GetEncounterLevelFromMapData(enum Species species, enum EncounterType 
         break;
     default:
         return MON_LEVEL_NONEXISTENT;
+    }
+
+    if (max == 0)
+        return MON_LEVEL_NONEXISTENT;
+
+    return RandomUniform(RNG_DEXNAV_ENCOUNTER_LEVEL, min, max);
+}
+
+static u8 GetFishingEncounterLevelFromMapData(enum Species species)
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay;
+    u8 min = MAX_LEVEL;
+    u8 max = 0;
+    u8 i;
+
+    if (headerId == HEADER_NONE)
+        return MON_LEVEL_NONEXISTENT;
+
+    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
+    const struct WildPokemonInfo *fishingMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo;
+
+    if (fishingMonsInfo == NULL)
+        return MON_LEVEL_NONEXISTENT;
+
+    for (i = 0; i < NUM_FISHING_MONS_ENCOUNTER_SLOTS; i++)
+    {
+        if (fishingMonsInfo->wildPokemon[i].species == species)
+        {
+            min = (min < fishingMonsInfo->wildPokemon[i].minLevel) ? min : fishingMonsInfo->wildPokemon[i].minLevel;
+            max = (max > fishingMonsInfo->wildPokemon[i].maxLevel) ? max : fishingMonsInfo->wildPokemon[i].maxLevel;
+        }
     }
 
     if (max == 0)
@@ -1910,6 +1916,8 @@ static void DexNavLoadEncounterData(void)
     const struct WildPokemonInfo *landMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
     timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_WATER);
     const struct WildPokemonInfo *waterMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
+    const struct WildPokemonInfo *fishingMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo;
     timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_HIDDEN);
     const struct WildPokemonInfo *hiddenMonsInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
 
@@ -1929,7 +1937,7 @@ static void DexNavLoadEncounterData(void)
         }
     }
 
-    // water mons
+    // water mons (surf first, then unique fishing species in leftover slots)
     if (waterMonsInfo != NULL && waterMonsInfo->encounterRate != 0)
     {
         for (i = 0; i < NUM_WATER_MONS_ENCOUNTER_SLOTS; i++)
@@ -1937,6 +1945,16 @@ static void DexNavLoadEncounterData(void)
             species = waterMonsInfo->wildPokemon[i].species;
             if (species != SPECIES_NONE && !SpeciesInArray(species, 1))
                 sDexNavUiDataPtr->waterSpecies[waterIndex++] = waterMonsInfo->wildPokemon[i].species;
+        }
+    }
+
+    if (fishingMonsInfo != NULL)
+    {
+        for (i = 0; i < NUM_FISHING_MONS_ENCOUNTER_SLOTS && waterIndex < ARRAY_COUNT(sDexNavUiDataPtr->waterSpecies); i++)
+        {
+            species = fishingMonsInfo->wildPokemon[i].species;
+            if (species != SPECIES_NONE && !SpeciesInArray(species, 1))
+                sDexNavUiDataPtr->waterSpecies[waterIndex++] = species;
         }
     }
 
@@ -2471,7 +2489,7 @@ bool32 TryFindHiddenPokemon(void)
     u16 *stepPtr = GetVarPointer(DN_VAR_STEP_COUNTER);
 
     if (DEXNAV_ENABLED == 0
-            || sDexNavSearchDataPtr == NULL
+            || sDexNavSearchDataPtr != NULL
             || !FlagGet(DN_FLAG_DETECTOR_MODE)
             || FlagGet(DN_FLAG_SEARCHING)
             || GetFlashLevel() > 0)
@@ -2579,6 +2597,8 @@ bool32 TryFindHiddenPokemon(void)
             return FALSE;
         }
 
+        PrepareDexNavChainForSpecies(species);
+
         // exclamation mark over player
         gFieldEffectArguments[0] = gSaveBlock1Ptr->pos.x;
         gFieldEffectArguments[1] = gSaveBlock1Ptr->pos.y;
@@ -2649,17 +2669,82 @@ u32 CalculateDexNavShinyRolls(void)
     return chainBonus + rndBonus;
 }
 
-void TryIncrementSpeciesSearchLevel()
+void TryIncrementSpeciesSearchLevel(void)
 {
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    if (gMapHeader.regionMapSectionId != MAPSEC_NONE && gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies] < 255)
-        gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies]++;
+    enum NationalDexOrder dexNum = SpeciesToNationalPokedexNum(gDexNavSpecies);
+
+    if (gMapHeader.regionMapSectionId != MAPSEC_NONE
+        && dexNum != NATIONAL_DEX_NONE
+        && dexNum <= NATIONAL_DEX_COUNT
+        && gSaveBlock3Ptr->dexNavSearchLevels[dexNum] < 255)
+        gSaveBlock3Ptr->dexNavSearchLevels[dexNum]++;
 #endif
+}
+
+void ResetDexNavChain(void)
+{
+    gSaveBlock3Ptr->dexNavChain = 0;
+    gSaveBlock3Ptr->dexNavChainSpecies = SPECIES_NONE;
+}
+
+static void PrepareDexNavChainForSpecies(enum Species species)
+{
+    if (gSaveBlock3Ptr->dexNavChainSpecies != species)
+        ResetDexNavChain();
+}
+
+bool32 TryGenerateDexNavFishingMon(enum Species *speciesOut)
+{
+    u16 val = VarGet(DN_VAR_SPECIES);
+    enum Species species = val & DEXNAV_MASK_SPECIES;
+    u32 environment = val >> 14;
+    u8 searchLevel;
+    u8 level;
+    u8 levelBase;
+    u8 potential;
+    u8 abilityNum;
+    enum Item item;
+    u16 moves[MAX_MON_MOVES];
+
+    if (!DEXNAV_ENABLED || species == SPECIES_NONE || environment != ENCOUNTER_TYPE_WATER)
+        return FALSE;
+
+    levelBase = GetEncounterLevelFromMapData(species, ENCOUNTER_TYPE_WATER);
+    if (levelBase == MON_LEVEL_NONEXISTENT)
+        levelBase = GetFishingEncounterLevelFromMapData(species);
+    if (levelBase == MON_LEVEL_NONEXISTENT)
+        return FALSE;
+
+    searchLevel = GetSearchLevel(species);
+    level = DexNavApplyChainLevelBonus(species, levelBase);
+    DexNavGenerateMoveset(species, searchLevel, level, moves);
+    item = DexNavGenerateHeldItem(species, searchLevel);
+    abilityNum = DexNavGetAbilityNum(species, searchLevel);
+    potential = DexNavGeneratePotential(searchLevel);
+
+    PrepareDexNavChainForSpecies(species);
+    gDexNavSpecies = species;
+    CreateDexNavWildMon(species, potential, level, abilityNum, item, (enum Move *)moves);
+
+    if (speciesOut != NULL)
+        *speciesOut = species;
+    return TRUE;
+}
+
+void TryIncrementDexNavChain(enum Species species)
+{
+    if (gSaveBlock3Ptr->dexNavChainSpecies != species)
+    {
+        gSaveBlock3Ptr->dexNavChain = 0;
+        gSaveBlock3Ptr->dexNavChainSpecies = species;
+    }
+    IncrementDexNavChain();
 }
 
 void ResetDexNavSearch(void)
 {
-    gSaveBlock3Ptr->dexNavChain = 0;    //reset dex nav chaining on new map
+    ResetDexNavChain(); // leaving the area breaks the chain
     VarSet(DN_VAR_STEP_COUNTER, 0); //reset hidden Pokémon step counter
     if (FlagGet(DN_FLAG_SEARCHING))
         EndDexNavSearch();   //moving to new map ends dexnav search

@@ -14,6 +14,7 @@
 #include "data.h"
 #include "item.h"
 #include "item_menu.h"
+#include "item_use.h"
 #include "link.h"
 #include "main.h"
 #include "m4a.h"
@@ -84,6 +85,9 @@ static void TryMoveSelectionDisplayMoveDescription(enum BattlerId battler);
 static void MoveSelectionDisplayMoveDescription(enum BattlerId battler);
 static void WaitForMonSelection(enum BattlerId battler);
 static void CompleteWhenChoseItem(enum BattlerId battler);
+static void StartChooseBallTarget(enum BattlerId battler, u8 chosenAction);
+static void HandleInputChooseBallTarget(enum BattlerId battler);
+static void TryThrowLastUsedBall(enum BattlerId battler);
 static void Task_LaunchLvlUpAnim(u8);
 static void Task_PrepareToGiveExpWithExpBar(u8);
 static void Task_SetControllerToWaitForString(u8);
@@ -292,11 +296,8 @@ static void HandleInputChooseAction(enum BattlerId battler)
             else if (!JOY_HELD(B_LAST_USED_BALL_BUTTON) && CanThrowLastUsedBall())
             {
                 gBattleStruct->ackBallUseBtn = FALSE;
-                PlaySE(SE_SELECT);
                 ArrowsChangeColorLastBallCycle(FALSE);
-                TryHideLastUsedBall();
-                BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
-                BtlController_Complete(battler);
+                TryThrowLastUsedBall(battler);
             }
             return;
         }
@@ -403,10 +404,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
     else if (B_LAST_USED_BALL == TRUE && B_LAST_USED_BALL_CYCLE == FALSE
              && JOY_NEW(B_LAST_USED_BALL_BUTTON) && CanThrowLastUsedBall())
     {
-        PlaySE(SE_SELECT);
-        TryHideLastUsedBall();
-        BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
-        BtlController_Complete(battler);
+        TryThrowLastUsedBall(battler);
     }
 }
 
@@ -1592,6 +1590,89 @@ static void WaitForMonSelection(enum BattlerId battler)
     }
 }
 
+static u8 sBallTargetChosenAction;
+
+static void StartChooseBallTarget(enum BattlerId battler, u8 chosenAction)
+{
+    sBallTargetChosenAction = chosenAction;
+    gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    if (!IsBattlerAlive(gMultiUsePlayerCursor))
+        gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+
+    EndBounceEffect(battler, BOUNCE_HEALTHBOX);
+    EndBounceEffect(battler, BOUNCE_MON);
+    gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
+    gBattlerControllerFuncs[battler] = HandleInputChooseBallTarget;
+}
+
+static void HandleInputChooseBallTarget(enum BattlerId battler)
+{
+    enum BattlerId left = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    enum BattlerId right = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+    enum BattlerId i;
+
+    DoBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX, 15, 1);
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (i != gMultiUsePlayerCursor)
+            EndBounceEffect(i, BOUNCE_HEALTHBOX);
+    }
+
+    if (JOY_NEW(A_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
+        EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
+        gBattleStruct->catchingBattler = gMultiUsePlayerCursor;
+        if (sBallTargetChosenAction == B_ACTION_THROW_BALL)
+        {
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
+        }
+        else
+        {
+            RemoveBagItem(gSpecialVar_ItemId, 1);
+            BtlController_EmitOneReturnValue(battler, B_COMM_TO_ENGINE, gSpecialVar_ItemId);
+        }
+        BtlController_Complete(battler);
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
+        EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
+        if (sBallTargetChosenAction == B_ACTION_THROW_BALL)
+        {
+            TryRestoreLastUsedBall();
+            gBattlerControllerFuncs[battler] = HandleInputChooseAction;
+        }
+        else
+        {
+            BtlController_EmitOneReturnValue(battler, B_COMM_TO_ENGINE, ITEM_NONE);
+            BtlController_Complete(battler);
+        }
+    }
+    else if (JOY_NEW(DPAD_ANY) && IsBattlerAlive(left) && IsBattlerAlive(right))
+    {
+        PlaySE(SE_SELECT);
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
+        gMultiUsePlayerCursor = (gMultiUsePlayerCursor == left) ? right : left;
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
+    }
+}
+
+static void TryThrowLastUsedBall(enum BattlerId battler)
+{
+    PlaySE(SE_SELECT);
+    TryHideLastUsedBall();
+    if (NeedsWildBallTarget())
+    {
+        StartChooseBallTarget(battler, B_ACTION_THROW_BALL);
+        return;
+    }
+    BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
+    BtlController_Complete(battler);
+}
+
 static void OpenBagAndChooseItem(enum BattlerId battler)
 {
     if (!gPaletteFade.active)
@@ -1610,6 +1691,13 @@ static void CompleteWhenChoseItem(enum BattlerId battler)
 {
     if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
     {
+        if (gSpecialVar_ItemId != ITEM_NONE
+         && GetItemBattleUsage(gSpecialVar_ItemId) == EFFECT_ITEM_THROW_BALL
+         && NeedsWildBallTarget())
+        {
+            StartChooseBallTarget(battler, B_ACTION_USE_ITEM);
+            return;
+        }
         BtlController_EmitOneReturnValue(battler, B_COMM_TO_ENGINE, gSpecialVar_ItemId);
         BtlController_Complete(battler);
     }
@@ -1763,8 +1851,8 @@ static void MoveSelectionDisplayMoveDescription(enum BattlerId battler)
     }
 
     u8 pwr_num[3], acc_num[3];
-    u8 cat_desc[7] = _("CAT: ");
-    u8 pwr_desc[7] = _("PWR: ");
+    u8 cat_desc[7] = _("Cat: ");
+    u8 pwr_desc[7] = _("Pwr: ");
     u8 acc_desc[7] = _("ACC: ");
     u8 cat_start[] = _("{CLEAR_TO 3}");
     u8 pwr_start[] = _("{CLEAR_TO 56}");

@@ -40,6 +40,7 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId);
 void ItemUseOutOfBattle_InfiniteRepel(u8 taskId);
 void ItemUseOutOfBattle_TimeChanger(u8 taskId);
 void ItemUseOutOfBattle_NatureChanger(u8 taskId);
+void ItemUseOutOfBattle_AbilitySwapper(u8 taskId);
 void ItemUseOutOfBattle_BottleCap(u8 taskId);
 void ItemUseOutOfBattle_PortaHeal(u8 taskId);
 void ItemUseOutOfBattle_CandyFeast(u8 taskId);
@@ -68,6 +69,7 @@ enum {
 };
 
 bool32 CanThrowBall(void);
+bool32 NeedsWildBallTarget(void);
 bool32 CannotUseItemsInBattle(enum Item itemId, struct Pokemon *mon);
 
 enum ItemTMHMOrEvolutionStone

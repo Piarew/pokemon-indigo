@@ -3062,7 +3062,7 @@ static const u16 sDebug_BerryResults[MAX_RFU_PLAYERS][4] =
 };
 
 static const u8 sJPText_Vowels[] = _("あいうえおかき");
-static const u8 sText_Letters[] = _("ABCDEFG");
+static const u8 sText_Letters[] = _("Abcdefg");
 static const u8 sText_Digits[] = _("0123456");
 
 static const u8 *const sDebug_PlayerNames[] =

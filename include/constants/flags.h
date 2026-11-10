@@ -1264,9 +1264,9 @@
 #define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
 #define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
+#define FLAG_UNUSED_0x4BD                                           0x4BD // Ability randomizer (FLAG_SYS_RANDOMIZER_ABILITY)
+#define FLAG_UNUSED_0x4BE                                           0x4BE // Moveset randomizer (FLAG_SYS_RANDOMIZER_MOVESET)
+#define FLAG_UNUSED_0x4BF                                           0x4BF // Moveset signature (FLAG_SYS_RANDOMIZER_MOVESET_SIGNATURE)
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
@@ -2016,7 +2016,7 @@
 #define FLAG_GOT_OAK_FIELD_KIT                           0
 #define FLAG_GOT_SHINY_CHARM                             0
 #define FLAG_GOT_OLD_AMBER                               0
-#define FLAG_0x25F                                       0
+#define FLAG_GOT_ABILITY_SWAPPER                         0
 #define FLAG_0x260                                       0
 #define FLAG_0x261                                       0
 #define FLAG_0x262                                       0
