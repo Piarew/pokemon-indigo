@@ -1,2 +1,7 @@
 SolaceonTown_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SolaceonTown_PokemonCenter_1F_OnTransition
 	.byte 0
+
+SolaceonTown_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_SOLACEON_TOWN
+	end

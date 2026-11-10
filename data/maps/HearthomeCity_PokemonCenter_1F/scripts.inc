@@ -1,2 +1,7 @@
 HearthomeCity_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, HearthomeCity_PokemonCenter_1F_OnTransition
 	.byte 0
+
+HearthomeCity_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_HEARTHOME_CITY
+	end

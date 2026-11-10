@@ -1,2 +1,7 @@
 CelesticTown_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CelesticTown_PokemonCenter_1F_OnTransition
 	.byte 0
+
+CelesticTown_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_CELESTIC_TOWN
+	end

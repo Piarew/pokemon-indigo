@@ -1,2 +1,7 @@
 SnowpointCity_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SnowpointCity_PokemonCenter_1F_OnTransition
 	.byte 0
+
+SnowpointCity_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_SNOWPOINT_CITY
+	end

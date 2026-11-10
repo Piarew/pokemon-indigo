@@ -1,2 +1,7 @@
 PastoriaCity_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PastoriaCity_PokemonCenter_1F_OnTransition
 	.byte 0
+
+PastoriaCity_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_PASTORIA_CITY
+	end

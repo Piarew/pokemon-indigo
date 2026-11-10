@@ -1,2 +1,7 @@
 FightArea_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, FightArea_PokemonCenter_1F_OnTransition
 	.byte 0
+
+FightArea_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_FIGHT_AREA
+	end

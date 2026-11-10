@@ -1,2 +1,7 @@
 VeilstoneCity_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, VeilstoneCity_PokemonCenter_1F_OnTransition
 	.byte 0
+
+VeilstoneCity_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_VEILSTONE_CITY
+	end

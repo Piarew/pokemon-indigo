@@ -1,2 +1,7 @@
 EternaCity_PokemonCenter_F1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, EternaCity_PokemonCenter_F1_OnTransition
 	.byte 0
+
+EternaCity_PokemonCenter_F1_OnTransition::
+	setrespawn HEAL_LOCATION_ETERNA_CITY
+	end

@@ -1,2 +1,7 @@
 TwinleafTown_MainHouse_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, TwinleafTown_MainHouse_1F_OnTransition
 	.byte 0
+
+TwinleafTown_MainHouse_1F_OnTransition::
+	setrespawn HEAL_LOCATION_TWINLEAF_TOWN
+	end

@@ -1,2 +1,7 @@
 SunyshoreCity_PokemonCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SunyshoreCity_PokemonCenter_1F_OnTransition
 	.byte 0
+
+SunyshoreCity_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_SUNYSHORE_CITY
+	end
