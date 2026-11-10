@@ -13787,3 +13787,1373 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Muk
 Level: 39
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+/*
+Pokémon Indigo gym leaders. 6v6 doubles, Gen IX sets.
+
+Construction: five core mons share the gym type (primary or secondary);
+one off-type safety covers a weakness. Dual typing on the core five is
+preferred. Cohesion (weather, terrain, Trick Room, Tailwind) beats
+stacking resists. Opening pair is first in the party; safety is last.
+
+Vanilla TRAINER_LEADER_BROCK / MISTY / etc. are unchanged. Gym scripts
+still use those IDs until the FLAG_INDIGO engine and gym maps switch over.
+
+Display names are profession titles, capped at TRAINER_NAME_LENGTH 10.
+Full titles: Naturalist, Caretaker, Entrepreneur (Magnate), Lighthouse
+Keeper (Keeper), Apothecary, Mountaineer (Climber), Conservationist
+(Botanist), Craftsman, Illusionist (Magician), Restaurateur (Chef),
+Martial Artist (Sensei), Wildlife Warden (Warden), Broadcaster (Anchor),
+Mine Surveyor (Surveyor), Historian, Expedition Leader (Explorer),
+Engineer, Entomologist (Researcher). Pics are FRLG placeholders.
+
+Ace levels follow documentation/rom-completion.md (Viridian 12 …
+Sunyshore 70). Heatran and Tornadus (Incarnate) are intentional gym mons.
+*/
+
+/*
+Cherrygrove Normal. Signature Porygon-Z. Safety Gallade (Fighting).
+Open Maushold + Porygon-Z. Five Normal core; Gallade is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_CHERRYGROVE ===
+Name: Naturalist
+Class: Leader Frlg
+Pic: Super Nerd Frlg
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion / Full Heal
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Maushold-Four @ Wide Lens
+Ability: Technician
+Level: 35
+Jolly Nature
+EVs: 252 Atk / 4 Def / 252 Spe
+- Population Bomb
+- Follow Me
+- Helping Hand
+- Protect
+
+Porygon-Z @ Life Orb
+Ability: Adaptability
+Level: 36
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Tri Attack
+- Shadow Ball
+- Ice Beam
+- Protect
+
+Snorlax @ Figy Berry
+Ability: Thick Fat
+Level: 33
+Adamant Nature
+EVs: 252 HP / 252 Atk / 4 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Belly Drum
+- Body Slam
+- High Horsepower
+- Protect
+
+Farigiraf @ Sitrus Berry
+Ability: Armor Tail
+Level: 34
+Quiet Nature
+EVs: 252 HP / 4 Def / 252 SpA
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Trick Room
+- Psychic
+- Hyper Voice
+- Protect
+
+Staraptor @ Choice Scarf
+Ability: Intimidate
+Level: 34
+Jolly Nature
+EVs: 252 Atk / 4 Def / 252 Spe
+- Brave Bird
+- Double-Edge
+- Close Combat
+- U-turn
+
+Gallade @ Scope Lens
+Ability: Sharpness
+Level: 35
+Jolly Nature
+EVs: 252 Atk / 4 Def / 252 Spe
+- Sacred Sword
+- Psycho Cut
+- Wide Guard
+- Protect
+
+/*
+Violet Ghost. Signature Mimikyu. Safety Bisharp (Dark/Steel).
+Open Mimikyu + Gholdengo. Five Ghost core; Bisharp is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_VIOLET ===
+Name: Caretaker
+Class: Leader Frlg
+Pic: Channeler Frlg
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion / Full Heal
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Mimikyu @ Mental Herb
+Ability: Disguise
+Level: 40
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Trick Room
+- Play Rough
+- Shadow Sneak
+- Protect
+
+Gholdengo @ Choice Specs
+Ability: Good as Gold
+Level: 39
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Make It Rain
+- Shadow Ball
+- Thunderbolt
+- Trick
+
+Aegislash @ Leftovers
+Ability: Stance Change
+Level: 38
+Quiet Nature
+EVs: 252 HP / 4 Def / 252 SpA
+- King's Shield
+- Shadow Ball
+- Flash Cannon
+- Shadow Sneak
+
+Gengar @ Focus Sash
+Ability: Cursed Body
+Level: 38
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Shadow Ball
+- Sludge Bomb
+- Icy Wind
+- Protect
+
+Jellicent @ Sitrus Berry
+Ability: Water Absorb
+Level: 37
+Quiet Nature
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Water Spout
+- Shadow Ball
+- Strength Sap
+- Trick Room
+
+Bisharp @ Eviolite
+Ability: Defiant
+Level: 39
+Adamant Nature
+EVs: 252 Atk / 4 Def / 252 Spe
+- Knock Off
+- Iron Head
+- Sucker Punch
+- Protect
+
+/*
+Goldenrod Dark. Signature Kingambit. Safety Lucario (Fighting/Steel).
+Open Grimmsnarl + Mandibuzz. Five Dark core; Lucario is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_GOLDENROD ===
+Name: Magnate
+Class: Leader Frlg
+Pic: Gentleman Frlg
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion / Full Heal
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Grimmsnarl @ Light Clay
+Ability: Prankster
+Level: 43
+Careful Nature
+EVs: 252 HP / 4 Atk / 252 SpD
+- Reflect
+- Light Screen
+- Spirit Break
+- Parting Shot
+
+Mandibuzz @ Rocky Helmet
+Ability: Overcoat
+Level: 43
+Impish Nature
+EVs: 252 HP / 252 Def / 4 SpD
+- Tailwind
+- Foul Play
+- Roost
+- Taunt
+
+Meowscarada @ Focus Sash
+Ability: Protean
+Level: 42
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Flower Trick
+- Knock Off
+- U-turn
+- Protect
+
+Hydreigon @ Life Orb
+Ability: Levitate
+Level: 42
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Dark Pulse
+- Draco Meteor
+- Heat Wave
+- Protect
+
+Kingambit @ Black Glasses
+Ability: Supreme Overlord
+Level: 44
+Adamant Nature
+EVs: 252 HP / 252 Atk / 4 SpD
+- Kowtow Cleave
+- Sucker Punch
+- Iron Head
+- Protect
+
+Lucario @ Expert Belt
+Ability: Inner Focus
+Level: 43
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+- Protect
+
+/*
+Olivine Flying. Signature Tornadus (Incarnate / Prankster). Safety Excadrill (Ground/Steel).
+Open Tornadus + Kilowattrel. Dropped Gyarados. Five Flying core; Excadrill is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_OLIVINE ===
+Name: Keeper
+Class: Leader Frlg
+Pic: Sailor Frlg
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion / Full Heal
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Tornadus @ Covert Cloak
+Ability: Prankster
+Level: 48
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Tailwind
+- Bleakwind Storm
+- Taunt
+- Protect
+
+Kilowattrel @ Choice Specs
+Ability: Wind Power
+Level: 47
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Thunder
+- Hurricane
+- Volt Switch
+- Air Slash
+
+Dragonite @ Lum Berry
+Ability: Multiscale
+Level: 46
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Dragon Dance
+- Dual Wingbeat
+- Extreme Speed
+- Protect
+
+Corviknight @ Leftovers
+Ability: Mirror Armor
+Level: 45
+Impish Nature
+EVs: 252 HP / 252 Def / 4 SpD
+- Brave Bird
+- Body Press
+- Roost
+- Tailwind
+
+Gliscor @ Toxic Orb
+Ability: Poison Heal
+Level: 46
+Jolly Nature
+EVs: 252 HP / 4 Atk / 252 Spe
+- Earthquake
+- Toxic
+- Knock Off
+- Protect
+
+Excadrill @ Focus Sash
+Ability: Mold Breaker
+Level: 47
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Iron Head
+- High Horsepower
+- Rock Slide
+- Protect
+
+/*
+Cianwood Poison. Signature Glimmora. Safety Corviknight (Steel/Flying).
+Open Glimmora + Sneasler. Five Poison core; Corviknight is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_CIANWOOD ===
+Name: Apothecary
+Class: Leader Frlg
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion / Full Heal
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Glimmora @ Focus Sash
+Ability: Toxic Debris
+Level: 50
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Power Gem
+- Sludge Bomb
+- Earth Power
+- Protect
+
+Sneasler @ White Herb
+Ability: Unburden
+Level: 49
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Dire Claw
+- Close Combat
+- Throat Chop
+- Protect
+
+Toxapex @ Black Sludge
+Ability: Regenerator
+Level: 47
+Calm Nature
+EVs: 252 HP / 4 Def / 252 SpD
+- Chilling Water
+- Baneful Bunker
+- Haze
+- Recover
+
+Gengar @ Life Orb
+Ability: Cursed Body
+Level: 48
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Shadow Ball
+- Sludge Bomb
+- Icy Wind
+- Protect
+
+Clodsire @ Leftovers
+Ability: Unaware
+Level: 48
+Careful Nature
+EVs: 252 HP / 4 Atk / 252 SpD
+- Earthquake
+- Poison Jab
+- Recover
+- Protect
+
+Corviknight @ Rocky Helmet
+Ability: Mirror Armor
+Level: 49
+Impish Nature
+EVs: 252 HP / 252 Def / 4 SpD
+- Brave Bird
+- Iron Defense
+- Body Press
+- Roost
+
+/*
+Blackthorn Ice. Signature Alolan Ninetales. Safety Quaquaval (Water/Fighting).
+Open Ninetales-Alola + Cetitan. Five Ice core; Quaquaval is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_BLACKTHORN ===
+Name: Climber
+Class: Leader Frlg
+Pic: Elite Four Lorelei Frlg
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Ninetales-Alola @ Light Clay
+Ability: Snow Warning
+Level: 54
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Aurora Veil
+- Blizzard
+- Moonblast
+- Protect
+
+Cetitan @ Life Orb
+Ability: Slush Rush
+Level: 53
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Ice Spinner
+- Liquidation
+- Earthquake
+- Protect
+
+Baxcalibur @ Loaded Dice
+Ability: Thermal Exchange
+Level: 52
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Glaive Rush
+- Icicle Spear
+- Ice Shard
+- Protect
+
+Froslass @ Focus Sash
+Ability: Cursed Body
+Level: 51
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Icy Wind
+- Shadow Ball
+- Will-O-Wisp
+- Destiny Bond
+
+Mamoswine @ Choice Band
+Ability: Thick Fat
+Level: 52
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Icicle Crash
+- High Horsepower
+- Ice Shard
+- Rock Slide
+
+Quaquaval @ Clear Amulet
+Ability: Moxie
+Level: 53
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Aqua Step
+- Close Combat
+- Ice Spinner
+- Protect
+
+/*
+Viridian Grass. Signature Venusaur. Safety Heatran (Fire/Steel).
+Open Rillaboom + Whimsicott. Dual sun + Grassy Terrain. Five Grass core; Heatran is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_VIRIDIAN ===
+Name: Botanist
+Class: Leader Frlg
+Pic: Leader Erika Frlg
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Rillaboom @ Sitrus Berry
+Ability: Grassy Surge
+Level: 11
+Adamant Nature
+EVs: 252 Atk / 4 Def / 252 Spe
+- Grassy Glide
+- Wood Hammer
+- Fake Out
+- U-turn
+
+Whimsicott @ Focus Sash
+Ability: Prankster
+Level: 11
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Tailwind
+- Moonblast
+- Encore
+- Helping Hand
+
+Venusaur @ Life Orb
+Ability: Chlorophyll
+Level: 12
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Solar Beam
+- Sludge Bomb
+- Sleep Powder
+- Protect
+
+Lilligant @ Wide Lens
+Ability: Chlorophyll
+Level: 10
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Sleep Powder
+- Petal Dance
+- After You
+- Protect
+
+Ferrothorn @ Leftovers
+Ability: Iron Barbs
+Level: 9
+Relaxed Nature
+EVs: 252 HP / 4 Atk / 252 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Power Whip
+- Gyro Ball
+- Leech Seed
+- Protect
+
+Heatran @ Shuca Berry
+Ability: Flash Fire
+Level: 11
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Heat Wave
+- Flash Cannon
+- Earth Power
+- Protect
+
+/*
+Pewter Steel. Signature Metagross. Safety Gliscor (Ground/Flying).
+Open Corviknight + Heatran. Five Steel core; Gliscor is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_PEWTER ===
+Name: Craftsman
+Class: Leader Frlg
+Pic: Leader Brock Frlg
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Corviknight @ Rocky Helmet
+Ability: Mirror Armor
+Level: 15
+Impish Nature
+EVs: 252 HP / 252 Def / 4 SpD
+- Brave Bird
+- Body Press
+- Roost
+- Tailwind
+
+Heatran @ Shuca Berry
+Ability: Flash Fire
+Level: 15
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Heat Wave
+- Flash Cannon
+- Earth Power
+- Protect
+
+Metagross @ Assault Vest
+Ability: Clear Body
+Level: 16
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Meteor Mash
+- Zen Headbutt
+- Ice Punch
+- Bullet Punch
+
+Ferrothorn @ Leftovers
+Ability: Iron Barbs
+Level: 13
+Relaxed Nature
+EVs: 252 HP / 4 Atk / 252 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Power Whip
+- Gyro Ball
+- Leech Seed
+- Protect
+
+Scizor @ Choice Band
+Ability: Technician
+Level: 14
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Bullet Punch
+- U-turn
+- Close Combat
+- Knock Off
+
+Gliscor @ Toxic Orb
+Ability: Poison Heal
+Level: 15
+Jolly Nature
+EVs: 252 HP / 4 Atk / 252 Spe
+- High Horsepower
+- Knock Off
+- Toxic
+- Protect
+
+/*
+Cerulean Fairy. Signature Hatterene. Safety Excadrill (Ground/Steel).
+Open Hatterene + Klefki. Five Fairy core; Excadrill is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_CERULEAN ===
+Name: Magician
+Class: Leader Frlg
+Pic: Painter Frlg
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Hatterene @ Focus Sash
+Ability: Magic Bounce
+Level: 20
+Quiet Nature
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Trick Room
+- Dazzling Gleam
+- Psychic
+- Protect
+
+Klefki @ Light Clay
+Ability: Prankster
+Level: 19
+Bold Nature
+EVs: 252 HP / 252 Def / 4 SpD
+- Reflect
+- Light Screen
+- Thunder Wave
+- Foul Play
+
+Azumarill @ Sitrus Berry
+Ability: Huge Power
+Level: 18
+Adamant Nature
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Belly Drum
+- Aqua Jet
+- Play Rough
+- Protect
+
+Primarina @ Throat Spray
+Ability: Liquid Voice
+Level: 18
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Hyper Voice
+- Moonblast
+- Energy Ball
+- Protect
+
+Tinkaton @ Assault Vest
+Ability: Mold Breaker
+Level: 17
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Gigaton Hammer
+- Play Rough
+- Knock Off
+- Brick Break
+
+Excadrill @ Focus Sash
+Ability: Mold Breaker
+Level: 19
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- High Horsepower
+- Iron Head
+- Rock Slide
+- Protect
+
+/*
+Celadon Fire. Signature Torkoal. Safety Gastrodon (Water/Ground).
+Open Torkoal + Scovillain. Five Fire core; Gastrodon is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_CELADON ===
+Name: Chef
+Class: Leader Frlg
+Pic: Beauty Frlg
+Gender: Female
+Music: Female
+Items: Hyper Potion / Full Heal
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Torkoal @ Charcoal
+Ability: Drought
+Level: 25
+Quiet Nature
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Eruption
+- Heat Wave
+- Earth Power
+- Protect
+
+Scovillain @ Focus Sash
+Ability: Chlorophyll
+Level: 24
+Naive Nature
+EVs: 252 Atk / 4 SpA / 252 Spe
+- Heat Wave
+- Solar Beam
+- Growth
+- Protect
+
+Volcarona @ Sitrus Berry
+Ability: Flame Body
+Level: 23
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Quiver Dance
+- Fiery Dance
+- Bug Buzz
+- Protect
+
+Houndoom @ Life Orb
+Ability: Solar Power
+Level: 23
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Heat Wave
+- Dark Pulse
+- Solar Beam
+- Protect
+
+Armarouge @ Life Orb
+Ability: Flash Fire
+Level: 22
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Armor Cannon
+- Psychic
+- Wide Guard
+- Protect
+
+Gastrodon @ Leftovers
+Ability: Storm Drain
+Level: 24
+Calm Nature
+EVs: 252 HP / 4 Def / 252 SpD
+- Muddy Water
+- Earth Power
+- Ice Beam
+- Recover
+
+/*
+Saffron Fighting. Signature Annihilape. Safety Gardevoir (Psychic/Fairy).
+Open Hitmontop + Annihilape. Five Fighting core; Gardevoir is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_SAFFRON ===
+Name: Sensei
+Class: Leader Frlg
+Pic: Black Belt Frlg
+Gender: Male
+Music: Male
+Items: Hyper Potion / Full Heal
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Hitmontop @ Sitrus Berry
+Ability: Intimidate
+Level: 29
+Impish Nature
+EVs: 252 HP / 252 Def / 4 SpD
+- Fake Out
+- Close Combat
+- Wide Guard
+- Feint
+
+Annihilape @ Leftovers
+Ability: Defiant
+Level: 30
+Adamant Nature
+EVs: 252 HP / 252 Atk / 4 SpD
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Protect
+
+Lucario @ Life Orb
+Ability: Inner Focus
+Level: 28
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Close Combat
+- Meteor Mash
+- Extreme Speed
+- Protect
+
+Great Tusk @ Booster Energy
+Ability: Protosynthesis
+Level: 28
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Headlong Rush
+- Close Combat
+- Ice Spinner
+- Protect
+
+Pawmot @ Focus Sash
+Ability: Natural Cure
+Level: 27
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Double Shock
+- Close Combat
+- Revival Blessing
+- Protect
+
+Gardevoir @ Choice Scarf
+Ability: Trace
+Level: 29
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Psychic
+- Moonblast
+- Mystical Fire
+- Trick
+
+/*
+Fuchsia Dragon. Signature Kommo-o. Safety Aegislash (Steel/Ghost).
+Open Dragapult + Garchomp. Five Dragon core; Aegislash is off-type.
+Clanging Scales hits allies; Protect or immune partners only.
+*/
+=== TRAINER_LEADER_INDIGO_FUCHSIA ===
+Name: Warden
+Class: Leader Frlg
+Pic: Pokemon Ranger M Frlg
+Gender: Male
+Music: Male
+Items: Hyper Potion / Full Heal
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Dragapult @ Life Orb
+Ability: Clear Body
+Level: 33
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Draco Meteor
+- Shadow Ball
+- Flamethrower
+- Tailwind
+
+Garchomp @ Clear Amulet
+Ability: Rough Skin
+Level: 33
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Dragon Claw
+- Stomping Tantrum
+- Rock Slide
+- Protect
+
+Kommo-o @ Throat Spray
+Ability: Bulletproof
+Level: 34
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Clangorous Soul
+- Clanging Scales
+- Flamethrower
+- Protect
+
+Hydreigon @ Choice Specs
+Ability: Levitate
+Level: 32
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Draco Meteor
+- Dark Pulse
+- Heat Wave
+- Earth Power
+
+Baxcalibur @ Loaded Dice
+Ability: Thermal Exchange
+Level: 32
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Glaive Rush
+- Icicle Spear
+- Ice Shard
+- Protect
+
+Aegislash @ Leftovers
+Ability: Stance Change
+Level: 33
+Quiet Nature
+EVs: 252 HP / 4 Def / 252 SpA
+- King's Shield
+- Shadow Ball
+- Flash Cannon
+- Shadow Sneak
+
+/*
+Jubilife Electric. Signature Alolan Raichu. Safety Tangrowth (Grass).
+Open Pincurchin + Raichu-Alola. Five Electric core; Tangrowth is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_JUBILIFE ===
+Name: Anchor
+Class: Leader Frlg
+Pic: Cooltrainer F Frlg
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Pincurchin @ Terrain Extender
+Ability: Electric Surge
+Level: 55
+Bold Nature
+EVs: 252 HP / 252 Def / 4 SpD
+- Zing Zap
+- Rising Voltage
+- Recover
+- Protect
+
+Raichu-Alola @ Life Orb
+Ability: Surge Surfer
+Level: 56
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Psychic
+- Thunderbolt
+- Focus Blast
+- Protect
+
+Magnezone @ Assault Vest
+Ability: Analytic
+Level: 54
+Modest Nature
+EVs: 252 HP / 252 SpA / 4 SpD
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
+
+Rotom-Wash @ Sitrus Berry
+Ability: Levitate
+Level: 54
+Calm Nature
+EVs: 252 HP / 4 Def / 252 SpD
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Protect
+
+Bellibolt @ Leftovers
+Ability: Electromorphosis
+Level: 53
+Bold Nature
+EVs: 252 HP / 252 Def / 4 SpA
+- Thunderbolt
+- Acid Spray
+- Chilling Water
+- Protect
+
+Tangrowth @ Rocky Helmet
+Ability: Regenerator
+Level: 55
+Relaxed Nature
+EVs: 252 HP / 4 Atk / 252 Def
+- Power Whip
+- Knock Off
+- Sleep Powder
+- Protect
+
+/*
+Oreburgh Ground. Signature Garchomp. Safety Rotom-Wash (Electric/Water).
+Open Garchomp + Flygon. Five Ground core; Rotom-Wash is off-type.
+Earthquake hits grounded allies (Gastrodon, Clodsire); use High Horsepower then.
+*/
+=== TRAINER_LEADER_INDIGO_OREBURGH ===
+Name: Surveyor
+Class: Leader Frlg
+Pic: Ruin Maniac Frlg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Garchomp @ Clear Amulet
+Ability: Rough Skin
+Level: 58
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Earthquake
+- Dragon Claw
+- Rock Slide
+- Protect
+
+Flygon @ Life Orb
+Ability: Levitate
+Level: 57
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Earth Power
+- Dragon Pulse
+- U-turn
+- Protect
+
+Gliscor @ Toxic Orb
+Ability: Poison Heal
+Level: 56
+Jolly Nature
+EVs: 252 HP / 4 Atk / 252 Spe
+- High Horsepower
+- Knock Off
+- Toxic
+- Protect
+
+Gastrodon @ Leftovers
+Ability: Storm Drain
+Level: 55
+Calm Nature
+EVs: 252 HP / 4 Def / 252 SpD
+- Ice Beam
+- Earth Power
+- Recover
+- Protect
+
+Clodsire @ Black Sludge
+Ability: Unaware
+Level: 56
+Careful Nature
+EVs: 252 HP / 4 Atk / 252 SpD
+- High Horsepower
+- Poison Jab
+- Recover
+- Protect
+
+Rotom-Wash @ Sitrus Berry
+Ability: Levitate
+Level: 57
+Calm Nature
+EVs: 252 HP / 4 Def / 252 SpD
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Protect
+
+/*
+Eterna Psychic. Signature Indeedee-F. Safety Scizor (Bug/Steel).
+Open Indeedee-F + Alakazam. Five Psychic core; Scizor is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_ETERNA ===
+Name: Historian
+Class: Leader Frlg
+Pic: Leader Sabrina Frlg
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Indeedee-F @ Psychic Seed
+Ability: Psychic Surge
+Level: 60
+Timid Nature
+EVs: 252 HP / 4 SpA / 252 Spe
+- Follow Me
+- Expanding Force
+- Helping Hand
+- Protect
+
+Alakazam @ Life Orb
+Ability: Magic Guard
+Level: 59
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Expanding Force
+- Shadow Ball
+- Focus Blast
+- Protect
+
+Hatterene @ Covert Cloak
+Ability: Magic Bounce
+Level: 58
+Quiet Nature
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Trick Room
+- Psychic
+- Dazzling Gleam
+- Protect
+
+Gallade @ Scope Lens
+Ability: Sharpness
+Level: 58
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Sacred Sword
+- Psycho Cut
+- Wide Guard
+- Protect
+
+Slowking-Galar @ Assault Vest
+Ability: Regenerator
+Level: 57
+Calm Nature
+EVs: 252 HP / 4 Def / 252 SpD
+- Sludge Bomb
+- Psychic
+- Flamethrower
+- Ice Beam
+
+Scizor @ Choice Band
+Ability: Technician
+Level: 59
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Bullet Punch
+- U-turn
+- Close Combat
+- Knock Off
+
+/*
+Snowpoint Rock. Signature Tyranitar. Safety Breloom (Grass/Fighting).
+Open Tyranitar + Lycanroc (Midday). Five Rock core; Breloom is off-type.
+Do not send both Sand Stream setters at once.
+*/
+=== TRAINER_LEADER_INDIGO_SNOWPOINT ===
+Name: Explorer
+Class: Leader Frlg
+Pic: Hiker Frlg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Tyranitar @ Assault Vest
+Ability: Sand Stream
+Level: 66
+Adamant Nature
+EVs: 252 HP / 252 Atk / 4 SpD
+- Rock Slide
+- Knock Off
+- Low Kick
+- Ice Punch
+
+Lycanroc @ Life Orb
+Ability: Sand Rush
+Level: 65
+Jolly Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Accelerock
+- Rock Slide
+- Close Combat
+- Protect
+
+Gigalith @ Smooth Rock
+Ability: Sand Stream
+Level: 63
+Impish Nature
+EVs: 252 HP / 4 Atk / 252 Def
+- Rock Slide
+- Heavy Slam
+- Body Press
+- Protect
+
+Cradily @ Leftovers
+Ability: Storm Drain
+Level: 64
+Calm Nature
+EVs: 252 HP / 4 Def / 252 SpD
+- Giga Drain
+- Ancient Power
+- Earth Power
+- Recover
+
+Garganacl @ Leftovers
+Ability: Purifying Salt
+Level: 64
+Impish Nature
+EVs: 252 HP / 252 Def / 4 SpD
+- Salt Cure
+- Rock Slide
+- Recover
+- Protect
+
+Breloom @ Focus Sash
+Ability: Technician
+Level: 65
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Mach Punch
+- Bullet Seed
+- Spore
+- Protect
+
+/*
+Sunyshore Water. Signature Pelipper. Safety Ferrothorn (Grass/Steel).
+Open Pelipper + Kingdra. Five Water core; Ferrothorn is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_SUNYSHORE ===
+Name: Engineer
+Class: Leader Frlg
+Pic: Engineer Frlg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Pelipper @ Damp Rock
+Ability: Drizzle
+Level: 70
+Modest Nature
+EVs: 252 HP / 252 SpA / 4 SpD
+- Hurricane
+- Weather Ball
+- Tailwind
+- Protect
+
+Kingdra @ Life Orb
+Ability: Swift Swim
+Level: 69
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Hydro Pump
+- Draco Meteor
+- Hurricane
+- Protect
+
+Barraskewda @ Choice Band
+Ability: Swift Swim
+Level: 68
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Liquidation
+- Close Combat
+- Psychic Fangs
+- Flip Turn
+
+Ludicolo @ Assault Vest
+Ability: Swift Swim
+Level: 68
+Modest Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Fake Out
+
+Swampert @ Rindo Berry
+Ability: Torrent
+Level: 67
+Adamant Nature
+EVs: 252 HP / 252 Atk / 4 SpD
+- High Horsepower
+- Liquidation
+- Ice Punch
+- Protect
+
+Ferrothorn @ Leftovers
+Ability: Iron Barbs
+Level: 69
+Relaxed Nature
+EVs: 252 HP / 4 Atk / 252 Def
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+- Power Whip
+- Gyro Ball
+- Leech Seed
+- Protect
+
+/*
+Pastoria Bug. Signature Ribombee. Safety Coalossal (Rock/Fire).
+Open Ribombee + Galvantula. Five Bug core; Coalossal is off-type.
+*/
+=== TRAINER_LEADER_INDIGO_PASTORIA ===
+Name: Researcher
+Class: Leader Frlg
+Pic: Scientist Frlg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer / Powerful Status
+
+Ribombee @ Focus Sash
+Ability: Shield Dust
+Level: 62
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Sticky Web
+- Pollen Puff
+- Moonblast
+- Tailwind
+
+Galvantula @ Life Orb
+Ability: Compound Eyes
+Level: 61
+Timid Nature
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Thunder
+- Bug Buzz
+- Energy Ball
+- Protect
+
+Scizor @ Choice Band
+Ability: Technician
+Level: 60
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Bullet Punch
+- U-turn
+- Close Combat
+- Knock Off
+
+Araquanid @ Assault Vest
+Ability: Water Bubble
+Level: 60
+Adamant Nature
+EVs: 252 HP / 252 Atk / 4 SpD
+- Liquidation
+- Leech Life
+- Lunge
+- Poison Jab
+
+Heracross @ Flame Orb
+Ability: Guts
+Level: 59
+Adamant Nature
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Close Combat
+- Megahorn
+- Facade
+- Protect
+
+Coalossal @ Weakness Policy
+Ability: Steam Engine
+Level: 61
+Modest Nature
+EVs: 252 HP / 252 SpA / 4 SpD
+- Flamethrower
+- Stone Edge
+- Earth Power
+- Protect
+

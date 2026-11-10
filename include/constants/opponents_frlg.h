@@ -628,11 +628,32 @@
 #define TRAINER_CHAMPION_REMATCH_CHARMANDER        622
 #define TRAINER_CUE_BALL_PAXTON                    623
 
+// Pokémon Indigo gym leaders. 6v6 doubles, one per type. Vanilla FRLG
+// TRAINER_LEADER_BROCK/MISTY/etc. stay untouched until gym scripts switch over.
+#define TRAINER_LEADER_INDIGO_CHERRYGROVE          624
+#define TRAINER_LEADER_INDIGO_VIOLET               625
+#define TRAINER_LEADER_INDIGO_GOLDENROD            626
+#define TRAINER_LEADER_INDIGO_OLIVINE              627
+#define TRAINER_LEADER_INDIGO_CIANWOOD             628
+#define TRAINER_LEADER_INDIGO_BLACKTHORN           629
+#define TRAINER_LEADER_INDIGO_VIRIDIAN             630
+#define TRAINER_LEADER_INDIGO_PEWTER               631
+#define TRAINER_LEADER_INDIGO_CERULEAN             632
+#define TRAINER_LEADER_INDIGO_CELADON              633
+#define TRAINER_LEADER_INDIGO_SAFFRON              634
+#define TRAINER_LEADER_INDIGO_FUCHSIA              635
+#define TRAINER_LEADER_INDIGO_JUBILIFE             636
+#define TRAINER_LEADER_INDIGO_OREBURGH             637
+#define TRAINER_LEADER_INDIGO_ETERNA               638
+#define TRAINER_LEADER_INDIGO_SNOWPOINT            639
+#define TRAINER_LEADER_INDIGO_SUNYSHORE            640
+#define TRAINER_LEADER_INDIGO_PASTORIA             641
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is
-//       only space for 25 additional trainers before trainer flag space overflows.
+//       only space for 126 additional trainers before MAX_TRAINERS_COUNT_FRLG.
 //       MAX_TRAINERS_COUNT_FRLG can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_FRLG                      624
+#define TRAINERS_COUNT_FRLG                      642
 #define MAX_TRAINERS_COUNT_FRLG                  768
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_FRLG_H
