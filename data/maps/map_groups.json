@@ -1249,7 +1249,8 @@
     "CherrygroveCity_Mart_hns",
     "CherrygroveCity_House1_hns",
     "CherrygroveCity_House2_hns",
-    "CherrygroveCity_House3_hns"
+    "CherrygroveCity_House3_hns",
+    "CherrygroveCity_Gym"
   ],
   "gMapGroup_IndoorViolet_Johto": [
     "VioletCity_PokemonCenter_hns",
@@ -1713,7 +1714,8 @@
     "JubilifeCity_Flat3_F3",
     "JubilifeCity_PokemonCenter_1F",
     "JubilifeCity_PokemonCenter_2F",
-    "JubilifeCity_Mart"
+    "JubilifeCity_Mart",
+    "JubilifeCity_Gym"
   ],
   "gMapGroup_IndoorOreburgh": [
     "OreburghCity_Flat1_F1",

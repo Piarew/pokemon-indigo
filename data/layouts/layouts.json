@@ -17617,6 +17617,32 @@
     "layout_version": "frlg",
     "border_width": 2,
     "border_height": 2
+  },
+  {
+    "id": "LAYOUT_CHERRYGROVE_CITY_GYM",
+    "name": "CherrygroveCity_Gym_Layout",
+    "width": 13,
+    "height": 20,
+    "border_width": 2,
+    "border_height": 2,
+    "primary_tileset": "gTileset_BuildingFrlg",
+    "secondary_tileset": "gTileset_CeladonGym",
+    "border_filepath": "data/layouts/CherrygroveCity_Gym/border.bin",
+    "blockdata_filepath": "data/layouts/CherrygroveCity_Gym/map.bin",
+    "layout_version": "frlg"
+  },
+  {
+    "id": "LAYOUT_JUBILIFE_CITY_GYM",
+    "name": "JubilifeCity_Gym_Layout",
+    "width": 13,
+    "height": 16,
+    "border_width": 2,
+    "border_height": 2,
+    "primary_tileset": "gTileset_BuildingFrlg",
+    "secondary_tileset": "gTileset_PewterGym",
+    "border_filepath": "data/layouts/JubilifeCity_Gym/border.bin",
+    "blockdata_filepath": "data/layouts/JubilifeCity_Gym/map.bin",
+    "layout_version": "frlg"
   }
   ]
 }
