@@ -1626,6 +1626,17 @@ static u8 InitObjectEventStateFromTemplate(const struct ObjectEventTemplate *tem
     objectEvent->previousCoords.y = y;
     objectEvent->currentElevation = template->elevation;
     objectEvent->previousElevation = template->elevation;
+    // Imported Johto/Sinnoh events stamp elevation 0 (TRANSITION). Adopt the
+    // standing tile's floor so cave levels are respected; real elev-0 stairs stay ramps.
+    if (objectEvent->currentElevation == ELEVATION_TRANSITION)
+    {
+        u8 tileElevation = MapGridGetElevationAt(x, y);
+        if (tileElevation != ELEVATION_TRANSITION && tileElevation != ELEVATION_MULTI_LEVEL)
+        {
+            objectEvent->currentElevation = tileElevation;
+            objectEvent->previousElevation = tileElevation;
+        }
+    }
     objectEvent->range.rangeX = template->movementRangeX;
     objectEvent->range.rangeY = template->movementRangeY;
     objectEvent->trainerType = template->trainerType;
@@ -6355,6 +6366,21 @@ enum Collision GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, enum 
     return collision;
 }
 
+// TRANSITION (0) skips floor checks. If the avatar is still marked TRANSITION
+// but is standing on a real floor, use that floor so cave levels block.
+static u8 GetCollisionElevation(const struct ObjectEvent *objectEvent)
+{
+    u8 elevation = objectEvent->currentElevation;
+
+    if (elevation != ELEVATION_TRANSITION)
+        return elevation;
+
+    elevation = MapGridGetElevationAt(objectEvent->currentCoords.x, objectEvent->currentCoords.y);
+    if (elevation == ELEVATION_MULTI_LEVEL)
+        return ELEVATION_TRANSITION;
+    return elevation;
+}
+
 static enum Collision GetVanillaCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction direction)
 {
     if (IsCoordOutsideObjectEventMovementRange(objectEvent, x, y))
@@ -6363,7 +6389,7 @@ static enum Collision GetVanillaCollision(struct ObjectEvent *objectEvent, s16 x
         return COLLISION_IMPASSABLE;
     else if (objectEvent->trackedByCamera && !CanCameraMoveInDirection(direction))
         return COLLISION_IMPASSABLE;
-    else if (IsElevationMismatchAt(objectEvent->currentElevation, x, y))
+    else if (IsElevationMismatchAt(GetCollisionElevation(objectEvent), x, y))
         return COLLISION_ELEVATION_MISMATCH;
     else if (DoesObjectCollideWithObjectAt(objectEvent, x, y))
         return COLLISION_OBJECT_EVENT;
@@ -6463,7 +6489,7 @@ u8 GetCollisionFlagsAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, enum
         flags |= 1 << (COLLISION_OUTSIDE_RANGE - 1);
     if (MapGridGetCollisionAt(x, y) || GetMapBorderIdAt(x, y) == CONNECTION_INVALID || IsMetatileDirectionallyImpassable(objectEvent, x, y, direction) || (objectEvent->trackedByCamera && !CanCameraMoveInDirection(direction)))
         flags |= 1 << (COLLISION_IMPASSABLE - 1);
-    if (IsElevationMismatchAt(objectEvent->currentElevation, x, y))
+    if (IsElevationMismatchAt(GetCollisionElevation(objectEvent), x, y))
         flags |= 1 << (COLLISION_ELEVATION_MISMATCH - 1);
     if (DoesObjectCollideWithObjectAt(objectEvent, x, y))
         flags |= 1 << (COLLISION_OBJECT_EVENT - 1);

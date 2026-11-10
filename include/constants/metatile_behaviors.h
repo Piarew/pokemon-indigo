@@ -217,8 +217,8 @@ enum {
     MB_ISOLATED_HORIZONTAL_RAIL,
     MB_VERTICAL_RAIL,
     MB_HORIZONTAL_RAIL,
-    MB_UNUSED_D7,
-    MB_UNUSED_D8,
+    MB_TALL_GRASS_IMPASSABLE_NORTH, // HnS: grass cliff rim, same collisions as IMPASSABLE_NORTH
+    MB_CAVE_IMPASSABLE_NORTH,       // HnS: cave floor/cliff rim, same collisions as IMPASSABLE_NORTH
     MB_UNUSED_D9,
     MB_UNUSED_DA,
     MB_UNUSED_DB,
