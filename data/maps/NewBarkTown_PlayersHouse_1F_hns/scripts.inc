@@ -1,2 +1,7 @@
 NewBarkTown_PlayersHouse_1F_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, NewBarkTown_PlayersHouse_1F_hns_OnTransition
 	.byte 0
+
+NewBarkTown_PlayersHouse_1F_hns_OnTransition::
+	setrespawn HEAL_LOCATION_NEW_BARK_TOWN
+	end

@@ -1,2 +1,7 @@
 MahoganyTown_PokemonCenter_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MahoganyTown_PokemonCenter_hns_OnTransition
 	.byte 0
+
+MahoganyTown_PokemonCenter_hns_OnTransition::
+	setrespawn HEAL_LOCATION_MAHOGANY_TOWN
+	end

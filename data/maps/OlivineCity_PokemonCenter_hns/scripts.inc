@@ -1,2 +1,7 @@
 OlivineCity_PokemonCenter_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OlivineCity_PokemonCenter_hns_OnTransition
 	.byte 0
+
+OlivineCity_PokemonCenter_hns_OnTransition::
+	setrespawn HEAL_LOCATION_OLIVINE_CITY
+	end

@@ -1,2 +1,7 @@
 BlackthornCity_PokemonCenter_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, BlackthornCity_PokemonCenter_hns_OnTransition
 	.byte 0
+
+BlackthornCity_PokemonCenter_hns_OnTransition::
+	setrespawn HEAL_LOCATION_BLACKTHORN_CITY
+	end

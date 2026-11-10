@@ -1,2 +1,7 @@
 CherrygroveCity_PokemonCenter_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CherrygroveCity_PokemonCenter_hns_OnTransition
 	.byte 0
+
+CherrygroveCity_PokemonCenter_hns_OnTransition::
+	setrespawn HEAL_LOCATION_CHERRYGROVE_CITY
+	end
