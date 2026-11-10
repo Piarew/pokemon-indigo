@@ -27,12 +27,6 @@ ViridianCity_EventScript_SetOldManBlockingRoad::
 	return
 
 ViridianCity_EventScript_TryUnlockGym::
-	goto_if_unset FLAG_BADGE02_GET, Common_EventScript_NopReturn
-	goto_if_unset FLAG_BADGE03_GET, Common_EventScript_NopReturn
-	goto_if_unset FLAG_BADGE04_GET, Common_EventScript_NopReturn
-	goto_if_unset FLAG_BADGE05_GET, Common_EventScript_NopReturn
-	goto_if_unset FLAG_BADGE06_GET, Common_EventScript_NopReturn
-	goto_if_unset FLAG_BADGE07_GET, Common_EventScript_NopReturn
 	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR, 1
 	return
 
@@ -70,7 +64,7 @@ ViridianCity_EventScript_GymSign::
 	end
 
 ViridianCity_EventScript_GymDoor::
-	msgbox ViridianCity_Text_GymDoorsAreLocked, MSGBOX_SIGN
+	msgbox ViridianCity_Text_GymSign, MSGBOX_SIGN
 	end
 
 ViridianCity_EventScript_Boy::
@@ -81,11 +75,7 @@ ViridianCity_EventScript_Boy::
 ViridianCity_EventScript_OldMan::
 	lock
 	faceplayer
-	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR, 1, ViridianCity_EventScript_OldManGymLeaderReturned
-	msgbox ViridianCity_Text_GymClosedWonderWhoLeaderIs
-	closemessage
-	applymovement LOCALID_VIRIDIAN_OLD_MAN, Common_Movement_FaceOriginalDirection
-	waitmovement 0
+	msgbox ViridianCity_Text_ViridiansGymLeaderReturned
 	release
 	end
 
@@ -97,7 +87,8 @@ ViridianCity_EventScript_OldManGymLeaderReturned::
 ViridianCity_EventScript_TutorialOldMan::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE01_GET, ViridianCity_EventScript_AskIfTeachyTVHelpful
+	specialvar VAR_RESULT, CountIndigoGyms
+	goto_if_ne VAR_RESULT, 0, ViridianCity_EventScript_AskIfTeachyTVHelpful
 	goto_if_ge VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2, ViridianCity_EventScript_TutorialCompleted
 	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 1, ViridianCity_EventScript_TutorialStart
 	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 0, ViridianCity_EventScript_TutorialNotReady

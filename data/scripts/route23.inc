@@ -57,42 +57,40 @@ Route23_EventScript_BadgeGuard::
 	end
 
 Route23_EventScript_CheckBoulderBadge::
-	goto_if_set FLAG_BADGE01_GET, Route23_EventScript_RecognizeBoulderBadge
-	goto Route23_EventScript_MissingBoulderBadge
+	goto Route23_EventScript_CheckIndigoHq
 	end
 
 Route23_EventScript_CheckCascadeBadge::
-	goto_if_set FLAG_BADGE02_GET, Route23_EventScript_RecognizeBadge
-	goto Route23_EventScript_MissingBadge
+	goto Route23_EventScript_CheckIndigoHq
 	end
 
 Route23_EventScript_CheckThunderBadge::
-	goto_if_set FLAG_BADGE03_GET, Route23_EventScript_RecognizeBadge
-	goto Route23_EventScript_MissingBadge
+	goto Route23_EventScript_CheckIndigoHq
 	end
 
 Route23_EventScript_CheckRainbowBadge::
-	goto_if_set FLAG_BADGE04_GET, Route23_EventScript_RecognizeBadge
-	goto Route23_EventScript_MissingBadge
+	goto Route23_EventScript_CheckIndigoHq
 	end
 
 Route23_EventScript_CheckSoulBadge::
-	goto_if_set FLAG_BADGE05_GET, Route23_EventScript_RecognizeBadge
-	goto Route23_EventScript_MissingBadge
+	goto Route23_EventScript_CheckIndigoHq
 	end
 
 Route23_EventScript_CheckMarshBadge::
-	goto_if_set FLAG_BADGE06_GET, Route23_EventScript_RecognizeBadge
-	goto Route23_EventScript_MissingBadge
+	goto Route23_EventScript_CheckIndigoHq
 	end
 
 Route23_EventScript_CheckVolcanoBadge::
-	goto_if_set FLAG_BADGE07_GET, Route23_EventScript_RecognizeBadge
-	goto Route23_EventScript_MissingBadge
+	goto Route23_EventScript_CheckIndigoHq
 	end
 
 Route23_EventScript_CheckEarthBadge::
-	goto_if_set FLAG_BADGE08_GET, Route23_EventScript_RecognizeBadge
+	goto Route23_EventScript_CheckIndigoHq
+	end
+
+Route23_EventScript_CheckIndigoHq::
+	specialvar VAR_RESULT, CountIndigoGyms
+	goto_if_eq VAR_RESULT, NUM_INDIGO_GYMS, Route23_EventScript_RecognizeBadge
 	goto Route23_EventScript_MissingBadge
 	end
 
@@ -128,42 +126,40 @@ Route23_EventScript_BadgeGuardTrigger::
 	end
 
 Route23_EventScript_CheckBoulderBadgeTrigger::
-	goto_if_set FLAG_BADGE01_GET, Route23_EventScript_RecognizeBoulderBadgeTrigger
-	goto Route23_EventScript_MissingBoulderBadgeTrigger
+	goto Route23_EventScript_CheckIndigoHqTrigger
 	end
 
 Route23_EventScript_CheckCascadeBadgeTrigger::
-	goto_if_set FLAG_BADGE02_GET, Route23_EventScript_RecognizeBadgeTrigger
-	goto Route23_EventScript_MissingBadgeTrigger
+	goto Route23_EventScript_CheckIndigoHqTrigger
 	end
 
 Route23_EventScript_CheckThunderBadgeTrigger::
-	goto_if_set FLAG_BADGE03_GET, Route23_EventScript_RecognizeBadgeTrigger
-	goto Route23_EventScript_MissingBadgeTrigger
+	goto Route23_EventScript_CheckIndigoHqTrigger
 	end
 
 Route23_EventScript_CheckRainbowBadgeTrigger::
-	goto_if_set FLAG_BADGE04_GET, Route23_EventScript_RecognizeBadgeTrigger
-	goto Route23_EventScript_MissingBadgeTrigger
+	goto Route23_EventScript_CheckIndigoHqTrigger
 	end
 
 Route23_EventScript_CheckSoulBadgeTrigger::
-	goto_if_set FLAG_BADGE05_GET, Route23_EventScript_RecognizeBadgeTrigger
-	goto Route23_EventScript_MissingBadgeTrigger
+	goto Route23_EventScript_CheckIndigoHqTrigger
 	end
 
 Route23_EventScript_CheckMarshBadgeTrigger::
-	goto_if_set FLAG_BADGE06_GET, Route23_EventScript_RecognizeBadgeTrigger
-	goto Route23_EventScript_MissingBadgeTrigger
+	goto Route23_EventScript_CheckIndigoHqTrigger
 	end
 
 Route23_EventScript_CheckVolcanoBadgeTrigger::
-	goto_if_set FLAG_BADGE07_GET, Route23_EventScript_RecognizeBadgeTrigger
-	goto Route23_EventScript_MissingBadgeTrigger
+	goto Route23_EventScript_CheckIndigoHqTrigger
 	end
 
 Route23_EventScript_CheckEarthBadgeTrigger::
-	goto_if_set FLAG_BADGE08_GET, Route23_EventScript_RecognizeBadgeTrigger
+	goto Route23_EventScript_CheckIndigoHqTrigger
+	end
+
+Route23_EventScript_CheckIndigoHqTrigger::
+	specialvar VAR_RESULT, CountIndigoGyms
+	goto_if_eq VAR_RESULT, NUM_INDIGO_GYMS, Route23_EventScript_RecognizeBadgeTrigger
 	goto Route23_EventScript_MissingBadgeTrigger
 	end
 

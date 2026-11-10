@@ -14,7 +14,8 @@ CeladonCity_Gym_EventScript_DefeatedErika::
 	famechecker FAMECHECKER_ERIKA, 1
 	clearflag FLAG_HIDE_FAME_CHECKER_ERIKA_JOURNALS
 	setflag FLAG_DEFEATED_ERIKA
-	setflag FLAG_BADGE04_GET
+	setvar VAR_0x8004, TYPE_FIRE
+	special GiveIndigoRecognition
 	set_gym_trainers_frlg 4
 	goto CeladonCity_Gym_EventScript_GiveTM19
 	end
@@ -73,7 +74,7 @@ CeladonCity_Gym_EventScript_Mary::
 
 CeladonCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE04_GET, CeladonCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_INDIGO_FIRE, CeladonCity_Gym_EventScript_GymStatuePostVictory
 	msgbox CeladonCity_Gym_Text_GymStatue
 	releaseall
 	end

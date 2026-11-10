@@ -41,3 +41,26 @@ IndigoFieldAgent_Text_ComeBack:
 IndigoFieldAgent_Text_AllDone:
 	.string "That's every field technique I can\n"
 	.string "authorize. Use them well.$"
+
+EventScript_IndigoHqGate::
+	specialvar VAR_RESULT, CountIndigoGyms
+	goto_if_eq VAR_RESULT, NUM_INDIGO_GYMS, EventScript_IndigoHqGatePass
+	msgbox IndigoHq_Text_NeedAllEighteen, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
+	end
+
+EventScript_IndigoHqGatePass::
+	releaseall
+	end
+
+EventScript_IndigoHqNotReady::
+	msgbox IndigoHq_Text_NeedAllEighteen, MSGBOX_DEFAULT
+	release
+	end
+
+IndigoHq_Text_NeedAllEighteen:
+	.string "Team Indigo HQ opens to Trainers who\n"
+	.string "have earned all 18 type recognitions.$"
