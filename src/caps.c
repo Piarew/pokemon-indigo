@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "event_data.h"
 #include "caps.h"
+#include "indigo.h"
 #include "pokemon.h"
 
 
@@ -38,12 +39,16 @@ u32 GetCurrentLevelCap(void)
         if (cap != 0)
             return cap;
 
+#if IS_FRLG
+        gyms = CountIndigoGyms();
+#else
         gyms = 0;
         for (i = 0; i < NUM_BADGES; i++)
         {
             if (FlagGet(FLAG_BADGE01_GET + i))
                 gyms++;
         }
+#endif
         cap = LEVEL_CAP_BASE + LEVEL_CAP_PER_GYM * gyms;
         if (cap > LEVEL_CAP_MAX)
             cap = LEVEL_CAP_MAX;

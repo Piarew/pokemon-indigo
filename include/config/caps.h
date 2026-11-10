@@ -19,7 +19,7 @@
 
 #define B_EXP_CAP_TYPE                  EXP_CAP_HARD       // [EXP_CAP_NONE, EXP_CAP_HARD, EXP_CAP_SOFT] choose the type of level cap to apply
 #define B_LEVEL_CAP_TYPE                LEVEL_CAP_VARIABLE // [LEVEL_CAP_NONE, LEVEL_CAP_FLAG_LIST, LEVEL_CAP_VARIABLE] choose the method to derive the level cap
-#define B_LEVEL_CAP_VARIABLE            0x40F7 // VAR_UNUSED_0x40F7. 0 = auto from gym count; non-zero overrides.
+#define B_LEVEL_CAP_VARIABLE            0x40F7 // 0 = auto from Indigo gym count; non-zero overrides.
 
 #define B_RARE_CANDY_CAP                TRUE  // If set to true, Rare Candies can't be used to go over the level cap
 #define B_LEVEL_CAP_EXP_UP              FALSE // If set to true, mons under level cap will receive more experience

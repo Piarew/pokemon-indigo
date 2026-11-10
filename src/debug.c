@@ -15,6 +15,7 @@
 #include "event_object_movement.h"
 #include "event_scripts.h"
 #include "heal_location.h"
+#include "indigo.h"
 #include "field_message_box.h"
 #include "field_screen_effect.h"
 #include "field_weather.h"
@@ -104,6 +105,7 @@ enum FlagsVarsDebugMenu
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL,
+    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_INDIGO_ALL,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLLISION,
@@ -332,6 +334,7 @@ static void DebugAction_FlagsVars_SwitchPokeNav(u8 taskId);
 static void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId);
 static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId);
 static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId);
+static void DebugAction_FlagsVars_ToggleIndigoFlags(u8 taskId);
 static void DebugAction_FlagsVars_ToggleGameClear(u8 taskId);
 static void DebugAction_FlagsVars_ToggleFrontierPass(u8 taskId);
 static void DebugAction_FlagsVars_CollisionOnOff(u8 taskId);
@@ -754,6 +757,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Flags[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES]     = { COMPOUND_STRING("Toggle {STR_VAR_1}Running Shoes"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_RunningShoes },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS]     = { COMPOUND_STRING("Toggle {STR_VAR_1}Fly Flags"),       DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleFlyFlags },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BADGES_ALL]    = { COMPOUND_STRING("Toggle {STR_VAR_1}All badges"),      DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleBadgeFlags },
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_INDIGO_ALL]    = { COMPOUND_STRING("Toggle {STR_VAR_1}All Indigo"),      DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleIndigoFlags },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR]    = { COMPOUND_STRING("Toggle {STR_VAR_1}Game clear"),      DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleGameClear },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_FRONTIER_PASS] = { COMPOUND_STRING("Toggle {STR_VAR_1}Frontier Pass"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleFrontierPass },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_COLLISION]     = { COMPOUND_STRING("Toggle {STR_VAR_1}Collision Off"),   DebugAction_ToggleFlag, DebugAction_FlagsVars_CollisionOnOff },
@@ -1579,6 +1583,13 @@ static u32 Debug_CheckToggleFlags(u8 id)
                 break;
             }
         }
+        break;
+    case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_INDIGO_ALL:
+#if IS_FRLG
+        result = CountIndigoGyms() == NUM_INDIGO_GYMS;
+#else
+        result = FALSE;
+#endif
         break;
     case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_GAME_CLEAR:
         result = FlagGet(FLAG_SYS_GAME_CLEAR);
@@ -3150,6 +3161,33 @@ static void DebugAction_FlagsVars_ToggleBadgeFlags(u8 taskId)
         for (u32 i = 0; i < ARRAY_COUNT(gBadgeFlags); i++)
             FlagSet(gBadgeFlags[i]);
     }
+}
+
+static void DebugAction_FlagsVars_ToggleIndigoFlags(u8 taskId)
+{
+#if IS_FRLG
+    u32 i;
+
+    if (CountIndigoGyms() == NUM_INDIGO_GYMS)
+    {
+        PlaySE(SE_PC_OFF);
+        for (i = 0; i < NUM_INDIGO_GYMS; i++)
+            FlagClear(FLAG_INDIGO_NORMAL + i);
+        for (i = 0; i < NUM_INDIGO_FIELD_MOVES; i++)
+            FlagClear(FLAG_INDIGO_CUT + i);
+    }
+    else
+    {
+        PlaySE(SE_PC_LOGIN);
+        for (i = 0; i < NUM_INDIGO_GYMS; i++)
+            FlagSet(FLAG_INDIGO_NORMAL + i);
+        for (i = 0; i < NUM_INDIGO_FIELD_MOVES; i++)
+            FlagSet(FLAG_INDIGO_CUT + i);
+    }
+    SyncIndigoCount();
+#else
+    PlaySE(SE_FAILURE);
+#endif
 }
 
 static void DebugAction_FlagsVars_ToggleGameClear(u8 taskId)

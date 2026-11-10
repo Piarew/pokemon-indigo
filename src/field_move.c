@@ -3,6 +3,7 @@
 #include "field_move.h"
 #include "fldeff.h"
 #include "fldeff_misc.h"
+#include "indigo.h"
 #include "party_menu.h"
 #include "pokemon.h"
 #include "strings.h"
@@ -23,6 +24,11 @@ static bool32 IsAlwaysTrue(enum FieldMove fieldMove)
 static bool32 HasBadgeForFieldMove(enum FieldMove fieldMove)
 {
     return FlagGet(gFieldMoveInfo[fieldMove].arg + FLAG_BADGE01_GET);
+}
+
+static bool32 HasIndigoUnlockForFieldMove(enum FieldMove fieldMove)
+{
+    return HasIndigoFieldMove(fieldMove);
 }
 
 u32 GetFieldMoveUserSlot(enum FieldMove fieldMove)
@@ -63,6 +69,11 @@ const struct FieldMoveUnlock gFieldMoveUnlocks[FIELD_MOVE_UNLOCK_COUNT] =
         .isUnlockedFunc = HasBadgeForFieldMove,
         .lockedMessage = gText_CantUseUntilNewBadge,
     },
+    [INDIGO_UNLOCK] =
+    {
+        .isUnlockedFunc = HasIndigoUnlockForFieldMove,
+        .lockedMessage = gText_CantUseUntilIndigoAuth,
+    },
 };
 
 #define FLAG_TO_BADGE(flag) flag - FLAG_BADGE01_GET
@@ -72,7 +83,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_CUT] =
     {
         .fieldMoveFunc = SetUpFieldMove_Cut,
-        .unlockType = BADGE_UNLOCK,
+        .unlockType = IS_FRLG ? INDIGO_UNLOCK : BADGE_UNLOCK,
         .moveID = MOVE_CUT,
         .partyMsgID = PARTY_MSG_NOTHING_TO_CUT,
         .arg = IS_FRLG ? FLAG_TO_BADGE(FLAG_BADGE02_GET) : FLAG_TO_BADGE(FLAG_BADGE01_GET),
@@ -81,7 +92,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_FLASH] =
     {
         .fieldMoveFunc = SetUpFieldMove_Flash,
-        .unlockType = BADGE_UNLOCK,
+        .unlockType = IS_FRLG ? INDIGO_UNLOCK : BADGE_UNLOCK,
         .moveID = MOVE_FLASH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
         .arg = IS_FRLG ? FLAG_TO_BADGE(FLAG_BADGE01_GET) : FLAG_TO_BADGE(FLAG_BADGE02_GET),
@@ -90,7 +101,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_ROCK_SMASH] =
     {
         .fieldMoveFunc = SetUpFieldMove_RockSmash,
-        .unlockType = BADGE_UNLOCK,
+        .unlockType = IS_FRLG ? INDIGO_UNLOCK : BADGE_UNLOCK,
         .moveID = MOVE_ROCK_SMASH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
         .arg = IS_FRLG ? FLAG_TO_BADGE(FLAG_BADGE06_GET) : FLAG_TO_BADGE(FLAG_BADGE03_GET),
@@ -99,7 +110,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_STRENGTH] =
     {
         .fieldMoveFunc = SetUpFieldMove_Strength,
-        .unlockType = BADGE_UNLOCK,
+        .unlockType = IS_FRLG ? INDIGO_UNLOCK : BADGE_UNLOCK,
         .moveID = MOVE_STRENGTH,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
         .arg = FLAG_TO_BADGE(FLAG_BADGE04_GET),
@@ -108,7 +119,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_SURF] =
     {
         .fieldMoveFunc = SetUpFieldMove_Surf,
-        .unlockType = BADGE_UNLOCK,
+        .unlockType = IS_FRLG ? INDIGO_UNLOCK : BADGE_UNLOCK,
         .moveID = MOVE_SURF,
         .partyMsgID = PARTY_MSG_CANT_SURF_HERE,
         .arg = FLAG_TO_BADGE(FLAG_BADGE05_GET),
@@ -117,7 +128,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_FLY] =
     {
         .fieldMoveFunc = SetUpFieldMove_Fly,
-        .unlockType = BADGE_UNLOCK,
+        .unlockType = IS_FRLG ? INDIGO_UNLOCK : BADGE_UNLOCK,
         .moveID = MOVE_FLY,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
         .arg = IS_FRLG ? FLAG_TO_BADGE(FLAG_BADGE03_GET) : FLAG_TO_BADGE(FLAG_BADGE06_GET),
@@ -135,7 +146,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_WATERFALL] =
     {
         .fieldMoveFunc = SetUpFieldMove_Waterfall,
-        .unlockType = BADGE_UNLOCK,
+        .unlockType = IS_FRLG ? INDIGO_UNLOCK : BADGE_UNLOCK,
         .moveID = MOVE_WATERFALL,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
         .arg = IS_FRLG ? FLAG_TO_BADGE(FLAG_BADGE07_GET) : FLAG_TO_BADGE(FLAG_BADGE08_GET),
@@ -191,7 +202,9 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_ROCK_CLIMB] =
     {
         .fieldMoveFunc = SetUpFieldMove_RockClimb,
-#if OW_ROCK_CLIMB_FIELD_MOVE
+#if IS_FRLG
+        .unlockType = INDIGO_UNLOCK,
+#elif OW_ROCK_CLIMB_FIELD_MOVE
         .unlockType = ALWAYS_UNLOCKED,
 #else
         .unlockType = CANT_UNLOCK,
@@ -203,7 +216,9 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_DEFOG] =
     {
         .fieldMoveFunc = SetUpFieldMove_Defog,
-#if OW_DEFOG_FIELD_MOVE
+#if IS_FRLG
+        .unlockType = INDIGO_UNLOCK,
+#elif OW_DEFOG_FIELD_MOVE
         .unlockType = ALWAYS_UNLOCKED,
 #else
         .unlockType = CANT_UNLOCK,

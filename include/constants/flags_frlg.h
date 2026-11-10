@@ -1220,34 +1220,41 @@
 #define FLAG_0x4BD               FLAG_UNUSED_0x4BD
 #define FLAG_0x4BE               FLAG_UNUSED_0x4BE
 #define FLAG_0x4BF               FLAG_UNUSED_0x4BF
-#define FLAG_0x4C0               0x4C0
-#define FLAG_0x4C1               0x4C1
-#define FLAG_0x4C2               0x4C2
-#define FLAG_0x4C3               0x4C3
-#define FLAG_0x4C4               0x4C4
-#define FLAG_0x4C5               0x4C5
-#define FLAG_0x4C6               0x4C6
-#define FLAG_0x4C7               0x4C7
-#define FLAG_0x4C8               0x4C8
-#define FLAG_0x4C9               0x4C9
-#define FLAG_0x4CA               0x4CA
-#define FLAG_0x4CB               0x4CB
-#define FLAG_0x4CC               0x4CC
-#define FLAG_0x4CD               0x4CD
-#define FLAG_0x4CE               0x4CE
-#define FLAG_0x4CF               0x4CF
-#define FLAG_0x4D0               0x4D0
-#define FLAG_0x4D1               0x4D1
-#define FLAG_0x4D2               0x4D2
-#define FLAG_0x4D3               0x4D3
-#define FLAG_0x4D4               0x4D4
-#define FLAG_0x4D5               0x4D5
-#define FLAG_0x4D6               0x4D6
-#define FLAG_0x4D7               0x4D7
-#define FLAG_0x4D8               0x4D8
-#define FLAG_0x4D9               0x4D9
-#define FLAG_0x4DA               0x4DA
-#define FLAG_0x4DB               0x4DB
+
+// Indigo gym-clear flags (18 types, packed, skip TYPE_MYSTERY). Separate from FLAG_BADGE01–08.
+#define FLAG_INDIGO_NORMAL               0x4C0
+#define FLAG_INDIGO_FIGHTING             0x4C1
+#define FLAG_INDIGO_FLYING               0x4C2
+#define FLAG_INDIGO_POISON               0x4C3
+#define FLAG_INDIGO_GROUND               0x4C4
+#define FLAG_INDIGO_ROCK                 0x4C5
+#define FLAG_INDIGO_BUG                  0x4C6
+#define FLAG_INDIGO_GHOST                0x4C7
+#define FLAG_INDIGO_STEEL                0x4C8
+#define FLAG_INDIGO_FIRE                 0x4C9
+#define FLAG_INDIGO_WATER                0x4CA
+#define FLAG_INDIGO_GRASS                0x4CB
+#define FLAG_INDIGO_ELECTRIC             0x4CC
+#define FLAG_INDIGO_PSYCHIC              0x4CD
+#define FLAG_INDIGO_ICE                  0x4CE
+#define FLAG_INDIGO_DRAGON               0x4CF
+#define FLAG_INDIGO_DARK                 0x4D0
+#define FLAG_INDIGO_FAIRY                0x4D1
+#define NUM_INDIGO_GYMS                  (1 + FLAG_INDIGO_FAIRY - FLAG_INDIGO_NORMAL)
+
+// Field-move gift flags. Independent of which type gym was last.
+#define FLAG_INDIGO_CUT                  0x4D2
+#define FLAG_INDIGO_FLASH                0x4D3
+#define FLAG_INDIGO_STRENGTH             0x4D4
+#define FLAG_INDIGO_SURF                 0x4D5
+#define FLAG_INDIGO_FLY                  0x4D6
+#define FLAG_INDIGO_ROCK_SMASH           0x4D7
+#define FLAG_INDIGO_WATERFALL            0x4D8
+#define FLAG_INDIGO_DEFOG                0x4D9
+#define FLAG_INDIGO_ROCK_CLIMB           0x4DA
+#define NUM_INDIGO_FIELD_MOVES           (1 + FLAG_INDIGO_ROCK_CLIMB - FLAG_INDIGO_CUT)
+#define FLAG_INDIGO_MET_AGENT            0x4DB
+
 #define FLAG_0x4DC               0x4DC
 #define FLAG_0x4DD               0x4DD
 #define FLAG_0x4DE               0x4DE
