@@ -47,7 +47,11 @@
 #include "union_room.h"
 #include "dexnav.h"
 #include "wild_encounter.h"
+#include "challenge.h"
+#include "field_move.h"
+#include "region_map.h"
 #include "constants/battle_frontier.h"
+#include "constants/field_move.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
@@ -69,6 +73,7 @@ enum
     MENU_ACTION_PYRAMID_BAG,
     MENU_ACTION_DEBUG,
     MENU_ACTION_DEXNAV,
+    MENU_ACTION_FLY,
 };
 
 // Save status
@@ -86,9 +91,10 @@ COMMON_DATA bool8 (*gMenuCallback)(void) = NULL;
 // EWRAM
 EWRAM_DATA static u8 sSafariBallsWindowId = 0;
 EWRAM_DATA static u8 sBattlePyramidFloorWindowId = 0;
+EWRAM_DATA static u8 sNuzlockeWindowId = 0;
 EWRAM_DATA static u8 sStartMenuCursorPos = 0;
 EWRAM_DATA static u8 sNumStartMenuActions = 0;
-EWRAM_DATA static u8 sCurrentStartMenuActions[9] = {0};
+EWRAM_DATA static u8 sCurrentStartMenuActions[16] = {0};
 EWRAM_DATA static s8 sInitStartMenuData[2] = {0};
 
 EWRAM_DATA static u8 (*sSaveDialogCallback)(void) = NULL;
@@ -111,6 +117,7 @@ static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuDexNavCallback(void);
+static bool8 StartMenuFlyCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -144,6 +151,16 @@ static void SaveGameTask(u8 taskId);
 static void Task_SaveAfterLinkBattle(u8 taskId);
 static void Task_WaitForBattleTowerLinkSave(u8 taskId);
 static bool8 FieldCB_ReturnToFieldStartMenu(void);
+
+static const struct WindowTemplate sWindowTemplate_Nuzlocke = {
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = 10,
+    .height = 2,
+    .paletteNum = 15,
+    .baseBlock = 0xE8
+};
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .bg = 0,
@@ -188,6 +205,8 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
 };
 
 static const u8 sText_MenuDebug[] = _("DEBUG");
+static const u8 sText_MenuFly[] = _("FLY");
+static const u8 sText_MenuNuzlocke[] = _("NUZLOCKE");
 
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -206,6 +225,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
     [MENU_ACTION_DEBUG]           = {sText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
     [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = StartMenuDexNavCallback}},
+    [MENU_ACTION_FLY]             = {sText_MenuFly,     {.u8_void = StartMenuFlyCallback}},
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -333,6 +353,9 @@ static void BuildNormalStartMenu(void)
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
 
+    if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE && IsFieldMoveUnlocked(FIELD_MOVE_FLY))
+        AddStartMenuAction(MENU_ACTION_FLY);
+
     AddStartMenuAction(MENU_ACTION_BAG);
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
@@ -351,6 +374,8 @@ static void BuildDebugStartMenu(void)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
+    if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE && IsFieldMoveUnlocked(FIELD_MOVE_FLY))
+        AddStartMenuAction(MENU_ACTION_FLY);
     AddStartMenuAction(MENU_ACTION_BAG);
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKENAV);
@@ -428,6 +453,19 @@ static void BuildMultiPartnerRoomStartMenu(void)
     AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
+static void ShowNuzlockeWindow(void)
+{
+    struct WindowTemplate template = sWindowTemplate_Nuzlocke;
+
+    if (GetSafariZoneFlag())
+        template.tilemapTop = 5;
+    sNuzlockeWindowId = AddWindow(&template);
+    PutWindowTilemap(sNuzlockeWindowId);
+    DrawStdWindowFrame(sNuzlockeWindowId, FALSE);
+    AddTextPrinterParameterized(sNuzlockeWindowId, FONT_NORMAL, sText_MenuNuzlocke, 4, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sNuzlockeWindowId, COPYWIN_GFX);
+}
+
 static void ShowSafariBallsWindow(void)
 {
     sSafariBallsWindowId = AddWindow(&sWindowTemplate_SafariBalls);
@@ -477,6 +515,12 @@ static void RemoveExtraStartMenuWindows(void)
     {
         ClearStdWindowAndFrameToTransparent(sBattlePyramidFloorWindowId, FALSE);
         RemoveWindow(sBattlePyramidFloorWindowId);
+    }
+    if (IsNuzlockeActive())
+    {
+        ClearStdWindowAndFrameToTransparent(sNuzlockeWindowId, FALSE);
+        CopyWindowToVram(sNuzlockeWindowId, COPYWIN_GFX);
+        RemoveWindow(sNuzlockeWindowId);
     }
 }
 
@@ -535,6 +579,8 @@ static bool32 InitStartMenuStep(void)
             ShowSafariBallsWindow();
         if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
             ShowPyramidFloorWindow();
+        if (IsNuzlockeActive())
+            ShowNuzlockeWindow();
         sInitStartMenuData[0]++;
         break;
     case 4:
@@ -648,6 +694,9 @@ static bool8 HandleStartMenuInput(void)
         }
         if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV
           && MapHasNoEncounterData())
+            return FALSE;
+        if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_FLY
+          && SetUpFieldMove_Fly() == FALSE)
             return FALSE;
 
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
@@ -1496,6 +1545,21 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 {
     list[*pos] = newEntry;
     (*pos)++;
+}
+
+static bool8 StartMenuFlyCallback(void)
+{
+    if (!gPaletteFade.active)
+    {
+        PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
+        CleanupOverworldWindowsAndTilemaps();
+        gPartyMenu.slotId = GetFieldMoveUserSlot(FIELD_MOVE_FLY);
+        SetMainCallback2(CB2_OpenFlyMap);
+        return TRUE;
+    }
+
+    return FALSE;
 }
 
 static bool8 StartMenuDexNavCallback(void)

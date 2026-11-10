@@ -50,6 +50,8 @@
 #include "vs_seeker.h"
 #include "wild_encounter_ow.h"
 #include "window.h"
+#include "challenge.h"
+#include "constants/abilities.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_special.h"
 #include "constants/event_objects.h"
@@ -278,6 +280,8 @@ static void CreateBattleStartTask(enum BattleTransition transition, u16 song)
 
     gTasks[taskId].tTransition = transition;
     PlayMapChosenOrBattleBGM(song);
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+        NuzlockeOnWildBattleStart();
 }
 
 static void Task_BattleStart_Debug(u8 taskId)
@@ -313,6 +317,8 @@ static void CreateBattleStartTask_Debug(u8 transition, u16 song)
 
     gTasks[taskId].tTransition = transition;
     PlayMapChosenOrBattleBGM(song);
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+        NuzlockeOnWildBattleStart();
 }
 
 #undef tState
@@ -2210,7 +2216,18 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
     for (i = 0; i < monsCount; i++)
     {
         u32 monIndex = monIndices[i];
-        GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndex], trainerGen);
+        if (IsTrainerRandomizerActive())
+        {
+            struct TrainerMon temp = trainer->party[monIndex];
+            temp.species = RemapSpeciesForRandomizer(temp.species, TRUE);
+            temp.nickname = NULL;
+            temp.ability = ABILITY_NONE;
+            GenerateMonFromTrainerMon(&party[i], &temp, trainerGen);
+        }
+        else
+        {
+            GenerateMonFromTrainerMon(&party[i], &trainer->party[monIndex], trainerGen);
+        }
     }
     Free(trainerGen);
 }

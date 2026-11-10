@@ -27,6 +27,7 @@
 #include "string_util.h"
 #include "tv.h"
 #include "wild_encounter.h"
+#include "challenge.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
@@ -80,6 +81,8 @@ u32 HealPartyMonsIfNeeded(void)
 
     for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
     {
+        if (NuzlockeBlocksHealing(&gParties[B_TRAINER_PLAYER][i]))
+            continue;
         if (PokemonNeedsFullRestore(&gParties[B_TRAINER_PLAYER][i]))
         {
             HealPokemon(&gParties[B_TRAINER_PLAYER][i]);

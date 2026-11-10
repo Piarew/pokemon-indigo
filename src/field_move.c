@@ -4,6 +4,7 @@
 #include "fldeff.h"
 #include "fldeff_misc.h"
 #include "party_menu.h"
+#include "pokemon.h"
 #include "strings.h"
 #include "constants/field_move.h"
 #include "constants/moves.h"
@@ -22,6 +23,27 @@ static bool32 IsAlwaysTrue(enum FieldMove fieldMove)
 static bool32 HasBadgeForFieldMove(enum FieldMove fieldMove)
 {
     return FlagGet(gFieldMoveInfo[fieldMove].arg + FLAG_BADGE01_GET);
+}
+
+u32 GetFieldMoveUserSlot(enum FieldMove fieldMove)
+{
+    enum Move move = FieldMove_GetMoveId(fieldMove);
+    u32 fallback = PARTY_SIZE;
+    u32 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
+            break;
+        if (GetMonData(mon, MON_DATA_IS_EGG))
+            continue;
+        if (fallback == PARTY_SIZE)
+            fallback = i;
+        if (MonKnowsMove(mon, move))
+            return i;
+    }
+    return fallback;
 }
 
 const struct FieldMoveUnlock gFieldMoveUnlocks[FIELD_MOVE_UNLOCK_COUNT] =

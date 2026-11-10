@@ -222,9 +222,28 @@ PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	waitmovement 0
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalNoFairWhatAboutMe
 	msgbox PalletTown_ProfessorOaksLab_Text_OakBePatientRival
+	msgbox PalletTown_ProfessorOaksLab_Text_OakChallengeModes
+	msgbox PalletTown_ProfessorOaksLab_Text_OakAskNuzlocke, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_EnableNuzlocke
+	msgbox PalletTown_ProfessorOaksLab_Text_OakAskWildRandomizer, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_EnableWildRandomizer
+	msgbox PalletTown_ProfessorOaksLab_Text_OakAskTrainerRandomizer, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_EnableTrainerRandomizer
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2
 	releaseall
 	end
+
+PalletTown_ProfessorOaksLab_EventScript_EnableNuzlocke::
+	setflag FLAG_UNUSED_0x4AD
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_EnableWildRandomizer::
+	setflag FLAG_UNUSED_0x4AE
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_EnableTrainerRandomizer::
+	setflag FLAG_UNUSED_0x4AF
+	return
 
 PalletTown_ProfessorOaksLab_Movement_OakEnter::
 	walk_up
@@ -582,6 +601,7 @@ PalletTown_ProfessorOaksLab_EventScript_ProfOak::
 
 PalletTown_ProfessorOaksLab_EventScript_OakJustShownCompleteDex::
 	msgbox PokedexRating_Text_ThankYouMadeDreamReality
+	call PalletTown_ProfessorOaksLab_EventScript_TryGiveShinyCharm
 	release
 	end
 
@@ -850,8 +870,20 @@ PalletTown_ProfessorOaksLab_EventScript_DexCompleted::
 	delay 70
 	msgbox PokedexRating_Text_ThankYouMadeDreamReality
 	setflag SHOWED_OAK_COMPLETE_DEX
+	call PalletTown_ProfessorOaksLab_EventScript_TryGiveShinyCharm
 	release
 	end
+
+PalletTown_ProfessorOaksLab_EventScript_TryGiveShinyCharm::
+	goto_if_set FLAG_GOT_SHINY_CHARM, PalletTown_ProfessorOaksLab_EventScript_TryGiveShinyCharmReturn
+	msgbox PalletTown_ProfessorOaksLab_Text_OakGiveShinyCharm
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedShinyCharm, ITEM_SHINY_CHARM, 1, MUS_RG_OBTAIN_KEY_ITEM
+	setflag FLAG_GOT_SHINY_CHARM
+	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainShinyCharm
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_TryGiveShinyCharmReturn::
+	return
 
 PalletTown_ProfessorOaksLab_EventScript_OakExcitedNorth::
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, PalletTown_ProfessorOaksLab_Movement_OakExcitedNorth
@@ -1648,6 +1680,37 @@ PalletTown_ProfessorOaksLab_Text_OakExplainFieldKit::
 	.string "PC from anywhere.\p"
 	.string "You can also relearn forgotten\n"
 	.string "moves from the party menu.$"
+
+PalletTown_ProfessorOaksLab_Text_OakGiveShinyCharm::
+	.string "OAK: And one more thing.\p"
+	.string "This charm will help you find\n"
+	.string "rare, differently colored POKéMON.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedShinyCharm::
+	.string "{PLAYER} received the SHINY CHARM\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_OakExplainShinyCharm::
+	.string "Keep the SHINY CHARM with you.\n"
+	.string "It greatly increases the chance\l"
+	.string "of encountering Shiny POKéMON.$"
+
+PalletTown_ProfessorOaksLab_Text_OakChallengeModes::
+	.string "OAK: Before you pick a POKéMON,\n"
+	.string "I can enable optional challenges.\p"
+	.string "These cannot be turned off later.$"
+
+PalletTown_ProfessorOaksLab_Text_OakAskNuzlocke::
+	.string "Enable NUZLOCKE Mode?\p"
+	.string "Fainted POKéMON are boxed, and\n"
+	.string "you may catch only the first new\l"
+	.string "species in each area.$"
+
+PalletTown_ProfessorOaksLab_Text_OakAskWildRandomizer::
+	.string "Randomize wild POKéMON?$"
+
+PalletTown_ProfessorOaksLab_Text_OakAskTrainerRandomizer::
+	.string "Randomize TRAINER POKéMON?$"
 
 PalletTown_ProfessorOaksLab_Text_BlankEncyclopedia::
 	.string "It's like an encyclopedia, but the\n"

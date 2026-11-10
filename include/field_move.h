@@ -62,4 +62,6 @@ static inline bool32 FieldMove_IsVisible(enum FieldMove fieldMove)
     return !gFieldMoveInfo[fieldMove].hideIfLocked || IsFieldMoveUnlocked(fieldMove);
 }
 
+u32 GetFieldMoveUserSlot(enum FieldMove fieldMove);
+
 #endif //GUARD_FIELD_MOVE_H

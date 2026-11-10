@@ -1257,6 +1257,10 @@ void SetResultWithButtonPress(bool32 *result)
         *result = TRUE;
         PlaySE(SE_SELECT);
     }
+    else if (JOY_HELD(A_BUTTON | B_BUTTON))
+    {
+        *result = TRUE;
+    }
 }
 
 bool32 TextPrinterWaitWithDownArrow(struct TextPrinter *textPrinter)
@@ -1335,13 +1339,13 @@ static u16 RenderText(struct TextPrinter *textPrinter)
     switch (textPrinter->state)
     {
     case RENDER_STATE_HANDLE_CHAR:
-        if ((JOY_HELD(A_BUTTON | B_BUTTON) && textPrinter->hasPrintBeenSpedUp) || IsPlayerTextSpeedInstant())
+        if ((JOY_HELD(A_BUTTON | B_BUTTON) && (textPrinter->hasPrintBeenSpedUp || gTextFlags.canABSpeedUpPrint)) || IsPlayerTextSpeedInstant())
             textPrinter->delayCounter = 0;
 
         if (textPrinter->delayCounter && textPrinter->textSpeed)
         {
             textPrinter->delayCounter--;
-            if (gTextFlags.canABSpeedUpPrint && (JOY_NEW(A_BUTTON | B_BUTTON)))
+            if (gTextFlags.canABSpeedUpPrint && (JOY_NEW(A_BUTTON | B_BUTTON) || JOY_HELD(A_BUTTON | B_BUTTON)))
             {
                 textPrinter->hasPrintBeenSpedUp = TRUE;
                 textPrinter->delayCounter = 0;

@@ -1248,9 +1248,9 @@
 #define FLAG_UNUSED_0x4AA                                           0x4AA // DexNav detector mode (DN_FLAG_DETECTOR_MODE)
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Infinite Repel on/off (I_INFINITE_REPEL_FLAG)
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Pause fake RTC (OW_FLAG_PAUSE_TIME)
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
+#define FLAG_UNUSED_0x4AD                                           0x4AD // Nuzlocke mode (FLAG_SYS_NUZLOCKE)
+#define FLAG_UNUSED_0x4AE                                           0x4AE // Wild randomizer (FLAG_SYS_RANDOMIZER_WILD)
+#define FLAG_UNUSED_0x4AF                                           0x4AF // Trainer randomizer (FLAG_SYS_RANDOMIZER_TRAINER)
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
@@ -2014,7 +2014,7 @@
 #define FLAG_GOT_OAK_RESEARCH_KIT                        0
 #define FLAG_GOT_TM27                                    0
 #define FLAG_GOT_OAK_FIELD_KIT                           0
-#define FLAG_0x25D                                       0
+#define FLAG_GOT_SHINY_CHARM                             0
 #define FLAG_GOT_OLD_AMBER                               0
 #define FLAG_0x25F                                       0
 #define FLAG_0x260                                       0

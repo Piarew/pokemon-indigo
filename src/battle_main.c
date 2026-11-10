@@ -48,6 +48,7 @@
 #include "recorded_battle.h"
 #include "roamer.h"
 #include "safari_zone.h"
+#include "challenge.h"
 #include "scanline_effect.h"
 #include "script.h"
 #include "sound.h"
@@ -5414,6 +5415,7 @@ static void ReturnFromBattleToOverworld(void)
 {
     if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
+        NuzlockeHandleFaintedParty();
         CalculatePlayerPartyCount();
         RandomlyGivePartyPokerus();
         PartySpreadPokerus();

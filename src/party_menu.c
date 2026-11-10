@@ -67,8 +67,10 @@
 #include "text.h"
 #include "text_window.h"
 #include "trade.h"
+#include "tv.h"
 #include "union_room.h"
 #include "window.h"
+#include "challenge.h"
 #include "constants/battle.h"
 #include "constants/battle_frontier.h"
 #include "constants/field_effects.h"
@@ -84,6 +86,7 @@
 enum {
     MENU_SUMMARY,
     MENU_RELEARN,
+    MENU_RENAME,
     MENU_SWITCH,
     MENU_CANCEL1,
     MENU_ITEM,
@@ -457,6 +460,7 @@ static void BlitBitmapToPartyWindow_LeftColumn(u8, u8, u8, u8, u8, bool8);
 static void BlitBitmapToPartyWindow_RightColumn(u8, u8, u8, u8, u8, bool8);
 static void CursorCb_Summary(u8);
 static void CursorCb_Relearn(u8);
+static void CursorCb_Rename(u8);
 static void CursorCb_Switch(u8);
 static void CursorCb_Cancel1(u8);
 static void CursorCb_Item(u8);
@@ -2965,6 +2969,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN);
+    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RENAME);
 
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -3174,6 +3179,39 @@ static void CursorCb_Relearn(u8 taskId)
     }
 
     sPartyMenuInternal->exitCallback = CB2_InitPartyMenuMoveRelearner;
+    Task_ClosePartyMenu(taskId);
+}
+
+static void CB2_ReturnToPartyMenuFromNamingScreen(void)
+{
+    SetBoxMonData(GetSelectedBoxMonFromPcOrParty(), MON_DATA_NICKNAME, gStringVar2);
+    gPaletteFade.bufferTransferDisabled = TRUE;
+    InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, PARTY_ACTION_CHOOSE_MON, TRUE, PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow, gPartyMenu.exitCallback);
+}
+
+static void CB2_ChangePartyMonNickname(void)
+{
+    ChangePokemonNicknameWithCallback(CB2_ReturnToPartyMenuFromNamingScreen);
+}
+
+static void CursorCb_Rename(u8 taskId)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
+
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+
+    if (GetMonData(mon, MON_DATA_IS_EGG) || GetMonData(mon, MON_DATA_OT_ID) != GetPlayerIDAsU32())
+    {
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        return;
+    }
+
+    gSpecialVar_0x8004 = gPartyMenu.slotId;
+    sPartyMenuInternal->exitCallback = CB2_ChangePartyMonNickname;
     Task_ClosePartyMenu(taskId);
 }
 
@@ -4931,6 +4969,10 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
     u32 oldStatus = GetMonData(mon, MON_DATA_STATUS);
 
     if (NotUsingHPEVItemOnShedinja(mon, item) == FALSE)
+    {
+        cannotUse = TRUE;
+    }
+    else if (NuzlockeBlocksHealing(mon) && IsHPRecoveryItem(item))
     {
         cannotUse = TRUE;
     }
