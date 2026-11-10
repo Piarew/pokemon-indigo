@@ -12,7 +12,9 @@ enum RegionMapType
     REGION_MAP_KANTO,
     REGION_MAP_SEVII123,
     REGION_MAP_SEVII45,
-    REGION_MAP_SEVII67
+    REGION_MAP_SEVII67,
+    REGION_MAP_JOHTO,
+    REGION_MAP_SINNOH,
 };
 
 enum
@@ -131,6 +133,7 @@ mapsec_u16_t CorrectSpecialMapSecId(mapsec_u16_t mapSecId);
 void ShowRegionMapForPokedexAreaScreen(struct RegionMap *regionMap);
 void PokedexAreaScreen_UpdateRegionMapVariablesAndVideoRegs(s16 x, s16 y);
 void CB2_OpenFlyMap(void);
+void SetFlyMapOpenedFromPartyMenu(bool32 fromParty);
 bool8 IsRegionMapZoomed(void);
 void TrySetPlayerIconBlink(void);
 void BlendRegionMap(u16 color, u32 coeff);

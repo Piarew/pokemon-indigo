@@ -1556,9 +1556,9 @@ static bool8 StartMenuFlyCallback(void)
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
         gPartyMenu.slotId = GetFieldMoveUserSlot(FIELD_MOVE_FLY);
-        FlyDest_SetOpenedFromPartyMenu(FALSE);
+        SetFlyMapOpenedFromPartyMenu(FALSE);
         gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
-        SetMainCallback2(CB2_OpenFlyDestList);
+        SetMainCallback2(CB2_OpenFlyMap);
         return TRUE;
     }
 
