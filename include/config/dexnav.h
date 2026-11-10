@@ -3,6 +3,7 @@
 
 #define DEXNAV_ENABLED                TRUE   // Whether or not DexNav is enabled. If TRUE, flags/vars below must all be non-zero
 #define USE_DEXNAV_SEARCH_LEVELS      TRUE   // 1 byte per national dex number (forms share). Search Level ++ on any DexNav encounter, including running.
+#define DEXNAV_L_REVEAL_UNSEEN        DISABLED_ON_RELEASE // L in the DexNav GUI toggles showing unseen species on the current map.
 
 // Flag/var defines
 #define DN_FLAG_SEARCHING             FLAG_UNUSED_0x4A8 // Searching for mon

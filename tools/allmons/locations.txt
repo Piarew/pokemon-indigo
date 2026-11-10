@@ -1,0 +1,207 @@
+# Johto and Sinnoh wild locations
+# folder | biomes | min-max | kinds | CLASSIC SPECIES (optional)
+# kinds: L=land W=water F=fishing R=rock_smash
+# Hidden DexNav slots are added automatically (land unless the map has no L).
+
+# --- Johto early ---
+Route29_hns | early field grass | 2-4 | L | PIDGEY RATTATA SENTRET HOOTHOOT
+Route30_hns | early field grass bug | 3-5 | L W F | CATERPIE WEEDLE LEDYBA SPINARAK PIDGEY
+Route31_hns | early grass bug | 3-6 | L W F | CATERPIE WEEDLE BELLSPROUT PIDGEY SPINARAK
+DarkCave_SouthSide_hns | cave | 2-7 | L W F R | ZUBAT GEODUDE DUNSPARCE TEDDIURSA
+Route32_hns | grass water field | 4-8 | L W F | RATTATA PIDGEY BELLSPROUT HOPPIP WOOPER MAREEP
+UnionCave_1F_hns | cave | 4-8 | L R | ZUBAT GEODUDE ONIX SANDSHREW
+UnionCave_B1F_hns | cave | 6-10 | L R | ZUBAT GEODUDE ONIX WOOPER
+UnionCave_B2F_hns | cave water | 8-12 | L W F R | ZUBAT GEODUDE WOOPER QUAGSIRE
+Route33_hns | grass | 6-8 | L | RATTATA SPEAROW EKANS HOPPIP
+IlexForest_hns | forest bug grass | 5-8 | L | CATERPIE WEEDLE PARAS ODDISH ZUBAT PIDGEY
+SlowpokeWell_B1F_hns | cave water | 5-10 | L W F | ZUBAT SLOWPOKE
+SlowpokeWell_B2F_hns | cave water | 10-15 | L W F | ZUBAT SLOWPOKE SLOWBRO
+AzaleaTown_hns | water | 6-12 | W F |
+Route34_hns | grass urban field | 8-12 | L W F | DROWZEE ABRA DITTO RATTATA
+Route35_hns | grass field | 10-14 | L W F | SNUBBULL NIDORAN_F NIDORAN_M YANMA ABRA DROWZEE
+NationalPark_Normal_hns | grass bug field | 10-14 | L | CATERPIE WEEDLE PIDGEY NIDORAN_F SUNKERN
+Route36_hns | grass field | 12-16 | L | STANTLER GROWLITHE VULPIX GASTLY PIDGEY
+Route37_hns | grass field | 13-17 | L | STANTLER GROWLITHE VULPIX SPINARAK LEDYBA
+Route38_hns | field grass | 14-18 | L | MILTANK TAUROS MAGNEMITE MEOWTH SNUBBULL
+Route39_hns | field grass | 15-18 | L | MILTANK TAUROS MAGNEMITE MEOWTH
+OlivineCity_hns | water urban | 15-20 | W F |
+Route40_hns | water beach | 15-22 | L W F | WINGULL TENTACOOL
+Route41_hns | water | 15-24 | W F |
+WhirlIslands_1F_hns | cave water | 22-28 | L W F | KRABBY ZUBAT SEEL
+WhirlIslands_B1F_hns | cave water | 22-30 | L W F | KRABBY ZUBAT SEEL GOLBAT
+WhirlIslands_B1F_Inner_hns | cave water | 23-30 | L W F | KRABBY SEEL GOLBAT
+WhirlIslands_B2F_hns | cave water | 24-32 | L W F | KRABBY SEEL GOLBAT
+WhirlIslands_B3F_hns | cave water | 25-32 | L W F | KRABBY SEEL GOLBAT
+CianwoodCity_hns | water | 15-22 | W F |
+Route47_hns | grass mountain water | 20-30 | L W F R | DITTO MILTANK GLOOM FARFETCHD
+Route48_hns | grass | 20-25 | L | GLOOM FARFETCHD TAUROS HOPPIP
+CliffEdgeCave_hns | cave | 18-26 | L R | ZUBAT GOLBAT GRAVELER WOOPER
+Route42_hns | grass mountain water | 13-17 | L W F | MANKEY MAREEP FLAAFFY MARILL
+MtMortar_1F_South_hns | cave | 13-20 | L W F R | ZUBAT MARILL MACHOP GEODUDE
+MtMortar_1F_North_hns | cave | 20-25 | L R | ZUBAT GOLBAT GRAVELER MACHOKE
+MtMortar_2F_hns | cave | 22-28 | L W F R | GOLBAT GRAVELER MACHOKE
+MtMortar_B1F_hns | cave | 13-22 | L W F R | ZUBAT MARILL MACHOP GEODUDE
+Route43_hns | grass water | 15-18 | L W F | MAREEP FLAAFFY GIRAFARIG VENONAT FARFETCHD
+LakeOfRage_hns | water grass field | 15-20 | L W F | MAGIKARP GYARADOS SENTRET
+Mahoganytown_hns | water | 15-20 | W F |
+Route44_hns | grass water | 18-23 | L W F | LICKITUNG TANGELA WEEPINBELL POLIWAG BELLSPROUT
+IcePath_1F_hns | ice cave | 20-24 | L | SWINUB DELIBIRD SNEASEL JYNX ZUBAT
+IcePath_B1F_hns | ice cave | 21-25 | L | SWINUB DELIBIRD SNEASEL JYNX
+IcePath_B2F_hns | ice cave | 22-26 | L | SWINUB SNEASEL JYNX
+IcePath_B3F_hns | ice cave | 22-26 | L | SWINUB SNEASEL JYNX
+IcePath_B4F_hns | ice cave | 23-27 | L | SWINUB SNEASEL JYNX GOLBAT
+Route45_hns | mountain | 20-25 | L | GLIGAR GRAVELER DONPHAN TEDDIURSA SKARMORY
+DarkCave_NorthSide_hns | cave | 20-26 | L W F R | TEDDIURSA URSARING WOBBUFFET GOLBAT
+Route46_hns | early mountain | 2-5 | L | GEODUDE RATTATA SPEAROW
+BlackthornCity_hns | water | 20-26 | W F |
+DragonsDen_Cavern_hns | cave water dragon | 20-30 | L W F | MAGIKARP DRATINI
+Route27_hns | grass water late | 28-32 | L W F | DODUO PONYTA RATICATE QUAGSIRE
+Route26_hns | grass water late | 28-32 | L W F | DODUO PONYTA SANDSLASH RATICATE
+Route26North_hns | grass late | 28-32 | L | DODUO PONYTA SANDSLASH
+TohjoFalls_Cavern_hns | cave water | 22-28 | L W F | ZUBAT GOLBAT RATICATE
+Route28_hns | grass late mountain | 40-45 | L | PONYTA RAPIDASH DODRIO SNEASEL
+MtSilver_Outside_hns | mountain late | 40-48 | L | PONYTA RAPIDASH DODRIO SNEASEL
+MtSilver_1F_ItemRoom_hns | cave late | 42-48 | L R | GOLBAT GRAVELER ONIX QUAGSIRE
+MtSilver_1F_WaterfallRoom_hns | cave water late | 42-48 | L W F | GOLBAT QUAGSIRE GOLDEEN
+MtSilver_MountainSide_hns | mountain late | 44-50 | L | GOLBAT DONPHAN URSARING
+MtSilver_2F_hns | cave late | 45-50 | L | GOLBAT ONIX QUAGSIRE GOLDUCK
+MtSilver_3F_hns | cave late | 46-51 | L | GOLBAT GOLDUCK QUAGSIRE
+MtSilver_Snow_hns | snow ice late | 47-52 | L | SNEASEL DELIBIRD SWINUB
+VictoryRoadKanto_B2F_hns | cave late | 32-40 | L R | ONIX GRAVELER GOLBAT MACHOKE
+VictoryRoadKanto_B1F_hns | cave late | 34-42 | L R | ONIX GRAVELER GOLBAT MACHOKE
+VictoryRoadKanto_1F_hns | cave late | 36-44 | L R | ONIX GRAVELER GOLBAT MACHOKE
+Route23_hns | grass late | 32-40 | L | FEAROW EKANS ARBOK SANDSLASH
+BurnedTower_1F_hns | haunted tower | 13-16 | L | GASTLY RATTATA KOFFING
+BurnedTower_B1F_hns | haunted tower | 14-18 | L | GASTLY HAUNTER KOFFING RATTATA
+RuinsOfAlph_Outside_hns | ruins grass | 18-24 | L R | NATU SMEARGLE WOOPER
+RuinsOfAlph_B1F_hns | ruins | 5-5 | L | UNOWN
+NewBarkTown_hns | water early | 2-8 | W F |
+CherrygroveCity_hns | water early | 3-10 | W F |
+VioletCity_hns | water | 5-12 | W F |
+EcruteakCity_hns | water | 12-18 | W F |
+EmbeddedTower_hns | cave late dragon | 45-55 | L | DRATINI DRAGONAIR
+SafariZone_Enterance_hns | safari grass field | 20-28 | L | NIDORAN_F NIDORAN_M DODUO EXEGGCUTE
+SafariZone_Low_Left_hns | safari forest grass | 20-28 | L | PARAS ODDISH PINSIR
+SafariZone_Low_Mid_hns | safari swamp water | 20-28 | L W F | PSYDUCK POLIWAG WOOPER
+SafariZone_Low_Right_hns | safari mountain | 20-28 | L R | GEODUDE MACHOP GLIGAR
+SafariZone_Top_Left_hns | safari desert | 20-28 | L | SANDSHREW CUBONE MAROWAK
+SafariZone_Top_Mid_hns | safari grass water | 20-28 | L W F | SLOWPOKE KRABBY GOLDEEN
+SafariZone_Top_Right_hns | safari mountain late | 22-30 | L | TAUROS KANGASKHAN RHYHORN
+SafariZone1_hns | safari grass | 22-30 | L | CHANSEY SCYTHER PINSIR
+SafariZone2_hns | safari forest | 22-30 | L | HERACROSS BUTTERFREE BEEDRILL
+SafariZone3_hns | safari swamp | 22-30 | L W F | QUAGSIRE YANMA ARIADOS
+
+# --- Sinnoh early ---
+Route201 | early field grass | 2-4 | L | STARLY BIDOOF
+Route202 | early field grass | 3-5 | L | STARLY BIDOOF SHINX KRICKETOT
+Route203 | early grass | 4-7 | L W F | STARLY BIDOOF SHINX KRICKETOT ABRA
+OreburghGate_1F | cave | 5-8 | L R | ZUBAT GEODUDE PSYDUCK
+OreburghGate_B1F | cave water | 6-10 | L W F R | ZUBAT GEODUDE PSYDUCK
+OreburghMine_B1F | cave | 6-9 | L R | GEODUDE ZUBAT ONIX
+OreburghMine_B2F | cave | 7-10 | L R | GEODUDE ZUBAT ONIX
+Route204 | grass | 6-9 | L W F | STARLY BIDOOF SHINX BUDEW KRICKETOT
+RavagedPath | cave water | 8-12 | L W F | ZUBAT PSYDUCK MEDITITE
+Route205_South | grass water | 8-12 | L W F | BIDOOF BUDEW PACHIRISU SHELLOS
+ValleyWindworks | grass power | 8-12 | L | SHINX BIDOOF PACHIRISU MAGNEMITE
+FloaromaMeadow | grass field | 9-13 | L | BUDEW COMBEE CHERUBI
+Route205_North | grass forest | 11-15 | L W F | BIDOOF BUDEW PACHIRISU SILCOON CASCOON
+EternaForest | forest bug grass | 10-14 | L | BUNEARY BUDEW WURMPLE SILCOON CASCOON GASTLY
+OldChateau_Entrance | haunted tower | 12-16 | L | GASTLY HAUNTER
+OldChateau_DiningRoom | haunted tower | 13-17 | L | GASTLY HAUNTER
+OldChateau_2F | haunted tower | 14-18 | L | GASTLY HAUNTER
+Route206 | grass | 14-18 | L | BIDOOF BUDEW KRICKETOT BRONZOR STUNKY
+WaywardCave_1F | cave | 14-18 | L | ZUBAT GEODUDE BRONZOR GIBLE
+WaywardCave_B1F | cave | 16-20 | L | ZUBAT GEODUDE BRONZOR GIBLE
+Route207 | mountain grass | 14-18 | L | MACHOP GEODUDE KRICKETOT STUNKY
+MtCoronet_1F_South | cave | 16-22 | L R | ZUBAT GEODUDE CHINGLING CLEFAIRY
+MtCoronet_Outside_South | mountain | 16-22 | L | MACHOP GEODUDE ZUBAT
+Route208 | grass water | 16-20 | L W F | BIDOOF BIBAREL MEDITITE PSYDUCK
+Route209 | grass | 16-20 | L W F | BIDOOF BIBAREL STARAVIA CHANSEY ROSELIA
+LostTower_1F | haunted tower | 16-20 | L | GASTLY ZUBAT
+LostTower_2F | haunted tower | 17-21 | L | GASTLY HAUNTER ZUBAT
+LostTower_3F | haunted tower | 18-22 | L | GASTLY HAUNTER GOLBAT
+LostTower_4F | haunted tower | 19-23 | L | HAUNTER GOLBAT
+LostTower_5F | haunted tower | 20-24 | L | HAUNTER GOLBAT DUSKULL
+SolaceonRuins_Room1 | ruins | 16-22 | L | UNOWN
+SolaceonRuins_Room2 | ruins | 16-22 | L | UNOWN
+ManiacTunnel | cave ruins | 18-24 | L | UNOWN BRONZOR CHINGLING
+Route210_South | grass | 18-24 | L | BIBAREL STARAVIA PSYDUCK KADABRA MACHOKE
+Route215 | grass | 19-25 | L | ABRA KADABRA MARILL PONYTA
+Route214 | grass mountain | 20-26 | L | GRAVELER RHYHORN PONYTA SUDOWOODO
+ValorLakefront | grass beach | 20-26 | L W F | GIRAFARIG STARAVIA BIBAREL
+Route213 | beach grass | 20-26 | L W F | WINGULL TENTACOOL CHATOT
+PastoriaCity | water swamp | 20-26 | W F |
+GreatMarsh | safari swamp water | 20-26 | L W F | WOOPER QUAGSIRE BIDOOF CROAGUNK CARNIVINE
+Route212_South | swamp grass | 20-26 | L W F | BIDOOF CROAGUNK WOOPER ROSELIA
+Route212_North | grass water | 18-24 | L W F | BIDOOF STARAVIA CROAGUNK ROSELIA
+TrophyGarden | grass field | 20-26 | L | PICHU PIKACHU CLEFAIRY JIGGLYPUFF
+Route210_North | grass | 24-30 | L | PSYDUCK KADABRA MACHOKE HOUNDOUR
+Route211_West | mountain grass | 12-16 | L | MEDITITE MACHOP BIDOOF CHINGLING
+Route211_East | mountain grass | 26-32 | L | MEDITITE MACHOKE GRAVELER CHINGLING
+MtCoronet_1F_North_Room1 | cave | 26-32 | L R | GOLBAT GRAVELER CHINGLING CLEFAIRY
+MtCoronet_1F_North_Room2 | cave | 26-32 | L R | GOLBAT GRAVELER CHINGLING
+MtCoronet_B1F | cave | 16-22 | L W F R | ZUBAT GEODUDE CHINGLING
+MtCoronet_1F_TunnelRoom | cave | 28-34 | L R | GOLBAT GRAVELER CHINGLING CLEFAIRY
+MtCoronet_2F | cave | 30-36 | L R | GOLBAT GRAVELER CHINGLING
+MtCoronet_3F | cave | 32-38 | L R | GOLBAT GRAVELER CHINGLING CLEFAIRY
+MtCoronet_4F_Room1 | cave | 33-39 | L R | GOLBAT GRAVELER CHINGLING
+MtCoronet_4F_Room3 | cave ice | 34-40 | L | SNEASEL GOLBAT GRAVELER
+MtCoronet_5F | cave | 36-42 | L R | GOLBAT GRAVELER CHINGLING CLEFABLE
+MtCoronet_6F | cave late | 38-44 | L R | GOLBAT GRAVELER CHINGLING
+MtCoronet_Outside_North | mountain snow | 35-42 | L | SNEASEL MACHOP GRAVELER
+Route216 | snow ice | 32-38 | L | SNEASEL SWINUB SNOVER
+Route217 | snow ice | 34-40 | L | SNEASEL SWINUB SNOVER MEDICHAM
+AcuityLakefront | snow ice water | 34-40 | L W F | SNEASEL SNOVER PSYDUCK
+LakeAcuity | water ice | 34-40 | L W F | PSYDUCK GOLDUCK SNOVER
+SnowpointTemple_1F | ice cave late | 38-46 | L | SNEASEL GOLBAT
+SnowpointTemple_B1F | ice cave late | 40-48 | L | SNEASEL GOLBAT
+SnowpointTemple_B5F | ice cave late | 44-52 | L | SNEASEL GOLBAT
+Route218 | grass water | 22-28 | L W F | SHELLOS WINGULL FLOATZEL GASTRODON
+CanalaveCity | water urban | 22-28 | W F |
+IronIsland | mountain | 24-30 | L | GRAVELER GOLBAT
+IronIsland_1F | cave | 24-30 | L R | GRAVELER GOLBAT ONIX
+IronIsland_B1F_Left | cave | 26-32 | L R | GRAVELER GOLBAT ONIX
+IronIsland_B1F_Right | cave | 26-32 | L R | GRAVELER GOLBAT ONIX
+IronIsland_B2F_Left | cave | 28-34 | L R | GRAVELER GOLBAT STEELIX
+IronIsland_B2F_Right | cave | 28-34 | L R | GRAVELER GOLBAT STEELIX
+IronIsland_B3F | cave | 30-36 | L R | GRAVELER GOLBAT STEELIX
+Route219 | water beach | 16-22 | W F |
+Route220 | water | 18-24 | W F |
+Route221 | grass beach | 24-30 | L W F | FLOATZEL SHELLOS STUNKY SKUNTANK
+Route222 | grass beach | 30-36 | L W F | FLOATZEL WINGULL LUXIO ELEKID
+SunyshoreCity | water urban | 30-36 | W F |
+Route223 | water | 32-40 | W F |
+SinnohVictoryRoad_1F | cave late | 36-44 | L R | GOLBAT GRAVELER ONIX MACHOKE
+SinnohVictoryRoad_2F | cave late | 38-46 | L R | GOLBAT GRAVELER ONIX
+SinnohVictoryRoad_B1F | cave water late | 38-46 | L W F R | GOLBAT GRAVELER STEELIX
+SinnohVictoryRoad_1F_Room1 | cave late | 40-48 | L R | GOLBAT GRAVELER MACHOKE
+SinnohVictoryRoad_1F_Room2 | cave late | 40-48 | L R | GOLBAT GRAVELER
+SinnohVictoryRoad_1F_Room3 | cave late | 42-50 | L R | GOLBAT GRAVELER STEELIX
+Route224 | grass water late | 44-52 | L W F | ODDISH GLOOM BELLSPROUT WEEPINBELL
+Route225 | grass late | 46-54 | L | FEAROW RATICATE MACHOKE BANETTE
+SurvivalArea | grass late | 46-54 | L | FEAROW RATICATE
+Route226 | grass water late | 47-55 | L W F | FEAROW RATICATE GOLBAT
+Route227 | mountain volcano late | 48-56 | L | FEAROW GOLBAT GRAVELER NUMEL
+StarkMountain | volcano late | 50-58 | L R | MAGMAR GRAVELER GOLBAT
+StarkMountain_Room1 | volcano cave late | 50-58 | L R | MAGMAR GRAVELER GOLBAT
+StarkMountain_Room2_West | volcano cave late | 51-59 | L R | MAGMAR GRAVELER
+StarkMountain_Room2_East | volcano cave late | 51-59 | L R | MAGMAR GRAVELER
+StarkMountain_Room3 | volcano cave late | 52-60 | L R | MAGMAR GRAVELER GOLBAT
+Route228 | desert late | 48-56 | L | HIPPOPOTAS CACTURNE DUGTRIO
+Route229 | grass late | 47-55 | L | ODDISH GLOOM BELLSPROUT PINSIR
+Route230 | grass water late | 47-55 | L W F | ODDISH GLOOM WINGULL TENTACRUEL
+FightArea | grass late | 45-52 | L W F | FEAROW WINGULL
+ResortArea | grass water late | 45-52 | L W F | PSYDUCK GOLDUCK
+LakeVerity | water grass early | 2-6 | L W F | STARLY BIDOOF PSYDUCK GOLDEEN
+LakeValor | water grass | 30-36 | L W F | PSYDUCK GOLDUCK MAGIKARP GYARADOS
+VerityLakefront | grass early | 2-5 | L | STARLY BIDOOF
+FuegoIronworks | grass power | 22-28 | L | MAGNEMITE MAGNETON GROWLITHE
+SendoffSpring | grass water haunted | 36-44 | L W F | GOLDUCK GASTLY CHINGLING
+SpringPath | grass | 36-44 | L | GOLDUCK CHINGLING
+TurnbackCave_Entrance | cave haunted late | 44-54 | L | GOLBAT BRONZONG DUSKULL
+TurnbackCave_Room1 | cave haunted late | 45-55 | L | GOLBAT BRONZONG DUSCLOPS
+FullmoonIsland_Forest | forest haunted | 40-48 | L | GASTLY HAUNTER CLEFAIRY
+NewmoonIsland_Forest | forest haunted | 40-48 | L | GASTLY HAUNTER
+TwinleafTown | water early | 2-8 | W F |
+JubilifeCity | water urban | 4-10 | W F |
+SnowpointCity | water ice | 34-40 | W F |
