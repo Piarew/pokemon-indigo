@@ -2,7 +2,8 @@
 """Copy Johto maps from Heart & Soul 2.0 and rewrite them for pokeemerald-expansion.
 
 HnS source (outside this repo): ../pokehns-expansion
-Rewrite: map.json region REGION_KANTO, layout_version frlg, FRLG metatile attributes.
+Rewrite: map.json region REGION_KANTO, layout_version frlg, FRLG metatile attributes
+(Emerald MB IDs kept; do not invert FRLG_TO_EMERALD).
 Does not patch tools/mapjson/mapjson.cpp.
 """
 from __future__ import annotations
@@ -11,13 +12,10 @@ import json
 import re
 import shutil
 import struct
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HNS = Path("/home/piarew/pokehns-expansion")
-sys.path.insert(0, str(ROOT / "migration_scripts"))
-import frlg_metatile_behavior_converter as conv  # noqa: E402
 
 OUTDOOR_MAPS = [
     "NewBarkTown_hns",
@@ -242,8 +240,13 @@ WEATHER_MAP = {
     "WEATHER_LEAVES": "WEATHER_NONE",
 }
 
-WATER_FRLG = {0x10, 0x11, 0x12, 0x13, 0x15, 0x16, 0x17, 0x1A, 0x1B, 0x50, 0x51, 0x52, 0x53}
-LAND_FRLG = {0x02}
+# Encounter-type bits in FRLG 32-bit packing. Behavior IDs stay Emerald
+# (stock general_frlg / pallet_town_frlg do the same; MetatileBehavior_*
+# always compares against MB_* from metatile_behaviors.h).
+# Do not invert FRLG_TO_EMERALD: last-write-wins maps MB_NORMAL to 0x2B
+# (MB_REFLECTION_UNDER_BRIDGE), which turns land into puddles.
+LAND_ENCOUNTER = {0x02, 0x03, 0xC9}  # tall/long grass, cycling-road grass
+WATER_ENCOUNTER = {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x2C, 0x2D, 0x50, 0x51, 0x52, 0x53}
 
 IMPORTED_MAP_IDS: set[str] = set()
 
@@ -347,17 +350,6 @@ def collect_tilesets(map_folders: list[str], hns_layouts: list[dict]) -> list[tu
     return tilesets
 
 
-def emerald_to_frlg_behavior():
-    table = {}
-    name_to_frlg = {name: code for code, name in conv.FRLG_BEHAVIORS.items()}
-    for frlg_name, em_name in conv.FRLG_TO_EMERALD.items():
-        table[conv.EMERALD_BEHAVIORS[em_name]] = name_to_frlg[frlg_name]
-    return table
-
-
-EMERALD_TO_FRLG = emerald_to_frlg_behavior()
-
-
 def convert_attributes(src: Path, dest: Path) -> None:
     data = src.read_bytes()
     n_meta = (dest.parent / "metatiles.bin").stat().st_size // 16
@@ -370,12 +362,11 @@ def convert_attributes(src: Path, dest: Path) -> None:
     for (attr,) in struct.iter_unpack("<H", data):
         em_behavior = attr & 0x00FF
         layer = (attr & 0xF000) >> 12
-        frlg_behavior = EMERALD_TO_FRLG.get(em_behavior, em_behavior)
-        packed = frlg_behavior | ((layer & 0x3) << 29)
-        if frlg_behavior in LAND_FRLG:
-            packed |= 1 << 24
-        elif frlg_behavior in WATER_FRLG:
-            packed |= 2 << 24
+        packed = em_behavior | ((layer & 0x3) << 29)
+        if em_behavior in LAND_ENCOUNTER:
+            packed |= (1 << 24) | (1 << 9)
+        elif em_behavior in WATER_ENCOUNTER:
+            packed |= (2 << 24) | (2 << 9)
         out.append(packed)
     dest.write_bytes(struct.pack("<" + "I" * len(out), *out))
 
