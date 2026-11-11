@@ -17643,6 +17643,45 @@
     "border_filepath": "data/layouts/JubilifeCity_Gym/border.bin",
     "blockdata_filepath": "data/layouts/JubilifeCity_Gym/map.bin",
     "layout_version": "frlg"
+  },
+  {
+    "id": "LAYOUT_CINNABAR_ISLAND_HNS",
+    "name": "CinnabarIsland_hns_Layout",
+    "width": 72,
+    "height": 44,
+    "primary_tileset": "gTileset_Kanto_General_Hns",
+    "secondary_tileset": "gTileset_Lavaridge_Hns",
+    "border_filepath": "data/layouts/CinnabarIsland_hns/border.bin",
+    "blockdata_filepath": "data/layouts/CinnabarIsland_hns/map.bin",
+    "layout_version": "frlg",
+    "border_width": 2,
+    "border_height": 2
+  },
+  {
+    "id": "LAYOUT_ROUTE20_HNS",
+    "name": "Route20_hns_Layout",
+    "width": 120,
+    "height": 20,
+    "primary_tileset": "gTileset_Kanto_General_Hns",
+    "secondary_tileset": "gTileset_Lavaridge_Hns",
+    "border_filepath": "data/layouts/Route20_hns/border.bin",
+    "blockdata_filepath": "data/layouts/Route20_hns/map.bin",
+    "layout_version": "frlg",
+    "border_width": 2,
+    "border_height": 2
+  },
+  {
+    "id": "LAYOUT_ROUTE21_SOUTH_HNS",
+    "name": "Route21_South_hns_Layout",
+    "width": 24,
+    "height": 50,
+    "primary_tileset": "gTileset_Kanto_General_Hns",
+    "secondary_tileset": "gTileset_Lavaridge_Hns",
+    "border_filepath": "data/layouts/Route21_South_hns/border.bin",
+    "blockdata_filepath": "data/layouts/Route21_South_hns/map.bin",
+    "layout_version": "frlg",
+    "border_width": 2,
+    "border_height": 2
   }
   ]
 }

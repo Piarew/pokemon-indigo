@@ -737,4 +737,7 @@ const u16 gMetatileAttributes_Sinnoh_EliteFour[] = INCBIN_U16("data/tilesets/sec
 const u16 gMetatiles_Sinnoh_CableClub[] = INCBIN_U16("data/tilesets/secondary/sinnoh_cable_club/metatiles.bin");
 const u16 gMetatileAttributes_Sinnoh_CableClub[] = INCBIN_U16("data/tilesets/secondary/sinnoh_cable_club/metatile_attributes.bin");
 
+const u16 gMetatiles_Lavaridge_Hns[] = INCBIN_U16("data/tilesets/secondary/lavaridge_hns/metatiles.bin");
+const u16 gMetatileAttributes_Lavaridge_Hns[] = INCBIN_U16("data/tilesets/secondary/lavaridge_hns/metatile_attributes.bin");
+
 #endif // IS_FRLG

@@ -2793,4 +2793,15 @@ const struct Tileset gTileset_Sinnoh_CableClub =
     .usesEmeraldCounts = TRUE,
 };
 
+const struct Tileset gTileset_Lavaridge_Hns =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Lavaridge_Hns,
+    .palettes = gTilesetPalettes_Lavaridge_Hns,
+    .metatiles = gMetatiles_Lavaridge_Hns,
+    .metatileAttributes = gMetatileAttributes_Lavaridge_Hns,
+    .callback = NULL,
+};
+
 #endif // IS_FRLG

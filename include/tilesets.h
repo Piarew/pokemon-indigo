@@ -177,4 +177,6 @@ extern const struct Tileset gTileset_Sinnoh_MauvilleGym;
 extern const struct Tileset gTileset_Sinnoh_EliteFour;
 extern const struct Tileset gTileset_Sinnoh_CableClub;
 
+extern const struct Tileset gTileset_Lavaridge_Hns;
+
 #endif //GUARD_tilesets_H
