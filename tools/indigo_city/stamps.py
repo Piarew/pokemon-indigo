@@ -100,12 +100,15 @@ class Canvas:
                 self.set(x, y, self.tree_mt(x, y), 1)
 
     def tree_clump(self, x, y, w=2, h=2):
-        """Free-standing tree block on paving/grass: x and y must be even. Ends with a trunk row
-        (0x024/0x025) so the trees sit on the ground like Saffron's (row 22, x10-13)."""
-        assert x % 2 == 0 and y % 2 == 0 and w % 2 == 0 and h % 2 == 0
-        self.trees(x, y, x + w - 1, y + h - 1)
+        """Free-standing tree(s) on grass, FRLG town style (Celadon 46-47,4-6): crown top 0x00E/0x00F
+        (drawn over grass), crown bottom 0x01E/0x01F, trunk row 0x024/0x025. x, y even; w=2 per tree.
+        Occupies rows y..y+2. h is kept for API compatibility (single tree height only)."""
+        assert x % 2 == 0 and y % 2 == 0 and w % 2 == 0
         for xx in range(x, x + w):
-            self.set(xx, y + h, 0x024 if xx % 2 == 0 else 0x025, 1)
+            r = xx % 2
+            self.set(xx, y, (0x00E, 0x00F)[r], 1)
+            self.set(xx, y + 1, (0x01E, 0x01F)[r], 1)
+            self.set(xx, y + 2, (0x024, 0x025)[r], 1)
 
     # --- fences ----------------------------------------------------------
     def fence_h(self, x0, x1, y):
