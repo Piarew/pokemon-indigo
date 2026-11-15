@@ -17682,6 +17682,19 @@
     "layout_version": "frlg",
     "border_width": 2,
     "border_height": 2
+  },
+  {
+    "id": "LAYOUT_INDIGO_CITY",
+    "name": "IndigoCity_Layout",
+    "width": 66,
+    "height": 56,
+    "border_width": 2,
+    "border_height": 2,
+    "primary_tileset": "gTileset_General_Frlg",
+    "secondary_tileset": "gTileset_SaffronCity",
+    "border_filepath": "data/layouts/IndigoCity/border.bin",
+    "blockdata_filepath": "data/layouts/IndigoCity/map.bin",
+    "layout_version": "frlg"
   }
   ]
 }

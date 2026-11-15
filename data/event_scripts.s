@@ -803,6 +803,7 @@ gStdScripts_End::
 	.include "data/maps/CinnabarIsland_Frlg/scripts.inc"
 	.include "data/maps/IndigoPlateau_Exterior_Frlg/scripts.inc"
 	.include "data/maps/SaffronCity_Frlg/scripts.inc"
+	.include "data/maps/IndigoCity/scripts.inc"
 	.include "data/maps/SaffronCity_Connection_Frlg/scripts.inc"
 	.include "data/maps/OneIsland_Frlg/scripts.inc"
 	.include "data/maps/TwoIsland_Frlg/scripts.inc"
