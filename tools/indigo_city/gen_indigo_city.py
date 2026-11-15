@@ -6,6 +6,9 @@ from collections import deque
 
 from stamps import BUSH, FLOWER, GRASS, PAVE, SIGN, Canvas, frame, stamp_size
 
+TALL_GRASS = 0x00D      # MB_TALL_GRASS, land encounters (Viridian Forest / Route 6 use 0x0D)
+BOULDER_GAP = (17, 36)  # gap in the Day Care yard's north rail, blocked by a Strength boulder
+
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 os.chdir(REPO)
 
@@ -60,8 +63,7 @@ def main():
     place('pokecenter', 9, 18, 'Pokemon Center')
     place('mart', 15, 19, 'Poke Mart')
     place('tower', 22, 18, 'Indigo Department Store')
-    place('apartment', 39, 18)
-    place('apartment', 44, 18)
+    lay_pond(c)          # replaces the two apartment blocks (x39..48, y18..23)
     place('house_door', 51, 18, 'Hotel')
     place('house_short', 9, 26)
     place('house_wide_door', 15, 26, 'Pokemon Fan Club')
@@ -100,7 +102,8 @@ def main():
                 continue
             assert not c.solid(x, y), ('avenue', x, y, hex(c.mt(x, y)))
 
-    precheck(c, (34, 47))
+    precheck(c, (34, 47), blocked={BOULDER_GAP})
+    precheck(c, (34, 47), label='with Strength')
 
     c.save('data/layouts/IndigoCity')
 
@@ -142,7 +145,20 @@ def main():
         'floor_number': 0,
         'battle_scene': 'MAP_BATTLE_SCENE_NORMAL',
         'connections': None,
-        'object_events': [],
+        'object_events': [{
+            'type': 'object',
+            'graphics_id': 'OBJ_EVENT_GFX_PUSHABLE_BOULDER',
+            'x': BOULDER_GAP[0],
+            'y': BOULDER_GAP[1],
+            'elevation': 3,
+            'movement_type': 'MOVEMENT_TYPE_FACE_DOWN',
+            'movement_range_x': 0,
+            'movement_range_y': 0,
+            'trainer_type': 'TRAINER_TYPE_NONE',
+            'trainer_sight_or_berry_tree_id': '0',
+            'script': 'EventScript_StrengthBoulder',
+            'flag': '0',
+        }],
         'warp_events': warps,
         'coord_events': coord_events,
         'bg_events': [],
@@ -178,21 +194,40 @@ def lay_park(c):
 
 
 def lay_daycare_yard(c):
-    """Closed pen east of Day Care. Interior grass is solid so the pen is not an unreachable walkable pocket."""
-    c.fence_h(14, 21, 36)
+    """Fenced tall-grass yard east of the Day Care (x14..21, y36..42). The north rail has a 1-tile
+    gap at BOULDER_GAP that holds a Strength boulder object; push it south into the grass to enter."""
+    gx, gy = BOULDER_GAP
+    c.fence_h(14, gx - 1, 36)
+    c.fence_h(gx + 1, 21, 36)
+    c.set(gx, gy, GRASS)                   # walkable gap tile under the boulder
     c.fence_h(14, 21, 42)
     c.fence_v(14, 37, 41, 'left')
     c.fence_v(21, 37, 41, 'right')
-    for y in range(37, 42):
-        for x in range(15, 21):
-            c.set(x, y, GRASS, 1)
+    c.fill(15, 37, 20, 41, TALL_GRASS)     # walkable, wild-encounter tall grass
+
+
+def lay_pond(c):
+    """FRLG pond (General_Frlg 0x1A5-0x1AF water with rock rim, 0x133 lower lip) on a grass lot
+    x40..49, y18..24. Water is MB_POND_WATER, collision 0, elevation 1 (surf / fishing), like
+    Viridian City's pond; the rim/lip tiles are walkable grass at elevation 3."""
+    c.grass_patch(40, 18, 49, 24)
+    x0, x1, y0, y1 = 41, 48, 19, 22        # water rows y19..22, lip row y23
+    for y in range(y0, y1 + 1):
+        for x in range(x0, x1 + 1):
+            if y == y0:
+                m = 0x1A5 if x == x0 else 0x1A7 if x == x1 else 0x1A6
+            else:
+                m = 0x1AD if x == x0 else 0x1AF if x == x1 else 0x1AE
+            c.set(x, y, m, 0, 1)
+    for x in range(x0, x1 + 1):
+        c.set(x, y1 + 1, 0x133)
 
 
 def warp(x, y, dest, dest_id, elev):
     return {'x': x, 'y': y, 'elevation': elev, 'dest_map': dest, 'dest_warp_id': dest_id}
 
 
-def precheck(c, start):
+def precheck(c, start, blocked=(), label='no Strength'):
     sx, sy = start
     seen = {(sx, sy)}
     q = deque([(sx, sy)])
@@ -200,14 +235,19 @@ def precheck(c, start):
         x, y = q.popleft()
         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             nx, ny = x + dx, y + dy
-            if 0 <= nx < c.w and 0 <= ny < c.h and (nx, ny) not in seen and not c.solid(nx, ny):
+            if 0 <= nx < c.w and 0 <= ny < c.h and (nx, ny) not in seen and not c.solid(nx, ny) and (nx, ny) not in blocked:
                 e1 = (c.b[y][x] >> 12) & 0xF
                 e2 = (c.b[ny][nx] >> 12) & 0xF
                 if e1 == e2 or e1 in (0, 15) or e2 in (0, 15):
                     seen.add((nx, ny))
                     q.append((nx, ny))
-    unreach = [(x, y) for y in range(c.h) for x in range(c.w) if not c.solid(x, y) and (x, y) not in seen]
-    print('precheck start=%s reachable=%d walkable_unreachable=%d' % (start, len(seen), len(unreach)))
+    water = lambda x, y: (c.b[y][x] >> 12) & 0xF == 1      # surf-only pond tiles
+    unreach = [(x, y) for y in range(c.h) for x in range(c.w)
+               if not c.solid(x, y) and not water(x, y) and (x, y) not in seen]
+    yard = [(x, y) for x, y in unreach if 15 <= x <= 20 and 37 <= y <= 41 or (x, y) == BOULDER_GAP]
+    print('precheck (%s) start=%s reachable=%d walkable_unreachable=%d (Day Care yard behind boulder: %d)'
+          % (label, start, len(seen), len(unreach), len(yard)))
+    unreach = [t for t in unreach if t not in yard]
     if unreach:
         print('unreachable sample:', unreach[:40])
         raise SystemExit(1)
