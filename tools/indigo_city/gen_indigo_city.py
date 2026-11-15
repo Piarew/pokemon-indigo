@@ -4,6 +4,7 @@ import json
 import os
 from collections import deque
 
+from gen_indigo_tileset import gym_remap
 from stamps import BUSH, FLOWER, GRASS, PAVE, SIGN, Canvas, frame, stamp_size
 
 TALL_GRASS = 0x00D      # MB_TALL_GRASS, land encounters (Viridian Forest / Route 6 use 0x0D)
@@ -22,6 +23,22 @@ DEST = {
 }
 
 WEST_FENCE, EAST_FENCE, TOP_FENCE, BOT_FENCE = 6, 59, 9, 45
+
+
+def indigo_gym_roofs(c, rects):
+    """Point the gym stamps at gTileset_IndigoCity's indigo-roof metatile copies."""
+    remap = gym_remap()
+    for name, x0, y0, x1, y1 in rects:
+        if name not in ('League Registration Hall', 'Battle Club'):
+            continue
+        n = 0
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                v = c.b[y][x]
+                if (v & 0x3FF) in remap:
+                    c.b[y][x] = (v & ~0x3FF) | remap[v & 0x3FF]
+                    n += 1
+        assert n, name
 
 
 def main():
@@ -56,6 +73,7 @@ def main():
     place('house_door', 18, 11, 'Name Rater')
     place('gym', 24, 11, 'League Registration Hall')
     place('gym', 39, 11, 'Battle Club')   # mirror of the League Hall across the avenue
+    indigo_gym_roofs(c, rects)
     place('house_wide_door', 47, 11, 'Trade & Link Center')
     place('house_plain', 53, 11)
 

@@ -17691,7 +17691,7 @@
     "border_width": 2,
     "border_height": 2,
     "primary_tileset": "gTileset_General_Frlg",
-    "secondary_tileset": "gTileset_SaffronCity",
+    "secondary_tileset": "gTileset_IndigoCity",
     "border_filepath": "data/layouts/IndigoCity/border.bin",
     "blockdata_filepath": "data/layouts/IndigoCity/map.bin",
     "layout_version": "frlg"

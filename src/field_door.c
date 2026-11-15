@@ -865,6 +865,22 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .palettes = sDoorAnimPalettes_SilphCo
     },
     {
+        .metatileNum = METATILE_SaffronCity_Door,
+        .tileset = &gTileset_IndigoCity,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x1,
+        .tiles = sDoorAnimTiles_Saffron,
+        .palettes = sDoorAnimPalettes_Saffron
+    },
+    {
+        .metatileNum = METATILE_SaffronCity_SilphCoDoor,
+        .tileset = &gTileset_IndigoCity,
+        .sound = DOOR_SOUND_SLIDING,
+        .size = DOOR_SIZE_1x1,
+        .tiles = sDoorAnimTiles_SilphCo,
+        .palettes = sDoorAnimPalettes_SilphCo
+    },
+    {
         .metatileNum = METATILE_CeruleanCity_Door,
         .tileset = &gTileset_CeruleanCity,
         .sound = DOOR_SOUND_NORMAL,

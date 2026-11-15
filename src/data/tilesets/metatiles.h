@@ -253,6 +253,8 @@ const u16 gMetatileAttributes_IndigoPlateau[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_SaffronCity[] = INCBIN_U16("data/tilesets/secondary/saffron_city_frlg/metatiles.bin");
 const u16 gMetatileAttributes_SaffronCity[] = INCBIN_U16("data/tilesets/secondary/saffron_city_frlg/metatile_attributes.bin");
+const u16 gMetatiles_IndigoCity[] = INCBIN_U16("data/tilesets/secondary/indigo_city/metatiles.bin");
+const u16 gMetatileAttributes_IndigoCity[] = INCBIN_U16("data/tilesets/secondary/indigo_city/metatile_attributes.bin");
 
 const u16 gMetatiles_PewterGym[] = INCBIN_U16("data/tilesets/secondary/pewter_gym_frlg/metatiles.bin");
 const u16 gMetatileAttributes_PewterGym[] = INCBIN_U16("data/tilesets/secondary/pewter_gym_frlg/metatile_attributes.bin");
