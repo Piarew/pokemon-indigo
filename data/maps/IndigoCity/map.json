@@ -85,7 +85,7 @@
       "x": 42,
       "y": 15,
       "elevation": 0,
-      "dest_map": "MAP_SAFFRON_CITY_GYM",
+      "dest_map": "MAP_PEWTER_CITY_GYM",
       "dest_warp_id": "1"
     },
     {
@@ -179,5 +179,14 @@
       "script": "IndigoCity_EventScript_VictoryRoadGate"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 42,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "IndigoCity_EventScript_BattleClubDoor"
+    }
+  ]
 }

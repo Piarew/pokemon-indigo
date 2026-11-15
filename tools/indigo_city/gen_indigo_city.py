@@ -2,13 +2,15 @@
 """Compose Indigo City from the Saffron stamp library and write its map json."""
 import json
 import os
+import re
 from collections import deque
 
 from gen_indigo_tileset import gym_remap
 from stamps import BUSH, FLOWER, GRASS, PAVE, SIGN, Canvas, frame, stamp_size
 
 TALL_GRASS = 0x00D      # MB_TALL_GRASS, land encounters (Viridian Forest / Route 6 use 0x0D)
-BOULDER_GAP = (17, 36)  # gap in the Day Care yard's north rail, blocked by a Strength boulder
+BOULDER_GAP = (17, 36)
+REMATCH_DOOR_MT = 0x15B  # gym door; scripts.inc swaps in wall 0x314 while the Battle Club is locked  # gap in the Day Care yard's north rail, blocked by a Strength boulder
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 os.chdir(REPO)
@@ -16,7 +18,8 @@ os.chdir(REPO)
 HOUSE = 'MAP_SAFFRON_CITY_HOUSE'
 DEST = {
     'League Registration Hall': 'MAP_SAFFRON_CITY_GYM',
-    'Battle Club': 'MAP_SAFFRON_CITY_GYM',
+    # Placeholder: src/indigo_rematch.c redirects this door to today's rematch gym.
+    'Battle Club': 'MAP_PEWTER_CITY_GYM',
     'Pokemon Center': 'MAP_SAFFRON_CITY_POKEMON_CENTER_1F',
     'Poke Mart': 'MAP_SAFFRON_CITY_MART',
     'Indigo Department Store': 'MAP_SILPH_CO_1F',
@@ -134,6 +137,21 @@ def main():
         for x, y in doors:
             warps.append(warp(x, y, dest, '1', 0))
 
+    # The C side (include/indigo_rematch.h) hardcodes the Battle Club door's warp index.
+    hdr = open('include/indigo_rematch.h').read()
+    door_warp = int(re.search(r'#define INDIGO_CITY_REMATCH_DOOR_WARP (\d+)', hdr).group(1))
+    club = dict(placed)['Battle Club']
+    assert len(club) == 1 and (warps[door_warp]['x'], warps[door_warp]['y']) == club[0], (door_warp, club)
+    assert c.mt(*club[0]) == REMATCH_DOOR_MT, hex(c.mt(*club[0]))
+    bg_events = [{
+        'type': 'sign',
+        'x': club[0][0],
+        'y': club[0][1],
+        'elevation': 0,
+        'player_facing_dir': 'BG_EVENT_PLAYER_FACING_NORTH',
+        'script': 'IndigoCity_EventScript_BattleClubDoor',
+    }]
+
     coord_events = [
         {
             'type': 'trigger',
@@ -179,7 +197,7 @@ def main():
         }],
         'warp_events': warps,
         'coord_events': coord_events,
-        'bg_events': [],
+        'bg_events': bg_events,
     }
     os.makedirs('data/maps/IndigoCity', exist_ok=True)
     with open('data/maps/IndigoCity/map.json', 'w') as f:
