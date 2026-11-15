@@ -646,6 +646,8 @@ gSpecials::
 	def_special CheckAddCoins
 	def_special GiveIndigoRecognition
 	def_special CountIndigoGyms
+	def_special IndigoRematch_UpdateDaily
+	def_special IndigoRematch_BufferLeaderName
 	def_special CountIndigoFieldMoves
 	def_special SyncIndigoCount
 	def_special TryGiveIndigoFieldMoves

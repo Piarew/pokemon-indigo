@@ -21,6 +21,7 @@
 #include "field_specials.h"
 #include "fldeff_misc.h"
 #include "follower_npc.h"
+#include "indigo_rematch.h"
 #include "item_menu.h"
 #include "link.h"
 #include "match_call.h"
@@ -1091,11 +1092,15 @@ static void SetupWarp(struct MapHeader *unused, s8 warpEventId, struct MapPositi
     else
     {
         const struct MapHeader *mapHeader;
+        u8 mapGroup = warpEvent->mapGroup;
+        u8 mapNum = warpEvent->mapNum;
+        u8 warpId = warpEvent->warpId;
 
-        SetWarpDestinationToMapWarp(warpEvent->mapGroup, warpEvent->mapNum, warpEvent->warpId);
+        IndigoRematch_AdjustWarp(warpEventId, &mapGroup, &mapNum, &warpId);
+        SetWarpDestinationToMapWarp(mapGroup, mapNum, warpId);
         UpdateEscapeWarp(position->x, position->y);
-        mapHeader = Overworld_GetMapHeaderByGroupAndId(warpEvent->mapGroup, warpEvent->mapNum);
-        if (mapHeader->events->warps[warpEvent->warpId].mapNum == MAP_NUM(MAP_DYNAMIC))
+        mapHeader = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum);
+        if (mapHeader->events->warps[warpId].mapNum == MAP_NUM(MAP_DYNAMIC))
             SetDynamicWarp(mapHeader->events->warps[warpEventId].warpId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, warpEventId);
     }
 }

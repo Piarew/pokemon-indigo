@@ -263,8 +263,8 @@
 #define VAR_0x40F8                 0x40F8 // DexNav registered species (DN_VAR_SPECIES)
 #define VAR_0x40F9                 0x40F9 // DexNav step counter (DN_VAR_STEP_COUNTER)
 #define VAR_INDIGO_COUNT           0x40FA // Cached 0–18 gym-clear count. Level cap reads flags, not this.
-#define VAR_0x40FB                 0x40FB
-#define VAR_0x40FC                 0x40FC
+#define VAR_INDIGO_REMATCH_GYM     0x40FB // Indigo City Battle Club: today's Kanto gym (low byte) + visit bit 0x8000. src/indigo_rematch.c
+#define VAR_INDIGO_REMATCH_DAY     0x40FC // gLocalTime.days of the last Battle Club reroll.
 #define VAR_0x40FD                 0x40FD
 #define VAR_0x40FE                 0x40FE
 #define VAR_0x40FF                 0x40FF
