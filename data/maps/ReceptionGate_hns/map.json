@@ -44,14 +44,14 @@
       "x": 11,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_VICTORY_ROAD_KANTO_B2F_HNS",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_INDIGO_CITY",
+      "dest_warp_id": "1"
     },
     {
       "x": 10,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_VICTORY_ROAD_KANTO_B2F_HNS",
+      "dest_map": "MAP_INDIGO_CITY",
       "dest_warp_id": "0"
     },
     {
@@ -69,25 +69,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "ReceptionGate_EventScript_VictoryRoadGate"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "ReceptionGate_EventScript_VictoryRoadGate"
-    }
-  ],
+  "coord_events": [],
   "bg_events": []
 }
