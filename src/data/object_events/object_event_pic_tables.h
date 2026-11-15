@@ -2493,4 +2493,6 @@ static const struct SpriteFrameImage sPicTable_MomFrlg[] = {
     overworld_frame(gObjectEventPic_MomFrlg, 2, 4, 2),
 };
 
+#include "indigo_pic_tables.h"
+
 #endif // IS_FRLG

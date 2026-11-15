@@ -545,4 +545,297 @@ PalletTown_Text_PressStartToOpenMenuCopy::
 	.string "Trainer Tips!\p"
 	.string "Press Start to open the Menu!$"
 
+@ Sprite-preview NPCs. Real Indigo gym teams (6v6 doubles).
+@ Beating one here sets that gym trainer's defeated flag.
+
+	.macro pallet_indigo_preview trainer:req, intro:req, defeat:req, after:req
+	trainerbattle_double \trainer, \intro, \defeat, PalletTown_Text_IndigoNeedTwo
+	msgbox \after, MSGBOX_AUTOCLOSE
+	end
+	.endm
+
+PalletTown_EventScript_IndigoViridian::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_VIRIDIAN, PalletTown_Text_WrenIntro, PalletTown_Text_WrenDefeat, PalletTown_Text_WrenAfter
+PalletTown_EventScript_IndigoPewter::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_PEWTER, PalletTown_Text_MasonIntro, PalletTown_Text_MasonDefeat, PalletTown_Text_MasonAfter
+PalletTown_EventScript_IndigoCerulean::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_CERULEAN, PalletTown_Text_MaeveIntro, PalletTown_Text_MaeveDefeat, PalletTown_Text_MaeveAfter
+PalletTown_EventScript_IndigoCeladon::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_CELADON, PalletTown_Text_PepperIntro, PalletTown_Text_PepperDefeat, PalletTown_Text_PepperAfter
+PalletTown_EventScript_IndigoSaffron::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_SAFFRON, PalletTown_Text_IoriIntro, PalletTown_Text_IoriDefeat, PalletTown_Text_IoriAfter
+PalletTown_EventScript_IndigoFuchsia::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_FUCHSIA, PalletTown_Text_HoltIntro, PalletTown_Text_HoltDefeat, PalletTown_Text_HoltAfter
+PalletTown_EventScript_IndigoCherrygrove::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_CHERRYGROVE, PalletTown_Text_ArloIntro, PalletTown_Text_ArloDefeat, PalletTown_Text_ArloAfter
+PalletTown_EventScript_IndigoViolet::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_VIOLET, PalletTown_Text_LenoreIntro, PalletTown_Text_LenoreDefeat, PalletTown_Text_LenoreAfter
+PalletTown_EventScript_IndigoGoldenrod::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_GOLDENROD, PalletTown_Text_ValeIntro, PalletTown_Text_ValeDefeat, PalletTown_Text_ValeAfter
+PalletTown_EventScript_IndigoOlivine::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_OLIVINE, PalletTown_Text_BramIntro, PalletTown_Text_BramDefeat, PalletTown_Text_BramAfter
+PalletTown_EventScript_IndigoCianwood::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_CIANWOOD, PalletTown_Text_YarrowIntro, PalletTown_Text_YarrowDefeat, PalletTown_Text_YarrowAfter
+PalletTown_EventScript_IndigoBlackthorn::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_BLACKTHORN, PalletTown_Text_SigridIntro, PalletTown_Text_SigridDefeat, PalletTown_Text_SigridAfter
+PalletTown_EventScript_IndigoJubilife::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_JUBILIFE, PalletTown_Text_PiperIntro, PalletTown_Text_PiperDefeat, PalletTown_Text_PiperAfter
+PalletTown_EventScript_IndigoOreburgh::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_OREBURGH, PalletTown_Text_GritIntro, PalletTown_Text_GritDefeat, PalletTown_Text_GritAfter
+PalletTown_EventScript_IndigoEterna::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_ETERNA, PalletTown_Text_EdithIntro, PalletTown_Text_EdithDefeat, PalletTown_Text_EdithAfter
+PalletTown_EventScript_IndigoSnowpoint::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_SNOWPOINT, PalletTown_Text_MagnusIntro, PalletTown_Text_MagnusDefeat, PalletTown_Text_MagnusAfter
+PalletTown_EventScript_IndigoSunyshore::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_SUNYSHORE, PalletTown_Text_WadeIntro, PalletTown_Text_WadeDefeat, PalletTown_Text_WadeAfter
+PalletTown_EventScript_IndigoPastoria::
+	pallet_indigo_preview TRAINER_LEADER_INDIGO_PASTORIA, PalletTown_Text_GilesIntro, PalletTown_Text_GilesDefeat, PalletTown_Text_GilesAfter
+
+PalletTown_Text_IndigoNeedTwo::
+	.string "Bring two POKéMON.\n"
+	.string "This is a Double Battle.$"
+
+PalletTown_Text_WrenIntro::
+	.string "I'm WREN. I keep the woods standing,\n"
+	.string "with or without Indigo's blessing.\p"
+	.string "Grass POKéMON grow on their own terms.\n"
+	.string "Let's see if you respect that.$"
+
+PalletTown_Text_WrenDefeat::
+	.string "You cut a path.\n"
+	.string "I'll plant around it.$"
+
+PalletTown_Text_WrenAfter::
+	.string "Viridian's gym is a greenhouse.\n"
+	.string "Come when you're ready to get dirty.$"
+
+PalletTown_Text_MasonIntro::
+	.string "Name's MASON. I smith steel the old\n"
+	.string "Pewter way.\p"
+	.string "Indigo pays for the forge.\n"
+	.string "I pay them back in tempered POKéMON.$"
+
+PalletTown_Text_MasonDefeat::
+	.string "Solid work.\n"
+	.string "You didn't warp in the heat.$"
+
+PalletTown_Text_MasonAfter::
+	.string "Steel bends. It doesn't break.\n"
+	.string "Remember that in my gym.$"
+
+PalletTown_Text_MaeveIntro::
+	.string "MAEVE, darling. Cerulean's stage is mine.\p"
+	.string "Fairy POKéMON love an audience.\n"
+	.string "Give them a show.$"
+
+PalletTown_Text_MaeveDefeat::
+	.string "Oh, you stole my spotlight.$"
+
+PalletTown_Text_MaeveAfter::
+	.string "Keep practicing.\n"
+	.string "The next act is in Cerulean.$"
+
+PalletTown_Text_PepperIntro::
+	.string "PEPPER, Celadon kitchen.\n"
+	.string "Fire isn't garnish.\n"
+	.string "It's the whole dish.\p"
+	.string "Sit down. Dinner's a Double Battle.$"
+
+PalletTown_Text_PepperDefeat::
+	.string "Overcooked.\n"
+	.string "I'll plate it better next time.$"
+
+PalletTown_Text_PepperAfter::
+	.string "Celadon's gym smells like spice.\n"
+	.string "Don't be late.$"
+
+PalletTown_Text_IoriIntro::
+	.string "IORI. Saffron dojo.\n"
+	.string "A belt is earned, not issued.\p"
+	.string "Fighting POKéMON don't fake a strike.\n"
+	.string "Neither do I.$"
+
+PalletTown_Text_IoriDefeat::
+	.string "Your form held.\n"
+	.string "Bow.$"
+
+PalletTown_Text_IoriAfter::
+	.string "The dojo doors stay open.\n"
+	.string "Come train for real.$"
+
+PalletTown_Text_HoltIntro::
+	.string "HOLT. I walk Fuchsia's preserve.\p"
+	.string "Dragon POKéMON keep to the deep paths.\n"
+	.string "Stay on mine.$"
+
+PalletTown_Text_HoltDefeat::
+	.string "You found the trail.\n"
+	.string "Most don't.$"
+
+PalletTown_Text_HoltAfter::
+	.string "The Safari's quieter than it looks.\n"
+	.string "My gym isn't.$"
+
+PalletTown_Text_ArloIntro::
+	.string "ARLO. I catalog ordinary POKéMON\n"
+	.string "like they're treasures.\p"
+	.string "Normal types get overlooked.\n"
+	.string "That's a mistake.$"
+
+PalletTown_Text_ArloDefeat::
+	.string "Noted.\n"
+	.string "You're going in the field journal.$"
+
+PalletTown_Text_ArloAfter::
+	.string "Cherrygrove's gym is a collection.\n"
+	.string "Handle with care.$"
+
+PalletTown_Text_LenoreIntro::
+	.string "…LENORE. I tend Violet's empty houses.\p"
+	.string "Ghost POKéMON stayed when the city\n"
+	.string "didn't. Indigo can wait.$"
+
+PalletTown_Text_LenoreDefeat::
+	.string "You walked out.\n"
+	.string "That's rarer than you think.$"
+
+PalletTown_Text_LenoreAfter::
+	.string "Violet is abandoned.\n"
+	.string "The gym still has lights on.$"
+
+PalletTown_Text_ValeIntro::
+	.string "VALE. Goldenrod deals in what people\n"
+	.string "won't say out loud.\p"
+	.string "Dark POKéMON know a good contract.\n"
+	.string "Do you?$"
+
+PalletTown_Text_ValeDefeat::
+	.string "Fine.\n"
+	.string "You drove a harder bargain.$"
+
+PalletTown_Text_ValeAfter::
+	.string "The department store's honest.\n"
+	.string "My gym isn't. Come anyway.$"
+
+PalletTown_Text_BramIntro::
+	.string "BRAM. I keep Olivine's light turning.\p"
+	.string "Flying POKéMON read the wind.\n"
+	.string "So do ships. So do I.$"
+
+PalletTown_Text_BramDefeat::
+	.string "Gust caught me.\n"
+	.string "I'll trim the lamp.$"
+
+PalletTown_Text_BramAfter::
+	.string "Climb the tower when you want\n"
+	.string "a proper match.$"
+
+PalletTown_Text_YarrowIntro::
+	.string "YARROW. I mix what Cianwood's clinic\n"
+	.string "won't touch.\p"
+	.string "Poison isn't cruelty.\n"
+	.string "It's a measured dose.$"
+
+PalletTown_Text_YarrowDefeat::
+	.string "You had the antidote ready.\n"
+	.string "Good.$"
+
+PalletTown_Text_YarrowAfter::
+	.string "Come to the pharmacy gym.\n"
+	.string "Wipe your feet.$"
+
+PalletTown_Text_SigridIntro::
+	.string "SIGRID. Ice is a teacher.\n"
+	.string "Blackthorn is the classroom.\p"
+	.string "If you can't keep your footing,\n"
+	.string "turn back.$"
+
+PalletTown_Text_SigridDefeat::
+	.string "Avalanche on me.\n"
+	.string "I'll climb it.$"
+
+PalletTown_Text_SigridAfter::
+	.string "The mountain gym doesn't lower\n"
+	.string "itself. You climb.$"
+
+PalletTown_Text_PiperIntro::
+	.string "PIPER, live from Jubilife!\p"
+	.string "Electric POKéMON don't whisper.\n"
+	.string "Neither does the news.$"
+
+PalletTown_Text_PiperDefeat::
+	.string "And that's a wrap.\n"
+	.string "You took the segment.$"
+
+PalletTown_Text_PiperAfter::
+	.string "Tune in at the TV gym.\n"
+	.string "Bring two POKéMON. We're doubles.$"
+
+PalletTown_Text_GritIntro::
+	.string "GRIT. I map what sits under Oreburgh.\p"
+	.string "Ground POKéMON don't lie about\n"
+	.string "bedrock. I don't either.$"
+
+PalletTown_Text_GritDefeat::
+	.string "You found the fault line.\n"
+	.string "I'll mark it.$"
+
+PalletTown_Text_GritAfter::
+	.string "The mine gym goes down.\n"
+	.string "Watch your head.$"
+
+PalletTown_Text_EdithIntro::
+	.string "EDITH. I keep Eterna's records,\n"
+	.string "not Indigo's speeches.\p"
+	.string "Psychic POKéMON remember.\n"
+	.string "So should you.$"
+
+PalletTown_Text_EdithDefeat::
+	.string "Written down.\n"
+	.string "You won.$"
+
+PalletTown_Text_EdithAfter::
+	.string "The library gym is quiet.\n"
+	.string "Your battle won't be.$"
+
+PalletTown_Text_MagnusIntro::
+	.string "MAGNUS. Snowpoint expeditions\n"
+	.string "don't turn around.\p"
+	.string "Rock POKéMON wait out the storm.\n"
+	.string "Pack for it.$"
+
+PalletTown_Text_MagnusDefeat::
+	.string "Base camp.\n"
+	.string "We'll summit later.$"
+
+PalletTown_Text_MagnusAfter::
+	.string "The gym is a ridge, not a lobby.\n"
+	.string "Dress warm.$"
+
+PalletTown_Text_WadeIntro::
+	.string "WADE. I keep Sunyshore's water moving.\p"
+	.string "Water POKéMON follow pressure.\n"
+	.string "So do pipes. So do I.$"
+
+PalletTown_Text_WadeDefeat::
+	.string "Leak on my side.\n"
+	.string "I'll patch it.$"
+
+PalletTown_Text_WadeAfter::
+	.string "The coastal gym is live.\n"
+	.string "Bring two POKéMON.$"
+
+PalletTown_Text_GilesIntro::
+	.string "GILES. I study bugs others swat.\p"
+	.string "Bug POKéMON built the marsh.\n"
+	.string "Indigo just put a sign on it.$"
+
+PalletTown_Text_GilesDefeat::
+	.string "Specimen noted.\n"
+	.string "You're quicker than you look.$"
+
+PalletTown_Text_GilesAfter::
+	.string "Pastoria's gym is a net and a notebook.\n"
+	.string "Come get caught.$"
+
 

@@ -13816,9 +13816,9 @@ Cherrygrove Normal. Signature Porygon-Z. Safety Gallade (Fighting).
 Open Maushold + Porygon-Z. Five Normal core; Gallade is off-type.
 */
 === TRAINER_LEADER_INDIGO_CHERRYGROVE ===
-Name: Naturalist
+Name: Arlo
 Class: Leader Frlg
-Pic: Super Nerd Frlg
+Pic: Indigo Cherrygrove
 Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion / Full Heal
@@ -13892,9 +13892,9 @@ Violet Ghost. Signature Mimikyu. Safety Bisharp (Dark/Steel).
 Open Mimikyu + Gholdengo. Five Ghost core; Bisharp is off-type.
 */
 === TRAINER_LEADER_INDIGO_VIOLET ===
-Name: Caretaker
+Name: Lenore
 Class: Leader Frlg
-Pic: Channeler Frlg
+Pic: Indigo Violet
 Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion / Full Heal
@@ -13968,9 +13968,9 @@ Goldenrod Dark. Signature Kingambit. Safety Lucario (Fighting/Steel).
 Open Grimmsnarl + Mandibuzz. Five Dark core; Lucario is off-type.
 */
 === TRAINER_LEADER_INDIGO_GOLDENROD ===
-Name: Magnate
+Name: Vale
 Class: Leader Frlg
-Pic: Gentleman Frlg
+Pic: Indigo Goldenrod
 Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion / Full Heal
@@ -14042,9 +14042,9 @@ Olivine Flying. Signature Tornadus (Incarnate / Prankster). Safety Excadrill (Gr
 Open Tornadus + Kilowattrel. Dropped Gyarados. Five Flying core; Excadrill is off-type.
 */
 === TRAINER_LEADER_INDIGO_OLIVINE ===
-Name: Keeper
+Name: Bram
 Class: Leader Frlg
-Pic: Sailor Frlg
+Pic: Indigo Olivine
 Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion / Full Heal
@@ -14116,9 +14116,9 @@ Cianwood Poison. Signature Glimmora. Safety Corviknight (Steel/Flying).
 Open Glimmora + Sneasler. Five Poison core; Corviknight is off-type.
 */
 === TRAINER_LEADER_INDIGO_CIANWOOD ===
-Name: Apothecary
+Name: Yarrow
 Class: Leader Frlg
-Pic: Cooltrainer F Frlg
+Pic: Indigo Cianwood
 Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion / Full Heal
@@ -14190,9 +14190,9 @@ Blackthorn Ice. Signature Alolan Ninetales. Safety Quaquaval (Water/Fighting).
 Open Ninetales-Alola + Cetitan. Five Ice core; Quaquaval is off-type.
 */
 === TRAINER_LEADER_INDIGO_BLACKTHORN ===
-Name: Climber
+Name: Sigrid
 Class: Leader Frlg
-Pic: Elite Four Lorelei Frlg
+Pic: Indigo Blackthorn
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -14264,9 +14264,9 @@ Viridian Grass. Signature Venusaur. Safety Heatran (Fire/Steel).
 Open Rillaboom + Whimsicott. Dual sun + Grassy Terrain. Five Grass core; Heatran is off-type.
 */
 === TRAINER_LEADER_INDIGO_VIRIDIAN ===
-Name: Botanist
+Name: Wren
 Class: Leader Frlg
-Pic: Leader Erika Frlg
+Pic: Indigo Viridian
 Gender: Female
 Music: Female
 Items: Super Potion / Super Potion
@@ -14339,9 +14339,9 @@ Pewter Steel. Signature Metagross. Safety Gliscor (Ground/Flying).
 Open Corviknight + Heatran. Five Steel core; Gliscor is off-type.
 */
 === TRAINER_LEADER_INDIGO_PEWTER ===
-Name: Craftsman
+Name: Mason
 Class: Leader Frlg
-Pic: Leader Brock Frlg
+Pic: Indigo Pewter
 Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
@@ -14414,9 +14414,9 @@ Cerulean Fairy. Signature Hatterene. Safety Excadrill (Ground/Steel).
 Open Hatterene + Klefki. Five Fairy core; Excadrill is off-type.
 */
 === TRAINER_LEADER_INDIGO_CERULEAN ===
-Name: Magician
+Name: Maeve
 Class: Leader Frlg
-Pic: Painter Frlg
+Pic: Indigo Cerulean
 Gender: Female
 Music: Female
 Items: Super Potion / Super Potion
@@ -14490,9 +14490,9 @@ Celadon Fire. Signature Torkoal. Safety Gastrodon (Water/Ground).
 Open Torkoal + Scovillain. Five Fire core; Gastrodon is off-type.
 */
 === TRAINER_LEADER_INDIGO_CELADON ===
-Name: Chef
+Name: Pepper
 Class: Leader Frlg
-Pic: Beauty Frlg
+Pic: Indigo Celadon
 Gender: Female
 Music: Female
 Items: Hyper Potion / Full Heal
@@ -14531,7 +14531,7 @@ EVs: 252 SpA / 4 SpD / 252 Spe
 - Protect
 
 Houndoom @ Life Orb
-Ability: Solar Power
+Ability: Flash Fire
 Level: 23
 Timid Nature
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -14565,9 +14565,9 @@ Saffron Fighting. Signature Annihilape. Safety Gardevoir (Psychic/Fairy).
 Open Hitmontop + Annihilape. Five Fighting core; Gardevoir is off-type.
 */
 === TRAINER_LEADER_INDIGO_SAFFRON ===
-Name: Sensei
+Name: Iori
 Class: Leader Frlg
-Pic: Black Belt Frlg
+Pic: Indigo Saffron
 Gender: Male
 Music: Male
 Items: Hyper Potion / Full Heal
@@ -14640,9 +14640,9 @@ Open Dragapult + Garchomp. Five Dragon core; Aegislash is off-type.
 Clanging Scales hits allies; Protect or immune partners only.
 */
 === TRAINER_LEADER_INDIGO_FUCHSIA ===
-Name: Warden
+Name: Holt
 Class: Leader Frlg
-Pic: Pokemon Ranger M Frlg
+Pic: Indigo Fuchsia
 Gender: Male
 Music: Male
 Items: Hyper Potion / Full Heal
@@ -14714,9 +14714,9 @@ Jubilife Electric. Signature Alolan Raichu. Safety Tangrowth (Grass).
 Open Pincurchin + Raichu-Alola. Five Electric core; Tangrowth is off-type.
 */
 === TRAINER_LEADER_INDIGO_JUBILIFE ===
-Name: Anchor
+Name: Piper
 Class: Leader Frlg
-Pic: Cooltrainer F Frlg
+Pic: Indigo Jubilife
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -14789,9 +14789,9 @@ Open Garchomp + Flygon. Five Ground core; Rotom-Wash is off-type.
 Earthquake hits grounded allies (Gastrodon, Clodsire); use High Horsepower then.
 */
 === TRAINER_LEADER_INDIGO_OREBURGH ===
-Name: Surveyor
+Name: Grit
 Class: Leader Frlg
-Pic: Ruin Maniac Frlg
+Pic: Indigo Oreburgh
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -14863,9 +14863,9 @@ Eterna Psychic. Signature Indeedee-F. Safety Scizor (Bug/Steel).
 Open Indeedee-F + Alakazam. Five Psychic core; Scizor is off-type.
 */
 === TRAINER_LEADER_INDIGO_ETERNA ===
-Name: Historian
+Name: Edith
 Class: Leader Frlg
-Pic: Leader Sabrina Frlg
+Pic: Indigo Eterna
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -14939,9 +14939,9 @@ Open Tyranitar + Lycanroc (Midday). Five Rock core; Breloom is off-type.
 Do not send both Sand Stream setters at once.
 */
 === TRAINER_LEADER_INDIGO_SNOWPOINT ===
-Name: Explorer
+Name: Magnus
 Class: Leader Frlg
-Pic: Hiker Frlg
+Pic: Indigo Snowpoint
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -15013,9 +15013,9 @@ Sunyshore Water. Signature Pelipper. Safety Ferrothorn (Grass/Steel).
 Open Pelipper + Kingdra. Five Water core; Ferrothorn is off-type.
 */
 === TRAINER_LEADER_INDIGO_SUNYSHORE ===
-Name: Engineer
+Name: Wade
 Class: Leader Frlg
-Pic: Engineer Frlg
+Pic: Indigo Sunyshore
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -15088,9 +15088,9 @@ Pastoria Bug. Signature Ribombee. Safety Coalossal (Rock/Fire).
 Open Ribombee + Galvantula. Five Bug core; Coalossal is off-type.
 */
 === TRAINER_LEADER_INDIGO_PASTORIA ===
-Name: Researcher
+Name: Giles
 Class: Leader Frlg
-Pic: Scientist Frlg
+Pic: Indigo Pastoria
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore

@@ -387,6 +387,24 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysD;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysA;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysN;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoViridian;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoPewter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoCerulean;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoCeladon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoSaffron;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoFuchsia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoCherrygrove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoViolet;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoGoldenrod;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoOlivine;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoCianwood;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoBlackthorn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoJubilife;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoOreburgh;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoEterna;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoSnowpoint;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoSunyshore;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_IndigoPastoria;
 // Begin Pokémon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -790,6 +808,24 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DEOXYS_A]                 = &gObjectEventGraphicsInfo_DeoxysA,
     [OBJ_EVENT_GFX_DEOXYS_N]                 = &gObjectEventGraphicsInfo_DeoxysN,
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
+    [OBJ_EVENT_GFX_INDIGO_VIRIDIAN]          = &gObjectEventGraphicsInfo_IndigoViridian,
+    [OBJ_EVENT_GFX_INDIGO_PEWTER]            = &gObjectEventGraphicsInfo_IndigoPewter,
+    [OBJ_EVENT_GFX_INDIGO_CERULEAN]          = &gObjectEventGraphicsInfo_IndigoCerulean,
+    [OBJ_EVENT_GFX_INDIGO_CELADON]           = &gObjectEventGraphicsInfo_IndigoCeladon,
+    [OBJ_EVENT_GFX_INDIGO_SAFFRON]           = &gObjectEventGraphicsInfo_IndigoSaffron,
+    [OBJ_EVENT_GFX_INDIGO_FUCHSIA]           = &gObjectEventGraphicsInfo_IndigoFuchsia,
+    [OBJ_EVENT_GFX_INDIGO_CHERRYGROVE]       = &gObjectEventGraphicsInfo_IndigoCherrygrove,
+    [OBJ_EVENT_GFX_INDIGO_VIOLET]            = &gObjectEventGraphicsInfo_IndigoViolet,
+    [OBJ_EVENT_GFX_INDIGO_GOLDENROD]         = &gObjectEventGraphicsInfo_IndigoGoldenrod,
+    [OBJ_EVENT_GFX_INDIGO_OLIVINE]           = &gObjectEventGraphicsInfo_IndigoOlivine,
+    [OBJ_EVENT_GFX_INDIGO_CIANWOOD]          = &gObjectEventGraphicsInfo_IndigoCianwood,
+    [OBJ_EVENT_GFX_INDIGO_BLACKTHORN]        = &gObjectEventGraphicsInfo_IndigoBlackthorn,
+    [OBJ_EVENT_GFX_INDIGO_JUBILIFE]          = &gObjectEventGraphicsInfo_IndigoJubilife,
+    [OBJ_EVENT_GFX_INDIGO_OREBURGH]          = &gObjectEventGraphicsInfo_IndigoOreburgh,
+    [OBJ_EVENT_GFX_INDIGO_ETERNA]            = &gObjectEventGraphicsInfo_IndigoEterna,
+    [OBJ_EVENT_GFX_INDIGO_SNOWPOINT]         = &gObjectEventGraphicsInfo_IndigoSnowpoint,
+    [OBJ_EVENT_GFX_INDIGO_SUNYSHORE]         = &gObjectEventGraphicsInfo_IndigoSunyshore,
+    [OBJ_EVENT_GFX_INDIGO_PASTORIA]          = &gObjectEventGraphicsInfo_IndigoPastoria,
 #endif // IS_FRLG
 };
 

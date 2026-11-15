@@ -1,5 +1,6 @@
 #include "constants/trainers.h"
 #include "data.h"
+#include "indigo_trainer_pics.h"
 
 const u32 gTrainerFrontPic_None[] = INCGFX_U32("graphics/trainers/front_pics/none.png", ".4bpp.smol");
 const u16 gTrainerPalette_None[] = INCGFX_U16("graphics/trainers/palettes/none.pal", ".gbapal");
@@ -1226,4 +1227,22 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PainterFrlg, gTrainerPalette_PainterFrlg),
     },
+    [TRAINER_PIC_INDIGO_VIRIDIAN]    = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoViridian, gTrainerPalette_IndigoViridian) },
+    [TRAINER_PIC_INDIGO_PEWTER]      = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoPewter, gTrainerPalette_IndigoPewter) },
+    [TRAINER_PIC_INDIGO_CERULEAN]    = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoCerulean, gTrainerPalette_IndigoCerulean) },
+    [TRAINER_PIC_INDIGO_CELADON]     = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoCeladon, gTrainerPalette_IndigoCeladon) },
+    [TRAINER_PIC_INDIGO_SAFFRON]     = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoSaffron, gTrainerPalette_IndigoSaffron) },
+    [TRAINER_PIC_INDIGO_FUCHSIA]     = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoFuchsia, gTrainerPalette_IndigoFuchsia) },
+    [TRAINER_PIC_INDIGO_CHERRYGROVE] = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoCherrygrove, gTrainerPalette_IndigoCherrygrove) },
+    [TRAINER_PIC_INDIGO_VIOLET]      = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoViolet, gTrainerPalette_IndigoViolet) },
+    [TRAINER_PIC_INDIGO_GOLDENROD]   = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoGoldenrod, gTrainerPalette_IndigoGoldenrod) },
+    [TRAINER_PIC_INDIGO_OLIVINE]     = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoOlivine, gTrainerPalette_IndigoOlivine) },
+    [TRAINER_PIC_INDIGO_CIANWOOD]    = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoCianwood, gTrainerPalette_IndigoCianwood) },
+    [TRAINER_PIC_INDIGO_BLACKTHORN]  = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoBlackthorn, gTrainerPalette_IndigoBlackthorn) },
+    [TRAINER_PIC_INDIGO_JUBILIFE]    = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoJubilife, gTrainerPalette_IndigoJubilife) },
+    [TRAINER_PIC_INDIGO_OREBURGH]    = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoOreburgh, gTrainerPalette_IndigoOreburgh) },
+    [TRAINER_PIC_INDIGO_ETERNA]      = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoEterna, gTrainerPalette_IndigoEterna) },
+    [TRAINER_PIC_INDIGO_SNOWPOINT]   = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoSnowpoint, gTrainerPalette_IndigoSnowpoint) },
+    [TRAINER_PIC_INDIGO_SUNYSHORE]   = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoSunyshore, gTrainerPalette_IndigoSunyshore) },
+    [TRAINER_PIC_INDIGO_PASTORIA]    = { .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_IndigoPastoria, gTrainerPalette_IndigoPastoria) },
 };

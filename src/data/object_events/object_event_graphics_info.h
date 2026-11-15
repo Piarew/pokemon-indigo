@@ -7224,4 +7224,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+#include "indigo_graphics_info.h"
+
 #endif // IS_FRLG
