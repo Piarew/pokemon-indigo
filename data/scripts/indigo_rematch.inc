@@ -1,5 +1,5 @@
 @ Indigo City Battle Club rematches (src/indigo_rematch.c).
-@ Each Kanto leader script starts with:
+@ Each wired gym leader script (sRematchGyms[].wired in src/indigo_rematch.c) starts with:
 @	specialvar VAR_RESULT, IndigoRematch_GetVisitState
 @	goto_if_ne VAR_RESULT, INDIGO_REMATCH_NONE, <Gym>_EventScript_<Leader>Rematch
 @ and the rematch block is:
@@ -9,8 +9,7 @@
 @	special IndigoRematch_BeforeBattle
 @	trainerbattle_no_intro TRAINER_LEADER_INDIGO_<city>, Text_IndigoRematchDefeat
 @	goto EventScript_IndigoRematchWon
-@ Teams are the leaders' Pokémon Indigo teams (Lt. Surge and Blaine have none
-@ and keep their FRLG teams). trainerbattle_no_intro ignores the defeated flag;
+@ Teams are the TRAINER_LEADER_INDIGO_* teams. trainerbattle_no_intro ignores the defeated flag;
 @ party levels are scaled to the level cap in CreateNPCTrainerParty, only while
 @ the came-from-Battle-Club bit is set. IndigoRematch_BeforeBattle/SetDoneToday
 @ restore the team's trainer flag afterwards. No badge, TM, or story flags.

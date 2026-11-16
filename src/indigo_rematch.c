@@ -22,39 +22,75 @@
 #define REMATCH_VISIT_BIT  0x8000
 #define REMATCH_DONE_BIT   0x4000  // today's rematch already won; cleared by the daily reroll
 #define REMATCH_FLAG_BIT   0x2000  // the rematch trainer's own trainer flag was already set before the battle
-#define REMATCH_ENTRY_WARP 1  // middle of the three entrance warps in every Kanto gym
 
-// trainerId: the team the leader uses in Battle Club rematches. Kanto leaders
-// use their Pokémon Indigo team (TRAINER_LEADER_INDIGO_<city>). Vermilion and
-// Cinnabar have no Indigo team, so Lt. Surge and Blaine keep their FRLG teams.
+// The 18 Pokemon Indigo gyms (roster order: Johto, Kanto, Sinnoh).
+//   clearFlag:  FLAG_INDIGO_<TYPE>, the same per-gym clear flags CountIndigoGyms()
+//               (and so the level cap) counts. Set by GiveIndigoRecognition.
+//   map/map2:   gym interior map(s); map2 = extra floor (Snowpoint B1F) or 0.
+//   entryWarp:  warp in `map` the Battle Club door lands on.
+//   trainerId:  TRAINER_LEADER_INDIGO_<city>, battled in rematches (level-cap scaled).
+//   wired:      the gym's leader object runs a script with the Battle Club rematch
+//               branch (see data/scripts/indigo_rematch.inc). Gyms that aren't wired
+//               are never picked, so the door can't strand the player in a gym
+//               whose leader can't rematch. Flip to TRUE when the leader script is real.
 struct RematchGym
 {
+    u16 clearFlag;
     u16 map;
-    u16 defeatedFlag;
+    u16 map2;
+    u8 entryWarp;
+    bool8 wired;
     u16 trainerId;
-    const u8 *leader;
+    const u8 *cityName;
 };
 
-static const u8 sText_Brock[] = _("Brock");
-static const u8 sText_Misty[] = _("Misty");
-static const u8 sText_LtSurge[] = _("Lt. Surge");
-static const u8 sText_Erika[] = _("Erika");
-static const u8 sText_Koga[] = _("Koga");
-static const u8 sText_Sabrina[] = _("Sabrina");
-static const u8 sText_Blaine[] = _("Blaine");
-static const u8 sText_Giovanni[] = _("Giovanni");
+static const u8 sText_Cherrygrove[] = _("Cherrygrove City");
+static const u8 sText_Violet[] = _("Violet City");
+static const u8 sText_Goldenrod[] = _("Goldenrod City");
+static const u8 sText_Olivine[] = _("Olivine City");
+static const u8 sText_Cianwood[] = _("Cianwood City");
+static const u8 sText_Blackthorn[] = _("Blackthorn City");
+static const u8 sText_Viridian[] = _("Viridian City");
+static const u8 sText_Pewter[] = _("Pewter City");
+static const u8 sText_Cerulean[] = _("Cerulean City");
+static const u8 sText_Celadon[] = _("Celadon City");
+static const u8 sText_Saffron[] = _("Saffron City");
+static const u8 sText_Fuchsia[] = _("Fuchsia City");
+static const u8 sText_Jubilife[] = _("Jubilife City");
+static const u8 sText_Oreburgh[] = _("Oreburgh City");
+static const u8 sText_Eterna[] = _("Eterna City");
+static const u8 sText_Snowpoint[] = _("Snowpoint City");
+static const u8 sText_Sunyshore[] = _("Sunyshore City");
+static const u8 sText_Pastoria[] = _("Pastoria City");
 
 static const struct RematchGym sRematchGyms[] =
 {
-    { MAP_PEWTER_CITY_GYM,     FLAG_DEFEATED_BROCK,           TRAINER_LEADER_INDIGO_PEWTER,   sText_Brock },
-    { MAP_CERULEAN_CITY_GYM,   FLAG_DEFEATED_MISTY,           TRAINER_LEADER_INDIGO_CERULEAN, sText_Misty },
-    { MAP_VERMILION_CITY_GYM,  FLAG_DEFEATED_LT_SURGE,        TRAINER_LEADER_LT_SURGE,        sText_LtSurge },
-    { MAP_CELADON_CITY_GYM,    FLAG_DEFEATED_ERIKA,           TRAINER_LEADER_INDIGO_CELADON,  sText_Erika },
-    { MAP_FUCHSIA_CITY_GYM,    FLAG_DEFEATED_KOGA,            TRAINER_LEADER_INDIGO_FUCHSIA,  sText_Koga },
-    { MAP_SAFFRON_CITY_GYM,    FLAG_DEFEATED_SABRINA,         TRAINER_LEADER_INDIGO_SAFFRON,  sText_Sabrina },
-    { MAP_CINNABAR_ISLAND_GYM, FLAG_DEFEATED_BLAINE,          TRAINER_LEADER_BLAINE,          sText_Blaine },
-    { MAP_VIRIDIAN_CITY_GYM,   FLAG_DEFEATED_LEADER_GIOVANNI, TRAINER_LEADER_INDIGO_VIRIDIAN, sText_Giovanni },
+    // Johto: leader objects run HnS import stubs ("Hello!"), Cherrygrove is a
+    // copy of Celadon Gym (Erika + Celadon scripts) -> not wired yet.
+    { FLAG_INDIGO_NORMAL,   MAP_CHERRYGROVE_CITY_GYM,    0, 1, FALSE, TRAINER_LEADER_INDIGO_CHERRYGROVE, sText_Cherrygrove },
+    { FLAG_INDIGO_GHOST,    MAP_VIOLET_CITY_GYM_HNS,     0, 0, FALSE, TRAINER_LEADER_INDIGO_VIOLET,      sText_Violet },
+    { FLAG_INDIGO_DARK,     MAP_GOLDENROD_CITY_GYM_HNS,  0, 0, FALSE, TRAINER_LEADER_INDIGO_GOLDENROD,   sText_Goldenrod },
+    { FLAG_INDIGO_FLYING,   MAP_OLIVINE_CITY_GYM_HNS,    0, 0, FALSE, TRAINER_LEADER_INDIGO_OLIVINE,     sText_Olivine },
+    { FLAG_INDIGO_POISON,   MAP_CIANWOOD_GYM_HNS,        0, 0, FALSE, TRAINER_LEADER_INDIGO_CIANWOOD,    sText_Cianwood },
+    { FLAG_INDIGO_ICE,      MAP_BLACKTHORN_CITY_GYM_HNS, 0, 0, FALSE, TRAINER_LEADER_INDIGO_BLACKTHORN,  sText_Blackthorn },
+    // Kanto: the FRLG gyms' leader objects (still the FRLG sprites/scripts on
+    // master, which award these Indigo clears) carry the rematch branch.
+    { FLAG_INDIGO_GRASS,    MAP_VIRIDIAN_CITY_GYM,       0, 1, TRUE,  TRAINER_LEADER_INDIGO_VIRIDIAN,    sText_Viridian },
+    { FLAG_INDIGO_STEEL,    MAP_PEWTER_CITY_GYM,         0, 1, TRUE,  TRAINER_LEADER_INDIGO_PEWTER,      sText_Pewter },
+    { FLAG_INDIGO_FAIRY,    MAP_CERULEAN_CITY_GYM,       0, 1, TRUE,  TRAINER_LEADER_INDIGO_CERULEAN,    sText_Cerulean },
+    { FLAG_INDIGO_FIRE,     MAP_CELADON_CITY_GYM,        0, 1, TRUE,  TRAINER_LEADER_INDIGO_CELADON,     sText_Celadon },
+    { FLAG_INDIGO_FIGHTING, MAP_SAFFRON_CITY_GYM,        0, 1, TRUE,  TRAINER_LEADER_INDIGO_SAFFRON,     sText_Saffron },
+    { FLAG_INDIGO_DRAGON,   MAP_FUCHSIA_CITY_GYM,        0, 1, TRUE,  TRAINER_LEADER_INDIGO_FUCHSIA,     sText_Fuchsia },
+    // Sinnoh: leader objects run Sinnoh import stubs; Jubilife Gym is a copy of
+    // the Saffron Dojo with no leader object -> not wired yet.
+    { FLAG_INDIGO_ELECTRIC, MAP_JUBILIFE_CITY_GYM,       0, 1, FALSE, TRAINER_LEADER_INDIGO_JUBILIFE,    sText_Jubilife },
+    { FLAG_INDIGO_GROUND,   MAP_OREBURGH_CITY_GYM,       0, 1, FALSE, TRAINER_LEADER_INDIGO_OREBURGH,    sText_Oreburgh },
+    { FLAG_INDIGO_PSYCHIC,  MAP_ETERNA_CITY_GYM,         0, 1, FALSE, TRAINER_LEADER_INDIGO_ETERNA,      sText_Eterna },
+    { FLAG_INDIGO_ROCK,     MAP_SNOWPOINT_CITY_GYM_1F,   MAP_SNOWPOINT_CITY_GYM_B1F, 0, FALSE, TRAINER_LEADER_INDIGO_SNOWPOINT, sText_Snowpoint },
+    { FLAG_INDIGO_WATER,    MAP_SUNYSHORE_CITY_GYM,      0, 0, FALSE, TRAINER_LEADER_INDIGO_SUNYSHORE,   sText_Sunyshore },
+    { FLAG_INDIGO_BUG,      MAP_PASTORIA_CITY_GYM,       0, 1, FALSE, TRAINER_LEADER_INDIGO_PASTORIA,    sText_Pastoria },
 };
+STATIC_ASSERT(ARRAY_COUNT(sRematchGyms) == NUM_INDIGO_GYMS, RematchGymTableSize);
 
 static u32 GetPickedGym(void)
 {
@@ -78,24 +114,31 @@ static void SetVisiting(bool32 visiting)
     VarSet(VAR_INDIGO_REMATCH_GYM, visiting ? (value | REMATCH_VISIT_BIT) : value);
 }
 
-static bool32 IsGymDefeated(u32 gym)
+// In the rotation pool: the gym is cleared and its leader can rematch.
+static bool32 IsGymInPool(u32 gym)
 {
-    return gym >= 1 && gym <= ARRAY_COUNT(sRematchGyms) && FlagGet(sRematchGyms[gym - 1].defeatedFlag);
+    return gym >= 1 && gym <= ARRAY_COUNT(sRematchGyms)
+        && sRematchGyms[gym - 1].wired && FlagGet(sRematchGyms[gym - 1].clearFlag);
 }
 
-static bool32 IsRematchGymMap(u16 map)
+static const struct RematchGym *GetRematchGymByMap(u16 map)
 {
     u32 i;
     for (i = 0; i < ARRAY_COUNT(sRematchGyms); i++)
     {
-        if (sRematchGyms[i].map == map)
-            return TRUE;
+        if (sRematchGyms[i].map == map || (sRematchGyms[i].map2 != 0 && sRematchGyms[i].map2 == map))
+            return &sRematchGyms[i];
     }
-    return FALSE;
+    return NULL;
+}
+
+static bool32 IsRematchGymMap(u16 map)
+{
+    return GetRematchGymByMap(map) != NULL;
 }
 
 // Returns today's gym (1-based), rerolling when the day changed or the
-// stored pick is no longer valid. 0 = no Kanto leader defeated yet.
+// stored pick is no longer valid. 0 = no eligible gym cleared yet.
 u16 IndigoRematch_UpdateDaily(void)
 {
     u8 candidates[ARRAY_COUNT(sRematchGyms)];
@@ -104,16 +147,16 @@ u16 IndigoRematch_UpdateDaily(void)
 
     RtcCalcLocalTime();
     today = (u16)gLocalTime.days;
-    if (current != 0 && VarGet(VAR_INDIGO_REMATCH_DAY) == today && IsGymDefeated(current))
+    if (current != 0 && VarGet(VAR_INDIGO_REMATCH_DAY) == today && IsGymInPool(current))
         return current;
 
     for (i = 1; i <= ARRAY_COUNT(sRematchGyms); i++)
     {
-        if (IsGymDefeated(i))
+        if (IsGymInPool(i))
             candidates[count++] = i;
     }
     // Avoid repeating yesterday's leader when there is a choice.
-    if (count > 1 && IsGymDefeated(current))
+    if (count > 1 && IsGymInPool(current))
     {
         for (i = 0; i < count; i++)
         {
@@ -131,11 +174,12 @@ u16 IndigoRematch_UpdateDaily(void)
     return current;
 }
 
+// gStringVar1 = today's gym city ("Pewter City"); leaders are referred to by gym.
 void IndigoRematch_BufferLeaderName(void)
 {
     u32 gym = IndigoRematch_UpdateDaily();
     if (gym != 0)
-        StringCopy(gStringVar1, sRematchGyms[gym - 1].leader);
+        StringCopy(gStringVar1, sRematchGyms[gym - 1].cityName);
     else
         gStringVar1[0] = EOS;
 }
@@ -153,13 +197,13 @@ void IndigoRematch_AdjustWarp(s8 warpEventId, u8 *mapGroup, u8 *mapNum, u8 *warp
         {
             *mapGroup = MAP_GROUP(sRematchGyms[gym - 1].map);
             *mapNum = MAP_NUM(sRematchGyms[gym - 1].map);
-            *warpId = REMATCH_ENTRY_WARP;
+            *warpId = sRematchGyms[gym - 1].entryWarp;
             SetVisiting(TRUE);
         }
     }
-    else if (src != dest && IsRematchGymMap(src))
+    else if (IsRematchGymMap(src) && !IsRematchGymMap(dest))
     {
-        // Leaving a Kanto gym (warps inside the Saffron gym have src == dest).
+        // Leaving a gym (warps inside a gym, e.g. Saffron pads or Snowpoint 1F/B1F, don't count).
         if (IsVisiting())
         {
             *mapGroup = MAP_GROUP(MAP_INDIGO_CITY);
@@ -168,14 +212,14 @@ void IndigoRematch_AdjustWarp(s8 warpEventId, u8 *mapGroup, u8 *mapNum, u8 *warp
         }
         SetVisiting(FALSE);
     }
-    else if (src != dest && IsRematchGymMap(dest))
+    else if (!IsRematchGymMap(src) && IsRematchGymMap(dest))
     {
         // Normal entry from the gym's home city.
         SetVisiting(FALSE);
     }
 }
 
-// Special for the Kanto leader scripts: INDIGO_REMATCH_NONE / _READY / _DONE_TODAY.
+// Special for the gym leader scripts: INDIGO_REMATCH_NONE / _READY / _DONE_TODAY.
 // Not rerolled here, so the day turning over mid-visit doesn't re-open a rematch
 // until the player comes back through the Battle Club.
 u16 IndigoRematch_GetVisitState(void)
@@ -188,14 +232,7 @@ u16 IndigoRematch_GetVisitState(void)
 
 static const struct RematchGym *GetCurrentMapRematchGym(void)
 {
-    u16 map = (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
-    u32 i;
-    for (i = 0; i < ARRAY_COUNT(sRematchGyms); i++)
-    {
-        if (sRematchGyms[i].map == map)
-            return &sRematchGyms[i];
-    }
-    return NULL;
+    return GetRematchGymByMap((gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum);
 }
 
 // Run right before the rematch battle: remember whether the rematch team's
@@ -221,7 +258,7 @@ void IndigoRematch_SetDoneToday(void)
     VarSet(VAR_INDIGO_REMATCH_GYM, (value & ~REMATCH_FLAG_BIT) | REMATCH_DONE_BIT);
 }
 
-// Battle Club rematches use the leader's original party, shifted so the
+// Battle Club rematches use the leader's Indigo party, shifted so the
 // highest-level mon sits at the current level cap and the rest keep their
 // offsets below it (clamped to 1..MAX_LEVEL). Returns the trainer to build
 // the party from: the original one unless this is a Battle Club rematch.

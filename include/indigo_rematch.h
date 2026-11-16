@@ -5,7 +5,7 @@ struct Trainer;
 struct TrainerMon;
 
 // Indigo City east gym ("Battle Club"): daily rotating rematch gym.
-// Its door leads to one defeated Kanto leader's gym, rerolled once per day;
+// Its door leads to one cleared Indigo gym (FLAG_INDIGO_<TYPE>), rerolled once per in-game day;
 // leaving that gym returns to Indigo City instead of the gym's home city.
 
 // Warp event in data/maps/IndigoCity/map.json for the Battle Club door.
