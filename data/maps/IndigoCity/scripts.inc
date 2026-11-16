@@ -4,7 +4,7 @@ IndigoCity_MapScripts::
 	.byte 0
 
 @ Battle Club (east gym): daily rotating rematch gym, see src/indigo_rematch.c.
-@ With no Kanto Leader defeated yet the door is bricked up (0x15B door -> 0x314 wall).
+@ With no eligible gym cleared yet the door is bricked up (0x15B door -> 0x314 wall).
 IndigoCity_OnLoad::
 	specialvar VAR_RESULT, IndigoRematch_UpdateDaily
 	call_if_eq VAR_RESULT, 0, IndigoCity_EventScript_LockBattleClub
@@ -48,12 +48,13 @@ IndigoCity_EventScript_BattleClubLocked::
 	end
 
 IndigoCity_Text_BattleClubToday::
-	.string "INDIGO BATTLE CLUB\n"
-	.string "Today's Gym Leader: {STR_VAR_1}\p"
+	.string "INDIGO BATTLE CLUB\p"
+	.string "Today's challenger:\n"
+	.string "the {STR_VAR_1} Gym Leader.\p"
 	.string "The challenger changes daily.$"
 
 IndigoCity_Text_BattleClubLocked::
 	.string "The door is locked.\p"
 	.string "INDIGO BATTLE CLUB\n"
-	.string "Open to Trainers who have beaten\l"
-	.string "a Kanto Gym Leader.$"
+	.string "Open to Trainers who have earned\l"
+	.string "at least one type recognition.$"
