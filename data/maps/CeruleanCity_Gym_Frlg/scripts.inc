@@ -2,6 +2,8 @@ CeruleanCity_Gym_Frlg_MapScripts::
 	.byte 0
 
 CeruleanCity_Gym_EventScript_Misty::
+	specialvar VAR_RESULT, IndigoRematch_GetVisitState
+	goto_if_ne VAR_RESULT, INDIGO_REMATCH_NONE, CeruleanCity_Gym_EventScript_MistyRematch
 	famechecker FAMECHECKER_MISTY, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	trainerbattle_single TRAINER_LEADER_MISTY, CeruleanCity_Gym_Text_MistyIntro, CeruleanCity_Gym_Text_MistyDefeat, CeruleanCity_Gym_EventScript_MistyDefeated, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM03_FROM_MISTY, CeruleanCity_Gym_EventScript_GiveTM03
@@ -162,3 +164,10 @@ CeruleanCity_Gym_Text_GymStatuePlayerWon::
 	.string "Winning Trainers:\n"
 	.string "{RIVAL}, {PLAYER}$"
 
+CeruleanCity_Gym_EventScript_MistyRematch::
+	lock
+	faceplayer
+	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
+	msgbox Text_IndigoRematchIntro
+	trainerbattle_no_intro TRAINER_LEADER_MISTY, Text_IndigoRematchDefeat
+	goto EventScript_IndigoRematchWon

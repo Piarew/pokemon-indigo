@@ -2,6 +2,8 @@ PewterCity_Gym_Frlg_MapScripts::
 	.byte 0
 
 PewterCity_Gym_EventScript_Brock::
+	specialvar VAR_RESULT, IndigoRematch_GetVisitState
+	goto_if_ne VAR_RESULT, INDIGO_REMATCH_NONE, PewterCity_Gym_EventScript_BrockRematch
 	famechecker FAMECHECKER_BROCK, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	trainerbattle_single TRAINER_LEADER_BROCK, PewterCity_Gym_Text_BrockIntro, PewterCity_Gym_Text_BrockDefeat, PewterCity_Gym_EventScript_DefeatedBrock, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM39_FROM_BROCK, PewterCity_Gym_EventScript_GiveTM39
@@ -200,3 +202,10 @@ PewterCity_Gym_Text_GymStatuePlayerWon::
 	.string "Winning Trainers:\n"
 	.string "{RIVAL}, {PLAYER}$"
 
+PewterCity_Gym_EventScript_BrockRematch::
+	lock
+	faceplayer
+	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
+	msgbox Text_IndigoRematchIntro
+	trainerbattle_no_intro TRAINER_LEADER_BROCK, Text_IndigoRematchDefeat
+	goto EventScript_IndigoRematchWon

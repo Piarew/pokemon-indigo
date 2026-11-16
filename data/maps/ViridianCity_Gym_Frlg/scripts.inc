@@ -1,7 +1,22 @@
 ViridianCity_Gym_Frlg_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ViridianCity_Gym_OnTransition
 	.byte 0
 
+@ Giovanni's gym object is hidden for good once he's beaten. A second copy
+@ (LOCALID_VIRIDIAN_GIOVANNI_REMATCH, hidden by FLAG_TEMP_1) stands in for
+@ Indigo City Battle Club rematches; it is hidden on every normal visit.
+ViridianCity_Gym_OnTransition::
+	specialvar VAR_RESULT, IndigoRematch_GetVisitState
+	call_if_eq VAR_RESULT, INDIGO_REMATCH_NONE, ViridianCity_Gym_EventScript_HideRematchGiovanni
+	end
+
+ViridianCity_Gym_EventScript_HideRematchGiovanni::
+	setflag FLAG_TEMP_1
+	return
+
 ViridianCity_Gym_EventScript_Giovanni::
+	specialvar VAR_RESULT, IndigoRematch_GetVisitState
+	goto_if_ne VAR_RESULT, INDIGO_REMATCH_NONE, ViridianCity_Gym_EventScript_GiovanniRematch
 	famechecker FAMECHECKER_GIOVANNI, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	trainerbattle_single TRAINER_LEADER_GIOVANNI, ViridianCity_Gym_Text_GiovanniIntro, ViridianCity_Gym_Text_GiovanniDefeat, ViridianCity_Gym_EventScript_DefeatedGiovanni, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM26_FROM_GIOVANNI, ViridianCity_Gym_EventScript_GiveTM26
@@ -274,3 +289,10 @@ ViridianCity_Gym_Text_GymStatuePlayerWon::
 	.string "Winning Trainers:\n"
 	.string "{RIVAL}, {PLAYER}$"
 
+ViridianCity_Gym_EventScript_GiovanniRematch::
+	lock
+	faceplayer
+	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
+	msgbox Text_IndigoRematchIntro
+	trainerbattle_no_intro TRAINER_LEADER_GIOVANNI, Text_IndigoRematchDefeat
+	goto EventScript_IndigoRematchWon

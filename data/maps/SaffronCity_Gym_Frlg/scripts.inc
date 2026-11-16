@@ -2,6 +2,8 @@ SaffronCity_Gym_Frlg_MapScripts::
 	.byte 0
 
 SaffronCity_Gym_EventScript_Sabrina::
+	specialvar VAR_RESULT, IndigoRematch_GetVisitState
+	goto_if_ne VAR_RESULT, INDIGO_REMATCH_NONE, SaffronCity_Gym_EventScript_SabrinaRematch
 	famechecker FAMECHECKER_SABRINA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	trainerbattle_single TRAINER_LEADER_SABRINA, SaffronCity_Gym_Text_SabrinaIntro, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM04_FROM_SABRINA, SaffronCity_Gym_EventScript_GiveTM04
@@ -256,3 +258,10 @@ SaffronCity_Gym_Text_GymStatuePlayerWon::
 	.string "Winning Trainers:\n"
 	.string "{RIVAL}, {PLAYER}$"
 
+SaffronCity_Gym_EventScript_SabrinaRematch::
+	lock
+	faceplayer
+	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
+	msgbox Text_IndigoRematchIntro
+	trainerbattle_no_intro TRAINER_LEADER_SABRINA, Text_IndigoRematchDefeat
+	goto EventScript_IndigoRematchWon

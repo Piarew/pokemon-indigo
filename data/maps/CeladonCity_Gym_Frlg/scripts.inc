@@ -2,6 +2,8 @@ CeladonCity_Gym_Frlg_MapScripts::
 	.byte 0
 
 CeladonCity_Gym_EventScript_Erika::
+	specialvar VAR_RESULT, IndigoRematch_GetVisitState
+	goto_if_ne VAR_RESULT, INDIGO_REMATCH_NONE, CeladonCity_Gym_EventScript_ErikaRematch
 	famechecker FAMECHECKER_ERIKA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	trainerbattle_single TRAINER_LEADER_ERIKA, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM19_FROM_ERIKA, CeladonCity_Gym_EventScript_GiveTM19
@@ -236,3 +238,10 @@ CeladonCity_Gym_Text_GymStatuePlayerWon::
 	.string "Winning Trainers:\n"
 	.string "{RIVAL}, {PLAYER}$"
 
+CeladonCity_Gym_EventScript_ErikaRematch::
+	lock
+	faceplayer
+	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
+	msgbox Text_IndigoRematchIntro
+	trainerbattle_no_intro TRAINER_LEADER_ERIKA, Text_IndigoRematchDefeat
+	goto EventScript_IndigoRematchWon

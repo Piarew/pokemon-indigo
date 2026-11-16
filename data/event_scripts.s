@@ -2380,6 +2380,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/qol.inc"
 	.include "data/scripts/indigo.inc"
+	.include "data/scripts/indigo_rematch.inc"
 	.include "data/scripts/johto_field_services.inc"
 	.include "data/scripts/sinnoh_field_services.inc"
 	.include "data/scripts/battle_frontier.inc"
