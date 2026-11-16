@@ -6,10 +6,14 @@
 @	lock / faceplayer
 @	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
 @	msgbox Text_IndigoRematchIntro
-@	trainerbattle_no_intro TRAINER_LEADER_X, Text_IndigoRematchDefeat
+@	special IndigoRematch_BeforeBattle
+@	trainerbattle_no_intro TRAINER_LEADER_INDIGO_<city>, Text_IndigoRematchDefeat
 @	goto EventScript_IndigoRematchWon
-@ trainerbattle_no_intro ignores the trainer's defeated flag; party levels are
-@ scaled to the level cap in CreateNPCTrainerParty. No badge, TM, or story flags.
+@ Teams are the leaders' Pokémon Indigo teams (Lt. Surge and Blaine have none
+@ and keep their FRLG teams). trainerbattle_no_intro ignores the defeated flag;
+@ party levels are scaled to the level cap in CreateNPCTrainerParty, only while
+@ the came-from-Battle-Club bit is set. IndigoRematch_BeforeBattle/SetDoneToday
+@ restore the team's trainer flag afterwards. No badge, TM, or story flags.
 
 EventScript_IndigoRematchWon::
 	special IndigoRematch_SetDoneToday

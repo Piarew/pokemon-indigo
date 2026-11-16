@@ -253,5 +253,6 @@ FuchsiaCity_Gym_EventScript_KogaRematch::
 	faceplayer
 	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
 	msgbox Text_IndigoRematchIntro
-	trainerbattle_no_intro TRAINER_LEADER_KOGA, Text_IndigoRematchDefeat
+	special IndigoRematch_BeforeBattle
+	trainerbattle_no_intro TRAINER_LEADER_INDIGO_FUCHSIA, Text_IndigoRematchDefeat
 	goto EventScript_IndigoRematchWon

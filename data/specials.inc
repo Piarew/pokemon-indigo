@@ -649,6 +649,7 @@ gSpecials::
 	def_special IndigoRematch_UpdateDaily
 	def_special IndigoRematch_BufferLeaderName
 	def_special IndigoRematch_GetVisitState
+	def_special IndigoRematch_BeforeBattle
 	def_special IndigoRematch_SetDoneToday
 	def_special CountIndigoFieldMoves
 	def_special SyncIndigoCount

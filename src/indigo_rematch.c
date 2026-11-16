@@ -1,5 +1,6 @@
 #include "global.h"
 #include "indigo_rematch.h"
+#include "battle_setup.h"
 #include "caps.h"
 #include "data.h"
 #include "event_data.h"
@@ -20,8 +21,12 @@
 #define REMATCH_GYM_MASK   0x00FF
 #define REMATCH_VISIT_BIT  0x8000
 #define REMATCH_DONE_BIT   0x4000  // today's rematch already won; cleared by the daily reroll
+#define REMATCH_FLAG_BIT   0x2000  // the rematch trainer's own trainer flag was already set before the battle
 #define REMATCH_ENTRY_WARP 1  // middle of the three entrance warps in every Kanto gym
 
+// trainerId: the team the leader uses in Battle Club rematches. Kanto leaders
+// use their Pokémon Indigo team (TRAINER_LEADER_INDIGO_<city>). Vermilion and
+// Cinnabar have no Indigo team, so Lt. Surge and Blaine keep their FRLG teams.
 struct RematchGym
 {
     u16 map;
@@ -41,14 +46,14 @@ static const u8 sText_Giovanni[] = _("Giovanni");
 
 static const struct RematchGym sRematchGyms[] =
 {
-    { MAP_PEWTER_CITY_GYM,     FLAG_DEFEATED_BROCK,           TRAINER_LEADER_BROCK,    sText_Brock },
-    { MAP_CERULEAN_CITY_GYM,   FLAG_DEFEATED_MISTY,           TRAINER_LEADER_MISTY,    sText_Misty },
-    { MAP_VERMILION_CITY_GYM,  FLAG_DEFEATED_LT_SURGE,        TRAINER_LEADER_LT_SURGE, sText_LtSurge },
-    { MAP_CELADON_CITY_GYM,    FLAG_DEFEATED_ERIKA,           TRAINER_LEADER_ERIKA,    sText_Erika },
-    { MAP_FUCHSIA_CITY_GYM,    FLAG_DEFEATED_KOGA,            TRAINER_LEADER_KOGA,     sText_Koga },
-    { MAP_SAFFRON_CITY_GYM,    FLAG_DEFEATED_SABRINA,         TRAINER_LEADER_SABRINA,  sText_Sabrina },
-    { MAP_CINNABAR_ISLAND_GYM, FLAG_DEFEATED_BLAINE,          TRAINER_LEADER_BLAINE,   sText_Blaine },
-    { MAP_VIRIDIAN_CITY_GYM,   FLAG_DEFEATED_LEADER_GIOVANNI, TRAINER_LEADER_GIOVANNI, sText_Giovanni },
+    { MAP_PEWTER_CITY_GYM,     FLAG_DEFEATED_BROCK,           TRAINER_LEADER_INDIGO_PEWTER,   sText_Brock },
+    { MAP_CERULEAN_CITY_GYM,   FLAG_DEFEATED_MISTY,           TRAINER_LEADER_INDIGO_CERULEAN, sText_Misty },
+    { MAP_VERMILION_CITY_GYM,  FLAG_DEFEATED_LT_SURGE,        TRAINER_LEADER_LT_SURGE,        sText_LtSurge },
+    { MAP_CELADON_CITY_GYM,    FLAG_DEFEATED_ERIKA,           TRAINER_LEADER_INDIGO_CELADON,  sText_Erika },
+    { MAP_FUCHSIA_CITY_GYM,    FLAG_DEFEATED_KOGA,            TRAINER_LEADER_INDIGO_FUCHSIA,  sText_Koga },
+    { MAP_SAFFRON_CITY_GYM,    FLAG_DEFEATED_SABRINA,         TRAINER_LEADER_INDIGO_SAFFRON,  sText_Sabrina },
+    { MAP_CINNABAR_ISLAND_GYM, FLAG_DEFEATED_BLAINE,          TRAINER_LEADER_BLAINE,          sText_Blaine },
+    { MAP_VIRIDIAN_CITY_GYM,   FLAG_DEFEATED_LEADER_GIOVANNI, TRAINER_LEADER_INDIGO_VIRIDIAN, sText_Giovanni },
 };
 
 static u32 GetPickedGym(void)
@@ -181,9 +186,39 @@ u16 IndigoRematch_GetVisitState(void)
     return (value & REMATCH_DONE_BIT) ? INDIGO_REMATCH_DONE_TODAY : INDIGO_REMATCH_READY;
 }
 
+static const struct RematchGym *GetCurrentMapRematchGym(void)
+{
+    u16 map = (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
+    u32 i;
+    for (i = 0; i < ARRAY_COUNT(sRematchGyms); i++)
+    {
+        if (sRematchGyms[i].map == map)
+            return &sRematchGyms[i];
+    }
+    return NULL;
+}
+
+// Run right before the rematch battle: remember whether the rematch team's
+// trainer flag was already set, so winning a rematch doesn't mark e.g.
+// TRAINER_LEADER_INDIGO_PEWTER as beaten for any future gym script.
+void IndigoRematch_BeforeBattle(void)
+{
+    const struct RematchGym *gym = GetCurrentMapRematchGym();
+    u16 value = VarGet(VAR_INDIGO_REMATCH_GYM) & ~REMATCH_FLAG_BIT;
+    if (gym != NULL && HasTrainerBeenFought(gym->trainerId))
+        value |= REMATCH_FLAG_BIT;
+    VarSet(VAR_INDIGO_REMATCH_GYM, value);
+}
+
+// Run after a won rematch: mark today's rematch as done and restore the
+// rematch team's trainer flag to its pre-battle state.
 void IndigoRematch_SetDoneToday(void)
 {
-    VarSet(VAR_INDIGO_REMATCH_GYM, VarGet(VAR_INDIGO_REMATCH_GYM) | REMATCH_DONE_BIT);
+    const struct RematchGym *gym = GetCurrentMapRematchGym();
+    u16 value = VarGet(VAR_INDIGO_REMATCH_GYM);
+    if (gym != NULL && !(value & REMATCH_FLAG_BIT))
+        ClearTrainerFlag(gym->trainerId);
+    VarSet(VAR_INDIGO_REMATCH_GYM, (value & ~REMATCH_FLAG_BIT) | REMATCH_DONE_BIT);
 }
 
 // Battle Club rematches use the leader's original party, shifted so the
@@ -243,6 +278,10 @@ void IndigoRematch_AdjustWarp(s8 warpEventId, u8 *mapGroup, u8 *mapNum, u8 *warp
 u16 IndigoRematch_GetVisitState(void)
 {
     return 0;
+}
+
+void IndigoRematch_BeforeBattle(void)
+{
 }
 
 void IndigoRematch_SetDoneToday(void)

@@ -424,6 +424,8 @@ VermilionCity_Gym_EventScript_LtSurgeRematch::
 	lock
 	faceplayer
 	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
+	@ No Pokémon Indigo team for this gym; the FRLG team is used.
 	msgbox Text_IndigoRematchIntro
+	special IndigoRematch_BeforeBattle
 	trainerbattle_no_intro TRAINER_LEADER_LT_SURGE, Text_IndigoRematchDefeat
 	goto EventScript_IndigoRematchWon

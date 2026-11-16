@@ -16,6 +16,7 @@ u16 IndigoRematch_UpdateDaily(void);
 void IndigoRematch_BufferLeaderName(void);
 void IndigoRematch_AdjustWarp(s8 warpEventId, u8 *mapGroup, u8 *mapNum, u8 *warpId);
 u16 IndigoRematch_GetVisitState(void);
+void IndigoRematch_BeforeBattle(void);
 void IndigoRematch_SetDoneToday(void);
 const struct Trainer *IndigoRematch_ScaleTrainer(u16 trainerNum, const struct Trainer *trainer, struct Trainer *tempTrainer, struct TrainerMon *tempParty);
 

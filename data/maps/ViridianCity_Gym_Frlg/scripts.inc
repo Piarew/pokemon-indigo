@@ -294,5 +294,6 @@ ViridianCity_Gym_EventScript_GiovanniRematch::
 	faceplayer
 	goto_if_eq VAR_RESULT, INDIGO_REMATCH_DONE_TODAY, EventScript_IndigoRematchDoneToday
 	msgbox Text_IndigoRematchIntro
-	trainerbattle_no_intro TRAINER_LEADER_GIOVANNI, Text_IndigoRematchDefeat
+	special IndigoRematch_BeforeBattle
+	trainerbattle_no_intro TRAINER_LEADER_INDIGO_VIRIDIAN, Text_IndigoRematchDefeat
 	goto EventScript_IndigoRematchWon
