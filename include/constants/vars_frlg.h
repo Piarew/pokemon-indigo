@@ -265,6 +265,10 @@
 #define VAR_INDIGO_COUNT           0x40FA // Cached 0–18 gym-clear count. Level cap reads flags, not this.
 #define VAR_INDIGO_REMATCH_GYM     0x40FB // Indigo City Battle Club: today's Kanto gym (low byte) + visit bit 0x8000. src/indigo_rematch.c
 #define VAR_INDIGO_REMATCH_DAY     0x40FC // gLocalTime.days of the last Battle Club reroll.
+// IndigoRematch_GetVisitState results (leader scripts in the Kanto gyms).
+#define INDIGO_REMATCH_NONE        0 // normal visit from the gym's home city
+#define INDIGO_REMATCH_READY       1 // entered via the Battle Club, rematch available
+#define INDIGO_REMATCH_DONE_TODAY  2 // entered via the Battle Club, already won today
 #define VAR_0x40FD                 0x40FD
 #define VAR_0x40FE                 0x40FE
 #define VAR_0x40FF                 0x40FF

@@ -25,6 +25,7 @@
 #include "fldeff_misc.h"
 #include "follower_npc.h"
 #include "gym_leader_rematch.h"
+#include "indigo_rematch.h"
 #include "item.h"
 #include "load_save.h"
 #include "malloc.h"
@@ -2236,7 +2237,9 @@ static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
     if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
-        CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum));
+        struct Trainer scaledTrainer;
+        struct TrainerMon scaledParty[PARTY_SIZE];
+        CreateNPCTrainerPartyFromTrainer(party, IndigoRematch_ScaleTrainer(trainerNum, GetTrainerStructFromId(trainerNum), &scaledTrainer, scaledParty));
         return;
     }
 

@@ -1,25 +1,32 @@
 #include "global.h"
 #include "indigo_rematch.h"
+#include "caps.h"
+#include "data.h"
 #include "event_data.h"
 #include "random.h"
 #include "rtc.h"
 #include "string_util.h"
 #include "constants/characters.h"
 #include "constants/maps.h"
+#include "constants/opponents.h"
+#include "constants/pokemon.h"
 
 #if IS_FRLG
 
 // VAR_INDIGO_REMATCH_GYM: low byte = today's gym (1-based index into sRematchGyms,
-// 0 = none); REMATCH_VISIT_BIT = player entered the current gym through Indigo City.
+// 0 = none); REMATCH_VISIT_BIT = player entered the current gym through Indigo City;
+// REMATCH_DONE_BIT = today's leader already beaten in a Battle Club rematch.
 // VAR_INDIGO_REMATCH_DAY: gLocalTime.days the pick was made on.
 #define REMATCH_GYM_MASK   0x00FF
 #define REMATCH_VISIT_BIT  0x8000
+#define REMATCH_DONE_BIT   0x4000  // today's rematch already won; cleared by the daily reroll
 #define REMATCH_ENTRY_WARP 1  // middle of the three entrance warps in every Kanto gym
 
 struct RematchGym
 {
     u16 map;
     u16 defeatedFlag;
+    u16 trainerId;
     const u8 *leader;
 };
 
@@ -34,14 +41,14 @@ static const u8 sText_Giovanni[] = _("Giovanni");
 
 static const struct RematchGym sRematchGyms[] =
 {
-    { MAP_PEWTER_CITY_GYM,     FLAG_DEFEATED_BROCK,           sText_Brock },
-    { MAP_CERULEAN_CITY_GYM,   FLAG_DEFEATED_MISTY,           sText_Misty },
-    { MAP_VERMILION_CITY_GYM,  FLAG_DEFEATED_LT_SURGE,        sText_LtSurge },
-    { MAP_CELADON_CITY_GYM,    FLAG_DEFEATED_ERIKA,           sText_Erika },
-    { MAP_FUCHSIA_CITY_GYM,    FLAG_DEFEATED_KOGA,            sText_Koga },
-    { MAP_SAFFRON_CITY_GYM,    FLAG_DEFEATED_SABRINA,         sText_Sabrina },
-    { MAP_CINNABAR_ISLAND_GYM, FLAG_DEFEATED_BLAINE,          sText_Blaine },
-    { MAP_VIRIDIAN_CITY_GYM,   FLAG_DEFEATED_LEADER_GIOVANNI, sText_Giovanni },
+    { MAP_PEWTER_CITY_GYM,     FLAG_DEFEATED_BROCK,           TRAINER_LEADER_BROCK,    sText_Brock },
+    { MAP_CERULEAN_CITY_GYM,   FLAG_DEFEATED_MISTY,           TRAINER_LEADER_MISTY,    sText_Misty },
+    { MAP_VERMILION_CITY_GYM,  FLAG_DEFEATED_LT_SURGE,        TRAINER_LEADER_LT_SURGE, sText_LtSurge },
+    { MAP_CELADON_CITY_GYM,    FLAG_DEFEATED_ERIKA,           TRAINER_LEADER_ERIKA,    sText_Erika },
+    { MAP_FUCHSIA_CITY_GYM,    FLAG_DEFEATED_KOGA,            TRAINER_LEADER_KOGA,     sText_Koga },
+    { MAP_SAFFRON_CITY_GYM,    FLAG_DEFEATED_SABRINA,         TRAINER_LEADER_SABRINA,  sText_Sabrina },
+    { MAP_CINNABAR_ISLAND_GYM, FLAG_DEFEATED_BLAINE,          TRAINER_LEADER_BLAINE,   sText_Blaine },
+    { MAP_VIRIDIAN_CITY_GYM,   FLAG_DEFEATED_LEADER_GIOVANNI, TRAINER_LEADER_GIOVANNI, sText_Giovanni },
 };
 
 static u32 GetPickedGym(void)
@@ -51,6 +58,7 @@ static u32 GetPickedGym(void)
 
 static void SetPickedGym(u32 gym)
 {
+    // A new pick also re-opens the once-per-day rematch.
     VarSet(VAR_INDIGO_REMATCH_GYM, (VarGet(VAR_INDIGO_REMATCH_GYM) & REMATCH_VISIT_BIT) | gym);
 }
 
@@ -162,6 +170,60 @@ void IndigoRematch_AdjustWarp(s8 warpEventId, u8 *mapGroup, u8 *mapNum, u8 *warp
     }
 }
 
+// Special for the Kanto leader scripts: INDIGO_REMATCH_NONE / _READY / _DONE_TODAY.
+// Not rerolled here, so the day turning over mid-visit doesn't re-open a rematch
+// until the player comes back through the Battle Club.
+u16 IndigoRematch_GetVisitState(void)
+{
+    u16 value = VarGet(VAR_INDIGO_REMATCH_GYM);
+    if (!(value & REMATCH_VISIT_BIT))
+        return INDIGO_REMATCH_NONE;
+    return (value & REMATCH_DONE_BIT) ? INDIGO_REMATCH_DONE_TODAY : INDIGO_REMATCH_READY;
+}
+
+void IndigoRematch_SetDoneToday(void)
+{
+    VarSet(VAR_INDIGO_REMATCH_GYM, VarGet(VAR_INDIGO_REMATCH_GYM) | REMATCH_DONE_BIT);
+}
+
+// Battle Club rematches use the leader's original party, shifted so the
+// highest-level mon sits at the current level cap and the rest keep their
+// offsets below it (clamped to 1..MAX_LEVEL). Returns the trainer to build
+// the party from: the original one unless this is a Battle Club rematch.
+const struct Trainer *IndigoRematch_ScaleTrainer(u16 trainerNum, const struct Trainer *trainer, struct Trainer *tempTrainer, struct TrainerMon *tempParty)
+{
+    u32 i, maxLvl = 0;
+    s32 shift, lvl;
+
+    if (!IsVisiting() || trainer->partySize == 0 || trainer->partySize > PARTY_SIZE
+     || trainer->poolSize != 0 || trainer->overrideTrainer != 0)
+        return trainer;
+    for (i = 0; i < ARRAY_COUNT(sRematchGyms); i++)
+    {
+        if (sRematchGyms[i].trainerId == trainerNum)
+            break;
+    }
+    if (i == ARRAY_COUNT(sRematchGyms))
+        return trainer;
+
+    for (i = 0; i < trainer->partySize; i++)
+    {
+        if (trainer->party[i].lvl > maxLvl)
+            maxLvl = trainer->party[i].lvl;
+    }
+    shift = (s32)GetCurrentLevelCap() - (s32)maxLvl;
+
+    *tempTrainer = *trainer;
+    for (i = 0; i < trainer->partySize; i++)
+    {
+        tempParty[i] = trainer->party[i];
+        lvl = tempParty[i].lvl + shift;
+        tempParty[i].lvl = (lvl < 1) ? 1 : (lvl > MAX_LEVEL) ? MAX_LEVEL : lvl;
+    }
+    tempTrainer->party = tempParty;
+    return tempTrainer;
+}
+
 #else // !IS_FRLG
 
 u16 IndigoRematch_UpdateDaily(void)
@@ -176,6 +238,20 @@ void IndigoRematch_BufferLeaderName(void)
 
 void IndigoRematch_AdjustWarp(s8 warpEventId, u8 *mapGroup, u8 *mapNum, u8 *warpId)
 {
+}
+
+u16 IndigoRematch_GetVisitState(void)
+{
+    return 0;
+}
+
+void IndigoRematch_SetDoneToday(void)
+{
+}
+
+const struct Trainer *IndigoRematch_ScaleTrainer(u16 trainerNum, const struct Trainer *trainer, struct Trainer *tempTrainer, struct TrainerMon *tempParty)
+{
+    return trainer;
 }
 
 #endif // IS_FRLG
