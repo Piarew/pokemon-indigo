@@ -1,7 +1,7 @@
 {
   "id": "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE",
   "name": "UndergroundPath_SouthEntrance_Frlg",
-  "layout": "LAYOUT_UNDERGROUND_PATH_ENTRANCE",
+  "layout": "LAYOUT_ROUTE6_TUNNEL_ENTRANCE_HNS",
   "music": "MUS_RG_PEWTER",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_UNDERGROUND_PATH",
@@ -14,7 +14,7 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "type": "object",
@@ -33,38 +33,34 @@
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 8,
-      "elevation": 3,
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE6",
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
-      "y": 8,
-      "elevation": 3,
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE6",
       "dest_warp_id": "0"
     },
     {
-      "x": 7,
-      "y": 8,
-      "elevation": 3,
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE6",
       "dest_warp_id": "0"
     },
     {
-      "x": 7,
-      "y": 4,
-      "elevation": 3,
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL",
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

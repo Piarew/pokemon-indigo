@@ -269,7 +269,7 @@
 #define INDIGO_REMATCH_NONE        0 // normal visit from the gym's home city
 #define INDIGO_REMATCH_READY       1 // entered via the Battle Club, rematch available
 #define INDIGO_REMATCH_DONE_TODAY  2 // entered via the Battle Club, already won today
-#define VAR_0x40FD                 0x40FD
+#define VAR_TRAIN                  0x40FD // Magnet Train arrival (ON_FRAME exit)
 #define VAR_0x40FE                 0x40FE
 #define VAR_0x40FF                 0x40FF
 

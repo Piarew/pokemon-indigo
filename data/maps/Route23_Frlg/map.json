@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE23",
   "name": "Route23_Frlg",
-  "layout": "LAYOUT_ROUTE23",
+  "layout": "LAYOUT_ROUTE23_HNS",
   "music": "MUS_RG_VICTORY_ROAD",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_23",
@@ -19,11 +19,6 @@
       "map": "MAP_INDIGO_PLATEAU_EXTERIOR",
       "offset": 0,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE22",
-      "offset": 0,
-      "direction": "down"
     }
   ],
   "object_events": [
@@ -31,8 +26,8 @@
       "local_id": "LOCALID_CASCADE_BADGE_GUARD",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-      "x": 15,
-      "y": 149,
+      "x": 12,
+      "y": 152,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -46,8 +41,8 @@
       "local_id": "LOCALID_THUNDER_BADGE_GUARD",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-      "x": 8,
-      "y": 140,
+      "x": 7,
+      "y": 141,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -76,8 +71,8 @@
       "local_id": "LOCALID_SOUL_BADGE_GUARD",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-      "x": 16,
-      "y": 112,
+      "x": 14,
+      "y": 110,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -135,39 +130,19 @@
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 28,
-      "elevation": 3,
-      "dest_map": "MAP_VICTORY_ROAD_1F_FRLG",
-      "dest_warp_id": "1"
-    },
-    {
       "x": 18,
-      "y": 28,
-      "elevation": 3,
-      "dest_map": "MAP_VICTORY_ROAD_2F",
-      "dest_warp_id": "6"
-    },
-    {
-      "x": 8,
-      "y": 153,
-      "elevation": 3,
-      "dest_map": "MAP_ROUTE22_NORTH_ENTRANCE",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 9,
-      "y": 154,
+      "y": 20,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE22_NORTH_ENTRANCE",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_VICTORY_ROAD_KANTO_1F_HNS",
+      "dest_warp_id": "0",
+      "type": "warp"
     }
   ],
   "coord_events": [
     {
       "type": "trigger",
       "x": 13,
-      "y": 149,
+      "y": 154,
       "elevation": 3,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "1",
@@ -176,7 +151,7 @@
     {
       "type": "trigger",
       "x": 7,
-      "y": 140,
+      "y": 142,
       "elevation": 3,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "2",
@@ -185,7 +160,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 123,
+      "y": 124,
       "elevation": 3,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "3",
@@ -193,7 +168,7 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 12,
       "y": 111,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -211,7 +186,7 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 13,
       "y": 61,
       "elevation": 3,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -220,7 +195,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 2,
       "y": 35,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -229,7 +204,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 3,
       "y": 34,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -238,7 +213,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 3,
       "y": 32,
       "elevation": 3,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -247,7 +222,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 4,
       "y": 33,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -256,7 +231,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 2,
       "y": 31,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -265,7 +240,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 2,
       "y": 36,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -347,7 +322,7 @@
     {
       "type": "trigger",
       "x": 4,
-      "y": 92,
+      "y": 95,
       "elevation": 1,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "5",
@@ -356,7 +331,7 @@
     {
       "type": "trigger",
       "x": 3,
-      "y": 92,
+      "y": 95,
       "elevation": 1,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "5",
@@ -365,7 +340,7 @@
     {
       "type": "trigger",
       "x": 2,
-      "y": 92,
+      "y": 95,
       "elevation": 1,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "5",
@@ -374,16 +349,7 @@
     {
       "type": "trigger",
       "x": 4,
-      "y": 139,
-      "elevation": 0,
-      "var": "VAR_MAP_SCENE_ROUTE23",
-      "var_value": "2",
-      "script": "Route23_EventScript_ThunderBadgeGuardTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 139,
+      "y": 135,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "2",
@@ -392,7 +358,16 @@
     {
       "type": "trigger",
       "x": 6,
-      "y": 140,
+      "y": 136,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_ROUTE23",
+      "var_value": "2",
+      "script": "Route23_EventScript_ThunderBadgeGuardTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 141,
       "elevation": 3,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "2",
@@ -499,7 +474,7 @@
     },
     {
       "type": "trigger",
-      "x": 15,
+      "x": 14,
       "y": 112,
       "elevation": 1,
       "var": "VAR_MAP_SCENE_ROUTE23",
@@ -509,7 +484,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 148,
+      "y": 144,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "1",
@@ -518,7 +493,7 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 148,
+      "y": 152,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "1",
@@ -527,7 +502,7 @@
     {
       "type": "trigger",
       "x": 14,
-      "y": 149,
+      "y": 153,
       "elevation": 3,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "1",
@@ -536,7 +511,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 148,
+      "y": 152,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_ROUTE23",
       "var_value": "1",
@@ -557,7 +532,7 @@
     {
       "type": "hidden_item",
       "x": 20,
-      "y": 72,
+      "y": 70,
       "elevation": 0,
       "item": "ITEM_ULTRA_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE23_ULTRA_BALL",
@@ -567,7 +542,7 @@
     {
       "type": "hidden_item",
       "x": 11,
-      "y": 101,
+      "y": 104,
       "elevation": 3,
       "item": "ITEM_MAX_ETHER",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE23_MAX_ETHER",
@@ -577,7 +552,7 @@
     {
       "type": "hidden_item",
       "x": 3,
-      "y": 18,
+      "y": 22,
       "elevation": 3,
       "item": "ITEM_LUM_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE23_LUM_BERRY",
@@ -606,8 +581,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 3,
-      "y": 128,
+      "x": 4,
+      "y": 127,
       "elevation": 3,
       "item": "ITEM_LEPPA_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE23_LEPPA_BERRY",
@@ -626,8 +601,8 @@
     },
     {
       "type": "sign",
-      "x": 3,
-      "y": 31,
+      "x": 5,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route23_EventScript_VictoryRoadGateSign"

@@ -1,7 +1,7 @@
 {
   "id": "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE",
   "name": "DiglettsCave_SouthEntrance_Frlg",
-  "layout": "LAYOUT_DIGLETTS_CAVE_SOUTH_ENTRANCE",
+  "layout": "LAYOUT_DIGLETTS_CAVE_ENTRANCE_SOUTH_HNS",
   "music": "MUS_RG_VIRIDIAN_FOREST",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_DIGLETTS_CAVE",
@@ -34,17 +34,18 @@
   "warp_events": [
     {
       "x": 4,
-      "y": 6,
-      "elevation": 3,
-      "dest_map": "MAP_ROUTE11",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 6,
-      "y": 4,
-      "elevation": 3,
+      "y": 3,
+      "elevation": 0,
       "dest_map": "MAP_DIGLETTS_CAVE_B1F",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_VERMILION_CITY",
+      "dest_warp_id": "0",
+      "type": "warp"
     }
   ],
   "coord_events": [],

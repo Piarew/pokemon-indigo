@@ -1,7 +1,7 @@
 {
   "id": "MAP_PEWTER_CITY_MUSEUM_1F",
   "name": "PewterCity_Museum_1F_Frlg",
-  "layout": "LAYOUT_PEWTER_CITY_MUSEUM_1F",
+  "layout": "LAYOUT_PEWTER_CITY_MUSEUM_1F_HNS",
   "music": "MUS_RG_PEWTER",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_PEWTER_CITY",
@@ -32,14 +32,29 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_OLD_AMBER",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_AMBER",
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PewterCity_Museum_1F_EventScript_OldAmber",
+      "flag": "FLAG_HIDE_OLD_AMBER"
+    },
+    {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 2,
       "y": 4,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PewterCity_Museum_1F_EventScript_OldMan",
@@ -58,21 +73,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PewterCity_Museum_1F_EventScript_OldAmberScientist",
       "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_OLD_AMBER",
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_OLD_AMBER",
-      "x": 22,
-      "y": 3,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "PewterCity_Museum_1F_EventScript_OldAmber",
-      "flag": "FLAG_HIDE_OLD_AMBER"
     },
     {
       "type": "object",
@@ -105,44 +105,44 @@
   ],
   "warp_events": [
     {
-      "x": 13,
+      "x": 14,
       "y": 9,
-      "elevation": 3,
+      "elevation": 0,
+      "dest_map": "MAP_PEWTER_CITY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 22,
+      "y": 9,
+      "elevation": 0,
       "dest_map": "MAP_PEWTER_CITY",
       "dest_warp_id": "0"
     },
     {
       "x": 14,
       "y": 9,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_PEWTER_CITY",
       "dest_warp_id": "0"
     },
     {
-      "x": 15,
+      "x": 14,
       "y": 9,
-      "elevation": 3,
-      "dest_map": "MAP_PEWTER_CITY",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 21,
-      "y": 9,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_PEWTER_CITY",
       "dest_warp_id": "1"
     },
     {
-      "x": 22,
+      "x": 14,
       "y": 9,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_PEWTER_CITY",
       "dest_warp_id": "1"
     },
     {
       "x": 8,
       "y": 8,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_PEWTER_CITY_MUSEUM_2F",
       "dest_warp_id": "0"
     }
@@ -180,7 +180,7 @@
     {
       "type": "sign",
       "x": 4,
-      "y": 4,
+      "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PewterCity_Museum_1F_EventScript_AerodactylFossil"
@@ -188,7 +188,7 @@
     {
       "type": "sign",
       "x": 4,
-      "y": 7,
+      "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PewterCity_Museum_1F_EventScript_KabutopsFossil"

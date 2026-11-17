@@ -1,7 +1,7 @@
 {
   "id": "MAP_VERMILION_CITY_GYM",
   "name": "VermilionCity_Gym_Frlg",
-  "layout": "LAYOUT_VERMILION_CITY_GYM",
+  "layout": "LAYOUT_VERMILION_CITY_GYM_HNS",
   "music": "MUS_RG_GYM",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_VERMILION_CITY",
@@ -18,16 +18,44 @@
   "object_events": [
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
+      "x": 6,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VermilionCity_Gym_EventScript_GymGuy",
+      "flag": "0"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LT_SURGE",
       "x": 5,
       "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VermilionCity_Gym_EventScript_LtSurge",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_FRLG",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "VermilionCity_Gym_EventScript_Tucker",
       "flag": "0"
     },
     {
@@ -57,55 +85,27 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "VermilionCity_Gym_EventScript_Dwayne",
       "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-      "x": 4,
-      "y": 17,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "VermilionCity_Gym_EventScript_GymGuy",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_FRLG",
-      "x": 7,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "VermilionCity_Gym_EventScript_Tucker",
-      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 4,
+      "x": 5,
       "y": 19,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_VERMILION_CITY",
       "dest_warp_id": "9"
     },
     {
       "x": 5,
       "y": 19,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_VERMILION_CITY",
       "dest_warp_id": "9"
     },
     {
-      "x": 6,
+      "x": 5,
       "y": 19,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_VERMILION_CITY",
       "dest_warp_id": "9"
     }

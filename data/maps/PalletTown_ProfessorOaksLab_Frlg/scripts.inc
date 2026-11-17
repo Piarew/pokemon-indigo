@@ -28,13 +28,13 @@ PalletTown_ProfessorOaksLab_EventScript_SetNationalDexSceneFinished::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_ReadyOakForStarterScene::
-	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 6, 11
+	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 13, 19
 	setobjectmovementtype LOCALID_OAKS_LAB_PROF_OAK, MOVEMENT_TYPE_FACE_UP
 	savebgm MUS_RG_OAK
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_ReadyOakForNationalDexScene::
-	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 6, 11
+	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 13, 19
 	setobjectmovementtype LOCALID_OAKS_LAB_PROF_OAK, MOVEMENT_TYPE_FACE_UP
 	return
 
@@ -58,7 +58,7 @@ PalletTown_ProfessorOaksLab_EventScript_EnterForNationalDexScene:: @ 8169002
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, PalletTown_ProfessorOaksLab_Movement_OakEnter
 	waitmovement 0
 	removeobject LOCALID_OAKS_LAB_PROF_OAK
-	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 6, 3
+	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 13, 11
 	setobjectmovementtype LOCALID_OAKS_LAB_PROF_OAK, MOVEMENT_TYPE_FACE_DOWN
 	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
 	applymovement LOCALID_PLAYER, PalletTown_ProfessorOaksLab_Movement_PlayerEnter
@@ -120,7 +120,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexScene::
 	end
 
 PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterNorth::
-	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 5, 10
+	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 12, 18
 	addobject LOCALID_OAKS_LAB_RIVAL
 	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	applymovement LOCALID_PLAYER, PalletTown_ProfessorOaksLab_Movement_WatchRivalEnterNorth
@@ -129,7 +129,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterNorth::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterEastWest::
-	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 6, 10
+	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 13, 18
 	addobject LOCALID_OAKS_LAB_RIVAL
 	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, Common_Movement_WalkInPlaceFasterDown
@@ -139,7 +139,7 @@ PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterEastWest::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_NationalDexSceneRivalEnterSouth::
-	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 6, 10
+	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 13, 18
 	addobject LOCALID_OAKS_LAB_RIVAL
 	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, Common_Movement_WalkInPlaceFasterDown
@@ -202,7 +202,7 @@ PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, PalletTown_ProfessorOaksLab_Movement_OakEnter
 	waitmovement 0
 	removeobject LOCALID_OAKS_LAB_PROF_OAK
-	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 6, 3
+	setobjectxyperm LOCALID_OAKS_LAB_PROF_OAK, 13, 11
 	setobjectmovementtype LOCALID_OAKS_LAB_PROF_OAK, MOVEMENT_TYPE_FACE_DOWN
 	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
 	applymovement LOCALID_PLAYER, PalletTown_ProfessorOaksLab_Movement_PlayerEnter
@@ -1062,7 +1062,7 @@ PalletTown_ProfessorOaksLab_EventScript_PlayerAlreadyGotBalls::
 	end
 
 PalletTown_ProfessorOaksLab_EventScript_DexSceneRivalEnterNorth::
-	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 5, 10
+	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 12, 18
 	addobject LOCALID_OAKS_LAB_RIVAL
 	applymovement LOCALID_PLAYER, PalletTown_ProfessorOaksLab_Movement_WatchRivalEnterNorth
 	applymovement LOCALID_OAKS_LAB_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalEnter
@@ -1070,7 +1070,7 @@ PalletTown_ProfessorOaksLab_EventScript_DexSceneRivalEnterNorth::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_DexSceneRivalEnterEastWest::
-	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 6, 10
+	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 13, 18
 	addobject LOCALID_OAKS_LAB_RIVAL
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, Common_Movement_WalkInPlaceFasterDown
 	applymovement LOCALID_PLAYER, PalletTown_ProfessorOaksLab_Movement_WatchRivalEnterEastWest
@@ -1079,7 +1079,7 @@ PalletTown_ProfessorOaksLab_EventScript_DexSceneRivalEnterEastWest::
 	return
 
 PalletTown_ProfessorOaksLab_EventScript_DexSceneRivalEnterSouth::
-	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 6, 10
+	setobjectxyperm LOCALID_OAKS_LAB_RIVAL, 13, 18
 	addobject LOCALID_OAKS_LAB_RIVAL
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, Common_Movement_WalkInPlaceFasterDown
 	applymovement LOCALID_OAKS_LAB_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalEnter

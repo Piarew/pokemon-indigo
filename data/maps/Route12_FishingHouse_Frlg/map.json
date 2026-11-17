@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE12_FISHING_HOUSE",
   "name": "Route12_FishingHouse_Frlg",
-  "layout": "LAYOUT_HOUSE4_FRLG",
+  "layout": "LAYOUT_ROUTE12_HOUSE_HNS",
   "music": "MUS_RG_CELADON",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_12",
@@ -19,12 +19,12 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
-      "x": 4,
+      "x": 7,
       "y": 4,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route12_FishingHouse_EventScript_FishingGuruBrother",
@@ -33,16 +33,16 @@
   ],
   "warp_events": [
     {
-      "x": 2,
+      "x": 4,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ROUTE12",
       "dest_warp_id": "0"
     },
     {
-      "x": 3,
-      "y": 7,
-      "elevation": 3,
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE12",
       "dest_warp_id": "0"
     },

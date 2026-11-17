@@ -1,7 +1,7 @@
 {
   "id": "MAP_PALLET_TOWN_PLAYERS_HOUSE_1F",
   "name": "PalletTown_PlayersHouse_1F_Frlg",
-  "layout": "LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_1F_FRLG",
+  "layout": "LAYOUT_PALLET_TOWN_REDS_HOUSE_1F_HNS",
   "music": "MUS_RG_PALLET",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_PALLET_TOWN",
@@ -20,9 +20,9 @@
       "local_id": "LOCALID_PLAYERS_HOUSE_1F_MOM",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MOM_FRLG",
-      "x": 8,
+      "x": 7,
       "y": 4,
-      "elevation": 3,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -34,29 +34,29 @@
   ],
   "warp_events": [
     {
-      "x": 5,
+      "x": 9,
       "y": 8,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_PALLET_TOWN",
       "dest_warp_id": "0"
     },
     {
-      "x": 4,
+      "x": 9,
       "y": 8,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_PALLET_TOWN",
       "dest_warp_id": "0"
     },
     {
-      "x": 10,
+      "x": 9,
       "y": 2,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_PALLET_TOWN_PLAYERS_HOUSE_2F",
       "dest_warp_id": "0"
     },
     {
-      "x": 3,
-      "y": 9,
+      "x": 9,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_PALLET_TOWN",
       "dest_warp_id": "0"
@@ -66,7 +66,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 6,
+      "x": 4,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

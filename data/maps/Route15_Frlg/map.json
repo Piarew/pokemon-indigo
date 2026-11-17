@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE15",
   "name": "Route15_Frlg",
-  "layout": "LAYOUT_ROUTE15",
+  "layout": "LAYOUT_ROUTE15_HNS",
   "music": "MUS_RG_ROUTE11",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_15",
@@ -17,21 +17,77 @@
   "connections": [
     {
       "map": "MAP_FUCHSIA_CITY",
-      "offset": -10,
+      "offset": -15,
       "direction": "left"
     },
     {
       "map": "MAP_ROUTE14",
-      "offset": -40,
+      "offset": -37,
       "direction": "right"
     }
   ],
   "object_events": [
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
+      "x": 63,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
+      "x": 72,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
+      "x": 85,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 30,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route15_EventScript_ItemTM18",
+      "flag": "FLAG_HIDE_ROUTE15_TM18"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
-      "x": 22,
-      "y": 13,
+      "x": 23,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -72,8 +128,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
-      "x": 44,
-      "y": 13,
+      "x": 43,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -115,7 +171,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BIKER",
       "x": 63,
-      "y": 13,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 1,
@@ -156,8 +212,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
-      "x": 28,
-      "y": 6,
+      "x": 27,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -166,20 +222,6 @@
       "trainer_sight_or_berry_tree_id": "1",
       "script": "Route15_EventScript_Celia",
       "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 20,
-      "y": 6,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route15_EventScript_ItemTM18",
-      "flag": "FLAG_HIDE_ROUTE15_TM18"
     },
     {
       "type": "object",
@@ -208,28 +250,20 @@
       "trainer_sight_or_berry_tree_id": "1",
       "script": "Route15_EventScript_Mya",
       "flag": "0"
-    },
-    {
-      "type": "clone",
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
-      "x": 73,
-      "y": 7,
-      "target_local_id": "LOCALID_ROUTE14_BORDER_TREE",
-      "target_map": "MAP_ROUTE14"
     }
   ],
   "warp_events": [
     {
-      "x": 9,
-      "y": 11,
-      "elevation": 3,
+      "x": 16,
+      "y": 6,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE15_WEST_ENTRANCE_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 16,
-      "y": 11,
-      "elevation": 3,
+      "x": 9,
+      "y": 6,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE15_WEST_ENTRANCE_1F",
       "dest_warp_id": "2"
     }
@@ -238,8 +272,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 41,
-      "y": 11,
+      "x": 37,
+      "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route15_EventScript_RouteSign"

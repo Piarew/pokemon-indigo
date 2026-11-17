@@ -1,8 +1,8 @@
 {
   "id": "MAP_ROUTE25_SEA_COTTAGE",
   "name": "Route25_SeaCottage_Frlg",
-  "layout": "LAYOUT_ROUTE25_SEA_COTTAGE",
-  "music": "MUS_RG_FUCHSIA",
+  "layout": "LAYOUT_GOLDENROD_CITY_TRAIN_STATION_HNS",
+  "music": "MUS_RG_VERMILLION",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_25",
   "requires_flash": false,
@@ -20,9 +20,9 @@
       "local_id": "LOCALID_BILL_HUMAN",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BILL",
-      "x": 7,
-      "y": 5,
-      "elevation": 3,
+      "x": 11,
+      "y": 22,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
@@ -35,9 +35,9 @@
       "local_id": "LOCALID_BILL_CLEFAIRY",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CLEFAIRY",
-      "x": 10,
-      "y": 6,
-      "elevation": 3,
+      "x": 20,
+      "y": 23,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
@@ -45,27 +45,57 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route25_SeaCottage_EventScript_Bill",
       "flag": "FLAG_HIDE_BILL_CLEFAIRY"
+    },
+    {
+      "local_id": "LOCALID_ROUTE25_STATION_ATTENDANT",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
+      "x": 16,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route25_SeaCottage_EventScript_Attendant",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROUTE25_STATION_TRAIN",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 6,
-      "y": 9,
-      "elevation": 3,
+      "x": 15,
+      "y": 26,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE25",
       "dest_warp_id": "0"
     },
     {
-      "x": 7,
-      "y": 9,
-      "elevation": 3,
+      "x": 16,
+      "y": 26,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE25",
       "dest_warp_id": "0"
     },
     {
-      "x": 8,
-      "y": 9,
-      "elevation": 3,
+      "x": 17,
+      "y": 26,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE25",
       "dest_warp_id": "0"
     }
@@ -74,8 +104,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 4,
-      "y": 5,
+      "x": 18,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Route25_SeaCottage_EventScript_Computer"

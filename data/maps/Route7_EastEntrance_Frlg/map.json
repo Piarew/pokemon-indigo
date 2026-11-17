@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE7_EAST_ENTRANCE",
   "name": "Route7_EastEntrance_Frlg",
-  "layout": "LAYOUT_SAFFRON_CITY_EAST_WEST_ENTRANCE",
+  "layout": "LAYOUT_GATE_SAFFRON_CITY_ROUTE7_HNS",
   "music": "MUS_RG_PEWTER",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_7",
@@ -21,10 +21,10 @@
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 6,
       "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route7_EastEntrance_EventScript_Guard",
@@ -35,28 +35,28 @@
     {
       "x": 1,
       "y": 5,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE7",
       "dest_warp_id": "1"
     },
     {
       "x": 1,
-      "y": 6,
-      "elevation": 3,
+      "y": 5,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE7",
       "dest_warp_id": "1"
     },
     {
       "x": 11,
       "y": 5,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_SAFFRON_CITY",
       "dest_warp_id": "8"
     },
     {
       "x": 11,
-      "y": 6,
-      "elevation": 3,
+      "y": 5,
+      "elevation": 0,
       "dest_map": "MAP_SAFFRON_CITY",
       "dest_warp_id": "8"
     }

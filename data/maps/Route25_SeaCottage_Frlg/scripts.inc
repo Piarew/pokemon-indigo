@@ -3,6 +3,7 @@
 
 Route25_SeaCottage_Frlg_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route25_SeaCottage_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route25_SeaCottage_OnFrame
 	.byte 0
 
 Route25_SeaCottage_OnTransition::
@@ -10,9 +11,13 @@ Route25_SeaCottage_OnTransition::
 	call_if_set FLAG_GOT_SS_TICKET, Route25_SeaCottage_EventScript_SetReturnedAfterSSTicket
 	end
 
+Route25_SeaCottage_OnFrame::
+	map_script_2 VAR_TRAIN, 1, Route25_SeaCottage_EventScript_ExitTrain
+	.2byte 0
+
 Route25_SeaCottage_EventScript_HideClefairyBill::
 	clearflag FLAG_HIDE_BILL_CLEFAIRY
-	setobjectxyperm LOCALID_BILL_HUMAN, 3, 3
+	setobjectxyperm LOCALID_BILL_HUMAN, 11, 22
 	return
 
 Route25_SeaCottage_EventScript_SetReturnedAfterSSTicket::
@@ -45,18 +50,11 @@ Route25_SeaCottage_EventScript_BillAskForHelp::
 	msgbox Route25_SeaCottage_Text_RunCellSeparationOnPC
 	closemessage
 	delay 10
-	call_if_eq VAR_FACING, DIR_SOUTH, Route25_SeaCottage_EventScript_BillWalkToTeleporterSouth
-	call_if_eq VAR_FACING, DIR_NORTH, Route25_SeaCottage_EventScript_BillWalkToTeleporter
-	call_if_eq VAR_FACING, DIR_WEST, Route25_SeaCottage_EventScript_BillWalkToTeleporter
-	call_if_eq VAR_FACING, DIR_EAST, Route25_SeaCottage_EventScript_BillWalkToTeleporter
-	opendoor 10, 3
-	waitdooranim
-	applymovement LOCALID_BILL_CLEFAIRY, Route25_SeaCottage_Movement_BillEnterTeleporter
+	applymovement LOCALID_BILL_CLEFAIRY, Route25_SeaCottage_Movement_BillEnterSeparator
 	waitmovement 0
+	playse SE_WARP_IN
+	waitse
 	removeobject LOCALID_BILL_CLEFAIRY
-	playse SE_CONTEST_CURTAIN_FALL
-	closedoor 10, 3
-	waitdooranim
 	setflag BILL_IN_TELEPORTER
 	release
 	end
@@ -74,16 +72,6 @@ Route25_SeaCottage_EventScript_DeclineHelpBillMale::
 
 Route25_SeaCottage_EventScript_DeclineHelpBillFemale::
 	msgbox Route25_SeaCottage_Text_NoPleaseBeautiful
-	return
-
-Route25_SeaCottage_EventScript_BillWalkToTeleporterSouth::
-	applymovement LOCALID_BILL_CLEFAIRY, Route25_SeaCottage_Movement_BillWalkToTeleporterSouth
-	waitmovement 0
-	return
-
-Route25_SeaCottage_EventScript_BillWalkToTeleporter::
-	applymovement LOCALID_BILL_CLEFAIRY, Route25_SeaCottage_Movement_BillWalkToTeleporter
-	waitmovement 0
 	return
 
 Route25_SeaCottage_EventScript_BillGoToSSAnne::
@@ -124,21 +112,10 @@ Route25_SeaCottage_EventScript_BillGoLookAtPC::
 	release
 	end
 
-Route25_SeaCottage_Movement_BillWalkToTeleporter::
-	walk_up
-	walk_up
-	step_end
-
-Route25_SeaCottage_Movement_BillWalkToTeleporterSouth::
-	walk_right
-	walk_up
-	walk_up
-	walk_left
+Route25_SeaCottage_Movement_BillEnterSeparator::
 	walk_in_place_faster_up
-	step_end
-
-Route25_SeaCottage_Movement_BillEnterTeleporter::
-	walk_up
+	delay_16
+	walk_in_place_faster_up
 	step_end
 
 Route25_SeaCottage_EventScript_Computer::
@@ -155,50 +132,25 @@ Route25_SeaCottage_EventScript_RunCellSeparator::
 	closemessage
 	clearflag BILL_IN_TELEPORTER
 	setflag FLAG_HELPED_BILL_IN_SEA_COTTAGE
-	special SpawnCameraObject
-	applymovement LOCALID_CAMERA, Route25_SeaCottage_Movement_CameraPanToTeleporters
-	waitmovement 0
 	delay 35
 	playse SE_PIN
 	waitse
-	setvar VAR_0x8004, 0
-	special AnimateTeleporterHousing
-	delay 10
 	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
 	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
 	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
 	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
-	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
-	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
-	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
-	setvar VAR_0x8004, 1
-	special AnimateTeleporterHousing
 	playse SE_WARP_IN
-	special AnimateTeleporterCable
 	waitse
 	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
 	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
-	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
-	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
-	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
-	opendoor 3, 3
-	waitdooranim
 	fadeinbgm 0
 	addobject LOCALID_BILL_HUMAN
 	clearflag FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE
 	delay 50
 	playfanfare MUS_LEVEL_UP
-	applymovement LOCALID_BILL_HUMAN, Route25_SeaCottage_Movement_BillExitTeleporter
+	applymovement LOCALID_BILL_HUMAN, Route25_SeaCottage_Movement_BillExitSeparator
 	waitmovement 0
 	waitfanfare
-	applymovement LOCALID_CAMERA, Route25_SeaCottage_Movement_CameraPanBackFromTeleporters
-	waitmovement 0
-	playse SE_CONTEST_CURTAIN_FALL
-	closedoor 3, 3
-	waitdooranim
-	applymovement LOCALID_BILL_HUMAN, Route25_SeaCottage_Movement_BillWalkToMiddleOfRoom
-	waitmovement 0
-	special RemoveCameraObject
 	releaseall
 	end
 
@@ -207,22 +159,6 @@ Route25_SeaCottage_EventScript_PlayTeleporterBeepSE::
 	waitse
 	delay 20
 	return
-
-Route25_SeaCottage_Movement_CameraPanToTeleporters::
-	walk_up
-	walk_up
-	walk_right
-	walk_right
-	step_end
-
-Route25_SeaCottage_Movement_CameraPanBackFromTeleporters::
-	delay_16
-	delay_16
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	step_end
 
 Route25_SeaCottage_EventScript_OpenBillsMonList::
 	msgbox Route25_SeaCottage_Text_BillsFavoriteMonList
@@ -282,17 +218,161 @@ Route25_SeaCottage_EventScript_ExitBillsMonList::
 	releaseall
 	end
 
-Route25_SeaCottage_Movement_BillWalkToMiddleOfRoom::
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+Route25_SeaCottage_Movement_BillExitSeparator::
+	walk_in_place_faster_down
+	step_end
+
+Route25_SeaCottage_EventScript_Attendant::
+	lock
+	faceplayer
+	goto_if_unset FLAG_HELPED_BILL_IN_SEA_COTTAGE, Route25_SeaCottage_EventScript_AttendantTrainNotRunning
+	msgbox Route25_SeaCottage_Text_OfficerRightThisWay
+	closemessage
+	applymovement LOCALID_ROUTE25_STATION_ATTENDANT, Route25_SeaCottage_Movement_AttendantMoveUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Route25_SeaCottage_Movement_WalkToTrain
+	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	playse SE_EXIT
+	waitse
+	fadescreen FADE_TO_BLACK
+	applymovement OBJ_EVENT_ID_CAMERA, Route25_SeaCottage_Movement_CameraPanUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_CAMERA, Route25_SeaCottage_Movement_CameraPanLeft
+	waitmovement 0
+	delay 60
+	applymovement LOCALID_ROUTE25_STATION_TRAIN, Route25_SeaCottage_Movement_SlideRight
+	applymovement OBJ_EVENT_ID_CAMERA, Route25_SeaCottage_Movement_SlideRight
+	playbgm MUS_RG_SS_ANNE, FALSE
+	fadescreen FADE_FROM_BLACK
+	playse SE_TRUCK_MOVE
+	delay 220
+	playse SE_TRUCK_STOP
+	applymovement LOCALID_ROUTE25_STATION_TRAIN, Route25_SeaCottage_Movement_SlideRight
+	applymovement OBJ_EVENT_ID_CAMERA, Route25_SeaCottage_Movement_SlideRight
+	fadescreen FADE_TO_BLACK
+	waitse
+	special RemoveCameraObject
+	setvar VAR_TRAIN, 1
+	delay 60
+	warp MAP_SAFFRON_CITY_TRAIN_STATION_HNS, 1
+	waitstate
+	delay 60
+	end
+
+Route25_SeaCottage_EventScript_AttendantTrainNotRunning::
+	msgbox Route25_SeaCottage_Text_OfficerTrainNotRunning
+	closemessage
+	release
+	end
+
+Route25_SeaCottage_EventScript_ExitTrain::
+	lock
+	applymovement LOCALID_ROUTE25_STATION_ATTENDANT, Route25_SeaCottage_Movement_AttendantMoveUp
+	applymovement OBJ_EVENT_ID_PLAYER, Route25_SeaCottage_Movement_ExitTrain
+	waitmovement 0
+	setvar VAR_TRAIN, 0
+	applymovement LOCALID_ROUTE25_STATION_ATTENDANT, Route25_SeaCottage_Movement_AttendantMoveDown
+	waitmovement 0
+	release
+	end
+
+Route25_SeaCottage_Movement_ExitTrain::
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
 	walk_down
 	walk_down
 	step_end
 
-Route25_SeaCottage_Movement_BillExitTeleporter::
+Route25_SeaCottage_Movement_AttendantMoveUp::
+	face_up
+	walk_up
+	walk_left
+	face_right
+	step_end
+
+Route25_SeaCottage_Movement_AttendantMoveDown::
+	walk_right
 	walk_down
+	step_end
+
+Route25_SeaCottage_Movement_WalkToTrain::
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+Route25_SeaCottage_Movement_CameraPanUp::
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	step_end
+
+Route25_SeaCottage_Movement_CameraPanLeft::
+	slide_left
+	slide_left
+	slide_left
+	slide_left
+	slide_left
+	slide_left
+	slide_left
+	slide_left
+	slide_left
+	slide_left
+	slide_left
+	step_end
+
+Route25_SeaCottage_Movement_SlideRight::
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
+	slide_right
 	step_end
 
 Route25_SeaCottage_Text_ImBillHelpMeOutPal::
@@ -322,10 +402,10 @@ Route25_SeaCottage_Text_ImBillHelpMeOutLady::
 	.string "Help me out here!$"
 
 Route25_SeaCottage_Text_RunCellSeparationOnPC::
-	.string "Wait till I get inside the\n"
-	.string "Teleporter.\p"
-	.string "When I do, go to my PC and run\n"
-	.string "the Cell Separation System.$"
+	.string "Wait till I hop onto the separator\n"
+	.string "pad.\p"
+	.string "When I do, go to the station PC and\n"
+	.string "run the Cell Separation System.$"
 
 Route25_SeaCottage_Text_NoPleaseChief::
 	.string "No!?\n"
@@ -390,12 +470,12 @@ Route25_SeaCottage_Text_CheckOutRareMonsOnPC::
 	.string "Go on, check out my PC.$"
 
 Route25_SeaCottage_Text_TeleporterIsDisplayed::
-	.string "Teleporter is displayed on the PC\n"
-	.string "monitor.$"
+	.string "The Cell Separator is displayed on\n"
+	.string "the PC monitor.$"
 
 Route25_SeaCottage_Text_InitiatedTeleportersCellSeparator::
-	.string "{PLAYER} initiated the Teleporter's\n"
-	.string "Cell Separator.$"
+	.string "{PLAYER} initiated the Cell\n"
+	.string "Separator.$"
 
 Route25_SeaCottage_Text_BillsFavoriteMonList::
 	.string "Bill's favorite Pokémon list!$"
@@ -403,3 +483,13 @@ Route25_SeaCottage_Text_BillsFavoriteMonList::
 Route25_SeaCottage_Text_SeeWhichMon::
 	.string "Which Pokémon do you want to see?$"
 
+Route25_SeaCottage_Text_OfficerTrainNotRunning::
+	.string "The Magnet Train isn't running.\p"
+	.string "Bill's in the middle of an experiment,\n"
+	.string "and… well, you should talk to that\l"
+	.string "Clefairy.$"
+
+Route25_SeaCottage_Text_OfficerRightThisWay::
+	.string "This Magnet Train runs between the\n"
+	.string "Cerulean Cape and Saffron City.\p"
+	.string "Right this way, please.$"

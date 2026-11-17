@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE16_HOUSE",
   "name": "Route16_House_Frlg",
-  "layout": "LAYOUT_HOUSE1_FRLG",
+  "layout": "LAYOUT_ROUTE16_HOUSE_HNS",
   "music": "MUS_RG_CELADON",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_16",
@@ -47,23 +47,23 @@
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 7,
-      "elevation": 3,
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE16",
       "dest_warp_id": "0"
     },
     {
       "x": 4,
-      "y": 7,
-      "elevation": 3,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE16",
       "dest_warp_id": "0"
     },
     {
-      "x": 5,
-      "y": 7,
-      "elevation": 3,
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE16",
       "dest_warp_id": "0"
     }

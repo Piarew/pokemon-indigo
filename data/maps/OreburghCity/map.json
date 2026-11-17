@@ -361,10 +361,32 @@
       "elevation": 0,
       "dest_map": "MAP_OREBURGH_CITY_MINING_MUSEUM",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 58,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_FLAT3_F1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 60,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_FLAT3_F1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
   "bg_events": [
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_StationSign"
+    },
     {
       "type": "sign",
       "x": 56,

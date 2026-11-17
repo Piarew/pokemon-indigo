@@ -1,7 +1,7 @@
 {
   "id": "MAP_UNDERGROUND_PATH_EAST_ENTRANCE",
   "name": "UndergroundPath_EastEntrance_Frlg",
-  "layout": "LAYOUT_UNDERGROUND_PATH_ENTRANCE",
+  "layout": "LAYOUT_ROUTE8_TUNNEL_ENTRANCE_HNS",
   "music": "MUS_RG_PEWTER",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_UNDERGROUND_PATH_2",
@@ -33,30 +33,30 @@
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 8,
-      "elevation": 3,
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE8",
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
-      "y": 8,
-      "elevation": 3,
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE8",
       "dest_warp_id": "0"
     },
     {
-      "x": 7,
-      "y": 8,
-      "elevation": 3,
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE8",
       "dest_warp_id": "0"
     },
     {
-      "x": 7,
-      "y": 4,
-      "elevation": 3,
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL",
       "dest_warp_id": "0"
     }

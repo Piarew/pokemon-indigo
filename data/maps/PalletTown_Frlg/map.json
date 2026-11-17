@@ -1,7 +1,7 @@
 {
   "id": "MAP_PALLET_TOWN",
   "name": "PalletTown_Frlg",
-  "layout": "LAYOUT_PALLET_TOWN",
+  "layout": "LAYOUT_PALLET_TOWN_HNS",
   "music": "MUS_RG_PALLET",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_PALLET_TOWN",
@@ -17,7 +17,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE1",
-      "offset": 0,
+      "offset": -12,
       "direction": "up"
     },
     {
@@ -136,7 +136,7 @@
       "local_id": "LOCALID_PALLET_INDIGO_SAFFRON",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_INDIGO_SAFFRON",
-      "x": 18,
+      "x": 20,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -151,7 +151,7 @@
       "local_id": "LOCALID_PALLET_INDIGO_FUCHSIA",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_INDIGO_FUCHSIA",
-      "x": 19,
+      "x": 21,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -331,6 +331,14 @@
     },
     {
       "type": "sign",
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PalletTown_EventScript_TownSign"
+    },
+    {
+      "type": "sign",
       "x": 4,
       "y": 7,
       "elevation": 0,
@@ -344,14 +352,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PalletTown_EventScript_RivalsHouseSign"
-    },
-    {
-      "type": "sign",
-      "x": 9,
-      "y": 11,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PalletTown_EventScript_TownSign"
     },
     {
       "type": "sign",

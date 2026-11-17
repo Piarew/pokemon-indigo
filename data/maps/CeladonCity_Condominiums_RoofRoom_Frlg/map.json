@@ -1,7 +1,7 @@
 {
   "id": "MAP_CELADON_CITY_CONDOMINIUMS_ROOF_ROOM",
   "name": "CeladonCity_Condominiums_RoofRoom_Frlg",
-  "layout": "LAYOUT_CELADON_CITY_CONDOMINIUMS_ROOF_ROOM",
+  "layout": "LAYOUT_CELADON_CITY_APARTMENTS_ROOF_HOUSE_HNS",
   "music": "MUS_RG_CELADON",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_CELADON_CITY",
@@ -17,20 +17,6 @@
   "connections": null,
   "object_events": [
     {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_FRLG",
-      "x": 3,
-      "y": 5,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeladonCity_Condominiums_RoofRoom_EventScript_BlackBelt",
-      "flag": "0"
-    },
-    {
       "local_id": "LOCALID_EEVEE_POKEBALL",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -44,11 +30,25 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeladonCity_Condominiums_RoofRoom_EventScript_EeveeBall",
       "flag": "FLAG_HIDE_EEVEE_BALL"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_FRLG",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeladonCity_Condominiums_RoofRoom_EventScript_BlackBelt",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 4,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_CELADON_CITY_CONDOMINIUMS_ROOF",
@@ -56,13 +56,13 @@
     },
     {
       "x": 4,
-      "y": 7,
-      "elevation": 3,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_CELADON_CITY_CONDOMINIUMS_ROOF",
       "dest_warp_id": "2"
     },
     {
-      "x": 5,
+      "x": 4,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_CELADON_CITY_CONDOMINIUMS_ROOF",

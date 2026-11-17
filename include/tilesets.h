@@ -180,4 +180,31 @@ extern const struct Tileset gTileset_Sinnoh_CableClub;
 
 extern const struct Tileset gTileset_Lavaridge_Hns;
 
+extern const struct Tileset gTileset_PalletTown_Hns;
+extern const struct Tileset gTileset_PewterCity_Hns;
+extern const struct Tileset gTileset_CeruleanCity_Hns;
+extern const struct Tileset gTileset_Vermilion_Hns;
+extern const struct Tileset gTileset_LavenderTown_Hns;
+extern const struct Tileset gTileset_CeladonCity_Hns;
+extern const struct Tileset gTileset_SaffronCity_Hns;
+extern const struct Tileset gTileset_Fuchsia_Hns;
+extern const struct Tileset gTileset_CyclingRoad_Hns;
+extern const struct Tileset gTileset_Kanto_Building_Hns;
+extern const struct Tileset gTileset_KantoMart_Hns;
+extern const struct Tileset gTileset_ViridianCity_Gym_Hns;
+extern const struct Tileset gTileset_Museum_Hns;
+extern const struct Tileset gTileset_CeruleanCity_Gym_Hns;
+extern const struct Tileset gTileset_VermilionCity_Gym_Hns;
+extern const struct Tileset gTileset_SoulHouse_Hns;
+extern const struct Tileset gTileset_CeladonApartments_Hns;
+extern const struct Tileset gTileset_SaffronCity_Gym_Hns;
+extern const struct Tileset gTileset_FuchsiaCity_Gym_Hns;
+extern const struct Tileset gTileset_SilphCo_Hns;
+extern const struct Tileset gTileset_SeaCottage_Hns;
+extern const struct Tileset gTileset_ViridianForest_Hns;
+extern const struct Tileset gTileset_Cave_MtMoon_Hns;
+extern const struct Tileset gTileset_Cave_Green_Hns;
+extern const struct Tileset gTileset_Cave_Sandy_Hns;
+extern const struct Tileset gTileset_SaffronCity_FightingDojoVIP_Hns;
+
 #endif //GUARD_tilesets_H

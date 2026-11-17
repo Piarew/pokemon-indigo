@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE",
   "name": "Route2_ViridianForest_SouthEntrance_Frlg",
-  "layout": "LAYOUT_ROUTE2_ENTRANCE",
+  "layout": "LAYOUT_GATE_ROUTE2_VIRIDIAN_FOREST_HNS",
   "music": "MUS_RG_PEWTER",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_2",
@@ -19,8 +19,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2_FRLG",
-      "x": 10,
-      "y": 6,
+      "x": 9,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -33,8 +33,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_FRLG",
-      "x": 4,
-      "y": 7,
+      "x": 5,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -47,30 +47,30 @@
   ],
   "warp_events": [
     {
-      "x": 6,
-      "y": 10,
-      "elevation": 3,
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE2",
       "dest_warp_id": "2"
     },
     {
       "x": 7,
-      "y": 10,
-      "elevation": 3,
+      "y": 9,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE2",
       "dest_warp_id": "2"
     },
     {
-      "x": 8,
-      "y": 10,
-      "elevation": 3,
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE2",
       "dest_warp_id": "2"
     },
     {
       "x": 7,
       "y": 1,
-      "elevation": 3,
+      "elevation": 0,
       "dest_map": "MAP_VIRIDIAN_FOREST",
       "dest_warp_id": "0"
     }

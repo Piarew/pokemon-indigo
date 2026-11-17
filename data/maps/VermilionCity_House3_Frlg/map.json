@@ -1,7 +1,7 @@
 {
   "id": "MAP_VERMILION_CITY_HOUSE3",
   "name": "VermilionCity_House3_Frlg",
-  "layout": "LAYOUT_HOUSE1_FRLG",
+  "layout": "LAYOUT_VERMILION_CITY_HOUSE3_HNS",
   "music": "MUS_RG_VERMILLION",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_VERMILION_CITY",
@@ -47,8 +47,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CLIPBOARD",
-      "x": 6,
-      "y": 4,
+      "x": 5,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -75,23 +75,23 @@
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 7,
-      "elevation": 3,
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_VERMILION_CITY",
       "dest_warp_id": "8"
     },
     {
       "x": 4,
-      "y": 7,
-      "elevation": 3,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_VERMILION_CITY",
       "dest_warp_id": "8"
     },
     {
-      "x": 5,
-      "y": 7,
-      "elevation": 3,
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_VERMILION_CITY",
       "dest_warp_id": "8"
     }

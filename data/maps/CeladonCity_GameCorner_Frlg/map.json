@@ -1,7 +1,7 @@
 {
   "id": "MAP_CELADON_CITY_GAME_CORNER",
   "name": "CeladonCity_GameCorner_Frlg",
-  "layout": "LAYOUT_CELADON_CITY_GAME_CORNER",
+  "layout": "LAYOUT_CELADON_CITY_GAME_CORNER_HNS",
   "music": "MUS_RG_GAME_CORNER",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_CELADON_CITY",
@@ -17,6 +17,105 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_GAME_CORNER_GRUNT",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+      "x": 11,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeladonCity_GameCorner_EventScript_RocketGrunt",
+      "flag": "FLAG_HIDE_GAME_CORNER_ROCKET"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeladonCity_GameCorner_EventScript_CoinsClerk",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_FRLG",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeladonCity_GameCorner_EventScript_Woman2",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_FISHER",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeladonCity_GameCorner_EventScript_Fisher",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_2",
+      "x": 16,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeladonCity_GameCorner_EventScript_OldMan",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeladonCity_GameCorner_EventScript_GymGuy",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeladonCity_GameCorner_EventScript_BaldingMan",
+      "flag": "0"
+    },
+    {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
       "x": 4,
@@ -28,34 +127,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeladonCity_GameCorner_EventScript_InfoClerk",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
-      "x": 6,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeladonCity_GameCorner_EventScript_CoinsClerk",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-      "x": 1,
-      "y": 6,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeladonCity_GameCorner_EventScript_BaldingMan",
       "flag": "0"
     },
     {
@@ -74,65 +145,9 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_FISHER",
-      "x": 4,
-      "y": 7,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeladonCity_GameCorner_EventScript_Fisher",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-      "x": 7,
-      "y": 10,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeladonCity_GameCorner_EventScript_GymGuy",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_FRLG",
-      "x": 7,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeladonCity_GameCorner_EventScript_Woman2",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_2",
-      "x": 10,
-      "y": 9,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeladonCity_GameCorner_EventScript_OldMan",
-      "flag": "0"
-    },
-    {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST",
-      "x": 13,
-      "y": 7,
+      "x": 14,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -155,41 +170,26 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeladonCity_GameCorner_EventScript_Gentleman",
       "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_GAME_CORNER_GRUNT",
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-      "x": 11,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeladonCity_GameCorner_EventScript_RocketGrunt",
-      "flag": "FLAG_HIDE_GAME_CORNER_ROCKET"
     }
   ],
   "warp_events": [
     {
-      "x": 9,
-      "y": 13,
+      "x": 2,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_CELADON_CITY",
       "dest_warp_id": "0"
     },
     {
-      "x": 10,
-      "y": 13,
+      "x": 2,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_CELADON_CITY",
       "dest_warp_id": "0"
     },
     {
-      "x": 11,
-      "y": 13,
+      "x": 2,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_CELADON_CITY",
       "dest_warp_id": "0"
@@ -326,24 +326,16 @@
     },
     {
       "type": "sign",
-      "x": 0,
-      "y": 7,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
-      "script": "CeladonCity_GameCorner_EventScript_SlotMachine0"
-    },
-    {
-      "type": "sign",
-      "x": 0,
-      "y": 9,
+      "x": 5,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine1"
     },
     {
       "type": "sign",
-      "x": 0,
-      "y": 10,
+      "x": 5,
+      "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine2"
@@ -351,31 +343,23 @@
     {
       "type": "sign",
       "x": 5,
-      "y": 6,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine3"
     },
     {
       "type": "sign",
-      "x": 5,
-      "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "CeladonCity_GameCorner_EventScript_UnusableSlotMachine1"
-    },
-    {
-      "type": "sign",
-      "x": 5,
-      "y": 9,
+      "x": 6,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine5"
     },
     {
       "type": "sign",
-      "x": 5,
-      "y": 10,
+      "x": 6,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine6"
@@ -383,7 +367,7 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 6,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine7"
@@ -391,22 +375,14 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 7,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
-      "script": "CeladonCity_GameCorner_EventScript_SlotMachine8"
-    },
-    {
-      "type": "sign",
-      "x": 6,
-      "y": 9,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine9"
     },
     {
       "type": "sign",
-      "x": 11,
+      "x": 12,
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
@@ -414,7 +390,7 @@
     },
     {
       "type": "sign",
-      "x": 11,
+      "x": 12,
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
@@ -422,24 +398,48 @@
     },
     {
       "type": "sign",
-      "x": 11,
-      "y": 8,
+      "x": 17,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "CeladonCity_GameCorner_EventScript_SlotMachine0"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "CeladonCity_GameCorner_EventScript_UnusableSlotMachine1"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "CeladonCity_GameCorner_EventScript_SlotMachine8"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine12"
     },
     {
       "type": "sign",
-      "x": 11,
-      "y": 10,
+      "x": 12,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine13"
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 6,
+      "x": 13,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine14"
@@ -447,23 +447,23 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 8,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "CeladonCity_GameCorner_EventScript_UnusableSlotMachine2"
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 9,
+      "x": 13,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine16"
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 10,
+      "x": 18,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine17"
@@ -479,39 +479,39 @@
     {
       "type": "sign",
       "x": 17,
-      "y": 7,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine19"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 8,
+      "x": 18,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine20"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 9,
+      "x": 18,
+      "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_SlotMachine21"
     },
     {
       "type": "sign",
-      "x": 11,
-      "y": 1,
+      "x": 17,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CeladonCity_GameCorner_EventScript_Poster"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 13,
+      "x": 18,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "CeladonCity_GameCorner_EventScript_PhotoPrinter"

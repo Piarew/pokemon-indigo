@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE21_NORTH",
   "name": "Route21_North_Frlg",
-  "layout": "LAYOUT_ROUTE21_NORTH",
+  "layout": "LAYOUT_ROUTE21_HNS",
   "music": "MUS_RG_ROUTE3",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_21",
@@ -16,17 +16,31 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_CINNABAR_ISLAND",
+      "offset": -4,
+      "direction": "down"
+    },
+    {
       "map": "MAP_PALLET_TOWN",
       "offset": 0,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE21_SOUTH",
-      "offset": 0,
-      "direction": "down"
     }
   ],
   "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_FISHER",
+      "x": 16,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 4,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route21_North_EventScript_Wade",
+      "flag": "0"
+    },
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
@@ -39,20 +53,6 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route21_North_EventScript_Ronald",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_FISHER",
-      "x": 16,
-      "y": 26,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route21_North_EventScript_Wade",
       "flag": "0"
     },
     {
@@ -96,22 +96,10 @@
       "trainer_sight_or_berry_tree_id": "1",
       "script": "Route21_North_EventScript_Ian",
       "flag": "0"
-    },
-    {
-      "type": "clone",
-      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN_FRLG",
-      "x": 13,
-      "y": -3,
-      "target_local_id": "LOCALID_PALLET_FAT_MAN",
-      "target_map": "MAP_PALLET_TOWN"
     }
   ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
+  "warp_events": [],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",

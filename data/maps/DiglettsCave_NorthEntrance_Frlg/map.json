@@ -1,7 +1,7 @@
 {
   "id": "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE",
   "name": "DiglettsCave_NorthEntrance_Frlg",
-  "layout": "LAYOUT_DIGLETTS_CAVE_NORTH_ENTRANCE",
+  "layout": "LAYOUT_DIGLETTS_CAVE_ENTRANCE_NORTH_HNS",
   "music": "MUS_RG_VIRIDIAN_FOREST",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_DIGLETTS_CAVE",
@@ -33,16 +33,16 @@
   ],
   "warp_events": [
     {
-      "x": 6,
-      "y": 4,
-      "elevation": 3,
+      "x": 4,
+      "y": 3,
+      "elevation": 0,
       "dest_map": "MAP_DIGLETTS_CAVE_B1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 4,
-      "y": 6,
-      "elevation": 3,
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE2",
       "dest_warp_id": "3"
     }

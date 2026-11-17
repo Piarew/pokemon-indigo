@@ -7216,3 +7216,363 @@ SafariZoneGate_SafariZoneEntrance_EventScript_Engineer::
 
 SafariZoneGate_SafariZoneEntrance_EventScript_Engineer_Text:
 	.string "Hello!$"
+
+@ Stubs for extra HnS Kanto maps (remap_kanto_hns).
+
+LavenderTown_RadioStation_EventScript_Officer::
+	msgbox LavenderTown_RadioStation_EventScript_Officer_Text, MSGBOX_NPC
+	end
+
+LavenderTown_RadioStation_EventScript_Officer_Text:
+	.string "Hello!$"
+
+LavenderTown_RadioStation_EventScript_Host::
+	msgbox LavenderTown_RadioStation_EventScript_Host_Text, MSGBOX_NPC
+	end
+
+LavenderTown_RadioStation_EventScript_Host_Text:
+	.string "Hello!$"
+
+LavenderTown_RadioStation_EventScript_Receptionist::
+	msgbox LavenderTown_RadioStation_EventScript_Receptionist_Text, MSGBOX_NPC
+	end
+
+LavenderTown_RadioStation_EventScript_Receptionist_Text:
+	.string "Hello!$"
+
+LavenderTown_RadioStation_EventScript_SuperNerd::
+	msgbox LavenderTown_RadioStation_EventScript_SuperNerd_Text, MSGBOX_NPC
+	end
+
+LavenderTown_RadioStation_EventScript_SuperNerd_Text:
+	.string "Hello!$"
+
+LavenderTown_RadioStation_EventScript_Director::
+	msgbox LavenderTown_RadioStation_EventScript_Director_Text, MSGBOX_NPC
+	end
+
+LavenderTown_RadioStation_EventScript_Director_Text:
+	.string "Hello!$"
+
+LavenderTown_RadioStation_EventScript_Library::
+	msgbox LavenderTown_RadioStation_EventScript_Library_Text, MSGBOX_NPC
+	end
+
+LavenderTown_RadioStation_EventScript_Library_Text:
+	.string "Hello!$"
+
+LavenderTown_RadioStation_EventScript_Sign::
+	msgbox LavenderTown_RadioStation_EventScript_Sign_Text, MSGBOX_NPC
+	end
+
+LavenderTown_RadioStation_EventScript_Sign_Text:
+	.string "Hello!$"
+
+LavenderTown_RadioStation_EventScript_Directory::
+	msgbox LavenderTown_RadioStation_EventScript_Directory_Text, MSGBOX_NPC
+	end
+
+LavenderTown_RadioStation_EventScript_Directory_Text:
+	.string "Hello!$"
+
+VermilionCity_PortOutside_EventScript_Fisher::
+	msgbox VermilionCity_PortOutside_EventScript_Fisher_Text, MSGBOX_NPC
+	end
+
+VermilionCity_PortOutside_EventScript_Fisher_Text:
+	.string "Hello!$"
+
+VermilionPort_EventScript_Sailor::
+	msgbox VermilionPort_EventScript_Sailor_Text, MSGBOX_NPC
+	end
+
+VermilionPort_EventScript_Sailor_Text:
+	.string "Hello!$"
+
+VermilionPortIndoor_EventScript_Nerd::
+	msgbox VermilionPortIndoor_EventScript_Nerd_Text, MSGBOX_NPC
+	end
+
+VermilionPortIndoor_EventScript_Nerd_Text:
+	.string "Hello!$"
+
+VermilionPortIndoor_EventScript_Teacher::
+	msgbox VermilionPortIndoor_EventScript_Teacher_Text, MSGBOX_NPC
+	end
+
+VermilionPortIndoor_EventScript_Teacher_Text:
+	.string "Hello!$"
+
+MtMoon_EventScript_Moonstone::
+	msgbox MtMoon_EventScript_Moonstone_Text, MSGBOX_NPC
+	end
+
+MtMoon_EventScript_Moonstone_Text:
+	.string "Hello!$"
+
+MtMoon_Outside_EventScript_Sign::
+	msgbox MtMoon_Outside_EventScript_Sign_Text, MSGBOX_NPC
+	end
+
+MtMoon_Outside_EventScript_Sign_Text:
+	.string "Hello!$"
+
+MtMoon_Outside_EventScript_WhiteRock::
+	msgbox MtMoon_Outside_EventScript_WhiteRock_Text, MSGBOX_NPC
+	end
+
+MtMoon_Outside_EventScript_WhiteRock_Text:
+	.string "Hello!$"
+
+MtMoon_Shop_EventScript_Clerk::
+	msgbox MtMoon_Shop_EventScript_Clerk_Text, MSGBOX_NPC
+	end
+
+MtMoon_Shop_EventScript_Clerk_Text:
+	.string "Hello!$"
+
+MtMoon_Shop_EventScript_Lass::
+	msgbox MtMoon_Shop_EventScript_Lass_Text, MSGBOX_NPC
+	end
+
+MtMoon_Shop_EventScript_Lass_Text:
+	.string "Hello!$"
+
+
+SaffronCity_FightingDojoVIP_EventScript_Misty::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Misty_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Misty_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Brock::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Brock_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Brock_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Surge::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Surge_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Surge_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Erika::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Erika_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Erika_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Janine::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Janine_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Janine_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Sabrina::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Sabrina_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Sabrina_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Blaine::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Blaine_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Blaine_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Blue::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Blue_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Blue_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Whitney::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Whitney_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Whitney_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Falkner::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Falkner_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Falkner_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Bugsy::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Bugsy_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Bugsy_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Morty::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Morty_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Morty_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Jasmine::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Jasmine_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Jasmine_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Chuck::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Chuck_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Chuck_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Clair::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Clair_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Clair_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Pryce::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Pryce_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Pryce_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EventScript_Nurse::
+	msgbox SaffronCity_FightingDojoVIP_EventScript_Nurse_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EventScript_Nurse_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojo_EventScript_Chased::
+	msgbox SaffronCity_FightingDojo_EventScript_Chased_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojo_EventScript_Chased_Text:
+	.string "Hello!$"
+
+TrainerHill_Courtyard_EventScript_RightMoveTutor::
+	msgbox TrainerHill_Courtyard_EventScript_RightMoveTutor_Text, MSGBOX_NPC
+	end
+
+TrainerHill_Courtyard_EventScript_RightMoveTutor_Text:
+	.string "Hello!$"
+
+TrainerHill_Courtyard_EventScript_ElementalMoveTutor::
+	msgbox TrainerHill_Courtyard_EventScript_ElementalMoveTutor_Text, MSGBOX_NPC
+	end
+
+TrainerHill_Courtyard_EventScript_ElementalMoveTutor_Text:
+	.string "Hello!$"
+
+TrainerHill_Courtyard_EventScript_LeftMoveTutor::
+	msgbox TrainerHill_Courtyard_EventScript_LeftMoveTutor_Text, MSGBOX_NPC
+	end
+
+TrainerHill_Courtyard_EventScript_LeftMoveTutor_Text:
+	.string "Hello!$"
+
+BattleFrontier_ExchangeServiceCorner_EventScript_PowerClerk_hns::
+	msgbox BattleFrontier_ExchangeServiceCorner_EventScript_PowerClerk_hns_Text, MSGBOX_NPC
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_PowerClerk_hns_Text:
+	.string "Hello!$"
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HoldItemClerk2_hns::
+	msgbox BattleFrontier_ExchangeServiceCorner_EventScript_HoldItemClerk2_hns_Text, MSGBOX_NPC
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HoldItemClerk2_hns_Text:
+	.string "Hello!$"
+
+BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk1_hns::
+	msgbox BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk1_hns_Text, MSGBOX_NPC
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk1_hns_Text:
+	.string "Hello!$"
+
+BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk2_hns::
+	msgbox BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk2_hns_Text, MSGBOX_NPC
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_DecorClerk2_hns_Text:
+	.string "Hello!$"
+
+BattleFrontier_ExchangeServiceCorner_EventScript_PokeBallClerk_hns::
+	msgbox BattleFrontier_ExchangeServiceCorner_EventScript_PokeBallClerk_hns_Text, MSGBOX_NPC
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_PokeBallClerk_hns_Text:
+	.string "Hello!$"
+
+BattleFrontier_ExchangeServiceCorner_EventScript_VitaminClerk_hns::
+	msgbox BattleFrontier_ExchangeServiceCorner_EventScript_VitaminClerk_hns_Text, MSGBOX_NPC
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_VitaminClerk_hns_Text:
+	.string "Hello!$"
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HoldItemClerk_hns::
+	msgbox BattleFrontier_ExchangeServiceCorner_EventScript_HoldItemClerk_hns_Text, MSGBOX_NPC
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HoldItemClerk_hns_Text:
+	.string "Hello!$"
+
+SaffronCity_FightingDojoVIP_EvetScript_Statue::
+	msgbox SaffronCity_FightingDojoVIP_EvetScript_Statue_Text, MSGBOX_NPC
+	end
+
+SaffronCity_FightingDojoVIP_EvetScript_Statue_Text:
+	.string "Hello!$"
+
+SeafoamIslands_Gym_EventScript_Blaine::
+	msgbox SeafoamIslands_Gym_EventScript_Blaine_Text, MSGBOX_NPC
+	end
+
+SeafoamIslands_Gym_EventScript_Blaine_Text:
+	.string "Hello!$"
+
+SeafomIslands2_EventScript_GymGuide::
+	msgbox SeafomIslands2_EventScript_GymGuide_Text, MSGBOX_NPC
+	end
+
+SeafomIslands2_EventScript_GymGuide_Text:
+	.string "Hello!$"
+
+SeafoamIslands_Gym_EventScript_GymStatue::
+	msgbox SeafoamIslands_Gym_EventScript_GymStatue_Text, MSGBOX_NPC
+	end
+
+SeafoamIslands_Gym_EventScript_GymStatue_Text:
+	.string "Hello!$"
+
+Route10_PowerPlantBackRoom_EventScript_Engineer::
+	msgbox Route10_PowerPlantBackRoom_EventScript_Engineer_Text, MSGBOX_NPC
+	end
+
+Route10_PowerPlantBackRoom_EventScript_Engineer_Text:
+	.string "Hello!$"
+
+Route10_PowerPlantBackRoom_EventScript_Manager::
+	msgbox Route10_PowerPlantBackRoom_EventScript_Manager_Text, MSGBOX_NPC
+	end
+
+Route10_PowerPlantBackRoom_EventScript_Manager_Text:
+	.string "Hello!$"

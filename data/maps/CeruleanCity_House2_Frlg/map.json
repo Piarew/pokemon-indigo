@@ -1,7 +1,7 @@
 {
   "id": "MAP_CERULEAN_CITY_HOUSE2",
   "name": "CeruleanCity_House2_Frlg",
-  "layout": "LAYOUT_CERULEAN_CITY_HOUSE2",
+  "layout": "LAYOUT_CERULEAN_CITY_HOUSE2_HNS",
   "music": "MUS_RG_FUCHSIA",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_CERULEAN_CITY",
@@ -47,29 +47,29 @@
   ],
   "warp_events": [
     {
-      "x": 2,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CITY",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 3,
-      "y": 7,
+      "x": 4,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY",
       "dest_warp_id": "1"
     },
     {
       "x": 4,
-      "y": 7,
-      "elevation": 1,
+      "y": 8,
+      "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY",
       "dest_warp_id": "1"
     },
     {
       "x": 4,
-      "y": 1,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_CERULEAN_CITY",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 4,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY",
       "dest_warp_id": "9"

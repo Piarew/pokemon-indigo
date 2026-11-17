@@ -115,8 +115,8 @@ Route25_Text_WaynePostBattle::
 	.string "Cerulean City.$"
 
 Route25_Text_SeaCottageSign::
-	.string "Sea Cottage\n"
-	.string "Bill lives here!$"
+	.string "Cerulean Cape Station\n"
+	.string "Bill's Magnet Train!$"
 
 Route25_Text_MistyHighHopesAboutThisPlace::
 	.string "This cape is a famous date spot.\p"

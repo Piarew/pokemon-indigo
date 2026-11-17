@@ -1,7 +1,7 @@
 {
   "id": "MAP_INDIGO_PLATEAU_EXTERIOR",
   "name": "IndigoPlateau_Exterior_Frlg",
-  "layout": "LAYOUT_INDIGO_PLATEAU_EXTERIOR",
+  "layout": "LAYOUT_INDIGO_PLATEAU_HNS",
   "music": "MUS_RG_VICTORY_ROAD",
   "region_map_section": "MAPSEC_INDIGO_PLATEAU",
   "requires_flash": false,
@@ -23,8 +23,8 @@
     {
       "local_id": "LOCALID_CREDITS_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_BLUE",
-      "x": 11,
-      "y": 6,
+      "x": 10,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -37,8 +37,8 @@
     {
       "local_id": "LOCALID_CREDITS_PROF_OAK",
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
-      "x": 11,
-      "y": 6,
+      "x": 10,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,

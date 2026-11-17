@@ -88,7 +88,7 @@
       "local_id": "LOCALID_CHERRYGROVE_SILVER",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BLUE",
-      "x": 65,
+      "x": 64,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",

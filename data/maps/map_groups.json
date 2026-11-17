@@ -828,7 +828,10 @@
     "SixIsland_DottedHole_B4F_Frlg",
     "SixIsland_DottedHole_SapphireRoom_Frlg",
     "SixIsland_PatternBush_Frlg",
-    "SixIsland_AlteringCave_Frlg"
+    "SixIsland_AlteringCave_Frlg",
+    "MtMoon_Outside_hns",
+    "Route19_Cave_hns",
+    "SeafoamIslands_Gym_hns"
   ],
   "gMapGroup_SpecialArea_Frlg": [
     "NavelRock_Exterior_Frlg",
@@ -999,7 +1002,9 @@
     "LavenderTown_VolunteerPokemonHouse_Frlg",
     "LavenderTown_House1_Frlg",
     "LavenderTown_House2_Frlg",
-    "LavenderTown_Mart_Frlg"
+    "LavenderTown_Mart_Frlg",
+    "LavenderTown_RadioStation_hns",
+    "LavenderTown_House3_hns"
   ],
   "gMapGroup_IndoorVermilion_Frlg": [
     "VermilionCity_House1_Frlg",
@@ -1009,7 +1014,9 @@
     "VermilionCity_House2_Frlg",
     "VermilionCity_Mart_Frlg",
     "VermilionCity_Gym_Frlg",
-    "VermilionCity_House3_Frlg"
+    "VermilionCity_House3_Frlg",
+    "VermilionCity_PortOutside_hns",
+    "VermilionCity_PortInside_hns"
   ],
   "gMapGroup_IndoorCeladon_Frlg": [
     "CeladonCity_DepartmentStore_1F_Frlg",
@@ -1069,7 +1076,9 @@
     "SaffronCity_PokemonCenter_1F_Frlg",
     "SaffronCity_PokemonCenter_2F_Frlg",
     "SaffronCity_MrPsychicsHouse_Frlg",
-    "SaffronCity_PokemonTrainerFanClub_Frlg"
+    "SaffronCity_PokemonTrainerFanClub_Frlg",
+    "SaffronCity_TrainStation_hns",
+    "SaffronCity_FightingDojoVIP_hns"
   ],
   "gMapGroup_IndoorRoute2_Frlg": [
     "Route2_ViridianForest_SouthEntrance_Frlg",
@@ -1079,7 +1088,8 @@
   ],
   "gMapGroup_IndoorRoute4_Frlg": [
     "Route4_PokemonCenter_1F_Frlg",
-    "Route4_PokemonCenter_2F_Frlg"
+    "Route4_PokemonCenter_2F_Frlg",
+    "MtMoon_Shop_hns"
   ],
   "gMapGroup_IndoorRoute5_Frlg": [
     "Route5_PokemonDayCare_Frlg",
@@ -1096,7 +1106,8 @@
   ],
   "gMapGroup_IndoorRoute10_Frlg": [
     "Route10_PokemonCenter_1F_Frlg",
-    "Route10_PokemonCenter_2F_Frlg"
+    "Route10_PokemonCenter_2F_Frlg",
+    "Route10_PowerPlantBackRoom_hns"
   ],
   "gMapGroup_IndoorRoute11_Frlg": [
     "Route11_EastEntrance_1F_Frlg",

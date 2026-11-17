@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE24",
   "name": "Route24_Frlg",
-  "layout": "LAYOUT_ROUTE24",
+  "layout": "LAYOUT_ROUTE24_HNS",
   "music": "MUS_RG_ROUTE24",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_24",
@@ -17,13 +17,13 @@
   "connections": [
     {
       "map": "MAP_CERULEAN_CITY",
-      "offset": -12,
+      "offset": -25,
       "direction": "down"
     },
     {
       "map": "MAP_ROUTE25",
       "offset": 0,
-      "direction": "right"
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -59,8 +59,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
-      "x": 10,
-      "y": 22,
+      "x": 9,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -73,8 +73,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
-      "x": 12,
-      "y": 25,
+      "x": 8,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -87,8 +87,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
-      "x": 10,
-      "y": 28,
+      "x": 8,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -101,8 +101,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER_FRLG",
-      "x": 12,
-      "y": 31,
+      "x": 8,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -116,7 +116,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 5,
-      "y": 21,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -141,9 +141,7 @@
       "flag": "FLAG_HIDE_ROUTE24_TM45"
     }
   ],
-  "warp_events": [
-
-  ],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",
