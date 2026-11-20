@@ -449,16 +449,22 @@ PalletTown_EventScript_SignLadyStartShowSign::
 	end
 
 PalletTown_Text_OakDontGoOut::
-	.string "Oak: Hey! Wait!\n"
-	.string "Don't go out!$"
+	.string "ASH: Hey! Don't go out there!$"
 
 PalletTown_Text_OakGrassUnsafeNeedMon::
-	.string "Oak: It's unsafe!\n"
-	.string "Wild Pokémon live in tall grass!\p"
-	.string "You need your own Pokémon for\n"
-	.string "your protection.\p"
-	.string "I know!\n"
-	.string "Here, come with me!$"
+	.string "ASH: Wild Pokémon live in the\n"
+	.string "grass.\p"
+	.string "They fight two at a time on this\n"
+	.string "route. I learned that the hard way.\p"
+	.string "I'm ASH. Prof. Ash, if the plaque\n"
+	.string "makes you formal.\p"
+	.string "OAK taught me in this town.\n"
+	.string "He's gone. The work isn't.\p"
+	.string "You need partners before you need\n"
+	.string "a road.\p"
+	.string "Come to the lab. I've got three\n"
+	.string "waiting.\p"
+	.string "They don't like being a single.$"
 
 PalletTown_Text_RaisingMonsToo::
 	.string "I'm raising Pokémon, too.\p"
@@ -466,12 +472,19 @@ PalletTown_Text_RaisingMonsToo::
 	.string "protect me.$"
 
 PalletTown_Text_CanStoreItemsAndMonsInPC::
-	.string "Technology is incredible!\p"
-	.string "You can now store and recall items\n"
-	.string "and Pokémon as data via PC.$"
+	.string "You can store items and Pokémon\n"
+	.string "in a PC.\p"
+	.string "The Champion who lived in your\n"
+	.string "house used a PC like a closet.\p"
+	.string "We still tell that story because\n"
+	.string "we don't have a new one.\p"
+	.string "ASH says you'll write it.\n"
+	.string "ASH says that about everyone.$"
 
 PalletTown_Text_OakPokemonResearchLab::
-	.string "Oak Pokémon Research Lab$"
+	.string "Ash Pokémon Research Lab\p"
+	.string "A small plaque under the paint:\n"
+	.string "In memory of Prof. Samuel Oak.$"
 
 PalletTown_Text_PlayersHouse::
 	.string "{PLAYER}'s house$"
@@ -481,7 +494,8 @@ PalletTown_Text_RivalsHouse::
 
 PalletTown_Text_TownSign::
 	.string "Pallet Town\n"
-	.string "Shades of your journey await!$"
+	.string "Shades of your journey await!\p"
+	.string "Prof. Ash's Pokémon Research Lab$"
 
 PalletTown_Text_OakLetMeSeePokedex::
 	.string "Oak: Ah, {PLAYER}!\n"
@@ -510,8 +524,7 @@ PalletTown_Text_OakYouEnjoyingTraveling::
 	.string "Oak: Ah, {PLAYER}!\n"
 	.string "You seem to be enjoying traveling.\p"
 	.string "Knowing you, {PLAYER}, I can easily\n"
-	.string "imagine you going out to even more\l"
-	.string "exotic locales.\p"
+	.string "imagine you going even farther.\p"
 	.string "Good for you, good for you.\n"
 	.string "Hohoho.$"
 
@@ -533,7 +546,12 @@ PalletTown_Text_PressStartToOpenMenu::
 	.string "Press Start to open the Menu!$"
 
 PalletTown_Text_SignsAreUsefulArentThey::
-	.string "Signs are useful, aren't they?$"
+	.string "Signs are useful, aren't they?\p"
+	.string "That one used to say OAK.\n"
+	.string "They painted ASH over it and left\p"
+	.string "a plaque so the tourists would\n"
+	.string "stop asking if the old man was\p"
+	.string "napping.$"
 
 PalletTown_Text_LookCopiedTrainerTipsSign::
 	.string "Look, look!\p"
@@ -637,7 +655,7 @@ PalletTown_Text_MaeveAfter::
 
 PalletTown_Text_PepperIntro::
 	.string "PEPPER, Celadon kitchen.\n"
-	.string "Fire isn't garnish.\n"
+	.string "Fire isn't garnish.\p"
 	.string "It's the whole dish.\p"
 	.string "Sit down. Dinner's a Double Battle.$"
 

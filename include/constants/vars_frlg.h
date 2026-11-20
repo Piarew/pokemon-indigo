@@ -270,7 +270,7 @@
 #define INDIGO_REMATCH_READY       1 // entered via the Battle Club, rematch available
 #define INDIGO_REMATCH_DONE_TODAY  2 // entered via the Battle Club, already won today
 #define VAR_TRAIN                  0x40FD // Magnet Train arrival (ON_FRAME exit)
-#define VAR_0x40FE                 0x40FE
+#define VAR_STARTER_REGION         0x40FE // 0=Kanto … 8=Paldea. Player gets that region's full trio.
 #define VAR_0x40FF                 0x40FF
 
 #define VARS_END_FRLG              0x40FF

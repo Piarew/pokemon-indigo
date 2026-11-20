@@ -167,7 +167,8 @@ PalletTown_RivalsHouse_EventScript_Picture::
 PalletTown_RivalsHouse_Text_HiBrothersAtLab::
 	.string "Daisy: Hi, {PLAYER}!\p"
 	.string "My brother, {RIVAL}, is out at\n"
-	.string "Grandpa's Lab.$"
+	.string "Ash's lab. He said Indigo keeps a\p"
+	.string "list. I told him to eat first.$"
 
 PalletTown_RivalsHouse_Text_HeardYouBattledRival::
 	.string "Daisy: {PLAYER}, I heard you had\n"
@@ -175,10 +176,9 @@ PalletTown_RivalsHouse_Text_HeardYouBattledRival::
 	.string "I wish I'd seen that!$"
 
 PalletTown_RivalsHouse_Text_ErrandForGrandpaThisWillHelp::
-	.string "Grandpa asked you to run an\n"
-	.string "errand?\p"
-	.string "Gee, that's lazy of him.\n"
-	.string "Here, this will help you.$"
+	.string "Ash asked you to go already?\p"
+	.string "Here. A Town Map. Pallet is small.\n"
+	.string "The rest of it is not.$"
 
 PalletTown_RivalsHouse_Text_ReceivedTownMapFromDaisy::
 	.string "{PLAYER} received a Town Map\n"
@@ -190,7 +190,7 @@ PalletTown_RivalsHouse_Text_DontHaveSpaceForThis::
 
 PalletTown_RivalsHouse_Text_ExplainTownMap::
 	.string "You can use the Town Map to find\n"
-	.string "out where you are, or check the\l"
+	.string "out where you are, or check the\p"
 	.string "names of places.$"
 
 PalletTown_RivalsHouse_Text_PleaseGiveMonsRest::

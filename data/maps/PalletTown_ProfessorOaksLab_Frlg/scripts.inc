@@ -2,6 +2,7 @@
 .equ PLAYER_STARTER_SPECIES,  VAR_TEMP_2
 .equ RIVAL_STARTER_SPECIES,   VAR_TEMP_3
 .equ RIVAL_STARTER_ID,        VAR_TEMP_4
+.equ LOCALID_OAKS_LAB_PIKACHU, LOCALID_CHARMANDER_BALL
 
 .equ SHOWED_OAK_COMPLETE_DEX, FLAG_TEMP_2
 
@@ -13,6 +14,8 @@ PalletTown_ProfessorOaksLab_Frlg_MapScripts::
 
 PalletTown_ProfessorOaksLab_OnTransition::
 	setflag FLAG_VISITED_OAKS_LAB
+	setflag FLAG_HIDE_BULBASAUR_BALL
+	setflag FLAG_HIDE_SQUIRTLE_BALL
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 1, PalletTown_ProfessorOaksLab_EventScript_ReadyOakForStarterScene
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 7, PalletTown_ProfessorOaksLab_EventScript_ReadyOakForNationalDexScene
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 8, PalletTown_ProfessorOaksLab_EventScript_SetNationalDexSceneFinished
@@ -199,6 +202,8 @@ PalletTown_ProfessorOaksLab_Movement_OakBringDexesToDeskSouth::
 PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	lockall
 	textcolor NPC_TEXT_COLOR_MALE
+	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
+	addobject LOCALID_OAKS_LAB_PROF_OAK
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, PalletTown_ProfessorOaksLab_Movement_OakEnter
 	waitmovement 0
 	removeobject LOCALID_OAKS_LAB_PROF_OAK
@@ -214,31 +219,56 @@ PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	fadedefaultbgm
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalFedUpWithWaiting
 	closemessage
-	delay 60
-	msgbox PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne
-	closemessage
 	delay 30
 	applymovement LOCALID_OAKS_LAB_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalReact
 	waitmovement 0
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalNoFairWhatAboutMe
-	msgbox PalletTown_ProfessorOaksLab_Text_OakBePatientRival
-	msgbox PalletTown_ProfessorOaksLab_Text_OakChallengeModes
-	msgbox PalletTown_ProfessorOaksLab_Text_OakAskNuzlocke, MSGBOX_YESNO
-	call_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_EnableNuzlocke
-	msgbox PalletTown_ProfessorOaksLab_Text_OakAskWildRandomizer, MSGBOX_YESNO
-	call_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_EnableWildRandomizer
-	msgbox PalletTown_ProfessorOaksLab_Text_OakAskTrainerRandomizer, MSGBOX_YESNO
-	call_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_EnableTrainerRandomizer
-	msgbox PalletTown_ProfessorOaksLab_Text_OakAskAbilityRandomizer, MSGBOX_YESNO
-	call_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_EnableAbilityRandomizer
-	msgbox PalletTown_ProfessorOaksLab_Text_OakAskMovesetRandomizer
-	dynmultipush PalletTown_ProfessorOaksLab_Text_MovesetNormal, 0
-	dynmultipush PalletTown_ProfessorOaksLab_Text_MovesetRandom, 1
-	dynmultipush PalletTown_ProfessorOaksLab_Text_MovesetSignature, 2
-	dynmultistack 0, 0, TRUE, 3, FALSE, 0, DYN_MULTICHOICE_CB_NONE
-	call_if_eq VAR_RESULT, 1, PalletTown_ProfessorOaksLab_EventScript_EnableMovesetRandomizer
-	call_if_eq VAR_RESULT, 2, PalletTown_ProfessorOaksLab_EventScript_EnableMovesetSignatureRandomizer
-	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2
+	msgbox PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne
+	msgbox PalletTown_ProfessorOaksLab_Text_AshAskRegion
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionKanto, 0
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionJohto, 1
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionHoenn, 2
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionSinnoh, 3
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionUnova, 4
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionKalos, 5
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionAlola, 6
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionGalar, 7
+	dynmultipush PalletTown_ProfessorOaksLab_Text_RegionPaldea, 8
+	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	copyvar VAR_STARTER_REGION, VAR_RESULT
+	call PalletTown_ProfessorOaksLab_EventScript_BufferRegionName
+	msgbox PalletTown_ProfessorOaksLab_Text_AshConfirmRegion
+	closemessage
+	playmoncry SPECIES_PIKACHU, CRY_MODE_NORMAL
+	applymovement LOCALID_OAKS_LAB_PIKACHU, PalletTown_ProfessorOaksLab_Movement_PikachuHop
+	waitmovement 0
+	waitmoncry
+	call PalletTown_ProfessorOaksLab_EventScript_GiveChosenTrio
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_PALLET_LADY_NOT_BLOCKING_SIGN
+	setflag FLAG_HIDE_BULBASAUR_BALL
+	setflag FLAG_HIDE_SQUIRTLE_BALL
+	msgbox PalletTown_ProfessorOaksLab_Text_AshGiveDex
+	closemessage
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
+	message PalletTown_ProfessorOaksLab_Text_ReceivedPokedexFromAsh
+	waitmessage
+	waitfanfare
+	call EventScript_RestorePrevTextColor
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setvar VAR_MAP_SCENE_POKEMON_CENTER_TEALA, 1
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls, ITEM_POKE_BALL, 5
+	msgbox PalletTown_ProfessorOaksLab_Text_AshExplainCatching
+	call_if_eq VAR_STARTER_REGION, 1, PalletTown_ProfessorOaksLab_EventScript_RivalClaimsKanto
+	call_if_ne VAR_STARTER_REGION, 1, PalletTown_ProfessorOaksLab_EventScript_RivalClaimsJohto
+	msgbox PalletTown_ProfessorOaksLab_Text_AshCanReachNextTownWithMon
+	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3
+	setvar VAR_MAP_SCENE_PALLET_TOWN_OAK, 1
+	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1
+	setvar VAR_MAP_SCENE_ROUTE22, 1
+	call_if_set FLAG_OPENED_START_MENU, PalletTown_ProfessorOaksLab_EventScript_ReadyEndSignLadyScene
 	releaseall
 	end
 
@@ -265,6 +295,228 @@ PalletTown_ProfessorOaksLab_EventScript_EnableMovesetRandomizer::
 PalletTown_ProfessorOaksLab_EventScript_EnableMovesetSignatureRandomizer::
 	setflag FLAG_UNUSED_0x4BE
 	setflag FLAG_UNUSED_0x4BF
+	return
+
+PalletTown_ProfessorOaksLab_Movement_PikachuHop::
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
+PalletTown_ProfessorOaksLab_EventScript_RivalClaimsKanto::
+	msgbox PalletTown_ProfessorOaksLab_Text_RivalClaimsKanto
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_RivalClaimsJohto::
+	msgbox PalletTown_ProfessorOaksLab_Text_RivalClaimsJohto
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferRegionName::
+	goto_if_eq VAR_STARTER_REGION, 0, PalletTown_ProfessorOaksLab_EventScript_BufferKanto
+	goto_if_eq VAR_STARTER_REGION, 1, PalletTown_ProfessorOaksLab_EventScript_BufferJohto
+	goto_if_eq VAR_STARTER_REGION, 2, PalletTown_ProfessorOaksLab_EventScript_BufferHoenn
+	goto_if_eq VAR_STARTER_REGION, 3, PalletTown_ProfessorOaksLab_EventScript_BufferSinnoh
+	goto_if_eq VAR_STARTER_REGION, 4, PalletTown_ProfessorOaksLab_EventScript_BufferUnova
+	goto_if_eq VAR_STARTER_REGION, 5, PalletTown_ProfessorOaksLab_EventScript_BufferKalos
+	goto_if_eq VAR_STARTER_REGION, 6, PalletTown_ProfessorOaksLab_EventScript_BufferAlola
+	goto_if_eq VAR_STARTER_REGION, 7, PalletTown_ProfessorOaksLab_EventScript_BufferGalar
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionPaldea
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferKanto::
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionKanto
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferJohto::
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionJohto
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferHoenn::
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionHoenn
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferSinnoh::
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionSinnoh
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferUnova::
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionUnova
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferKalos::
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionKalos
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferAlola::
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionAlola
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_BufferGalar::
+	bufferstring STR_VAR_1, PalletTown_ProfessorOaksLab_Text_RegionGalar
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveChosenTrio::
+	goto_if_eq VAR_STARTER_REGION, 0, PalletTown_ProfessorOaksLab_EventScript_GiveKantoTrio
+	goto_if_eq VAR_STARTER_REGION, 1, PalletTown_ProfessorOaksLab_EventScript_GiveJohtoTrio
+	goto_if_eq VAR_STARTER_REGION, 2, PalletTown_ProfessorOaksLab_EventScript_GiveHoennTrio
+	goto_if_eq VAR_STARTER_REGION, 3, PalletTown_ProfessorOaksLab_EventScript_GiveSinnohTrio
+	goto_if_eq VAR_STARTER_REGION, 4, PalletTown_ProfessorOaksLab_EventScript_GiveUnovaTrio
+	goto_if_eq VAR_STARTER_REGION, 5, PalletTown_ProfessorOaksLab_EventScript_GiveKalosTrio
+	goto_if_eq VAR_STARTER_REGION, 6, PalletTown_ProfessorOaksLab_EventScript_GiveAlolaTrio
+	goto_if_eq VAR_STARTER_REGION, 7, PalletTown_ProfessorOaksLab_EventScript_GiveGalarTrio
+	goto PalletTown_ProfessorOaksLab_EventScript_GivePaldeaTrio
+
+PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname::
+	message PalletTown_ProfessorOaksLab_Text_ReceivedMonFromAsh
+	waitmessage
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Common_EventScript_NopReturn
+	call Common_EventScript_NameReceivedPartyMon
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveKantoTrio::
+	givemon SPECIES_BULBASAUR, 5
+	bufferspeciesname STR_VAR_1, SPECIES_BULBASAUR
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_CHARMANDER, 5
+	bufferspeciesname STR_VAR_1, SPECIES_CHARMANDER
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_SQUIRTLE, 5
+	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveJohtoTrio::
+	givemon SPECIES_CHIKORITA, 5
+	bufferspeciesname STR_VAR_1, SPECIES_CHIKORITA
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_CYNDAQUIL, 5
+	bufferspeciesname STR_VAR_1, SPECIES_CYNDAQUIL
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_TOTODILE, 5
+	bufferspeciesname STR_VAR_1, SPECIES_TOTODILE
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveHoennTrio::
+	givemon SPECIES_TREECKO, 5
+	bufferspeciesname STR_VAR_1, SPECIES_TREECKO
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_TORCHIC, 5
+	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_MUDKIP, 5
+	bufferspeciesname STR_VAR_1, SPECIES_MUDKIP
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveSinnohTrio::
+	givemon SPECIES_TURTWIG, 5
+	bufferspeciesname STR_VAR_1, SPECIES_TURTWIG
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_CHIMCHAR, 5
+	bufferspeciesname STR_VAR_1, SPECIES_CHIMCHAR
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_PIPLUP, 5
+	bufferspeciesname STR_VAR_1, SPECIES_PIPLUP
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveUnovaTrio::
+	givemon SPECIES_SNIVY, 5
+	bufferspeciesname STR_VAR_1, SPECIES_SNIVY
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_TEPIG, 5
+	bufferspeciesname STR_VAR_1, SPECIES_TEPIG
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_OSHAWOTT, 5
+	bufferspeciesname STR_VAR_1, SPECIES_OSHAWOTT
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveKalosTrio::
+	givemon SPECIES_CHESPIN, 5
+	bufferspeciesname STR_VAR_1, SPECIES_CHESPIN
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_FENNEKIN, 5
+	bufferspeciesname STR_VAR_1, SPECIES_FENNEKIN
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_FROAKIE, 5
+	bufferspeciesname STR_VAR_1, SPECIES_FROAKIE
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveAlolaTrio::
+	givemon SPECIES_ROWLET, 5
+	bufferspeciesname STR_VAR_1, SPECIES_ROWLET
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_LITTEN, 5
+	bufferspeciesname STR_VAR_1, SPECIES_LITTEN
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_POPPLIO, 5
+	bufferspeciesname STR_VAR_1, SPECIES_POPPLIO
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GiveGalarTrio::
+	givemon SPECIES_GROOKEY, 5
+	bufferspeciesname STR_VAR_1, SPECIES_GROOKEY
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_SCORBUNNY, 5
+	bufferspeciesname STR_VAR_1, SPECIES_SCORBUNNY
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_SOBBLE, 5
+	bufferspeciesname STR_VAR_1, SPECIES_SOBBLE
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_GivePaldeaTrio::
+	givemon SPECIES_SPRIGATITO, 5
+	bufferspeciesname STR_VAR_1, SPECIES_SPRIGATITO
+	setvar VAR_0x8004, 0
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_FUECOCO, 5
+	bufferspeciesname STR_VAR_1, SPECIES_FUECOCO
+	setvar VAR_0x8004, 1
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	givemon SPECIES_QUAXLY, 5
+	bufferspeciesname STR_VAR_1, SPECIES_QUAXLY
+	setvar VAR_0x8004, 2
+	call PalletTown_ProfessorOaksLab_EventScript_StarterFanfareNickname
+	setvar VAR_STARTER_MON, 0
 	return
 
 PalletTown_ProfessorOaksLab_Movement_OakEnter::
@@ -333,13 +585,66 @@ PalletTown_ProfessorOaksLab_EventScript_RivalBattle::
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	msgbox PalletTown_ProfessorOaksLab_Text_RivalLetsCheckOutMons
-	closemessage
 	applymovement LOCALID_OAKS_LAB_PROF_OAK, Common_Movement_FaceDown
 	waitmovement 0
-	goto_if_eq VAR_STARTER_MON, 0, PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleCharmander
-	goto_if_eq VAR_STARTER_MON, 1, PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleBulbasaur
-	goto_if_eq VAR_STARTER_MON, 2, PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleSquirtle
+	call_if_eq VAR_TEMP_2, 1, PalletTown_ProfessorOaksLab_EventScript_RivalApproachFromDeskLeft
+	call_if_eq VAR_TEMP_2, 2, PalletTown_ProfessorOaksLab_EventScript_RivalApproachFromDeskMid
+	call_if_eq VAR_TEMP_2, 3, PalletTown_ProfessorOaksLab_EventScript_RivalApproachFromDeskRight
+	goto_if_eq VAR_STARTER_REGION, 1, PalletTown_ProfessorOaksLab_EventScript_RivalBattleKantoTrio
+	goto PalletTown_ProfessorOaksLab_EventScript_RivalBattleJohtoTrio
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RivalApproachFromDeskLeft::
+	applymovement LOCALID_OAKS_LAB_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalApproachFromDeskLeft
+	waitmovement 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_RivalApproachFromDeskMid::
+	applymovement LOCALID_OAKS_LAB_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalApproachFromDeskMid
+	waitmovement 0
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_RivalApproachFromDeskRight::
+	applymovement LOCALID_OAKS_LAB_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalApproachFromDeskRight
+	waitmovement 0
+	return
+
+PalletTown_ProfessorOaksLab_Movement_RivalApproachFromDeskLeft::
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PalletTown_ProfessorOaksLab_Movement_RivalApproachFromDeskMid::
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PalletTown_ProfessorOaksLab_Movement_RivalApproachFromDeskRight::
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PalletTown_ProfessorOaksLab_EventScript_RivalBattleJohtoTrio::
+	msgbox PalletTown_ProfessorOaksLab_Text_RivalLetsCheckOutMons
+	closemessage
+	trainerbattle_earlyrival TRAINER_RIVAL_OAKS_LAB_SQUIRTLE, RIVAL_BATTLE_TUTORIAL, PalletTown_ProfessorOaksLab_Text_RivalDefeat, Text_RivalVictory
+	goto PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_RivalBattleKantoTrio::
+	msgbox PalletTown_ProfessorOaksLab_Text_RivalLetsCheckOutMons
+	closemessage
+	trainerbattle_earlyrival TRAINER_RIVAL_OAKS_LAB_CHARMANDER, RIVAL_BATTLE_TUTORIAL, PalletTown_ProfessorOaksLab_Text_RivalDefeat, Text_RivalVictory
+	goto PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle
 	end
 
 @ The scripts for the rival approaching the player for battle are a bit bloated because
@@ -516,8 +821,9 @@ PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle::
 	removeobject LOCALID_OAKS_LAB_RIVAL
 	playse SE_EXIT
 	fadedefaultbgm
-	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 4
+	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 6
 	setflag FLAG_BEAT_RIVAL_IN_OAKS_LAB
+	setflag FLAG_HIDE_RIVAL_IN_LAB
 	releaseall
 	end
 
@@ -614,9 +920,10 @@ PalletTown_ProfessorOaksLab_EventScript_ProfOak::
 	goto_if_set FLAG_SYS_GAME_CLEAR, PalletTown_ProfessorOaksLab_EventScript_TryStartNationalDexScene
 	goto_if_eq VAR_MAP_SCENE_CERULEAN_CITY_RIVAL, 1, PalletTown_ProfessorOaksLab_EventScript_RatePokedex
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 6, PalletTown_ProfessorOaksLab_EventScript_RatePokedexOrTryGiveBalls
-	goto_if_ge VAR_MAP_SCENE_VIRIDIAN_CITY_MART, 1, PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 4, PalletTown_ProfessorOaksLab_EventScript_OakBattleMonForItToGrow
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_OakCanReachNextTownWithMon
+	goto_if_set FLAG_SYS_POKEDEX_GET, PalletTown_ProfessorOaksLab_EventScript_RatePokedexOrTryGiveBalls
+	goto_if_ge VAR_MAP_SCENE_VIRIDIAN_CITY_MART, 1, PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene
 	msgbox PalletTown_ProfessorOaksLab_Text_OakWhichOneWillYouChoose
 	release
 	end
@@ -1336,17 +1643,17 @@ PalletTown_ProfessorOaksLab_EventScript_SquirtleBall::
 	release
 	end
 
-PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
+PalletTown_ProfessorOaksLab_EventScript_Pikachu::
 	lock
 	faceplayer
-	setvar PLAYER_STARTER_NUM, 2
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CHARMANDER
-	setvar RIVAL_STARTER_SPECIES, SPECIES_SQUIRTLE
-	setvar RIVAL_STARTER_ID, LOCALID_SQUIRTLE_BALL
-	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2, PalletTown_ProfessorOaksLab_EventScript_ConfirmStarterChoice
-	msgbox PalletTown_ProfessorOaksLab_Text_ThoseArePokeBalls
+	playmoncry SPECIES_PIKACHU, CRY_MODE_NORMAL
+	msgbox PalletTown_ProfessorOaksLab_Text_Pikachu
+	waitmoncry
 	release
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
+	goto PalletTown_ProfessorOaksLab_EventScript_Pikachu
 	end
 
 PalletTown_ProfessorOaksLab_EventScript_LastPokeBall::
@@ -1416,20 +1723,28 @@ PalletTown_ProfessorOaksLab_EventScript_RightSignAlt::
 
 PalletTown_ProfessorOaksLab_Text_RivalGrampsIsntAround::
 	.string "{RIVAL}: What, it's only {PLAYER}?\n"
-	.string "Gramps isn't around.$"
+	.string "Ash isn't back yet.\p"
+	.string "MOM made you sit, didn't she.\n"
+	.string "I didn't wait.$"
 
 PalletTown_ProfessorOaksLab_Text_RivalFedUpWithWaiting::
-	.string "{RIVAL}: Gramps!\n"
-	.string "I'm fed up with waiting!$"
+	.string "{RIVAL}: You took long enough.\n"
+	.string "MOM probably made you sit.\p"
+	.string "ASH said nobody leaves Pallet with\n"
+	.string "one Pokémon anymore. Doubles.\p"
+	.string "The whole road.$"
 
 PalletTown_ProfessorOaksLab_Text_RivalNoFairWhatAboutMe::
-	.string "{RIVAL}: Hey! Gramps! No fair!\n"
-	.string "What about me?$"
+	.string "{RIVAL}: I didn't come here for a\n"
+	.string "lecture.\p"
+	.string "I came because INDIGO City keeps\n"
+	.string "a list, and I intend to be on it.\p"
+	.string "Hurry up before the Pikachu files\n"
+	.string "us.$"
 
 PalletTown_ProfessorOaksLab_Text_RivalGoChoosePlayer::
-	.string "{RIVAL}: Heh, I don't need to be\n"
-	.string "greedy like you. I'm mature!\p"
-	.string "Go ahead and choose, {PLAYER}!$"
+	.string "{RIVAL}: Pick a region already.\n"
+	.string "I already know which three I want.$"
 
 PalletTown_ProfessorOaksLab_Text_RivalIllTakeThisOneThen::
 	.string "{RIVAL}: I'll take this one, then!$"
@@ -1439,18 +1754,18 @@ PalletTown_ProfessorOaksLab_Text_RivalReceivedMonFromOak::
 	.string "from Prof. Oak!$"
 
 PalletTown_ProfessorOaksLab_Text_RivalMyMonLooksTougher::
-	.string "{RIVAL}: My Pokémon looks a lot\n"
-	.string "tougher than yours.$"
+	.string "{RIVAL}: Three on three.\n"
+	.string "Mine look tougher. Try me downstairs.$"
 
 PalletTown_ProfessorOaksLab_Text_RivalLetsCheckOutMons::
 	.string "{RIVAL}: Wait, {PLAYER}!\n"
-	.string "Let's check out our Pokémon!\p"
+	.string "Doubles. Don't freeze.\p"
 	.string "Come on, I'll take you on!$"
 
 PalletTown_ProfessorOaksLab_Text_RivalDefeat::
 	.string "What?\n"
-	.string "Unbelievable!\l"
-	.string "I picked the wrong Pokémon!$"
+	.string "Unbelievable!\p"
+	.string "Three on three and I still lost!$"
 
 @ Also used for early Route 22 battle
 Text_RivalVictory::
@@ -1458,10 +1773,11 @@ Text_RivalVictory::
 	.string "Am I great or what?$"
 
 PalletTown_ProfessorOaksLab_Text_RivalGoToughenMyMon::
-	.string "{RIVAL}: Okay! I'll make my\n"
-	.string "Pokémon battle to toughen it up!\p"
-	.string "{PLAYER}! Gramps!\n"
-	.string "Smell you later!$"
+	.string "{RIVAL}: Fine.\p"
+	.string "I'll battle until my team stops\n"
+	.string "embarrassing me.\p"
+	.string "Viridian first. Then Indigo's list.\n"
+	.string "Smell you later, {PLAYER}!$"
 
 PalletTown_ProfessorOaksLab_Text_RivalGramps::
 	.string "{RIVAL}: Gramps!$"
@@ -1485,32 +1801,36 @@ PalletTown_ProfessorOaksLab_Text_RivalTellSisNotToGiveYouMap::
 	.string "my place after this!$"
 
 PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne::
-	.string "Oak: {RIVAL}?\n"
-	.string "Let me think…\p"
-	.string "Oh, that's right, I told you to\n"
-	.string "come! Just wait!\p"
-	.string "Here, {PLAYER}.\p"
-	.string "There are three Pokémon here.\p"
-	.string "Haha!\p"
-	.string "The Pokémon are held inside\n"
-	.string "these Poké Balls.\p"
-	.string "When I was young, I was a serious\n"
-	.string "Pokémon Trainer.\p"
-	.string "But now, in my old age, I have\n"
-	.string "only these three left.\p"
-	.string "You can have one.\n"
-	.string "Go on, choose!$"
+	.string "ASH: {RIVAL}. Patience.\p"
+	.string "You were born in a town of twelve\n"
+	.string "people.\p"
+	.string "You still act like the plateau\n"
+	.string "is late.\p"
+	.string "{PLAYER}. Pallet.\n"
+	.string "That's enough résumé.\p"
+	.string "OAK used to make a kid pick one\n"
+	.string "ball and call it a journey.\p"
+	.string "I watched that go wrong for\n"
+	.string "fifty years.\p"
+	.string "Partners don't travel alone.\p"
+	.string "The gyms don't even fight that\n"
+	.string "way anymore.\p"
+	.string "Pick a region. You get all three\n"
+	.string "of its first partners.\p"
+	.string "Grass, fire, water.\n"
+	.string "A team, not a mascot.\p"
+	.string "I don't work for Team Indigo.\n"
+	.string "I don't stamp types.\p"
+	.string "I just don't send people north\n"
+	.string "with an empty party.$"
 
 PalletTown_ProfessorOaksLab_Text_OakBePatientRival::
 	.string "Oak: Be patient, {RIVAL}.\n"
 	.string "You can have one, too!$"
 
 PalletTown_ProfessorOaksLab_Text_OakWhichOneWillYouChoose::
-	.string "Oak: Now, {PLAYER}.\p"
-	.string "Inside those three Poké Balls are\n"
-	.string "Pokémon.\p"
-	.string "Which one will you choose for\n"
-	.string "yourself?$"
+	.string "ASH: {RIVAL} is already here.\n"
+	.string "Don't make the Pikachu wait too.$"
 
 PalletTown_ProfessorOaksLab_Text_OakHeyDontGoAwayYet::
 	.string "Oak: Hey!\n"
@@ -1543,15 +1863,25 @@ PalletTown_ProfessorOaksLab_Text_ReceivedMonFromOak::
 	.string "from Prof. Oak!$"
 
 PalletTown_ProfessorOaksLab_Text_OakCanReachNextTownWithMon::
-	.string "Oak: If a wild Pokémon appears,\n"
-	.string "your Pokémon can battle it.\p"
-	.string "With it at your side, you should be\n"
-	.string "able to reach the next town.$"
+	.string "ASH: {RIVAL} is going to try those\n"
+	.string "partners the second you walk out.\p"
+	.string "Let him. Route 1 fights two at a\n"
+	.string "time. You already have the number.$"
+
+PalletTown_ProfessorOaksLab_Text_AshCanReachNextTownWithMon::
+	.string "ASH: If a wild Pokémon appears,\n"
+	.string "yours can battle it.\p"
+	.string "Two at a time on Route 1.\p"
+	.string "{RIVAL} will not let you leave\n"
+	.string "without a fight.\p"
+	.string "That's fine.\n"
+	.string "That's why you have three.$"
 
 PalletTown_ProfessorOaksLab_Text_OakBattleMonForItToGrow::
-	.string "Oak: {PLAYER}, raise your young\n"
-	.string "Pokémon by making it battle.\p"
-	.string "It has to battle for it to grow.$"
+	.string "ASH: {PLAYER}, raise them by\n"
+	.string "battling.\p"
+	.string "A team that never fights is just\n"
+	.string "three names in a box.$"
 
 PalletTown_ProfessorOaksLab_Text_OakHaveSomethingForMe::
 	.string "Oak: Oh, {PLAYER}!\n"
@@ -1656,9 +1986,9 @@ PalletTown_ProfessorOaksLab_Text_ReceivedExpShare::
 
 PalletTown_ProfessorOaksLab_Text_OakExplainExpShare::
 	.string "Turn it on from the Key Items\n"
-	.string "pocket, and every Pokémon in\l"
-	.string "your party will gain Exp. Points\l"
-	.string "from battle.\p"
+	.string "pocket.\p"
+	.string "Every Pokémon in your party will\n"
+	.string "gain Exp. Points from battle.\p"
 	.string "It's on now, so your whole team\n"
 	.string "will grow together.$"
 
@@ -1693,8 +2023,9 @@ PalletTown_ProfessorOaksLab_Text_OakExplainAbilitySwapper::
 
 PalletTown_ProfessorOaksLab_Text_OakExplainResearchKit::
 	.string "The Infinite Repel keeps weaker\n"
-	.string "wild Pokémon away until you turn\l"
-	.string "it off.\p"
+	.string "wild Pokémon away.\p"
+	.string "Turn it off when you want them\n"
+	.string "back.\p"
 	.string "The Time Changer lets you set\n"
 	.string "morning, day, evening, or night.\p"
 	.string "The Nature Changer can set any\n"
@@ -1702,8 +2033,9 @@ PalletTown_ProfessorOaksLab_Text_OakExplainResearchKit::
 	.string "Ability Swap trades the Abilities\n"
 	.string "of two party Pokémon.\p"
 	.string "I've also unlocked DexNav in the\n"
-	.string "Start Menu. Register a species\l"
-	.string "you've seen to search for it.$"
+	.string "Start Menu.\p"
+	.string "Register a species you've seen\n"
+	.string "to search for it.$"
 
 PalletTown_ProfessorOaksLab_Text_OakGiveFieldKit::
 	.string "Oak: And these should help you\n"
@@ -1741,8 +2073,8 @@ PalletTown_ProfessorOaksLab_Text_ReceivedShinyCharm::
 	.string "from Prof. Oak.$"
 
 PalletTown_ProfessorOaksLab_Text_OakExplainShinyCharm::
-	.string "Keep the Shiny Charm with you.\n"
-	.string "It greatly increases the chance\l"
+	.string "Keep the Shiny Charm with you.\p"
+	.string "It greatly increases the chance\n"
 	.string "of encountering Shiny Pokémon.$"
 
 PalletTown_ProfessorOaksLab_Text_OakChallengeModes::
@@ -1752,9 +2084,9 @@ PalletTown_ProfessorOaksLab_Text_OakChallengeModes::
 
 PalletTown_ProfessorOaksLab_Text_OakAskNuzlocke::
 	.string "Enable Nuzlocke Mode?\p"
-	.string "Fainted Pokémon are boxed, and\n"
-	.string "you may catch only the first new\l"
-	.string "species in each area.$"
+	.string "Fainted Pokémon are boxed.\p"
+	.string "You may catch only the first\n"
+	.string "new species in each area.$"
 
 PalletTown_ProfessorOaksLab_Text_OakAskWildRandomizer::
 	.string "Randomize wild Pokémon?$"
@@ -1767,9 +2099,11 @@ PalletTown_ProfessorOaksLab_Text_OakAskAbilityRandomizer::
 
 PalletTown_ProfessorOaksLab_Text_OakAskMovesetRandomizer::
 	.string "How should Pokémon learn moves?\p"
-	.string "Normal keeps their usual moves.\n"
-	.string "Random replaces every level-up move.\l"
-	.string "Signature keeps a unique move first.$"
+	.string "Normal keeps their usual moves.\p"
+	.string "Random replaces every\n"
+	.string "level-up move.\p"
+	.string "Signature keeps a unique move\n"
+	.string "first.$"
 
 PalletTown_ProfessorOaksLab_Text_MovesetNormal::
 	.string "Normal$"
@@ -1779,6 +2113,78 @@ PalletTown_ProfessorOaksLab_Text_MovesetRandom::
 
 PalletTown_ProfessorOaksLab_Text_MovesetSignature::
 	.string "Signature$"
+
+PalletTown_ProfessorOaksLab_Text_AshAskRegion::
+	.string "ASH: Pick a region.$"
+
+PalletTown_ProfessorOaksLab_Text_RegionKanto::
+	.string "Kanto$"
+
+PalletTown_ProfessorOaksLab_Text_RegionJohto::
+	.string "Johto$"
+
+PalletTown_ProfessorOaksLab_Text_RegionHoenn::
+	.string "Hoenn$"
+
+PalletTown_ProfessorOaksLab_Text_RegionSinnoh::
+	.string "Sinnoh$"
+
+PalletTown_ProfessorOaksLab_Text_RegionUnova::
+	.string "Unova$"
+
+PalletTown_ProfessorOaksLab_Text_RegionKalos::
+	.string "Kalos$"
+
+PalletTown_ProfessorOaksLab_Text_RegionAlola::
+	.string "Alola$"
+
+PalletTown_ProfessorOaksLab_Text_RegionGalar::
+	.string "Galar$"
+
+PalletTown_ProfessorOaksLab_Text_RegionPaldea::
+	.string "Paldea$"
+
+PalletTown_ProfessorOaksLab_Text_AshConfirmRegion::
+	.string "ASH: {STR_VAR_1}.\n"
+	.string "All three. They're yours.\p"
+	.string "They will not always agree with\n"
+	.string "each other.\p"
+	.string "That's the point of a Double Battle.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedMonFromAsh::
+	.string "{PLAYER} received the {STR_VAR_1}\n"
+	.string "from Prof. Ash!$"
+
+PalletTown_ProfessorOaksLab_Text_AshGiveDex::
+	.string "ASH: That's a Pokédex.\n"
+	.string "OAK's design. I updated the pages.\p"
+	.string "Kanto, Johto, Sinnoh. The rest of\n"
+	.string "the world still fits if you walk.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedPokedexFromAsh::
+	.string "{PLAYER} received the Pokédex\n"
+	.string "from Prof. Ash.$"
+
+PalletTown_ProfessorOaksLab_Text_AshExplainCatching::
+	.string "ASH: And balls. You're going to\n"
+	.string "need more than three friends.\p"
+	.string "Route 1 already knows how to make\n"
+	.string "a party look small.$"
+
+PalletTown_ProfessorOaksLab_Text_RivalClaimsKanto::
+	.string "{RIVAL}: Johto? Fine.\n"
+	.string "I'll take Kanto's three.\p"
+	.string "Same town, different list.\n"
+	.string "Don't get comfortable.$"
+
+PalletTown_ProfessorOaksLab_Text_RivalClaimsJohto::
+	.string "{RIVAL}: Then I'll take Johto's\n"
+	.string "three. I don't need your leftovers.\p"
+	.string "Same town, different list.\n"
+	.string "Don't get comfortable.$"
+
+PalletTown_ProfessorOaksLab_Text_Pikachu::
+	.string "PIKACHU: Pika-pi!$"
 
 PalletTown_ProfessorOaksLab_Text_BlankEncyclopedia::
 	.string "It's like an encyclopedia, but the\n"
@@ -1806,8 +2212,8 @@ PalletTown_ProfessorOaksLab_Text_EmailMessage::
 	.string "There's an e-mail message here.\p"
 	.string "…\p"
 	.string "Finally!\n"
-	.string "The ultimate Trainers of the\l"
-	.string "Pokémon League are ready to\l"
+	.string "The ultimate Trainers of the\p"
+	.string "Pokémon League are ready to\n"
 	.string "take on all comers!\p"
 	.string "Bring your best Pokémon and see\n"
 	.string "how you rate as a Trainer!\p"
@@ -1817,8 +2223,9 @@ PalletTown_ProfessorOaksLab_Text_EmailMessage::
 	.string "…$"
 
 PalletTown_ProfessorOaksLab_Text_StudyAsOaksAide::
-	.string "I study Pokémon as Prof. Oak's\n"
-	.string "Aide.$"
+	.string "I file for Prof. Ash.\n"
+	.string "Oak's notes are still in the drawer.\p"
+	.string "Ash won't throw them out.$"
 
 PalletTown_ProfessorOaksLab_Text_DaisyWillGroomMons::
 	.string "Hi, {PLAYER}. I bet you've become\n"

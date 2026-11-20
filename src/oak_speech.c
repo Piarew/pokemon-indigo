@@ -652,8 +652,8 @@ static const u8 *const sFemaleNameChoices[] =
 static const u8 *const sRivalNameChoices[] =
 {
 #if defined(FIRERED)
-    gNameChoice_Green,
     gNameChoice_Gary,
+    gNameChoice_Green,
     gNameChoice_Kaz,
     gNameChoice_Toru
 #else

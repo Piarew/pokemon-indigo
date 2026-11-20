@@ -29,12 +29,17 @@ PalletTown_PlayersHouse_2F_EventScript_Sign::
 	end
 
 PalletTown_PlayersHouse_2F_Text_PlayedWithNES::
-	.string "{PLAYER} played with the Nes.\p"
+	.string "The NES still works.\p"
+	.string "Someone carved a name into the\n"
+	.string "plastic under the slot.\p"
+	.string "The name is not yours.\p"
 	.string "…Okay!\n"
 	.string "It's time to go!$"
 
 PalletTown_PlayersHouse_2F_Text_PressLRForHelp::
-	.string "It's a posted notice…\p"
+	.string "A notice, sun-faded.\p"
 	.string "If you're confused, ask for Help!\n"
-	.string "Press the L or R Button!$"
+	.string "Press the L or R Button!\p"
+	.string "Under it, in newer ink:\n"
+	.string "Ash's lab is next door.$"
 

@@ -4434,14 +4434,26 @@ Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
 Music: Serious
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Squirtle
+Chikorita
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
-- Tail Whip
+- Growl
+
+Cyndaquil
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Leer
+
+Totodile
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Leer
 
 === TRAINER_RIVAL_OAKS_LAB_BULBASAUR ===
 Name: Terry
@@ -4449,7 +4461,34 @@ Class: Rival Early Frlg
 Pic: Rival Early Frlg
 Gender: Male
 Music: Serious
-Double Battle: No
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Chikorita
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+
+Cyndaquil
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Leer
+
+Totodile
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Leer
+
+=== TRAINER_RIVAL_OAKS_LAB_CHARMANDER ===
+Name: Terry
+Class: Rival Early Frlg
+Pic: Rival Early Frlg
+Gender: Male
+Music: Serious
+Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Bulbasaur
@@ -4458,20 +4497,17 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - Growl
 
-=== TRAINER_RIVAL_OAKS_LAB_CHARMANDER ===
-Name: Terry
-Class: Rival Early Frlg
-Pic: Rival Early Frlg
-Gender: Male
-Music: Serious
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
 Charmander
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Scratch
 - Growl
+
+Squirtle
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Tail Whip
 
 === TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE ===
 Name: Terry
