@@ -416,6 +416,8 @@ void ActionSelectionDestroyCursorAt(u8 cursorPosition);
 void InitMoveSelectionsVarsAndStrings(enum BattlerId battler);
 void MoveSelectionCreateCursorAt(u8 cursorPos, u8 arg1);
 void MoveSelectionDestroyCursorAt(u8 cursorPosition);
+void UpdateFightMenuMoveIcons(enum Move move, enum Type type);
+void ResetFightMenuMoveIcons(void);
 void PlayerHandleChooseMove(enum BattlerId battler);
 void HandleInputChooseMove(enum BattlerId battler);
 void HandleInputChooseTarget(enum BattlerId battler);

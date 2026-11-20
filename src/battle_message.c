@@ -1658,7 +1658,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
     [B_WIN_PP] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_NARROW,
-        .x = 0,
+        .x = 8,
         .y = 1,
         .speed = 0,
         .color.foreground = B_SHOW_EFFECTIVENESS != SHOW_EFFECTIVENESS_NEVER ? 13 : 12,
@@ -1942,7 +1942,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_KantoTutorial[] =
     [B_WIN_PP] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_NARROW,
-        .x = 0,
+        .x = 8,
         .y = 1,
         .speed = 0,
         .color.foreground = B_SHOW_EFFECTIVENESS != SHOW_EFFECTIVENESS_NEVER ? 13 : 12,
@@ -2227,7 +2227,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
     [B_WIN_PP] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_NARROW,
-        .x = 0,
+        .x = 8,
         .y = 1,
         .speed = 0,
         .color.foreground = B_SHOW_EFFECTIVENESS != SHOW_EFFECTIVENESS_NEVER ? 13 : 12,

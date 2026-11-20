@@ -49,6 +49,21 @@
 #include "type_icons.h"
 #include "pokedex.h"
 #include "test/battle.h"
+#include "decompress.h"
+#include "graphics.h"
+
+// CreateSprite x,y is the sprite center (centerToCornerVec). Right pane is
+// 168,120 to 232,152. Type is 32x16, category is 16x16. Inset 4px from the
+// inner edges so they sit in the white box instead of on the frame.
+#define FIGHT_MENU_TYPE_ICON_X 188 // top-left 172
+#define FIGHT_MENU_TYPE_ICON_Y 130 // top-left 122
+#define FIGHT_MENU_CAT_ICON_X  220 // top-left 212
+#define FIGHT_MENU_CAT_ICON_Y  130 // top-left 122
+
+EWRAM_DATA static u8 sFightMenuTypeSpriteId;
+EWRAM_DATA static u8 sFightMenuCategorySpriteId;
+EWRAM_DATA static bool8 sFightMenuIconsForceHidden;
+EWRAM_DATA static bool8 sFightMenuIconsCreated;
 
 static void PlayerHandleLoadMonSprite(enum BattlerId battler);
 static void PlayerHandleDrawTrainerPic(enum BattlerId battler);
@@ -873,6 +888,7 @@ void HandleInputChooseMove(enum BattlerId battler)
 
             MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 27);
             BattlePutTextOnWindow(gText_BattleSwitchWhich, B_WIN_SWITCH_PROMPT);
+            sFightMenuIconsForceHidden = TRUE;
             gBattlerControllerFuncs[battler] = HandleMoveSwitching;
         }
     }
@@ -1793,13 +1809,79 @@ static void MoveSelectionDisplayPPNumber(enum BattlerId battler)
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP_REMAINING);
 }
 
-static void MoveSelectionDisplayMoveType(enum BattlerId battler)
+static void SpriteCB_FightMenuIcon(struct Sprite *sprite)
 {
-    u8 *txtPtr, *end;
+    sprite->invisible = sFightMenuIconsForceHidden || (gBattle_BG0_Y != DISPLAY_HEIGHT * 2);
+}
+
+static void LoadFightMenuMoveIconGfx(void)
+{
+    if (GetSpriteTileStartByTag(gSpriteSheet_MoveTypes.tag) == TAG_NONE)
+    {
+        LoadCompressedSpriteSheet(&gSpriteSheet_MoveTypes);
+        LoadPalette(gMoveTypes_Pal, OBJ_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    }
+}
+
+static u8 CreateFightMenuIconSprite(const struct SpriteTemplate *template, s16 x, s16 y)
+{
+    u8 spriteId = CreateSprite(template, x, y, 0);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        gSprites[spriteId].callback = SpriteCB_FightMenuIcon;
+        gSprites[spriteId].oam.priority = 0;
+        SpriteCB_FightMenuIcon(&gSprites[spriteId]);
+    }
+    return spriteId;
+}
+
+void ResetFightMenuMoveIcons(void)
+{
+    sFightMenuTypeSpriteId = 0;
+    sFightMenuCategorySpriteId = 0;
+    sFightMenuIconsForceHidden = FALSE;
+    sFightMenuIconsCreated = FALSE;
+}
+
+void UpdateFightMenuMoveIcons(enum Move move, enum Type type)
+{
+    struct Sprite *sprite;
+    enum DamageCategory category = GetBattleMoveCategory(move);
+
+    sFightMenuIconsForceHidden = FALSE;
+    LoadFightMenuMoveIconGfx();
+
+    if (!sFightMenuIconsCreated || !gSprites[sFightMenuTypeSpriteId].inUse)
+        sFightMenuTypeSpriteId = CreateFightMenuIconSprite(&gSpriteTemplate_MoveTypes, FIGHT_MENU_TYPE_ICON_X, FIGHT_MENU_TYPE_ICON_Y);
+
+    if (!sFightMenuIconsCreated || !gSprites[sFightMenuCategorySpriteId].inUse)
+        sFightMenuCategorySpriteId = CreateFightMenuIconSprite(&gSpriteTemplate_CategoryIcons, FIGHT_MENU_CAT_ICON_X, FIGHT_MENU_CAT_ICON_Y);
+
+    sFightMenuIconsCreated = TRUE;
+
+    if (sFightMenuTypeSpriteId != MAX_SPRITES)
+    {
+        sprite = &gSprites[sFightMenuTypeSpriteId];
+        StartSpriteAnim(sprite, type);
+        sprite->oam.paletteNum = gTypesInfo[type].palette;
+        SpriteCB_FightMenuIcon(sprite);
+    }
+
+    if (sFightMenuCategorySpriteId != MAX_SPRITES)
+    {
+        sprite = &gSprites[sFightMenuCategorySpriteId];
+        StartSpriteAnim(sprite, category);
+        SpriteCB_FightMenuIcon(sprite);
+    }
+
+    gDisplayedStringBattle[0] = EOS;
+    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
+}
+
+static enum Type GetFightMenuMoveType(enum BattlerId battler, enum Move move)
+{
     enum Species speciesId = gBattleMons[battler].species;
-    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
-    enum Move move = moveInfo->moves[gMoveSelectionCursor[battler]];
     enum Type type = GetMoveType(move);
     enum BattleMoveEffects effect = GetMoveEffect(move);
 
@@ -1831,10 +1913,15 @@ static void MoveSelectionDisplayMoveType(enum BattlerId battler)
         struct Pokemon *mon = GetBattlerMon(battler);
         type = CheckDynamicMoveType(mon, move, battler, MON_IN_BATTLE);
     }
-    end = StringCopy(txtPtr, gTypesInfo[type].name);
+    return type;
+}
 
-    PrependFontIdToFit(txtPtr, end, FONT_NORMAL, WindowWidthPx(B_WIN_MOVE_TYPE) - 25);
-    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
+static void MoveSelectionDisplayMoveType(enum BattlerId battler)
+{
+    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
+    enum Move move = moveInfo->moves[gMoveSelectionCursor[battler]];
+
+    UpdateFightMenuMoveIcons(move, GetFightMenuMoveType(battler, move));
 }
 
 static void TryMoveSelectionDisplayMoveDescription(enum BattlerId battler)
@@ -2528,45 +2615,39 @@ static u32 CheckTargetTypeEffectiveness(enum BattlerId battler)
 static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, enum BattlerId battler)
 {
     static const u8 noIcon[] =  _("");
-    static const u8 effectiveIcon[] =  _("{CIRCLE_HOLLOW}");
-    static const u8 extremeleyEffectiveIcon[] =  _("{STAR}");
-    static const u8 superEffectiveIcon[] =  _("{CIRCLE_DOT}");
-    static const u8 notVeryEffectiveIcon[] =  _("{TRIANGLE}");
-    static const u8 mostlyIneffectiveIcon[] =  _("{TRIANGLE_UPSIDE_DOWN}");
-    static const u8 immuneIcon[] =  _("{BIG_MULT_X}");
+    static const u8 extremeleyEffectiveIcon[] =  _("{COLOR GREEN}{SHADOW LIGHT_GREEN}{UP_ARROW}{UP_ARROW}");
+    static const u8 superEffectiveIcon[] =  _("{COLOR GREEN}{SHADOW LIGHT_GREEN}{UP_ARROW}");
+    static const u8 notVeryEffectiveIcon[] =  _("{COLOR RED}{SHADOW LIGHT_RED}{DOWN_ARROW}");
+    static const u8 mostlyIneffectiveIcon[] =  _("{COLOR RED}{SHADOW LIGHT_RED}{DOWN_ARROW}{DOWN_ARROW}");
+    static const u8 immuneIcon[] =  _("{COLOR RED}{SHADOW LIGHT_RED}{BIG_MULT_X}");
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    u8 *txtPtr;
-
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfacePP);
+    const u8 *icon = noIcon;
 
     if (!IsBattleMoveStatus(moveInfo->moves[gMoveSelectionCursor[battler]]))
     {
         switch (foeEffectiveness)
         {
         case EFFECTIVENESS_EXTREMELY_EFFECTIVE:
-            StringCopy(txtPtr, extremeleyEffectiveIcon);
+            icon = extremeleyEffectiveIcon;
             break;
         case EFFECTIVENESS_SUPER_EFFECTIVE:
-            StringCopy(txtPtr, superEffectiveIcon);
+            icon = superEffectiveIcon;
             break;
         case EFFECTIVENESS_NOT_VERY_EFFECTIVE:
-            StringCopy(txtPtr, notVeryEffectiveIcon);
+            icon = notVeryEffectiveIcon;
             break;
         case EFFECTIVENESS_MOSTLY_INEFFECTIVE:
-            StringCopy(txtPtr, mostlyIneffectiveIcon);
+            icon = mostlyIneffectiveIcon;
             break;
         case EFFECTIVENESS_NO_EFFECT:
-            StringCopy(txtPtr, immuneIcon);
-            break;
-        case EFFECTIVENESS_NORMAL:
-            StringCopy(txtPtr, effectiveIcon);
+            icon = immuneIcon;
             break;
         default:
-        case EFFECTIVENESS_CANNOT_VIEW:
-            StringCopy(txtPtr, noIcon);
+            icon = noIcon;
             break;
         }
     }
 
+    StringCopy(gDisplayedStringBattle, icon);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
 }

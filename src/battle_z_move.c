@@ -418,17 +418,7 @@ static void ZMoveSelectionDisplayPpNumber(enum BattlerId battler)
 
 static void ZMoveSelectionDisplayMoveType(enum Move zMove, enum BattlerId battler)
 {
-    u8 *txtPtr, *end;
-    enum Type zMoveType = GetBattleMoveType(zMove);
-
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
-    *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
-    *(txtPtr)++ = EXT_CTRL_CODE_FONT;
-    *(txtPtr)++ = FONT_NORMAL;
-
-    end = StringCopy(txtPtr, gTypesInfo[zMoveType].name);
-    PrependFontIdToFit(txtPtr, end, FONT_NORMAL, WindowWidthPx(B_WIN_MOVE_TYPE) - 25);
-    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
+    UpdateFightMenuMoveIcons(zMove, GetBattleMoveType(zMove));
 }
 
 #define Z_EFFECT_BS_LENGTH  5

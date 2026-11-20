@@ -2861,6 +2861,7 @@ static void BattleStartClearSetData(void)
     ClearPursuitValues();
     gSelectedMonPartyId = PARTY_SIZE; // Revival Blessing
     gCategoryIconSpriteId = 0xFF;
+    ResetFightMenuMoveIcons();
 
     if (IsSleepClauseEnabled())
     {
