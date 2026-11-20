@@ -224,17 +224,22 @@ ViridianCity_EventScript_DoTutorialBattle::
 	return
 
 ViridianCity_Text_CanCarryMonsAnywhere::
-	.string "Those Poké Balls at your waist!\n"
-	.string "You have Pokémon, don't you?\p"
-	.string "It's great that you can carry and\n"
-	.string "use Pokémon anytime, anywhere.$"
+	.string "Those Poké Balls at your waist.\n"
+	.string "Three of them, if Ash did his job.\p"
+	.string "WREN's gym is open. Grass.\p"
+	.string "She takes Indigo money.\n"
+	.string "She does not like the pin.$"
 
 ViridianCity_Text_GymClosedWonderWhoLeaderIs::
 	.string "This Pokémon Gym is always closed.\p"
 	.string "I wonder who the Leader is?$"
 
 ViridianCity_Text_ViridiansGymLeaderReturned::
-	.string "Viridian Gym's Leader returned!$"
+	.string "WREN came back from the woods.\p"
+	.string "They hung an Indigo plaque on\n"
+	.string "her door.\p"
+	.string "She didn't take it down.\n"
+	.string "She also didn't polish it.$"
 
 ViridianCity_Text_WantToKnowAboutCaterpillarMons::
 	.string "You want to know about the two\n"
@@ -276,8 +281,7 @@ ViridianCity_Text_ShowYouHowToCatchMons::
 	.string "Then let me give you a word of\n"
 	.string "advice.\p"
 	.string "Whenever you catch a Pokémon,\n"
-	.string "the Pokédex automatically updates\l"
-	.string "its data.\p"
+	.string "the Pokédex updates its data.\p"
 	.string "…You don't know how to catch\n"
 	.string "a Pokémon?\p"
 	.string "I suppose I had better show you\n"
@@ -325,8 +329,10 @@ ViridianCity_Text_TooBusyForTeachyTV::
 	.string "be ill spent…$"
 
 ViridianCity_Text_CitySign::
-	.string "Viridian City \n"
-	.string "The Eternally Green Paradise$"
+	.string "Viridian City\n"
+	.string "The Eternally Green Paradise\p"
+	.string "West: Route 22, Indigo City\n"
+	.string "North: Pewter City$"
 
 ViridianCity_Text_CatchMonsForEasierBattles::
 	.string "Trainer Tips\p"
@@ -343,7 +349,9 @@ ViridianCity_Text_MovesLimitedByPP::
 	.string "Pokémon at a Pokémon Center.$"
 
 ViridianCity_Text_GymSign::
-	.string "Viridian City Pokémon Gym$"
+	.string "Viridian City Pokémon Gym\n"
+	.string "Leader: Wren\p"
+	.string "The Reluctant Grass Type!$"
 
 ViridianCity_Text_GymDoorsAreLocked::
 	.string "Viridian Gym's doors are locked…$"

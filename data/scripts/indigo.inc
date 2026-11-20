@@ -25,10 +25,14 @@ EventScript_IndigoFieldAgent_AllDone::
 	end
 
 IndigoFieldAgent_Text_Intro:
-	.string "I'm an agent of the Indigo League.\p"
-	.string "As you earn type recognition from\n"
-	.string "gyms, I'll authorize field techniques\l"
-	.string "for your team.$"
+	.string "HARLAN: Indigo Field Bureau.\p"
+	.string "I walk the towns so HQ doesn't\n"
+	.string "have to.\p"
+	.string "WREN is in that gym. Grass.\n"
+	.string "Earn her recognition, then Pewter's.\p"
+	.string "After two, the Bureau will see you.\p"
+	.string "As you earn types, I'll authorize\n"
+	.string "field techniques for your team.$"
 
 IndigoFieldAgent_Text_Granted:
 	.string "The League authorizes you to use\n"

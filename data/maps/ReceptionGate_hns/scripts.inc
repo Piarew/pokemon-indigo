@@ -1,6 +1,18 @@
 ReceptionGate_hns_MapScripts::
 	.byte 0
 
+ReceptionGate_EventScript_Clerk::
+	msgbox ReceptionGate_Text_Clerk, MSGBOX_NPC
+	end
+
+ReceptionGate_Text_Clerk::
+	.string "North is Indigo City.\n"
+	.string "East is Viridian, down Route 22.\p"
+	.string "South is Johto, if your feet last.\p"
+	.string "The Field Bureau only sees Trainers\n"
+	.string "with two type recognitions.\p"
+	.string "Sightseers may still walk the city.$"
+
 ReceptionGate_EventScript_SinnohGuide::
 	lock
 	faceplayer
