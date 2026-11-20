@@ -30,8 +30,8 @@ SootopolisCity_House4_Text_AncientTreasuresWaitingInSea:
 SootopolisCity_House4_Text_StrollUnderwaterWithPokemon:
 	.string "Ancient treasures…\p"
 	.string "It would be nice if they existed, but\n"
-	.string "even if they didn't, it would be so\l"
-	.string "beautiful to take an underwater\l"
+	.string "even if they didn't, it would be so\p"
+	.string "beautiful to take an underwater\n"
 	.string "stroll with my Pokémon.$"
 
 SootopolisCity_House4_Text_Azumarill:

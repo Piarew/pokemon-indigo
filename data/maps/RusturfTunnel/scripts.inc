@@ -474,14 +474,14 @@ RusturfTunnel_Text_WhyCantTheyKeepDigging:
 	.string "My beloved awaits me in Verdanturf\n"
 	.string "Town just beyond here…\p"
 	.string "If Rustboro and Verdanturf were\n"
-	.string "joined by this tunnel, I could visit\l"
+	.string "joined by this tunnel, I could visit\p"
 	.string "her every day…\p"
 	.string "But this…\n"
 	.string "What am I to do?$"
 
 RusturfTunnel_Text_ToGetToVerdanturf:
 	.string "To get from Rustboro to Verdanturf,\n"
-	.string "you need to go to Dewford, then pass\l"
+	.string "you need to go to Dewford, then pass\p"
 	.string "through Slateport and Mauville…$"
 
 RusturfTunnel_Text_YouShatteredBoulderTakeHM:
@@ -493,7 +493,7 @@ RusturfTunnel_Text_YouShatteredBoulderTakeHM:
 RusturfTunnel_Text_ExplainStrength:
 	.string "That HM contains Strength.\p"
 	.string "If a muscular Pokémon were to learn\n"
-	.string "that, it would be able to move even\l"
+	.string "that, it would be able to move even\p"
 	.string "large boulders.$"
 
 RusturfTunnel_Text_WandaReunion:
@@ -522,6 +522,6 @@ RusturfTunnel_Text_MikeDefeat:
 
 RusturfTunnel_Text_MikePostBattle:
 	.string "They halted development here to\n"
-	.string "protect Pokémon, right?\l"
+	.string "protect Pokémon, right?\p"
 	.string "There's a feel-good story!$"
 

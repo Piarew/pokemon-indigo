@@ -205,7 +205,7 @@ Route119_WeatherInstitute_2F_EventScript_WeatherScientist::
 
 Route119_WeatherInstitute_2F_Text_Grunt2Intro:
 	.string "The Institute created a type of\n"
-	.string "Pokémon that has something to do with\l"
+	.string "Pokémon that has something to do with\p"
 	.string "the weather. We're here to take them!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt2Defeat:
@@ -213,12 +213,12 @@ Route119_WeatherInstitute_2F_Text_Grunt2Defeat:
 
 Route119_WeatherInstitute_2F_Text_Grunt2PostBattle:
 	.string "If the Pokémon they made here can\n"
-	.string "control the weather freely, then we of\l"
+	.string "control the weather freely, then we of\p"
 	.string "Team Aqua definitely need it!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3Intro:
 	.string "We're Team Aqua!\n"
-	.string "We appear wherever anything rare is\l"
+	.string "We appear wherever anything rare is\p"
 	.string "found!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3Defeat:
@@ -226,7 +226,7 @@ Route119_WeatherInstitute_2F_Text_Grunt3Defeat:
 
 Route119_WeatherInstitute_2F_Text_Grunt3PostBattle:
 	.string "You don't have any idea what we of\n"
-	.string "Team Aqua are working towards!\l"
+	.string "Team Aqua are working towards!\p"
 	.string "You stay out of our way!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt5Intro:
@@ -299,7 +299,7 @@ Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather:
 
 Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous:
 	.string "I've been researching rain for many\n"
-	.string "years, but it's ridiculous to think that\l"
+	.string "years, but it's ridiculous to think that\p"
 	.string "humans can freely change the weather.$"
 
 Route119_WeatherInstitute_2F_Text_GroudonWeather:

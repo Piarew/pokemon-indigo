@@ -76,7 +76,7 @@ MtPyre_2F_Text_LukeDefeat:
 
 MtPyre_2F_Text_LukePostBattle:
 	.string "Luke: Well, we lost but that's okay!\n"
-	.string "I'm right here by your side.\l"
+	.string "I'm right here by your side.\p"
 	.string "We'll make it through this dare!$"
 
 MtPyre_2F_Text_LukeNotEnoughMons:

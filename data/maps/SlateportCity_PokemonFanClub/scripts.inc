@@ -266,12 +266,12 @@ SlateportCity_PokemonFanClub_Text_MeetChairman:
 	.string "However, they're held in far-off towns,\n"
 	.string "so I cannot participate often enough.\p"
 	.string "That is why we gather here to show\n"
-	.string "off our Pokémon, and have others\l"
+	.string "off our Pokémon, and have others\p"
 	.string "show us theirs.$"
 
 SlateportCity_PokemonFanClub_Text_LikeToSeeEnteredContestPokemon:
 	.string "The Pokémon of a Trainer who has\n"
-	.string "entered a Pokémon Contest…\l"
+	.string "entered a Pokémon Contest…\p"
 	.string "That, I would like to see.$"
 
 SlateportCity_PokemonFanClub_Text_AllowMeToExamineYourPokemon:
@@ -317,7 +317,7 @@ SlateportCity_PokemonFanClub_Text_NoSpaceForReward:
 
 SlateportCity_PokemonFanClub_Text_MonMostImpressiveGiveItThis:
 	.string "Your {STR_VAR_1}, it is growing in\n"
-	.string "a most impressive manner!\l"
+	.string "a most impressive manner!\p"
 	.string "It is one fine specimen!\p"
 	.string "But! If you were to give it this,\n"
 	.string "it would grow even better! Indeed!$"
@@ -351,7 +351,7 @@ SlateportCity_PokemonFanClub_Text_NothingElseToGiveYou:
 	.string "I'm sorry, but I've nothing else to\n"
 	.string "give you! None at all!\p"
 	.string "After all, you're blessed with the gift\n"
-	.string "of raising Pokémon without resorting\l"
+	.string "of raising Pokémon without resorting\p"
 	.string "to any items!$"
 
 SlateportCity_PokemonFanClub_Text_ShowMePokemonThatLoveYou:

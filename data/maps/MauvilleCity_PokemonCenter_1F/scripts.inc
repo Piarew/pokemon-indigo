@@ -41,7 +41,7 @@ MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings:
 
 MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner:
 	.string "When I accessed the Record Corner,\n"
-	.string "the data for what's hot in Dewford\l"
+	.string "the data for what's hot in Dewford\p"
 	.string "got updated.\p"
 	.string "Now that bit of data is the same\n"
 	.string "as my friend's!$"

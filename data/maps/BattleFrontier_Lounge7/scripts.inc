@@ -313,10 +313,10 @@ BattleFrontier_Lounge7_Text_LeftTutorIntro:
 	.string "I'm not like that blowhard woman over\n"
 	.string "there. I'm actually talented!\p"
 	.string "Let me prove it to you.\n"
-	.string "I can teach your Pokémon special and\l"
+	.string "I can teach your Pokémon special and\p"
 	.string "yet cute moves.\p"
 	.string "But my lessons don't come free.\n"
-	.string "How about paying for the moves I teach\l"
+	.string "How about paying for the moves I teach\p"
 	.string "with a wee bit of Battle Points?$"
 
 BattleFrontier_Lounge7_Text_LeftTutorWelcomeBack:
@@ -362,10 +362,10 @@ BattleFrontier_Lounge7_Text_RightTutorIntro:
 	.string "I'm not like that buffoonish woman over\n"
 	.string "there. I'm actually experienced!\p"
 	.string "I can prove it to you.\n"
-	.string "I can teach your Pokémon hard and\l"
+	.string "I can teach your Pokémon hard and\p"
 	.string "yet pretty moves.\p"
 	.string "But my lessons don't come free.\n"
-	.string "How about paying for the moves I teach\l"
+	.string "How about paying for the moves I teach\p"
 	.string "with a wee bit of Battle Points?$"
 
 BattleFrontier_Lounge7_Text_RightTutorWelcomeBack:
@@ -375,7 +375,7 @@ BattleFrontier_Lounge7_Text_RightTutorWelcomeBack:
 
 BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong:
 	.string "Those ladies, the way they bad-mouth\n"
-	.string "each other, you probably think that\l"
+	.string "each other, you probably think that\p"
 	.string "they don't get along.\p"
 	.string "But if that were true, they wouldn't\n"
 	.string "stay out here together, would they?$"
@@ -394,100 +394,100 @@ BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful:
 
 BattleFrontier_Lounge7_Text_SoftboiledDesc::
 	.string "Recovers up to\n"
-	.string "half the user's\n"
+	.string "half the user's\p"
 	.string "maximum HP.$"
 
 BattleFrontier_Lounge7_Text_SeismicTossDesc::
 	.string "Inflicts damage\n"
-	.string "identical to the\n"
+	.string "identical to the\p"
 	.string "user's level.$"
 
 BattleFrontier_Lounge7_Text_DreamEaterDesc::
 	.string "Recovers half the\n"
-	.string "damage inflicted\n"
+	.string "damage inflicted\p"
 	.string "on a sleeping foe.$"
 
 BattleFrontier_Lounge7_Text_MegaPunchDesc::
 	.string "A strong punch\n"
-	.string "thrown with\n"
+	.string "thrown with\p"
 	.string "incredible power.$"
 
 BattleFrontier_Lounge7_Text_MegaKickDesc::
 	.string "An extremely\n"
-	.string "powerful kick with\n"
+	.string "powerful kick with\p"
 	.string "intense force.$"
 
 BattleFrontier_Lounge7_Text_BodySlamDesc::
 	.string "A full-body slam\n"
-	.string "that may cause\n"
+	.string "that may cause\p"
 	.string "paralysis.$"
 
 BattleFrontier_Lounge7_Text_RockSlideDesc::
 	.string "Large boulders\n"
-	.string "are hurled. May\n"
+	.string "are hurled. May\p"
 	.string "cause flinching.$"
 
 BattleFrontier_Lounge7_Text_CounterDesc::
 	.string "Retaliates any\n"
-	.string "physical hit with\n"
+	.string "physical hit with\p"
 	.string "double the power.$"
 
 BattleFrontier_Lounge7_Text_ThunderWaveDesc::
 	.string "A weak jolt of\n"
-	.string "electricity that\n"
+	.string "electricity that\p"
 	.string "paralyzes the foe.$"
 
 BattleFrontier_Lounge7_Text_SwordsDanceDesc::
 	.string "A fighting dance\n"
-	.string "that sharply\n"
+	.string "that sharply\p"
 	.string "raises Attack.$"
 
 BattleFrontier_Lounge7_Text_DefenseCurlDesc::
 	.string "Curls up to con-\n"
-	.string "ceal weak spots\n"
+	.string "ceal weak spots\p"
 	.string "and raise Defense.$"
 
 BattleFrontier_Lounge7_Text_SnoreDesc::
 	.string "A loud attack\n"
-	.string "that can be used\n"
+	.string "that can be used\p"
 	.string "only while asleep.$"
 
 BattleFrontier_Lounge7_Text_MudSlapDesc::
 	.string "Hurls mud in the\n"
-	.string "foe's face to re-\n"
+	.string "foe's face to re-\p"
 	.string "duce its accuracy.$"
 
 BattleFrontier_Lounge7_Text_SwiftDesc::
 	.string "Sprays star-\n"
-	.string "shaped rays\n"
+	.string "shaped rays\p"
 	.string "that never miss.$"
 
 BattleFrontier_Lounge7_Text_IcyWindDesc::
 	.string "A chilling attack\n"
-	.string "that lowers the\n"
+	.string "that lowers the\p"
 	.string "foe's Speed.$"
 
 BattleFrontier_Lounge7_Text_EndureDesc::
 	.string "Endures any at-\n"
-	.string "tack for 1 turn,\n"
+	.string "tack for 1 turn,\p"
 	.string "leaving 1HP.$"
 
 BattleFrontier_Lounge7_Text_PsychUpDesc::
 	.string "Copies the foe's\n"
-	.string "effect(s) and\n"
+	.string "effect(s) and\p"
 	.string "gives to the user.$"
 
 BattleFrontier_Lounge7_Text_IcePunchDesc::
 	.string "An icy punch\n"
-	.string "that may\n"
+	.string "that may\p"
 	.string "freeze the foe.$"
 
 BattleFrontier_Lounge7_Text_ThunderPunchDesc::
 	.string "An electrified\n"
-	.string "punch that may\n"
+	.string "punch that may\p"
 	.string "paralyze the foe.$"
 
 BattleFrontier_Lounge7_Text_FirePunchDesc::
 	.string "A fiery punch\n"
-	.string "that may burn\n"
+	.string "that may burn\p"
 	.string "the foe.$"

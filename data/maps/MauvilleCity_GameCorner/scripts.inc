@@ -682,7 +682,7 @@ MauvilleCity_GameCorner_Text_NoRoomForPlacingDecor:
 
 MauvilleCity_GameCorner_Text_OhIsThatSo:
 	.string "Oh, is that so? \n"
-	.string "You need to save some Coins before\l"
+	.string "You need to save some Coins before\p"
 	.string "coming back here.$"
 
 MauvilleCity_GameCorner_Text_SoYourChoiceIsX:
@@ -723,7 +723,7 @@ MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor:
 
 MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins:
 	.string "My luck can only last so long.\n"
-	.string "This is too much for me.\l"
+	.string "This is too much for me.\p"
 	.string "Here, take some Coins!$"
 
 MauvilleCity_GameCorner_Text_MauvilleSomethingForEveryone:

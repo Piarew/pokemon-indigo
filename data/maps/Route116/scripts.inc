@@ -366,12 +366,12 @@ Route116_Text_DiggingTunnelWhenGoonOrderedMeOut:
 	.string "I was digging the tunnel without any\n"
 	.string "tools when some goon ordered me out!\p"
 	.string "That tunnel's filled with Pokémon\n"
-	.string "that react badly to loud noises.\l"
+	.string "that react badly to loud noises.\p"
 	.string "They could cause an uproar.\p"
 	.string "That's why we stopped using heavy\n"
 	.string "equipment for tunneling…\p"
 	.string "I'm worried that the goon will do\n"
-	.string "something stupid and startle the\l"
+	.string "something stupid and startle the\p"
 	.string "Pokémon into an uproar.$"
 
 Route116_Text_GoonHightailedItOutOfTunnel:
@@ -382,14 +382,14 @@ Route116_Text_GoonHightailedItOutOfTunnel:
 Route116_Text_ThankYouTokenOfAppreciation:
 	.string "Oh! It's you!\p"
 	.string "You're that person who not only helped\n"
-	.string "me in Petalburg Woods, but also got\l"
-	.string "back my stolen package and then even\l"
+	.string "me in Petalburg Woods, but also got\p"
+	.string "back my stolen package and then even\n"
 	.string "graciously delivered it to Slateport!\p"
 	.string "Capt. Stern informed us that the\n"
 	.string "package arrived, too!\p"
 	.string "I thank you very, very much!\p"
 	.string "Why, if I were a rain cloud, I would\n"
-	.string "shower you with gratitude and hail\l"
+	.string "shower you with gratitude and hail\p"
 	.string "you as a hero!\p"
 	.string "For you, the most wonderful Trainer,\n"
 	.string "I bear good news!\p"
@@ -410,8 +410,8 @@ Route116_Text_BagIsJamPacked:
 
 Route116_Text_TokenOfAppreciation:
 	.string "As a token of our appreciation for\n"
-	.string "your delivering our package, I have\l"
-	.string "a gift of a new kind of Poké Ball\l"
+	.string "your delivering our package, I have\p"
+	.string "a gift of a new kind of Poké Ball\n"
 	.string "for our most wonderful Trainer!$"
 
 Route116_Text_CanYouHelpMeFindGlasses:
@@ -424,19 +424,19 @@ Route116_Text_MayISeeThoseGlasses:
 
 Route116_Text_NotWhatImLookingForMaybeTheyArentHere:
 	.string "Hmm…\n"
-	.string "These are Blackglasses.\l"
+	.string "These are Blackglasses.\p"
 	.string "They're not what I'm looking for…\p"
 	.string "Maybe my glasses aren't around\n"
 	.string "here…$"
 
 Route116_Text_CantFindGlassesNotHere:
 	.string "Hmm…\n"
-	.string "I can't find my glasses anywhere…\l"
+	.string "I can't find my glasses anywhere…\p"
 	.string "Maybe they're not around here…$"
 
 Route116_Text_NotWhatImLookingFor:
 	.string "Hmm…\n"
-	.string "These are Blackglasses.\l"
+	.string "These are Blackglasses.\p"
 	.string "They're not what I'm looking for…$"
 
 Route116_Text_RouteSignRustboro:
@@ -455,8 +455,8 @@ Route116_Text_TunnelersRestHouse:
 Route116_Text_TrainerTipsBToStopEvolution:
 	.string "Trainer Tips\p"
 	.string "If you want to stop a Pokémon from\n"
-	.string "evolving, press the B Button while it\l"
-	.string "is trying to evolve.\l"
+	.string "evolving, press the B Button while it\p"
+	.string "is trying to evolve.\n"
 	.string "The startled Pokémon will stop.\p"
 	.string "This is called an evolution cancel.$"
 

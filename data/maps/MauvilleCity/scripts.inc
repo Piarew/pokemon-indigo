@@ -461,7 +461,7 @@ MauvilleCity_EventScript_RegisterWallyCall::
 
 MauvilleCity_Text_UncleHesTooPeppy:
 	.string "Uncle: It's because of Pokémon that\n"
-	.string "this boy's got more pep, I suppose…\l"
+	.string "this boy's got more pep, I suppose…\p"
 	.string "But he's become a bit too peppy…$"
 
 MauvilleCity_Text_WallyWantToChallengeGym:
@@ -493,12 +493,12 @@ MauvilleCity_Text_WallyWillYouBattleMe:
 
 MauvilleCity_Text_WallyMyUncleWontKnowImStrong:
 	.string "Wally: Oh… If you won't battle me,\n"
-	.string "{PLAYER}, my Uncle won't know that I've\l"
+	.string "{PLAYER}, my Uncle won't know that I've\p"
 	.string "become really strong.$"
 
 MauvilleCity_Text_UncleCanYouBattleWally:
 	.string "Uncle: {PLAYER}{KUN}, was it?\n"
-	.string "On Wally's behalf, can I ask you to\l"
+	.string "On Wally's behalf, can I ask you to\p"
 	.string "battle with him just this once?\p"
 	.string "I don't think he's going to listen to\n"
 	.string "any reason the way he is now.$"
@@ -524,7 +524,7 @@ MauvilleCity_Text_ThankYouNotEnoughToBattle:
 	.string "{PLAYER}, thank you.\n"
 	.string "Being a Trainer is tough, isn't it?\p"
 	.string "It's not enough just to have Pokémon\n"
-	.string "and make them battle. That isn't what\l"
+	.string "and make them battle. That isn't what\p"
 	.string "being a real Trainer is about.$"
 
 MauvilleCity_Text_UncleNoNeedToBeDown:
@@ -537,11 +537,11 @@ MauvilleCity_Text_UncleNoNeedToBeDown:
 
 MauvilleCity_Text_UncleVisitUsSometime:
 	.string "Uncle: {PLAYER}{KUN}, it just dawned on me\n"
-	.string "that you must be the Trainer who kept\l"
-	.string "an eye out for Wally when he caught\l"
+	.string "that you must be the Trainer who kept\p"
+	.string "an eye out for Wally when he caught\n"
 	.string "his Pokémon.\p"
 	.string "Why don't you visit us in Verdanturf\n"
-	.string "sometime?\l"
+	.string "sometime?\p"
 	.string "I'm sure Wally would enjoy it.$"
 
 
@@ -575,7 +575,7 @@ MauvilleCity_Text_ScottYouDidntHoldBack:
 
 MauvilleCity_Text_WattsonNeedFavorTakeKey:
 	.string "Wattson: Oh, {PLAYER}{KUN}!\n"
-	.string "You look like you have a lot of zip!\l"
+	.string "You look like you have a lot of zip!\p"
 	.string "That's a good thing, wahahahaha!\p"
 	.string "Fine! I've decided!\n"
 	.string "I need a favor, {PLAYER}{KUN}!\p"
@@ -636,12 +636,12 @@ MauvilleCity_Text_CitySign:
 
 MauvilleCity_Text_GymSign:
 	.string "Mauville City Pokémon Gym\n"
-	.string "Leader: Wattson\l"
+	.string "Leader: Wattson\p"
 	.string "“The cheerfully electrifying man!”$"
 
 MauvilleCity_Text_BikeShopSign:
 	.string "“Ride in gravel and shake up your\n"
-	.string "soul!”\l"
+	.string "soul!”\p"
 	.string "Rydel's Cycles$"
 
 MauvilleCity_Text_GameCornerSign:

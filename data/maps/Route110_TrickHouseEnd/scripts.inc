@@ -249,7 +249,7 @@ Route110_TrickHouseEnd_Movement_TrickMasterSurprise:
 
 Route110_TrickHouseEnd_Text_YouveMadeItToMe:
 	.string "Aak!\n"
-	.string "You've made it to me?\l"
+	.string "You've made it to me?\p"
 	.string "Hmmm… You're sharp!$"
 
 Route110_TrickHouseEnd_Text_AllNightToPlantTrees:
@@ -297,7 +297,7 @@ Route110_TrickHouseEnd_Text_AllNightPolishingFloors:
 
 Route110_TrickHouseEnd_Text_FountainOfIdeasRunDry:
 	.string "Wh-what should I do?\n"
-	.string "My fountain of ideas for tricks has\l"
+	.string "My fountain of ideas for tricks has\p"
 	.string "run dry…\p"
 	.string "Perhaps it is time I toured the country\n"
 	.string "on a quest to devise new tricks…$"
@@ -306,16 +306,16 @@ Route110_TrickHouseEnd_Text_DefeatedMePreferWhichTent:
 	.string "I hate to admit defeat, but you have\n"
 	.string "bested me!\p"
 	.string "Still, you must have been reeled in by\n"
-	.string "my charisma for you to visit me again\l"
+	.string "my charisma for you to visit me again\p"
 	.string "and again. Yes, you must have!\p"
 	.string "But that has nothing to do with my\n"
 	.string "losing!\p"
 	.string "In recognition of the friendship\n"
-	.string "between you, the driven, and the genius\l"
-	.string "that is myself, I demand that you take\l"
+	.string "between you, the driven, and the genius\p"
+	.string "that is myself, I demand that you take\n"
 	.string "this keepsake!\p"
 	.string "Actually there are two--\n"
-	.string "a Red Tent and a Blue Tent.\l"
+	.string "a Red Tent and a Blue Tent.\p"
 	.string "Which do you prefer?$"
 
 Route110_TrickHouseEnd_Text_NoRoomInPC:

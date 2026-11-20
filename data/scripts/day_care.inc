@@ -302,7 +302,7 @@ Route117_Text_TakeGoodCareOfIt:
 
 Route117_Text_FriendlyWithOtherTrainersMon:
 	.string "By the way, about your {STR_VAR_1},\n"
-	.string "it seemed to be friendly with\l"
+	.string "it seemed to be friendly with\p"
 	.string "{STR_VAR_2}'s {STR_VAR_3}.\p"
 	.string "I may even have seen it receiving\n"
 	.string "a piece of Mail.$"

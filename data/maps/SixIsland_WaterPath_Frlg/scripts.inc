@@ -55,7 +55,7 @@ SixIsland_WaterPath_Text_DeniseDefeat::
 
 SixIsland_WaterPath_Text_DenisePostBattle::
 	.string "When I can't be with my boyfriend,\n"
-	.string "I spend time with the Pokémon he\l"
+	.string "I spend time with the Pokémon he\p"
 	.string "gave me.$"
 
 SixIsland_WaterPath_Text_EarlIntro::

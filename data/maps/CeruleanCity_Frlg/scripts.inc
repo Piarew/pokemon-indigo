@@ -368,7 +368,7 @@ CeruleanCity_Text_RivalIntro::
 
 CeruleanCity_Text_RivalDefeat::
 	.string "Hey!\n"
-	.string "Take it easy!\l"
+	.string "Take it easy!\p"
 	.string "You won already!$"
 
 CeruleanCity_Text_RivalPostBattle::
@@ -508,14 +508,14 @@ CeruleanCity_Text_ThisIsCeruleanCave::
 	.string "It takes a very special Trainer to\n"
 	.string "be allowed inside there.\p"
 	.string "You'd have to be strong enough to\n"
-	.string "become the Pokémon League\l"
+	.string "become the Pokémon League\p"
 	.string "Champion for starters.\p"
 	.string "And, you would have to have\n"
 	.string "made a great achievement.$"
 
 CeruleanCity_Text_CitySign::
 	.string "Cerulean City\n"
-	.string "A Mysterious, Blue Aura Surrounds\l"
+	.string "A Mysterious, Blue Aura Surrounds\p"
 	.string "It$"
 
 CeruleanCity_Text_TrainerTipsHeldItems::
@@ -531,6 +531,6 @@ CeruleanCity_Text_BikeShopSign::
 
 CeruleanCity_Text_GymSign::
 	.string "Cerulean City Pokémon Gym\n"
-	.string "Leader: Misty\l"
+	.string "Leader: Misty\p"
 	.string "The Tomboyish Mermaid!$"
 

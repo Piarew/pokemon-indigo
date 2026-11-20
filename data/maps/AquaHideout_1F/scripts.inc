@@ -64,7 +64,7 @@ AquaHideout_1F_Text_WhereMightMagmaHideoutBe:
 	.string "What? What?\n"
 	.string "Are you a Team Magma grunt?\p"
 	.string "I hear that Team Magma is trying to\n"
-	.string "awaken an awesome Pokémon at their\l"
+	.string "awaken an awesome Pokémon at their\p"
 	.string "Hideout.\p"
 	.string "But where might their Hideout be?$"
 

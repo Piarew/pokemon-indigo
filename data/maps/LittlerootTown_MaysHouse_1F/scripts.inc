@@ -338,7 +338,7 @@ RivalsHouse_1F_Text_LikeChildLikeFather:
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
 	.string "That {RIVAL}!\p"
 	.string "I guess our child is too busy with\n"
-	.string "Pokémon to notice that you came\l"
+	.string "Pokémon to notice that you came\p"
 	.string "to visit, {PLAYER}{KUN}.$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
@@ -365,7 +365,7 @@ RivalsHouse_1F_Text_MayWhoAreYou:
 	.string "Um… I'm May.\n"
 	.string "Glad to meet you!\p"
 	.string "I…\n"
-	.string "I have this dream of becoming friends\l"
+	.string "I have this dream of becoming friends\p"
 	.string "with Pokémon all over the world.\p"
 	.string "I… I heard about you, {PLAYER}{KUN}, from\n"
 	.string "my dad, Prof. Birch.\p"
@@ -387,7 +387,7 @@ RivalsHouse_1F_Text_BrendanWhoAreYou:
 	.string "Moved in next door, right?\p"
 	.string "I didn't know that you're a girl.\p"
 	.string "Dad, Prof. Birch, said that our new\n"
-	.string "next-door neighbor is a Gym Leader's\l"
+	.string "next-door neighbor is a Gym Leader's\p"
 	.string "kid, so I assumed you'd be a guy.\p"
 	.string "My name's Brendan.\n"
 	.string "So, hi, neighbor!\p"

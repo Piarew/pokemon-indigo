@@ -255,7 +255,7 @@ SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword::
 	.string "If you want it back, why don't you\n"
 	.string "go get it after I sell it?\p"
 	.string "I'll even tell you one of the\n"
-	.string "passwords to Team Rocket's\l"
+	.string "passwords to Team Rocket's\p"
 	.string "Warehouse.\p"
 	.string "The Warehouse password I know is\n"
 	.string "“Yes, nah, Chansey.”\p"

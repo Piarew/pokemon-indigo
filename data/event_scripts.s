@@ -2070,7 +2070,7 @@ gText_MonsHealedShouldBuyPotions::
 	.string "If your Pokémon's energy, HP,\n"
 	.string "is down, please come see us.\p"
 	.string "If you're planning to go far in the\n"
-	.string "field, you should buy some Potions\l"
+	.string "field, you should buy some Potions\p"
 	.string "at the Pokémon Mart.\p"
 	.string "We hope you excel!$"
 
@@ -2094,10 +2094,10 @@ gText_MomExplainHPGetPotions::
 	.string "He said that Pokémon's energy is\n"
 	.string "measured in HP.\p"
 	.string "If your Pokémon lose their HP,\n"
-	.string "you can restore them at any\l"
+	.string "you can restore them at any\p"
 	.string "Pokémon Center.\p"
 	.string "If you're going to travel far away,\n"
-	.string "the smart Trainer stocks up on\l"
+	.string "the smart Trainer stocks up on\p"
 	.string "Potions at the Pokémon Mart.\p"
 	.string "Make me proud, honey!\p"
 	.string "Take care!$"
@@ -2119,8 +2119,8 @@ gText_PokerusExplanation::
 	.string "Your Pokémon may be infected with\n"
 	.string "Pokérus.\p"
 	.string "Little is known about the Pokérus\n"
-	.string "except that they are microscopic life-\l"
-	.string "forms that attach to Pokémon.\p"
+	.string "except that they are microscopic\p"
+	.string "life-forms that attach to Pokémon.\p"
 	.string "While infected, Pokémon are said to\n"
 	.string "grow exceptionally well.$"
 
@@ -2135,7 +2135,7 @@ gText_BigHoleInTheWall::
 
 gText_SorryWirelessClubAdjustments::
 	.string "I'm terribly sorry.\n"
-	.string "The Pokémon Wireless Club is\l"
+	.string "The Pokémon Wireless Club is\p"
 	.string "undergoing adjustments now.$"
 
 gText_UndergoingAdjustments::

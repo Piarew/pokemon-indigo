@@ -73,8 +73,8 @@ CeladonCity_Condominiums_3F_Text_ImGameDesignerShowMeFinishedPokedex::
 
 CeladonCity_Condominiums_3F_Text_CompletedPokedexCongratulations::
 	.string "Wow! Excellent!\n"
-	.string "You completed your Pokédex!\l"
-	.string "Congratulations!\l"
+	.string "You completed your Pokédex!\p"
+	.string "Congratulations!\n"
 	.string "…$"
 
 CeladonCity_Condominiums_3F_Text_ItsTheGameProgram::

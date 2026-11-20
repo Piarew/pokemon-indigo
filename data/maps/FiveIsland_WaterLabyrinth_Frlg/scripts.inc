@@ -95,7 +95,7 @@ FiveIsland_WaterLabyrinth_Text_DontHaveSpaceInYourParty::
 @ Unused
 FiveIsland_WaterLabyrinth_Text_YouveComeBackForTheEgg::
 	.string "やあ\n"
-	.string "タマゴを　もらいに\l"
+	.string "タマゴを　もらいに\p"
 	.string "きて　くれたんだね$"
 
 FiveIsland_WaterLabyrinth_Text_GladIMetSomeoneLikeYou::

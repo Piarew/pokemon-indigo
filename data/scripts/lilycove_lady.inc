@@ -545,7 +545,7 @@ LilycoveCity_PokemonCenter_1F_Text_PlayerGaveMeGreatThing:
 
 LilycoveCity_PokemonCenter_1F_Text_WillYouShareThing:
 	.string "Listen, if you have anything that\n"
-	.string "is {STR_VAR_1}, will you share it\l"
+	.string "is {STR_VAR_1}, will you share it\p"
 	.string "with me?$"
 
 LilycoveCity_PokemonCenter_1F_Text_WhatWillYouGiveMe:
@@ -671,10 +671,10 @@ LilycoveCity_PokemonCenter_1F_Text_MaybeNextTime:
 
 LilycoveCity_PokemonCenter_1F_Text_PickYourPrize:
 	.string "Okay, the first thing you have to do\n"
-	.string "is pick the prize for the person that\l"
+	.string "is pick the prize for the person that\p"
 	.string "answers your quiz correctly.\p"
 	.string "But beware, if the person taking\n"
-	.string "the quiz can't get it right, I get to\l"
+	.string "the quiz can't get it right, I get to\p"
 	.string "keep the prize!$"
 
 LilycoveCity_PokemonCenter_1F_Text_QuitChoosingPrize:
@@ -722,7 +722,7 @@ LilycoveCity_PokemonCenter_1F_Text_DontHaveAPokeblockCase:
 	.string "Please, may I have one {POKEBLOCK}?\n"
 	.string "All I'm asking for is one!\p"
 	.string "…Oh, but…\n"
-	.string "Don't you have a {POKEBLOCK} Case?\l"
+	.string "Don't you have a {POKEBLOCK} Case?\p"
 	.string "That's no good. Next time, then!$"
 
 LilycoveCity_PokemonCenter_1F_Text_AskingForOnePokeblock:

@@ -44,7 +44,7 @@ Text_MegaPunchTeach::
 	.string "A punch of roaring ferocity!\p"
 	.string "Packed with destructive power!\p"
 	.string "When the chips are down,\n"
-	.string "Mega Punch is the ultimate attack!\l"
+	.string "Mega Punch is the ultimate attack!\p"
 	.string "You agree, yes?\p"
 	.string "Now!\n"
 	.string "Let me teach it to your Pokémon!$"
@@ -61,14 +61,14 @@ Text_MegaPunchTaught::
 	.string "Now, we are comrades in the way of\n"
 	.string "punching!\p"
 	.string "You should go before you're seen\n"
-	.string "by the misguided fool who trains\l"
+	.string "by the misguided fool who trains\p"
 	.string "only his silly kicking over there.$"
 
 Text_MegaKickTeach::
 	.string "A kick of brutal ferocity!\p"
 	.string "Packed with destructive power!\p"
 	.string "When you get right down to it,\n"
-	.string "Mega Kick is the ultimate attack!\l"
+	.string "Mega Kick is the ultimate attack!\p"
 	.string "Don't you agree?\p"
 	.string "Okay!\n"
 	.string "I'll teach it to your Pokémon!$"
@@ -85,7 +85,7 @@ Text_MegaKickTaught::
 	.string "Now, we are soul mates in the way\n"
 	.string "of kicking!\p"
 	.string "You should run before you're seen\n"
-	.string "by the deluded nitwit who trains\l"
+	.string "by the deluded nitwit who trains\p"
 	.string "only simple punching over there.$"
 
 Route4_Text_PeopleLikeAndRespectBrock::

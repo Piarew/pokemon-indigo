@@ -48,7 +48,7 @@ Route114_FossilManiacsHouse_Text_RocksFillDisplayCase:
 
 Route114_FossilManiacsHouse_Text_CrammedWithBooks:
 	.string "The Composition of Strata…\n"
-	.string "How Rain Shapes the Land…\l"
+	.string "How Rain Shapes the Land…\p"
 	.string "Stones, Soil, and Rock…\p"
 	.string "It's crammed with books.$"
 

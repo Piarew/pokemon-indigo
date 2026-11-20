@@ -124,7 +124,7 @@ SlateportCity_SternsShipyard_1F_Text_DecidedToHelpDock:
 	.string "But, you know, that Dock is really\n"
 	.string "something special.\p"
 	.string "With his knack for technology and\n"
-	.string "my experience, I'm sure that we can\l"
+	.string "my experience, I'm sure that we can\p"
 	.string "build one great ship, aye!$"
 
 SlateportCity_SternsShipyard_1F_Text_SeaIsLikeLivingThing:

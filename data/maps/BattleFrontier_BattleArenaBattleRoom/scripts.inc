@@ -570,7 +570,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_IsThatRight:
 
 BattleFrontier_BattleArenaBattleRoom_Text_YouLookWeakTakeThingsEasy:
 	.string "I don't know how to say it, but…\n"
-	.string "To put it bluntly, you look pretty weak.\l"
+	.string "To put it bluntly, you look pretty weak.\p"
 	.string "Are you sure you're up for me?\p"
 	.string "Hmm…\p"
 	.string "Well, all right!\n"
@@ -599,7 +599,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_GretaLookingForwardToSeeingAgain:
 	.string "Greta: Hey! Howdy!\n"
 	.string "You finally won your way up to me!\p"
 	.string "I was getting worried waiting for you!\n"
-	.string "I was really looking forward to seeing\l"
+	.string "I was really looking forward to seeing\p"
 	.string "you again!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_SoAreYouReady:

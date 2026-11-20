@@ -849,12 +849,11 @@ PewterCity_Text_ClefairyCameFromMoon::
 	.string "fell on Mt. Moon.$"
 
 PewterCity_Text_BrockOnlySeriousTrainerHere::
-	.string "There aren't many serious Pokémon\n"
-	.string "Trainers here.\p"
-	.string "They're all like Bug Catchers,\n"
-	.string "you know, just hobbyists.\p"
-	.string "But Pewter Gym's Brock isn't like\n"
-	.string "that, not one bit.$"
+	.string "There aren't many serious Trainers\n"
+	.string "here. Hobbyists, Bug Catchers.\p"
+	.string "MASON is different. Steel.\n"
+	.string "He says Indigo kept the forges lit.\p"
+	.string "He means it.$"
 
 PewterCity_Text_DidYouCheckOutMuseum::
 	.string "Did you check out the Museum?$"
@@ -891,7 +890,9 @@ PewterCity_Text_BrocksLookingForChallengersFollowMe::
 
 PewterCity_Text_GoTakeOnBrock::
 	.string "If you have the right stuff,\n"
-	.string "go take on Brock!$"
+	.string "go take on Mason!\p"
+	.string "Steel gym. He likes the pin.\n"
+	.string "WREN, down in Viridian, does not.$"
 
 PewterCity_Text_TrainerTipsEarningEXP::
 	.string "Trainer Tips\p"
@@ -910,12 +911,14 @@ PewterCity_Text_MuseumOfScience::
 
 PewterCity_Text_GymSign::
 	.string "Pewter City Pokémon Gym\n"
-	.string "Leader: Brock\l"
-	.string "The Rock-Solid Pokémon Trainer!$"
+	.string "Leader: Mason\p"
+	.string "The Steel that Kept the Forges Lit!$"
 
 PewterCity_Text_CitySign::
 	.string "Pewter City\n"
-	.string "A Stone Gray City$"
+	.string "A Stone Gray City\p"
+	.string "Type recognition: Steel\n"
+	.string "Leader: Mason$"
 
 PewterCity_Text_OhPlayer::
 	.string "Oh, {PLAYER}{KUN}!$"

@@ -136,9 +136,9 @@ RustboroCity_DevonCorp_1F_Text_ProductDisplay:
 	.string "the glass display case.\p"
 	.string "There's a panel with a description…\p"
 	.string "“In addition to industrial products,\n"
-	.string "Devon now markets sundries and\l"
+	.string "Devon now markets sundries and\p"
 	.string "pharmaceuticals for better lifestyles.\p"
 	.string "“Recently, Devon has begun marketing\n"
-	.string "tools for Pokémon Trainers, including\l"
+	.string "tools for Pokémon Trainers, including\p"
 	.string "Poké Balls and PokéNav systems.”$"
 

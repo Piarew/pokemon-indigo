@@ -117,7 +117,7 @@ Route109_SeashoreHouse_Text_ShowMeSomeHotMatches:
 
 Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles:
 	.string "You're scorching hot!\n"
-	.string "Those battles blazed!\l"
+	.string "Those battles blazed!\p"
 	.string "I'm more than just satisfied!\p"
 	.string "As thanks for showing me your hot\n"
 	.string "streak, I want you to take these.\p"
@@ -145,7 +145,7 @@ Route109_SeashoreHouse_Text_ThatsTooBad:
 
 Route109_SeashoreHouse_Text_DwayneIntro:
 	.string "If you're looking for a battle in the\n"
-	.string "Seashore House, you'll find no\l"
+	.string "Seashore House, you'll find no\p"
 	.string "hotter Trainer than me, matey!$"
 
 Route109_SeashoreHouse_Text_DwayneDefeated:
@@ -177,6 +177,6 @@ Route109_SeashoreHouse_Text_SimonDefeated:
 
 Route109_SeashoreHouse_Text_SimonPostBattle:
 	.string "If one of my Pokémon knew the move\n"
-	.string "for carrying me across water on its\l"
+	.string "for carrying me across water on its\p"
 	.string "back, I could get rid of this inner tube.$"
 

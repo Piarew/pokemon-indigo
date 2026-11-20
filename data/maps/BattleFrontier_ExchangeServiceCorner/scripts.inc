@@ -385,10 +385,10 @@ BattleFrontier_ExchangeServiceCorner_Text_ThankYouVisitWithPoints:
 
 BattleFrontier_ExchangeServiceCorner_Text_WishIHadAllDolls:
 	.string "Oh, they're so nice!\n"
-	.string "I wish I had them!\l"
-	.string "Cute cushions!\l"
-	.string "Big plush Dolls!\l"
-	.string "Little plush Dolls!\l"
+	.string "I wish I had them!\p"
+	.string "Cute cushions!\n"
+	.string "Big plush Dolls!\p"
+	.string "Little plush Dolls!\n"
 	.string "I wish I had them all!$"
 
 BattleFrontier_ExchangeServiceCorner_Text_GetYouAnythingYouWant:
@@ -413,7 +413,7 @@ BattleFrontier_ExchangeServiceCorner_Text_GoGetYourOwnDoll:
 BattleFrontier_ExchangeServiceCorner_Text_MoreBattlePointsForRecord:
 	.string "Did you know?\p"
 	.string "If you stretch your record at any of\n"
-	.string "the Battle facilities, they start\l"
+	.string "the Battle facilities, they start\p"
 	.string "giving you more and more Battle Points.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc::

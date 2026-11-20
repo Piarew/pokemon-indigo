@@ -185,7 +185,7 @@ CeruleanCity_House1_Text_HaveJustTheThing::
 
 CeruleanCity_House1_Text_GoCrushBerriesAtDirectCorner::
 	.string "There's something new on the second\n"
-	.string "floor of Pokémon Centers, at the\l"
+	.string "floor of Pokémon Centers, at the\p"
 	.string "Direct Corner.\p"
 	.string "They installed a Wireless Adapter\n"
 	.string "machine for crushing Berries.\p"

@@ -8,7 +8,7 @@ ShoalCave_LowTideEntranceRoom_Text_AreYouPlanningOnGoingInThere:
 
 ShoalCave_LowTideEntranceRoom_Text_BringMe4ShoalSaltAndShells:
 	.string "If you bring me four each of the\n"
-	.string "Shoal Salt and Shoal Shells,\l"
+	.string "Shoal Salt and Shoal Shells,\p"
 	.string "I can make you a Shell Bell…\p"
 	.string "You can get those ingredients\n"
 	.string "every day.$"

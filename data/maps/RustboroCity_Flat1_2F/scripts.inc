@@ -137,7 +137,7 @@ RustboroCity_Flat1_2F_Text_ThinkOfMyOwnPhrase:
 	.string "Oh, so you don't know any good words.\n"
 	.string "I'd better think for myself, then.\p"
 	.string "Hmm…\n"
-	.string "How about “{STR_VAR_1}”?\l"
+	.string "How about “{STR_VAR_1}”?\p"
 	.string "Let's see if that will work.$"
 
 RustboroCity_Flat1_2F_Text_ShesNotSmilingAtAll2:
@@ -148,7 +148,7 @@ RustboroCity_Flat1_2F_Text_ShesNotSmilingAtAll2:
 
 RustboroCity_Flat1_2F_Text_OhYouDontKnowAny:
 	.string "Oh, so you don't know any good words.\n"
-	.string "I guess I'll try to amuse her with\l"
+	.string "I guess I'll try to amuse her with\p"
 	.string "the saying I used before.\p"
 	.string "Anyways, if you have a good suggestion,\n"
 	.string "don't hesitate in telling me, okay?$"
@@ -158,12 +158,12 @@ RustboroCity_Flat1_2F_Text_ThankYouIllGiveYouWallpaper:
 	.string "Thanks to you, my darling Walda\n"
 	.string "laughed for me!\p"
 	.string "Actually, I may not look all that\n"
-	.string "special, but I'm one of Devon\l"
+	.string "special, but I'm one of Devon\p"
 	.string "Corporation's top researchers.\p"
 	.string "So, how about I do something in return\n"
 	.string "for you?\p"
 	.string "I know, I'll add some new wallpaper\n"
-	.string "patterns for the Boxes in the PC\l"
+	.string "patterns for the Boxes in the PC\p"
 	.string "Pokémon Storage System.\p"
 	.string "In the wallpaper pattern menu,\n"
 	.string "select “Friends.”\p"

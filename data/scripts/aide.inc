@@ -15,7 +15,7 @@ Aide_EventScript_DeclineCheckMons::
 
 Aide_Text_HaventCaughtEnoughMonsForItem::
 	.string "Let's see…\n"
-	.string "Uh-oh! You have caught only\l"
+	.string "Uh-oh! You have caught only\p"
 	.string "{STR_VAR_3} kinds of Pokémon!\p"
 	.string "You need {STR_VAR_1} kinds\n"
 	.string "if you want the {STR_VAR_2}.$"

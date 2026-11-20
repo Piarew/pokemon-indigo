@@ -287,15 +287,15 @@ BattleFrontier_BattlePikeLobby_Text_ExplainBattlePike:
 	.string "The Battle Choice rules are very\n"
 	.string "simple…\p"
 	.string "Choose one of three paths and make\n"
-	.string "your way to the goal room at the end\l"
+	.string "your way to the goal room at the end\p"
 	.string "of the Battle Pike. It's that simple.\p"
 	.string "However, what happens on the chosen\n"
-	.string "path depends entirely on the luck\l"
+	.string "path depends entirely on the luck\p"
 	.string "of the challenger…\p"
 	.string "If you reach the goal, you will be\n"
 	.string "rewarded with Battle Points.\p"
 	.string "If you want to interrupt your\n"
-	.string "challenge, please have a word with\l"
+	.string "challenge, please have a word with\p"
 	.string "our staff in the big rooms on the way.\p"
 	.string "If you don't save before interrupting,\n"
 	.string "you will be disqualified.$"
@@ -306,7 +306,7 @@ BattleFrontier_BattlePikeLobby_Text_LookForwardToSeeingYou:
 
 BattleFrontier_BattlePikeLobby_Text_WhichChallengeMode:
 	.string "You have the choice of two courses,\n"
-	.string "Level 50 and Open Level.\l"
+	.string "Level 50 and Open Level.\p"
 	.string "Which will you challenge?$"
 
 BattleFrontier_BattlePikeLobby_Text_NotEnoughValidMonsLv50:
@@ -339,7 +339,7 @@ BattleFrontier_BattlePikeLobby_Text_PleaseChooseThreeMons:
 
 BattleFrontier_BattlePikeLobby_Text_SaveBeforeChallenge:
 	.string "Before starting your Battle Choice\n"
-	.string "challenge, I must save the game.\l"
+	.string "challenge, I must save the game.\p"
 	.string "Is that acceptable?$"
 
 BattleFrontier_BattlePikeLobby_Text_StepThisWay:
@@ -362,7 +362,7 @@ BattleFrontier_BattlePikeLobby_Text_ShallRecordResults:
 @ Unused
 BattleFrontier_BattlePikeLobby_Text_AwardYouTheseBattlePoints2:
 	.string "To commemorate your completion of\n"
-	.string "the Battle Choice challenge, we award\l"
+	.string "the Battle Choice challenge, we award\p"
 	.string "you these Battle Point(s)…$"
 
 @ Unused
@@ -396,13 +396,13 @@ BattleFrontier_BattlePikeLobby_Text_OneRoomAwayFromGoal:
 
 BattleFrontier_BattlePikeLobby_Text_NeverHadToBattleTrainer:
 	.string "I've completed the challenge 10 times\n"
-	.string "now, but I've never had to battle\l"
+	.string "now, but I've never had to battle\p"
 	.string "a Trainer once.$"
 
 BattleFrontier_BattlePikeLobby_Text_ThinkAbilitiesUsefulHere:
 	.string "Listen! Listen!\p"
 	.string "Don't you think that the special\n"
-	.string "abilities of Pokémon will be useful\l"
+	.string "abilities of Pokémon will be useful\p"
 	.string "here?$"
 
 @ Unused
@@ -410,7 +410,7 @@ BattleFrontier_BattlePikeLobby_Text_TrainersWhicheverPathIChoose:
 	.string "What is this weird place?\n"
 	.string "I can't figure it out at all!\p"
 	.string "I've taken the challenge a bunch\n"
-	.string "of times, but all I ever do is run into\l"
+	.string "of times, but all I ever do is run into\p"
 	.string "Trainers whichever path I choose.$"
 
 BattleFrontier_BattlePikeLobby_Text_RulesAreListed:
@@ -425,12 +425,12 @@ BattleFrontier_BattlePikeLobby_Text_ExplainPokenavBagRules:
 
 BattleFrontier_BattlePikeLobby_Text_ExplainHeldItemRules:
 	.string "During a Battle Choice challenge,\n"
-	.string "any Berry or Herb held by Pokémon\l"
+	.string "any Berry or Herb held by Pokémon\p"
 	.string "will be effective only once.$"
 
 BattleFrontier_BattlePikeLobby_Text_ExplainMonOrderRules:
 	.string "During a Battle Choice challenge,\n"
-	.string "the sequence of Pokémon cannot be\l"
+	.string "the sequence of Pokémon cannot be\p"
 	.string "changed.\p"
 	.string "The sequence must be set before\n"
 	.string "starting your challenge.$"

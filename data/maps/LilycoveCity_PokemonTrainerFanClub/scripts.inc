@@ -589,7 +589,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_OthersDontKnowYoureTheBest:
 
 LilycoveCity_PokemonTrainerFanClub_Text_TrainersPowerIsOutOfTheOrdinary:
 	.string "I hate to say this, but the Trainer\n"
-	.string "everybody's talking about is\l"
+	.string "everybody's talking about is\p"
 	.string "{STR_VAR_1}, no question about it!\p"
 	.string "That Trainer's power…\n"
 	.string "It's out of the ordinary.$"
@@ -635,7 +635,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_NobodyUnderstandsBrawly:
 
 LilycoveCity_PokemonTrainerFanClub_Text_MyFavoriteTrainerIsBrawly:
 	.string "Whatever anyone says, my favorite\n"
-	.string "Trainer is Dewford's Gym Leader\l"
+	.string "Trainer is Dewford's Gym Leader\p"
 	.string "Brawly!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouveSurpassedYourFather:

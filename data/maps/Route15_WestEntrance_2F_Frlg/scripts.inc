@@ -54,7 +54,7 @@ Route15_WestEntrance_2F_Text_GiveItemIfCaughtEnough::
 	.string "Hi! Remember me?\n"
 	.string "I'm one of Prof. Oak's Aides.\p"
 	.string "If your Pokédex has complete data\n"
-	.string "on {STR_VAR_1} species, I'm supposed to\l"
+	.string "on {STR_VAR_1} species, I'm supposed to\p"
 	.string "give you a reward.\p"
 	.string "Prof. Oak entrusted me with the\n"
 	.string "{STR_VAR_2} for you.\p"
@@ -75,8 +75,8 @@ Route15_WestEntrance_2F_Text_ReceivedItemFromAide::
 Route15_WestEntrance_2F_Text_ExplainExpShare::
 	.string "Exp. Share is a Key Item.\p"
 	.string "Turn it on, and every Pokémon in\n"
-	.string "your party will gain Exp. Points\l"
-	.string "from battle, even if they didn't\l"
+	.string "your party will gain Exp. Points\p"
+	.string "from battle, even if they didn't\n"
 	.string "fight.$"
 
 Route15_WestEntrance_2F_Text_LargeShiningBird::

@@ -40,7 +40,7 @@ VictoryRoad_B1F_Text_SamuelPostBattle:
 
 VictoryRoad_B1F_Text_ShannonIntro:
 	.string "To win your way through the Pokémon\n"
-	.string "League, you need the trust of your\l"
+	.string "League, you need the trust of your\p"
 	.string "Pokémon.$"
 
 VictoryRoad_B1F_Text_ShannonDefeat:
@@ -71,7 +71,7 @@ VictoryRoad_B1F_Text_MitchellDefeat:
 
 VictoryRoad_B1F_Text_MitchellPostBattle:
 	.string "Even outside of battle, I sense\n"
-	.string "incredible power emanating from you\l"
+	.string "incredible power emanating from you\p"
 	.string "and your Pokémon.$"
 
 VictoryRoad_B1F_Text_HalleIntro:

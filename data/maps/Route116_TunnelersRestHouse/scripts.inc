@@ -30,28 +30,28 @@ Route116_TunnelersRestHouse_EventScript_TunnelOpened::
 Route116_TunnelersRestHouse_Text_WeHadToStopBoring:
 	.string "That Rusturf Tunnel there…\p"
 	.string "At first, we had a huge work crew boring\n"
-	.string "through rock with the latest machinery.\l"
+	.string "through rock with the latest machinery.\p"
 	.string "But, we had to stop.\p"
 	.string "It turns out that we would have had\n"
-	.string "a negative effect on wild Pokémon in\l"
+	.string "a negative effect on wild Pokémon in\p"
 	.string "the area.\p"
 	.string "So, we've got nothing to do but loll\n"
 	.string "around here doing nothing.$"
 
 Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf:
 	.string "There's a man digging his way to\n"
-	.string "Verdanturf all by his lonesome.\l"
+	.string "Verdanturf all by his lonesome.\p"
 	.string "He's desperate to get through.\p"
 	.string "He says that if he digs little by little\n"
-	.string "without using machines, he won't\l"
-	.string "disturb Pokémon, and he'll avoid\l"
+	.string "without using machines, he won't\p"
+	.string "disturb Pokémon, and he'll avoid\n"
 	.string "harming the natural environment.\p"
 	.string "I wonder if he made it through yet.$"
 
 Route116_TunnelersRestHouse_Text_GetToVerdanturfWithoutTunnel:
 	.string "To get to Verdanturf without using\n"
-	.string "this Tunnel, you'd have to cross the\l"
-	.string "sea to Dewford, sail on to Slateport,\l"
+	.string "this Tunnel, you'd have to cross the\p"
+	.string "sea to Dewford, sail on to Slateport,\n"
 	.string "then travel through Mauville.$"
 
 Route116_TunnelersRestHouse_Text_TunnelHasGoneThrough:

@@ -91,7 +91,7 @@ LilycoveCity_Text_PokeblocksSuitPokemon:
 Route123_BerryMastersHouse_Text_YoureDeservingOfBerry:
 	.string "You may call me the Berry Master.\p"
 	.string "I dream of filling the world with\n"
-	.string "beautiful flowers, so I raise Berries\l"
+	.string "beautiful flowers, so I raise Berries\p"
 	.string "and hand them out to everyone.\p"
 	.string "You're deserving of one!$"
 
@@ -156,10 +156,10 @@ Route104_PrettyPetalFlowerShop_Text_BerriesExplanation:
 	.string "If you take some Berries, be sure to\n"
 	.string "plant one in the loamy soil again.\p"
 	.string "A planted Berry will soon sprout,\n"
-	.string "grow into a plant, flower beautifully,\l"
+	.string "grow into a plant, flower beautifully,\p"
 	.string "then grow Berries again.\p"
 	.string "I want to see the whole wide world\n"
-	.string "filled with beautiful flowers.\l"
+	.string "filled with beautiful flowers.\p"
 	.string "That's my dream.\p"
 	.string "Please help me, {PLAYER}{KUN}. Plant Berries\n"
 	.string "and bring more flowers into the world.$"
@@ -180,7 +180,7 @@ Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation:
 	.string "water them with the Wailmer Pail.\p"
 	.string "Oh, another thing.\p"
 	.string "If you don't pick Berries for a while,\n"
-	.string "they'll drop off onto the ground.\l"
+	.string "they'll drop off onto the ground.\p"
 	.string "But they'll sprout again.\p"
 	.string "Isn't that awesome?\n"
 	.string "It's like they have the will to live.$"
@@ -195,7 +195,7 @@ Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries:
 	.string "You can plant a Berry and grow it big,\n"
 	.string "or you can make a Pokémon hold it.\p"
 	.string "But now they have a machine that mixes\n"
-	.string "up different Berries and makes candies\l"
+	.string "up different Berries and makes candies\p"
 	.string "for Pokémon.\p"
 	.string "I want some candy, too.$"
 
@@ -205,7 +205,7 @@ SootopolisCity_Text_NameIsKiriHaveOneOfThese:
 	.string "Okay. That's nice!\p"
 	.string "My name is Kiri.\p"
 	.string "My mommy and daddy named me that so\n"
-	.string "I would grow healthy and warmhearted.\l"
+	.string "I would grow healthy and warmhearted.\p"
 	.string "That's what they wished.\p"
 	.string "You can have one of these.$"
 
@@ -220,7 +220,7 @@ SootopolisCity_Text_WhatKindOfWishInYourName:
 SootopolisCity_Text_LikeSeasonBornIn:
 	.string "Spring, summer, autumn, and winter.\p"
 	.string "If you're born in springtime, do you like\n"
-	.string "the spring, and if you're born in the\l"
+	.string "the spring, and if you're born in the\p"
 	.string "summer, do you like the summer?$"
 
 SootopolisCity_Text_ThenILoveAutumn:

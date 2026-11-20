@@ -210,7 +210,7 @@ FuchsiaCity_House3_Text_DistillerNotReady::
 FuchsiaCity_House3_Text_DistillerIntro::
 	.string "I'm Indigo's Move Distiller.\p"
 	.string "Donate a Pokémon that knows exactly\n"
-	.string "one move, and I'll press that\l"
+	.string "one move, and I'll press that\p"
 	.string "technique into a disc.\p"
 	.string "I keep the Pokémon. The Move Deleter\n"
 	.string "here can strip extras first.$"
@@ -276,7 +276,7 @@ FuchsiaCity_House3_Text_DistillerArchived::
 	.string "There's no factory disc for\n"
 	.string "{STR_VAR_2}.\p"
 	.string "I've recorded it myself. Talk to me\n"
-	.string "again, and I can teach it to any\l"
+	.string "again, and I can teach it to any\p"
 	.string "Pokémon.$"
 
 FuchsiaCity_House3_Text_DistillerNoArchive::

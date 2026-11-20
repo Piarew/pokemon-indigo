@@ -32,6 +32,6 @@ DewfordTown_PokemonCenter_1F_Text_StoneCavern:
 
 DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM:
 	.string "Even if a Pokémon faints and can't\n"
-	.string "battle, it can still use a move learned\l"
+	.string "battle, it can still use a move learned\p"
 	.string "from a Hidden Machine (HM).$"
 

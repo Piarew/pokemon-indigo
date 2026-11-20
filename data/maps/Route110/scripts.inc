@@ -777,12 +777,12 @@ Route110_Text_MayExplainItemfinder:
 	.string "not visible, it emits a sound.\p"
 	.string "Okay, {PLAYER}{KUN}, let's meet again!\p"
 	.string "I know it's a little silly coming from\n"
-	.string "me, but I think you should train a lot\l"
+	.string "me, but I think you should train a lot\p"
 	.string "harder for the next time.$"
 
 Route110_Text_BrendanLetsBattle:
 	.string "Brendan: Hey, {PLAYER}.\n"
-	.string "So this is where you were.\l"
+	.string "So this is where you were.\p"
 	.string "How's it going?\p"
 	.string "Have you been raising your Pokémon?\n"
 	.string "I'll check for you.$"
@@ -850,7 +850,7 @@ Route110_Text_BikeTechniques:
 Route110_Text_WhichShouldIChoose:
 	.string "Which should I choose?\p"
 	.string "Make a beeline for Mauville on\n"
-	.string "Cycling Road, or take the low road\l"
+	.string "Cycling Road, or take the low road\p"
 	.string "and look for Pokémon?$"
 
 Route110_Text_CyclingChallengeResultSummary:
@@ -862,7 +862,7 @@ Route110_Text_CyclingChallengeResultSummary:
 Route110_Text_ChallengeReactionBest:
 	.string "Bravo! Splendid showing!\p"
 	.string "Your love of cycling comes from deep\n"
-	.string "within your heart.\l"
+	.string "within your heart.\p"
 	.string "You've shaken me to my very soul!$"
 
 Route110_Text_ChallengeReactionGood:
@@ -892,18 +892,18 @@ Route110_Text_ChallengeReactionWorst:
 Route110_Text_RatedForNumberOfCollisions:
 	.string "This is Cycling Road.\p"
 	.string "If you were to ride from Mauville to\n"
-	.string "Slateport on a Mach Bike, you would\l"
-	.string "be rated for the number of collisions\l"
+	.string "Slateport on a Mach Bike, you would\p"
+	.string "be rated for the number of collisions\n"
 	.string "and your total time.$"
 
 Route110_Text_AlwaysAimHigher:
 	.string "Regardless of the results, I count on\n"
-	.string "seeing more challenges from you.\l"
+	.string "seeing more challenges from you.\p"
 	.string "Always aim higher!$"
 
 Route110_Text_AcroBikesDoNotQualify:
 	.string "On this Cycling Road, those riding\n"
-	.string "Mach Bikes are rated for their number\l"
+	.string "Mach Bikes are rated for their number\p"
 	.string "of collisions and their total times.\p"
 	.string "Acro Bikes do not qualify for rating.\n"
 	.string "They are easy to turn, so it's not fair.$"
@@ -966,7 +966,7 @@ Route110_Text_ImagineSeeingYouHere:
 
 Route110_Text_HeardYouInstallMatchCall:
 	.string "Oh, I see!\n"
-	.string "You two are running separately.\l"
+	.string "You two are running separately.\p"
 	.string "Well, that's fine.\p"
 	.string "Oh, yes, I heard that your PokéNav\n"
 	.string "had the Match Call system installed.\p"

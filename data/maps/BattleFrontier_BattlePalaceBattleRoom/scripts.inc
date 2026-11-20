@@ -486,7 +486,7 @@ BattleFrontier_BattlePalaceBattleRoom_Text_RecordLastMatch:
 BattleFrontier_BattlePalaceBattleRoom_Text_ChallengingPalaceMaven:
 	.string "And now…\p"
 	.string "By winning consistently, you have\n"
-	.string "earned the privilege of challenging\l"
+	.string "earned the privilege of challenging\p"
 	.string "our master, the Palace Maven…$"
 
 BattleFrontier_BattlePalaceBattleRoom_Text_ReadyForPalaceMaven:
@@ -552,7 +552,7 @@ BattleFrontier_BattlePalaceBattleRoom_Text_Kaaah:
 
 BattleFrontier_BattlePalaceBattleRoom_Text_SpenserYourTeamIsAdmirable:
 	.string "Spenser: Well, that was some display!\n"
-	.string "Even fully unleashed, my brethren\l"
+	.string "Even fully unleashed, my brethren\p"
 	.string "could not overpower you.\p"
 	.string "Your team spirit is truly admirable!\p"
 	.string "Here!\n"

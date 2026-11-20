@@ -24,3 +24,25 @@ Private notes live in gitignored `documentation/`. This file is the committed co
 
 - `make BUILD=firered` keeps `MAP_VERSION` even with extra make goals. `make firered` also works if it is the only goal.
 - `make release` is the ship build (debug off, `DISABLED_ON_RELEASE` features off).
+
+## Script dialogue
+
+FireRed msgboxes are two lines. Instant text speed is the default, so a third line is unreadable.
+
+- At most two lines per A-button continue.
+- `\n` starts the second line of the current box.
+- `\p` waits for A (the ▼ prompt), clears the box, and starts a new one.
+- Do not use `\l` in player-facing script text. `\l` waits, then scrolls the first line away. Instant speed plus a held A skips that scroll, so the player never sees the line.
+- Pattern:
+
+```
+	.string "First line of this box.\n"
+	.string "Second line of this box.\p"
+	.string "Next box, first line.\n"
+	.string "Next box, second line.$"
+```
+
+- One-line boxes are fine: `.string "Go on.$"`
+- Dynmultichoice labels, item names, and other single-line UI strings stay one line.
+- When a sentence would need a third line, end the box with `\p` and continue in a new box. Break at a phrase boundary, not mid-word.
+- The same two-line rule applies to C `_()` strings shown in a msgbox.

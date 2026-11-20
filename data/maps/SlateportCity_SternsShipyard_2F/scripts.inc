@@ -11,7 +11,7 @@ SlateportCity_SternsShipyard_2F_EventScript_Scientist2::
 
 SlateportCity_SternsShipyard_2F_Text_ShipDesignMoreLikeBuilding:
 	.string "Designing a large ship is more like\n"
-	.string "making a big building than putting\l"
+	.string "making a big building than putting\p"
 	.string "together a transportation vehicle.$"
 
 SlateportCity_SternsShipyard_2F_Text_FloatsBecauseBuoyancy:

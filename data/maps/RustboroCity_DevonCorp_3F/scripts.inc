@@ -230,7 +230,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
 	.string "You can check the locations of\n"
 	.string "Dewford and Slateport easily!\p"
 	.string "By the way, I've heard that sinister\n"
-	.string "criminals--Magma and Aqua, I believe--\l"
+	.string "criminals--Magma and Aqua, I believe--\p"
 	.string "have been making trouble far and wide.\p"
 	.string "I think it would be best if you rested\n"
 	.string "up before you go on your way.$"
@@ -250,7 +250,7 @@ RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
 	.string "Mr. Stone: A Pokémon holding that\n"
-	.string "Exp. Share will be given some of the\l"
+	.string "Exp. Share will be given some of the\p"
 	.string "Exp Points from battle.\p"
 	.string "It will get Exp Points even if it didn't\n"
 	.string "actually battle.\p"
@@ -297,7 +297,7 @@ RustboroCity_DevonCorp_3F_Text_VisitCaptSternShipyard:
 
 RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular:
 	.string "Devon's new products, the Repeat Ball\n"
-	.string "and Timer Ball, have become hugely\l"
+	.string "and Timer Ball, have become hugely\p"
 	.string "popular among Trainers.$"
 
 RustboroCity_DevonCorp_3F_Text_RareRocksDisplay:

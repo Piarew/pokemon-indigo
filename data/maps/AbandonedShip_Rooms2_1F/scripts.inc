@@ -67,7 +67,7 @@ AbandonedShip_Rooms2_1F_Text_DanNotEnoughMons:
 
 AbandonedShip_Rooms2_1F_Text_KiraIntro:
 	.string "Kira: Oh?\n"
-	.string "We were searching for treasures.\l"
+	.string "We were searching for treasures.\p"
 	.string "But we discovered a Trainer instead!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraDefeat:
@@ -117,7 +117,7 @@ AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat:
 
 AbandonedShip_Rooms2_1F_Text_KiraPostRematch:
 	.string "Kira: We're not leaving until we raise\n"
-	.string "our Pokémon some more and we find\l"
+	.string "our Pokémon some more and we find\p"
 	.string "the treasures here!$"
 
 AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons:

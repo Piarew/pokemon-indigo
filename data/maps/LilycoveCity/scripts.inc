@@ -413,7 +413,7 @@ LilycoveCity_Text_MayShoppingLetsBattle:
 	.string "I bought a whole bunch of Dolls and\n"
 	.string "Posters.\p"
 	.string "Of course, I've also caught a lot of\n"
-	.string "Pokémon, and I'm raising them\l"
+	.string "Pokémon, and I'm raising them\p"
 	.string "properly, too.\p"
 	.string "Actually, I'm more worried if you're\n"
 	.string "raising Pokémon properly, {PLAYER}{KUN}.\p"
@@ -445,7 +445,7 @@ LilycoveCity_Text_MayGoingBackToLittleroot:
 	.string "May: I'm thinking of going back to\n"
 	.string "Littleroot soon.\p"
 	.string "I've caught a decent group of Pokémon,\n"
-	.string "and my Pokédex is coming along, so\l"
+	.string "and my Pokédex is coming along, so\p"
 	.string "I'm going home to show my dad.$"
 
 LilycoveCity_Text_MayYouGoingToCollectBadges:
@@ -453,7 +453,7 @@ LilycoveCity_Text_MayYouGoingToCollectBadges:
 	.string "Collect all the Gym Badges and take\n"
 	.string "the Pokémon League challenge?\p"
 	.string "Well, while you're collecting Badges,\n"
-	.string "{PLAYER}{KUN}, I'm going to work on my\l"
+	.string "{PLAYER}{KUN}, I'm going to work on my\p"
 	.string "Pokédex. I'll complete it before you!\p"
 	.string "See you!$"
 
@@ -507,7 +507,7 @@ LilycoveCity_Text_BrendanGoingBackToLittleroot:
 	.string "Brendan: I…\n"
 	.string "I plan on going home to Littleroot.\p"
 	.string "You know I'm helping out my dad on his\n"
-	.string "Pokédex. It's coming together pretty\l"
+	.string "Pokédex. It's coming together pretty\p"
 	.string "decently, so I should go show him.$"
 
 LilycoveCity_Text_BrendanYouGoingToCollectBadges:
@@ -522,7 +522,7 @@ LilycoveCity_Text_BrendanYouGoingToPokemonLeague:
 	.string "Since you're that strong, are you\n"
 	.string "taking the Pokémon League challenge?\p"
 	.string "Heh, even me--if I trained my Pokémon\n"
-	.string "a bit more, I should be stronger than\l"
+	.string "a bit more, I should be stronger than\p"
 	.string "you, {PLAYER}.\p"
 	.string "Well, anyway, hang in there!$"
 
@@ -563,7 +563,7 @@ LilycoveCity_Text_DontGoNearCaveInCove:
 
 LilycoveCity_Text_IfWorldBecomesOurs:
 	.string "If this whole wide world becomes ours,\n"
-	.string "Team Aqua's, it will be a happier\l"
+	.string "Team Aqua's, it will be a happier\p"
 	.string "place for Pokémon, too.$"
 
 LilycoveCity_Text_WailmerLeapOutOfWater:
@@ -633,13 +633,13 @@ LilycoveCity_Text_ImArtDealer:
 
 LilycoveCity_Text_SeaRemainsForeverYoung:
 	.string "Even as we grow old and wrinkled,\n"
-	.string "the sea remains forever young with\l"
+	.string "the sea remains forever young with\p"
 	.string "the vivid brilliance of life…\p"
 	.string "Fwohoho fwohohohoho…$"
 
 LilycoveCity_Text_SixtyYearsAgoHusbandProposed:
 	.string "It was sixty years ago that my husband\n"
-	.string "proposed to me here.\l"
+	.string "proposed to me here.\p"
 	.string "The sea remains as beautiful as ever.\p"
 	.string "Mufufufu mufufufufufu…$"
 
@@ -647,7 +647,7 @@ LilycoveCity_Text_TeamAquaRenovatedCavern:
 	.string "Hm, you know of the peculiar cavern\n"
 	.string "in this cove?\p"
 	.string "That had been a natural formation,\n"
-	.string "but then that Team Aqua lot came\l"
+	.string "but then that Team Aqua lot came\p"
 	.string "along and made their renovations.\p"
 	.string "They call themselves\n"
 	.string "the “nature-loving Team Aqua”!\p"

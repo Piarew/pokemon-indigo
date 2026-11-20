@@ -514,8 +514,8 @@ Route109_Text_BrineyTellMeWhenYouNeedToSail:
 
 Route109_Text_ChillAtMyPapasSpot:
 	.string "Yo, Trainers!\n"
-	.string "Whether you're hot to trot,\l"
-	.string "or cool cat not,\l"
+	.string "Whether you're hot to trot,\p"
+	.string "or cool cat not,\n"
 	.string "chill at my papa's spot!$"
 
 Route109_Text_LittleKidsDartAround:

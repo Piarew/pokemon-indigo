@@ -47,7 +47,7 @@ SevenIsland_Text_IslandsMadeInSevenDays::
 	.string "…Or at least that's what the young\n"
 	.string "people believe.\p"
 	.string "The truth is, these islands are so\n"
-	.string "named because they are said to\l"
+	.string "named because they are said to\p"
 	.string "have been made in seven days.$"
 
 SevenIsland_Text_IslandVirtuallyUntouched::

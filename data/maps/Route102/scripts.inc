@@ -75,7 +75,7 @@ Route102_EventScript_Allen::
 
 Route102_Text_WatchMeCatchPokemon:
 	.string "Wally: {PLAYER}…\n"
-	.string "Pokémon hide in tall grass like this,\l"
+	.string "Pokémon hide in tall grass like this,\p"
 	.string "don't they?\p"
 	.string "Please watch me and see if I can\n"
 	.string "catch one properly.\p"

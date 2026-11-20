@@ -318,7 +318,7 @@ MauvilleCity_Gym_Text_VivianPostBattle:
 	.string "I've heard that Mauville was founded\n"
 	.string "by Wattson.\p"
 	.string "He was a Trainer long before we\n"
-	.string "became Trainers.\l"
+	.string "became Trainers.\p"
 	.string "He must know all sorts of things!$"
 
 MauvilleCity_Gym_Text_AngeloIntro:
@@ -391,7 +391,7 @@ MauvilleCity_Gym_Text_GymStatueCertified:
 
 MauvilleCity_Gym_Text_WattsonPreRematch:
 	.string "Wattson: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
+	.string "I know what you want.\p"
 	.string "You want to battle my Pokémon!\p"
 	.string "Wahahahaha!\p"
 	.string "I'll make sparks fly from you!\n"
@@ -411,7 +411,7 @@ MauvilleCity_Gym_Text_WattsonPostRematch:
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
 	.string "Wattson: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
+	.string "I know what you want.\p"
 	.string "You want to battle my Pokémon!\p"
 	.string "Wahahahaha!\p"
 	.string "Oops! Wait!\n"

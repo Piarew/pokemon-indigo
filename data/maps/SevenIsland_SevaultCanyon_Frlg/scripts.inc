@@ -27,7 +27,7 @@ SevenIsland_SevaultCanyon_Text_EvanDefeat::
 
 SevenIsland_SevaultCanyon_Text_EvanPostBattle::
 	.string "You see them every so often,\n"
-	.string "Trainers with awesome Pokémon\l"
+	.string "Trainers with awesome Pokémon\p"
 	.string "who have no idea what to do.\p"
 	.string "Before training Pokémon, Trainers\n"
 	.string "themselves need to grow up.$"
@@ -114,7 +114,7 @@ SevenIsland_SevaultCanyon_Text_NyaDefeat::
 
 SevenIsland_SevaultCanyon_Text_NyaPostBattle::
 	.string "Nya: I think I'm going to need\n"
-	.string "much more seasoning and tutoring\l"
+	.string "much more seasoning and tutoring\p"
 	.string "under Lex…\p"
 	.string "…So, Lex, please, may I stay with\n"
 	.string "you like this?$"
@@ -133,5 +133,5 @@ SevenIsland_SevaultCanyon_Text_BrunoTrainedWithBrawly::
 	.string "But it's also not bad to aim for\n"
 	.string "the top with a partner.\p"
 	.string "Even Bruno…\n"
-	.string "He trained with a fellow by the\l"
+	.string "He trained with a fellow by the\p"
 	.string "name of Brawly before.$"

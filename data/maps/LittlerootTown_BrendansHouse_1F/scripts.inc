@@ -289,12 +289,12 @@ PlayersHouse_1F_Text_IsntItNiceInHere:
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
 	.string "The mover's Pokémon do all the work\n"
-	.string "of moving us in and cleaning up after.\l"
+	.string "of moving us in and cleaning up after.\p"
 	.string "This is so convenient!\p"
 	.string "{PLAYER}, your room is upstairs.\n"
 	.string "Go check it out, dear!\p"
 	.string "Dad bought you a new clock to mark\n"
-	.string "our move here.\l"
+	.string "our move here.\p"
 	.string "Don't forget to set it!$"
 
 PlayersHouse_1F_Text_ArentYouInterestedInRoom:
@@ -393,7 +393,7 @@ PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
 	.string "That's the impression I get.\n"
 	.string "But your old man hasn't given up yet!\p"
 	.string "Oh, yes, I have something for you.\n"
-	.string "This came to you from someone named\l"
+	.string "This came to you from someone named\p"
 	.string "Mr. Briney.$"
 
 PlayersHouse_1F_Text_PortsInSlateportLilycove:
@@ -419,7 +419,7 @@ PlayersHouse_1F_Text_LatiEmergencyNewsFlash:
 	.string "We bring you this emergency\n"
 	.string "news flash!\p"
 	.string "In various Hoenn locales, there have\n"
-	.string "been reports of a Bzzt…colored\l"
+	.string "been reports of a Bzzt…colored\p"
 	.string "Pokémon in flight.\p"
 	.string "The identity of this Pokémon is\n"
 	.string "currently unknown.\p"

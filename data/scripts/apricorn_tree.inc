@@ -68,7 +68,7 @@ ApricornTree_Text_Empty:
 
 ApricornTree_Text_WantToPick:
 	.string "…It's {STR_VAR_2} {STR_VAR_1}!\n"
-	.string "Do you want to pick the\l"
+	.string "Do you want to pick the\p"
 	.string "{STR_VAR_1}?$"
 
 ApricornTree_Text_PickedTheApricorn:
@@ -77,7 +77,7 @@ ApricornTree_Text_PickedTheApricorn:
 
 ApricornTree_Text_PutAwayApricorn:
 	.string "{PLAYER} put away the\n"
-	.string "{STR_VAR_1} in\l"
+	.string "{STR_VAR_1} in\p"
 	.string "the Bag's {STR_VAR_3} Pocket.$"
 
 ApricornTree_Text_PocketFull:

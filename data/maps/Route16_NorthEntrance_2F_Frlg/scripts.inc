@@ -73,7 +73,7 @@ Route16_NorthEntrance_2F_Text_GiveAmuletCoinIfCaught40::
 	.string "Hi! Remember me?\n"
 	.string "I'm one of Prof. Oak's Aides.\p"
 	.string "If your Pokédex has complete data\n"
-	.string "on 40 species, I'm supposed to\l"
+	.string "on 40 species, I'm supposed to\p"
 	.string "give you a reward.\p"
 	.string "Prof. Oak entrusted me with an\n"
 	.string "Amulet Coin for you.\p"

@@ -1425,7 +1425,7 @@ SootopolisCity_Text_TwoPokemonArentAngry:
 
 SootopolisCity_Text_FlyingMonStoppedRampage:
 	.string "That flying Pokémon came down from\n"
-	.string "the sky and stopped the rampaging\l"
+	.string "the sky and stopped the rampaging\p"
 	.string "Pokémon…$"
 
 SootopolisCity_Text_WonderWhatWorldIsLike:
@@ -1452,13 +1452,13 @@ SootopolisCity_Text_DoYouKnowMonNames:
 
 SootopolisCity_Text_GreenOneSettlesThings:
 	.string "I was wondering which one would win,\n"
-	.string "the red one or the blue one, but, oh no,\l"
+	.string "the red one or the blue one, but, oh no,\p"
 	.string "it's the green one that settles things!\p"
 	.string "Talk about a huge turn of events!$"
 
 SootopolisCity_Text_SeeingLegendWithOwnEyes:
 	.string "There's an ancient legend that claims\n"
-	.string "the land and sea were shaped by\l"
+	.string "the land and sea were shaped by\p"
 	.string "a colossal battle between Pokémon.\p"
 	.string "Well, I'm seeing that happen with\n"
 	.string "my very own eyes!\p"
@@ -1467,7 +1467,7 @@ SootopolisCity_Text_SeeingLegendWithOwnEyes:
 
 SootopolisCity_Text_SawLegendWithOwnEyes:
 	.string "There's an ancient legend that claims\n"
-	.string "the land and sea were shaped by\l"
+	.string "the land and sea were shaped by\p"
 	.string "a colossal battle between Pokémon.\p"
 	.string "Well, I saw that happen with\n"
 	.string "my very own eyes!\p"
@@ -1492,7 +1492,7 @@ SootopolisCity_Text_SootopolisDidntGetWrecked:
 
 SootopolisCity_Text_NoOrdinaryTourist:
 	.string "Hm!\n"
-	.string "You've come all the way to Sootopolis?\l"
+	.string "You've come all the way to Sootopolis?\p"
 	.string "You're no ordinary tourist.\p"
 	.string "But I suppose that doesn't make you\n"
 	.string "an extraordinary tourist, either.$"
@@ -1513,13 +1513,13 @@ SootopolisCity_Text_LeadSuperiorTrainerToCave:
 	.string "A Trainer who has knowledge and\n"
 	.string "experience of many kinds of Pokémon…\p"
 	.string "If such a person were to appear, I was\n"
-	.string "instructed by Wallace to lead that\l"
+	.string "instructed by Wallace to lead that\p"
 	.string "Trainer to this Cave.$"
 
 SootopolisCity_Text_AwakenedPokemonClash:
 	.string "Oh, my…\p"
 	.string "The clash between the two awakened\n"
-	.string "Pokémon was quelled by the awakening\l"
+	.string "Pokémon was quelled by the awakening\p"
 	.string "of a third Pokémon…$"
 
 SootopolisCity_Text_CaveOfOriginSleepsToo:
@@ -1531,14 +1531,14 @@ SootopolisCity_Text_SootopolisSkyBeautiful:
 	.string "Sootopolis sprang up as a town in\n"
 	.string "the crater of a volcano.\p"
 	.string "If you look up at the sky, the lip of\n"
-	.string "the crater is also visible.\l"
+	.string "the crater is also visible.\p"
 	.string "So, all you see is the sky in a circle.\p"
 	.string "But that's what makes the sky above\n"
 	.string "Sootopolis the most beautiful.$"
 
 SootopolisCity_Text_GiganticPokemonFight:
 	.string "When two Pokémon that gigantic\n"
-	.string "are fighting that savagely, there's\l"
+	.string "are fighting that savagely, there's\p"
 	.string "not much that we can do.$"
 
 SootopolisCity_Text_FearedWorstWhenPokemonFlewDown:
@@ -1549,14 +1549,14 @@ SootopolisCity_Text_NightSkyFavoriteScenery:
 	.string "A circle of a night sky framed by\n"
 	.string "the crater of a volcano…\p"
 	.string "And in that ring, stars flicker and\n"
-	.string "blink as if they were alive…\l"
+	.string "blink as if they were alive…\p"
 	.string "It's my favorite scenery.$"
 
 SootopolisCity_Text_WeatherWentWild:
 	.string "The weather was clear this morning,\n"
 	.string "but…\p"
 	.string "All of a sudden, dark clouds brewed up,\n"
-	.string "rain started falling in sheets, and\l"
+	.string "rain started falling in sheets, and\p"
 	.string "there was thunder and lightning, too.\p"
 	.string "The weather just went completely\n"
 	.string "wild!\p"
@@ -1580,15 +1580,15 @@ SootopolisCity_Text_AfterAllOurScheming:
 	.string "Maxie: So the super-ancient Pokémon\n"
 	.string "weren't only Groudon and Kyogre…\p"
 	.string "After all our fruitless scheming and\n"
-	.string "frantic efforts, that one Pokémon's\l"
-	.string "simple action puts everything right\l"
+	.string "frantic efforts, that one Pokémon's\p"
+	.string "simple action puts everything right\n"
 	.string "again as if nothing had happened…\p"
 	.string "Fu…\n"
 	.string "Fuhahaha…$"
 
 SootopolisCity_Text_KyogreCalmDown:
 	.string "Archie: Kyogre! What's wrong?!\n"
-	.string "Look over here! It's the Red Orb!\l"
+	.string "Look over here! It's the Red Orb!\p"
 	.string "Calm down! Kyogre!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
@@ -1603,7 +1603,7 @@ SootopolisCity_Text_TryingMeaninglessToPokemon:
 	.string "Haha…\n"
 	.string "Hahaha…\p"
 	.string "Maybe what we were trying to do was\n"
-	.string "something small, even meaningless,\l"
+	.string "something small, even meaningless,\p"
 	.string "to Pokémon…$"
 
 SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
@@ -1615,7 +1615,7 @@ SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
 	.string "with their uncontrollable energy…\p"
 	.string "…{PLAYER}{KUN}.\p"
 	.string "You being here now I'll take to mean\n"
-	.string "that you're prepared to become\l"
+	.string "that you're prepared to become\p"
 	.string "involved in this crisis.\p"
 	.string "Well, then, there's someone that\n"
 	.string "I'd like you to meet.\p"
@@ -1685,7 +1685,7 @@ SootopolisCity_Text_ExplainWaterfallGoToGym:
 	.string "That Hidden Machine contains\n"
 	.string "Waterfall.\p"
 	.string "If you have the Rain Badge, a Pokémon\n"
-	.string "that has learned that HM move can\l"
+	.string "that has learned that HM move can\p"
 	.string "force its way up waterfalls.\p"
 	.string "And where does one get the Rain Badge?\n"
 	.string "You know, don't you?\p"
@@ -1696,5 +1696,5 @@ SootopolisCity_Text_ExplainWaterfallGoToGym:
 
 SootopolisCity_Text_DazzledByMentor:
 	.string "Wallace: I'm sure that you will be\n"
-	.string "dazzled by my mentor's breathtakingly\l"
+	.string "dazzled by my mentor's breathtakingly\p"
 	.string "elegant battle style.$"

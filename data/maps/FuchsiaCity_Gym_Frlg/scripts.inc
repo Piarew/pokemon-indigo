@@ -166,7 +166,7 @@ FuchsiaCity_Gym_Text_KirkDefeat::
 
 FuchsiaCity_Gym_Text_KirkPostBattle::
 	.string "Even though I've lost, I will keep\n"
-	.string "training according to the teachings\l"
+	.string "training according to the teachings\p"
 	.string "of Koga, my ninja master.$"
 
 FuchsiaCity_Gym_Text_NateIntro::

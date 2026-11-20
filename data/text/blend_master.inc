@@ -12,7 +12,7 @@ BerryBlender_Text_TooBusyNowIsee:
 	.string "Hmmm!\p"
 	.string "So, you are too busy now, I see!\p"
 	.string "But fear not!\n"
-	.string "I shall be here all day!\l"
+	.string "I shall be here all day!\p"
 	.string "Hurry back from your errand!$"
 
 BerryBlender_Text_BlendMasterNoBerries:
@@ -25,7 +25,7 @@ BerryBlender_Text_BlendMasterKnowHowToMakePokeblocks:
 	.string "Of course!\n"
 	.string "Of course!\p"
 	.string "Incidentally…\n"
-	.string "You do know how to blend {POKEBLOCK}S\l"
+	.string "You do know how to blend {POKEBLOCK}S\p"
 	.string "from Berries?$"
 
 BerryBlender_Text_BlendMasterExplainBerryBlending:

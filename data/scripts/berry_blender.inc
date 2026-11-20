@@ -86,7 +86,7 @@ BerryBlender_Text_ExplainBerryBlending2:
 	.string "Okay!\n"
 	.string "Let me explain it to you!\p"
 	.string "When the spinning Blender's arrow\n"
-	.string "reaches your marker, just press\l"
+	.string "reaches your marker, just press\p"
 	.string "the A Button.\p"
 	.string "That's all it takes.\n"
 	.string "Pretty easy, don't you think?$"
@@ -146,7 +146,7 @@ BerryBlender_Text_DontHaveAnyBerries3:
 	.string "If you don't have any Berries,\n"
 	.string "you can't make any {POKEBLOCK}S.\p"
 	.string "We'll always be making {POKEBLOCK}S here,\n"
-	.string "so let's make some together when\l"
+	.string "so let's make some together when\p"
 	.string "you get a Berry or two.$"
 
 BerryBlender_Text_PokeblockCaseIsFull3:
@@ -167,7 +167,7 @@ BerryBlender_Text_SetNewBlenderRecord:
 
 BerryBlender_Text_LookGoodAtBlendingJoinUs:
 	.string "Oh, dear!\n"
-	.string "You look as if you're good at blending.\l"
+	.string "You look as if you're good at blending.\p"
 	.string "Would you like to join us?$"
 
 BerryBlender_Text_MakeDeliciousPokeblocks:
@@ -212,7 +212,7 @@ BerryBlender_Text_LoveMakingPokeblocks:
 
 BerryBlender_Text_MakePokeblocksUsingBerryBlender:
 	.string "If you'd like, we could make some\n"
-	.string "{POKEBLOCK}S together using the\l"
+	.string "{POKEBLOCK}S together using the\p"
 	.string "Berry Blender.$"
 
 BerryBlender_Text_DontHaveAnyBerriesHaveOne:

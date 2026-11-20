@@ -124,21 +124,21 @@ ViridianCity_Gym_Text_GiovanniIntro::
 	.string "It shall be so until I can restore\n"
 	.string "Team Rocket to its former glory.\p"
 	.string "But, you have found me again.\n"
-	.string "So be it.\l"
+	.string "So be it.\p"
 	.string "This time, I'm not holding back!\p"
 	.string "Once more, you shall face\n"
 	.string "Giovanni, the greatest Trainer!{PLAY_BGM}{MUS_RG_ENCOUNTER_ROCKET}$"
 
 ViridianCity_Gym_Text_GiovanniDefeat::
 	.string "Ha!\n"
-	.string "That was a truly intense fight.\l"
+	.string "That was a truly intense fight.\p"
 	.string "You have won!\p"
 	.string "As proof, here is the Earthbadge!\n"
 	.string "{PAUSE_MUSIC}{PLAY_BGM}{MUS_OBTAIN_BADGE}{PAUSE 0xFE}{PAUSE 0x56}{RESUME_MUSIC}$"
 
 ViridianCity_Gym_Text_GiovanniPostBattle::
 	.string "Having lost in this fashion, \n"
-	.string "I can't face my followers.\l"
+	.string "I can't face my followers.\p"
 	.string "I have betrayed their trust.\p"
 	.string "As of today, Team Rocket is\n"
 	.string "finished forever!\p"
@@ -174,7 +174,7 @@ ViridianCity_Gym_Text_YouDoNotHaveSpace::
 
 ViridianCity_Gym_Text_YujiIntro::
 	.string "Heh!\n"
-	.string "You must be running out of steam\l"
+	.string "You must be running out of steam\p"
 	.string "by now!$"
 
 ViridianCity_Gym_Text_YujiDefeat::
@@ -259,7 +259,7 @@ ViridianCity_Gym_Text_SamuelDefeat::
 
 ViridianCity_Gym_Text_SamuelPostBattle::
 	.string "You can go on to the Pokémon\n"
-	.string "League only by defeating our Gym\l"
+	.string "League only by defeating our Gym\p"
 	.string "Leader!$"
 
 ViridianCity_Gym_Text_GymGuyAdvice::
@@ -268,7 +268,7 @@ ViridianCity_Gym_Text_GymGuyAdvice::
 	.string "Even I don't know the Viridian\n"
 	.string "Leader's identity.\p"
 	.string "But one thing's certain.\n"
-	.string "This will be the toughest of all\l"
+	.string "This will be the toughest of all\p"
 	.string "the Gym Leaders.\p"
 	.string "Also, I heard that the Trainers\n"
 	.string "here like Ground-type Pokémon.$"

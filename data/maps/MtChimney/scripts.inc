@@ -544,10 +544,10 @@ MtChimney_EventScript_SawyerRematch::
 MtChimney_Text_MeteoriteWillActivateVolcano:
 	.string "The power contained in the Meteorite…\p"
 	.string "By amplifying its power with this\n"
-	.string "machine, Mt. Chimney's volcanic\l"
+	.string "machine, Mt. Chimney's volcanic\p"
 	.string "activity will instantly intensify…\p"
 	.string "Its energy will grow deep inside\n"
-	.string "the crater and…\l"
+	.string "the crater and…\p"
 	.string "Fufufu…$"
 
 MtChimney_Text_MaxieIntro:
@@ -556,13 +556,13 @@ MtChimney_Text_MaxieIntro:
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "I'd heard Archie bemoaning a child\n"
-	.string "who's been meddling in Team Aqua's\l"
+	.string "who's been meddling in Team Aqua's\p"
 	.string "affairs.\p"
 	.string "It must be you he meant.\p"
 	.string "Humph! So you're thinking of\n"
 	.string "interfering with us, Team Magma?\p"
 	.string "Now you listen.\n"
-	.string "Long ago, living things used the\l"
+	.string "Long ago, living things used the\p"
 	.string "land to live and grow.\p"
 	.string "That is why land is all important!\n"
 	.string "It is the cradle of all!\p"
@@ -575,7 +575,7 @@ MtChimney_Text_MaxieIntro:
 	.string "Oh! There was no need for you to\n"
 	.string "learn that much.\p"
 	.string "But, no matter!\n"
-	.string "I'll teach you the consequences of\l"
+	.string "I'll teach you the consequences of\p"
 	.string "meddling in our grand design!$"
 
 MtChimney_Text_MaxieDefeat:
@@ -595,7 +595,7 @@ MtChimney_Text_TabithaIntro:
 	.string "Hehehe!\p"
 	.string "So you've come all the way here!\p"
 	.string "But you're too late!\n"
-	.string "I've already delivered the Meteorite\l"
+	.string "I've already delivered the Meteorite\p"
 	.string "from Meteor Falls to the Boss!$"
 
 MtChimney_Text_TabithaDefeat:
@@ -755,7 +755,7 @@ MtChimney_Text_RouteSign:
 
 MtChimney_Text_ShelbyIntro:
 	.string "I've been to the hot springs and\n"
-	.string "refreshed my tired bones.\l"
+	.string "refreshed my tired bones.\p"
 	.string "Right now I'm feeling strong!$"
 
 MtChimney_Text_ShelbyDefeat:
@@ -774,7 +774,7 @@ MtChimney_Text_ShelbyRegister:
 
 MtChimney_Text_ShelbyRematchIntro:
 	.string "If you can mesh your heart with those\n"
-	.string "of your Pokémon, why, you should be\l"
+	.string "of your Pokémon, why, you should be\p"
 	.string "able to achieve great things.$"
 
 MtChimney_Text_ShelbyRematchDefeat:
@@ -806,14 +806,14 @@ MtChimney_Text_SheilaDefeat:
 
 MtChimney_Text_SheilaPostBattle:
 	.string "Like I said, I've finally made it to\n"
-	.string "Mt. Chimney. It would be a shame if\l"
+	.string "Mt. Chimney. It would be a shame if\p"
 	.string "I only do a little sightseeing…\p"
 	.string "I want to get in some battles and buy\n"
 	.string "Cookies as souvenirs.$"
 
 MtChimney_Text_ShirleyIntro:
 	.string "Since I bathed in the hot springs,\n"
-	.string "I've been feeling great!\l"
+	.string "I've been feeling great!\p"
 	.string "I'm sure I'm going to win!$"
 
 MtChimney_Text_ShirleyDefeat:

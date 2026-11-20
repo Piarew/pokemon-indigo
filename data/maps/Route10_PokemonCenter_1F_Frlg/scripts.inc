@@ -80,7 +80,7 @@ Route10_PokemonCenter_1F_Text_GiveEverstoneIfCaught20Mons::
 	.string "It's me, one of the ever-present\n"
 	.string "Aides to Prof. Oak.\p"
 	.string "If your Pokédex has complete data\n"
-	.string "on twenty species, I'm supposed to\l"
+	.string "on twenty species, I'm supposed to\p"
 	.string "give you a reward from Prof. Oak.\p"
 	.string "He entrusted me with this\n"
 	.string "Everstone.\p"

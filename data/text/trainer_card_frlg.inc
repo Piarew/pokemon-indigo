@@ -22,19 +22,19 @@ CeladonCity_GameCorner_Text_PrintIsReadyCheckTrainerCard::
 
 FourIsland_House2_Text_WishICouldShowOffStickers::
 	.string "Giggle…\n"
-	.string "I collected a ton of Stickers.\l"
+	.string "I collected a ton of Stickers.\p"
 	.string "I wish I could show them off…$"
 
 FourIsland_House2_Text_GiveYouStickerIfYouBrag::
 	.string "Oh, excellent!\n"
 	.string "You've come to the right place!\p"
 	.string "Look, look! See? See?\n"
-	.string "These are my Stickers!\l"
+	.string "These are my Stickers!\p"
 	.string "Look how many I got!\p"
 	.string "I bet you want some.\n"
 	.string "I bet you do!\p"
 	.string "I'll give a Sticker if you can tell\n"
-	.string "me something awesome about\l"
+	.string "me something awesome about\p"
 	.string "yourself.\p"
 	.string "What will you brag about?$"
 
@@ -62,7 +62,7 @@ FourIsland_House2_Text_WowHoFLow::
 
 FourIsland_House2_Text_WowHoFHigh::
 	.string "Whoa! You've made it into the\n"
-	.string "Hall of Fame that often?\l"
+	.string "Hall of Fame that often?\p"
 	.string "That's seriously incredible, yup!\p"
 	.string "You own the Pokémon League!\n"
 	.string "I'll give you one of these.$"

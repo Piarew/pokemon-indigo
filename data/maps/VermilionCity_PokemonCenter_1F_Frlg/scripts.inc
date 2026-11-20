@@ -45,7 +45,7 @@ VermilionCity_PokemonCenter_1F_EventScript_ExplainVSSeeker::
 
 VermilionCity_PokemonCenter_1F_Text_TrainerMonsStrongerThanWild::
 	.string "Even if they are the same level,\n"
-	.string "Pokémon can have very different\l"
+	.string "Pokémon can have very different\p"
 	.string "stats and abilities.\p"
 	.string "A Pokémon raised by a Trainer is\n"
 	.string "stronger than one in the wild.$"

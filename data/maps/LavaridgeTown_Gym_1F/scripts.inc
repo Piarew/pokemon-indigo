@@ -187,7 +187,7 @@ LavaridgeTown_Gym_1F_Text_GymGuideAdvice:
 	.string "Her passion for Pokémon burns stronger\n"
 	.string "and hotter than a volcano.\p"
 	.string "Don't get too close to her--you'll burn!\n"
-	.string "Hose her down with water and then\l"
+	.string "Hose her down with water and then\p"
 	.string "go for it!$"
 
 LavaridgeTown_Gym_1F_Text_GymGuidePostVictory:
@@ -220,10 +220,10 @@ LavaridgeTown_Gym_1F_Text_AxlePostBattle:
 
 LavaridgeTown_Gym_B1F_Text_KeeganIntro:
 	.string "You must be getting tired by now.\n"
-	.string "You'd like to rest in the hot sand,\l"
+	.string "You'd like to rest in the hot sand,\p"
 	.string "wouldn't you?\p"
 	.string "But you should know that maintaining\n"
-	.string "your willpower is an important ability\l"
+	.string "your willpower is an important ability\p"
 	.string "for all Trainers.$"
 
 LavaridgeTown_Gym_B1F_Text_KeeganDefeat:
@@ -269,7 +269,7 @@ LavaridgeTown_Gym_B1F_Text_JaceDefeat:
 
 LavaridgeTown_Gym_B1F_Text_JacePostBattle:
 	.string "The way the battling spirit burns\n"
-	.string "within you, you may stand a chance\l"
+	.string "within you, you may stand a chance\p"
 	.string "against our Leader.$"
 
 LavaridgeTown_Gym_B1F_Text_JeffIntro:
@@ -306,10 +306,10 @@ LavaridgeTown_Gym_1F_Text_FlanneryIntro:
 	.string "I am Flannery, and I'm the Gym\n"
 	.string "Leader here!\p"
 	.string "Uh…\n"
-	.string "Dare not underestimate me, though\l"
+	.string "Dare not underestimate me, though\p"
 	.string "I have been Leader only a short time!\p"
 	.string "With skills inherited from my grand-\n"
-	.string "father, I shall, uh…demonstrate the\l"
+	.string "father, I shall, uh…demonstrate the\p"
 	.string "hot moves we have honed on this land!$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
@@ -330,8 +330,8 @@ LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge:
 
 LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis:
 	.string "If you have a Heat Badge, all Pokémon\n"
-	.string "up to Level 50, even those you get in\l"
-	.string "trades from other people, will obey\l"
+	.string "up to Level 50, even those you get in\p"
+	.string "trades from other people, will obey\n"
 	.string "you completely.\p"
 	.string "And, it lets Pokémon use the HM move\n"
 	.string "Strength outside of battle.\p"
@@ -343,7 +343,7 @@ LavaridgeTown_Gym_1F_Text_ExplainOverheat:
 	.string "That move inflicts serious damage on\n"
 	.string "the opponent.\p"
 	.string "But it also sharply cuts the Sp. ATK\n"
-	.string "of the Pokémon using it. It might not\l"
+	.string "of the Pokémon using it. It might not\p"
 	.string "be suitable for longer battles.$"
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
@@ -367,7 +367,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryPreRematch:
 	.string "Flannery: Losing a battle isn't going\n"
 	.string "to deflate me.\p"
 	.string "I love Pokémon.\n"
-	.string "I love to battle.\l"
+	.string "I love to battle.\p"
 	.string "And… I love this Gym!\p"
 	.string "Let's exchange superhot moves\n"
 	.string "in another battle!$"
@@ -388,7 +388,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 	.string "Flannery: Losing a battle isn't going\n"
 	.string "to deflate me.\p"
 	.string "I love Pokémon.\n"
-	.string "I love to battle.\l"
+	.string "I love to battle.\p"
 	.string "And… I love this Gym!\p"
 	.string "Let's exchange superhot moves\n"
 	.string "in another battle!\p"

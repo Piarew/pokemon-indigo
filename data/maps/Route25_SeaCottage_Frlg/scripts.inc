@@ -413,8 +413,8 @@ Route25_SeaCottage_Text_NoPleaseChief::
 	.string "Come on, you gotta help a guy in\n"
 	.string "deep, deep trouble!\p"
 	.string "What do you say, chief?\n"
-	.string "Please?\l"
-	.string "Okay?\l"
+	.string "Please?\p"
+	.string "Okay?\n"
 	.string "All right!$"
 
 Route25_SeaCottage_Text_NoPleaseBeautiful::
@@ -423,8 +423,8 @@ Route25_SeaCottage_Text_NoPleaseBeautiful::
 	.string "Come on, you gotta help a guy in\n"
 	.string "deep, deep trouble!\p"
 	.string "What do you say, beautiful?\n"
-	.string "Please?\l"
-	.string "Okay?\l"
+	.string "Please?\p"
+	.string "Okay?\n"
 	.string "All right!$"
 
 Route25_SeaCottage_Text_ThanksBudTakeThis::
@@ -486,7 +486,7 @@ Route25_SeaCottage_Text_SeeWhichMon::
 Route25_SeaCottage_Text_OfficerTrainNotRunning::
 	.string "The Magnet Train isn't running.\p"
 	.string "Bill's in the middle of an experiment,\n"
-	.string "and… well, you should talk to that\l"
+	.string "and… well, you should talk to that\p"
 	.string "Clefairy.$"
 
 Route25_SeaCottage_Text_OfficerRightThisWay::

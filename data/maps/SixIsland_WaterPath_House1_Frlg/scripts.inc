@@ -75,7 +75,7 @@ SixIsland_WaterPath_House1_EventScript_SizeRecordNonEmpty::
 
 SixIsland_WaterPath_House1_Text_LoveItNeedItHeracross::
 	.string "Hera, hera, Heracross!\n"
-	.string "Big and shiny, it's the bug boss!\l"
+	.string "Big and shiny, it's the bug boss!\p"
 	.string "Love it, need it, Heracross!$"
 
 SixIsland_WaterPath_House1_Text_MayIMeasureHeracross::
@@ -86,7 +86,7 @@ SixIsland_WaterPath_House1_Text_MayIMeasureHeracross::
 
 SixIsland_WaterPath_House1_Text_ItsXSizeDeserveReward::
 	.string "Eeeek, it's {STR_VAR_2}!\n"
-	.string "I've never seen anything like this!\l"
+	.string "I've never seen anything like this!\p"
 	.string "You deserve a reward!$"
 
 SixIsland_WaterPath_House1_Text_WantToSeeBiggerOne::

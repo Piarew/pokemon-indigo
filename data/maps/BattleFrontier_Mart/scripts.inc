@@ -58,7 +58,7 @@ BattleFrontier_Mart_Text_ProteinMakeNiceGift:
 
 BattleFrontier_Mart_Text_FacilitiesDontAllowItems:
 	.string "A lot of the Battle Frontier's\n"
-	.string "facilities don't allow the use of items\l"
+	.string "facilities don't allow the use of items\p"
 	.string "during battles.\p"
 	.string "That rule makes things tougher than\n"
 	.string "they already are!$"

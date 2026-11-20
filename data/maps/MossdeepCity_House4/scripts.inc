@@ -45,7 +45,7 @@ MossdeepCity_House4_Text_BrotherLikesToFindBases:
 
 MossdeepCity_House4_Text_BrotherLikesToVisitBasesAndBattle:
 	.string "My little brother says he likes to\n"
-	.string "visit people's Secret Bases and have\l"
+	.string "visit people's Secret Bases and have\p"
 	.string "Pokémon battles.$"
 
 MossdeepCity_House4_Text_YouMadeSecretBaseNearX:

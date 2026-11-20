@@ -124,7 +124,7 @@ Route112_Text_CantLetAnyonePassUntilTheyreBack:
 
 Route112_Text_NotEasyToGetBackToLavaridge:
 	.string "Eh, I'd like to get to Mauville, but if\n"
-	.string "I went down these ledges, it'd be no\l"
+	.string "I went down these ledges, it'd be no\p"
 	.string "easy matter to get back to Lavaridge.$"
 
 Route112_Text_MtChimneyCableCarSign:

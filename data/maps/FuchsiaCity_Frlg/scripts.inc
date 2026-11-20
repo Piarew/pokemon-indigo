@@ -177,12 +177,12 @@ FuchsiaCity_Text_WardensHomeSign::
 
 FuchsiaCity_Text_SafariZoneOfficeSign::
 	.string "Pokémon Paradise!\n"
-	.string "Welcome to the Safari Zone!\l"
+	.string "Welcome to the Safari Zone!\p"
 	.string "Safari Zone Office$"
 
 FuchsiaCity_Text_GymSign::
 	.string "Fuchsia City Pokémon Gym\n"
-	.string "Leader: Koga\l"
+	.string "Leader: Koga\p"
 	.string "The Poisonous Ninja Master$"
 
 FuchsiaCity_Text_ChanseySign::
@@ -208,12 +208,12 @@ FuchsiaCity_Text_LaprasSign::
 
 FuchsiaCity_Text_OmanyteSign::
 	.string "Name: Omanyte\n"
-	.string "An extremely rare Pokémon that was\l"
+	.string "An extremely rare Pokémon that was\p"
 	.string "regenerated from a fossil.$"
 
 FuchsiaCity_Text_KabutoSign::
 	.string "Name: Kabuto\n"
-	.string "An extremely rare Pokémon that was\l"
+	.string "An extremely rare Pokémon that was\p"
 	.string "regenerated from a fossil.$"
 
 @ Unused. May have been meant to be the placeholder text for the zoo mons, similar to RB's "!" text

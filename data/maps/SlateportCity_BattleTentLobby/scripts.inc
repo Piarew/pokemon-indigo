@@ -292,7 +292,7 @@ SlateportCity_BattleTentLobby_Text_ExplainTorment:
 
 SlateportCity_BattleTentLobby_Text_IllTryUsingBugMons:
 	.string "I don't really like Bug Pokémon,\n"
-	.string "but maybe I'll try using some for\l"
+	.string "but maybe I'll try using some for\p"
 	.string "a change of pace.\p"
 	.string "Who knows, I might even get to like\n"
 	.string "them!$"

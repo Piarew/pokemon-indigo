@@ -312,7 +312,7 @@ VermilionCity_Text_PokemonFanClubSign::
 
 VermilionCity_Text_GymSign::
 	.string "Vermilion City Pokémon Gym\n"
-	.string "Leader: Lt. Surge\l"
+	.string "Leader: Lt. Surge\p"
 	.string "The Lightning American!$"
 
 VermilionCity_Text_VermilionHarbor::

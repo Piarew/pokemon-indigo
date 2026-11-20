@@ -16,7 +16,7 @@ EventTicket_Text_ShowEonTicket:
 	.string "I'll tell you, you're trying to reach a\n"
 	.string "tiny spit of an island far in the south.\p"
 	.string "There's no telling what we'll encounter\n"
-	.string "once we reach there, aye.\l"
+	.string "once we reach there, aye.\p"
 	.string "That shivers my timbers!\p"
 	.string "All aboard!$"
 

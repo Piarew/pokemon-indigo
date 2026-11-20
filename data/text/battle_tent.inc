@@ -29,7 +29,7 @@ FallarborTown_BattleTentLobby_Text_ExplainFallarborTent:
 	.string "If you don't save, you will not be able\n"
 	.string "to continue with your challenge.\p"
 	.string "If you pull off the feat of beating\n"
-	.string "three Trainers in succession,\l"
+	.string "three Trainers in succession,\p"
 	.string "we will present you with a fine prize.$"
 
 FallarborTown_BattleTentLobby_Text_SaveBeforeChallenge:
@@ -39,7 +39,7 @@ FallarborTown_BattleTentLobby_Text_SaveBeforeChallenge:
 @ Unused
 FallarborTown_BattleTentLobby_Text_WhichLevelMode:
 	.string "We offer two levels of challenge,\n"
-	.string "Level 50 and Open Level.\l"
+	.string "Level 50 and Open Level.\p"
 	.string "Which is your choice?$"
 
 FallarborTown_BattleTentLobby_Text_SelectThreeMons:
@@ -77,7 +77,7 @@ FallarborTown_BattleTentLobby_Text_DidntSaveBeforeQuitting:
 	.string "You did not save the game before\n"
 	.string "shutting down, did you?\p"
 	.string "It is unfortunate, but that has\n"
-	.string "resulted in your disqualification\l"
+	.string "resulted in your disqualification\p"
 	.string "from your challenge.\p"
 	.string "You may, of course, start with a fresh\n"
 	.string "challenge.$"
@@ -129,7 +129,7 @@ VerdanturfTown_BattleTentLobby_Text_TakeChallenge:
 
 VerdanturfTown_BattleTentLobby_Text_ExplainVerdanturfTent:
 	.string "In the Verdanturf Battle Tent,\n"
-	.string "there is one crucial rule that must\l"
+	.string "there is one crucial rule that must\p"
 	.string "be obeyed.\p"
 	.string "Trainers are permitted only to switch\n"
 	.string "their Pokémon in and out.\p"
@@ -140,7 +140,7 @@ VerdanturfTown_BattleTentLobby_Text_ExplainVerdanturfTent:
 	.string "You must put your trust in your\n"
 	.string "Pokémon and watch over them.\p"
 	.string "If you achieve the honor of beating\n"
-	.string "three Trainers in succession,\l"
+	.string "three Trainers in succession,\p"
 	.string "we will present you with a prize.\p"
 	.string "If you want to interrupt your\n"
 	.string "challenge, please save the game.\p"
@@ -154,7 +154,7 @@ VerdanturfTown_BattleTentLobby_Text_ReturnFortified:
 @ Unused
 VerdanturfTown_BattleTentLobby_Text_WhichLevelMode:
 	.string "There are two levels of difficulty,\n"
-	.string "Level 50 and Open Level.\l"
+	.string "Level 50 and Open Level.\p"
 	.string "Which is your choice of a challenge?$"
 
 VerdanturfTown_BattleTentLobby_Text_NotEnoughValidMonsLv50:
@@ -224,7 +224,7 @@ SlateportCity_BattleTentLobby_Text_TakeChallenge:
 
 SlateportCity_BattleTentLobby_Text_ExplainSlateportTent:
 	.string "Here at the Slateport Battle Tent,\n"
-	.string "we hold Battle Swap events\l"
+	.string "we hold Battle Swap events\p"
 	.string "using rental Pokémon.\p"
 	.string "First, you will be loaned three\n"
 	.string "Pokémon specifically for this event.\p"
@@ -233,7 +233,7 @@ SlateportCity_BattleTentLobby_Text_ExplainSlateportTent:
 	.string "If you win, you are permitted to trade\n"
 	.string "one of your rental Pokémon.\p"
 	.string "Repeat this cycle of battling and\n"
-	.string "trading--if you win three times in\l"
+	.string "trading--if you win three times in\p"
 	.string "a row, you will earn a fine prize.\p"
 	.string "If you want to interrupt your\n"
 	.string "challenge, please save the game.\p"
@@ -322,7 +322,7 @@ SlateportCity_BattleTentLobby_Text_ExplainBasicRules:
 	.string "In a Battle Swap event, you may use\n"
 	.string "only three Pokémon.\p"
 	.string "Whether you are renting or swapping,\n"
-	.string "your team may not have two or more\l"
+	.string "your team may not have two or more\p"
 	.string "of the same Pokémon.$"
 
 SlateportCity_BattleTentLobby_Text_ExplainSwapPartnerRules:
@@ -333,7 +333,7 @@ SlateportCity_BattleTentLobby_Text_ExplainSwapPartnerRules:
 
 SlateportCity_BattleTentLobby_Text_ExplainSwapNumberRules:
 	.string "After every battle you win, you may\n"
-	.string "swap for one of your defeated\l"
+	.string "swap for one of your defeated\p"
 	.string "opponent's Pokémon.\p"
 	.string "You will not be able to swap Pokémon\n"
 	.string "with the third Trainer in the event.$"
@@ -342,10 +342,10 @@ SlateportCity_BattleTentLobby_Text_ExplainSwapNotes:
 	.string "There are two key points to be aware\n"
 	.string "of when swapping Pokémon.\p"
 	.string "First, when swapping, you can't check\n"
-	.string "the stats of the Pokémon you are\l"
+	.string "the stats of the Pokémon you are\p"
 	.string "about to receive.\p"
 	.string "Second, the Pokémon on your team\n"
-	.string "are lined up in sequence, depending on\l"
+	.string "are lined up in sequence, depending on\p"
 	.string "the order in which you rented them.\p"
 	.string "This sequence remains unchanged\n"
 	.string "even when swaps are made.$"
@@ -368,10 +368,10 @@ VerdanturfTown_BattleTentLobby_Text_ReadWhichHeading:
 @ Unused
 VerdanturfTown_BattleTentLobby_Text_ExplainBasicRules:
 	.string "Here at the Verdanturf Battle Tent,\n"
-	.string "Pokémon are required to think and\l"
+	.string "Pokémon are required to think and\p"
 	.string "battle by themselves.\p"
 	.string "Unlike in the wild, Pokémon that live\n"
-	.string "with people behave differently\l"
+	.string "with people behave differently\p"
 	.string "depending on their nature.$"
 
 @ Unused
@@ -383,7 +383,7 @@ VerdanturfTown_BattleTentLobby_Text_ExplainNatureRules:
 	.string "Yet another may enjoy vexing or\n"
 	.string "confounding its foes.\p"
 	.string "Depending on its nature, a Pokémon\n"
-	.string "will have favorite moves that it is good\l"
+	.string "will have favorite moves that it is good\p"
 	.string "at using.\p"
 	.string "It may also dislike certain moves that\n"
 	.string "it has trouble using.$"
@@ -393,11 +393,11 @@ VerdanturfTown_BattleTentLobby_Text_ExplainMoveRules:
 	.string "There are offensive moves that inflict\n"
 	.string "direct damage on the foe.\p"
 	.string "There are defensive moves that are\n"
-	.string "used to prepare for enemy attacks or\l"
+	.string "used to prepare for enemy attacks or\p"
 	.string "used to heal HP and so on.\p"
 	.string "There are also other somewhat-odd\n"
-	.string "moves that may enfeeble the foes with\l"
-	.string "stat problems including poison and \l"
+	.string "moves that may enfeeble the foes with\p"
+	.string "stat problems including poison and \n"
 	.string "paralysis.\p"
 	.string "Pokémon will consider using moves in\n"
 	.string "these three categories.$"
@@ -405,25 +405,25 @@ VerdanturfTown_BattleTentLobby_Text_ExplainMoveRules:
 @ Unused
 VerdanturfTown_BattleTentLobby_Text_ExplainUnderpoweredRules:
 	.string "When not under command by its Trainer,\n"
-	.string "a Pokémon may be unable to effectively\l"
+	.string "a Pokémon may be unable to effectively\p"
 	.string "use certain moves.\p"
 	.string "A Pokémon is not good at using any\n"
 	.string "move that it dislikes.\p"
 	.string "If a Pokémon only knows moves that\n"
-	.string "do not match its nature, it will often\l"
+	.string "do not match its nature, it will often\p"
 	.string "be unable to live up to its potential.$"
 
 @ Unused
 VerdanturfTown_BattleTentLobby_Text_ExplainWhenInDangerRules:
 	.string "Depending on its nature, a Pokémon may\n"
-	.string "start using moves that don't match its\l"
+	.string "start using moves that don't match its\p"
 	.string "nature when it is in trouble.\p"
 	.string "If a Pokémon begins behaving oddly\n"
 	.string "in a pinch, watch it carefully.$"
 
 BattleTentLobby_Text_ExplainLevelRules:
 	.string "At this Battle Tent, the levels of\n"
-	.string "your opponents will be adjusted to\l"
+	.string "your opponents will be adjusted to\p"
 	.string "match the levels of your Pokémon.\p"
 	.string "However, no Trainer you face will\n"
 	.string "have any Pokémon below Level 30.$"

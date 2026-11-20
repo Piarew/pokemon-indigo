@@ -348,12 +348,12 @@ BattleFrontier_OutsideWest_Text_ThenWhereWouldYouLikeToGo:
 
 BattleFrontier_OutsideWest_Text_BestOutOfAllMyFriends:
 	.string "I'm the best out of all my friends.\n"
-	.string "But here…\l"
+	.string "But here…\p"
 	.string "I've been useless!$"
 
 BattleFrontier_OutsideWest_Text_CantFindBattleTower:
 	.string "I want to go to the Battle Tower,\n"
-	.string "but I can't find it even though I have\l"
+	.string "but I can't find it even though I have\p"
 	.string "a map of the Battle Frontier.\p"
 	.string "This place is just too big!$"
 
@@ -393,7 +393,7 @@ BattleFrontier_OutsideWest_Text_ScaredOfPikeBecauseSeviper:
 	.string "I'm scared of going into the Battle\n"
 	.string "Pike because of Seviper…\p"
 	.string "B-but I came all the way here, so I will\n"
-	.string "try to conquer everything!\l"
+	.string "try to conquer everything!\p"
 	.string "…Shudder…$"
 
 BattleFrontier_OutsideWest_Text_LetsPlayRockPaperScissors:
@@ -409,12 +409,12 @@ BattleFrontier_OutsideWest_Text_LostIllPutOffPikeChallenge:
 	.string "Oh, no…\n"
 	.string "I lost.\p"
 	.string "I guess I'm not very lucky today.\n"
-	.string "I'll put off my Battle Pike challenge\l"
+	.string "I'll put off my Battle Pike challenge\p"
 	.string "until tomorrow.$"
 
 BattleFrontier_OutsideWest_Text_ChooseFishingOverBattling:
 	.string "I believe I'm the only person here who,\n"
-	.string "for some unknown reason, would choose\l"
+	.string "for some unknown reason, would choose\p"
 	.string "fishing over battling.\p"
 	.string "Huh? You can't catch anything here?\n"
 	.string "That's disappointing…$"
@@ -427,12 +427,12 @@ BattleFrontier_OutsideWest_Text_YoureOffToChallengeDome:
 	.string "Oh? You're off to challenge\n"
 	.string "the Battle Dome?\p"
 	.string "I'll wish you the best of luck.\n"
-	.string "Let us both win our way up and meet\l"
+	.string "Let us both win our way up and meet\p"
 	.string "in challenges.$"
 
 BattleFrontier_OutsideWest_Text_DomeIsHereGrandpa:
 	.string "Grandpa, over here!\n"
-	.string "The Battle Dome is here!\l"
+	.string "The Battle Dome is here!\p"
 	.string "Go get 'em, Grandpa!$"
 
 BattleFrontier_OutsideWest_Text_WontLetGentlemenBeatMe:
@@ -504,12 +504,12 @@ BattleFrontier_OutsideWest_Text_FansOverThereUsedToBeTrainers:
 	.string "They were so thoroughly whipped,\n"
 	.string "they became smitten by the Trainer.\p"
 	.string "Now they're just fans of the Trainer.\n"
-	.string "They go cheer for their idol at the\l"
+	.string "They go cheer for their idol at the\p"
 	.string "Battle Dome every day now.$"
 
 BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier:
 	.string "I heard a rumor that someone saw\n"
-	.string "a Pokémon with an unusually long tail\l"
+	.string "a Pokémon with an unusually long tail\p"
 	.string "somewhere in the Battle Frontier.\p"
 	.string "It must be adorable. I'm sure of it…\p"
 	.string "Oh, challenges can wait. I feel driven\n"

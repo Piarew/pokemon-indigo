@@ -152,13 +152,13 @@ BattleFrontier_Lounge1_EventScript_Boy2::
 
 BattleFrontier_Lounge1_Text_PokemonBreederIntro:
 	.string "For 70 years I have raised Pokémon!\n"
-	.string "I am the man they revere as\l"
+	.string "I am the man they revere as\p"
 	.string "the legendary top Pokémon Breeder!\p"
 	.string "If you ever become as seasoned as me,\n"
-	.string "you'll see the abilities of Pokémon\l"
+	.string "you'll see the abilities of Pokémon\p"
 	.string "at a glance.\p"
 	.string "You're a Trainer. Doesn't it interest\n"
-	.string "you to know your own Pokémon's\l"
+	.string "you to know your own Pokémon's\p"
 	.string "abilities?\p"
 	.string "Here!\n"
 	.string "Let's have a look at your Pokémon!$"
@@ -253,6 +253,6 @@ BattleFrontier_Lounge1_Text_SaidMyMonIsOutstanding:
 
 BattleFrontier_Lounge1_Text_DidntDoAnythingSpecialRaisingIt:
 	.string "He said my Pokémon is outstanding!\n"
-	.string "But I didn't do anything special\l"
+	.string "But I didn't do anything special\p"
 	.string "raising it…$"
 

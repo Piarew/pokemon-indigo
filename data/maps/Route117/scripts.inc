@@ -218,7 +218,7 @@ Route117_EventScript_Aisha::
 Route117_Text_DayCarePokemonHadNewMove:
 	.string "I left my Pokémon at the Day Care.\p"
 	.string "When I got it back, it had a new move\n"
-	.string "that I didn't teach it.\l"
+	.string "that I didn't teach it.\p"
 	.string "I was really, really surprised.$"
 
 Route117_Text_ArentTheseFlowersPretty:

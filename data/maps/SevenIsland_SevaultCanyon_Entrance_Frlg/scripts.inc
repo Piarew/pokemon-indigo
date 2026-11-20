@@ -29,7 +29,7 @@ SevenIsland_SevaultCanyon_Entrance_Text_MasonDefeat::
 
 SevenIsland_SevaultCanyon_Entrance_Text_MasonPostBattle::
 	.string "Lalalah…\n"
-	.string "My Pokémon, I send them out,\l"
+	.string "My Pokémon, I send them out,\p"
 	.string "all the girls scream and shout!$"
 
 SevenIsland_SevaultCanyon_Entrance_Text_NicolasIntro::

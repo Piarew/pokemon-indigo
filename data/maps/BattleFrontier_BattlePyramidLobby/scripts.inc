@@ -542,10 +542,10 @@ BattleFrontier_BattlePyramidLobby_Text_AwaitFutureChallenge:
 
 BattleFrontier_BattlePyramidLobby_Text_ExplainBattlePyramid:
 	.string "The Battle Quest is a battling\n"
-	.string "event in which you must explore\l"
+	.string "event in which you must explore\p"
 	.string "the Pyramid and try to reach the top.\p"
 	.string "In the Pyramid are seven floors of\n"
-	.string "mazes, all of them filled with not only\l"
+	.string "mazes, all of them filled with not only\p"
 	.string "skilled Trainers but also wild Pokémon.\p"
 	.string "You must enter with three Pokémon,\n"
 	.string "none of them holding an item.\p"
@@ -554,14 +554,14 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainBattlePyramid:
 	.string "If you fail in your challenge, any item\n"
 	.string "placed in the Battle Bag disappears.\p"
 	.string "If you want to interrupt your\n"
-	.string "challenge, you must select “Rest”\l"
+	.string "challenge, you must select “Rest”\p"
 	.string "and save the game.\p"
 	.string "If you don't save before interrupting,\n"
 	.string "you will be disqualified.$"
 
 BattleFrontier_BattlePyramidLobby_Text_WhichLevelMode:
 	.string "The Pyramid offers two courses,\n"
-	.string "Level 50 and Open Level.\l"
+	.string "Level 50 and Open Level.\p"
 	.string "Which will you enter?$"
 
 BattleFrontier_BattlePyramidLobby_Text_SelectThreeMons:
@@ -616,7 +616,7 @@ BattleFrontier_BattlePyramidLobby_Text_ExchangedBagForBattleBag:
 
 BattleFrontier_BattlePyramidLobby_Text_StepOnFloorPanel:
 	.string "When you step on this floor panel,\n"
-	.string "you will be transported to a higher\l"
+	.string "you will be transported to a higher\p"
 	.string "floor in the Pyramid.\p"
 	.string "I hope for your sake that your\n"
 	.string "quest goes safely!$"
@@ -741,7 +741,7 @@ BattleFrontier_BattlePyramidLobby_Text_HintPPWaste:
 	.string "unrequited anger…\p"
 	.string "It is a curse…\p"
 	.string "…And, I see your Pokémon drained of\n"
-	.string "Power Points and having no recourse\l"
+	.string "Power Points and having no recourse\p"
 	.string "but to use Struggle…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintLevitate:
@@ -843,7 +843,7 @@ BattleFrontier_BattlePyramidLobby_Text_TrainersNoticeRunning:
 	.string "If you run fast, Trainers may notice\n"
 	.string "and come after you for a battle.\p"
 	.string "So, if you want to avoid Trainers,\n"
-	.string "don't catch their eyes, but sneak\l"
+	.string "don't catch their eyes, but sneak\p"
 	.string "cautiously and quietly past them.$"
 
 BattleFrontier_BattlePyramidLobby_Text_LostLotOfItems:
@@ -860,7 +860,7 @@ BattleFrontier_BattlePyramidLobby_Text_YouveDefeatedPyramidKing:
 
 BattleFrontier_BattlePyramidLobby_Text_GiveYouTheseBattlePoints:
 	.string "Young explorer!\n"
-	.string "In commendation of your courage,\l"
+	.string "In commendation of your courage,\p"
 	.string "we give you these Battle Point(s)!$"
 
 BattleFrontier_BattlePyramidLobby_Text_RulesAreListed:
@@ -871,7 +871,7 @@ BattleFrontier_BattlePyramidLobby_Text_ReadWhichHeading:
 
 BattleFrontier_BattlePyramidLobby_Text_ExplainMonRules:
 	.string "When the Pyramid is conquered,\n"
-	.string "the wild Pokémon that appear in it\l"
+	.string "the wild Pokémon that appear in it\p"
 	.string "are replaced by different kinds.\p"
 	.string "Explore, observe, and learn what kinds\n"
 	.string "of wild Pokémon you may encounter.$"
@@ -896,7 +896,7 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainBagRules:
 	.string "The Battle Bag serves as your Bag\n"
 	.string "while in the Pyramid.\p"
 	.string "There are two separate Battle Bags--\n"
-	.string "one each for the Level 50 and\l"
+	.string "one each for the Level 50 and\p"
 	.string "Open Level adventures.\p"
 	.string "They each can hold up to 99 pieces\n"
 	.string "of ten kinds of items.\p"

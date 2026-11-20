@@ -22,12 +22,12 @@ gBirchDexRatingText_LessThan20::
 
 gBirchDexRatingText_LessThan30::
 	.string "Some Pokémon only appear in\n"
-	.string "certain areas.\l"
+	.string "certain areas.\p"
 	.string "You must be persistent.$"
 
 gBirchDexRatingText_LessThan40::
 	.string "Well, it could use more quantity,\n"
-	.string "but this is looking more like\l"
+	.string "but this is looking more like\p"
 	.string "a Pokédex now.$"
 
 gBirchDexRatingText_LessThan50::
@@ -44,7 +44,7 @@ gBirchDexRatingText_LessThan70::
 
 gBirchDexRatingText_LessThan80::
 	.string "This is going to be a fantastic\n"
-	.string "Pokédex.\l"
+	.string "Pokédex.\p"
 	.string "That's the feeling I'm getting.$"
 
 gBirchDexRatingText_LessThan90::
@@ -71,12 +71,12 @@ gBirchDexRatingText_LessThan130::
 
 gBirchDexRatingText_LessThan140::
 	.string "I've heard of Pokémon that evolve\n"
-	.string "when they come to fully love their\l"
+	.string "when they come to fully love their\p"
 	.string "Trainers.$"
 
 gBirchDexRatingText_LessThan150::
 	.string "I had no idea that there were so\n"
-	.string "many Pokémon species in the Hoenn\l"
+	.string "many Pokémon species in the Hoenn\p"
 	.string "region.$"
 
 gBirchDexRatingText_LessThan160::
@@ -87,12 +87,12 @@ gBirchDexRatingText_LessThan160::
 
 gBirchDexRatingText_LessThan170::
 	.string "One can get a very good idea about\n"
-	.string "the Pokémon of the Hoenn region\l"
+	.string "the Pokémon of the Hoenn region\p"
 	.string "by looking through your Pokédex.$"
 
 gBirchDexRatingText_LessThan180::
 	.string "I would say you already qualify as\n"
-	.string "a Pokémon Professor, and a good\l"
+	.string "a Pokémon Professor, and a good\p"
 	.string "one, too!$"
 
 gBirchDexRatingText_LessThan190::
@@ -101,7 +101,7 @@ gBirchDexRatingText_LessThan190::
 
 gBirchDexRatingText_LessThan200::
 	.string "You're very close to completing\n"
-	.string "this Pokédex.\l"
+	.string "this Pokédex.\p"
 	.string "I can feel it in my bones!$"
 
 gBirchDexRatingText_DexCompleted::
@@ -225,7 +225,7 @@ PokedexRating_Text_Wroooaaarrr::
 
 PokedexRating_Text_ThankYouMadeDreamReality::
 	.string "Thank you, {PLAYER}!\n"
-	.string "Sincerely, thank you!\l"
+	.string "Sincerely, thank you!\p"
 	.string "You've made my dream a reality!$"
 
 PokedexRating_Text_LoveSeeingYourPokedex::

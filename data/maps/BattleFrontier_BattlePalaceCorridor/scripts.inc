@@ -123,12 +123,12 @@ BattleFrontier_BattlePalaceCorridor_Text_PeopleAndMonAreSame:
 	.string "People and Pokémon, they are but\n"
 	.string "the same…\p"
 	.string "Their individual nature makes them\n"
-	.string "good at certain things, and not good\l"
+	.string "good at certain things, and not good\p"
 	.string "at others.$"
 
 BattleFrontier_BattlePalaceCorridor_Text_LetMonDoWhatItLikes:
 	.string "Rather than trying to make a Pokémon\n"
-	.string "do what it dislikes, try to let it do\l"
+	.string "do what it dislikes, try to let it do\p"
 	.string "what it likes and is good at doing.\p"
 	.string "Put yourself in the Pokémon's position\n"
 	.string "and consider what moves it would like.$"

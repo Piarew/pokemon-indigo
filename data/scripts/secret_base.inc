@@ -702,10 +702,10 @@ SecretBase_Text_WhatWouldYouLikeToDo:
 
 SecretBase_Text_RegistryInfo:
 	.string "Once registered, a Secret Base will not\n"
-	.string "disappear unless the other Trainer\l"
+	.string "disappear unless the other Trainer\p"
 	.string "moves it to a different location.\p"
 	.string "If a Secret Base is deleted from the\n"
-	.string "registered list, another one may take\l"
+	.string "registered list, another one may take\p"
 	.string "its place.\p"
 	.string "Up to ten Secret Base locations\n"
 	.string "may be registered.$"

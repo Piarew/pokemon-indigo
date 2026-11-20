@@ -388,7 +388,7 @@ BattleFrontier_BattleArenaLobby_Text_ExplainChallenge:
 	.string "If you don't save, you will not be able\n"
 	.string "to continue with your challenge.\p"
 	.string "If you pull off the feat of beating\n"
-	.string "seven Trainers in succession,\l"
+	.string "seven Trainers in succession,\p"
 	.string "we will present you with Battle Points.$"
 
 BattleFrontier_BattleArenaLobby_Text_OkayToSave:
@@ -397,7 +397,7 @@ BattleFrontier_BattleArenaLobby_Text_OkayToSave:
 
 BattleFrontier_BattleArenaLobby_Text_WhichLevelMode:
 	.string "The Battle Arena offers two levels\n"
-	.string "of challenge, Level 50 and Open Level.\l"
+	.string "of challenge, Level 50 and Open Level.\p"
 	.string "Which is your choice?$"
 
 BattleFrontier_BattleArenaLobby_Text_SelectThreeMons:
@@ -439,7 +439,7 @@ BattleFrontier_BattleArenaLobby_Text_DidntSaveBeforeShuttingDown:
 	.string "You did not save the game before\n"
 	.string "shutting down, did you?\p"
 	.string "It is unfortunate, but that has\n"
-	.string "resulted in your disqualification\l"
+	.string "resulted in your disqualification\p"
 	.string "from your challenge.\p"
 	.string "You may, of course, start with a fresh\n"
 	.string "challenge.$"
@@ -481,7 +481,7 @@ BattleFrontier_BattleArenaLobby_Text_LookingForwardToArrivalSaveGame:
 	.string "We have been looking forward to\n"
 	.string "your arrival.\p"
 	.string "Before I show you to the Battle\n"
-	.string "Arena, I must save the game.\l"
+	.string "Arena, I must save the game.\p"
 	.string "Please wait.$"
 
 BattleFrontier_BattleArenaLobby_Text_RecordLastMatch:
@@ -501,16 +501,16 @@ BattleFrontier_BattleArenaLobby_Text_LandingHitsWorked:
 BattleFrontier_BattleArenaLobby_Text_MatchWasDeclaredDraw:
 	.string "Our match was declared a draw.\p"
 	.string "When we ran out of time, both my\n"
-	.string "Pokémon and the opponent's had about\l"
+	.string "Pokémon and the opponent's had about\p"
 	.string "the same amount of HP left.$"
 
 BattleFrontier_BattleArenaLobby_Text_OrderOfMonsImportant:
 	.string "In the Battle Arena, the order of\n"
 	.string "Pokémon is totally important.\p"
 	.string "For example, if your first Pokémon\n"
-	.string "has certain type disadvantages,\l"
-	.string "try making your second Pokémon one\l"
-	.string "with moves that are super effective\l"
+	.string "has certain type disadvantages,\p"
+	.string "try making your second Pokémon one\n"
+	.string "with moves that are super effective\p"
 	.string "against the first one.\p"
 	.string "I think that will be a good way of\n"
 	.string "making an effective team.$"
@@ -535,37 +535,37 @@ BattleFrontier_BattleArenaLobby_Text_ExplainBattleRules:
 
 BattleFrontier_BattleArenaLobby_Text_ExplainMindRules:
 	.string "The first judging factor is “Mind.”\n"
-	.string "This factor evaluates how aggressive\l"
+	.string "This factor evaluates how aggressive\p"
 	.string "the battlers were.\p"
 	.string "The judging is based on how often\n"
-	.string "the Trainers ordered the use of\l"
+	.string "the Trainers ordered the use of\p"
 	.string "offensive moves.$"
 
 BattleFrontier_BattleArenaLobby_Text_ExplainSkillRules:
 	.string "The second judging factor is “Skill.”\n"
-	.string "This factor evaluates how effectively\l"
+	.string "This factor evaluates how effectively\p"
 	.string "Pokémon moves were used.\p"
 	.string "If a move worked successfully,\n"
 	.string "the Skill rating goes up.\p"
 	.string "If a move failed, the Skill rating\n"
 	.string "is lowered.\p"
 	.string "If it was an offensive move, the Skill\n"
-	.string "rating goes up if the move was “super\l"
-	.string "effective” and goes down if it was\l"
+	.string "rating goes up if the move was “super\p"
+	.string "effective” and goes down if it was\n"
 	.string "“not very effective.”\p"
 	.string "The Skill rating will not go up for\n"
 	.string "moves such as Protect and Detect.\p"
 	.string "If the opponent used Protect or\n"
-	.string "Detect, and your Pokémon failed to\l"
-	.string "hit with a move, its Skill rating will not\l"
+	.string "Detect, and your Pokémon failed to\p"
+	.string "hit with a move, its Skill rating will not\n"
 	.string "go down.$"
 
 BattleFrontier_BattleArenaLobby_Text_ExplainBodyRules:
 	.string "The third judging factor is “Body.”\n"
-	.string "This factor is based on how much HP\l"
+	.string "This factor is based on how much HP\p"
 	.string "remained at the end of a battle.\p"
 	.string "The rating takes into account how much\n"
-	.string "HP a Pokémon had at the start of\l"
+	.string "HP a Pokémon had at the start of\p"
 	.string "battle, and what remained at the end.$"
 
 BattleFrontier_BattleArenaLobby_Text_CongratsOnDefeatingTycoon:
@@ -576,5 +576,5 @@ BattleFrontier_BattleArenaLobby_Text_CongratsOnDefeatingTycoon:
 
 BattleFrontier_BattleArenaLobby_Text_PleaseAcceptBattlePoints:
 	.string "My dear challenger, in recognition of\n"
-	.string "your indefatigable spirit, please\l"
+	.string "your indefatigable spirit, please\p"
 	.string "accept these Battle Point(s).$"

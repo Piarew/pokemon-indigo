@@ -232,7 +232,7 @@ BattleFrontier_OutsideEast_EventScript_Camper::
 
 BattleFrontier_OutsideEast_Text_BattleTowerSign:
 	.string "This is the Battle Tower!\n"
-	.string "Keep the win streak as the toughest\l"
+	.string "Keep the win streak as the toughest\p"
 	.string "Trainer!$"
 
 BattleFrontier_OutsideEast_Text_BattlePalaceSign:
@@ -263,7 +263,7 @@ BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial:
 
 BattleFrontier_OutsideEast_Text_ConquerLeagueAndFrontier:
 	.string "My grand ambition is to conquer both\n"
-	.string "the Battle Frontier and the Pokémon\l"
+	.string "the Battle Frontier and the Pokémon\p"
 	.string "League.\p"
 	.string "And if my dream comes true…\p"
 	.string "I… I'm going to ask Mimi next door\n"
@@ -277,7 +277,7 @@ BattleFrontier_OutsideEast_Text_PyramidTooHarsh:
 
 BattleFrontier_OutsideEast_Text_ThriveInDarkness:
 	.string "I thrive in darkness…\n"
-	.string "Yes… What is worthy of me?\l"
+	.string "Yes… What is worthy of me?\p"
 	.string "None other than the Battle Pyramid…\p"
 	.string "What say you to wandering in darkness\n"
 	.string "and in utter and total desperation?$"
@@ -309,7 +309,7 @@ BattleFrontier_OutsideEast_Text_PeopleCallMeBusybody:
 	.string "People call me a busybody,\n"
 	.string "but I can't help it.\p"
 	.string "Your hat's on crooked!\n"
-	.string "Oh, no, trash on the ground!\l"
+	.string "Oh, no, trash on the ground!\p"
 	.string "Oops, it's almost dinnertime!\p"
 	.string "I don't know if I can stand to just\n"
 	.string "watch at the Battle Palace…$"
@@ -338,7 +338,7 @@ BattleFrontier_OutsideEast_Text_GoRackUpSomeWinsForDaddy:
 
 BattleFrontier_OutsideEast_Text_HeardPrettyGirlAtBattleArena:
 	.string "It wasn't easy getting here,\n"
-	.string "but I'd heard about this knockout\l"
+	.string "but I'd heard about this knockout\p"
 	.string "pretty girl at the Battle Arena.\p"
 	.string "Instead of her, do you know what\n"
 	.string "I found?\p"
@@ -355,10 +355,10 @@ BattleFrontier_OutsideEast_Text_LegendOfBattlePyramid:
 	.string "Do you know it?\n"
 	.string "The legend of the Battle Pyramid?\p"
 	.string "When there comes a confident Trainer\n"
-	.string "reaching for the golden pinnacle,\l"
+	.string "reaching for the golden pinnacle,\p"
 	.string "there shall appear a man among men.\p"
 	.string "Don't know that legend?\n"
-	.string "Well, of course not!\l"
+	.string "Well, of course not!\p"
 	.string "I just made it up!\p"
 	.string "What's it supposed to mean?\n"
 	.string "That, my friend, I can't say!$"
@@ -373,7 +373,7 @@ BattleFrontier_OutsideEast_Text_GotWipedOut:
 
 BattleFrontier_OutsideEast_Text_ToughTrainerInBattleTower:
 	.string "This guy ran into a horribly tough\n"
-	.string "Trainer while he was on the Battle\l"
+	.string "Trainer while he was on the Battle\p"
 	.string "Tower challenge.\p"
 	.string "Now look at him…\p"
 	.string "You need to be cautious if you ever\n"
@@ -389,7 +389,7 @@ BattleFrontier_OutsideEast_Text_LikeToHaveNameRecordedHere:
 	.string "Oh, yeah, okay!\n"
 	.string "So this is the Ranking Hall!\p"
 	.string "I'd like to go down in history as\n"
-	.string "a super champ and have my name\l"
+	.string "a super champ and have my name\p"
 	.string "recorded here for posterity.$"
 
 BattleFrontier_OutsideEast_Text_CanDoAnythingWithYou:
@@ -401,7 +401,7 @@ BattleFrontier_OutsideEast_Text_PowerOfOurLoveWillOvercome:
 	.string "Let's go to a Multi Battle Room\n"
 	.string "right this instant!\p"
 	.string "If we get together in the Battle Salon,\n"
-	.string "the power of our love will overcome\l"
+	.string "the power of our love will overcome\p"
 	.string "everyone we meet.\p"
 	.string "Why, before us, darling, everything\n"
 	.string "will topple like dominoes!$"

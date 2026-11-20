@@ -136,7 +136,7 @@ Debug_FlagsNotSetOverworldConfigMessage::
 
 Debug_FlagsNotSetOverworldConfigMessage_Text:
 	.string "Feature unavailable!\n"
-	.string "Please define a usable flag in:\l"
+	.string "Please define a usable flag in:\p"
 	.string "'include/config/overworld.h'!$"
 
 Debug_FlagsNotSetBattleConfigMessage::
@@ -145,7 +145,7 @@ Debug_FlagsNotSetBattleConfigMessage::
 
 Debug_FlagsNotSetBattleConfigMessage_Text:
 	.string "Feature unavailable!\n"
-	.string "Please define a usable flag in:\l"
+	.string "Please define a usable flag in:\p"
 	.string "'include/config/battle.h'!$"
 
 Debug_VarsNotSetBattleConfigMessage::
@@ -154,7 +154,7 @@ Debug_VarsNotSetBattleConfigMessage::
 
 Debug_VarsNotSetBattleConfigMessage_Text:
 	.string "Feature unavailable!\n"
-	.string "Please define a usable var in:\l"
+	.string "Please define a usable var in:\p"
 	.string "'include/config/battle.h'!$"
 
 Debug_BoxFilledMessage::
@@ -342,7 +342,9 @@ Debug_Follower_NPC_Not_Enabled::
 	end
 
 Debug_Enable_To_Use_Follower_NPCs:
-	.string "Feature unavailable.\nSet Fnpc_Enable_NPC_Followers to\lTrue in 'include/config/follower_npc.h'.$"
+	.string "Feature unavailable.\n"
+	.string "Set Fnpc_Enable_NPC_Followers to\p"
+	.string "True in 'include/config/follower_npc.h'.$"
 
 Debug_Follower_NPC_Event_Script::
 	lock
@@ -671,106 +673,97 @@ Debug_EventScript_EWRAMCounters_Text::
 	.string "Fishing Chain: {STR_VAR_2}.$"
 
 Debug_EventScript_FontTest_Text_1::
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "Angel Adept Blind Bodice Clique\n"
-	.string "Coast Dunce Docile Enact Eosin\l"
-	.string "Furlong Focal Gnome Gondola Human\l"
-	.string "Hoist Inlet Iodine Justin Jocose\l"
-	.string "Knoll Koala Linden Loads Milliner\l"
-	.string "Modal Number Nodule Onset Oddball\l"
-	.string "Pneumo Poncho Quanta Qophs Rhone\l"
-	.string "Roman Snout Sodium Tundra Tocsin\l"
-	.string "Uncle Udder Vulcan Vocal Whale\l"
-	.string "Woman Xmas Xenon Yunnan Young\l"
+	.string "{FONT_SMALL_NARROWER}Angel Adept Blind Bodice Clique\n"
+	.string "Coast Dunce Docile Enact Eosin\p"
+	.string "Furlong Focal Gnome Gondola Human\n"
+	.string "Hoist Inlet Iodine Justin Jocose\p"
+	.string "Knoll Koala Linden Loads Milliner\n"
+	.string "Modal Number Nodule Onset Oddball\p"
+	.string "Pneumo Poncho Quanta Qophs Rhone\n"
+	.string "Roman Snout Sodium Tundra Tocsin\p"
+	.string "Uncle Udder Vulcan Vocal Whale\n"
+	.string "Woman Xmas Xenon Yunnan Young\p"
 	.string "Zloty Zodiac.$"
 
 Debug_EventScript_FontTest_Text_2::
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "Angel angel adept for the nuance loads\n"
-	.string "of the arena cocoa and quaalude. Blind\l"
-	.string "blind bodice for the submit oboe of the\l"
-	.string "club snob and abbot. Clique clique\l"
-	.string "coast for the pouch loco of the franc\l"
-	.string "assoc and accede. Dunce dunce docile\l"
-	.string "for the loudness mastodon of the\l"
+	.string "{FONT_SMALL_NARROWER}Angel angel adept for the nuance loads\n"
+	.string "of the arena cocoa and quaalude. Blind\p"
+	.string "blind bodice for the submit oboe of the\n"
+	.string "club snob and abbot. Clique clique\p"
+	.string "coast for the pouch loco of the franc\n"
+	.string "assoc and accede. Dunce dunce docile\p"
+	.string "for the loudness mastodon of the\n"
 	.string "loud statehood and huddle.$"
 
 Debug_EventScript_FontTest_Text_3::
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "Enact enact eosin for the quench coed\n"
-	.string "of the pique canoe and bleep. Furlong\l"
-	.string "furlong focal for the genuflect\l"
-	.string "profound of the motif aloof and offers.\l"
-	.string "Gnome gnome gondola for the impugn\l"
-	.string "logos of the unplug analog and smuggle.\l"
-	.string "Human human hoist for the buddhist\l"
-	.string "alcohol of the riyadh caliph and\l"
+	.string "{FONT_SMALL_NARROWER}Enact enact eosin for the quench coed\n"
+	.string "of the pique canoe and bleep. Furlong\p"
+	.string "furlong focal for the genuflect\n"
+	.string "profound of the motif aloof and offers.\p"
+	.string "Gnome gnome gondola for the impugn\n"
+	.string "logos of the unplug analog and smuggle.\p"
+	.string "Human human hoist for the buddhist\n"
+	.string "alcohol of the riyadh caliph and\p"
 	.string "bathhouse.$"
 
 Debug_EventScript_FontTest_Text_4::
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "Inlet inlet iodine for the quince\n"
-	.string "champion of the ennui scampi and shiite.\l"
-	.string "Justin justin jocose for the djibouti\l"
-	.string "sojourn of the oranj raj and hajjis.\l"
-	.string "Knoll knoll koala for the banknote\l"
-	.string "lookout of the dybbuk outlook and\l"
-	.string "trekked. Linden linden loads for the\l"
-	.string "ulna monolog of the consul menthol and\l"
+	.string "{FONT_SMALL_NARROWER}Inlet inlet iodine for the quince\n"
+	.string "champion of the ennui scampi and shiite.\p"
+	.string "Justin justin jocose for the djibouti\n"
+	.string "sojourn of the oranj raj and hajjis.\p"
+	.string "Knoll knoll koala for the banknote\n"
+	.string "lookout of the dybbuk outlook and\p"
+	.string "trekked. Linden linden loads for the\n"
+	.string "ulna monolog of the consul menthol and\p"
 	.string "shallot.$"
 
 Debug_EventScript_FontTest_Text_5::
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "Milliner milliner modal for the alumna\n"
-	.string "solomon of the album custom and summon.\l"
-	.string "Number number nodule for the unmade\l"
-	.string "economic of the shotgun bison and\l"
-	.string "tunnel. Onset onset oddball for the\l"
-	.string "abandon podium of the antiquo tempo\l"
-	.string "and moonlit. Pneumo pneumo poncho for\l"
-	.string "the dauphin opossum of the holdup\l"
+	.string "{FONT_SMALL_NARROWER}Milliner milliner modal for the alumna\n"
+	.string "solomon of the album custom and summon.\p"
+	.string "Number number nodule for the unmade\n"
+	.string "economic of the shotgun bison and\p"
+	.string "tunnel. Onset onset oddball for the\n"
+	.string "abandon podium of the antiquo tempo\p"
+	.string "and moonlit. Pneumo pneumo poncho for\n"
+	.string "the dauphin opossum of the holdup\p"
 	.string "bishop and supplies.$"
 
 Debug_EventScript_FontTest_Text_6::
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "Quanta quanta qophs for the inquest\n"
-	.string "sheqel of the cinq coq and suqqu. Rhone\l"
-	.string "rhone roman for the burnt porous of the\l"
-	.string "lemur clamor and carrot. Snout snout\l"
-	.string "sodium for the ensnare bosom of the\l"
-	.string "genus pathos and missing. Tundra\l"
-	.string "tundra tocsin for the nutmeg isotope\l"
+	.string "{FONT_SMALL_NARROWER}Quanta quanta qophs for the inquest\n"
+	.string "sheqel of the cinq coq and suqqu. Rhone\p"
+	.string "rhone roman for the burnt porous of the\n"
+	.string "lemur clamor and carrot. Snout snout\p"
+	.string "sodium for the ensnare bosom of the\n"
+	.string "genus pathos and missing. Tundra\p"
+	.string "tundra tocsin for the nutmeg isotope\n"
 	.string "of the peasant ingot and ottoman.$"
 
 Debug_EventScript_FontTest_Text_7::
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "Uncle uncle udder for the dunes cloud\n"
-	.string "of the hindu thou and continuum. Vulcan\l"
-	.string "vulcan vocal for the alluvial ovoid of\l"
-	.string "the yugoslav chekhov and revved. Whale\l"
-	.string "whale woman for the meanwhile blowout\l"
-	.string "of the forepaw meadow and glowworm.\l"
-	.string "Xmas xmas xenon for the bauxite\l"
-	.string "doxology of the tableaux equinox and\l"
+	.string "{FONT_SMALL_NARROWER}Uncle uncle udder for the dunes cloud\n"
+	.string "of the hindu thou and continuum. Vulcan\p"
+	.string "vulcan vocal for the alluvial ovoid of\n"
+	.string "the yugoslav chekhov and revved. Whale\p"
+	.string "whale woman for the meanwhile blowout\n"
+	.string "of the forepaw meadow and glowworm.\p"
+	.string "Xmas xmas xenon for the bauxite\n"
+	.string "doxology of the tableaux equinox and\p"
 	.string "exxon.$"
 
 Debug_EventScript_FontTest_Text_8::
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "Yunnan yunnan young for the dynamo\n"
-	.string "coyote of the obloquy employ and\l"
-	.string "sayyid. Zloty zloty zodiac for the gizmo\l"
+	.string "{FONT_SMALL_NARROWER}Yunnan yunnan young for the dynamo\n"
+	.string "coyote of the obloquy employ and\p"
+	.string "sayyid. Zloty zloty zodiac for the gizmo\n"
 	.string "ozone of the franz laissez and buzzing.$"
 
 
 Debug_EventScript_FontTest_Text_9::                 @ Special thanks to Nintendo for this nice pangram to test other glyphs
-	.string "{FONT_SMALL_NARROWER}"                 @ Edit this to test your font
-	.string "42 × 138 = 5796.\n"
-	.string "Mr Jock, TV quiz PhD: bags 20% fewer\l"
-	.string "lynx at a café; voilà, they're “worth”\l"
-	.string "♂1/♀1 = ¥1. That's 10 + 9 - 8 = 11\l"
-	.string "Nintendo Gba can connect to a Nintendo\l"
-	.string "GameCube console! He claimed-though I don't\l"
-	.string "believe him-to have done so in an eyes-shut\l"
+	.string "{FONT_SMALL_NARROWER}42 × 138 = 5796.\n"
+	.string "Mr Jock, TV quiz PhD: bags 20% fewer\p"
+	.string "lynx at a café; voilà, they're “worth”\n"
+	.string "♂1/♀1 = ¥1. That's 10 + 9 - 8 = 11\p"
+	.string "Nintendo Gba can connect to a Nintendo\n"
+	.string "GameCube console! He claimed-though I don't\p"
+	.string "believe him-to have done so in an eyes-shut\n"
 	.string "state…?$"
 
 Debug_PrintFontTest::
@@ -820,7 +813,9 @@ Debug_EventScript_FakeRTCNotEnabled::
 	end
 
 Debug_EventScript_FakeRTCNotEnabled_Text_0:
-	.string "You currently do not have Fake Rtc\nenabled. Please enable it in include/\lconfig/overworld.h$"
+	.string "You currently do not have Fake Rtc\n"
+	.string "enabled. Please enable it in include/\p"
+	.string "config/overworld.h$"
 
 
 Debug_EventScript_TellTheTime_Text_0:

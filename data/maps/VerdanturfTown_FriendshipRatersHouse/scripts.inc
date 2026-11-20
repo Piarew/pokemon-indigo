@@ -70,7 +70,7 @@ VerdanturfTown_FriendshipRatersHouse_Text_SeeHowMuchPokemonLikesYou:
 
 VerdanturfTown_FriendshipRatersHouse_Text_AdoresYou:
 	.string "It adores you.\n"
-	.string "It can't possibly love you any more.\l"
+	.string "It can't possibly love you any more.\p"
 	.string "I even feel happy seeing it.$"
 
 VerdanturfTown_FriendshipRatersHouse_Text_VeryHappy:
@@ -91,7 +91,7 @@ VerdanturfTown_FriendshipRatersHouse_Text_NotUsedToYou:
 
 VerdanturfTown_FriendshipRatersHouse_Text_VeryWary:
 	.string "It's very wary.\n"
-	.string "It has scary viciousness in its eyes.\l"
+	.string "It has scary viciousness in its eyes.\p"
 	.string "It doesn't like you much at all.$"
 
 VerdanturfTown_FriendshipRatersHouse_Text_DetestsYou:

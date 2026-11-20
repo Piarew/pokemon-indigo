@@ -42,7 +42,7 @@ Route21_South_Text_ClaudeDefeat::
 
 Route21_South_Text_ClaudePostBattle::
 	.string "Sheesh, I haven't caught a thing.\n"
-	.string "Could this place actually be a\l"
+	.string "Could this place actually be a\p"
 	.string "giant pool or something?$"
 
 Route21_South_Text_NolanIntro::
@@ -69,7 +69,7 @@ Route21_North_Text_LilPostBattle::
 
 Route21_North_Text_LilNotEnoughMons::
 	.string "Lil: Huh? A battle?\n"
-	.string "I can't be bothered to do it alone.\l"
+	.string "I can't be bothered to do it alone.\p"
 	.string "Bring two Pokémon, won't you?$"
 
 Route21_North_Text_IanIntro::

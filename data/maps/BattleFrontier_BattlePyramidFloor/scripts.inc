@@ -129,7 +129,7 @@ BattleFacility_TrainerBattle_PlaceholderText:
 
 gText_BattlePyramidConfirmRest::
 	.string "Your Battle Pyramid quest will be\n"
-	.string "saved so that you may quit for now.\l"
+	.string "saved so that you may quit for now.\p"
 	.string "Is that okay?$"
 
 gText_BattlePyramidConfirmRetire::
@@ -374,7 +374,7 @@ BattlePyramid_Text_OneItemRemaining3::
 BattlePyramid_Text_ZeroItemsRemaining3::
 	.string "How's your stock of items holding up?\p"
 	.string "I reckon there are no more items\n"
-	.string "waiting to be found on this floor.\l"
+	.string "waiting to be found on this floor.\p"
 	.string "You take care now!$"
 
 BattlePyramid_Text_EightItemsRemaining4::

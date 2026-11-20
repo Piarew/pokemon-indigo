@@ -132,10 +132,10 @@ Route121_SafariZoneEntrance_Text_ComeInAndEnjoy:
 
 Route121_SafariZoneEntrance_Text_FirstTimeInfo:
 	.string "When you enter the Safari Zone, you\n"
-	.string "start with 30 Safari Balls for\l"
+	.string "start with 30 Safari Balls for\p"
 	.string "catching Pokémon.\p"
 	.string "The Safari Game is over when you run\n"
-	.string "out of Safari Balls, or when you've\l"
+	.string "out of Safari Balls, or when you've\p"
 	.string "walked 500 steps.\p"
 	.string "Come in and enjoy the Safari Zone!$"
 
@@ -251,7 +251,7 @@ SafariZone_RestHouse_Text_Youngster:
 	.string "I don't have any {POKEBLOCK}S, but I caught\n"
 	.string "a good number of Pokémon.\p"
 	.string "You can improve your chances of making\n"
-	.string "a catch by getting closer to them\l"
+	.string "a catch by getting closer to them\p"
 	.string "before throwing a Safari Ball.$"
 
 SafariZone_RestHouse_Text_PsychicM:

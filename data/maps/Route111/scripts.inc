@@ -564,7 +564,7 @@ Route111_EventScript_TrainerHillSign::
 Route111_Text_BattleOurFamily:
 	.string "Hello! I take it you're a traveler.\p"
 	.string "How's this? What do you say to taking\n"
-	.string "on our family of four in a series of\l"
+	.string "on our family of four in a series of\p"
 	.string "Pokémon battles?$"
 
 Route111_Text_IsThatSo:
@@ -624,15 +624,15 @@ Route111_Text_VickyPostBattle:
 
 Route111_Text_ToughToKeepWinningUpTheRanks:
 	.string "If you don't raise your Pokémon some\n"
-	.string "more, it could be tough to keep winning\l"
+	.string "more, it could be tough to keep winning\p"
 	.string "up through the ranks.\p"
 	.string "I've heard the Pokémon League's\n"
-	.string "Elite Four are far stronger than\l"
+	.string "Elite Four are far stronger than\p"
 	.string "any Gym Leader.$"
 
 Route111_Text_WinstrateFamilyDestroyedMe:
 	.string "I challenged the Winstrate family,\n"
-	.string "but four matches in a row is tough\l"
+	.string "but four matches in a row is tough\p"
 	.string "going… They destroyed me.$"
 
 Route111_Text_RouteSignMauville:
@@ -658,7 +658,7 @@ Route111_Text_OldLadysRestStopSign:
 Route111_Text_TrainerTipsSpAtkSpDef:
 	.string "Trainer Tips\p"
 	.string "One of the indicators of a Pokémon's\n"
-	.string "powerfulness is Sp. ATK. It stands for\l"
+	.string "powerfulness is Sp. ATK. It stands for\p"
 	.string "“Special Attack.”\p"
 	.string "Likewise, Sp. DEF stands for “Special\n"
 	.string "Defense.”$"
@@ -705,7 +705,7 @@ Route111_Text_RootFossilDisappeared:
 Route111_Text_MauvilleUncleToldMeToTakeRockSmash:
 	.string "Oh, no!\p"
 	.string "My uncle in Mauville told me to take\n"
-	.string "Rock Smash with me if I was going to\l"
+	.string "Rock Smash with me if I was going to\p"
 	.string "Route 111!\p"
 	.string "My uncle? He lives across from\n"
 	.string "the bike shop in Mauville.$"

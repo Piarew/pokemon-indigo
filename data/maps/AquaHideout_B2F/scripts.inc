@@ -110,7 +110,7 @@ AquaHideout_B2F_Text_MattPostBattle:
 	.string "Our Boss has already gone on his way to\n"
 	.string "some cave under the sea!\p"
 	.string "If you're going to give chase, you'd\n"
-	.string "better search the big, wide sea beyond\l"
+	.string "better search the big, wide sea beyond\p"
 	.string "Lilycove.\p"
 	.string "But will you find it then?\n"
 	.string "Hehehe!$"
@@ -147,7 +147,7 @@ AquaHideout_B2F_Text_Grunt6PostBattle:
 
 AquaHideout_B2F_Text_Grunt8Intro:
 	.string "When I joined Team Aqua, the first\n"
-	.string "thing I had to learn was how these\l"
+	.string "thing I had to learn was how these\p"
 	.string "warp panels connected.$"
 
 AquaHideout_B2F_Text_Grunt8Defeat:

@@ -76,7 +76,7 @@ SSTidalRooms_Text_ColtonDefeat:
 
 SSTidalRooms_Text_ColtonPostBattle:
 	.string "I get so excited imagining what kinds\n"
-	.string "of Pokémon I'll get to see in the next\l"
+	.string "of Pokémon I'll get to see in the next\p"
 	.string "Contest. The anticipation of it thrills!$"
 
 SSTidalRooms_Text_MicahIntro:
@@ -110,7 +110,7 @@ SSTidalRooms_Text_JedDefeat:
 
 SSTidalRooms_Text_JedPostBattle:
 	.string "Jed: It's the first time that our lovey-\n"
-	.string "dovey power couldn't prevail!\l"
+	.string "dovey power couldn't prevail!\p"
 	.string "You must be an awesome Trainer!$"
 
 SSTidalRooms_Text_JedNotEnoughMons:
@@ -126,7 +126,7 @@ SSTidalRooms_Text_LeaDefeat:
 
 SSTidalRooms_Text_LeaPostBattle:
 	.string "Lea: I can't believe it!\n"
-	.string "Our lovey-dovey power failed…\l"
+	.string "Our lovey-dovey power failed…\p"
 	.string "You must be an awesome Trainer!$"
 
 SSTidalRooms_Text_LeaNotEnoughMons:
@@ -143,12 +143,12 @@ SSTidalRooms_Text_GarretDefeat:
 
 SSTidalRooms_Text_GarretPostBattle:
 	.string "Perhaps I shall get Father to acquire\n"
-	.string "a yacht for me.\l"
+	.string "a yacht for me.\p"
 	.string "A yacht for me and Pokémon!$"
 
 SSTidalRooms_Text_NaomiIntro:
 	.string "Oh, you're such an adorable Trainer.\n"
-	.string "Would you like to have tea?\l"
+	.string "Would you like to have tea?\p"
 	.string "Or would you rather battle?$"
 
 SSTidalRooms_Text_NaomiDefeat:
@@ -165,11 +165,11 @@ SSTidalRooms_Text_NotSuspiciousTakeThis:
 	.string "Uh… Hi! I… I'm not acting suspicious!\n"
 	.string "Uh… You can have this! For free!\p"
 	.string "It… Honestly, I didn't Snatch it from\n"
-	.string "someone! I'd never do such a thing!\l"
+	.string "someone! I'd never do such a thing!\p"
 	.string "It's clean! You can use it!$"
 
 SSTidalRooms_Text_ExplainSnatch:
 	.string "Snatch steals the beneficial effects\n"
-	.string "of certain moves before they can be\l"
+	.string "of certain moves before they can be\p"
 	.string "used by a foe or ally.$"
 

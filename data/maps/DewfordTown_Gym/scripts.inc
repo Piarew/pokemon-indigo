@@ -290,7 +290,7 @@ DewfordTown_Gym_Text_GymGuideAdvice:
 	.string "Going against him with Normal-type\n"
 	.string "Pokémon is asking for trouble.\p"
 	.string "Fighting Pokémon will lay a serious\n"
-	.string "smack down on Normal Pokémon,\l"
+	.string "smack down on Normal Pokémon,\p"
 	.string "so be careful!\p"
 	.string "What's worse, the Gym is as dark as\n"
 	.string "the ocean floor.\p"
@@ -383,7 +383,7 @@ DewfordTown_Gym_Text_BrawlyIntro:
 	.string "I'm Brawly!\n"
 	.string "Dewford's Gym Leader!\p"
 	.string "I've been churned in the rough waves\n"
-	.string "of these parts, and I've grown tough\l"
+	.string "of these parts, and I've grown tough\p"
 	.string "in the pitch-black cave!\p"
 	.string "So you wanted to challenge me?\n"
 	.string "Let me see what you're made of!$"
@@ -401,7 +401,7 @@ DewfordTown_Gym_Text_ReceivedKnuckleBadge:
 
 DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 	.string "The Knuckle Badge makes all Pokémon\n"
-	.string "up to Level 30, even those you get in\l"
+	.string "up to Level 30, even those you get in\p"
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to use the HM move\n"
 	.string "Flash outside of battle.\p"
@@ -420,7 +420,7 @@ DewfordTown_Gym_Text_RegisteredBrawly:
 
 DewfordTown_Gym_Text_BrawlyPostBattle:
 	.string "I can see your talent becoming a giant\n"
-	.string "wave to cause a storm of astonishment\l"
+	.string "wave to cause a storm of astonishment\p"
 	.string "among Trainers one day!$"
 
 DewfordTown_Gym_Text_GymStatue:
@@ -445,7 +445,7 @@ DewfordTown_Gym_Text_BrawlyRematchDefeat:
 
 DewfordTown_Gym_Text_BrawlyPostRematch:
 	.string "Brawly: Battling is vast and it's deep.\n"
-	.string "You can't see the bottom.\l"
+	.string "You can't see the bottom.\p"
 	.string "It's just like the sea of Hoenn!$"
 
 DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:

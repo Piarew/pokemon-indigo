@@ -375,12 +375,12 @@ MossdeepCity_Gym_Text_GymGuideAdvice:
 	.string "The Gym Leaders here use\n"
 	.string "Psychic-type Pokémon.\p"
 	.string "If you go up against them with\n"
-	.string "Fighting- or Poison-type Pokémon,\l"
+	.string "Fighting- or Poison-type Pokémon,\p"
 	.string "they'll inflict horrible damage!\p"
 	.string "Plus, they'll come at you with\n"
 	.string "outstanding combination attacks.\p"
 	.string "If you want to win, you'll need to show\n"
-	.string "them how tight you are with your\l"
+	.string "them how tight you are with your\p"
 	.string "Pokémon. Go for it!$"
 
 MossdeepCity_Gym_Text_GymGuidePostVictory:
@@ -596,7 +596,7 @@ MossdeepCity_Gym_Text_RegisteredTateAndLiza:
 
 MossdeepCity_Gym_Text_TateAndLizaPostBattle:
 	.string "Tate: Looks like the bond between you\n"
-	.string "and your Pokémon is far stronger than\l"
+	.string "and your Pokémon is far stronger than\p"
 	.string "the bond that we share as twins.\p"
 	.string "Liza: You will become even stronger!\n"
 	.string "We've battled you, so we know.$"

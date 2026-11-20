@@ -43,7 +43,7 @@ SecretBase_Text_Trainer5DeclineBattle:
 
 SecretBase_Text_Trainer5Defeated::
 	.string "Hmmm… It's our loss…\n"
-	.string "But don't tell anyone!\l"
+	.string "But don't tell anyone!\p"
 	.string "It's a confidential secret!$"
 
 SecretBase_Text_Trainer5PostBattle:
@@ -172,7 +172,7 @@ SecretBase_Text_Trainer7PreChampion:
 
 SecretBase_Text_Trainer3Intro:
 	.string "Some people make their Secret Bases in\n"
-	.string "hard-to-find places.\l"
+	.string "hard-to-find places.\p"
 	.string "Do they want to just lie low?\p"
 	.string "But since you found me, how about we\n"
 	.string "have a battle?$"
@@ -193,7 +193,7 @@ SecretBase_Text_Trainer3PostBattle:
 
 SecretBase_Text_Trainer3PreChampion:
 	.string "Some people make their Secret Bases in\n"
-	.string "hard-to-find places.\l"
+	.string "hard-to-find places.\p"
 	.string "Do they want to just lie low?$"
 
 SecretBase_Text_Trainer8Intro:
@@ -255,8 +255,8 @@ SecretBase_Text_Trainer4PreChampion:
 
 SecretBase_Text_Trainer9Intro:
 	.string "You can learn a lot about the taste\n"
-	.string "and sense of people by the kinds of\l"
-	.string "decorations they have, and how they\l"
+	.string "and sense of people by the kinds of\p"
+	.string "decorations they have, and how they\n"
 	.string "display them.\p"
 	.string "What do you think of my taste?\n"
 	.string "Are you speechless?\p"
@@ -279,8 +279,8 @@ SecretBase_Text_Trainer9PostBattle:
 
 SecretBase_Text_Trainer9PreChampion:
 	.string "You can learn a lot about the taste\n"
-	.string "and sense of people by the kinds of\l"
-	.string "decorations they have, and how they\l"
+	.string "and sense of people by the kinds of\p"
+	.string "decorations they have, and how they\n"
 	.string "display them.\p"
 	.string "What do you think of my taste?\n"
 	.string "Are you speechless?$"

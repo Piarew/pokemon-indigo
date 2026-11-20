@@ -629,7 +629,7 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 
 DewfordTown_Text_TinyIslandCommunity:
 	.string "Dewford is a tiny island community.\n"
-	.string "If something gets trendy here,\l"
+	.string "If something gets trendy here,\p"
 	.string "everyone picks up on it right away.$"
 
 DewfordTown_Text_TownSign:
@@ -638,7 +638,7 @@ DewfordTown_Text_TownSign:
 
 DewfordTown_Text_GymSign:
 	.string "Dewford Town Pokémon Gym\n"
-	.string "Leader: Brawly\l"
+	.string "Leader: Brawly\p"
 	.string "“A big wave in fighting!”$"
 
 DewfordTown_Text_HallSign:
@@ -708,8 +708,8 @@ DewfordTown_Text_ThrowInFishingAdvice:
 	.string "Focus your mind…\n"
 	.string "If you get a bite, pull on the Rod.\p"
 	.string "Sometimes you can snag something\n"
-	.string "immediately, but with bigger catches,\l"
-	.string "you need to time the pulls on your Rod\l"
+	.string "immediately, but with bigger catches,\p"
+	.string "you need to time the pulls on your Rod\n"
 	.string "to haul them in.$"
 
 DewfordTown_Text_ThatsTooBadThen:
@@ -732,8 +732,8 @@ DewfordTown_Text_FishingAdvice:
 	.string "Focus your mind…\n"
 	.string "If you get a bite, pull the Rod.\p"
 	.string "Sometimes you can snag something\n"
-	.string "immediately, but with bigger catches,\l"
-	.string "you need to time the pulls on your Rod\l"
+	.string "immediately, but with bigger catches,\p"
+	.string "you need to time the pulls on your Rod\n"
 	.string "to haul them in.$"
 
 DewfordTown_Text_XIsTheBiggestHappeningThingRight:
@@ -744,10 +744,10 @@ DewfordTown_Text_XIsTheBiggestHappeningThingRight:
 	.string "That's right!\n"
 	.string "Of course you know!\p"
 	.string "I mean, sheesh,\n"
-	.string "“{STR_VAR_1}”…\l"
+	.string "“{STR_VAR_1}”…\p"
 	.string "It's the hottest thing in cool!\p"
 	.string "Wherever you're from,\n"
-	.string "“{STR_VAR_1}”\l"
+	.string "“{STR_VAR_1}”\p"
 	.string "is the biggest happening thing, right?$"
 
 DewfordTown_Text_TellMeWhatsNewAndIn:
@@ -765,7 +765,7 @@ DewfordTown_Text_OfCourseIKnowAboutThat:
 	.string "Of course I know about that!\n"
 	.string "“{STR_VAR_2},” right?\p"
 	.string "Yeah, that's it, it's there!\n"
-	.string "Isn't “{STR_VAR_2}”\l"
+	.string "Isn't “{STR_VAR_2}”\p"
 	.string "the coolest, or what?\p"
 	.string "It's the hippest thing in hip.\n"
 	.string "You think I'd not know about it?\p"
@@ -778,7 +778,7 @@ DewfordTown_Text_XHuhIThinkYIsCool:
 	.string "Hmm…\n"
 	.string "“{STR_VAR_2},” huh?\p"
 	.string "But personally, I think\n"
-	.string "“{STR_VAR_1}”\l"
+	.string "“{STR_VAR_1}”\p"
 	.string "is what's real in cool.$"
 
 DewfordTown_Text_HearOfAnyTrendsComeShareWithMe:

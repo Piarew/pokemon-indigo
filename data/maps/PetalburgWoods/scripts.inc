@@ -326,7 +326,7 @@ PetalburgWoods_Text_HaveYouSeenShroomish:
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:
 	.string "I was going to ambush you, but you\n"
-	.string "had to dawdle in Petalburg Woods\l"
+	.string "had to dawdle in Petalburg Woods\p"
 	.string "forever, didn't you?\p"
 	.string "I got sick of waiting, so here I am!$"
 
@@ -351,7 +351,7 @@ PetalburgWoods_Text_YoureKiddingMe:
 
 PetalburgWoods_Text_YouveGotSomeNerve:
 	.string "Grrr… You've got some nerve\n"
-	.string "meddling with Team Aqua!\l"
+	.string "meddling with Team Aqua!\p"
 	.string "Come on and battle me again!\p"
 	.string "I wish I could say that, but I'm out of\n"
 	.string "Pokémon…\p"
@@ -369,7 +369,7 @@ PetalburgWoods_Text_ThatWasAwfullyClose:
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
 	.string "Didn't that Team Aqua thug say\n"
-	.string "they were after something in\l"
+	.string "they were after something in\p"
 	.string "Rustboro, too?$"
 
 PetalburgWoods_Text_ICantBeWastingTime:
@@ -423,14 +423,14 @@ PetalburgWoods_Text_CantBePopularIfLose:
 
 PetalburgWoods_Text_IveBeenTrainingHard:
 	.string "You get to be popular if you have\n"
-	.string "strong Pokémon, right?\l"
+	.string "strong Pokémon, right?\p"
 	.string "So, I've been training hard.$"
 
 PetalburgWoods_Text_StayOutOfTallGrass:
 	.string "Yo, there!\n"
 	.string "Your Pokémon doing okay?\p"
 	.string "If your Pokémon are weak and you want\n"
-	.string "to avoid battles, you should stay out\l"
+	.string "to avoid battles, you should stay out\p"
 	.string "of tall grass.$"
 
 PetalburgWoods_Text_HiddenItemsExplanation:
@@ -447,10 +447,10 @@ PetalburgWoods_Text_TryUsingThisItem:
 
 PetalburgWoods_Text_MiracleSeedExplanation:
 	.string "It's a Miracle Seed.\n"
-	.string "If a Pokémon holds that item, its\l"
+	.string "If a Pokémon holds that item, its\p"
 	.string "Grass-type moves become stronger.\p"
 	.string "Besides Miracle Seed, I think there are\n"
-	.string "other convenient items for Pokémon\l"
+	.string "other convenient items for Pokémon\p"
 	.string "to hold.$"
 
 PetalburgWoods_Text_TrainerTipsExperience:
@@ -460,13 +460,13 @@ PetalburgWoods_Text_TrainerTipsExperience:
 	.string "To raise a weak Pokémon, put it at the\n"
 	.string "left of the team list.\p"
 	.string "As soon as a battle starts, switch it\n"
-	.string "out. It will earn Exp Points without\l"
+	.string "out. It will earn Exp Points without\p"
 	.string "being exposed to any harm.$"
 
 PetalburgWoods_Text_TrainerTipsPP:
 	.string "Trainer Tips\p"
 	.string "In addition to Hit Points (HP), Pokémon\n"
-	.string "have Power Points (PP) that are used to\l"
+	.string "have Power Points (PP) that are used to\p"
 	.string "make moves during battle.\p"
 	.string "If a Pokémon runs out of PP, it must be\n"
 	.string "taken to a Pokémon Center.$"

@@ -946,7 +946,7 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "To think that you have your very own\n"
-	.string "Pokémon now…\l"
+	.string "Pokémon now…\p"
 	.string "Your father will be overjoyed.\p"
 	.string "…But please be careful.\n"
 	.string "If anything happens, you can come home.\p"
@@ -959,7 +959,7 @@ LittlerootTown_Text_CanUsePCToStoreItems:
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "Prof. Birch spends days in his Lab\n"
-	.string "studying, then he'll suddenly go out in\l"
+	.string "studying, then he'll suddenly go out in\p"
 	.string "the wild to do more research…\p"
 	.string "When does Prof. Birch spend time\n"
 	.string "at home?$"
@@ -1007,7 +1007,7 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "Prof. Birch: Well, well, {PLAYER}{KUN}!\n"
 	.string "That was good work out there!\p"
 	.string "I knew there was something special\n"
-	.string "about you when I first saw you,\l"
+	.string "about you when I first saw you,\p"
 	.string "but I never expected this.\p"
 	.string "Oh, yes. Do you still have the Pokédex\n"
 	.string "I gave you?\p"

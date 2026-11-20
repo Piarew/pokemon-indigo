@@ -86,8 +86,8 @@ VerdanturfTown_WandasHouse_Text_StrongerSpeech:
 	.string "Wally: I lost to you, {PLAYER}, but I'm\n"
 	.string "not feeling down anymore.\p"
 	.string "Because I have a new purpose in life.\n"
-	.string "Together with my Ralts, I'm going\l"
-	.string "to challenge Pokémon Gyms and become\l"
+	.string "Together with my Ralts, I'm going\p"
+	.string "to challenge Pokémon Gyms and become\n"
 	.string "a great Trainer.\p"
 	.string "Please watch me, {PLAYER}.\n"
 	.string "I'm going to be stronger than you.\p"
@@ -108,7 +108,7 @@ VerdanturfTown_WandasHouse_Text_WallysNextDoor:
 	.string "This natural environment is doing\n"
 	.string "wonders for Wally's health.\p"
 	.string "Maybe it's not just the environment.\n"
-	.string "It could be Pokémon that are giving\l"
+	.string "It could be Pokémon that are giving\p"
 	.string "the boy hope.$"
 
 VerdanturfTown_WandasHouse_Text_WallySlippedOff:
@@ -117,7 +117,7 @@ VerdanturfTown_WandasHouse_Text_WallySlippedOff:
 
 VerdanturfTown_WandasHouse_Text_WallyGoneThatFar:
 	.string "Uncle: Is that right?\n"
-	.string "Wally's gone away that far all by\l"
+	.string "Wally's gone away that far all by\p"
 	.string "himself…\p"
 	.string "Well, I have to give him credit--he is\n"
 	.string "my little brother's son.$"
@@ -140,7 +140,7 @@ VerdanturfTown_WandasHouse_Text_DontWorryAboutWally:
 
 VerdanturfTown_WandasHouse_Text_CanSeeGirlfriendEveryDay:
 	.string "Thanks to you, I can see my girlfriend\n"
-	.string "every day.\l"
+	.string "every day.\p"
 	.string "Happy? You bet I am!$"
 
 VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendDriven:
@@ -158,7 +158,7 @@ VerdanturfTown_WandasHouse_Text_DaughtersBoyfriendWasDigging:
 
 VerdanturfTown_WandasHouse_Text_IfAnythingHappenedToWally:
 	.string "If anything were to happen to Wally,\n"
-	.string "I would never be able to look his\l"
+	.string "I would never be able to look his\p"
 	.string "parents in Petalburg in the eye…$"
 
 VerdanturfTown_WandasHouse_Text_WallyWasInEverGrande:

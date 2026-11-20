@@ -196,7 +196,7 @@ SootopolisCity_Gym_1F_Text_GymGuidePostVictory:
 
 SootopolisCity_Gym_1F_Text_JuanIntro:
 	.string "Let me ask you.\n"
-	.string "Did you know?\l"
+	.string "Did you know?\p"
 	.string "Ah, I should not be so coy.\p"
 	.string "It was I who taught Wallace everything\n"
 	.string "there is to know about Pokémon.\p"
@@ -238,10 +238,10 @@ SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 	.string "Having the Rain Badge shall assure you\n"
-	.string "the full obedience of all your Pokémon\l"
+	.string "the full obedience of all your Pokémon\p"
 	.string "to your every command.\p"
 	.string "The Rain Badge also allows the use\n"
-	.string "of the HM move Waterfall to scale\l"
+	.string "of the HM move Waterfall to scale\p"
 	.string "walls of cascading water.\p"
 	.string "And, so that you never forget the\n"
 	.string "battle we shared, take this…$"
@@ -259,7 +259,7 @@ SootopolisCity_Gym_1F_Text_RegisteredJuan:
 
 SootopolisCity_Gym_1F_Text_JuanPostBattle:
 	.string "The Trainers who have gathered all\n"
-	.string "the Gym Badges of Hoenn should make\l"
+	.string "the Gym Badges of Hoenn should make\p"
 	.string "way to the ultimate destination.\p"
 	.string "The Pokémon League.\p"
 	.string "Travel to the easternmost reaches\n"
@@ -271,7 +271,7 @@ SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
 	.string "There remains but one Badge to\n"
 	.string "obtain in Hoenn.\p"
 	.string "If you wish to challenge the Pokémon\n"
-	.string "League, you must obtain the last\l"
+	.string "League, you must obtain the last\p"
 	.string "Badge from the Gym in Fortree.$"
 
 SootopolisCity_Gym_1F_Text_GymStatue:

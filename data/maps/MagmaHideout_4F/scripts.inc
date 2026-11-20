@@ -140,7 +140,7 @@ MagmaHideout_4F_Text_Grunt11PostBattle:
 
 MagmaHideout_4F_Text_Grunt12Intro:
 	.string "Fuhahaha!\n"
-	.string "Soon! Very soon!\l"
+	.string "Soon! Very soon!\p"
 	.string "Our grand objective will be achieved!$"
 
 MagmaHideout_4F_Text_Grunt12Defeat:

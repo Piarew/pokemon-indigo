@@ -468,7 +468,7 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided:
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "If…\n"
-	.string "If we, Team Magma, are wrong…\l"
+	.string "If we, Team Magma, are wrong…\p"
 	.string "… … … … … …\p"
 	.string "Then might Team Aqua's goal to expand\n"
 	.string "the sea also be equally misguided?$"

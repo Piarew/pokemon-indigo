@@ -238,7 +238,7 @@ TwoIsland_Text_AddedMerchandiseForLostelle::
 	.string "I can't tell you how grateful I am\n"
 	.string "for your rescue of Lostelle.\p"
 	.string "Thanks to your feat, the people of\n"
-	.string "Three Island have changed their\l"
+	.string "Three Island have changed their\p"
 	.string "attitudes about Kanto people.\p"
 	.string "And, I'm from Kanto, you see.\p"
 	.string "The people of Three Island\n"
@@ -278,7 +278,7 @@ TwoIsland_Text_BrunoCameToIslandWhileBack::
 	.string "He's one of the Elite Four.\n"
 	.string "His name is Bruno.\p"
 	.string "He went away disappointed when he\n"
-	.string "found out that they were all sold\l"
+	.string "found out that they were all sold\p"
 	.string "out of Rage Candybars.$"
 
 TwoIsland_Text_BuyRareItemsHere::

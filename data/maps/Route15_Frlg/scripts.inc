@@ -64,7 +64,7 @@ Route15_Text_GraceDefeat::
 
 Route15_Text_GracePostBattle::
 	.string "I forgive you.\n"
-	.string "I can take it.\l"
+	.string "I can take it.\p"
 	.string "I'm a big girl now.$"
 
 Route15_Text_OliviaIntro::
@@ -89,7 +89,7 @@ Route15_Text_ErnestDefeat::
 
 Route15_Text_ErnestPostBattle::
 	.string "Life's too short.\n"
-	.string "It's cool to live as an outlaw.\l"
+	.string "It's cool to live as an outlaw.\p"
 	.string "Team Rocket Rules!$"
 
 Route15_Text_AlexIntro::

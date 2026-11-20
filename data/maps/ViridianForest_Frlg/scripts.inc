@@ -71,7 +71,7 @@ ViridianForest_Text_FriendsItchingToBattle::
 
 ViridianForest_Text_RickIntro::
 	.string "Hey! You have Pokémon!\n"
-	.string "Come on!\l"
+	.string "Come on!\p"
 	.string "Let's battle 'em!$"
 
 ViridianForest_Text_RickDefeat::
@@ -83,7 +83,7 @@ ViridianForest_Text_RickPostBattle::
 
 ViridianForest_Text_DougIntro::
 	.string "Yo!\n"
-	.string "You can't jam out if you're a\l"
+	.string "You can't jam out if you're a\p"
 	.string "Pokémon Trainer!$"
 
 ViridianForest_Text_DougDefeat::
@@ -139,7 +139,7 @@ ViridianForest_Text_RanOutOfPokeBalls::
 ViridianForest_Text_AvoidGrassyAreasWhenWeak::
 	.string "Trainer Tips\p"
 	.string "If your Pokémon are weak and you\n"
-	.string "want to avoid battles, stay away\l"
+	.string "want to avoid battles, stay away\p"
 	.string "from grassy areas!$"
 
 ViridianForest_Text_UseAntidoteForPoison::

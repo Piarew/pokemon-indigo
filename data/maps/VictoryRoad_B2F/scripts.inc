@@ -33,7 +33,7 @@ VictoryRoad_B2F_EventScript_Dianne::
 
 VictoryRoad_B2F_Text_VitoIntro:
 	.string "I trained together with my whole family,\n"
-	.string "every one of us!\l"
+	.string "every one of us!\p"
 	.string "I'm not losing to anyone!$"
 
 VictoryRoad_B2F_Text_VitoDefeat:
@@ -65,7 +65,7 @@ VictoryRoad_B2F_Text_CarolineDefeat:
 
 VictoryRoad_B2F_Text_CarolinePostBattle:
 	.string "Victory Road and the Pokémon League\n"
-	.string "are long and grueling challenges.\l"
+	.string "are long and grueling challenges.\p"
 	.string "Beware of fatigue!$"
 
 VictoryRoad_B2F_Text_JulieIntro:

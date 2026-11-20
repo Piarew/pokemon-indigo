@@ -398,7 +398,7 @@ BerryTree_Text_PickedTheBerry_Mutation:
 
 BerryTree_Text_PutAwayBerry_Mutation:
 	.string "{PLAYER} put away the {STR_VAR_1}\n"
-	.string "and the {STR_VAR_3} in the Bag's\l"
+	.string "and the {STR_VAR_3} in the Bag's\p"
 	.string "Berries Pocket.\p"
 	.string "The soil returned to its soft and\n"
 	.string "loamy state.$"

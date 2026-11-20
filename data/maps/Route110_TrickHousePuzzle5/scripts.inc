@@ -906,7 +906,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll1Intro:
 	.string "Clickety-Clack…\n"
 	.string "Mechadoll 1 Am I!\p"
 	.string "If you Answer Quizzes Correctly,\n"
-	.string "Then you will Go to Mechadoll 5.\l"
+	.string "Then you will Go to Mechadoll 5.\p"
 	.string "Then you can Obtain the Secret Code.$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll1Quiz1:

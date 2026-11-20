@@ -73,7 +73,7 @@ SixIsland_RuinValley_Text_StanlyDefeat::
 
 SixIsland_RuinValley_Text_StanlyPostBattle::
 	.string "I suggest to you that you, too,\n"
-	.string "give a thought to the secrets and\l"
+	.string "give a thought to the secrets and\p"
 	.string "mysteries of our world once a day.$"
 
 SixIsland_RuinValley_Text_FosterIntro::
@@ -124,7 +124,7 @@ SixIsland_RuinValley_Text_HectorDefeat::
 
 SixIsland_RuinValley_Text_HectorPostBattle::
 	.string "The door to the ruins…\n"
-	.string "It has these strange patterns\l"
+	.string "It has these strange patterns\p"
 	.string "engraved on the outside.\p"
 	.string "I don't know what they mean,\n"
 	.string "though.$"

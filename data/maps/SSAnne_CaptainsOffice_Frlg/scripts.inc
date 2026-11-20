@@ -47,7 +47,7 @@ SSAnne_CaptainsOffice_EventScript_Book::
 
 SSAnne_CaptainsOffice_Text_CaptainIFeelSeasick::
 	.string "Captain: Ooargh…\n"
-	.string "I feel hideous…\l"
+	.string "I feel hideous…\p"
 	.string "Urrp! Seasick…$"
 
 SSAnne_CaptainsOffice_Text_RubbedCaptainsBack::

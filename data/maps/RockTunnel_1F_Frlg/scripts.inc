@@ -64,7 +64,7 @@ RockTunnel_1F_Text_OliverIntro::
 
 RockTunnel_1F_Text_OliverDefeat::
 	.string "Ease up!\n"
-	.string "What am I doing?\l"
+	.string "What am I doing?\p"
 	.string "Which way is out?$"
 
 RockTunnel_1F_Text_OliverPostBattle::

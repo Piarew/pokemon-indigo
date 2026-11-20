@@ -15,7 +15,7 @@ gText_Birch_MainSpeech::
 	.string "This world is widely inhabited by\n"
 	.string "creatures known as Pokémon.\p"
 	.string "We humans live alongside Pokémon,\n"
-	.string "at times as friendly playmates, and\l"
+	.string "at times as friendly playmates, and\p"
 	.string "at times as cooperative workmates.\p"
 	.string "And sometimes, we band together\n"
 	.string "and battle others like us.\p"
@@ -24,7 +24,7 @@ gText_Birch_MainSpeech::
 	.string "In fact, there are many, many\n"
 	.string "secrets surrounding Pokémon.\p"
 	.string "To unravel Pokémon mysteries,\n"
-	.string "I've been undertaking research.\l"
+	.string "I've been undertaking research.\p"
 	.string "That's what I do.\p"
 	.string "$"
 
@@ -45,7 +45,7 @@ gText_Birch_SoItsPlayer::
 gText_Birch_YourePlayer::
 	.string "Ah, okay!\p"
 	.string "You're {PLAYER}{KUN} who's moving to my\n"
-	.string "hometown of Littleroot.\l"
+	.string "hometown of Littleroot.\p"
 	.string "I get it now!\p"
 	.string "$"
 
@@ -54,7 +54,7 @@ gText_Birch_AreYouReady::
 	.string "Your very own adventure is about\n"
 	.string "to unfold.\p"
 	.string "Take courage, and leap into the\n"
-	.string "world of Pokémon where dreams,\l"
+	.string "world of Pokémon where dreams,\p"
 	.string "adventure, and friendships await!\p"
 	.string "Well, I'll be expecting you later.\n"
 	.string "Come see me in my Pokémon Lab.\p"

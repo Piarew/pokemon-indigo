@@ -108,7 +108,7 @@ PokemonLeague_LoreleisRoom_Text_RematchIntro::
 	.string "I, Lorelei of the Elite Four,\n"
 	.string "have returned!\p"
 	.string "You know how it goes.\n"
-	.string "No one can best me when it comes\l"
+	.string "No one can best me when it comes\p"
 	.string "to icy Pokémon.\p"
 	.string "Freezing moves are powerful.\p"
 	.string "Your Pokémon will be at my mercy\n"

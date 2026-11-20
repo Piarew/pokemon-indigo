@@ -227,7 +227,7 @@ RustboroCity_PokemonSchool_Text_ExplainSleep:
 	.string "If a Pokémon falls asleep, it will be\n"
 	.string "unable to attack.\p"
 	.string "A Pokémon may wake up on its own,\n"
-	.string "but if a battle ends while it is\l"
+	.string "but if a battle ends while it is\p"
 	.string "sleeping, it will stay asleep.\p"
 	.string "Wake it up using an Awakening.$"
 
@@ -247,12 +247,12 @@ RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw:
 	.string "Students who don't study get a little\n"
 	.string "taste of my Quick Claw.\p"
 	.string "Whether or not you are a good student \n"
-	.string "will be evident from the way you use\l"
+	.string "will be evident from the way you use\p"
 	.string "this item.$"
 
 RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 	.string "A Pokémon holding the Quick Claw will\n"
-	.string "occasionally speed up and get to move\l"
+	.string "occasionally speed up and get to move\p"
 	.string "before its opponent.\p"
 	.string "There are many other items that are\n"
 	.string "meant to be held by Pokémon.\p"
@@ -269,7 +269,7 @@ RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot:
 
 RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
 	.string "Pokémon can hold items, but they\n"
-	.string "don't know what to do with man-made\l"
+	.string "don't know what to do with man-made\p"
 	.string "items like Potion and Antidote.$"
 
 RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:
@@ -295,10 +295,10 @@ RustboroCity_PokemonSchool_Text_StudentsNotes:
 	.string "Up to six Pokémon can accompany\n"
 	.string "a Trainer.\p"
 	.string "A Trainer is someone who catches\n"
-	.string "Pokémon, raises them, and battles\l"
+	.string "Pokémon, raises them, and battles\p"
 	.string "with them.\p"
 	.string "A Trainer's mission is to defeat\n"
-	.string "the strong Trainers who await\l"
+	.string "the strong Trainers who await\p"
 	.string "challengers in Pokémon Gyms.$"
 
 RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut:

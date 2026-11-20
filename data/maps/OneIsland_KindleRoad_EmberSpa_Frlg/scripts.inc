@@ -84,7 +84,7 @@ OneIsland_KindleRoad_EmberSpa_Text_SeeHowSmoothMySkinIs::
 
 OneIsland_KindleRoad_EmberSpa_Text_BrunoVisitsSpaOnOccasion::
 	.string "After an honest day of training,\n"
-	.string "nothing beats a relaxing soak in\l"
+	.string "nothing beats a relaxing soak in\p"
 	.string "the hot spring pool.\p"
 	.string "Bruno, who's a senior ahead of me,\n"
 	.string "visits the SPA on occasion.\p"

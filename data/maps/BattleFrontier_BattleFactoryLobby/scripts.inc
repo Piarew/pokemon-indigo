@@ -335,7 +335,7 @@ BattleFrontier_BattleFactoryLobby_Text_TakeSinglesChallenge:
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainSinglesChallenge:
 	.string "The Battle Swap Single Tournament\n"
-	.string "is a Single Battle competition using\l"
+	.string "is a Single Battle competition using\p"
 	.string "only rental Pokémon.\p"
 	.string "First, you will be loaned three\n"
 	.string "Pokémon specifically for this event.\p"
@@ -344,7 +344,7 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainSinglesChallenge:
 	.string "If you win, you are permitted to trade\n"
 	.string "one of your rental Pokémon.\p"
 	.string "Repeat this cycle of battling and\n"
-	.string "trading--if you win seven times in\l"
+	.string "trading--if you win seven times in\p"
 	.string "a row, you will earn Battle Points.\p"
 	.string "If you want to interrupt your\n"
 	.string "challenge, please save the game.\p"
@@ -431,7 +431,7 @@ BattleFrontier_BattleFactoryLobby_Text_TakeDoublesChallenge:
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainDoublesChallenge:
 	.string "The Battle Swap Double Tournament\n"
-	.string "is a Double Battle competition using\l"
+	.string "is a Double Battle competition using\p"
 	.string "only rental Pokémon.\p"
 	.string "First, you will be loaned three\n"
 	.string "Pokémon specifically for this event.\p"
@@ -440,7 +440,7 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainDoublesChallenge:
 	.string "If you win, you are permitted to trade\n"
 	.string "one of your rental Pokémon.\p"
 	.string "Repeat this cycle of battling and\n"
-	.string "trading--if you win seven times in\l"
+	.string "trading--if you win seven times in\p"
 	.string "a row, you will earn Battle Points.\p"
 	.string "If you want to interrupt your\n"
 	.string "challenge, please save the game.\p"
@@ -449,12 +449,12 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainDoublesChallenge:
 
 BattleFrontier_BattleFactoryLobby_Text_CongratsForDefeatingHead:
 	.string "Congratulations for defeating\n"
-	.string "the Factory Head and winning\l"
+	.string "the Factory Head and winning\p"
 	.string "seven matches in a row!$"
 
 BattleFrontier_BattleFactoryLobby_Text_AwardBattlePoints:
 	.string "In recognition of your wealth of\n"
-	.string "knowledge and keen intelligence,\l"
+	.string "knowledge and keen intelligence,\p"
 	.string "we award you these Battle Point(s).$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExchangeMonsAndSave:
@@ -465,19 +465,19 @@ BattleFrontier_BattleFactoryLobby_Text_ExchangeMonsAndSave:
 
 BattleFrontier_BattleFactoryLobby_Text_RecordLastMatch:
 	.string "Would you like to record your last\n"
-	.string "Battle Factory match on your\l"
+	.string "Battle Factory match on your\p"
 	.string "Frontier Pass?$"
 
 BattleFrontier_BattleFactoryLobby_Text_NeedKnowledgeOfMonsMoves:
 	.string "Hi!\n"
 	.string "You, there!\p"
 	.string "Are you thinking that the events here\n"
-	.string "are easy since you don't need to have\l"
+	.string "are easy since you don't need to have\p"
 	.string "a raised team of Pokémon?\p"
 	.string "I wouldn't be too sure about winning\n"
 	.string "that easily.\p"
 	.string "If you don't have thorough knowledge\n"
-	.string "about Pokémon and their moves,\l"
+	.string "about Pokémon and their moves,\p"
 	.string "it will be tough to keep winning.$"
 
 BattleFrontier_BattleFactoryLobby_Text_SwappedForWeakMon:
@@ -489,7 +489,7 @@ BattleFrontier_BattleFactoryLobby_Text_NeedToCheckOpponentsMons:
 	.string "Things haven't been going my way\n"
 	.string "at all.\p"
 	.string "You need to check your opponent's\n"
-	.string "Pokémon during battle to see if\l"
+	.string "Pokémon during battle to see if\p"
 	.string "they're any good.$"
 
 BattleFrontier_BattleFactoryLobby_Text_CantFigureOutStaffHints:
@@ -501,10 +501,10 @@ BattleFrontier_BattleFactoryLobby_Text_CantFigureOutStaffHints:
 @ Unused
 BattleFrontier_BattleFactoryLobby_Text_RentalMonsAreVaried:
 	.string "Like, I'm really tough, but I get bored\n"
-	.string "really easily, so I just kept swapping\l"
+	.string "really easily, so I just kept swapping\p"
 	.string "and battling over and over.\p"
 	.string "So anyway, when I kept entering\n"
-	.string "Battle Swap events, I noticed they\l"
+	.string "Battle Swap events, I noticed they\p"
 	.string "varied the rental Pokémon.$"
 
 BattleFrontier_BattleFactoryLobby_Text_RulesAreListed:
@@ -517,7 +517,7 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainBasicRules:
 	.string "In a Battle Swap event, you may use\n"
 	.string "only three Pokémon.\p"
 	.string "Whether you are renting or swapping,\n"
-	.string "your team may not have two or more\l"
+	.string "your team may not have two or more\p"
 	.string "of the same Pokémon.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainSwapPartnerRules:
@@ -528,7 +528,7 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainSwapPartnerRules:
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainSwapNumberRules:
 	.string "After every battle you win, you may\n"
-	.string "swap for one of your defeated\l"
+	.string "swap for one of your defeated\p"
 	.string "opponent's Pokémon.\p"
 	.string "You will not be able to swap Pokémon\n"
 	.string "with the seventh Trainer in the event.$"
@@ -537,15 +537,15 @@ BattleFrontier_BattleFactoryLobby_Text_ExplainSwapNotesRules:
 	.string "There are two key points to be aware\n"
 	.string "of when swapping Pokémon.\p"
 	.string "First, when swapping, you can't check\n"
-	.string "the stats of the Pokémon you are\l"
+	.string "the stats of the Pokémon you are\p"
 	.string "about to receive.\p"
 	.string "Second, the Pokémon on your team\n"
-	.string "are lined up in sequence, depending on\l"
+	.string "are lined up in sequence, depending on\p"
 	.string "the order in which you rented them.\p"
 	.string "This sequence remains unchanged\n"
 	.string "even when swaps are made.$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainOpenLvRules:
 	.string "In the Open Level, the rental Pokémon\n"
-	.string "and the opposing Trainers' Pokémon\l"
+	.string "and the opposing Trainers' Pokémon\p"
 	.string "are all Level 100.$"

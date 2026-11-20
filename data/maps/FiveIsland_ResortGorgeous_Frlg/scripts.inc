@@ -57,7 +57,7 @@ FiveIsland_ResortGorgeous_Text_DaisyPostBattle::
 
 FiveIsland_ResortGorgeous_Text_CelinaIntro::
 	.string "Excuse me!\n"
-	.string "I'm trying to paint.\l"
+	.string "I'm trying to paint.\p"
 	.string "Please keep out of my sight!$"
 
 FiveIsland_ResortGorgeous_Text_CelinaDefeat::
@@ -66,7 +66,7 @@ FiveIsland_ResortGorgeous_Text_CelinaDefeat::
 
 FiveIsland_ResortGorgeous_Text_CelinaPostBattle::
 	.string "Gillian?\n"
-	.string "Please tilt your head slightly…\l"
+	.string "Please tilt your head slightly…\p"
 	.string "There! That's the look I want!$"
 
 FiveIsland_ResortGorgeous_Text_RaynaIntro::

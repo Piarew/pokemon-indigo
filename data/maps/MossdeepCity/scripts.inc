@@ -407,7 +407,7 @@ MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "Scott: {PLAYER}{KUN}, feeling good?\n"
 	.string "I'm doing great!\p"
 	.string "I'd heard Mossdeep's Gym Leader is\n"
-	.string "pretty strong, so I decided to come\l"
+	.string "pretty strong, so I decided to come\p"
 	.string "take a look-see for myself.\p"
 	.string "But there's something wrong about\n"
 	.string "this town.\p"

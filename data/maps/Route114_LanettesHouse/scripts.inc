@@ -48,7 +48,7 @@ Route114_LanettesHouse_EventScript_PC::
 Route114_LanettesHouse_Text_EverythingClutteredKeepThis:
 	.string "Lanette: Oh! {PLAYER}{KUN}!\p"
 	.string "I'm sorry everything is so cluttered…\n"
-	.string "When I get engrossed in research,\l"
+	.string "When I get engrossed in research,\p"
 	.string "things end up this way…\p"
 	.string "This is embarrassing… Please keep\n"
 	.string "this a secret in exchange for this.$"
@@ -71,7 +71,7 @@ Route114_LanettesHouse_Text_ResearchNotesPage2:
 	.string "A marking system should be added to\n"
 	.string "make Pokémon easier to organize.\p"
 	.string "The name and wallpaper design of each\n"
-	.string "Box will be made changeable to please\l"
+	.string "Box will be made changeable to please\p"
 	.string "the stored Pokémon.\p"
 	.string "Keep reading?$"
 
@@ -81,7 +81,7 @@ Route114_LanettesHouse_Text_ResearchNotesPage3:
 	.string "If that Box is full, the received\n"
 	.string "Pokémon is stored in the next Box.\p"
 	.string "In other words, when a Box is examined,\n"
-	.string "it is automatically selected as the Box\l"
+	.string "it is automatically selected as the Box\p"
 	.string "to which Pokémon are sent.$"
 
 Route114_LanettesHouse_Text_ClosedTheNotebook:

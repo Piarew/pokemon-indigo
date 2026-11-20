@@ -18,7 +18,7 @@ MagmaHideout_1F_EventScript_Grunt2::
 
 MagmaHideout_1F_Text_Grunt1Intro:
 	.string "When Team Magma has roll call, we get\n"
-	.string "important guarding assignments in\l"
+	.string "important guarding assignments in\p"
 	.string "the order that we line up.\p"
 	.string "That's why I'm stuck off in this corner.\n"
 	.string "I'm always late to roll call!$"

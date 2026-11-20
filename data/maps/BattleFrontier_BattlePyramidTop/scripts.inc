@@ -215,7 +215,7 @@ BattleFrontier_BattlePyramidTop_Movement_CameraPanUp:
 
 BattleFrontier_BattlePyramidTop_Text_ReachedSummitUpYouGo:
 	.string "It is a delight to see you here!\n"
-	.string "You have reached the summit of\l"
+	.string "You have reached the summit of\p"
 	.string "the Battle Pyramid!\p"
 	.string "Above here is the Pyramid's\n"
 	.string "lookout point.\p"
@@ -259,7 +259,7 @@ BattleFrontier_BattlePyramidTop_Text_ImPyramidKingBrandon:
 	.string "I'm in charge here.\p"
 	.string "Most people call me the chief!\p"
 	.string "You coming here means you have\n"
-	.string "that much confidence in yourself,\l"
+	.string "that much confidence in yourself,\p"
 	.string "am I right?\p"
 	.string "Hahahah!\n"
 	.string "This should be exciting!$"
@@ -307,7 +307,7 @@ BattleFrontier_BattlePyramidTop_Text_EverythingYouHave:
 
 BattleFrontier_BattlePyramidTop_Text_BrandonRemarkableHaveThis:
 	.string "Brandon: Hahahah!\n"
-	.string "Remarkable!\l"
+	.string "Remarkable!\p"
 	.string "Yes, it's grand, indeed!\p"
 	.string "Young explorer!\p"
 	.string "You've bested me through and through!\n"

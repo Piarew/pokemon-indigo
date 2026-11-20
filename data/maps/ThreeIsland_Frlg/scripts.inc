@@ -404,7 +404,7 @@ ThreeIsland_Text_BossIsOnHisWay::
 	.string "Hey, go cry somewhere else.\n"
 	.string "Our boss is on his way.\p"
 	.string "When he gets here, we'll give you\n"
-	.string "a k-rad motorbike show you won't\l"
+	.string "a k-rad motorbike show you won't\p"
 	.string "soon forget!$"
 
 ThreeIsland_Text_GetOffIslandNow::
@@ -428,7 +428,7 @@ ThreeIsland_Text_FollowersRaisingHavoc::
 	.string "Your gang of followers have been\n"
 	.string "raising havoc on their bikes.\p"
 	.string "Do you have any idea how much\n"
-	.string "trouble they've caused us on the\l"
+	.string "trouble they've caused us on the\p"
 	.string "island?$"
 
 ThreeIsland_Text_OughtToBeThankingUs::

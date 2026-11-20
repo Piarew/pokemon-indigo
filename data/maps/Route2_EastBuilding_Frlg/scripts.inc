@@ -42,7 +42,7 @@ Route2_EastBuilding_Text_GiveHM05IfSeen10Mons::
 	.string "Hi! Remember me?\n"
 	.string "I'm one of Prof. Oak's Aides.\p"
 	.string "If your Pokédex has complete data\n"
-	.string "on ten species, I'm supposed to\l"
+	.string "on ten species, I'm supposed to\p"
 	.string "give you a reward.\p"
 	.string "Prof. Oak entrusted me with\n"
 	.string "HM05 for you.\p"

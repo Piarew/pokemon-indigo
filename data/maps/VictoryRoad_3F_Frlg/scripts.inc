@@ -61,7 +61,7 @@ VictoryRoad_3F_EventScript_Tyra::
 
 Text_DoubleEdgeTeach::
 	.string "You should be proud of yourself,\n"
-	.string "having battled your way through\l"
+	.string "having battled your way through\p"
 	.string "Victory Road so courageously.\p"
 	.string "In recognition of your feat,\n"
 	.string "I'll teach you Double-Edge.\p"

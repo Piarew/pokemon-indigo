@@ -256,7 +256,7 @@ Route128_Text_MaxieDoYouUnderstandNow:
 	.string "Do you finally see how disastrous\n"
 	.string "your dream turned out to be?\p"
 	.string "We have to hurry! We have to do\n"
-	.string "something before the situation goes\l"
+	.string "something before the situation goes\p"
 	.string "completely out of control!$"
 
 Route128_Text_MaxieResposibilityFallsToArchieAndMe:
@@ -264,7 +264,7 @@ Route128_Text_MaxieResposibilityFallsToArchieAndMe:
 	.string "I know that I have no right to be\n"
 	.string "critical of Archie…\p"
 	.string "But the way things are now, I doubt\n"
-	.string "that we humans will be capable of\l"
+	.string "that we humans will be capable of\p"
 	.string "doing anything about it.\p"
 	.string "But neither can we stand by and\n"
 	.string "just watch helplessly.\p"
@@ -295,7 +295,7 @@ Route128_Text_StevenWholeWorldWillDrown:
 
 Route128_Text_StevenImGoingToSootopolis:
 	.string "{PLAYER}{KUN}…\n"
-	.string "I don't know what you intend to do,\l"
+	.string "I don't know what you intend to do,\p"
 	.string "but don't do anything reckless.\p"
 	.string "Okay.\n"
 	.string "I'm going to Sootopolis.$"

@@ -59,9 +59,9 @@ SaffronCity_CopycatsHouse_2F_Text_MimickingFavoriteHobbyFemale::
 	.string "{PLAYER}: No, not me.\n"
 	.string "I asked you.\p"
 	.string "{PLAYER}: Pardon?\n"
-	.string "You're weird!\l"
-	.string " \l"
-	.string "Copycat: Hmm? Quit mimicking?\l"
+	.string "You're weird!\p"
+	.string " \n"
+	.string "Copycat: Hmm? Quit mimicking?\p"
 	.string "But that's my favorite hobby!$"
 
 Text_MimicTeach::
@@ -114,6 +114,6 @@ SaffronCity_CopycatsHouse_2F_Text_MySecrets::
 	.string "…\p"
 	.string "My Secrets!\p"
 	.string "Skill: Mimicry!\n"
-	.string "Hobby: Collecting dolls!\l"
+	.string "Hobby: Collecting dolls!\p"
 	.string "Favorite Pokémon: Clefairy!$"
 

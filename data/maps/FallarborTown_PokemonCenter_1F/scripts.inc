@@ -106,6 +106,6 @@ FallarborTown_PokemonCenter_1F_Text_FossilManiacEdgeOfTown:
 
 FallarborTown_PokemonCenter_1F_Text_PlantHardyTrees:
 	.string "In the fields of Fallarbor, we plant\n"
-	.string "seedlings of hardy trees that thrive\l"
+	.string "seedlings of hardy trees that thrive\p"
 	.string "even in volcanic ash.$"
 

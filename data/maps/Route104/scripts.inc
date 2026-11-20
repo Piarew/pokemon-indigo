@@ -1069,12 +1069,12 @@ Route104_Text_PrettyPetalFlowShop:
 Route104_Text_TrainerTipsDoubleBattles:
 	.string "Trainer Tips\p"
 	.string "In the Hoenn region there are pairs\n"
-	.string "of Trainers who challenge others\l"
-	.string "for 2-on-2 Pokémon battles called\l"
+	.string "of Trainers who challenge others\p"
+	.string "for 2-on-2 Pokémon battles called\n"
 	.string "Double Battles.\p"
 	.string "In a Double Battle, the Trainer must\n"
-	.string "send out two Pokémon, the one at the\l"
-	.string "left of the list and the top one.\l"
+	.string "send out two Pokémon, the one at the\p"
+	.string "left of the list and the top one.\n"
 	.string "Watch how Pokémon are lined up.$"
 
 Route104_Text_MayWeShouldRegister:
@@ -1094,7 +1094,7 @@ Route104_Text_MayHowsYourPokedex:
 
 Route104_Text_MayMinesDecentLetsBattle:
 	.string "Mine's looking pretty decent.\n"
-	.string "So…\l"
+	.string "So…\p"
 	.string "How about a little battle?$"
 
 Route104_Text_MayHaventRaisedPokemon:

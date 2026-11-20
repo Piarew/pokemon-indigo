@@ -245,7 +245,7 @@ BattleFrontier_BattleFactoryBattleRoom_Text_GetAMoveOn:
 
 BattleFrontier_BattleFactoryBattleRoom_Text_NolandImFactoryHead:
 	.string "Hey, my name's Noland!\n"
-	.string "I'm basically in charge of this place,\l"
+	.string "I'm basically in charge of this place,\p"
 	.string "which is why I'm the Factory Head!\p"
 	.string "I had a look at your Battle Swap data.\p"
 	.string "You seem to have the right idea,\n"

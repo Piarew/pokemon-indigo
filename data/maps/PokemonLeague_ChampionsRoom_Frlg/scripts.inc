@@ -237,7 +237,7 @@ PokemonLeague_ChampionsRoom_Text_RematchIntro::
 
 PokemonLeague_ChampionsRoom_Text_Defeat::
 	.string "No!\n"
-	.string "That can't be!\l"
+	.string "That can't be!\p"
 	.string "You beat me at my best!\p"
 	.string "After all that work to become\n"
 	.string "the League Champ?\p"
@@ -250,7 +250,7 @@ PokemonLeague_ChampionsRoom_Text_Victory::
 	.string "{PLAYER}に　まける　ような\n"
 	.string "おれさま　では　なーい！\p"
 	.string "ま！　ポケモンの\n"
-	.string "てんさい　{RIVAL}さま　あいてに\l"
+	.string "てんさい　{RIVAL}さま　あいてに\p"
 	.string "ここまで　よく　がんばった！\p"
 	.string "ほめて　つかわす！\n"
 	.string "はーッ！　はーはッはッ！$"
@@ -273,7 +273,7 @@ PokemonLeague_ChampionsRoom_Text_OakCongratulations::
 	.string "You're the new Pokémon League\n"
 	.string "Champion!\p"
 	.string "You've grown up so much since you\n"
-	.string "first left with {STR_VAR_1} to work\l"
+	.string "first left with {STR_VAR_1} to work\p"
 	.string "on the Pokédex.\p"
 	.string "{PLAYER}, you have come of age!$"
 

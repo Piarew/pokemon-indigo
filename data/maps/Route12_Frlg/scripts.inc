@@ -66,7 +66,7 @@ Text_SnorlaxWokeUp::
 
 Text_SnorlaxReturnedToMountains::
 	.string "Snorlax calmed down.\n"
-	.string "It gave a huge yawn…\l"
+	.string "It gave a huge yawn…\p"
 	.string "And returned to the mountains.$"
 
 Text_WantToUsePokeFlute::

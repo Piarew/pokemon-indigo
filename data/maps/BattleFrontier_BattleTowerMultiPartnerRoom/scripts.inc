@@ -427,7 +427,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice4Mon2Ask::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice4Accept::
 	.string "Really? I can't believe it!\n"
-	.string "I can't believe you'll let me join you!\l"
+	.string "I can't believe you'll let me join you!\p"
 	.string "I… I won't let you down!\p"
 	.string "Um… If it's really okay, I'll go register\n"
 	.string "right this instant!$"
@@ -442,7 +442,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice5Intro::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice5Mon1::
 	.string "{STR_VAR_3} told me that it would be\n"
-	.string "good to make this team:\l"
+	.string "good to make this team:\p"
 	.string "one {STR_VAR_1}-using {STR_VAR_2}$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice5Mon2Ask::
@@ -453,7 +453,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice5Mon2Ask::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice5Accept::
 	.string "Okay, glad to join you!\n"
-	.string "I hope you won't mess things up for me!\l"
+	.string "I hope you won't mess things up for me!\p"
 	.string "I'll do my registration now.$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice5Reject::
@@ -462,7 +462,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice5Reject::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice6Intro::
 	.string "I'm {STR_VAR_3} and I'm a Triathlete.\n"
-	.string "I'm busy every day what with jogging,\l"
+	.string "I'm busy every day what with jogging,\p"
 	.string "training, and rapping.\p"
 	.string "I also happen to be {STR_VAR_1}'s\n"
 	.string "no. {STR_VAR_2} apprentice.$"
@@ -495,7 +495,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice7Intro::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice7Mon1::
 	.string "Listen, listen! You have to hear about\n"
-	.string "the Pokémon {STR_VAR_3} recommended.\l"
+	.string "the Pokémon {STR_VAR_3} recommended.\p"
 	.string "One {STR_VAR_2} with {STR_VAR_1} and$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice7Mon2Ask::
@@ -520,7 +520,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice8Intro::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice8Mon1::
 	.string "I sought the sage advice of\n"
-	.string "{STR_VAR_3} and raised my team\l"
+	.string "{STR_VAR_3} and raised my team\p"
 	.string "of one {STR_VAR_2} with {STR_VAR_1}$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice8Mon2Ask::
@@ -555,7 +555,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice9Mon2Ask::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice9Accept::
 	.string "Eek! I… I feel giddy!\n"
-	.string "Thank you so much!\l"
+	.string "Thank you so much!\p"
 	.string "I'll go register us right away!$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice9Reject::
@@ -591,7 +591,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice11Intro::
 	.string "… … … … … …\n"
 	.string "I'm only joking!\p"
 	.string "People call me {STR_VAR_3} and I do, too!\n"
-	.string "I'm {STR_VAR_1}'s 1,000th apprentice!\l"
+	.string "I'm {STR_VAR_1}'s 1,000th apprentice!\p"
 	.string "Actually, I'm no. {STR_VAR_2}!$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice11Mon1::
@@ -600,7 +600,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice11Mon1::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice11Mon2Ask::
 	.string "{STR_VAR_2} with {STR_VAR_1}.\n"
-	.string "I've got ten of each kind!\l"
+	.string "I've got ten of each kind!\p"
 	.string "Actually, just one of each!\p"
 	.string "How about it?\n"
 	.string "Want to try tag battles with me?$"
@@ -626,7 +626,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice12Intro::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice12Mon1::
 	.string "With the advice of {STR_VAR_3} I did\n"
-	.string "abide, put together my team of pride!\l"
+	.string "abide, put together my team of pride!\p"
 	.string "One {STR_VAR_1}-using {STR_VAR_2}$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice12Mon2Ask::
@@ -680,7 +680,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice14Intro::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice14Mon1::
 	.string "I took {STR_VAR_3}'s advice to heart\n"
-	.string "and put together my team of\l"
+	.string "and put together my team of\p"
 	.string "one {STR_VAR_2} with {STR_VAR_1} and$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice14Mon2Ask::
@@ -694,7 +694,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice14Mon2Ask::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice14Accept::
 	.string "Thanks, I appreciate this!\n"
-	.string "Cough, cough!\l"
+	.string "Cough, cough!\p"
 	.string "Hang on while I go register.$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice14Reject::
@@ -732,7 +732,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice16Intro::
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice16Mon1::
 	.string "{STR_VAR_3} recommended my team.\p"
 	.string "Since the advice sounded sincere,\n"
-	.string "I decided to bring with me\l"
+	.string "I decided to bring with me\p"
 	.string "my {STR_VAR_1}-using {STR_VAR_2} and$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice16Mon2Ask::
@@ -1234,7 +1234,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_ExpertMMon2Ask::
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_ExpertMAccept::
 	.string "Hm!\n"
-	.string "I shall register us right away!\l"
+	.string "I shall register us right away!\p"
 	.string "Let us both do our best!$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_ExpertMReject::

@@ -47,7 +47,7 @@ MtMoon_1F_EventScript_Robby::
 
 MtMoon_1F_Text_MarcosIntro::
 	.string "Whoa!\n"
-	.string "You shocked me!\l"
+	.string "You shocked me!\p"
 	.string "…Oh, you're just a kid!$"
 
 MtMoon_1F_Text_MarcosDefeat::
@@ -95,7 +95,7 @@ MtMoon_1F_Text_JovanPostBattle::
 
 MtMoon_1F_Text_IrisIntro::
 	.string "What?\n"
-	.string "I'm waiting for my friends to find\l"
+	.string "I'm waiting for my friends to find\p"
 	.string "me here.$"
 
 MtMoon_1F_Text_IrisDefeat::
@@ -125,7 +125,7 @@ MtMoon_1F_Text_RobbyDefeat::
 
 MtMoon_1F_Text_RobbyPostBattle::
 	.string "Zubat is tough!\n"
-	.string "But if you can catch one, you'll\l"
+	.string "But if you can catch one, you'll\p"
 	.string "be able to count on it.$"
 
 MtMoon_1F_Text_ZubatIsABloodsucker::

@@ -87,7 +87,7 @@ SixIsland_PatternBush_Text_BethanyDefeat::
 
 SixIsland_PatternBush_Text_BethanyPostBattle::
 	.string "In the same way your mother raised\n"
-	.string "you full of love, you should raise\l"
+	.string "you full of love, you should raise\p"
 	.string "your Pokémon.$"
 
 SixIsland_PatternBush_Text_AllisonIntro::

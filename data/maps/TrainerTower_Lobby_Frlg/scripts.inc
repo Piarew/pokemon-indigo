@@ -315,7 +315,7 @@ TrainerTower_Lobby_Text_ExplainTrainerTower::
 	.string "Here at Trainer Tower, there is an\n"
 	.string "event called Time Attack.\p"
 	.string "You will be timed on how quickly\n"
-	.string "you can get from the reception\l"
+	.string "you can get from the reception\p"
 	.string "counter to the Owner on the roof.\p"
 	.string "The best times will be recorded on\n"
 	.string "the Time Board.\p"

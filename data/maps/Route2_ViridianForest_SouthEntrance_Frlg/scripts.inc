@@ -11,7 +11,7 @@ Route2_ViridianForest_SouthEntrance_EventScript_Woman2::
 
 Route2_ViridianForest_SouthEntrance_Text_ForestIsMaze::
 	.string "Are you going to Viridian Forest?\n"
-	.string "It's a natural maze in there.\l"
+	.string "It's a natural maze in there.\p"
 	.string "Be careful you don't get lost.$"
 
 Route2_ViridianForest_SouthEntrance_Text_RattataHasWickedBite::

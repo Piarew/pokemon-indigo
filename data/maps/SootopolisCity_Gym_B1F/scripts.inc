@@ -114,8 +114,8 @@ SootopolisCity_Gym_B1F_Text_BridgetDefeat:
 
 SootopolisCity_Gym_B1F_Text_BridgetPostBattle:
 	.string "Rather than being satisfied by being\n"
-	.string "in a strong Gym, I imagine training in\l"
-	.string "other places will make you stronger.\l"
+	.string "in a strong Gym, I imagine training in\p"
+	.string "other places will make you stronger.\n"
 	.string "But above all, it looks more fun.$"
 
 SootopolisCity_Gym_B1F_Text_OliviaIntro:
@@ -141,7 +141,7 @@ SootopolisCity_Gym_B1F_Text_TiffanyDefeat:
 
 SootopolisCity_Gym_B1F_Text_TiffanyPostBattle:
 	.string "This is really obvious, but how strong\n"
-	.string "you are as a Trainer has nothing to do\l"
+	.string "you are as a Trainer has nothing to do\p"
 	.string "with how young or old you are.$"
 
 SootopolisCity_Gym_B1F_Text_BethanyIntro:

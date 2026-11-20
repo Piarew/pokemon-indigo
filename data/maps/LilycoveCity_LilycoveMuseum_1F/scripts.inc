@@ -161,7 +161,7 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_FatMan::
 LilycoveCity_LilycoveMuseum_1F_Text_WelcomeToLilycoveMuseum:
 	.string "Welcome to Lilycove Museum.\p"
 	.string "Please take the time to enjoy our\n"
-	.string "collection of fantastic artwork\l"
+	.string "collection of fantastic artwork\p"
 	.string "featuring Pokémon.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_ImCuratorHaveYouViewedOurPaintings:
@@ -233,8 +233,8 @@ LilycoveCity_LilycoveMuseum_1F_Text_BigPokeBallCarvedFromStone:
 
 LilycoveCity_LilycoveMuseum_1F_Text_StoneTabletWithAncientText:
 	.string "It's a huge stone tablet inscribed\n"
-	.string "with Pokémon and dense text in the\l"
-	.string "small characters of an ancient,\l"
+	.string "with Pokémon and dense text in the\p"
+	.string "small characters of an ancient,\n"
 	.string "unreadable language.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_WorksOfMagnificence:

@@ -42,12 +42,12 @@ gText_PleaseWaitForLink::
 
 gText_ConfirmLinkWhenPlayersReady::
 	.string "When all players are ready…\n"
-	.string "A Button: Confirm\l"
+	.string "A Button: Confirm\p"
 	.string "B Button: Cancel$"
 
 gText_ConfirmStartLinkWithXPlayers::
 	.string "Start link with {STR_VAR_1} players.\n"
-	.string "A Button: Confirm\l"
+	.string "A Button: Confirm\p"
 	.string "B Button: Cancel$"
 
 gText_AwaitingLinkup::
@@ -107,7 +107,7 @@ Text_TerminateLinkConfirmation:
 
 Text_TerminateLinkPleaseWait:
 	.string "Terminating link…\n"
-	.string "You will be escorted out of\l"
+	.string "You will be escorted out of\p"
 	.string "the room. Please wait.$"
 
 CableClub_Text_TooBusyToNotice:
@@ -144,7 +144,7 @@ CableClub_Text_HopeToSeeYouAgain:
 CableClub_Text_NotSetUpForFarAwayRegion:
 	.string "I'm awfully sorry.\p"
 	.string "We're not set up to conduct trades\n"
-	.string "with Trainers far away in another\l"
+	.string "with Trainers far away in another\p"
 	.string "region yet…$"
 
 CableClub_Text_OtherTrainerNotReady:
@@ -166,7 +166,7 @@ CableClub_Text_CantMixWithJapaneseGame:
 	.string "You may not mix records with  \n"
 	.string "Japanese Ruby or Sapphire games.\p"
 	.string "Also, you can't mix records with\n"
-	.string "Japanese Emerald and overseas Ruby\l"
+	.string "Japanese Emerald and overseas Ruby\p"
 	.string "or Sapphire games at the same time.$"
 
 CableClub_Text_AdapterNotConnected:
@@ -243,7 +243,7 @@ CableClub_Text_OhExcuseMe:
 
 CableClub_Text_PlayerIsWaiting:
 	.string "It appears as if {STR_VAR_1} is playing\n"
-	.string "right now.\l"
+	.string "right now.\p"
 	.string "Go for it!$"
 
 MossdeepCity_GameCorner_1F_Text_DescribeWhichGame:
@@ -279,7 +279,7 @@ MossdeepCity_GameCorner_1F_Text_TalkToOldManToPlay:
 
 MossdeepCity_GameCorner_1F_Text_WelcomeCanYouWait:
 	.string "Hi, welcome!\n"
-	.string "Are you here to play games using\l"
+	.string "Are you here to play games using\p"
 	.string "Wireless Communication?\p"
 	.string "Can you wait just a little bit?$"
 
@@ -391,13 +391,13 @@ CableClub_Text_WelcomeUnionRoomEnter:
 	.string "Welcome to the Pokémon Wireless\n"
 	.string "Club Union Room.\p"
 	.string "You may interact directly with\n"
-	.string "other Trainers here, some of\l"
+	.string "other Trainers here, some of\p"
 	.string "whom you may not even know.\p"
 	.string "Would you like to enter the Room?$"
 
 CableClub_Text_UnionRoomInfo:
 	.string "The Trainers in the Union Room\n"
-	.string "will be those players around you\l"
+	.string "will be those players around you\p"
 	.string "who have also entered the Room.\p"
 	.string "You may do all sorts of things\n"
 	.string "here, such as exchanging greetings.\p"
@@ -430,7 +430,7 @@ CableClub_Text_ExplainWirelessClubFirstTime:
 	.string "First, the room on the left.\n"
 	.string "It's the Union Room.\p"
 	.string "You may link up with Trainers\n"
-	.string "around you who have also entered\l"
+	.string "around you who have also entered\p"
 	.string "the Union Room.\p"
 	.string "With them, you may do things like\n"
 	.string "chat, battle, and trade.\p"
@@ -439,7 +439,7 @@ CableClub_Text_ExplainWirelessClubFirstTime:
 	.string "You may trade or battle Pokémon\n"
 	.string "with your friends in this room.\p"
 	.string "If the Wireless Adapter isn't\n"
-	.string "connected, you may still link up\l"
+	.string "connected, you may still link up\p"
 	.string "using a Gba Game Link cable.\p"
 	.string "If that is the case, you must go\n"
 	.string "to the Direct Corner.\p"
@@ -461,7 +461,7 @@ CableClub_Text_ExplainWirelessClub:
 	.string "First, the room on the left.\n"
 	.string "It's the Union Room.\p"
 	.string "You may link up with Trainers\n"
-	.string "around you who have also entered\l"
+	.string "around you who have also entered\p"
 	.string "the Union Room.\p"
 	.string "With them, you may do things like\n"
 	.string "chat, battle, and trade.\p"
@@ -470,12 +470,12 @@ CableClub_Text_ExplainWirelessClub:
 	.string "You may trade or battle Pokémon\n"
 	.string "with your friends in this room.\p"
 	.string "Sometimes, you may not be able to\n"
-	.string "find your friends in the Union Room\l"
+	.string "find your friends in the Union Room\p"
 	.string "or the Direct Corner.\p"
 	.string "In that case, please move closer\n"
 	.string "to your friends.\p"
 	.string "If the Wireless Adapter isn't\n"
-	.string "connected, you may still link up\l"
+	.string "connected, you may still link up\p"
 	.string "using a Gba Game Link cable.\p"
 	.string "If that is the case, you must go\n"
 	.string "to the Direct Corner.\p"

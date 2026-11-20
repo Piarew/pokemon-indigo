@@ -1027,7 +1027,7 @@ RustboroCity_Text_HaveYouChallengedGym:
 	.string "Have you taken the Pokémon Gym\n"
 	.string "challenge?\p"
 	.string "When you get that shiny Gym Badge\n"
-	.string "in hand, I guess Trainers begin to\l"
+	.string "in hand, I guess Trainers begin to\p"
 	.string "realize what is required of them.$"
 
 RustboroCity_Text_HeyThatsRustborosGymBadge:
@@ -1074,7 +1074,7 @@ RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
 
 RustboroCity_Text_PokemonCanChangeLookFromExp:
 	.string "If a Pokémon gains experience in\n"
-	.string "battles, it can sometimes change in\l"
+	.string "battles, it can sometimes change in\p"
 	.string "the way it looks.$"
 
 RustboroCity_Text_PokemonChangeShape:
@@ -1169,7 +1169,7 @@ RustboroCity_Text_MayMrBrineyHint:
 	.string "May: Oh, by the way, Mr. Briney, who\n"
 	.string "I just passed…\p"
 	.string "{PLAYER}{KUN}, you just moved here so you\n"
-	.string "might not know this, but Mr. Briney\l"
+	.string "might not know this, but Mr. Briney\p"
 	.string "was once a revered seafarer.$"
 
 RustboroCity_Text_BrendanHiLetsRegister:
@@ -1215,14 +1215,14 @@ RustboroCity_Text_BrendanMrBrineyHint:
 	.string "Brendan: By the way, you know\n"
 	.string "Mr. Briney? The guy I just passed?\p"
 	.string "I bet you didn't know this, since you\n"
-	.string "just moved here, {PLAYER}, but\l"
+	.string "just moved here, {PLAYER}, but\p"
 	.string "Mr. Briney was once a great sailor.$"
 
 RustboroCity_Text_TunnelNearingCompletion:
 	.string "“Timesaving tunnel nearing\n"
 	.string "completion!”\p"
 	.string "…Is what it says on the sign, but\n"
-	.string "there's also a big “X” splashed\l"
+	.string "there's also a big “X” splashed\p"
 	.string "across it in red paint…$"
 
 RustboroCity_Text_DevonCorpSign:
@@ -1265,7 +1265,7 @@ RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
 	.string "I added a new feature named\n"
 	.string "Match Call to your PokéNav.\p"
 	.string "Using the Match Call feature,\n"
-	.string "you can chat with people who have\l"
+	.string "you can chat with people who have\p"
 	.string "been registered in your PokéNav.\p"
 	.string "{PLAYER}, our President Stone should\n"
 	.string "be registered in your PokéNav.\p"
@@ -1284,7 +1284,7 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "You can have a 2-on-2 battle even\n"
 	.string "if you're not with another Trainer.\p"
 	.string "If you catch the eyes of two Trainers\n"
-	.string "when you have two or more Pokémon,\l"
+	.string "when you have two or more Pokémon,\p"
 	.string "they'll both challenge you.\p"
 	.string "Don't you think it'd be cool if you\n"
 	.string "could beat two Trainers by yourself?$"

@@ -144,7 +144,7 @@ OneIsland_KindleRoad_Text_KiaPostBattle::
 
 OneIsland_KindleRoad_Text_KiaNotEnoughMons::
 	.string "Kia: If you want to battle with\n"
-	.string "us, you have to bring at least two\l"
+	.string "us, you have to bring at least two\p"
 	.string "Pokémon with you.$"
 
 OneIsland_KindleRoad_Text_MikIntro::

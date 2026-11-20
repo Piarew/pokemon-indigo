@@ -62,7 +62,7 @@ Route12_NorthEntrance_2F_Text_ReceivedTM27FromLittleGirl::
 Route12_NorthEntrance_2F_Text_ExplainTM27::
 	.string "TM27 is a move called Return…\p"
 	.string "If you treat your Pokémon good,\n"
-	.string "it will return your love by working\l"
+	.string "it will return your love by working\p"
 	.string "its hardest in battle.$"
 
 Route12_NorthEntrance_2F_Text_DontHaveRoomForThis::

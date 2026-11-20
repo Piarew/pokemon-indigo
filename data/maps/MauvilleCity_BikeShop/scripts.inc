@@ -199,7 +199,7 @@ MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne:
 	.string "My goodness!\n"
 	.string "That's ridiculously far!\p"
 	.string "If you had one of my Bikes, you could\n"
-	.string "go anywhere easily while feeling the\l"
+	.string "go anywhere easily while feeling the\p"
 	.string "gentle caress of the wind!\p"
 	.string "I'll tell you what!\n"
 	.string "I'll give you a Bike!\p"
@@ -259,7 +259,7 @@ MauvilleCity_BikeShop_Text_HandbooksAreInBack:
 	.string "I'm learning about Bikes while\n"
 	.string "I work here.\p"
 	.string "If you need advice on how to ride your\n"
-	.string "Bike, there're a couple handbooks in\l"
+	.string "Bike, there're a couple handbooks in\p"
 	.string "the back.$"
 
 MauvilleCity_BikeShop_Text_MachHandbookWhichPage:

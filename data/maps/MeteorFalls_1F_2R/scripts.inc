@@ -97,7 +97,7 @@ MeteorFalls_1F_2R_Text_NicolasPostRematch:
 
 MeteorFalls_1F_2R_Text_JohnIntro:
 	.string "John: We've always battled Pokémon\n"
-	.string "together as a twosome.\l"
+	.string "together as a twosome.\p"
 	.string "We've confidence in ourselves.$"
 
 MeteorFalls_1F_2R_Text_JohnDefeat:
@@ -142,7 +142,7 @@ MeteorFalls_1F_2R_Text_JayNotEnoughMons:
 
 MeteorFalls_1F_2R_Text_JohnRematchIntro:
 	.string "John: We've always battled Pokémon\n"
-	.string "together as a twosome.\l"
+	.string "together as a twosome.\p"
 	.string "We've confidence in ourselves.$"
 
 MeteorFalls_1F_2R_Text_JohnRematchDefeat:

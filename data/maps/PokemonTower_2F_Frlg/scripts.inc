@@ -102,7 +102,7 @@ PokemonTower_2F_Movement_RivalExitDown::
 
 PokemonTower_2F_Text_RivalIntro::
 	.string "{RIVAL}: Hey, {PLAYER}!\n"
-	.string "What brings you here?\l"
+	.string "What brings you here?\p"
 	.string "Is your Pokémon dead?\p"
 	.string "Hey! It's alive!\p"
 	.string "I can at least make them faint!\n"
@@ -120,7 +120,7 @@ PokemonTower_2F_Text_RivalPostBattle::
 	.string "Where could they be?\p"
 	.string "I bet there aren't any left!\p"
 	.string "Well, I better get going.\n"
-	.string "I've got a lot to accomplish,\l"
+	.string "I've got a lot to accomplish,\p"
 	.string "unlike you.\p"
 	.string "Smell ya later!$"
 

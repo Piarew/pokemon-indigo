@@ -469,7 +469,7 @@ SaffronCity_PokemonTrainerFanClub_Text_BrocksFanToBitterEnd::
 	.string "…  …\n"
 	.string "I'm Brock's fan!\p"
 	.string "Even if I were his only fan,\n"
-	.string "I swear it on my rock-hard will,\l"
+	.string "I swear it on my rock-hard will,\p"
 	.string "and on my shorts!\p"
 	.string "I'll be his fan to the bitter end!$"
 

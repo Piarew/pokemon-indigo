@@ -70,7 +70,7 @@ Route119_WeatherInstitute_1F_EventScript_Grunt4::
 
 Route119_WeatherInstitute_1F_Text_Grunt1Intro:
 	.string "The Boss got interested in\n"
-	.string "the research they have going here,\l"
+	.string "the research they have going here,\p"
 	.string "so he sent us out.\p"
 	.string "You quit meddling!$"
 
@@ -115,10 +115,10 @@ Route119_WeatherInstitute_1F_Text_ProfStudyingRain:
 
 Route119_WeatherInstitute_1F_Text_NoticingAbnormalWeather:
 	.string "On the 2nd floor of the Institute,\n"
-	.string "we study the weather patterns over\l"
+	.string "we study the weather patterns over\p"
 	.string "the Hoenn region.\p"
 	.string "We've been noticing temporary and\n"
-	.string "isolated cases of droughts and\l"
+	.string "isolated cases of droughts and\p"
 	.string "heavy rain lately…$"
 
 Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo:

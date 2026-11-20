@@ -268,7 +268,7 @@ FiveIsland_RocketWarehouse_Text_Admin2PostBattle::
 	.string "But don't think this is over.\n"
 	.string "I won't let this be the end.\p"
 	.string "I will find Giovanni.\n"
-	.string "And I will resurrect Team Rocket!\l"
+	.string "And I will resurrect Team Rocket!\p"
 	.string "I will…\p"
 	.string "Until then, farewell!$"
 

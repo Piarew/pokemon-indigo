@@ -278,14 +278,14 @@ LavaridgeTown_Text_MayNiceBadgesTakeThis:
 	.string "Oh? While I visited the hot springs,\n"
 	.string "you got the Lavaridge Gym Badge.\p"
 	.string "You must have collected\n"
-	.string "good Pokémon…\l"
+	.string "good Pokémon…\p"
 	.string "No, I believe you raised some.\p"
 	.string "I guess it would be okay for you to\n"
 	.string "have this.$"
 
 LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
 	.string "May: With those Go-Goggles, you'll\n"
-	.string "have no trouble getting through the\l"
+	.string "have no trouble getting through the\p"
 	.string "desert near Route 111.\p"
 	.string "But, wow, {PLAYER}{KUN}…\n"
 	.string "Challenging Gyms…\p"
@@ -305,13 +305,13 @@ LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
 
 LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "Brendan: Keep those with you if you're\n"
-	.string "planning on going into that desert near\l"
+	.string "planning on going into that desert near\p"
 	.string "Route 111.\p"
 	.string "There should be some Pokémon that\n"
-	.string "are exclusively desert-dwellers.\l"
+	.string "are exclusively desert-dwellers.\p"
 	.string "You might look around for those.\p"
 	.string "As for me…\n"
-	.string "I'm considering challenging Norman,\l"
+	.string "I'm considering challenging Norman,\p"
 	.string "the Gym Leader of Petalburg.\p"
 	.string "Unlike you, {PLAYER}, your dad looks like\n"
 	.string "he really is tough.\p"
@@ -320,10 +320,10 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
 	.string "I have here an Egg.\p"
 	.string "I'd hoped to hatch it by covering it in\n"
-	.string "hot sand by the hot springs.\l"
+	.string "hot sand by the hot springs.\p"
 	.string "But that doesn't seem to be enough…\p"
 	.string "I've heard it would be best if it were\n"
-	.string "kept together with Pokémon and\l"
+	.string "kept together with Pokémon and\p"
 	.string "carried about.\p"
 	.string "You are a Trainer, yes?\n"
 	.string "And your Pokémon radiate vitality.\p"
@@ -356,8 +356,8 @@ LavaridgeTown_Text_HotSpringsNeverRunDry:
 	.string "and yet the hot springs never run dry.\p"
 	.string "Isn't it magical?\p"
 	.string "These hot springs appear near active\n"
-	.string "volcanoes. Veins of water under the\l"
-	.string "ground are heated by magma to well up\l"
+	.string "volcanoes. Veins of water under the\p"
+	.string "ground are heated by magma to well up\n"
 	.string "as hot springs.$"
 
 LavaridgeTown_Text_PokemonNippedBackside:
@@ -385,9 +385,9 @@ LavaridgeTown_Text_IfPokemonInHotSprings:
 
 LavaridgeTown_Text_HotSpringsClaims:
 	.string "They're claiming that these hot springs\n"
-	.string "are good for calming nervous tension,\l"
-	.string "relieving aching muscles, solving\l"
-	.string "romantic problems, and attracting\l"
+	.string "are good for calming nervous tension,\p"
+	.string "relieving aching muscles, solving\n"
+	.string "romantic problems, and attracting\p"
 	.string "money…$"
 
 LavaridgeTown_Text_TownSign:
@@ -397,7 +397,7 @@ LavaridgeTown_Text_TownSign:
 
 LavaridgeTown_Text_GymSign:
 	.string "Lavaridge Town Pokémon Gym\n"
-	.string "Leader: Flannery\l"
+	.string "Leader: Flannery\p"
 	.string "“One with a fiery passion that burns!”$"
 
 LavaridgeTown_Text_HerbShopSign:

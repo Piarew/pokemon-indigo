@@ -103,7 +103,7 @@ PewterCity_Gym_Text_BrockDefeat::
 	.string "I took you for granted, and so\n"
 	.string "I lost.\p"
 	.string "As proof of your victory, I confer\n"
-	.string "on you this…the official Pokémon\l"
+	.string "on you this…the official Pokémon\p"
 	.string "League Boulderbadge.\p"
 	.string "{FONT_NORMAL}{PLAYER} received the Boulderbadge\n"
 	.string "from Brock!{PAUSE_MUSIC}{PLAY_BGM}{MUS_OBTAIN_BADGE}{PAUSE 0xFE}{PAUSE 0x56}{RESUME_MUSIC}\p"

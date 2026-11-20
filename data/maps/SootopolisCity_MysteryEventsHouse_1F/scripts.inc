@@ -166,7 +166,7 @@ SootopolisCity_MysteryEventsHouse_1F_Text_OnlyAmusementWatchingBattles:
 	.string "When I was young, I traveled the world\n"
 	.string "as a Pokémon Trainer.\p"
 	.string "Now that I've become an old buzzard,\n"
-	.string "my only amusement is watching young\l"
+	.string "my only amusement is watching young\p"
 	.string "Trainers battle.$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_DoorAppearsToBeLocked:

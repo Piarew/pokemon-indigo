@@ -196,13 +196,13 @@ SaffronCity_Text_FightingDojo::
 
 SaffronCity_Text_GymSign::
 	.string "Saffron City Pokémon Gym\n"
-	.string "Leader: Sabrina\l"
+	.string "Leader: Sabrina\p"
 	.string "The Master of Psychic Pokémon!$"
 
 SaffronCity_Text_FullHealCuresStatus::
 	.string "Trainer Tips\p"
 	.string "Full Heal cures all ailments like\n"
-	.string "burns, paralysis, poisoning,\l"
+	.string "burns, paralysis, poisoning,\p"
 	.string "freezing, and sleep.\p"
 	.string "It costs a bit more, but it's more\n"
 	.string "convenient than buying other items.$"
@@ -235,6 +235,6 @@ SaffronCity_Text_HowCanClubNotRecognizeLance::
 	.string "How could they not recognize\n"
 	.string "the brilliance that is Lance?\p"
 	.string "He stands for justice!\n"
-	.string "He's cool, and yet passionate!\l"
+	.string "He's cool, and yet passionate!\p"
 	.string "He's the greatest, Lance!$"
 

@@ -408,7 +408,7 @@ MossdeepCity_SpaceCenter_1F_Text_Grunt2Defeat:
 
 MossdeepCity_SpaceCenter_1F_Text_Grunt2PostBattle:
 	.string "Please, tell our leader that\n"
-	.string "I never abandoned my post.\l"
+	.string "I never abandoned my post.\p"
 	.string "That I stayed to the bitter end…$"
 
 MossdeepCity_SpaceCenter_1F_Text_MagmaIntentToStealNotice:

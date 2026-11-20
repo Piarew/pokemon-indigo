@@ -88,7 +88,7 @@ CeladonCity_Gym_EventScript_GymStatuePostVictory::
 
 CeladonCity_Gym_Text_ErikaIntro::
 	.string "Hello…\n"
-	.string "Lovely weather, isn't it?\l"
+	.string "Lovely weather, isn't it?\p"
 	.string "It's so pleasant…\p"
 	.string "…Oh, dear…\n"
 	.string "I must have dozed off. Welcome.\p"
@@ -104,7 +104,7 @@ CeladonCity_Gym_Text_ErikaIntro::
 
 CeladonCity_Gym_Text_ErikaDefeat::
 	.string "Oh!\n"
-	.string "I concede defeat.\l"
+	.string "I concede defeat.\p"
 	.string "You are remarkably strong.\p"
 	.string "I must confer on you the\n"
 	.string "Rainbowbadge.$"
@@ -210,7 +210,7 @@ CeladonCity_Gym_Text_LoriDefeat::
 
 CeladonCity_Gym_Text_LoriPostBattle::
 	.string "I have a blind date coming up.\n"
-	.string "I have to learn to be polite,\l"
+	.string "I have to learn to be polite,\p"
 	.string "especially if I have to battle.$"
 
 CeladonCity_Gym_Text_MaryIntro::

@@ -1289,7 +1289,7 @@ PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
 PetalburgCity_Gym_Text_ExplainFacade:
 	.string "Dad: TM42 contains Facade.\p"
 	.string "It doubles the power of moves if\n"
-	.string "the Pokémon is poisoned, paralyzed,\l"
+	.string "the Pokémon is poisoned, paralyzed,\p"
 	.string "or burned.\p"
 	.string "It might be able to turn a bad\n"
 	.string "situation into an advantage.$"
@@ -1366,7 +1366,7 @@ PetalburgCity_Gym_Text_RandallPostBattle:
 
 PetalburgCity_Gym_Text_RandallPostBadge:
 	.string "Whomever you beat, and whomever you\n"
-	.string "may lose to, you never shirk from\l"
+	.string "may lose to, you never shirk from\p"
 	.string "training yourself and your Pokémon.\p"
 	.string "That's what I think being a\n"
 	.string "Gym Leader is all about.$"
@@ -1433,7 +1433,7 @@ PetalburgCity_Gym_Text_BerkePostBattle:
 
 PetalburgCity_Gym_Text_BerkePostBadge:
 	.string "Since your dad became the Leader,\n"
-	.string "the Trainers of Petalburg City have\l"
+	.string "the Trainers of Petalburg City have\p"
 	.string "become a lot tougher.$"
 
 PetalburgCity_Gym_Text_MaryIntro:
@@ -1561,7 +1561,7 @@ PetalburgCity_Gym_Text_NormanPreRematch:
 	.string "Inside a Gym, it doesn't matter that\n"
 	.string "we are a parent and child.\p"
 	.string "…No, because we are parent and child,\n"
-	.string "we owe it to each other to do the best\l"
+	.string "we owe it to each other to do the best\p"
 	.string "we can. Isn't that right, {PLAYER}?$"
 
 PetalburgCity_Gym_Text_NormanRematchDefeat:
@@ -1572,7 +1572,7 @@ PetalburgCity_Gym_Text_NormanPostRematch:
 	.string "Dad: {PLAYER}…\n"
 	.string "What is your dream?\p"
 	.string "My dream…\n"
-	.string "Hahaha…\l"
+	.string "Hahaha…\p"
 	.string "It has already come true, actually.$"
 
 PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:

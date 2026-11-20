@@ -71,7 +71,7 @@ Route6_Text_ElijahDefeat::
 
 Route6_Text_ElijahPostBattle::
 	.string "Are my Pokémon weak?\n"
-	.string "Or, am I just bad?\l"
+	.string "Or, am I just bad?\p"
 	.string "Which do you think?$"
 
 Route6_Text_UndergroundPathSign::

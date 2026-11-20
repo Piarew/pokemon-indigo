@@ -330,7 +330,7 @@ Route103_Text_BrendanDefeated:
 
 Route103_Text_BrendanTimeToHeadBack:
 	.string "Brendan: I think I get it.\n"
-	.string "I think I know why my dad has his eye\l"
+	.string "I think I know why my dad has his eye\p"
 	.string "out for you now.\p"
 	.string "Look, your Pokémon already likes you,\n"
 	.string "even though you just got it.\p"

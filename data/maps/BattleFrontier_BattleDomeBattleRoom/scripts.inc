@@ -962,16 +962,16 @@ BattleFrontier_BattleDomeBattleRoom_Text_RefereesDecidedWinnerTrainer:
 	.string "The Referees have reached\n"
 	.string "a decision!\p"
 	.string "The winner is…\n"
-	.string "Oh, my goodness!\l"
-	.string "The winner is {STR_VAR_1}!\l"
+	.string "Oh, my goodness!\p"
+	.string "The winner is {STR_VAR_1}!\n"
 	.string "Congratulations!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_RefereesDecidedWinnerPlayer:
 	.string "The Referees have reached\n"
 	.string "a decision!\p"
 	.string "The winner is…\n"
-	.string "Oh, my goodness!\l"
-	.string "The winner is {PLAYER}!\l"
+	.string "Oh, my goodness!\p"
+	.string "The winner is {PLAYER}!\n"
 	.string "Congratulations!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_BrightNewHope:
@@ -1056,8 +1056,8 @@ BattleFrontier_BattleDomeBattleRoom_Text_MakeWayForDomeAceTucker:
 	.string "And now… The Trainer standing in\n"
 	.string "{PLAYER}'s record-setting path…\p"
 	.string "Yes! The one and only!\n"
-	.string "The Battle Dome Commissioner!\l"
-	.string "Our very own Dome Ace!\l"
+	.string "The Battle Dome Commissioner!\p"
+	.string "Our very own Dome Ace!\n"
 	.string "Make way for Tucker!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_SpectatorTuckerChant:
@@ -1073,7 +1073,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_TuckerSilverIntro:
 	.string "the tension of getting to battle me!\p"
 	.string "But don't you worry about a thing!\p"
 	.string "I'm the no. 1 star of the Battle Dome!\n"
-	.string "I, Tucker the Dome Ace, will bathe you\l"
+	.string "I, Tucker the Dome Ace, will bathe you\p"
 	.string "in my brilliant glow!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_LetsSeeYourStrategy:
@@ -1112,19 +1112,19 @@ BattleFrontier_BattleDomeBattleRoom_Text_LegendHasReturnedDomeAceTucker:
 	.string "Finally!\n"
 	.string "Finally, the legend has returned!\p"
 	.string "Yes, the name of that legend!\n"
-	.string "Our very own Dome Ace!\l"
+	.string "Our very own Dome Ace!\p"
 	.string "It's none other than Tucker!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_TuckerGoldIntro:
 	.string "Tucker: Ah…\n"
-	.string "The pummeling roar of the crowd…\l"
-	.string "Their furnace-like heat of excitement…\l"
+	.string "The pummeling roar of the crowd…\p"
+	.string "Their furnace-like heat of excitement…\n"
 	.string "This is a wonderful place…\p"
 	.string "To the crowd, I am the Dome Ace…\n"
-	.string "I represent their hopes and dreams…\l"
+	.string "I represent their hopes and dreams…\p"
 	.string "I must never fade from their sight…\p"
 	.string "I must burn!\n"
-	.string "Brighter and more brilliant!\l"
+	.string "Brighter and more brilliant!\p"
 	.string "I must light all that gather here!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_UnleashAllPowerIPossess:
@@ -1171,8 +1171,8 @@ BattleFrontier_BattleDomeBattleRoom_Text_RefereesDecidedWinnerTucker:
 	.string "The Referees have reached\n"
 	.string "a decision!\p"
 	.string "The winner is…\n"
-	.string "Oh, my goodness!\l"
-	.string "The winner is our very own Dome Ace!\l"
+	.string "Oh, my goodness!\p"
+	.string "The winner is our very own Dome Ace!\n"
 	.string "It's Tucker!\p"
 	.string "Congratulations! And thank you!\n"
 	.string "Let's hear it for the Dome Ace, Tucker!$"

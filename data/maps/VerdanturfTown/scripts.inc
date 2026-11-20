@@ -81,7 +81,7 @@ VerdanturfTown_Text_AirCleanHere:
 	.string "The way the winds blow, volcanic ash\n"
 	.string "is never blown in this direction.\p"
 	.string "The air is clean and delicious here.\n"
-	.string "Living here should do wonders for even\l"
+	.string "Living here should do wonders for even\p"
 	.string "frail and sickly people.$"
 
 VerdanturfTown_Text_MakeBattleTentDebut:
@@ -94,7 +94,7 @@ VerdanturfTown_Text_GuyTryingToBustThroughCave:
 	.string "Did you see the cave next to the\n"
 	.string "Pokémon Mart?\p"
 	.string "There's a guy in there who's trying to\n"
-	.string "bust up boulders so he can bust out\l"
+	.string "bust up boulders so he can bust out\p"
 	.string "through to the other side.\p"
 	.string "It'd be great if we could go through…\n"
 	.string "It'll make it easy to visit Rustboro.$"

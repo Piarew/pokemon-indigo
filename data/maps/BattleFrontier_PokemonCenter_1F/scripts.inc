@@ -47,7 +47,7 @@ BattleFrontier_PokemonCenter_1F_Text_NeverSeenPokemon:
 
 BattleFrontier_PokemonCenter_1F_Text_NextStopBattleArena:
 	.string "Okay! Next stop, the Battle Arena!\n"
-	.string "I'd better get the right Pokémon from\l"
+	.string "I'd better get the right Pokémon from\p"
 	.string "the PC Storage System.$"
 
 BattleFrontier_PokemonCenter_1F_Text_GoingThroughEveryChallenge:

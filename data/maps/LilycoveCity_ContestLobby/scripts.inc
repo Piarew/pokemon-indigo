@@ -986,8 +986,8 @@ LilycoveCity_ContestLobby_Text_YourPokemonSpurredMeToPaint:
 	.string "I did a painting of your Pokémon to\n"
 	.string "commemorate its victory…\p"
 	.string "Well, your Pokémon's appeals were\n"
-	.string "so fantastic, it spurred me into\l"
-	.string "painting better than I usually do.\l"
+	.string "so fantastic, it spurred me into\p"
+	.string "painting better than I usually do.\n"
 	.string "Look, see?$"
 
 LilycoveCity_ContestLobby_Text_ShouldITakePaintingToMuseum:
@@ -1039,8 +1039,8 @@ LilycoveCity_ContestLobby_Text_MasterRankHereICome:
 	.string "Hoo, boy… Master Rank Contests,\n"
 	.string "here I come.\p"
 	.string "The world will know that my dearest\n"
-	.string "Pokémon is the cutest being in all\l"
-	.string "existence. The time has come!\l"
+	.string "Pokémon is the cutest being in all\p"
+	.string "existence. The time has come!\n"
 	.string "Uheheheh.$"
 
 LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere:

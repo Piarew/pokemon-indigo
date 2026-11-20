@@ -55,7 +55,7 @@ AbandonedShip_Corridors_B1F_EventScript_Duncan::
 
 AbandonedShip_Corridors_B1F_Text_DuncanIntro:
 	.string "When we go out to sea, we Sailors\n"
-	.string "always bring our Pokémon.\l"
+	.string "always bring our Pokémon.\p"
 	.string "How about a quick battle?$"
 
 AbandonedShip_Corridors_B1F_Text_DuncanDefeat:

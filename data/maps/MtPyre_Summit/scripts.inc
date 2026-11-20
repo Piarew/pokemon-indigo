@@ -468,7 +468,7 @@ MtPyre_Summit_Text_Grunt3PostBattle:
 
 MtPyre_Summit_Text_Grunt4Intro:
 	.string "Oh, I know!\n"
-	.string "You tried to join Team Magma,\l"
+	.string "You tried to join Team Magma,\p"
 	.string "but they wouldn't have you!\p"
 	.string "Well, don't think that we'll let you\n"
 	.string "join our Team Aqua!$"
@@ -522,7 +522,7 @@ MtPyre_Summit_Text_GroudonKyogreAwakened:
 	.string "You say that both Groudon and Kyogre\n"
 	.string "have been awakened?\p"
 	.string "It is said that the Blue Orb and\n"
-	.string "the Red Orb quelled the rage of\l"
+	.string "the Red Orb quelled the rage of\p"
 	.string "the two Pokémon…\p"
 	.string "It is also said that the true owner\n"
 	.string "of the Orbs still exists.\p"
@@ -543,7 +543,7 @@ MtPyre_Summit_Text_SuperAncientPokemonTaughtUs:
 	.string "That is said to be the identities of\n"
 	.string "the super-ancient Pokémon…\p"
 	.string "In the same way that we humans and\n"
-	.string "Pokémon have life, our world, too,\l"
+	.string "Pokémon have life, our world, too,\p"
 	.string "is alive…\p"
 	.string "The super-ancient Pokémon have\n"
 	.string "taught us that…$"
@@ -562,7 +562,7 @@ MtPyre_Summit_Text_WillYouHearOutMyTale:
 MtPyre_Summit_Text_GroudonKyogreTale:
 	.string "It happened long, long ago…\p"
 	.string "The world was wracked by a ferocious\n"
-	.string "clash between the Pokémon of the land\l"
+	.string "clash between the Pokémon of the land\p"
 	.string "and the Pokémon of the sea…\p"
 	.string "The Pokémon of the land raised\n"
 	.string "mountains and created continents…\p"
@@ -576,7 +576,7 @@ MtPyre_Summit_Text_GroudonKyogreTale:
 	.string "Light poured from the two Orbs and\n"
 	.string "becalmed the enraged adversaries.\p"
 	.string "The pair, made docile, dove deep into\n"
-	.string "the sea where eventually they\l"
+	.string "the sea where eventually they\p"
 	.string "disappeared…$"
 
 MtPyre_Summit_Text_WellThatTooIsFine:
@@ -599,7 +599,7 @@ MtPyre_Summit_Text_HearTheNewLegendOfHoenn:
 MtPyre_Summit_Text_HoennTrioTale:
 	.string "It happened long, long ago…\p"
 	.string "The world was wracked by a ferocious\n"
-	.string "clash between the Pokémon of the land\l"
+	.string "clash between the Pokémon of the land\p"
 	.string "and the Pokémon of the sea…\p"
 	.string "The Pokémon of the land raised\n"
 	.string "mountains and created continents…\p"

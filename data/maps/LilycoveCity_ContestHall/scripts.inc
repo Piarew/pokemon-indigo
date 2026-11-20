@@ -357,7 +357,7 @@ LilycoveCity_ContestHall_Text_EnteredWrongContest:
 
 LilycoveCity_ContestHall_Text_RaisedMonToBeSmart:
 	.string "I've spent many a year, and all my\n"
-	.string "wisdom besides, raising this Pokémon\l"
+	.string "wisdom besides, raising this Pokémon\p"
 	.string "to be smart.\p"
 	.string "It won't be easily bested by some\n"
 	.string "young pup's Pokémon.\p"
@@ -380,7 +380,7 @@ LilycoveCity_ContestHall_Text_YoureBeautifulGrandpa:
 
 LilycoveCity_ContestHall_Text_AllSeemToUseDifferentMoves:
 	.string "Even when Trainers enter the same\n"
-	.string "kind of Pokémon, they all seem to use\l"
+	.string "kind of Pokémon, they all seem to use\p"
 	.string "different moves for appeals.\p"
 	.string "It's just like the way people have\n"
 	.string "different styles for battling.$"
@@ -433,13 +433,13 @@ LilycoveCity_ContestHall_Text_PokemonLooksLikeYoungerMe:
 
 LilycoveCity_ContestHall_Text_WinBeautyContestMakesMeHappy:
 	.string "You know, if I win at a Beauty\n"
-	.string "Contest, sure it makes me\l"
+	.string "Contest, sure it makes me\p"
 	.string "happy. More than usual, anyway.$"
 
 LilycoveCity_ContestHall_Text_GanderAtAllThosePrettyPokemon:
 	.string "Wahahahah!\p"
 	.string "Will you take a gander at all those\n"
-	.string "pretty Pokémon!\l"
+	.string "pretty Pokémon!\p"
 	.string "I just love this sort of glitz!$"
 
 LilycoveCity_ContestHall_Text_CantWinOnBeautyAlone:

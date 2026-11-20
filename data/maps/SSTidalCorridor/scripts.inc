@@ -264,7 +264,7 @@ SSTidalCorridor_Text_ScottBattleFrontierInvite:
 	.string "I've spoken with the ship's Captain\n"
 	.string "about this.\p"
 	.string "The next time you take a ferry,\n"
-	.string "you should be able to sail to\l"
+	.string "you should be able to sail to\p"
 	.string "the Battle Frontier.\p"
 	.string "Okay, {PLAYER}{KUN}, I'll be waiting for you\n"
 	.string "at the Battle Frontier!$"
@@ -300,7 +300,7 @@ SSTidalCorridor_Text_WeveArrived:
 
 SSTidalCorridor_Text_VisitOtherCabins:
 	.string "Go visit other cabins.\n"
-	.string "Trainers bored of the boat trip will\l"
+	.string "Trainers bored of the boat trip will\p"
 	.string "be itching to battle.$"
 
 SSTidalCorridor_Text_EnjoyYourCruise:

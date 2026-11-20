@@ -154,7 +154,7 @@ BattleFrontier_Lounge2_Text_SalonMaidenSilverMons::
 	.string "When she's measuring up her opponent,\n"
 	.string "she apparently uses these Pokémon:\p"
 	.string "A Psychic-type Psi Pokémon,\n"
-	.string "a Fire-type Volcano Pokémon,\l"
+	.string "a Fire-type Volcano Pokémon,\p"
 	.string "and a Normal-type Sleeping Pokémon.$"
 
 BattleFrontier_Lounge2_Text_SalonMaidenGoldMons::
@@ -163,7 +163,7 @@ BattleFrontier_Lounge2_Text_SalonMaidenGoldMons::
 	.string "When she's battling flat out,\n"
 	.string "she apparently uses these Pokémon:\p"
 	.string "A Dragon & Psychic Eon Pokémon,\n"
-	.string "an Electric-type Thunder Pokémon,\l"
+	.string "an Electric-type Thunder Pokémon,\p"
 	.string "and a Normal-type Sleeping Pokémon.$"
 
 BattleFrontier_Lounge2_Text_DomeAceIsThere::
@@ -178,7 +178,7 @@ BattleFrontier_Lounge2_Text_DomeAceSilverMons::
 	.string "When he's treating the opponent\n"
 	.string "lightly, he uses these three Pokémon:\p"
 	.string "A Dragon & Flying Dragon Pokémon,\n"
-	.string "a Water & Ground Mud Fish Pokémon,\l"
+	.string "a Water & Ground Mud Fish Pokémon,\p"
 	.string "and a Fire & Flying Flame Pokémon.$"
 
 BattleFrontier_Lounge2_Text_DomeAceGoldMons::
@@ -187,8 +187,8 @@ BattleFrontier_Lounge2_Text_DomeAceGoldMons::
 	.string "When he's demonstrating his strategy,\n"
 	.string "he uses these three Pokémon:\p"
 	.string "A Dragon & Flying Eon Pokémon,\n"
-	.string "a Water & Ground Mud Fish Pokémon,\l"
-	.string "and a Steel- & Psychic-type Iron Leg\l"
+	.string "a Water & Ground Mud Fish Pokémon,\p"
+	.string "and a Steel- & Psychic-type Iron Leg\n"
 	.string "Pokémon.$"
 
 BattleFrontier_Lounge2_Text_FactoryHeadIsThere::
@@ -227,7 +227,7 @@ BattleFrontier_Lounge2_Text_PikeQueenSilverMons::
 	.string "When she's in a good mood, they say\n"
 	.string "she uses these three Pokémon:\p"
 	.string "A Poison-type Fang Snake Pokémon,\n"
-	.string "a Bug & Rock Mold Pokémon,\l"
+	.string "a Bug & Rock Mold Pokémon,\p"
 	.string "and a Water-type Tender Pokémon.$"
 
 BattleFrontier_Lounge2_Text_PikeQueenGoldMons::
@@ -236,8 +236,8 @@ BattleFrontier_Lounge2_Text_PikeQueenGoldMons::
 	.string "When she's seriously annoyed, they say\n"
 	.string "she uses these three Pokémon:\p"
 	.string "A Poison-type Fang Snake Pokémon,\n"
-	.string "a Steel & Ground Iron Snake Pokémon,\l"
-	.string "and a Water- & Flying-type Atrocious\l"
+	.string "a Steel & Ground Iron Snake Pokémon,\p"
+	.string "and a Water- & Flying-type Atrocious\n"
 	.string "Pokémon.$"
 
 BattleFrontier_Lounge2_Text_ArenaTycoonIsThere::
@@ -253,7 +253,7 @@ BattleFrontier_Lounge2_Text_ArenaTycoonSilverMons::
 	.string "When she's assessing the foe's ability,\n"
 	.string "she supposedly uses these Pokémon:\p"
 	.string "A Bug & Fighting Single Horn Pokémon,\n"
-	.string "a Dark-type Moonlight Pokémon,\l"
+	.string "a Dark-type Moonlight Pokémon,\p"
 	.string "and a Bug & Ghost Shed Pokémon.$"
 
 BattleFrontier_Lounge2_Text_ArenaTycoonGoldMons::
@@ -262,8 +262,8 @@ BattleFrontier_Lounge2_Text_ArenaTycoonGoldMons::
 	.string "When she battles for keeps,\n"
 	.string "she supposedly uses these Pokémon:\p"
 	.string "A Dark-type Moonlight Pokémon,\n"
-	.string "a Ghost & Poison Shadow Pokémon\l"
-	.string "and a Grass- & Fighting-type\l"
+	.string "a Ghost & Poison Shadow Pokémon\p"
+	.string "and a Grass- & Fighting-type\n"
 	.string "Mushroom Pokémon.$"
 
 BattleFrontier_Lounge2_Text_PalaceMavenIsThere::
@@ -279,7 +279,7 @@ BattleFrontier_Lounge2_Text_PalaceMavenSilverMons::
 	.string "When he's testing the opponent's\n"
 	.string "spirit, he's said to use these Pokémon:\p"
 	.string "A Poison & Flying-type Bat Pokémon,\n"
-	.string "a Normal-type Lazy Pokémon, and a\l"
+	.string "a Normal-type Lazy Pokémon, and a\p"
 	.string "Water- & Ice-type Transport Pokémon.$"
 
 BattleFrontier_Lounge2_Text_PalaceMavenGoldMons::
@@ -288,7 +288,7 @@ BattleFrontier_Lounge2_Text_PalaceMavenGoldMons::
 	.string "When he throws his entire might into\n"
 	.string "battle, he's said to use these Pokémon:\p"
 	.string "A Fire-type Legendary Pokémon,\n"
-	.string "a Normal-type Lazy Pokémon,\l"
+	.string "a Normal-type Lazy Pokémon,\p"
 	.string "and a Water-type Aurora Pokémon.$"
 
 BattleFrontier_Lounge2_Text_PyramidKingIsThere::
@@ -304,7 +304,7 @@ BattleFrontier_Lounge2_Text_PyramidKingSilverMons::
 	.string "When he's checking the foe's power,\n"
 	.string "he apparently uses these Pokémon:\p"
 	.string "A Rock-type Rock Peak Pokémon,\n"
-	.string "an Ice-type Iceberg Pokémon,\l"
+	.string "an Ice-type Iceberg Pokémon,\p"
 	.string "and a Steel-type Iron Pokémon.$"
 
 BattleFrontier_Lounge2_Text_PyramidKingGoldMons::
@@ -313,8 +313,8 @@ BattleFrontier_Lounge2_Text_PyramidKingGoldMons::
 	.string "When he's pumped with hot power,\n"
 	.string "he apparently uses these Pokémon:\p"
 	.string "An Ice & Flying Freeze Pokémon, an\n"
-	.string "Electric & Flying Electric Pokémon,\l"
-	.string "and a Fire- & Flying-type Flame\l"
+	.string "Electric & Flying Electric Pokémon,\p"
+	.string "and a Fire- & Flying-type Flame\n"
 	.string "Pokémon.$"
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice1::
@@ -323,26 +323,26 @@ BattleFrontier_Lounge2_Text_DoubleBattleAdvice1::
 	.string "But the Double Battle Rooms of\n"
 	.string "the Battle Tower are, like, basic!\p"
 	.string "They're where you should learn about\n"
-	.string "how Double Battles are played here\l"
+	.string "how Double Battles are played here\p"
 	.string "in the Battle Frontier.$"
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice2::
 	.string "Watch yourself in the battles here.\p"
 	.string "I hear there are Trainers that have\n"
-	.string "strategies they developed just for\l"
+	.string "strategies they developed just for\p"
 	.string "Double Battles.$"
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice3::
 	.string "Once you're confident and comfortable\n"
-	.string "with Double Battles here, you should\l"
-	.string "think about challenging other places\l"
+	.string "with Double Battles here, you should\p"
+	.string "think about challenging other places\n"
 	.string "offering Double Battles.$"
 
 BattleFrontier_Lounge2_Text_MultiBattleAdvice::
 	.string "All sorts of Trainers gather in\n"
 	.string "the Battle Salon.\p"
 	.string "Just think--you may run into your\n"
-	.string "friends or followers!\l"
+	.string "friends or followers!\p"
 	.string "You should look carefully!$"
 
 BattleFrontier_Lounge2_Text_LinkMultiBattleAdvice::

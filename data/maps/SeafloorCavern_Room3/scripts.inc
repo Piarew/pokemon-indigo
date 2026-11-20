@@ -14,7 +14,7 @@ SeafloorCavern_Room3_EventScript_Grunt5::
 SeafloorCavern_Room3_Text_ShellyIntro:
 	.string "Ahahahaha!\p"
 	.string "How did you manage to get here without\n"
-	.string "a submarine?\l"
+	.string "a submarine?\p"
 	.string "What an impressive child!\p"
 	.string "But… It won't do to have you\n"
 	.string "meddling about here.\p"
@@ -33,14 +33,14 @@ SeafloorCavern_Room3_Text_ShellyPostBattle:
 	.string "It's terribly disappointing that you're\n"
 	.string "not a Team Aqua member.\p"
 	.string "You could have enjoyed the fabulous\n"
-	.string "world our Boss has promised as\l"
+	.string "world our Boss has promised as\p"
 	.string "one of us…$"
 
 SeafloorCavern_Room3_Text_Grunt5Intro:
 	.string "For our dream to become real, we need\n"
 	.string "the power of Pokémon.\p"
 	.string "But meddlers like you use the power of\n"
-	.string "Pokémon to mess with us even at\l"
+	.string "Pokémon to mess with us even at\p"
 	.string "a place like this!\p"
 	.string "Life just doesn't work the way we\n"
 	.string "need it to!$"

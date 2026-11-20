@@ -152,7 +152,7 @@ Route9_Text_ConnerRematchIntro::
 
 Route10_Text_MarkRematchIntro::
 	.string "Wow, you came here again?\n"
-	.string "Maybe you're a Pokémaniac, too?\l"
+	.string "Maybe you're a Pokémaniac, too?\p"
 	.string "Want to see my collection?$"
 
 Route10_Text_ClarkRematchIntro::
@@ -169,7 +169,7 @@ Route10_Text_HeidiRematchIntro::
 
 Route10_Text_TrentRematchIntro::
 	.string "Ah!\n"
-	.string "This mountain air is delicious!\l"
+	.string "This mountain air is delicious!\p"
 	.string "It's so good, I can't leave!$"
 
 Route10_Text_CarolRematchIntro::
@@ -217,12 +217,12 @@ Route11_Text_BernieRematchIntro::
 
 Route11_Text_DaveRematchIntro::
 	.string "I raised my Pokémon carefully.\n"
-	.string "They should be ready by now.\l"
+	.string "They should be ready by now.\p"
 	.string "This time, they should win, too.$"
 
 Route12_Text_NedRematchIntro::
 	.string "Yeah!\n"
-	.string "I got a bite, here!\l"
+	.string "I got a bite, here!\p"
 	.string "Th-this might be the real thing!$"
 
 Route12_Text_ChipRematchIntro::
@@ -245,7 +245,7 @@ Route12_Text_HankRematchIntro::
 
 Route12_Text_ElliotRematchIntro::
 	.string "I love fishing, don't get me wrong.\n"
-	.string "But, I wish I had more work…\l"
+	.string "But, I wish I had more work…\p"
 	.string "…It's hard to give up fishing!$"
 
 Route12_Text_AndrewRematchIntro::
@@ -372,7 +372,7 @@ Route15_Text_ChesterRematchIntro::
 
 Route15_Text_GraceRematchIntro::
 	.string "Oh, you're a little cutie!\n"
-	.string "So like a darling Pokémon!\l"
+	.string "So like a darling Pokémon!\p"
 	.string "I remember you now!$"
 
 Route15_Text_OliviaRematchIntro::
@@ -530,7 +530,7 @@ Route19_Text_AxleRematchIntro::
 
 Route19_Text_ConnieRematchIntro::
 	.string "I swam here with my friends…\n"
-	.string "I'm tired…\l"
+	.string "I'm tired…\p"
 	.string "Must we really battle again?$"
 
 Route19_Text_LiaRematchIntro::
@@ -642,7 +642,7 @@ Route25_Text_FlintRematchIntro::
 
 Route25_Text_KelseyRematchIntro::
 	.string "Hi!\n"
-	.string "My boyfriend is cool!\l"
+	.string "My boyfriend is cool!\p"
 	.string "My conditioning's good today!$"
 
 Route25_Text_ChadRematchIntro::
@@ -726,7 +726,7 @@ OneIsland_KindleRoad_Text_TanyaRematchIntro::
 
 OneIsland_KindleRoad_Text_SheaRematchIntro::
 	.string "Every morning, before breakfast,\n"
-	.string "I swim around this island…\l"
+	.string "I swim around this island…\p"
 	.string "Three times!$"
 
 OneIsland_KindleRoad_Text_HughRematchIntro::
@@ -788,7 +788,7 @@ FiveIsland_ResortGorgeous_Text_DaisyRematchIntro::
 
 FiveIsland_ResortGorgeous_Text_CelinaRematchIntro::
 	.string "Must I repeat myself?\n"
-	.string "I'm trying to paint.\l"
+	.string "I'm trying to paint.\p"
 	.string "Please keep out of my sight!$"
 
 FiveIsland_ResortGorgeous_Text_RaynaRematchIntro::

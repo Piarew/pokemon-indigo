@@ -175,7 +175,7 @@ SevenIsland_House_Room1_Text_OnlyEnjoymentWatchingBattles::
 	.string "I flew everywhere, challenging\n"
 	.string "Trainers wherever I found them.\p"
 	.string "Now, my only source of enjoyment\n"
-	.string "is reminiscing about the past while\l"
+	.string "is reminiscing about the past while\p"
 	.string "watching battles.$"
 
 SevenIsland_House_Room1_Text_SlightBreezeAroundBox::

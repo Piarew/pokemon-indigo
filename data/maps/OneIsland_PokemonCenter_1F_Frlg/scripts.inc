@@ -607,7 +607,7 @@ OneIsland_PokemonCenter_1F_Text_BillLetMeHelpYou::
 	.string "Bill: Oh, yeah?\n"
 	.string "Okay, let me take a look-see.\p"
 	.string "…Hang on here…\n"
-	.string "I think we can make it work.\l"
+	.string "I think we can make it work.\p"
 	.string "Let me help you, okay?$"
 
 OneIsland_PokemonCenter_1F_Text_CanYouDeliverThisMeteoritePlayer::
@@ -703,7 +703,7 @@ OneIsland_PokemonCenter_1F_Text_CelioOhReallyEhehe::
 
 OneIsland_PokemonCenter_1F_Text_BillWeShouldHeadBackToKanto::
 	.string "Bill: Well, there you have it.\n"
-	.string "I'm finished with the job.\l"
+	.string "I'm finished with the job.\p"
 	.string "We should head back to Kanto.\p"
 	.string "Celio, I'll be seeing you again.$"
 
@@ -720,7 +720,7 @@ OneIsland_PokemonCenter_1F_Text_CelioImModifyingMyNetworkMachine::
 	.string "Well, I'm modifying my Network\n"
 	.string "Machine.\p"
 	.string "When I get done with the machine,\n"
-	.string "I hope you'll be first to use it,\l"
+	.string "I hope you'll be first to use it,\p"
 	.string "{PLAYER}.$"
 
 OneIsland_PokemonCenter_1F_Text_CelioCaughtMoreMonMaybeICanBeUseful::
@@ -737,7 +737,7 @@ OneIsland_PokemonCenter_1F_Text_YoullBeTradingFromTrainersFarAway::
 	.string "I'm changing it so it can handle\n"
 	.string "trades over long distances.\p"
 	.string "When I get finished, you'll be\n"
-	.string "trading for exotic Pokémon from\l"
+	.string "trading for exotic Pokémon from\p"
 	.string "Trainers far away.$"
 
 OneIsland_PokemonCenter_1F_Text_NeedsSpecialGemstone::

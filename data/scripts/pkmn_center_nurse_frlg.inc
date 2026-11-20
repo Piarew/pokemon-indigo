@@ -90,5 +90,5 @@ Text_WeHopeToSeeYouAgain_Frlg::
 
 Text_RestoredPkmnToFullHealth_Frlg::
 	.string "Thank you for waiting.\n"
-	.string "We've restored your Pokémon to\l"
+	.string "We've restored your Pokémon to\p"
 	.string "full health.$"

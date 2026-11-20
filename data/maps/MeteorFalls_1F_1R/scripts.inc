@@ -239,7 +239,7 @@ MeteorFalls_1F_1R_Text_WithThisMeteorite:
 MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma:
 	.string "Heh?\p"
 	.string "I don't know who you are, but if you get\n"
-	.string "in the way of Team Magma, don't\l"
+	.string "in the way of Team Magma, don't\p"
 	.string "expect any mercy!$"
 
 MeteorFalls_1F_1R_Text_HoldItRightThereMagma:

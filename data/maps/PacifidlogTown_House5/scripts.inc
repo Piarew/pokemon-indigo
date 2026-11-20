@@ -29,7 +29,7 @@ PacifidlogTown_House5_Text_CanSeeMirageIslandToday:
 PacifidlogTown_House5_Text_MirageIslandAppearDependingOnWeather:
 	.string "Mirage Island…\p"
 	.string "It must become visible and invisible\n"
-	.string "depending on the weather conditions\l"
+	.string "depending on the weather conditions\p"
 	.string "that make mirages appear.\p"
 	.string "Or is it really appearing and\n"
 	.string "disappearing?$"

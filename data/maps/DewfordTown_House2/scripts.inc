@@ -38,7 +38,7 @@ DewfordTown_House2_Text_WantYouToHaveSilkScarf:
 DewfordTown_House2_Text_NoRoom:
 	.string "Oh, you don't have room?\p"
 	.string "Now, listen tight, this Scarf is a must-\n"
-	.string "have! Why, I would sell all my items\l"
+	.string "have! Why, I would sell all my items\p"
 	.string "in order to get it!$"
 
 DewfordTown_House2_Text_ExplainSilkScarf:

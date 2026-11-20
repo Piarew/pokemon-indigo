@@ -313,7 +313,7 @@ SlateportCity_OceanicMuseum_2F_Text_MeddlingKid:
 
 SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong:
 	.string "I came to see what was taking so\n"
-	.string "long to snatch some parts, and you\l"
+	.string "long to snatch some parts, and you\p"
 	.string "simps are held up by a mere child?$"
 
 SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
@@ -335,7 +335,7 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "Don't you agree? What we are doing\n"
 	.string "is a magnificent undertaking.\p"
 	.string "Ah, fine…\n"
-	.string "You're still too young to understand\l"
+	.string "You're still too young to understand\p"
 	.string "our noble objective.\p"
 	.string "But, I warn you, don't even consider\n"
 	.string "interfering with our plans again.\p"
@@ -394,7 +394,7 @@ SlateportCity_OceanicMuseum_2F_Text_PressureExperiment:
 	.string "“In shallow water, the pressure is not\n"
 	.string "very heavy.\p"
 	.string "“However, in extremely deep water,\n"
-	.string "the pressure can reach even tens of\l"
+	.string "the pressure can reach even tens of\p"
 	.string "thousands of tons on a small area.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_HoennModel:
@@ -406,7 +406,7 @@ SlateportCity_OceanicMuseum_2F_Text_HoennModel:
 SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay:
 	.string "It's a display on the flow of seawater.\p"
 	.string "“Near the bottom of the sea, water\n"
-	.string "flows due to differences in such\l"
+	.string "flows due to differences in such\p"
 	.string "factors as temperature and salinity.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay:

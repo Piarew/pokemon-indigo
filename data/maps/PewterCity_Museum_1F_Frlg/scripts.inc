@@ -240,7 +240,7 @@ PewterCity_Museum_1F_Text_WantYouToGetAmberExamined::
 	.string "I think that this chunk of Amber\n"
 	.string "contains Pokémon DNA!\p"
 	.string "It would be a shattering scientific\n"
-	.string "breakthrough if Pokémon could be\l"
+	.string "breakthrough if Pokémon could be\p"
 	.string "resurrected from it.\p"
 	.string "But, my colleagues just ignore\n"
 	.string "what I have to say.\p"

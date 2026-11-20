@@ -390,10 +390,10 @@ BattleFrontier_BattlePalaceLobby_Text_TakeSingleBattleChallenge:
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainSingleBattleChallenge:
 	.string "In the Battle Palace, there are\n"
-	.string "several auditoriums for Single Battles\l"
+	.string "several auditoriums for Single Battles\p"
 	.string "that are named Single Battle Halls.\p"
 	.string "The Single Battles are conducted in\n"
-	.string "the usual way, except with one crucial\l"
+	.string "the usual way, except with one crucial\p"
 	.string "rule that must be obeyed.\p"
 	.string "Trainers are permitted only to switch\n"
 	.string "their Pokémon in and out.\p"
@@ -404,7 +404,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainSingleBattleChallenge:
 	.string "You must put your trust in your\n"
 	.string "Pokémon and watch over them.\p"
 	.string "If you achieve the honor of beating\n"
-	.string "seven Trainers in succession,\l"
+	.string "seven Trainers in succession,\p"
 	.string "we will present you with Battle Points.\p"
 	.string "If you want to interrupt your\n"
 	.string "challenge, you must save the game.\p"
@@ -417,7 +417,7 @@ BattleFrontier_BattlePalaceLobby_Text_ReturnWhenFortified:
 
 BattleFrontier_BattlePalaceLobby_Text_WhichChallenge:
 	.string "There are two Battle Halls,\n"
-	.string "Level 50 and Open Level.\l"
+	.string "Level 50 and Open Level.\p"
 	.string "Which is your choice of a challenge?$"
 
 BattleFrontier_BattlePalaceLobby_Text_NotEnoughValidMonsLv50:
@@ -522,27 +522,27 @@ BattleFrontier_BattlePalaceLobby_Text_LadyCanTellWhatMonsThink:
 BattleFrontier_BattlePalaceLobby_Text_NatureAndMovesKeyHere:
 	.string "Hmm…\p"
 	.string "It appears that the nature of Pokémon\n"
-	.string "and the moves that they have been\l"
+	.string "and the moves that they have been\p"
 	.string "taught are the keys to battle here.\p"
 	.string "To be more precise, it's how well\n"
-	.string "the moves match the nature of\l"
+	.string "the moves match the nature of\p"
 	.string "the Pokémon.\p"
 	.string "If your Pokémon is in trouble and\n"
-	.string "unable to live up to its potential,\l"
-	.string "you may need to examine how well\l"
+	.string "unable to live up to its potential,\p"
+	.string "you may need to examine how well\n"
 	.string "its moves match its nature.$"
 
 BattleFrontier_BattlePalaceLobby_Text_MonDocileButTransforms:
 	.string "My Pokémon is usually very docile.\p"
 	.string "But when it's in a Battle Hall,\n"
-	.string "it sometimes seems to become\l"
+	.string "it sometimes seems to become\p"
 	.string "transformed into something wicked!\p"
 	.string "It becomes totally intimidating.\n"
 	.string "It's shocking, even.$"
 
 BattleFrontier_BattlePalaceLobby_Text_WhatNatureFavorsChippingAway:
 	.string "I wonder what sort of nature a Pokémon\n"
-	.string "would have if it favored enfeebling its\l"
+	.string "would have if it favored enfeebling its\p"
 	.string "opponents and chipping away slowly.\p"
 	.string "I'd be surprised if it was a Lax nature.\p"
 	.string "But, nah, that can't be right.$"
@@ -560,10 +560,10 @@ BattleFrontier_BattlePalaceLobby_Text_TakeDoubleBattleChallenge:
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainDoubleBattleChallenge:
 	.string "In the Battle Palace, there are\n"
-	.string "several auditoriums for Double Battles\l"
+	.string "several auditoriums for Double Battles\p"
 	.string "that are named Double Battle Halls.\p"
 	.string "The Double Battles are conducted in\n"
-	.string "the usual way, except with one crucial\l"
+	.string "the usual way, except with one crucial\p"
 	.string "rule that must be obeyed.\p"
 	.string "Trainers are permitted only to switch\n"
 	.string "their Pokémon in and out.\p"
@@ -574,7 +574,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainDoubleBattleChallenge:
 	.string "You must put your trust in your\n"
 	.string "Pokémon and watch over them.\p"
 	.string "If you achieve the honor of beating\n"
-	.string "seven Trainers in succession,\l"
+	.string "seven Trainers in succession,\p"
 	.string "we will present you with Battle Points.\p"
 	.string "If you want to interrupt your\n"
 	.string "challenge, please save the game.\p"
@@ -587,12 +587,12 @@ BattleFrontier_BattlePalaceLobby_Text_ToDefeatMavenAnd7Trainers:
 
 BattleFrontier_BattlePalaceLobby_Text_PresentYouWithBattlePoints:
 	.string "In honor of the bond you share with\n"
-	.string "your Pokémon, we present you with\l"
+	.string "your Pokémon, we present you with\p"
 	.string "these Battle Point(s).$"
 
 BattleFrontier_BattlePalaceLobby_Text_LikeToRecordMatch:
 	.string "Would you like to record your latest\n"
-	.string "Battle Palace match on your\l"
+	.string "Battle Palace match on your\p"
 	.string "Frontier Pass?$"
 
 BattleFrontier_BattlePalaceLobby_Text_RulesAreListed:
@@ -605,7 +605,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesBasics:
 	.string "Here, Pokémon are required to think\n"
 	.string "and battle by themselves.\p"
 	.string "Unlike in the wild, Pokémon that live\n"
-	.string "with people behave differently\l"
+	.string "with people behave differently\p"
 	.string "depending on their nature.$"
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesNature:
@@ -616,7 +616,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesNature:
 	.string "Yet another may enjoy vexing or\n"
 	.string "confounding its foes.\p"
 	.string "Due to its nature, a Pokémon\n"
-	.string "will have favorite moves that it is good\l"
+	.string "will have favorite moves that it is good\p"
 	.string "at using.\p"
 	.string "It may also dislike certain moves that\n"
 	.string "it has trouble using.$"
@@ -625,28 +625,28 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesMoves:
 	.string "There are offensive moves that inflict\n"
 	.string "direct damage on the foe.\p"
 	.string "There are defensive moves that are\n"
-	.string "used to prepare for enemy attacks or\l"
+	.string "used to prepare for enemy attacks or\p"
 	.string "used to heal HP and so on.\p"
 	.string "There are also other somewhat-odd\n"
-	.string "moves that may enfeeble the foes with\l"
-	.string "stat problems including poison and \l"
+	.string "moves that may enfeeble the foes with\p"
+	.string "stat problems including poison and \n"
 	.string "paralysis.\p"
 	.string "Pokémon will consider using moves in\n"
 	.string "these three categories.$"
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesUnderpowered:
 	.string "When not under command by its Trainer,\n"
-	.string "a Pokémon may be unable to effectively\l"
+	.string "a Pokémon may be unable to effectively\p"
 	.string "use certain moves.\p"
 	.string "A Pokémon is not good at using any\n"
 	.string "move that it dislikes.\p"
 	.string "If a Pokémon only knows moves that\n"
-	.string "do not match its nature, it will often\l"
+	.string "do not match its nature, it will often\p"
 	.string "be unable to live up to its potential.$"
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesWhenInDanger:
 	.string "Depending on its nature, a Pokémon may\n"
-	.string "start using moves that don't match its\l"
+	.string "start using moves that don't match its\p"
 	.string "nature when it is in trouble.\p"
 	.string "If a Pokémon begins behaving oddly\n"
 	.string "in a pinch, watch it carefully.$"

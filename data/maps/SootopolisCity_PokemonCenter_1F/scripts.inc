@@ -60,7 +60,7 @@ SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
 
 SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon:
 	.string "Whenever, wherever, and whatever\n"
-	.string "happens, I will always be friends with\l"
+	.string "happens, I will always be friends with\p"
 	.string "Pokémon.\p"
 	.string "Because it's fun to be with Pokémon!$"
 

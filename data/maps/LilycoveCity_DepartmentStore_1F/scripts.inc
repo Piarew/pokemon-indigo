@@ -143,7 +143,7 @@ LilycoveCity_DepartmentStore_1F_Text_WelcomeToDeptStore:
 
 LilycoveCity_DepartmentStore_1F_Text_IBuyAllSortsOfThings:
 	.string "Whenever I come to the Department\n"
-	.string "Store, I always end up buying all sorts\l"
+	.string "Store, I always end up buying all sorts\p"
 	.string "of things because it's so fun.$"
 
 LilycoveCity_DepartmentStore_1F_Text_MomBuyingMeFurniture:

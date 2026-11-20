@@ -138,7 +138,7 @@ LilycoveCity_House3_Text_ExplainPokeblocks:
 	.string "That's about all you need to know to\n"
 	.string "make good {POKEBLOCK}S.\p"
 	.string "If everyone had Pokémon they love,\n"
-	.string "smooth {POKEBLOCK}S, and a loving family,\l"
+	.string "smooth {POKEBLOCK}S, and a loving family,\p"
 	.string "the world would be a happier place.\p"
 	.string "Don't give up, dear!$"
 
@@ -163,6 +163,6 @@ LilycoveCity_House3_Text_MakePokeblocksWithBerryBlender:
 
 LilycoveCity_House3_Text_GoingToEnterContest:
 	.string "I want to brag about how tough my\n"
-	.string "Pokémon is, so we're going to enter\l"
+	.string "Pokémon is, so we're going to enter\p"
 	.string "a Contest together.$"
 

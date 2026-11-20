@@ -216,7 +216,7 @@ FortreeCity_Gym_Text_HumbertoDefeat:
 
 FortreeCity_Gym_Text_HumbertoPostBattle:
 	.string "You'd better watch it!\n"
-	.string "Don't get distracted staring at Winona\l"
+	.string "Don't get distracted staring at Winona\p"
 	.string "or you'll go crashing down in a heap!$"
 
 FortreeCity_Gym_Text_DariusIntro:
@@ -229,7 +229,7 @@ FortreeCity_Gym_Text_DariusDefeat:
 
 FortreeCity_Gym_Text_DariusPostBattle:
 	.string "Sure, you beat me all right.\n"
-	.string "But you'd better watch it! Our Leader\l"
+	.string "But you'd better watch it! Our Leader\p"
 	.string "Winona's Pokémon are all business.$"
 
 FortreeCity_Gym_Text_WinonaIntro:
@@ -244,7 +244,7 @@ FortreeCity_Gym_Text_WinonaIntro:
 
 FortreeCity_Gym_Text_WinonaDefeat:
 	.string "Never before have I seen a Trainer\n"
-	.string "command Pokémon with more grace\l"
+	.string "command Pokémon with more grace\p"
 	.string "than I…\p"
 	.string "In recognition of your prowess,\n"
 	.string "I present to you this Gym Badge.$"
@@ -255,7 +255,7 @@ FortreeCity_Gym_Text_ReceivedFeatherBadge:
 
 FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
 	.string "With the Feather Badge, all Pokémon up\n"
-	.string "to Lv 70, even those received through\l"
+	.string "to Lv 70, even those received through\p"
 	.string "trades, will obey your every command.\p"
 	.string "You will also be able to use\n"
 	.string "the HM move Fly outside of battle.\p"

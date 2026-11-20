@@ -288,7 +288,7 @@ TrainerHill_Entrance_Pokemart_Expanded:
 
 TrainerHill_Entrance_Text_StillGettingReady:
 	.string "This is the Trainer Hill where\n"
-	.string "you may enjoy tag battles with many\l"
+	.string "you may enjoy tag battles with many\p"
 	.string "Trainers.\p"
 	.string "Unfortunately, we're still getting\n"
 	.string "things ready. Please come back later!$"
@@ -296,7 +296,7 @@ TrainerHill_Entrance_Text_StillGettingReady:
 TrainerHill_Entrance_Text_WelcomeToTrainerHill:
 	.string "Welcome!\p"
 	.string "This is the Trainer Hill where\n"
-	.string "you may enjoy tag battles with many\l"
+	.string "you may enjoy tag battles with many\p"
 	.string "Trainers!$"
 
 TrainerHill_Entrance_Text_SaveGameBeforeEnter:
@@ -352,13 +352,13 @@ TrainerHill_Entrance_Text_ExplainTrainerHill:
 	.string "Here at the Trainer Hill, we conduct\n"
 	.string "an event called the Time Attack.\p"
 	.string "It is a race that measures how long\n"
-	.string "you take to reach our owner on\l"
+	.string "you take to reach our owner on\p"
 	.string "the rooftop from this counter.\p"
 	.string "The fastest times are posted on\n"
-	.string "the Time Board--try competing with\l"
+	.string "the Time Board--try competing with\p"
 	.string "your friends.\p"
 	.string "In Trainer battles along the way,\n"
-	.string "neither Exp. Points nor money will\l"
+	.string "neither Exp. Points nor money will\p"
 	.string "be awarded.$"
 
 @ Unused
@@ -373,7 +373,7 @@ TrainerHill_Roof_Text_YouFinallyCameBravo:
 	.string "You finally came!\n"
 	.string "Yes, you have arrived!\p"
 	.string "Wait! Don't say it!\n"
-	.string "I know why you came all the way\l"
+	.string "I know why you came all the way\p"
 	.string "here by yourself!\p"
 	.string "You wanted to see me, the owner\n"
 	.string "of the Trainer Hill, because…\p"

@@ -298,7 +298,7 @@ RustboroCity_DevonCorp_2F_Text_WowThatsAPokenav:
 	.string "Oh, wow!\n"
 	.string "That's a PokéNav!\p"
 	.string "It came about as a result of our\n"
-	.string "President's desire to learn about\l"
+	.string "President's desire to learn about\p"
 	.string "the feelings of Pokémon.\p"
 	.string "Would you like me to describe its\n"
 	.string "features in detail?\p"
@@ -307,7 +307,7 @@ RustboroCity_DevonCorp_2F_Text_WowThatsAPokenav:
 
 RustboroCity_DevonCorp_2F_Text_DeviceToVisualizePokemonDreams:
 	.string "I'm trying to develop a device that\n"
-	.string "visually reproduces the dreams of\l"
+	.string "visually reproduces the dreams of\p"
 	.string "Pokémon…\p"
 	.string "But it's not going well.$"
 

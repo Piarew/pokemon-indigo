@@ -66,10 +66,10 @@ Route111_WinstrateFamilysHouse_Text_MySonIsStrongerThanYou:
 
 Route111_WinstrateFamilysHouse_Text_LikeYouToHaveMachoBrace:
 	.string "We use this Macho Brace to more\n"
-	.string "effectively strengthen our Pokémon\l"
+	.string "effectively strengthen our Pokémon\p"
 	.string "in training.\p"
 	.string "Since you've beaten all of us here,\n"
-	.string "I don't know if you need it, but we\l"
+	.string "I don't know if you need it, but we\p"
 	.string "would like you to have our Macho Brace.$"
 
 Route111_WinstrateFamilysHouse_Text_PassionateAboutBattles:

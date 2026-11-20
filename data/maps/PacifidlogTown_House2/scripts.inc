@@ -93,7 +93,7 @@ PacifidlogTown_House2_EventScript_UnhappyAzurill::
 PacifidlogTown_House2_Text_ChairmansYoungerBrotherOnVacation:
 	.string "Er-hem!\p"
 	.string "I am the Pokémon Fan Club's most\n"
-	.string "important person, the Chairman's\l"
+	.string "important person, the Chairman's\p"
 	.string "younger brother.\p"
 	.string "I'm here enjoying my vacation with\n"
 	.string "Pokémon, yes, indeed.$"
@@ -128,7 +128,7 @@ PacifidlogTown_House2_Text_GetGoodTMInXDays:
 	.string "Oh, yes. In about {STR_VAR_1} or so days,\n"
 	.string "I should be getting a good TM or two.\p"
 	.string "You should come see me then.\n"
-	.string "I'll give you a TM that's suitable for\l"
+	.string "I'll give you a TM that's suitable for\p"
 	.string "your Pokémon.$"
 
 PacifidlogTown_House2_Text_Rurii:

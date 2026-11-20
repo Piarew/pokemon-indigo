@@ -229,7 +229,7 @@ MtEmber_Exterior_Text_BethDefeat::
 
 MtEmber_Exterior_Text_BethPostBattle::
 	.string "When lava at the surface of magma\n"
-	.string "hardens, and the magma inside flows\l"
+	.string "hardens, and the magma inside flows\p"
 	.string "out, caverns are left behind.$"
 
 MtEmber_Exterior_Text_JocelynIntro::

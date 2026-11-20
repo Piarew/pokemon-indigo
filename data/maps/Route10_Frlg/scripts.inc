@@ -18,7 +18,7 @@ Route10_EventScript_PowerPlantSign::
 
 Route10_Text_MarkIntro::
 	.string "Wow, you came all the way here?\n"
-	.string "Maybe you're a Pokémaniac, too?\l"
+	.string "Maybe you're a Pokémaniac, too?\p"
 	.string "Want to see my collection?$"
 
 Route10_Text_MarkDefeat::
@@ -33,12 +33,12 @@ Route10_Text_ClarkIntro::
 
 Route10_Text_ClarkDefeat::
 	.string "Ha-haha!\n"
-	.string "Not laughing!\l"
+	.string "Not laughing!\p"
 	.string "Ha-hay fever! Haha-ha-choo!$"
 
 Route10_Text_ClarkPostBattle::
 	.string "Haha-ha-choo!\n"
-	.string "Ha-choo!\l"
+	.string "Ha-choo!\p"
 	.string "Snort! Snivel!$"
 
 Route10_Text_HermanIntro::

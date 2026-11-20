@@ -198,7 +198,7 @@ TwoIsland_JoyfulGameCorner_Text_PleaseHelpFindLostelle::
 	.string "Hm? You, there!\n"
 	.string "Are you a friend of Lostelle's?\p"
 	.string "Have you seen Lostelle around?\n"
-	.string "I don't know where she might be.\l"
+	.string "I don't know where she might be.\p"
 	.string "She should've been here long ago.\p"
 	.string "Lostelle's a cutie - she got my\n"
 	.string "looks - so what if someone…\p"

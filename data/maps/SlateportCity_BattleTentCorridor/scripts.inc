@@ -157,7 +157,7 @@ SlateportCity_ContestHall_Text_AdviceForContests:
 	.string "Want a tasty little bit of advice\n"
 	.string "for Contests?\p"
 	.string "Using a certain move after another\n"
-	.string "certain kind of move sometimes gets\l"
+	.string "certain kind of move sometimes gets\p"
 	.string "you extra attention.\p"
 	.string "If you know what you're doing,\n"
 	.string "you can score big in appeal.\p"
@@ -173,8 +173,8 @@ SlateportCity_ContestHall_Text_MyPapaIsContestJudge:
 @ Unused
 SlateportCity_ContestHall_Text_ImLikeMajorlyCheesed:
 	.string "Hey, man, I'm like majorly cheesed,\n"
-	.string "you know. Like, you know, I just\l"
-	.string "wanted to know why my Pokémon\l"
+	.string "you know. Like, you know, I just\p"
+	.string "wanted to know why my Pokémon\n"
 	.string "never won, you know, like, hey?\p"
 	.string "So, like, I gave the Judge my two\n"
 	.string "cents, you know, they're free.\p"
@@ -253,7 +253,7 @@ SlateportCity_ContestHall_Text_MonLooksOnTopOfGame:
 	.string "That Pokémon looks like it's on top\n"
 	.string "of its game, huh?\p"
 	.string "A Pokémon that does good in the\n"
-	.string "secondary judging seems to be more\l"
+	.string "secondary judging seems to be more\p"
 	.string "relaxed when it's doing appeals.$"
 
 @ Unused
@@ -265,7 +265,7 @@ SlateportCity_ContestHall_Text_MyMonBetterThanThatLot:
 @ Unused
 SlateportCity_ContestHall_Text_GetUrgeToMoveWithMon:
 	.string "Don't you get the urge to move with\n"
-	.string "Pokémon if they're putting on an\l"
+	.string "Pokémon if they're putting on an\p"
 	.string "energetic appeal?$"
 
 @ Unused

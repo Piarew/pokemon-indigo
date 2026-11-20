@@ -367,7 +367,7 @@ Route120_Text_StevenGreeting:
 	.string "Now, if I were to use this device on\n"
 	.string "the invisible obstacle…\p"
 	.string "No, no. Rather than describing it,\n"
-	.string "I should just show you.\l"
+	.string "I should just show you.\p"
 	.string "That would be more fun.\p"
 	.string "{PLAYER}{KUN}, are your Pokémon ready for\n"
 	.string "battle?$"

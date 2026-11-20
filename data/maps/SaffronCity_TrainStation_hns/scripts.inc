@@ -242,7 +242,7 @@ SaffronMagnetTrainStation_Text_GymGuide::
 SaffronMagnetTrainStation_Text_GymGuideRunning::
 	.string "Whew…\p"
 	.string "How many times have I gone back\n"
-	.string "and forth between Saffron and the\l"
+	.string "and forth between Saffron and the\p"
 	.string "Cerulean Cape?$"
 
 SaffronMagnetTrainStation_Text_Teacher::
@@ -253,5 +253,5 @@ SaffronMagnetTrainStation_Text_Teacher::
 
 SaffronMagnetTrainStation_Text_Lass::
 	.string "Hi. This train goes to the Cerulean\n"
-	.string "Cape, where Bill lives, and through\l"
+	.string "Cape, where Bill lives, and through\p"
 	.string "the mountain to Oreburgh.$"

@@ -66,8 +66,8 @@ FallarborTown_CozmosHouse_EventScript_CozmoIsHappy::
 
 FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow:
 	.string "Prof. Cozmo: Oh…\n"
-	.string "I never should have let myself be\l"
-	.string "conned into telling Team Magma where\l"
+	.string "I never should have let myself be\p"
+	.string "conned into telling Team Magma where\n"
 	.string "you can find Meteorites…\p"
 	.string "That Meteorite from Meteor Falls…\n"
 	.string "It's never going to be mine now…$"
@@ -85,7 +85,7 @@ FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt:
 
 FallarborTown_CozmosHouse_Text_PleaseUseThisTM:
 	.string "Prof. Cozmo: This TM, it represents\n"
-	.string "my feeling of gratitude.\l"
+	.string "my feeling of gratitude.\p"
 	.string "Please use it!$"
 
 FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch:
@@ -105,7 +105,7 @@ FallarborTown_CozmosHouse_Text_MayIHaveMeteorite:
 
 FallarborTown_CozmosHouse_Text_CozmoWentToMeteorFalls:
 	.string "Prof. Cozmo went off to Meteor Falls\n"
-	.string "on Route 114 with some people from\l"
+	.string "on Route 114 with some people from\p"
 	.string "Team Magma.$"
 
 FallarborTown_CozmosHouse_Text_FeelSorryForCozmo:

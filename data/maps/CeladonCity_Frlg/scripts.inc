@@ -153,7 +153,7 @@ CeladonCity_Text_CitySign::
 
 CeladonCity_Text_GymSign::
 	.string "Celadon City Pokémon Gym\n"
-	.string "Leader: Erika\l"
+	.string "Leader: Erika\p"
 	.string "The Nature-Loving Princess!$"
 
 CeladonCity_Text_MansionSign::
@@ -166,7 +166,7 @@ CeladonCity_Text_DeptStoreSign::
 CeladonCity_Text_GuardSpecProtectsFromStatus::
 	.string "Trainer Tips\p"
 	.string "Guard Spec. protects Pokémon\n"
-	.string "from status-reduction moves during\l"
+	.string "from status-reduction moves during\p"
 	.string "battle.\p"
 	.string "Get your items at the\n"
 	.string "Celadon Dept. Store!$"

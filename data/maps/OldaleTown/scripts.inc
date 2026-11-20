@@ -358,7 +358,7 @@ OldaleTown_Text_ThisIsAPokemonMart:
 
 OldaleTown_Text_PotionExplanation:
 	.string "A Potion can be used anytime, so it's\n"
-	.string "even more useful than a Pokémon Center\l"
+	.string "even more useful than a Pokémon Center\p"
 	.string "in certain situations.$"
 
 OldaleTown_Text_WaitDontComeInHere:
@@ -383,12 +383,12 @@ OldaleTown_Text_FinishedSketchingFootprints:
 
 OldaleTown_Text_MayLetsGoBack:
 	.string "May: {PLAYER}{KUN}!\n"
-	.string "Over here!\l"
+	.string "Over here!\p"
 	.string "Let's hurry home!$"
 
 OldaleTown_Text_BrendanLetsGoBack:
 	.string "Brendan: I'm heading back to my dad's\n"
-	.string "Lab now.\l"
+	.string "Lab now.\p"
 	.string "{PLAYER}, you should hustle back, too.$"
 
 OldaleTown_Text_TownSign:

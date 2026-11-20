@@ -19,7 +19,7 @@ Route119_House_Text_RumorAboutCaveOfOrigin:
 	.string "I heard about a cave called the Cave\n"
 	.string "Of Origin.\p"
 	.string "People rumor that the spirits of\n"
-	.string "Pokémon are revived there. Could\l"
+	.string "Pokémon are revived there. Could\p"
 	.string "something like that really happen?$"
 
 Route119_House_Text_Wingull:

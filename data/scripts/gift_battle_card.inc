@@ -27,7 +27,7 @@ sText_MysteryGiftBattleCountCard:
 	.string "Thank you for using the Mystery\n"
 	.string "Gift System.\p"
 	.string "Your Battle Count Card keeps\n"
-	.string "track of your battle record against\l"
+	.string "track of your battle record against\p"
 	.string "Trainers with the same Card.\p"
 	.string "Look for and battle Trainers who\n"
 	.string "have the same Card as you.\p"

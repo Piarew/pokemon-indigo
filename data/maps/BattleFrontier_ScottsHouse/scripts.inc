@@ -215,7 +215,7 @@ BattleFrontier_ScottsHouse_Text_WelcomeToBattleFrontier:
 	.string "Anyway, {PLAYER}{KUN}, let me formally\n"
 	.string "welcome you to the Battle Frontier.\p"
 	.string "This is my dream come true.\n"
-	.string "It took me years and years, but I've\l"
+	.string "It took me years and years, but I've\p"
 	.string "finally given shape to my dream.$"
 
 BattleFrontier_ScottsHouse_Text_HowMuchEffortItTookToMakeReal:
@@ -232,7 +232,7 @@ BattleFrontier_ScottsHouse_Text_HaveThisAsMementoOfOurPathsCrossing:
 	.string "All I want for you is to enjoy battling\n"
 	.string "to your heart's content here.\p"
 	.string "{PLAYER}{KUN}, I want you to have this\n"
-	.string "as a memento for all the time our\l"
+	.string "as a memento for all the time our\p"
 	.string "paths crossed on our journeys.$"
 
 BattleFrontier_ScottsHouse_Text_ObtainedXBattlePoints:
@@ -243,7 +243,7 @@ BattleFrontier_ScottsHouse_Text_ExplainBattlePoints:
 	.string "Scott: You can check your Battle\n"
 	.string "Points on your Frontier Pass.\p"
 	.string "The more success you have here at\n"
-	.string "the Battle Frontier, the more Battle\l"
+	.string "the Battle Frontier, the more Battle\p"
 	.string "Points you will collect.\p"
 	.string "Use your Battle Points the way you\n"
 	.string "see fit, like trading them for items.$"
@@ -260,7 +260,7 @@ BattleFrontier_ScottsHouse_Text_WhyIGoSeekingTrainers:
 	.string "I love the purity of battle,\n"
 	.string "where everyone is equal.\p"
 	.string "That's why I go everywhere seeking\n"
-	.string "Trainers who are serious about\l"
+	.string "Trainers who are serious about\p"
 	.string "battling, and invite them here.$"
 
 BattleFrontier_ScottsHouse_Text_HaveYouMetFrontierBrain:
@@ -280,7 +280,7 @@ BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier:
 	.string "a Pokédex as well.\p"
 	.string "Well, guess what?\p"
 	.string "You may run into wild Pokémon in\n"
-	.string "the Battle Frontier somewhere…\l"
+	.string "the Battle Frontier somewhere…\p"
 	.string "Fufufu!$"
 
 BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols:
@@ -289,7 +289,7 @@ BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols:
 	.string "…Wait a second…\n"
 	.string "Oh!\p"
 	.string "Your Frontier Pass!\n"
-	.string "You've collected the full set\l"
+	.string "You've collected the full set\p"
 	.string "of silver symbols!\p"
 	.string "That's more than impressive!\n"
 	.string "You are tough, just as I suspected!\p"
@@ -304,7 +304,7 @@ BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols:
 	.string "…Wait a second…\n"
 	.string "Oh, my disbelieving eyes!\p"
 	.string "Your Frontier Pass!\n"
-	.string "You've gathered up the full set\l"
+	.string "You've gathered up the full set\p"
 	.string "of gold symbols!\p"
 	.string "That's more than stupendous!\n"
 	.string "You're incredible, just as I suspected!\p"
@@ -325,14 +325,14 @@ BattleFrontier_ScottsHouse_Text_BerryPocketStuffed:
 
 BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow:
 	.string "Scott: Oh, I heard about you!\n"
-	.string "How you ruled the Battle Tower!\l"
+	.string "How you ruled the Battle Tower!\p"
 	.string "You beat over 50 Trainers in a row?\p"
 	.string "That's fantastic!\n"
 	.string "I want you to have this!$"
 
 BattleFrontier_ScottsHouse_Text_Beat100TrainersInARow:
 	.string "Scott: Oh, my! I heard about you!\n"
-	.string "How you overwhelmed the Battle Tower!\l"
+	.string "How you overwhelmed the Battle Tower!\p"
 	.string "You beat over 100 Trainers in a row?\p"
 	.string "That's ridiculously spectacular!\n"
 	.string "You've got to have this!$"

@@ -975,7 +975,7 @@ SlateportCity_Text_BuyBricksSoDecorWontGetDirty:
 	.string "If you put Dolls or Cushions on\n"
 	.string "the floor, they'll get dirty.\p"
 	.string "I'm going to buy some Bricks so my\n"
-	.string "Dolls and Cushions won't get dirty\l"
+	.string "Dolls and Cushions won't get dirty\p"
 	.string "when I leave them out.$"
 
 SlateportCity_Text_GoingToCompeteInBattleTent:
@@ -993,7 +993,7 @@ SlateportCity_Text_BushedHikingFromMauville:
 
 SlateportCity_Text_EveryoneCallsHimCaptStern:
 	.string "Stern, the fellow who built the\n"
-	.string "Museum, also happens to be the leader\l"
+	.string "Museum, also happens to be the leader\p"
 	.string "of an undersea exploration team.\p"
 	.string "So, everyone calls him Capt. Stern.$"
 
@@ -1013,7 +1013,7 @@ SlateportCity_Text_QuitPushing:
 
 SlateportCity_Text_AquaHasPolicy:
 	.string "Team Aqua has a policy of\n"
-	.string "assembling and dispersing at\l"
+	.string "assembling and dispersing at\p"
 	.string "the operation site.$"
 
 SlateportCity_Text_BossIsBrilliant:
@@ -1087,7 +1087,7 @@ SlateportCity_Text_BuyTooMuch:
 
 SlateportCity_Text_GetNameRaterToHelpYou:
 	.string "If you want to change your Pokémon's\n"
-	.string "nickname, you'll have to get the Name\l"
+	.string "nickname, you'll have to get the Name\p"
 	.string "Rater to help you.$"
 
 SlateportCity_Text_CantChangeTradeMonName:
@@ -1149,7 +1149,7 @@ SlateportCity_Text_SternMoveAheadWithExploration:
 
 SlateportCity_Text_GabbyWonderfulThanksForInterview:
 	.string "Gabby: That's wonderful, Capt. Stern!\n"
-	.string "Thank you for taking the time from\l"
+	.string "Thank you for taking the time from\p"
 	.string "your busy schedule to talk to us.\p"
 	.string "We hope we can interview you again\n"
 	.string "with news of more discoveries!$"
@@ -1177,7 +1177,7 @@ SlateportCity_Text_AquaWillAssumeControlOfSubmarine:
 	.string "Your objections are meaningless!\n"
 	.string "We expect your total cooperation!\p"
 	.string "Fufufu…\n"
-	.string "Just watch and learn what Team\l"
+	.string "Just watch and learn what Team\p"
 	.string "Aqua has planned!$"
 
 SlateportCity_Text_SternWhatWasAllThat:
@@ -1207,13 +1207,13 @@ SlateportCity_Text_SternsShipyardWantedSign:
 SlateportCity_Text_SternsShipyardNearsCompletion:
 	.string "Stern's Shipyard\p"
 	.string "“The ferry S.S. Tidal nears\n"
-	.string "completion for serving the ports of\l"
+	.string "completion for serving the ports of\p"
 	.string "Slateport and Lilycove.”$"
 
 SlateportCity_Text_SternsShipyardFerryComplete:
 	.string "Stern's Shipyard\p"
 	.string "“Boarding of the Slateport-Lilycove\n"
-	.string "ferry S.S. Tidal is handled at the\l"
+	.string "ferry S.S. Tidal is handled at the\p"
 	.string "Harbor.”$"
 
 SlateportCity_Text_PokemonFanClubSign:
@@ -1334,7 +1334,7 @@ SlateportCity_Text_RegisteredScott:
 
 SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou:
 	.string "Scott: What I'd like to do is tag along\n"
-	.string "with you, but I do want to keep an eye\l"
+	.string "with you, but I do want to keep an eye\p"
 	.string "on the talents of other people, too.\p"
 	.string "So, I'll be off to roam other towns\n"
 	.string "a bit more.\p"

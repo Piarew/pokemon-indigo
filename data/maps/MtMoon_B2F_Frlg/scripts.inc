@@ -172,7 +172,7 @@ MtMoon_B2F_Text_Grunt1PostBattle::
 
 MtMoon_B2F_Text_Grunt2Intro::
 	.string "We, Team Rocket, are Pokémon\n"
-	.string "gangsters!\l"
+	.string "gangsters!\p"
 	.string "We strike fear with our strength!$"
 
 MtMoon_B2F_Text_Grunt2Defeat::

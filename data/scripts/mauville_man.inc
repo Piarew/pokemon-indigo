@@ -141,7 +141,7 @@ MauvilleCity_PokemonCenter_1F_Text_SendDecorToYourPC:
 
 MauvilleCity_PokemonCenter_1F_Text_CantTradeThatOne:
 	.string "Oops! Sorry! That's a really rare\n"
-	.string "piece of decoration.\l"
+	.string "piece of decoration.\p"
 	.string "I can't trade that one away!\p"
 	.string "Can I interest you in something else?$"
 
@@ -232,7 +232,7 @@ MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForDecor::
 @ Storyteller
 MauvilleCity_PokemonCenter_1F_Text_WillYouHearMyTale:
 	.string "I'm the Storyteller.\n"
-	.string "I'll tell you tales of legendary\l"
+	.string "I'll tell you tales of legendary\p"
 	.string "Trainers.\p"
 	.string "Will you hear my tale?$"
 
@@ -260,7 +260,7 @@ MauvilleCity_PokemonCenter_1F_Text_YouDidStatXTimes:
 
 MauvilleCity_PokemonCenter_1F_Text_CouldThereBeOtherLegends:
 	.string "It gets me thinking, could there be\n"
-	.string "other Trainers with more impressive\l"
+	.string "other Trainers with more impressive\p"
 	.string "legends awaiting discovery?$"
 
 MauvilleCity_PokemonCenter_1F_Text_HaveYouAnyLegendaryTales:
@@ -281,7 +281,7 @@ MauvilleCity_PokemonCenter_1F_Text_NotWorthyOfLegend:
 
 MauvilleCity_PokemonCenter_1F_Text_IWishMorePeopleWereInterested:
 	.string "I wish more people would be interested\n"
-	.string "in hearing my epic tales of legendary\l"
+	.string "in hearing my epic tales of legendary\p"
 	.string "Trainers.$"
 
 MauvilleCity_PokemonCenter_1F_Text_SavedGameTitle::

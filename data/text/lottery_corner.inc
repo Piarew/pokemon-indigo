@@ -3,7 +3,7 @@ LilycoveCity_DepartmentStore_1F_Text_LotteryCornerDrawTicket:
 	.string "All shoppers at our Department Store\n"
 	.string "get to draw a Pokémon Loto Ticket.\p"
 	.string "If the Loto Ticket's number matches\n"
-	.string "the ID number of any of your Pokémon,\l"
+	.string "the ID number of any of your Pokémon,\p"
 	.string "you will receive a fabulous gift.\p"
 	.string "Would you like to draw a Pokémon\n"
 	.string "Loto Ticket?$"
@@ -21,19 +21,19 @@ LilycoveCity_DepartmentStore_1F_Text_PleasePickTicket:
 LilycoveCity_DepartmentStore_1F_Text_TicketNumberIsXPleaseWait:
 	.string "The Loto Ticket number is {STR_VAR_1}.\p"
 	.string "I need to run a check on this number\n"
-	.string "to see if it matches any of your\l"
+	.string "to see if it matches any of your\p"
 	.string "Pokémon's ID numbers. Please wait.$"
 
 LilycoveCity_DepartmentStore_1F_Text_TicketMatchesPartyMon:
 	.string "Congratulations!\p"
 	.string "The ID number of your team's\n"
-	.string "{STR_VAR_1} matches your\l"
+	.string "{STR_VAR_1} matches your\p"
 	.string "Loto Ticket's number!$"
 
 LilycoveCity_DepartmentStore_1F_Text_TicketMatchesPCMon:
 	.string "Congratulations!\p"
 	.string "The ID number of your PC-boxed\n"
-	.string "{STR_VAR_1} matches your\l"
+	.string "{STR_VAR_1} matches your\p"
 	.string "Loto Ticket's number!$"
 
 LilycoveCity_DepartmentStore_1F_Text_NoNumbersMatched:
@@ -42,17 +42,17 @@ LilycoveCity_DepartmentStore_1F_Text_NoNumbersMatched:
 
 LilycoveCity_DepartmentStore_1F_Text_TwoDigitsMatched:
 	.string "Two digits matched, so you win the\n"
-	.string "third prize!\l"
+	.string "third prize!\p"
 	.string "You've won the {STR_VAR_1}!$"
 
 LilycoveCity_DepartmentStore_1F_Text_ThreeDigitsMatched:
 	.string "Three digits matched, so you win the\n"
-	.string "second prize!\l"
+	.string "second prize!\p"
 	.string "You've won the {STR_VAR_1}!$"
 
 LilycoveCity_DepartmentStore_1F_Text_FourDigitsMatched:
 	.string "Four digits matched, so you win the\n"
-	.string "first prize!\l"
+	.string "first prize!\p"
 	.string "You've won the {STR_VAR_1}!$"
 
 LilycoveCity_DepartmentStore_1F_Text_AllFiveDigitsMatched:

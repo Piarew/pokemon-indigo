@@ -10,7 +10,7 @@ Route111_Text_ExplainSecretPower:
 	.string "Find a big tree that looks like it might\n"
 	.string "drop some vines.\p"
 	.string "Use Secret Power in front of the tree.\n"
-	.string "Some vines should get free and drop\l"
+	.string "Some vines should get free and drop\p"
 	.string "down, so you can climb the tree.\p"
 	.string "You'll find a lot of space for putting\n"
 	.string "your favorite things.\p"

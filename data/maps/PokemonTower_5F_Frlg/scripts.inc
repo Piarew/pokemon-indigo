@@ -43,7 +43,7 @@ PokemonTower_5F_EventScript_Janae::
 
 PokemonTower_5F_Text_RestHereInPurifiedSpace::
 	.string "Come, child!\n"
-	.string "I have purified this space.\l"
+	.string "I have purified this space.\p"
 	.string "You can rest here.$"
 
 PokemonTower_5F_Text_TammyIntro::

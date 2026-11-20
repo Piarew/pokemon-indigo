@@ -234,7 +234,7 @@ SilphCo_7F_EventScript_Grunt3::
 
 SilphCo_7F_Text_HaveMonForSavingUs::
 	.string "Oh! Hi! You're not a Rocket!\n"
-	.string "You came to save us?\l"
+	.string "You came to save us?\p"
 	.string "Why, thank you!\p"
 	.string "I want you to have this Pokémon\n"
 	.string "for saving us.$"
@@ -344,14 +344,14 @@ SilphCo_7F_Text_RivalIntro::
 
 SilphCo_7F_Text_RivalDefeat::
 	.string "Oh, man!\n"
-	.string "So, you are ready for Boss\l"
+	.string "So, you are ready for Boss\p"
 	.string "Rocket!$"
 
 SilphCo_7F_Text_RivalPostBattle::
 	.string "Well, {PLAYER}!\n"
 	.string "I'm moving on up and ahead!\p"
 	.string "By checking my Pokédex, I'm\n"
-	.string "starting to see what's strong and\l"
+	.string "starting to see what's strong and\p"
 	.string "how they evolve!\p"
 	.string "Am I a genius or what?\p"
 	.string "I'm going to the Pokémon League to\n"
@@ -359,7 +359,7 @@ SilphCo_7F_Text_RivalPostBattle::
 	.string "I'll become the world's most\n"
 	.string "powerful Trainer!\p"
 	.string "{PLAYER}, well, good luck to you!\n"
-	.string "Don't sweat it!\l"
+	.string "Don't sweat it!\p"
 	.string "Smell ya!$"
 
 SilphCo_7F_Text_FloorSign::

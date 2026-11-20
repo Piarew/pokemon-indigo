@@ -569,6 +569,8 @@ void RunTextPrinters(void)
                         if (currentPrinter->callback != NULL)
                             currentPrinter->callback(&currentPrinter->printerTemplate, renderState);
                         isInstantText = FALSE;
+                        // Stop this frame so a held/new A cannot chain into the next box.
+                        repeat = textRepeats;
                         break;
                     case RENDER_FINISH:
                         currentPrinter->active = FALSE;
@@ -1252,14 +1254,12 @@ bool32 TextPrinterWaitAutoMode(struct TextPrinter *textPrinter)
 
 void SetResultWithButtonPress(bool32 *result)
 {
+    // Instant/fast text fills in the same frame a button is still held.
+    // Only a new press advances a ▼ prompt, so the player can read each box.
     if (JOY_NEW(A_BUTTON | B_BUTTON))
     {
         *result = TRUE;
         PlaySE(SE_SELECT);
-    }
-    else if (JOY_HELD(A_BUTTON | B_BUTTON))
-    {
-        *result = TRUE;
     }
 }
 

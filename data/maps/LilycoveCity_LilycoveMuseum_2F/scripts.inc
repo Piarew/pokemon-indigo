@@ -234,7 +234,7 @@ LilycoveCity_LilycoveMuseum_2F_Text_ExplainExhibitHall:
 	.string "famous works!\p"
 	.string "This exhibit hall, I wish to fill it with…\p"
 	.string "Modern and vibrant artworks of\n"
-	.string "Pokémon seemingly ready to spring\l"
+	.string "Pokémon seemingly ready to spring\p"
 	.string "forth into glorious life!$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_PleaseObtainPaintingsForExhibit:
@@ -245,13 +245,13 @@ LilycoveCity_LilycoveMuseum_2F_Text_PleaseObtainPaintingsForExhibit:
 	.string "You must encounter lively Pokémon\n"
 	.string "and works of art depicting them.\p"
 	.string "If you were to come across such\n"
-	.string "a painting, may we ask you to obtain\l"
-	.string "the artist's permission to exhibit\l"
+	.string "a painting, may we ask you to obtain\p"
+	.string "the artist's permission to exhibit\n"
 	.string "it here?$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_WishToFillExhibit:
 	.string "I wish to fill this exhibit hall with\n"
-	.string "modern and vibrant paintings of\l"
+	.string "modern and vibrant paintings of\p"
 	.string "Pokémon.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_ThanksAddedNewPainting:

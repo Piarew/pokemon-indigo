@@ -19,7 +19,7 @@ GraniteCave_1F_EventScript_ReceivedFlash::
 
 GraniteCave_1F_Text_GetsDarkAheadHereYouGo:
 	.string "Hey, you.\n"
-	.string "It gets awfully dark ahead.\l"
+	.string "It gets awfully dark ahead.\p"
 	.string "It'll be tough trying to explore.\p"
 	.string "That guy who came by earlier…\n"
 	.string "Steven, I think it was.\p"

@@ -130,7 +130,7 @@ gControlsGuide_Text_Intro::
 
 gControlsGuide_Text_DPad::
 	.string "Moves the main character.\n"
-	.string "Also used to choose various data\n"
+	.string "Also used to choose various data\p"
 	.string "headings.$"
 
 gControlsGuide_Text_AButton::
@@ -151,7 +151,7 @@ gControlsGuide_Text_SelectButton::
 
 gControlsGuide_Text_LRButtons::
 	.string "If you need help playing the\n"
-	.string "game, or on how to do things,\n"
+	.string "game, or on how to do things,\p"
 	.string "press the L or R Button.$"
 
 gOakSpeech_Text_AskPlayerGender::
@@ -160,30 +160,30 @@ gOakSpeech_Text_AskPlayerGender::
 
 gPikachuIntro_Text_Page1::
 	.string "In the world which you are about to\n"
-	.string "enter, you will embark on a grand\n"
+	.string "enter, you will embark on a grand\p"
 	.string "adventure with you as the hero.\n"
-	.string "\n"
+	.string "\p"
 	.string "Speak to people and check things\n"
-	.string "wherever you go, be it towns, roads,\n"
+	.string "wherever you go, be it towns, roads,\p"
 	.string "or caves. Gather information and\n"
 	.string "hints from every source.$"
 
 gPikachuIntro_Text_Page2::
 	.string "New paths will open to you by helping\n"
-	.string "people in need, overcoming challenges,\n"
+	.string "people in need, overcoming challenges,\p"
 	.string "and solving mysteries.\n"
-	.string "\n"
+	.string "\p"
 	.string "At times, you will be challenged by\n"
-	.string "others and attacked by wild creatures.\n"
+	.string "others and attacked by wild creatures.\p"
 	.string "Be brave and keep pushing on.$"
 
 gPikachuIntro_Text_Page3::
 	.string "Through your adventure, we hope\n"
-	.string "that you will interact with all sorts\n"
+	.string "that you will interact with all sorts\p"
 	.string "of people and achieve personal growth.\n"
-	.string "That is our biggest objective.\n"
+	.string "That is our biggest objective.\p"
 	.string "\n"
-	.string "Press the A Button, and let your\n"
+	.string "Press the A Button, and let your\p"
 	.string "adventure begin!$"
 
 gOakSpeech_Text_WelcomeToTheWorld::

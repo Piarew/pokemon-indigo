@@ -123,7 +123,7 @@ FortreeCity_Text_EveryoneHealthyAndLively:
 FortreeCity_Text_BugPokemonComeThroughWindow:
 	.string "Living on top of trees is okay.\p"
 	.string "But sometimes Bug Pokémon come in\n"
-	.string "through windows.\l"
+	.string "through windows.\p"
 	.string "It can be really startling.$"
 
 FortreeCity_Text_PokemonThatEvolveWhenTraded:
@@ -145,7 +145,7 @@ FortreeCity_Text_UsedDevonScopePokemonFled:
 
 FortreeCity_Text_CitySign:
 	.string "Fortree City\n"
-	.string "“The treetop city that frolics with\l"
+	.string "“The treetop city that frolics with\p"
 	.string "nature.”$"
 
 FortreeCity_Text_GymSign:

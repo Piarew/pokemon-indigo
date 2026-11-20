@@ -740,7 +740,7 @@ Route110_TrickHouseEntrance_Text_ConcealedBeneathCushion:
 Route110_TrickHouseEntrance_Text_TheyCallMeTrickMaster:
 	.string "Behold!\p"
 	.string "For I am the greatest living mystery\n"
-	.string "of a man in all of Hoenn!\l"
+	.string "of a man in all of Hoenn!\p"
 	.string "They call me…\p"
 	.string "The Trick Master!\n"
 	.string "Wahahaha! Glad to meet you!$"
@@ -779,13 +779,13 @@ Route110_TrickHouseEntrance_Text_InMidstOfDevisingNewChallenges:
 	.string "I'm in the midst of devising new tricky\n"
 	.string "challenges!\p"
 	.string "It's not too much to ask for a bit more\n"
-	.string "time for me to think, is it now?\l"
-	.string "You wouldn't begrudge me that?\l"
+	.string "time for me to think, is it now?\p"
+	.string "You wouldn't begrudge me that?\n"
 	.string "Come back in a little while!$"
 
 Route110_TrickHouseEntrance_Text_YoureHereToAcceptReward:
 	.string "Ah, it's you! You're here to accept the\n"
-	.string "reward from before, isn't that right?\l"
+	.string "reward from before, isn't that right?\p"
 	.string "Yes, right I am!\p"
 	.string "Here!\n"
 	.string "I'll give it to you now!$"
@@ -796,7 +796,7 @@ Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward:
 
 Route110_TrickHouseEntrance_Text_MechadollWhichTent:
 	.string "Mechadoll 5 I Am!\n"
-	.string "If Reward is not Taken by you,\l"
+	.string "If Reward is not Taken by you,\p"
 	.string "Then Trick Master you Cannot Follow.\p"
 	.string "Red Tent or Blue Tent,\n"
 	.string "Which do you Prefer?$"
