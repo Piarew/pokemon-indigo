@@ -1394,7 +1394,12 @@
     "PalletTown_RedsHouse_2F_hns",
     "PalletTown_House2_hns",
     "PalletTown_House3_hns",
-    "PalletTown_Lab_hns"
+    "PalletTown_Lab_hns",
+    "PalletTown_DepartmentStore_2F_hns",
+    "PalletTown_DepartmentStore_3F_hns",
+    "PalletTown_DepartmentStore_4F_hns",
+    "PalletTown_DepartmentStore_5F_hns",
+    "PalletTown_DepartmentStore_Roof_hns"
   ],
   "gMapGroup_IndoorViridian_Hns": [
     "ViridianCity_PokemonCenter_hns",
