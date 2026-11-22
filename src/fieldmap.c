@@ -407,18 +407,29 @@ u8 MapGridGetCollisionAt(s32 x, s32 y)
     return UNPACK_COLLISION(block);
 }
 
+static bool32 UsesFrlgTilesetCounts(struct MapLayout const *mapLayout)
+{
+    return mapLayout->primaryTileset && mapLayout->primaryTileset->usesFrlgCounts;
+}
+
 u32 GetNumTilesInPrimary(struct MapLayout const *mapLayout)
 {
+    if (UsesFrlgTilesetCounts(mapLayout))
+        return NUM_TILES_IN_PRIMARY_FRLG;
     return mapLayout->isFrlg ? NUM_TILES_IN_PRIMARY_FRLG : NUM_TILES_IN_PRIMARY;
 }
 
 u32 GetNumMetatilesInPrimary(struct MapLayout const *mapLayout)
 {
+    if (UsesFrlgTilesetCounts(mapLayout))
+        return NUM_METATILES_IN_PRIMARY_FRLG;
     return mapLayout->isFrlg ? NUM_METATILES_IN_PRIMARY_FRLG : NUM_METATILES_IN_PRIMARY;
 }
 
 u32 GetNumPalsInPrimary(struct MapLayout const *mapLayout)
 {
+    if (UsesFrlgTilesetCounts(mapLayout))
+        return NUM_PALS_IN_PRIMARY_FRLG;
     return mapLayout->isFrlg ? NUM_PALS_IN_PRIMARY_FRLG : NUM_PALS_IN_PRIMARY;
 }
 

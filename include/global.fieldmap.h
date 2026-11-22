@@ -106,6 +106,9 @@ struct Tileset
     /*0x0C*/ const u16 *metatiles;
     /*0x10*/ const u16 *metatileAttributes;
     /*0x14*/ TilesetCB callback;
+    // Heart & Soul Johto/Kanto primaries use FRLG 640/7 counts with Emerald
+    // 2-byte attributes. Layouts stay layout_version emerald (isFrlg FALSE).
+    bool8 usesFrlgCounts;
 };
 
 struct MapLayout
