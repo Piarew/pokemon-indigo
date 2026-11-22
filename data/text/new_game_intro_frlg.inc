@@ -158,6 +158,9 @@ gOakSpeech_Text_AskPlayerGender::
 	.string "Now tell me. Are you a boy?\n"
 	.string "Or are you a girl?$"
 
+gOakSpeech_Text_AskPlayerOrigin::
+	.string "Where are you from?$"
+
 gPikachuIntro_Text_Page1::
 	.string "In the world which you are about to\n"
 	.string "enter, you will embark on a grand\p"
@@ -187,29 +190,32 @@ gPikachuIntro_Text_Page3::
 	.string "adventure begin!$"
 
 gOakSpeech_Text_WelcomeToTheWorld::
-	.string "Hello, there!\n"
+	.string "Hello there!\n"
 	.string "Glad to meet you!\p"
-	.string "Welcome to the world of Pokémon!\p"
-	.string "My name is Oak.\p"
-	.string "People affectionately refer to me\n"
-	.string "as the Pokémon Professor.\p$"
+	.string "My name is Ash.\p"
+	.string "People still call me\n"
+	.string "the Pokémon Professor.\p$"
 
 gOakSpeech_Text_ThisWorld::
-	.string "This world…$"
+	.string "This world…\p$"
 
 gOakSpeech_Text_IsInhabitedFarAndWide::
 	.string "…is inhabited far and wide by\n"
 	.string "creatures called Pokémon.\p$"
 
 gOakSpeech_Text_IStudyPokemon::
-	.string "For some people, Pokémon are pets.\n"
-	.string "Others use them for battling.\p"
-	.string "As for myself…\p"
-	.string "I study Pokémon as a profession.\p$"
+	.string "Some people live with Pokémon\n"
+	.string "as partners.\p"
+	.string "Others become Trainers, and\n"
+	.string "travel to grow stronger.\p"
+	.string "As for myself…\n"
+	.string "I study Pokémon. And Trainers.\p$"
 
 gOakSpeech_Text_TellMeALittleAboutYourself::
-	.string "But first, tell me a little about\n"
-	.string "yourself.\p$"
+	.string "You've been invited to\n"
+	.string "Indigo City as a candidate.\p"
+	.string "First, tell me\n"
+	.string "where you're from.\p$"
 
 gOakSpeech_Text_YourNameWhatIsIt::
 	.string "Let's begin with your name.\n"
@@ -235,9 +241,31 @@ gOakSpeech_Text_RememberRivalsName::
 	.string "That's right! I remember now!\n"
 	.string "His name is {RIVAL}!\p$"
 
+gOakSpeech_Text_MeetTheCandidates::
+	.string "Three other candidates will\n"
+	.string "train with you.\p"
+	.string "Let me introduce them.\p$"
+
+gOakSpeech_Text_ThisIsIndigo::
+	.string "This is Indigo.\p"
+	.string "He's from Kanto.\p$"
+
+gOakSpeech_Text_ThisIsAmber::
+	.string "This is Amber.\p"
+	.string "She's from Johto.\p$"
+
+gOakSpeech_Text_ThisIsCrimson::
+	.string "This is Crimson.\p"
+	.string "He's from Sinnoh.\p$"
+
+gOakSpeech_Text_ThisIsJade::
+	.string "This is Jade.\p"
+	.string "She's from Sevii.\p$"
+
 gOakSpeech_Text_LetsGo::
-	.string "{PLAYER}!\p"
-	.string "Your very own Pokémon legend is\n"
-	.string "about to unfold!\p"
-	.string "A world of dreams and adventures\n"
-	.string "with Pokémon awaits! Let's go!$"
+	.string "{PLAYER}!\n"
+	.string "Indigo City is waiting.\p"
+	.string "The other candidates will be\n"
+	.string "at the Pokémon Lab at dawn.\p"
+	.string "Get some rest.\n"
+	.string "I'll see you then.\p$"

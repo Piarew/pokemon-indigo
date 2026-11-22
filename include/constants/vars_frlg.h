@@ -271,7 +271,13 @@
 #define INDIGO_REMATCH_DONE_TODAY  2 // entered via the Battle Club, already won today
 #define VAR_TRAIN                  0x40FD // Magnet Train arrival (ON_FRAME exit)
 #define VAR_STARTER_REGION         0x40FE // 0=Kanto … 8=Paldea. Player gets that region's full trio.
-#define VAR_0x40FF                 0x40FF
+#define VAR_PLAYER_ORIGIN          0x40FF // 0=Kanto, 1=Johto, 2=Sinnoh, 3=Sevii. Appearance/gender.
+
+#define PLAYER_ORIGIN_KANTO        0
+#define PLAYER_ORIGIN_JOHTO        1
+#define PLAYER_ORIGIN_SINNOH       2
+#define PLAYER_ORIGIN_SEVII        3
+#define PLAYER_ORIGIN_COUNT        4
 
 #define VARS_END_FRLG              0x40FF
 #define VARS_COUNT_FRLG            (VARS_END_FRLG - VARS_START_FRLG + 1)

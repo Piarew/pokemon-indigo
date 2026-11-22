@@ -10,9 +10,20 @@
 
 #define MAX_TRAINER_ITEMS 4
 
-#define TRAINER_PIC_WIDTH 64
-#define TRAINER_PIC_HEIGHT 64
+// Front pics may be 80x80 4bpp. GBA OAM maxes at 64x64, so 80x80 sheets
+// are repacked into 6 hardware sprites (see LoadTrainerFrontPicTiles).
+// Existing 64x64 art still loads as a single 64x64 sprite.
+#define TRAINER_PIC_WIDTH 80
+#define TRAINER_PIC_HEIGHT 80
 #define TRAINER_PIC_SIZE (TRAINER_PIC_WIDTH * TRAINER_PIC_HEIGHT / 2)
+#define TRAINER_PIC_LEGACY_WIDTH 64
+#define TRAINER_PIC_LEGACY_HEIGHT 64
+#define TRAINER_PIC_LEGACY_SIZE (TRAINER_PIC_LEGACY_WIDTH * TRAINER_PIC_LEGACY_HEIGHT / 2)
+
+// Back pics stay 64x64 per frame (4-frame 64x256 sheets).
+#define TRAINER_BACK_PIC_WIDTH 64
+#define TRAINER_BACK_PIC_HEIGHT 64
+#define TRAINER_BACK_PIC_SIZE (TRAINER_BACK_PIC_WIDTH * TRAINER_BACK_PIC_HEIGHT / 2)
 
 // Red and Leaf's back pics have 5 frames, but this is presumably irrelevant in the places this is used.
 #define MAX_TRAINER_PIC_FRAMES 4

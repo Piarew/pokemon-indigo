@@ -72,6 +72,10 @@ static const struct ContestWinner sContestWinnerPicDummy =
     .trainerName = _("")
 };
 
+#if IS_FRLG
+static const u8 sDefaultRivalName[] = _("Gary");
+#endif
+
 void SetTrainerId(u32 trainerId, u8 *dst)
 {
     dst[0] = trainerId;
@@ -137,9 +141,27 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
     if (IS_FRLG)
-        SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
+    {
+        // Oak speech writes playerOrigin before CB2_NewGame.
+        switch (gSaveBlock2Ptr->playerOrigin)
+        {
+        case PLAYER_ORIGIN_JOHTO:
+            SetWarpDestination(MAP_GROUP(MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS), MAP_NUM(MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS), WARP_ID_NONE, 6, 6);
+            break;
+        case PLAYER_ORIGIN_SINNOH:
+            SetWarpDestination(MAP_GROUP(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), MAP_NUM(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), WARP_ID_NONE, 6, 6);
+            break;
+        case PLAYER_ORIGIN_SEVII:
+        case PLAYER_ORIGIN_KANTO:
+        default:
+            SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
+            break;
+        }
+    }
     else
+    {
         SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    }
     WarpIntoMap();
 }
 
@@ -161,15 +183,8 @@ void ResetMenuAndMonGlobals(void)
 
 void NewGameInitData(void)
 {
-#if IS_FRLG
-    u8 rivalName[PLAYER_NAME_LENGTH + 1];
-#endif
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
         RtcReset();
-
-#if IS_FRLG
-    StringCopy(rivalName, gSaveBlock1Ptr->rivalName);
-#endif
     gDifferentSaveFile = TRUE;
     gSaveBlock2Ptr->encryptionKey = 0;
     ZeroPlayerPartyMons();
@@ -214,12 +229,13 @@ void NewGameInitData(void)
     UpdateDailySeed();
     WarpToTruck();
     if (IS_FRLG)
+    {
+        VarSet(VAR_PLAYER_ORIGIN, gSaveBlock2Ptr->playerOrigin);
         RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
+        StringCopy(gSaveBlock1Ptr->rivalName, sDefaultRivalName);
+    }
     else
         RunScriptImmediately(EventScript_ResetAllMapFlags);
-#if IS_FRLG
-        StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
-#endif
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
     InitLilycoveLady();

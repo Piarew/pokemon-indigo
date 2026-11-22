@@ -701,7 +701,7 @@ void BattleGfxSfxDummy2(enum Species species)
 void DecompressTrainerFrontPic(enum TrainerPicID trainerPicId, enum BattlerId battler)
 {
     enum BattlerPosition position = GetBattlerPosition(battler);
-    DecompressDataWithHeaderWram(GetTrainerFrontPicData(trainerPicId), gMonSpritesGfxPtr->spritesGfx[position]);
+    LoadTrainerFrontPicTiles(trainerPicId, gMonSpritesGfxPtr->spritesGfx[position]);
     LoadSpritePaletteWithTag(GetTrainerFrontPicPalette(trainerPicId), GetTrainerPicTag(trainerPicId, TRUE));
 }
 

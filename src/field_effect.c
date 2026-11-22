@@ -986,9 +986,11 @@ bool8 FieldEffectActiveListContains(u8 id)
 
 u8 CreateTrainerSprite(enum TrainerPicID trainerPicId, s16 x, s16 y, u8 subpriority, u8 *buffer)
 {
-    struct CompressedSpriteSheet spriteSheet;
+    struct SpriteSheet spriteSheet;
     struct SpriteTemplate spriteTemplate;
     bool32 alloced = FALSE;
+    u32 sheetSize;
+    u8 spriteId;
 
     // Allocate memory for buffer
     if (buffer == NULL)
@@ -997,12 +999,13 @@ u8 CreateTrainerSprite(enum TrainerPicID trainerPicId, s16 x, s16 y, u8 subprior
         alloced = TRUE;
     }
 
-    spriteSheet.data = GetTrainerFrontPicData(trainerPicId);
-    spriteSheet.size = TRAINER_PIC_SIZE;
+    sheetSize = LoadTrainerFrontPicTiles(trainerPicId, buffer);
+    spriteSheet.data = buffer;
+    spriteSheet.size = sheetSize;
     spriteSheet.tag = GetTrainerPicTag(trainerPicId, TRUE);
 
     LoadSpritePaletteWithTag(GetTrainerFrontPicPalette(trainerPicId), GetTrainerPicTag(trainerPicId, TRUE));
-    LoadCompressedSpriteSheetOverrideBuffer(&spriteSheet, buffer);
+    LoadSpriteSheet(&spriteSheet);
     if (alloced)
         Free(buffer);
 
@@ -1013,7 +1016,9 @@ u8 CreateTrainerSprite(enum TrainerPicID trainerPicId, s16 x, s16 y, u8 subprior
     spriteTemplate.images = NULL;
     spriteTemplate.affineAnims = gDummySpriteAffineAnimTable;
     spriteTemplate.callback = SpriteCallbackDummy;
-    return CreateSprite(&spriteTemplate, x, y, subpriority);
+    spriteId = CreateSprite(&spriteTemplate, x, y, subpriority);
+    ApplyTrainerFrontPicSprite(&gSprites[spriteId], trainerPicId);
+    return spriteId;
 }
 
 static void UNUSED LoadTrainerGfx_TrainerCard(u8 gender, u16 palOffset, u8 *dest)

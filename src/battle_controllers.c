@@ -28,6 +28,7 @@
 #include "test_runner.h"
 #include "text.h"
 #include "trainer.h"
+#include "trainer_pokemon_sprites.h"
 #include "util.h"
 #include "wild_encounter.h"
 #include "constants/abilities.h"
@@ -2504,6 +2505,8 @@ void BtlController_HandleDrawTrainerPic(enum BattlerId battler, enum TrainerPicI
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].x2 = DISPLAY_WIDTH;
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].sSpeedX = -2;
     }
+    if (!IsOnPlayerSide(battler) || isFrontPic)
+        ApplyTrainerFrontPicSprite(&gSprites[gBattleStruct->trainerSlideSpriteIds[battler]], trainerPicId);
     if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].callback = SpriteCB_TrainerSpawn;
     else
@@ -2540,6 +2543,7 @@ void BtlController_HandleTrainerSlide(enum BattlerId battler, enum TrainerPicID 
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].x2 = 96;
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].x += 32;
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].sSpeedX = -2;
+        ApplyTrainerFrontPicSprite(&gSprites[gBattleStruct->trainerSlideSpriteIds[battler]], trainerPicId);
     }
     gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].callback = SpriteCB_TrainerSlideIn;
 

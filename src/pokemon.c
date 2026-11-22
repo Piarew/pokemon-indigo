@@ -57,6 +57,7 @@
 #include "text.h"
 #include "trainer.h"
 #include "trainer_hill.h"
+#include "trainer_pokemon_sprites.h"
 #include "util.h"
 #include "constants/abilities.h"
 #include "constants/battle_frontier.h"
@@ -105,7 +106,20 @@ EWRAM_DATA static u16 sTeachableLearnset[MAX_TEACHABLE_LEARNSET_MOVES];
 EWRAM_DATA u8 gPartiesCount[MAX_BATTLE_TRAINERS] = {0};
 EWRAM_DATA struct Pokemon gParties[MAX_BATTLE_TRAINERS][PARTY_SIZE] = {0};
 EWRAM_DATA struct SpriteTemplate gMultiuseSpriteTemplate = {0};
+EWRAM_DATA static struct SpriteFrameImage sTrainerFrontFrameImages[MAX_BATTLERS_COUNT];
 EWRAM_DATA static struct MonSpritesGfxManager *sMonSpritesGfxManagers[MON_SPR_GFX_MANAGERS_COUNT] = {NULL};
+
+static const struct OamData sOamData_TrainerFrontPic80 =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(64x64),
+    .x = 0,
+    .size = SPRITE_SIZE(64x64),
+    .priority = 2,
+};
 EWRAM_DATA u8 gTriedEvolving = 0;
 EWRAM_DATA u16 gFollowerSteps = 0;
 
@@ -1888,10 +1902,22 @@ void SetMultiuseSpriteTemplateToTrainerBack(enum TrainerPicID trainerPicId, enum
 
 void SetMultiuseSpriteTemplateToTrainerFront(enum TrainerPicID trainerPicId, enum BattlerPosition battlerPosition)
 {
+    u32 sheetSize = GetTrainerFrontPicSheetSize(trainerPicId);
+
     if (gMonSpritesGfxPtr != NULL)
         gMultiuseSpriteTemplate = gMonSpritesGfxPtr->templates[battlerPosition];
     else
         gMultiuseSpriteTemplate = gBattlerSpriteTemplates[battlerPosition];
+
+    if (gMonSpritesGfxPtr != NULL)
+    {
+        sTrainerFrontFrameImages[battlerPosition].data = gMonSpritesGfxPtr->spritesGfx[battlerPosition];
+        sTrainerFrontFrameImages[battlerPosition].size = sheetSize;
+        gMultiuseSpriteTemplate.images = &sTrainerFrontFrameImages[battlerPosition];
+    }
+
+    if (sheetSize == TRAINER_PIC_SIZE)
+        gMultiuseSpriteTemplate.oam = &sOamData_TrainerFrontPic80;
 
     gMultiuseSpriteTemplate.paletteTag = GetTrainerPicTag(trainerPicId, TRUE);
     gMultiuseSpriteTemplate.anims = gAnims_Trainer;

@@ -435,7 +435,7 @@ const u32 gTrainerFrontPic_SisAndBroFrlg[] = INCGFX_U32("graphics/trainers/front
 const u16 gTrainerPalette_SisAndBroFrlg[] = INCGFX_U16("graphics/trainers/palettes/sis_and_bro_frlg.pal", ".gbapal");
 
 const u32 gTrainerFrontPic_ProfessorOakFrlg[] = INCGFX_U32("graphics/trainers/front_pics/professor_oak_frlg.png", ".4bpp.smol");
-const u16 gTrainerPalette_ProfessorOakFrlg[] = INCGFX_U16("graphics/trainers/palettes/professor_oak_frlg.pal", ".gbapal");
+const u16 gTrainerPalette_ProfessorOakFrlg[] = INCGFX_U16("graphics/trainers/front_pics/professor_oak_frlg.png", ".gbapal");
 
 const u32 gTrainerFrontPic_RocketGruntFFrlg[] = INCGFX_U32("graphics/trainers/front_pics/rocket_grunt_f_frlg.png", ".4bpp.smol");
 const u16 gTrainerPalette_RocketGruntFFrlg[] = INCGFX_U16("graphics/trainers/palettes/rocket_grunt_f_frlg.pal", ".gbapal");
@@ -579,7 +579,7 @@ const union AnimCmd *const sBackAnims_OldManPokedude[] = {
     (const struct TrainerBackPicInfo[])                                                      \
     {{                                                                                       \
         .coordinates = {.size = 8, .y_offset = yOffset},                                     \
-        .image = {.data = sprite, .size = TRAINER_PIC_SIZE, .relativeFrames = TRUE},         \
+        .image = {.data = sprite, .size = TRAINER_BACK_PIC_SIZE, .relativeFrames = TRUE},    \
         .paletteData = pal,                                                                  \
         .animation = anim,                                                                   \
     }}

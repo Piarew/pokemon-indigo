@@ -8975,7 +8975,7 @@ Level: 25
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_PKMN_PROF_PROF_OAK ===
-Name: Prof. Oak
+Name: Ash
 Class: Pkmn Prof Frlg
 Pic: Professor Oak Frlg
 Gender: Male
@@ -8983,7 +8983,7 @@ Music: Serious
 Double Battle: No
 AI: Check Bad Move
 
-Ekans
+Pikachu
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

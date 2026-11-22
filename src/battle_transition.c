@@ -2597,6 +2597,7 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
                                                     mugshotCoordsB.y + 42,
                                                     0, NULL);
         opponentSpriteB = &gSprites[task->tOpponentSpriteBId];
+        opponentSpriteB->subspriteTables = NULL;
         opponentSpriteB->callback = SpriteCB_MugshotTrainerPicPartner;
         opponentSpriteB->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
         opponentSpriteB->oam.matrixNum = AllocOamMatrix();
@@ -2620,6 +2621,7 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
                                                 106,
                                                 0, NULL);
         partnerSprite = &gSprites[task->tPartnerSpriteId];
+        partnerSprite->subspriteTables = NULL;
         partnerSprite->callback = SpriteCB_MugshotTrainerPicPartner;
         partnerSprite->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
         partnerSprite->oam.matrixNum = AllocOamMatrix();
@@ -2636,6 +2638,8 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
 
     opponentSpriteA = &gSprites[task->tOpponentSpriteAId];
     playerSprite = &gSprites[task->tPlayerSpriteId];
+    opponentSpriteA->subspriteTables = NULL;
+    playerSprite->subspriteTables = NULL;
 
     opponentSpriteA->callback = SpriteCB_MugshotTrainerPic;
     playerSprite->callback = SpriteCB_MugshotTrainerPic;
