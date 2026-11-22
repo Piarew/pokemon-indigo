@@ -1,9 +1,9 @@
 gText_Birch_Welcome::
-	.string "Hi! Sorry to keep you waiting!\p"
-	.string "Welcome to the world of POKéMON!\p"
-	.string "My name is BIRCH.\p"
-	.string "But everyone calls me the POKéMON\n"
-	.string "PROFESSOR.\p"
+	.string "Hello there!\n"
+	.string "Glad to meet you!\p"
+	.string "My name is ELM.\p"
+	.string "People still call me\n"
+	.string "the POKéMON PROFESSOR.\p"
 	.string "$"
 
 gText_Birch_Pokemon::
@@ -14,48 +14,72 @@ gText_Birch_Pokemon::
 gText_Birch_MainSpeech::
 	.string "This world is widely inhabited by\n"
 	.string "creatures known as POKéMON.\p"
-	.string "We humans live alongside POKéMON,\n"
-	.string "at times as friendly playmates, and\l"
-	.string "at times as cooperative workmates.\p"
-	.string "And sometimes, we band together\n"
-	.string "and battle others like us.\p"
-	.string "But despite our closeness, we don't\n"
-	.string "know everything about POKéMON.\p"
-	.string "In fact, there are many, many\n"
-	.string "secrets surrounding POKéMON.\p"
-	.string "To unravel POKéMON mysteries,\n"
-	.string "I've been undertaking research.\l"
-	.string "That's what I do.\p"
+	.string "Some people live with POKéMON\n"
+	.string "as partners.\p"
+	.string "Others become TRAINERS, and\n"
+	.string "travel to grow stronger.\p"
+	.string "As for myself…\n"
+	.string "I study POKéMON. And TRAINERS.\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "And you are?$"
+	.string "You've been invited to\n"
+	.string "INDIGO CITY as a candidate.\p"
+	.string "First, tell me\n"
+	.string "where you're from.\p"
+	.string "$"
 
 gText_Birch_BoyOrGirl::
 	.string "Are you a boy?\n"
 	.string "Or are you a girl?$"
 
+gText_Elm_AskPlayerOrigin::
+	.string "Where are you from?$"
+
 gText_Birch_WhatsYourName::
-	.string "All right.\n"
-	.string "What's your name?$"
+	.string "Let's begin with your name.\n"
+	.string "What is it?$"
 
 gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
 	.string "Ah, okay!\p"
-	.string "You're {PLAYER}{KUN} who's moving to my\n"
-	.string "hometown of LITTLEROOT.\l"
+	.string "You're {PLAYER}{KUN}.\n"
 	.string "I get it now!\p"
 	.string "$"
 
+gText_Elm_MeetTheCandidates::
+	.string "Three other candidates will\n"
+	.string "train with you.\p"
+	.string "Let me introduce them.\p"
+	.string "$"
+
+gText_Elm_ThisIsJade::
+	.string "This is JADE.\p"
+	.string "She's from HOENN.\p"
+	.string "$"
+
+gText_Elm_ThisIsAmber::
+	.string "This is AMBER.\p"
+	.string "She's from JOHTO.\p"
+	.string "$"
+
+gText_Elm_ThisIsCrimson::
+	.string "This is CRIMSON.\p"
+	.string "He's from KANTO.\p"
+	.string "$"
+
+gText_Elm_ThisIsAzure::
+	.string "This is AZURE.\p"
+	.string "He's from SINNOH.\p"
+	.string "$"
+
 gText_Birch_AreYouReady::
-	.string "All right, are you ready?\p"
-	.string "Your very own adventure is about\n"
-	.string "to unfold.\p"
-	.string "Take courage, and leap into the\n"
-	.string "world of POKéMON where dreams,\l"
-	.string "adventure, and friendships await!\p"
-	.string "Well, I'll be expecting you later.\n"
-	.string "Come see me in my POKéMON LAB.\p"
+	.string "{PLAYER}!\n"
+	.string "INDIGO CITY is waiting.\p"
+	.string "The other candidates will be\n"
+	.string "at the POKéMON LAB at dawn.\p"
+	.string "Get some rest.\n"
+	.string "I'll see you then.\p"
 	.string "$"

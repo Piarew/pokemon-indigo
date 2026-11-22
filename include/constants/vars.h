@@ -274,7 +274,13 @@
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_PLAYER_ORIGIN                                0x40FF // PLAYER_ORIGIN_HOENN … PLAYER_ORIGIN_SINNOH
+
+#define PLAYER_ORIGIN_HOENN        0
+#define PLAYER_ORIGIN_JOHTO        1
+#define PLAYER_ORIGIN_KANTO        2
+#define PLAYER_ORIGIN_SINNOH       3
+#define PLAYER_ORIGIN_COUNT        4
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

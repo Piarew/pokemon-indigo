@@ -48,8 +48,11 @@
 #include "berry_powder.h"
 #include "mystery_gift.h"
 #include "union_room_chat.h"
-#include "constants/map_groups.h"
+#include "constants/flags.h"
+#include "constants/heal_locations.h"
 #include "constants/items.h"
+#include "constants/map_groups.h"
+#include "constants/vars.h"
 #include "difficulty.h"
 #include "follower_npc.h"
 
@@ -57,7 +60,7 @@ extern const u8 EventScript_ResetAllMapFlags[];
 extern const u8 EventScript_ResetAllMapFlagsFrlg[];
 
 static void ClearFrontierRecord(void);
-static void WarpToTruck(void);
+static void WarpToStartingHouse(void);
 static void ResetMiniGamesRecords(void);
 static void ResetItemFlags(void);
 static void ResetDexNav(void);
@@ -133,12 +136,40 @@ static void ClearFrontierRecord(void)
     gSaveBlock2Ptr->frontier.opponentNames[1][0] = EOS;
 }
 
-static void WarpToTruck(void)
+static void InitHoennStartingFlags(void)
 {
-    if (IS_FRLG)
-        SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
-    else
-        SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    FlagSet(FLAG_HIDE_MAP_NAME_POPUP);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL);
+    VarSet(VAR_LITTLEROOT_INTRO_STATE, 4);
+    VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 1);
+    SetLastHealLocationWarp(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F);
+}
+
+static void WarpToStartingHouse(void)
+{
+    switch (gSaveBlock2Ptr->playerOrigin)
+    {
+    case PLAYER_ORIGIN_JOHTO:
+        SetWarpDestination(MAP_GROUP(MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS), MAP_NUM(MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS), WARP_ID_NONE, 6, 6);
+        SetLastHealLocationWarp(HEAL_LOCATION_NEW_BARK_TOWN);
+        break;
+    case PLAYER_ORIGIN_KANTO:
+        SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_REDS_HOUSE_2F_HNS), MAP_NUM(MAP_PALLET_TOWN_REDS_HOUSE_2F_HNS), WARP_ID_NONE, 6, 6);
+        SetLastHealLocationWarp(HEAL_LOCATION_PALLET_TOWN);
+        break;
+    case PLAYER_ORIGIN_SINNOH:
+        SetWarpDestination(MAP_GROUP(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), MAP_NUM(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), WARP_ID_NONE, 4, 2);
+        SetLastHealLocationWarp(HEAL_LOCATION_TWINLEAF_TOWN);
+        break;
+    case PLAYER_ORIGIN_HOENN:
+    default:
+        SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F), MAP_NUM(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F), WARP_ID_NONE, 4, 2);
+        break;
+    }
     WarpIntoMap();
 }
 
@@ -211,11 +242,14 @@ void NewGameInitData(void)
     ResetFanClub();
     ResetLotteryCorner();
     UpdateDailySeed();
-    WarpToTruck();
+    WarpToStartingHouse();
     if (IS_FRLG)
         RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
     else
         RunScriptImmediately(EventScript_ResetAllMapFlags);
+    VarSet(VAR_PLAYER_ORIGIN, gSaveBlock2Ptr->playerOrigin);
+    if (!IS_FRLG && gSaveBlock2Ptr->playerOrigin == PLAYER_ORIGIN_HOENN)
+        InitHoennStartingFlags();
 #if IS_FRLG
         StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
 #endif
