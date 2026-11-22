@@ -1,0 +1,92 @@
+{
+  "id": "MAP_ROUTE16_HNS",
+  "name": "Route16_hns",
+  "layout": "LAYOUT_ROUTE16_HNS",
+  "music": "MUS_ROUTE101",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_ROUTE_16",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_CELADON_CITY_HNS",
+      "offset": 5,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE17_HNS",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 35,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 49,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_1"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 38,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE16_HOUSE_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_GATE_CELADON_CITY_ROUTE16_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_GATE_CELADON_CITY_ROUTE16_HNS",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 44,
+      "y": 40,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route16_EventScript_Sign"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "MAP_SEAFOAM_ISLANDS_SECRET_CAVE_HNS",
+  "name": "SeafoamIslands_SecretCave_hns",
+  "layout": "LAYOUT_SEAFOAM_ISLANDS_SECRET_CAVE_HNS",
+  "music": "MUS_MT_CHIMNEY",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_SEAFOAM_ISLANDS",
+  "requires_flash": false,
+  "weather": "WEATHER_FOG_HORIZONTAL",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 16,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_SEAFOAM_ISLANDS_GYM_HNS",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
