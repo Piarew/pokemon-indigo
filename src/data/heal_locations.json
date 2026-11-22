@@ -190,109 +190,109 @@
     },
     {
       "id": "HEAL_LOCATION_PALLET_TOWN",
-      "map": "MAP_PALLET_TOWN",
+      "map": "MAP_PALLET_TOWN_HNS",
       "x": 6,
       "y": 8,
       "respawn_x": 8,
       "respawn_y": 5,
-      "respawn_map": "MAP_PALLET_TOWN_PLAYERS_HOUSE_1F",
-      "respawn_npc": "LOCALID_PLAYERS_HOUSE_1F_MOM"
+      "respawn_map": "MAP_PALLET_TOWN_REDS_HOUSE_1F_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_VIRIDIAN_CITY",
-      "map": "MAP_VIRIDIAN_CITY",
-      "x": 26,
-      "y": 27,
-      "respawn_map": "MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_VIRIDIAN_NURSE"
+      "map": "MAP_VIRIDIAN_CITY_HNS",
+      "x": 30,
+      "y": 37,
+      "respawn_map": "MAP_VIRIDIAN_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_PEWTER_CITY",
-      "map": "MAP_PEWTER_CITY",
-      "x": 17,
-      "y": 26,
-      "respawn_map": "MAP_PEWTER_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_PEWTER_NURSE"
+      "map": "MAP_PEWTER_CITY_HNS",
+      "x": 19,
+      "y": 30,
+      "respawn_map": "MAP_PEWTER_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_CERULEAN_CITY",
-      "map": "MAP_CERULEAN_CITY",
-      "x": 22,
-      "y": 20,
-      "respawn_map": "MAP_CERULEAN_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_CERULEAN_NURSE"
+      "map": "MAP_CERULEAN_CITY_HNS",
+      "x": 25,
+      "y": 30,
+      "respawn_map": "MAP_CERULEAN_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_LAVENDER_TOWN",
-      "map": "MAP_LAVENDER_TOWN",
-      "x": 6,
-      "y": 6,
-      "respawn_map": "MAP_LAVENDER_TOWN_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_LAVENDER_NURSE"
+      "map": "MAP_LAVENDER_TOWN_HNS",
+      "x": 9,
+      "y": 7,
+      "respawn_map": "MAP_LAVENDER_TOWN_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_VERMILION_CITY",
-      "map": "MAP_VERMILION_CITY",
-      "x": 15,
-      "y": 7,
-      "respawn_map": "MAP_VERMILION_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_VERMILION_NURSE"
+      "map": "MAP_VERMILION_CITY_HNS",
+      "x": 22,
+      "y": 5,
+      "respawn_map": "MAP_VERMILION_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_CELADON_CITY",
-      "map": "MAP_CELADON_CITY",
+      "map": "MAP_CELADON_CITY_HNS",
       "x": 48,
       "y": 12,
-      "respawn_map": "MAP_CELADON_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_CELADON_NURSE"
+      "respawn_map": "MAP_CELADON_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_FUCHSIA_CITY",
-      "map": "MAP_FUCHSIA_CITY",
+      "map": "MAP_FUCHSIA_CITY_HNS",
       "x": 25,
       "y": 32,
-      "respawn_map": "MAP_FUCHSIA_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_FUCHSIA_NURSE"
+      "respawn_map": "MAP_FUCHSIA_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_CINNABAR_ISLAND",
-      "map": "MAP_CINNABAR_ISLAND",
-      "x": 14,
-      "y": 12,
-      "respawn_map": "MAP_CINNABAR_ISLAND_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_CINNABAR_NURSE"
+      "map": "MAP_CINNABAR_ISLAND_HNS",
+      "x": 45,
+      "y": 30,
+      "respawn_map": "MAP_CINNABAR_ISLAND_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_INDIGO_PLATEAU",
-      "map": "MAP_INDIGO_PLATEAU_EXTERIOR",
+      "map": "MAP_INDIGO_PLATEAU_HNS",
       "x": 11,
       "y": 7,
-      "respawn_map": "MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_LEAGUE_NURSE"
+      "respawn_map": "MAP_INDIGO_PLATEAU_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_SAFFRON_CITY",
-      "map": "MAP_SAFFRON_CITY",
-      "x": 24,
+      "map": "MAP_SAFFRON_CITY_HNS",
+      "x": 18,
       "y": 39,
-      "respawn_map": "MAP_SAFFRON_CITY_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_SAFFRON_NURSE"
+      "respawn_map": "MAP_SAFFRON_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_ROUTE4",
-      "map": "MAP_ROUTE4",
+      "map": "MAP_ROUTE4_HNS",
       "x": 12,
       "y": 6,
-      "respawn_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_ROUTE4_NURSE"
+      "respawn_map": "MAP_ROUTE4_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_ROUTE10",
-      "map": "MAP_ROUTE10",
-      "x": 13,
-      "y": 21,
-      "respawn_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_ROUTE10_NURSE"
+      "map": "MAP_ROUTE10_HNS",
+      "x": 16,
+      "y": 36,
+      "respawn_map": "MAP_ROUTE9_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
     },
     {
       "id": "HEAL_LOCATION_ONE_ISLAND",
@@ -349,6 +349,230 @@
       "y": 12,
       "respawn_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_SIX_ISLAND_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_NEW_BARK_TOWN",
+      "map": "MAP_NEW_BARK_TOWN_HNS",
+      "x": 20,
+      "y": 12,
+      "respawn_map": "MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_1F_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_CHERRYGROVE_CITY",
+      "map": "MAP_CHERRYGROVE_CITY_HNS",
+      "x": 47,
+      "y": 8,
+      "respawn_map": "MAP_CHERRYGROVE_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_VIOLET_CITY",
+      "map": "MAP_VIOLET_CITY_HNS",
+      "x": 39,
+      "y": 46,
+      "respawn_map": "MAP_VIOLET_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_AZALEA_TOWN",
+      "map": "MAP_AZALEA_TOWN_HNS",
+      "x": 31,
+      "y": 16,
+      "respawn_map": "MAP_AZALEA_TOWN_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_GOLDENROD_CITY",
+      "map": "MAP_GOLDENROD_CITY_HNS",
+      "x": 28,
+      "y": 37,
+      "respawn_map": "MAP_GOLDENROD_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_ECRUTEAK_CITY",
+      "map": "MAP_ECRUTEAK_CITY_HNS",
+      "x": 39,
+      "y": 48,
+      "respawn_map": "MAP_ECRUTEAK_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_OLIVINE_CITY",
+      "map": "MAP_OLIVINE_CITY_HNS",
+      "x": 15,
+      "y": 44,
+      "respawn_map": "MAP_OLIVINE_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_CIANWOOD_CITY",
+      "map": "MAP_CIANWOOD_CITY_HNS",
+      "x": 31,
+      "y": 46,
+      "respawn_map": "MAP_CIANWOOD_POKECENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_MAHOGANYTOWN",
+      "map": "MAP_MAHOGANYTOWN_HNS",
+      "x": 21,
+      "y": 20,
+      "respawn_map": "MAP_MAHOGANY_TOWN_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_LAKE_OF_RAGE",
+      "map": "MAP_LAKE_OF_RAGE_HNS",
+      "x": 39,
+      "y": 42,
+      "respawn_map": "MAP_LAKE_OF_RAGE_HOUSE2_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_BLACKTHORN_CITY",
+      "map": "MAP_BLACKTHORN_CITY_HNS",
+      "x": 27,
+      "y": 49,
+      "respawn_map": "MAP_BLACKTHORN_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_TWINLEAF_TOWN",
+      "map": "MAP_TWINLEAF_TOWN",
+      "x": 16,
+      "y": 19,
+      "respawn_map": "MAP_TWINLEAF_TOWN_MAIN_HOUSE_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_SANDGEM_TOWN",
+      "map": "MAP_SANDGEM_TOWN",
+      "x": 17,
+      "y": 9,
+      "respawn_map": "MAP_SANDGEM_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_JUBILIFE_CITY",
+      "map": "MAP_JUBILIFE_CITY",
+      "x": 55,
+      "y": 37,
+      "respawn_map": "MAP_JUBILIFE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_OREBURGH_CITY",
+      "map": "MAP_OREBURGH_CITY",
+      "x": 51,
+      "y": 23,
+      "respawn_map": "MAP_OREBURGH_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_FLOAROMA_TOWN",
+      "map": "MAP_FLOAROMA_TOWN",
+      "x": 18,
+      "y": 29,
+      "respawn_map": "MAP_FLOAROMA_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_ETERNA_CITY",
+      "map": "MAP_ETERNA_CITY",
+      "x": 16,
+      "y": 18,
+      "respawn_map": "MAP_ETERNA_CITY_POKEMON_CENTER_F1",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_HEARTHOME_CITY",
+      "map": "MAP_HEARTHOME_CITY",
+      "x": 14,
+      "y": 20,
+      "respawn_map": "MAP_HEARTHOME_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_SOLACEON_TOWN",
+      "map": "MAP_SOLACEON_TOWN",
+      "x": 24,
+      "y": 25,
+      "respawn_map": "MAP_SOLACEON_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_VEILSTONE_CITY",
+      "map": "MAP_VEILSTONE_CITY",
+      "x": 41,
+      "y": 37,
+      "respawn_map": "MAP_VEILSTONE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_PASTORIA_CITY",
+      "map": "MAP_PASTORIA_CITY",
+      "x": 26,
+      "y": 15,
+      "respawn_map": "MAP_PASTORIA_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_CELESTIC_TOWN",
+      "map": "MAP_CELESTIC_TOWN",
+      "x": 27,
+      "y": 28,
+      "respawn_map": "MAP_CELESTIC_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_CANALAVE_CITY",
+      "map": "MAP_CANALAVE_CITY",
+      "x": 28,
+      "y": 23,
+      "respawn_map": "MAP_CANALAVE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_SNOWPOINT_CITY",
+      "map": "MAP_SNOWPOINT_CITY",
+      "x": 29,
+      "y": 46,
+      "respawn_map": "MAP_SNOWPOINT_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_SUNYSHORE_CITY",
+      "map": "MAP_SUNYSHORE_CITY",
+      "x": 32,
+      "y": 43,
+      "respawn_map": "MAP_SUNYSHORE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_FIGHT_AREA",
+      "map": "MAP_FIGHT_AREA",
+      "x": 39,
+      "y": 15,
+      "respawn_map": "MAP_FIGHT_AREA_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_SURVIVAL_AREA",
+      "map": "MAP_SURVIVAL_AREA",
+      "x": 17,
+      "y": 19,
+      "respawn_map": "MAP_SURVIVAL_AREA_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
+    },
+    {
+      "id": "HEAL_LOCATION_RESORT_AREA",
+      "map": "MAP_RESORT_AREA",
+      "x": 4,
+      "y": 18,
+      "respawn_map": "MAP_RESORT_AREA_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_NONE"
     }
   ]
 }
