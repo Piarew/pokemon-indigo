@@ -317,10 +317,11 @@ def resolve_tileset(symbol: str, src_root: Path, namespace: str | None) -> tuple
         src_folder = stem_to_snake(stem)
     dest_symbol = symbol
     dest_folder = src_folder
-    if namespace and symbol in EXISTING_TILESET_SYMBOLS:
-        dest_symbol = f"gTileset_{namespace}_{stem}"
-        dest_folder = f"{namespace.lower()}_{src_folder}"
-        TILESET_SNAPSHOT[symbol] = dest_symbol
+    if symbol in EXISTING_TILESET_SYMBOLS:
+        prefix = namespace or "Hns"
+        dest_symbol = f"gTileset_{prefix}_{stem}"
+        dest_folder = f"{prefix.lower()}_{src_folder}"
+    TILESET_SNAPSHOT[symbol] = dest_symbol
     return kind, src_folder, dest_folder, dest_symbol, kind == "secondary"
 
 
@@ -707,6 +708,9 @@ def collect_all_scripts(maps: list[dict]) -> list[str]:
 def existing_script_labels() -> set[str]:
     labels: set[str] = set()
     for path in list((ROOT / "data").rglob("*.inc")) + list((ROOT / "data").rglob("*.s")):
+        # FRLG-only scripts are not assembled into the Emerald ROM.
+        if "_Frlg" in path.name or path.name.endswith("_frlg.inc"):
+            continue
         try:
             text = path.read_text(errors="replace")
         except OSError:
@@ -751,7 +755,8 @@ def patch_event_scripts(folders: list[str], stub_rel: str) -> None:
         missing.append(stub_include)
     if not missing:
         return
-    needle = '\t.include "data/maps/SevenIsland_SevaultCanyon_House_Frlg/scripts.inc"\n'
+    # Splice after the last Emerald map include, before `.if IS_FRLG`.
+    needle = '\t.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"\n'
     if needle not in text:
         raise SystemExit("Could not splice event_scripts.s")
     path.write_text(text.replace(needle, needle + "\n".join(missing) + "\n", 1))
