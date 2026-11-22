@@ -2621,7 +2621,7 @@ static const u8 sDefaultDynamicWeathers[] =
 
 static const struct DynamicWeatherPool sDynamicWeatherPools[] =
 {
-    /*{ MAPSEC_DEWFORD_TOWN, DYNAMIC_WEATHER_POOL(sDynamicWeathers_DewfordTown) },*/
+    /*{ MAPSEC_NONE, DYNAMIC_WEATHER_POOL(sDynamicWeathers_DewfordTown) },*/
 };
 
 static const u8 *GetDynamicWeatherPool(u8 *count)

@@ -608,7 +608,7 @@ static u32 AllocateFrontierPassData(MainCallback callback)
 
     sPassData->callback = callback;
     i = GetCurrentRegionMapSectionId();
-    if (i != MAPSEC_BATTLE_FRONTIER && i != MAPSEC_ARTISAN_CAVE)
+    if (i != MAPSEC_NONE && i != MAPSEC_NONE)
     {
         // Player is not in the frontier, set
         // cursor position to the Trainer Card
@@ -1644,7 +1644,7 @@ static void InitFrontierMapSprites(void)
 
     // Create player indicator head sprite only if it's in vicinity of battle frontier.
     id = GetCurrentRegionMapSectionId();
-    if (id == MAPSEC_BATTLE_FRONTIER || id == MAPSEC_ARTISAN_CAVE)
+    if (id == MAPSEC_NONE || id == MAPSEC_NONE)
     {
         s8 mapNum = gSaveBlock1Ptr->location.mapNum;
 
