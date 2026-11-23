@@ -191,11 +191,9 @@
     {
       "id": "HEAL_LOCATION_PALLET_TOWN",
       "map": "MAP_PALLET_TOWN_HNS",
-      "x": 6,
+      "x": 16,
       "y": 8,
-      "respawn_x": 8,
-      "respawn_y": 5,
-      "respawn_map": "MAP_PALLET_TOWN_REDS_HOUSE_1F_HNS",
+      "respawn_map": "MAP_PALLET_TOWN_HOUSE2_HNS",
       "respawn_npc": "LOCALID_NONE"
     },
     {
