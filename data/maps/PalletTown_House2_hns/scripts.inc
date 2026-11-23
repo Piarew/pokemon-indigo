@@ -1,8 +1,2 @@
 PalletTown_House2_hns_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, PalletTown_House2_hns_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
-
-PalletTown_House2_hns_OnTransition:
-	setrespawn HEAL_LOCATION_PALLET_TOWN
-	end
